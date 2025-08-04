@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsg8q0ksmb5lr"]
+[gd_scene load_steps=5 format=3 uid="uid://dsg8q0ksmb5lr"]
 
 [ext_resource type="Script" uid="uid://bw878gwjwl5bw" path="res://scenes/ui/console.gd" id="1_35dvq"]
 [ext_resource type="Script" uid="uid://bk6bdio51usd3" path="res://scenes/ui/panel.gd" id="2_e4lyg"]
+[ext_resource type="Script" uid="uid://o7onsywlm8iu" path="res://scenes/ui/fs.gd" id="2_nv40g"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_7iixm"]
 
 [node name="console" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_35dvq")
+
+[node name="fullscreen handler" type="Node2D" parent="."]
+script = ExtResource("2_nv40g")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

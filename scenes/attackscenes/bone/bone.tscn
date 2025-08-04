@@ -7,25 +7,21 @@
 size = Vector2(7, 4)
 
 [node name="bone" type="Area2D"]
-scale = Vector2(0.75, 0.75)
 priority = 1
 script = ExtResource("1_ndqog")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2.5, 2.5)
 texture = ExtResource("1_fuk33")
 region_enabled = true
 region_rect = Rect2(17, 0, 7, 4)
 
 [node name="Sprite2Dlast" type="Sprite2D" parent="."]
 rotation = 3.14159
-scale = Vector2(2.5, 2.5)
 texture = ExtResource("1_fuk33")
 region_enabled = true
 region_rect = Rect2(17, 0, 7, 4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(2.5, 2.5)
 shape = SubResource("RectangleShape2D_r0mdm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

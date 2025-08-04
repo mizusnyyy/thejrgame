@@ -7,13 +7,13 @@ func summoned(bullet, soul, speed):
 	#await get_tree().create_timer(2.0).timeout
 	#startsequence(bullet, soul, 60, true,50)
 	#await get_tree().create_timer(2.0).timeout
-	startsequence(bullet, soul, 300, true,17,534)
+	startsequence(bullet, soul, 300, true,17,662)
 	await get_tree().create_timer(0.7).timeout
-	startsequence(bullet, soul, 300, false,17,620)
+	startsequence(bullet, soul, 300, false,17,529)
 	await get_tree().create_timer(0.7).timeout
-	startsequence(bullet, soul, 300, true,17,534)
+	startsequence(bullet, soul, 300, true,17,662)#lewonagorze
 	await get_tree().create_timer(0.7).timeout
-	startsequence(bullet, soul, 300, false,17,620)
+	startsequence(bullet, soul, 300, false,17,529)
 
 func startsequence(bullet, soul, speed, left,size,ylevel=620):
 	bullet = instantiateall(gloo_scene)

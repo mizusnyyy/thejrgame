@@ -2,19 +2,20 @@ extends Node2D
 @onready var gloo_scene = preload("res://scenes/attackscenes/bone/bone.tscn")
 
 func summoned(bullet, soul, speed):
-	battle.current_mode=battle.mode.RED
+	global.current_mode=global.mode.RED
 	#startsequence(bullet, soul, 40,true,5)
 	#await get_tree().create_timer(2.0).timeout
 	#startsequence(bullet, soul, 60, true,50)
 	#await get_tree().create_timer(2.0).timeout
-	var randomnr = 420
+	var randomnr = 660
+	var inny = 440
 	for i in range(21):
 		if i < 10:
-			startsequence(bullet, soul, 300, true,4,randomnr+(i*14))#musi,musi,speed,czyzlewej,wielkosc,poziom-y
-			startsequence(bullet, soul, 300, true,4,randomnr+135+(i*14))
+			startsequence(bullet, soul, 300, true,17-i,randomnr)#musi,musi,speed,czyzlewej,wielkosc,poziom-y
+			startsequence(bullet, soul, 300, true,8+i,inny)
 		else:
-			startsequence(bullet, soul, 300, true,4,randomnr+280-(i*14))
-			startsequence(bullet, soul, 300, true,4,randomnr+415-(i*14))
+			startsequence(bullet, soul, 300, true,8+i,randomnr)
+			startsequence(bullet, soul, 300, true,17-i,inny)
 		await get_tree().create_timer(0.12).timeout
 
 func startsequence(bullet, soul, speed, left,size,ylevel=620):

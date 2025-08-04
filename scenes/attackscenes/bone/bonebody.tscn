@@ -4,12 +4,10 @@
 [ext_resource type="Script" uid="uid://b2tiof47sqfha" path="res://scenes/attackscenes/bone/bonebody.gd" id="1_jx2gg"]
 
 [node name="bonebody" type="Area2D"]
-scale = Vector2(0.75, 0.75)
 priority = 1
 script = ExtResource("1_jx2gg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2.5, 2.5)
 texture = ExtResource("1_5nh5k")
 region_enabled = true
 region_rect = Rect2(19, 13, 3, 3)

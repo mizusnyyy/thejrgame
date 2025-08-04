@@ -34,9 +34,10 @@ func attack():
 	var ran = randi()%4
 	await get_tree().create_timer(2.0).timeout
 	
-	#gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_boneside.tscn")
+	#gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_bonetunnel.tscn")
 	#bullet = instantiateall(gloo_scene)
 	#bullet.summoned(bullet, soul, bullet_speed)
+	#return
 	if ran == 0: 
 		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_bonepit.tscn")
 		bullet = instantiateall(gloo_scene)
@@ -46,7 +47,7 @@ func attack():
 		bullet = instantiateall(gloo_scene)
 		bullet.summoned(bullet, soul, bullet_speed)
 	elif ran == 2: 
-		battle.current_mode=battle.mode.RED
+		global.current_mode=global.mode.RED
 		gloo_scene = preload("res://scenes/attackscenes/gloo/gloo.tscn")
 		#gloo_scene = preload("res://attackscenes/bone/bone.tscn")
 		bullet = instantiateall(gloo_scene)

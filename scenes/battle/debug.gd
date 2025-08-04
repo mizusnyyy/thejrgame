@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 			size -= 1
 			savingpos()
 	if Input.is_action_just_pressed("debug.bone.checkpos") and instance:
-		print(size, " size --- position ", instance.global_position.y)
+		print(size, " size --- position ", instance.global_position.y + (instance.getsizepls()*8))
 		#var pozycjapls = instance.global_position.y
 		#instance = gloo_scene.instantiate()
 		#add_child(instance)
@@ -43,7 +43,7 @@ func savingpos() -> void:
 	if instance == null:
 		return
 	
-	savepos = instance.global_position.y
+	savepos = instance.global_position.y + (instance.getsizepls()*8)
 	instance.queue_free()
 	makenew(savepos)
 

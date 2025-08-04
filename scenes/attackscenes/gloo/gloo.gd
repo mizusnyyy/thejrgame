@@ -14,9 +14,6 @@ func _process(delta):
 func _on_body_entered(body):
 	if body.name == "soul":
 		body.take_damage(10)
-func give_tp():
-	battle.tp+=1
-	print(battle.tp)
 func summoned(bullet, soul, speed):
 		bullet.global_position.x = randf_range(512,768)
 		bullet.global_position.y = 0

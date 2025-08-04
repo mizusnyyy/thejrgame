@@ -49,7 +49,7 @@ func instantiateall(scene: PackedScene) -> Node2D:
 	
 func summoned(bullet, soul, speed, left, size, ylevel=620):
 	#var random = randf_range(-196,-384)
-	var random = -384
+	var random = 0#-384
 	if left:
 		random *= -1
 		bullet.direction = Vector2.LEFT

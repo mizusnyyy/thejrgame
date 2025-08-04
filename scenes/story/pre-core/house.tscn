@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bpmn0ng1q8ox"]
+[gd_scene load_steps=29 format=4 uid="uid://bpmn0ng1q8ox"]
 
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_tecch"]
 [ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/players/teto.tscn" id="6_74pxv"]
@@ -8,8 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://cnmsr8v22thcc" path="res://assets/sprite/characters/party/jamorrr/jamorrrspritesheet.png" id="12_3kxp8"]
 [ext_resource type="PackedScene" uid="uid://dsg8q0ksmb5lr" path="res://scenes/ui/phone.tscn" id="12_510yu"]
 [ext_resource type="Texture2D" uid="uid://c72wlne1fh1ho" path="res://assets/tiles/tileobjects.png" id="12_qgspi"]
+[ext_resource type="Script" uid="uid://bejskw4sl3ymu" path="res://scenes/battle/debug.gd" id="13_0rrt8"]
 [ext_resource type="Script" uid="uid://cbg8nph3tsk6a" path="res://scenes/story/pre-core/glut.gd" id="13_j4awy"]
 [ext_resource type="Texture2D" uid="uid://bxq2w808td2io" path="res://assets/sprite/characters/glut/glut.png" id="14_0rrt8"]
+[ext_resource type="PackedScene" uid="uid://pegs4ep6hjc5" path="res://scenes/attackscenes/bone/bone.tscn" id="14_2i8gf"]
 [ext_resource type="AudioStream" uid="uid://bk6wuwnskch7u" path="res://assets/sprite/characters/glut/squeek.wav" id="15_0rrt8"]
 [ext_resource type="Texture2D" uid="uid://b5jp252jvsneo" path="res://assets/sprite/characters/party/misupi/misupispritesheet.png" id="15_jobkd"]
 
@@ -243,7 +245,7 @@ sprite_frames = SubResource("SpriteFrames_jkym4")
 
 [node name="glut" type="Area2D" parent="ysorting"]
 y_sort_enabled = true
-position = Vector2(305, 398)
+position = Vector2(-27, -19)
 script = ExtResource("13_j4awy")
 dialogue_text = "Steven her-! wait a minute... youre not steven"
 
@@ -284,6 +286,11 @@ animation = &"igor"
 process_mode = 3
 position = Vector2(384, -32)
 
+[node name="debug" type="Node2D" parent="."]
+position = Vector2(0, 0.5)
+script = ExtResource("13_0rrt8")
+gloo_scene = ExtResource("14_2i8gf")
+
 [connection signal="body_entered" from="ysorting/dzem" to="ysorting/dzem" method="_on_body_entered"]
 [connection signal="body_exited" from="ysorting/dzem" to="ysorting/dzem" method="_on_body_exited"]
 [connection signal="body_entered" from="ysorting/qorus" to="ysorting/qorus" method="_on_body_entered"]
@@ -292,5 +299,6 @@ position = Vector2(384, -32)
 [connection signal="body_exited" from="ysorting/glut" to="ysorting/glut" method="_on_body_exited"]
 [connection signal="body_entered" from="ysorting/misupi" to="ysorting/misupi" method="_on_body_entered"]
 [connection signal="body_exited" from="ysorting/misupi" to="ysorting/misupi" method="_on_body_exited"]
+[connection signal="ready" from="debug" to="ysorting/dzem" method="_on_debug_ready"]
 
 [editable path="ysorting/player"]

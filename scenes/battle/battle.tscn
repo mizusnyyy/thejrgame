@@ -1,4 +1,4 @@
-[gd_scene load_steps=165 format=3 uid="uid://chprno7b2lppf"]
+[gd_scene load_steps=167 format=3 uid="uid://chprno7b2lppf"]
 
 [ext_resource type="Script" uid="uid://4byxmesk7me" path="res://scenes/battle/battle.gd" id="1_6ofp8"]
 [ext_resource type="Texture2D" uid="uid://b45tvv1w8286c" path="res://assets/sprite/battle/bg/b0001.png" id="2_2ys7f"]
@@ -135,6 +135,8 @@
 [ext_resource type="Script" uid="uid://j2ey1br0lm7a" path="res://scenes/battle/defend.gd" id="126_21vhs"]
 [ext_resource type="AudioStream" uid="uid://yn4sayk7g01s" path="res://assets/sprite/intro/dzem.wav" id="132_ly5g2"]
 [ext_resource type="Texture2D" uid="uid://c2n5lud1gsnrw" path="res://assets/sprite/battle/heart_blue.png" id="135_21vhs"]
+[ext_resource type="Script" uid="uid://bejskw4sl3ymu" path="res://scenes/battle/debug.gd" id="136_w54gx"]
+[ext_resource type="PackedScene" uid="uid://pegs4ep6hjc5" path="res://scenes/attackscenes/bone/bone.tscn" id="137_21vhs"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gcnt2"]
 animations = [{
@@ -914,6 +916,11 @@ animation = &"red"
 stream = ExtResource("132_ly5g2")
 volume_db = -6.769
 autoplay = true
+
+[node name="debug" type="Node2D" parent="."]
+position = Vector2(0, 0.5)
+script = ExtResource("136_w54gx")
+gloo_scene = ExtResource("137_21vhs")
 
 [connection signal="body_entered" from="notui/left arrow" to="notui/left arrow" method="_on_body_entered"]
 [connection signal="body_exited" from="notui/left arrow" to="notui/left arrow" method="_on_body_exited"]

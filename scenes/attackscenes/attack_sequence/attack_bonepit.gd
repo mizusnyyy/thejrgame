@@ -2,21 +2,28 @@ extends Node2D
 @onready var gloo_scene = preload("res://scenes/attackscenes/bone/bone.tscn")
 
 func summoned(bullet, soul, speed):
+	battle.current_mode=battle.mode.BLUE
 	#startsequence(bullet, soul, 40,true,5)
 	#await get_tree().create_timer(2.0).timeout
 	#startsequence(bullet, soul, 60, true,50)
 	#await get_tree().create_timer(2.0).timeout
-	startsequence(bullet, soul, 360, true,4)
-	startsequence(bullet, soul, 360, false,4)
-	await get_tree().create_timer(0.08).timeout
-	startsequence(bullet, soul, 360, true,4)
-	startsequence(bullet, soul, 360, false,4)
-	await get_tree().create_timer(0.08).timeout
-	startsequence(bullet, soul, 360, true,2)
-	startsequence(bullet, soul, 360, false,2)
-	await get_tree().create_timer(0.08).timeout
-	startsequence(bullet, soul, 360, true,2)
-	startsequence(bullet, soul, 360, false,2)
+	startsequence(bullet, soul, 480, true,3)
+	startsequence(bullet, soul, 480, false,3)
+	await get_tree().create_timer(0.04).timeout
+	startsequence(bullet, soul, 480, true,3)
+	startsequence(bullet, soul, 480, false,3)
+	await get_tree().create_timer(0.04).timeout
+	startsequence(bullet, soul, 480, true,2)
+	startsequence(bullet, soul, 480, false,2)
+	await get_tree().create_timer(0.04).timeout
+	startsequence(bullet, soul, 480, true,2)
+	startsequence(bullet, soul, 480, false,2)
+	await get_tree().create_timer(0.04).timeout
+	startsequence(bullet, soul, 480, true,2)
+	startsequence(bullet, soul, 480, false,2)
+	await get_tree().create_timer(0.04).timeout
+	startsequence(bullet, soul, 480, true,2)
+	startsequence(bullet, soul, 480, false,2)
 
 func startsequence(bullet, soul, speed, left,size):
 	bullet = instantiateall(gloo_scene)

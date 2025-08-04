@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://btiymt6j151nn"]
 
-[ext_resource type="Script" uid="uid://c0gi7nhfv3g0w" path="res://scenes/attackscenes/attack_sequence/attack_bonepit.gd" id="1_4ytvv"]
+[ext_resource type="Script" uid="uid://eefm1txl764m" path="res://scenes/attackscenes/attack_sequence/attack_bonetunnel.gd" id="1_xjgqg"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_4ytvv")
+script = ExtResource("1_xjgqg")
 
 [connection signal="ready" from="." to="." method="_on_ready"]

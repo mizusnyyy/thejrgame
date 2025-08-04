@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsg8q0ksmb5lr"]
+[gd_scene load_steps=4 format=3 uid="uid://dsg8q0ksmb5lr"]
 
 [ext_resource type="Script" uid="uid://bw878gwjwl5bw" path="res://scenes/ui/console.gd" id="1_35dvq"]
+[ext_resource type="Script" uid="uid://bk6bdio51usd3" path="res://scenes/ui/panel.gd" id="2_e4lyg"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_7iixm"]
 
 [node name="console" type="Node2D"]
@@ -14,6 +15,7 @@ offset_left = 64.0
 offset_top = 64.0
 offset_right = 512.0
 offset_bottom = 400.0
+script = ExtResource("2_e4lyg")
 
 [node name="LineEdit" type="LineEdit" parent="CanvasLayer/Panel"]
 layout_mode = 1

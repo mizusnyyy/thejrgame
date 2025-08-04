@@ -5,6 +5,4 @@ var current_state = state.PLAYER_TURN
 var current_mode = mode.BLUE
 var tp = 0
 var enemy_hp = 100
-var health := 100.0
-var can_move = true
-	
+var mercy = 0

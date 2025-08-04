@@ -19,11 +19,9 @@ func _process(delta):
 			queue_free()
 func _on_body_entered(body):
 	if body.name == "soul":
-			if amount<bluecount:
-				body.take_damage(10) #BYL TRUE
-			else:
-				body.take_damage(10,true)
-			
+			body.take_damage(10) #BYL TRUE
+#func getglopos():
+	#return self.rect_global_position.y
 func give_tp():
 	battle.tp+=1
 	print(battle.tp)

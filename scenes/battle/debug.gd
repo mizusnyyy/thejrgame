@@ -10,8 +10,8 @@ var savepos: float = 0.0
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("debug.bone"):
 		# Restart instancji, jeśli już istnieje
-		if instance != null:
-			instance.queue_free()
+		#if instance != null:
+			#instance.queue_free()
 		
 		instance = gloo_scene.instantiate()
 		add_child(instance)
@@ -33,13 +33,17 @@ func _process(delta: float) -> void:
 			savingpos()
 	if Input.is_action_just_pressed("debug.bone.checkpos") and instance:
 		print(size, " size --- position ", instance.global_position.y)
+		#var pozycjapls = instance.global_position.y
+		#instance = gloo_scene.instantiate()
+		#add_child(instance)
+		#instance.summoned(instance, soul, 0, true, size, pozycjapls)
 		
 
 func savingpos() -> void:
 	if instance == null:
 		return
 	
-	savepos = instance.global_position.y + (7 * size)
+	savepos = instance.global_position.y
 	instance.queue_free()
 	makenew(savepos)
 
@@ -48,7 +52,7 @@ func makenew(pos: float) -> void:
 	add_child(instance)
 	instance.summoned(instance, soul, 0, true, size, pos)
 
-func _on_debug_ready() -> void:
+func _on_ready() -> void:
 	print("-----------------------")
-	print("l-create bone(del previous). p-check stats. i-pos.y up. k-pos.y down. u-size up. j-size down.")
+	print("l-create bone. p-check stats. i-pos.y up. k-pos.y down. u-size up. j-size down.")
 	print("-----------------------")

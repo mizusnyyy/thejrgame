@@ -25,4 +25,6 @@ func _process(delta: float) -> void:
 			var powrot_house = load("res://scenes/story/pre-core/house.tscn") 
 			get_tree().change_scene_to_packed(powrot_house)
 			return
+		battle.mercy += 10
+		print("mercy: " + battle.mercy)
 		notui.enemyturn()

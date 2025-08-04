@@ -32,16 +32,16 @@ func attack():
 	var ran = randi()%3
 	if ran == 0: 
 		battle.current_mode=battle.mode.BLUE
-		gloo_scene = preload("res://attackscenes/attack_sequence/attack_bonepit.tscn")
+		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_bonepit.tscn")
 		bullet = instantiateall(gloo_scene)
 		bullet.summoned(bullet, soul, bullet_speed)
 	elif ran == 1: 
 		battle.current_mode=battle.mode.RED
-		gloo_scene = preload("res://attackscenes/attack_sequence/attack_bonetunnel.tscn")
+		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_bonetunnel.tscn")
 		bullet = instantiateall(gloo_scene)
 		bullet.summoned(bullet, soul, bullet_speed)
 	elif ran == 2: 
-		gloo_scene = preload("res://attackscenes/gloo/gloo.tscn")
+		gloo_scene = preload("res://scenes/attackscenes/gloo/gloo.tscn")
 		#gloo_scene = preload("res://attackscenes/bone/bone.tscn")
 		bullet = instantiateall(gloo_scene)
 		#bullet.summoned(bullet, soul, bullet_speed, true, randi()%10+3)

@@ -1,6 +1,6 @@
 extends Area2D
-@onready var playersprite = $"../../../ysorting/player/player/AnimatedSprite2D"
-@onready var velocityplayer = $"../../../ysorting/player/player"
+@onready var playersprite = $"../../ysorting/player/player/AnimatedSprite2D"
+@onready var velocityplayer = $"../../ysorting/player/player"
 @export var ishorizontal = true
 
 func _on_body_entered(body: Node2D) -> void:

@@ -8,12 +8,12 @@ func summoned(bullet, soul, speed):
 	#await get_tree().create_timer(2.0).timeout
 	for i in range(21):
 		if i < 10:
-			startsequence(bullet, soul, 300, true,4+(i/2),420+(i*14))#musi,musi,speed,czyzlewej,wielkosc,poziom-y
-			startsequence(bullet, soul, 300, true,4+(i/2),570+(i*14))
+			startsequence(bullet, soul, 300, true,4,420+(i*14))#musi,musi,speed,czyzlewej,wielkosc,poziom-y
+			startsequence(bullet, soul, 300, true,4,570+(i*14))
 			print(420+(i*14))
 		else:
-			startsequence(bullet, soul, 300, true,4+(i/2),700-(i*14))
-			startsequence(bullet, soul, 300, true,4+(i/2),850-(i*14))
+			startsequence(bullet, soul, 300, true,4,700-(i*14))
+			startsequence(bullet, soul, 300, true,4,850-(i*14))
 			print("nast ", 690-(i*14))
 		await get_tree().create_timer(0.12).timeout
 

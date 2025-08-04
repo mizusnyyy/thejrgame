@@ -4,4 +4,4 @@ enum mode { RED,BLUE }
 var current_state = state.ENEMY_TURN
 var current_mode = mode.BLUE
 var tp = 0
-var enemy_hp=100
+var enemy_hp = 100

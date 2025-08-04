@@ -906,6 +906,7 @@ volume_db = -10.0
 shape = SubResource("RectangleShape2D_agsc7")
 
 [node name="heart" type="AnimatedSprite2D" parent="soul"]
+scale = Vector2(0.9, 0.9)
 sprite_frames = SubResource("SpriteFrames_n25ch")
 animation = &"red"
 

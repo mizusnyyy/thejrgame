@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://b60l2pd8phig8"]
+[gd_scene load_steps=22 format=4 uid="uid://b60l2pd8phig8"]
 
 [ext_resource type="Script" uid="uid://dp6bgu4j6w5ly" path="res://scenes/story/pre-core/dialoge.gd" id="1_ghtf3"]
 [ext_resource type="Texture2D" uid="uid://dunbchuq6bjn6" path="res://assets/dialogue/text.png" id="2_bf63m"]
@@ -8,9 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/players/teto.tscn" id="6_m0j0v"]
 [ext_resource type="Texture2D" uid="uid://bxq2w808td2io" path="res://assets/sprite/characters/glut/glut.png" id="7_3pd33"]
 [ext_resource type="Script" uid="uid://cbg8nph3tsk6a" path="res://scenes/story/pre-core/glut.gd" id="7_ngnqd"]
-[ext_resource type="PackedScene" uid="uid://drii5ui75n5aa" path="res://scenes/story/pre-core/door/teleportermap/teleportermap.tscn" id="8_xokh1"]
 [ext_resource type="AudioStream" uid="uid://bk6wuwnskch7u" path="res://assets/sprite/characters/glut/squeek.wav" id="9_87ub6"]
-[ext_resource type="Script" uid="uid://cxdj47olgmxen" path="res://scenes/story/pre-core/door/teleportermap/teleportermap.gd" id="9_jt1e3"]
 [ext_resource type="PackedScene" uid="uid://b5bxnr2plabon" path="res://scenes/story/pre-core/door/teleporter/teleporter.tscn" id="9_uur3u"]
 [ext_resource type="PackedScene" uid="uid://pgr1hxlmxihq" path="res://scenes/story/pre-core/door/doors.tscn" id="10_ett3c"]
 [ext_resource type="Texture2D" uid="uid://b7632vv4ixuwo" path="res://assets/tiles/tilebg.png" id="13_xq3a2"]
@@ -147,6 +145,18 @@ metadata/_edit_use_anchors_ = true
 stream = ExtResource("5_0wohv")
 volume_db = -5.0
 
+[node name="NameLabel" type="RichTextLabel" parent="CanvasLayer/dialoge"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 0.5
+offset_right = 140.0
+offset_bottom = 18.5
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/normal_font = ExtResource("4_xix80")
+text = "pablo game"
+scroll_active = false
+autowrap_mode = 0
+
 [node name="tp" type="Node2D" parent="."]
 
 [node name="TP12" parent="tp" instance=ExtResource("9_uur3u")]
@@ -174,20 +184,6 @@ position = Vector2(84, 0)
 [node name="Area2D" parent="tp/TP21" instance=ExtResource("10_ett3c")]
 position = Vector2(-16, -32)
 
-[node name="TP2Outside" parent="tp" instance=ExtResource("8_xokh1")]
-position = Vector2(0, -49)
-rotation = 3.14159
-script = ExtResource("9_jt1e3")
-ishorizontal = false
-namescene = "house.tscn"
-
-[node name="teleporter" parent="tp/TP2Outside" index="0"]
-position = Vector2(0, 1)
-
-[node name="Area2D" parent="tp/TP2Outside" instance=ExtResource("10_ett3c")]
-position = Vector2(-32, 15)
-rotation = -1.5708
-
 [node name="tilemap" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -204,6 +200,7 @@ tile_set = SubResource("TileSet_ihlf5")
 [node name="barrier" type="TileMapLayer" parent="tilemap"]
 z_index = 10
 scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAD8/wcAAAADAAAAAAD9/wcAAAADAAAAAAD+/wcAAAADAAAAAAD//wcAAAADAAAAAAAAAAcAAAADAAAAAAABAAcAAAADAAAAAAACAAcAAAADAAAAAAADAAcAAAADAAAAAAAEAAcAAAADAAAAAAAEAAYAAAADAAAAAAAEAAUAAAADAAAAAAAEAAQAAAADAAAAAAAFAAQAAAADAAAAAAAGAAQAAAADAAAAAAAHAAQAAAADAAAAAAAIAAQAAAADAAAAAAAJAAQAAAADAAAAAAAKAAQAAAADAAAAAAAKAAUAAAADAAAAAAAKAAYAAAADAAAAAAAKAAcAAAADAAAAAAALAAcAAAADAAAAAAAMAAcAAAADAAAAAAANAAcAAAADAAAAAAAOAAcAAAADAAAAAAAPAAcAAAADAAAAAAAQAAcAAAADAAAAAAARAAcAAAADAAAAAAASAAcAAAADAAAAAAATAAcAAAADAAAAAAAUAAcAAAADAAAAAAAVAAcAAAADAAAAAAAWAAcAAAADAAAAAAAXAAcAAAADAAAAAAAYAAcAAAADAAAAAAAYAAYAAAADAAAAAAAYAAUAAAADAAAAAAAYAAQAAAADAAAAAAAYAAMAAAADAAAAAAAYAAIAAAADAAAAAAAYAAEAAAADAAAAAAAYAAAAAAADAAAAAAAYAP//AAADAAAAAAAYAP7/AAADAAAAAAAYAP3/AAADAAAAAAAYAPz/AAADAAAAAAAYAPv/AAADAAAAAAAYAPr/AAADAAAAAAAYAPn/AAADAAAAAAAXAPn/AAADAAAAAAAWAPn/AAADAAAAAAAWAPj/AAADAAAAAAAWAPf/AAADAAAAAAAWAPb/AAADAAAAAAAVAPb/AAADAAAAAAAUAPb/AAADAAAAAAATAPb/AAADAAAAAAATAPX/AAADAAAAAAAUAPX/AAADAAAAAAAUAPT/AAADAAAAAAAUAPP/AAADAAAAAAATAPP/AAADAAAAAAATAPL/AAADAAAAAAASAPL/AAADAAAAAAARAPL/AAADAAAAAAARAPP/AAADAAAAAAAQAPL/AAADAAAAAAAPAPL/AAADAAAAAAAPAPP/AAADAAAAAAAOAPP/AAADAAAAAAAOAPT/AAADAAAAAAAOAPX/AAADAAAAAAAPAPX/AAADAAAAAAAPAPb/AAADAAAAAAAOAPb/AAADAAAAAAANAPb/AAADAAAAAAAMAPb/AAADAAAAAAAMAPf/AAADAAAAAAAMAPj/AAADAAAAAAAMAPn/AAADAAAAAAALAPn/AAADAAAAAAAKAPn/AAADAAAAAAAKAPr/AAADAAAAAAAKAPv/AAADAAAAAAAKAPz/AAADAAAAAAAKAP3/AAADAAAAAAAKAP7/AAADAAAAAAAJAP7/AAADAAAAAAAIAP7/AAADAAAAAAAHAP7/AAADAAAAAAAGAP7/AAADAAAAAAAFAP7/AAADAAAAAAAEAP7/AAADAAAAAAADAP7/AAADAAAAAAACAP7/AAADAAAAAAABAP7/AAADAAAAAAABAP3/AAADAAAAAAABAPz/AAADAAAAAAAAAPz/AAADAAAAAAD///z/AAADAAAAAAD+//z/AAADAAAAAAD+//3/AAADAAAAAAD+//7/AAADAAAAAAD9//7/AAADAAAAAAD8//7/AAADAAAAAAD7//7/AAADAAAAAAD7////AAADAAAAAAD7/wAAAAADAAAAAAD7/wEAAAADAAAAAAD7/wIAAAADAAAAAAD7/wMAAAADAAAAAAD7/wQAAAADAAAAAAD7/wUAAAADAAAAAAD7/wYAAAADAAAAAAD7/wcAAAADAAAAAAA=")
 tile_set = SubResource("TileSet_1eayi")
 
 [node name="ysorting" type="Node2D" parent="."]
@@ -248,5 +245,4 @@ stream = ExtResource("9_87ub6")
 
 [editable path="tp/TP12"]
 [editable path="tp/TP21"]
-[editable path="tp/TP2Outside"]
 [editable path="ysorting/player"]

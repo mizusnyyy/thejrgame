@@ -1,6 +1,6 @@
 extends Area2D
 @onready var playersprite = $"../../../ysorting/player/player/AnimatedSprite2D"
-@onready var velocityplayer = $"../../../ysorting/player/player"
+@onready var velocityplayer = $"../../../ysorting/player"
 @export var ishorizontal = true
 @export var namescene:String
 

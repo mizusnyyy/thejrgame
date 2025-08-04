@@ -6,9 +6,6 @@ extends Node2D
 
 var expression = Expression.new()
 var custom_commands = {}
-
-
-
 func goto_scene(path: String):
 	get_tree().change_scene_to_file(path)
 func set_var(variable, value):
@@ -16,7 +13,7 @@ func set_var(variable, value):
 		global.set(variable, value)
 		output("global." + str(variable) + " = " + str(value))
 	else:
-		output("[color=red]No such global variable: %s[/color]" % variable)
+		output("[color=red]no such global variable: %s[/color]" % variable)
 
 func _ready():
 	canvas_layer.hide()
@@ -45,7 +42,7 @@ func _on_text_submitted(command: String):
 	if command.strip_edges() == "":
 		return
 
-	output("> " + command)
+	output("[color=yellow]> " + "[color=white]" + command)
 
 	if _try_execute_custom_command(command):
 		return
@@ -57,7 +54,7 @@ func _on_text_submitted(command: String):
 
 	var result = expression.execute()
 	if expression.has_execute_failed():
-		output("[color=red]error bc game yes[/color]")
+		output("[color=red]no command bro[/color]")
 	else:
 		output(str(result))
 

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b7632vv4ixuwo" path="res://assets/tiles/tilebg.png" id="9_0rrt8"]
 [ext_resource type="Texture2D" uid="uid://blq2libb70yvf" path="res://assets/tiles/tilebarrier.png" id="10_2i8gf"]
 [ext_resource type="Texture2D" uid="uid://cnmsr8v22thcc" path="res://assets/sprite/characters/party/jamorrr/jamorrrspritesheet.png" id="12_3kxp8"]
-[ext_resource type="PackedScene" uid="uid://dsg8q0ksmb5lr" path="res://scenes/ui/phone.tscn" id="12_510yu"]
+[ext_resource type="PackedScene" uid="uid://dsg8q0ksmb5lr" path="res://scenes/ui/console.tscn" id="12_510yu"]
 [ext_resource type="Texture2D" uid="uid://c72wlne1fh1ho" path="res://assets/tiles/tileobjects.png" id="12_qgspi"]
 [ext_resource type="Script" uid="uid://cbg8nph3tsk6a" path="res://scenes/story/pre-core/glut.gd" id="13_j4awy"]
 [ext_resource type="Texture2D" uid="uid://bxq2w808td2io" path="res://assets/sprite/characters/glut/glut.png" id="14_0rrt8"]
@@ -281,8 +281,7 @@ sprite_frames = SubResource("SpriteFrames_tecch")
 animation = &"igor"
 
 [node name="phone" parent="." instance=ExtResource("12_510yu")]
-process_mode = 3
-position = Vector2(384, -32)
+position = Vector2(104, 304)
 
 [connection signal="body_entered" from="ysorting/dzem" to="ysorting/dzem" method="_on_body_entered"]
 [connection signal="body_exited" from="ysorting/dzem" to="ysorting/dzem" method="_on_body_exited"]

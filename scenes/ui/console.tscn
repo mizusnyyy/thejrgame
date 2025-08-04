@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsg8q0ksmb5lr"]
+
+[ext_resource type="Script" uid="uid://bw878gwjwl5bw" path="res://scenes/ui/console.gd" id="1_35dvq"]
+[ext_resource type="Texture2D" uid="uid://dsi5kag8n8k35" path="res://assets/ui/phone.png" id="1_srpgl"]
+[ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_7iixm"]
+
+[node name="console" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_35dvq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(234.5, 446.5)
+texture = ExtResource("1_srpgl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 90.5
+offset_top = 254.5
+offset_right = 378.5
+offset_bottom = 686.5
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_7iixm")
+text = "pablo game console™"
+metadata/_edit_use_anchors_ = true
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer"]
+offset_left = 90.5
+offset_top = 198.5
+offset_right = 378.5
+offset_bottom = 238.5
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_7iixm")
+text = ">"
+metadata/_edit_use_anchors_ = true

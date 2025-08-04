@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsg8q0ksmb5lr"]
+[gd_scene load_steps=4 format=3 uid="uid://b8jtsotexub62"]
 
 [ext_resource type="Texture2D" uid="uid://dsi5kag8n8k35" path="res://assets/ui/phone.png" id="1_srpgl"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_7iixm"]

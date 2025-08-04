@@ -36,7 +36,7 @@ func update_top_soul_position():
 func flash_effect():
 	invincible = true
 	var flash_times = 4
-	if player.health==0:
+	if global.health==0:
 		haudio.pitch_scale=0.5
 		haudio.play()
 	else:
@@ -55,14 +55,14 @@ func take_damage(amount,blue=false):
 	else:
 		if invincible:
 			return
-		player.health -= amount
-		print("bullet taken:", amount, " → the one holding the gun:", player.health)
+		global.health -= amount
+		print("bullet taken:", amount, " → the one holding the gun:", global.health)
 		flash_effect()
 func is_alive():
 	return alive
 	
 func _physics_process(delta: float) -> void:
-	if alive and battle.current_mode==battle.mode.RED:
+	if alive and global.current_mode==global.mode.RED:
 		sprite.play("red")
 		var directionlr := Input.get_axis("left", "right")
 		var directionud := Input.get_axis("up", "down")
@@ -74,7 +74,7 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0.0, SPEED)
 			velocity.y = move_toward(velocity.y, 0.0, SPEED)
 	
-	if alive  and battle.current_mode==battle.mode.BLUE:
+	if alive and global.current_mode==global.mode.BLUE:
 		sprite.play("blue")
 		if not is_on_floor():
 			velocity += get_gravity() * delta
@@ -86,7 +86,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 	
-	if player.health <= 0:
+	if global.health <= 0:
 		alive=false
 		await get_tree().create_timer(1.5).timeout
 		get_tree().change_scene_to_file("res://scenes/battle/gg/gg.tscn")

@@ -10,7 +10,7 @@ func _physics_process(delta: float) -> void:
 	var directionlr := Input.get_axis("left", "right")
 	var directionud := Input.get_axis("up", "down")
 	direction = Vector2(directionlr, directionud)
-	if direction.length() > 0 && player.can_move:
+	if direction.length() > 0 && global.can_move:
 		if directionlr != 0:
 			lrud[0] = directionlr
 		if directionud != 0:

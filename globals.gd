@@ -7,4 +7,3 @@ var tp = 0
 var enemy_hp = 100
 var health := 100.0
 var can_move = true
-	

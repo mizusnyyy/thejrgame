@@ -42,7 +42,7 @@ func _on_text_submitted(command: String):
 	if command.strip_edges() == "":
 		return
 
-	output("[color=yellow]> " + "[color=white]" + command)
+	output("[color=white]> " + "[color=white]" + command)
 
 	if _try_execute_custom_command(command):
 		return

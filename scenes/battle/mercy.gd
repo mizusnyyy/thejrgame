@@ -26,5 +26,5 @@ func _process(delta: float) -> void:
 			get_tree().change_scene_to_packed(powrot_house)
 			return
 		battle.mercy += 10
-		print("mercy: " + battle.mercy)
+		print("mercy: " + str(battle.mercy))
 		notui.enemyturn()

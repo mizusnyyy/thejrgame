@@ -19,11 +19,12 @@ func _process(delta: float) -> void:
 		selected = false
 		dmg.global_position=Vector2(randf_range(450,800),randf_range(125,250))
 		if dmg.global_position.x > 640:
-			dmg.rotation=randf_range(0,-0.5)
+			dmg.global_rotation=randf_range(0,-0.5)
 		else:
-			dmg.rotation=randf_range(0,0.5)
+			dmg.global_rotation=randf_range(0,0.5)
 		dmg.play()
 		audio.play()
 		await dmg.animation_finished
+		print("Enemy HP: ", battle.enemy_hp)
 		notui.enemyturn()
 		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://bpmn0ng1q8ox"]
+[gd_scene load_steps=28 format=4 uid="uid://bpmn0ng1q8ox"]
 
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_tecch"]
 [ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/players/teto.tscn" id="6_74pxv"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://b7632vv4ixuwo" path="res://assets/tiles/tilebg.png" id="9_0rrt8"]
 [ext_resource type="Texture2D" uid="uid://blq2libb70yvf" path="res://assets/tiles/tilebarrier.png" id="10_2i8gf"]
 [ext_resource type="Texture2D" uid="uid://cnmsr8v22thcc" path="res://assets/sprite/characters/party/jamorrr/jamorrrspritesheet.png" id="12_3kxp8"]
-[ext_resource type="PackedScene" uid="uid://dsg8q0ksmb5lr" path="res://scenes/ui/phone.tscn" id="12_510yu"]
 [ext_resource type="Texture2D" uid="uid://c72wlne1fh1ho" path="res://assets/tiles/tileobjects.png" id="12_qgspi"]
 [ext_resource type="Script" uid="uid://bejskw4sl3ymu" path="res://scenes/battle/debug.gd" id="13_0rrt8"]
 [ext_resource type="Script" uid="uid://cbg8nph3tsk6a" path="res://scenes/story/pre-core/glut.gd" id="13_j4awy"]
@@ -282,9 +281,18 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_tecch")
 animation = &"igor"
 
-[node name="phone" parent="." instance=ExtResource("12_510yu")]
-process_mode = 3
-position = Vector2(384, -32)
+[node name="phone" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(104, 304)
+script = null
 
 [node name="debug" type="Node2D" parent="."]
 position = Vector2(0, 0.5)

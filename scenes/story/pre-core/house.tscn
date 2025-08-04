@@ -263,7 +263,7 @@ y_sort_enabled = true
 position = Vector2(101, -51)
 script = SubResource("GDScript_c0hyh")
 dialogue_text = "heyyy jestem twinkiem chcesz sex?"
-portrait_texture = ExtResource("7_3kxp8")
+portrait_texture = ExtResource("15_jobkd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/misupi"]
 position = Vector2(1, 18)

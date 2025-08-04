@@ -1,0 +1,300 @@
+[gd_scene load_steps=28 format=4 uid="uid://bpmn0ng1q8ox"]
+
+[ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_tecch"]
+[ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/players/teto.tscn" id="6_74pxv"]
+[ext_resource type="Texture2D" uid="uid://blo5yr7xsgygh" path="res://assets/sprite/characters/party/shadow/shadowspritesheet.png" id="7_3kxp8"]
+[ext_resource type="Texture2D" uid="uid://b7632vv4ixuwo" path="res://assets/tiles/tilebg.png" id="9_0rrt8"]
+[ext_resource type="Texture2D" uid="uid://blq2libb70yvf" path="res://assets/tiles/tilebarrier.png" id="10_2i8gf"]
+[ext_resource type="Texture2D" uid="uid://cnmsr8v22thcc" path="res://assets/sprite/characters/party/jamorrr/jamorrrspritesheet.png" id="12_3kxp8"]
+[ext_resource type="Texture2D" uid="uid://c72wlne1fh1ho" path="res://assets/tiles/tileobjects.png" id="12_qgspi"]
+[ext_resource type="Script" uid="uid://bejskw4sl3ymu" path="res://scenes/battle/debug.gd" id="13_0rrt8"]
+[ext_resource type="Script" uid="uid://cbg8nph3tsk6a" path="res://scenes/story/pre-core/glut.gd" id="13_j4awy"]
+[ext_resource type="Texture2D" uid="uid://bxq2w808td2io" path="res://assets/sprite/characters/glut/glut.png" id="14_0rrt8"]
+[ext_resource type="PackedScene" uid="uid://pegs4ep6hjc5" path="res://scenes/attackscenes/bone/bone.tscn" id="14_2i8gf"]
+[ext_resource type="AudioStream" uid="uid://bk6wuwnskch7u" path="res://assets/sprite/characters/glut/squeek.wav" id="15_0rrt8"]
+[ext_resource type="Texture2D" uid="uid://b5jp252jvsneo" path="res://assets/sprite/characters/party/misupi/misupispritesheet.png" id="15_jobkd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qgspi"]
+texture = ExtResource("9_0rrt8")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qgspi"]
+sources/0 = SubResource("TileSetAtlasSource_qgspi")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jobkd"]
+texture = ExtResource("10_2i8gf")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 4, -8, 4)
+
+[sub_resource type="TileSet" id="TileSet_jobkd"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_jobkd")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jkym4"]
+texture = ExtResource("12_qgspi")
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(-8, 8)
+0:0/0/y_sort_origin = -10
+4:0/size_in_atlas = Vector2i(1, 3)
+4:0/0 = 0
+4:0/0/texture_origin = Vector2i(0, 16)
+4:0/0/y_sort_origin = -24
+5:0/size_in_atlas = Vector2i(1, 3)
+5:0/0 = 0
+5:0/0/texture_origin = Vector2i(0, 16)
+5:0/0/y_sort_origin = -24
+8:0/size_in_atlas = Vector2i(1, 2)
+8:0/0 = 0
+8:0/0/texture_origin = Vector2i(0, 8)
+8:0/0/y_sort_origin = -8
+2:0/size_in_atlas = Vector2i(2, 2)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(-8, 8)
+2:0/0/y_sort_origin = 2
+6:0/size_in_atlas = Vector2i(1, 2)
+6:0/0 = 0
+6:0/0/texture_origin = Vector2i(0, 8)
+6:0/0/y_sort_origin = -10
+7:0/size_in_atlas = Vector2i(1, 2)
+7:0/0 = 0
+7:0/0/texture_origin = Vector2i(0, 8)
+7:0/0/y_sort_origin = -10
+
+[sub_resource type="TileSet" id="TileSet_jkym4"]
+sources/0 = SubResource("TileSetAtlasSource_jkym4")
+
+[sub_resource type="GDScript" id="GDScript_c0hyh"]
+script/source = "extends Area2D
+
+var player_in_range := false
+var can_talk := true
+
+@export var dialogue_text := \"ok\"
+@export var portrait_texture: Texture
+@onready var dialog = $\"../../CanvasLayer/dialoge\"
+func _on_body_entered(body):
+	if body.name == \"player\":
+		player_in_range = true
+
+func _on_body_exited(body):
+	if body.name == \"player\":
+		player_in_range = false
+
+func _process(_delta):
+	if player_in_range and Input.is_action_just_pressed(\"interact\") and can_talk:
+		if not dialog.dialogue_active:
+			can_talk = false
+			dialog.show_dialogue(dialogue_text, portrait_texture)
+			await dialog.dialogue_finished
+			await get_tree().create_timer(0.3).timeout
+			can_talk = true
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_at5dv"]
+size = Vector2(48, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tecch"]
+size = Vector2(32, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jobkd"]
+atlas = ExtResource("7_3kxp8")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jkym4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jobkd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2i8gf"]
+size = Vector2(168, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkym4"]
+atlas = ExtResource("15_jobkd")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tecch"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkym4")
+}],
+"loop": true,
+"name": &"igor",
+"speed": 5.0
+}]
+
+[node name="01" type="Node2D"]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("1_tecch")]
+
+[node name="tilemap" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="ground" type="TileMapLayer" parent="tilemap"]
+z_index = -1
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAD8//z/AAACAAAAAAD8//3/AAACAAAAAAD8//7/AAACAAAAAAD8////AAACAAAAAAD8/wAAAAACAAAAAAD8/wEAAAACAAAAAAD8/wIAAAACAAAAAAD8/wMAAAACAAAAAAD9//z/AAACAAAAAAD9//3/AAACAAAAAAD9//7/AAACAAAAAAD9////AAACAAAAAAD9/wAAAAACAAAAAAD9/wEAAAACAAAAAAD9/wIAAAACAAAAAAD9/wMAAAACAAAAAAD+//z/AAACAAAAAAD+//3/AAACAAAAAAD+//7/AAACAAAAAAD+////AAACAAAAAAD+/wAAAAACAAAAAAD+/wEAAAACAAAAAAD+/wIAAAACAAAAAAD+/wMAAAACAAAAAAD///z/AAACAAAAAAD///3/AAACAAAAAAD///7/AAACAAAAAAD/////AAACAAAAAAD//wAAAAACAAAAAAD//wEAAAACAAAAAAD//wIAAAACAAAAAAD//wMAAAACAAAAAAAAAPz/AAACAAAAAAAAAP3/AAACAAAAAAAAAP7/AAACAAAAAAAAAP//AAACAAAAAAAAAAAAAAACAAAAAAAAAAEAAAACAAAAAAAAAAIAAAACAAAAAAAAAAMAAAACAAAAAAABAPz/AAACAAAAAAABAP3/AAACAAAAAAABAP7/AAACAAAAAAABAP//AAACAAAAAAABAAAAAAACAAAAAAABAAEAAAACAAAAAAABAAIAAAACAAAAAAABAAMAAAACAAAAAAACAPz/AAACAAAAAAACAP3/AAACAAAAAAACAP7/AAACAAAAAAACAP//AAACAAAAAAACAAAAAAACAAAAAAACAAEAAAACAAAAAAACAAIAAAACAAAAAAACAAMAAAACAAAAAAADAPz/AAACAAAAAAADAP3/AAACAAAAAAADAP7/AAACAAAAAAADAP//AAACAAAAAAADAAAAAAACAAAAAAADAAEAAAACAAAAAAADAAIAAAACAAAAAAADAAMAAAACAAAAAAD7/wAAAAACAAAAAAD7/wEAAAACAAAAAAD6/wEAAAACAAAAAAD5/wEAAAACAAAAAAD5/wAAAAACAAAAAAD4/wAAAAACAAAAAAD4/wEAAAACAAAAAAD6/wAAAAACAAAAAAD3/wAAAAACAAAAAAD3/wEAAAACAAAAAAD5////AAACAAAAAAD6////AAACAAAAAAD7////AAACAAAAAAD5/wIAAAACAAAAAAD6/wIAAAACAAAAAAD7/wIAAAACAAAAAAD5//7/AAAIAAAAAAD6//7/AAAGAAAAAAD7//7/AAAIAAAAABD8//v/AAAIAAAAAAD9//v/AAAGAAAAAAD+//v/AAAIAAAAABD///v/AAAGAAAAAAAAAPv/AAAGAAAAAAABAPv/AAAIAAAAAAACAPv/AAAGAAAAAAADAPv/AAAIAAAAABD5//z/AAAIAAAAAFD6//z/AAAJAAAAAFD7//z/AAAIAAAAAED8//r/AAAJAAAAAAD8//n/AAAIAAAAAFD9//n/AAAJAAAAAFD+//n/AAAIAAAAADD///n/AAALAAAAAAAAAPn/AAALAAAAABABAPn/AAAIAAAAACACAPn/AAAJAAAAAFADAPn/AAAIAAAAAED9//r/AAAHAAAAAAD+//r/AAAJAAAAABD///r/AAAMAAAAAAAAAPr/AAAMAAAAABABAPr/AAAJAAAAAAACAPr/AAAHAAAAAAADAPr/AAAJAAAAABD7//3/AAAJAAAAABD6//3/AAAHAAAAAAD5//3/AAAJAAAAAAAEAAAAAAACAAAAAAAEAAEAAAACAAAAAAD8/wQAAAANAAAAAAD8/wUAAAANAAAAAAD8/wYAAAANAAAAAAD8/wcAAAANAAAAAAD8/wgAAAANAAAAAAD8/wkAAAANAAAAAAD8/woAAAANAAAAAAD8/wsAAAANAAAAAAD8/wwAAAANAAAAAAD8/w0AAAANAAAAAAD9/w0AAAANAAAAAAD+/w0AAAANAAAAAAD//w0AAAANAAAAAAAAAA0AAAANAAAAAAABAA0AAAANAAAAAAACAA0AAAANAAAAAAADAA0AAAANAAAAAAAEAA0AAAANAAAAAAAFAA0AAAANAAAAAAAGAA0AAAANAAAAAAAHAA0AAAAAAAAAAAAIAA0AAAAAAAAAAAAJAA0AAAAAAAAAAAAKAA0AAAAAAAAAAAALAA0AAAAAAAAAAAALAAwAAAAAAAAAAAALAAsAAAAAAAAAAAALAAoAAAANAAAAAAAKAAoAAAANAAAAAAAJAAoAAAANAAAAAAAIAAoAAAANAAAAAAAHAAoAAAANAAAAAAAHAAsAAAAAAAAAAAAHAAwAAAAAAAAAAAAIAAwAAAAAAAAAAAAJAAwAAAAAAAAAAAAJAAsAAAAAAAAAAAAIAAsAAAAAAAAAAAAKAAwAAAAAAAAAAAAKAAsAAAAAAAAAAAAGAAwAAAANAAAAAAAGAAsAAAANAAAAAAAGAAoAAAANAAAAAAAMAAoAAAANAAAAAAAMAAsAAAANAAAAAAAMAAwAAAANAAAAAAAMAA0AAAANAAAAAAD9/wwAAAAIAAAAAAD+/wwAAAAGAAAAAAD//wwAAAAGAAAAAAAAAAwAAAAGAAAAAAABAAwAAAAGAAAAAAACAAwAAAAGAAAAAAADAAwAAAAGAAAAAAAEAAwAAAAGAAAAAAAFAAwAAAAIAAAAABD9/wsAAAAJAAAAAAD+/wsAAAAHAAAAAAD//wsAAAAHAAAAAAAAAAsAAAAHAAAAAAABAAsAAAAHAAAAAAACAAsAAAAHAAAAAAADAAsAAAAHAAAAAAAEAAsAAAAHAAAAAAAFAAsAAAAJAAAAABAFAAoAAAAIAAAAADD9/woAAAAIAAAAACD+/woAAAAGAAAAACD//woAAAAGAAAAACAAAAoAAAAGAAAAACABAAoAAAAGAAAAACACAAoAAAAGAAAAACADAAoAAAAGAAAAACAEAAoAAAAGAAAAACD8/w4AAAANAAAAAAD9/w4AAAAAAAAAAAD+/w4AAAAAAAAAAAD//w4AAAAAAAAAAAAAAA4AAAAAAAAAAAABAA4AAAAAAAAAAAACAA4AAAAAAAAAAAADAA4AAAAAAAAAAAAEAA4AAAAAAAAAAAAFAA4AAAAAAAAAAAAGAA4AAAAAAAAAAAAHAA4AAAAAAAAAAAAIAA4AAAAAAAAAAAAJAA4AAAAAAAAAAAAKAA4AAAAAAAAAAAALAA4AAAAAAAAAAAAMAA4AAAANAAAAAAAGAAkAAAAIAAAAAAAMAAkAAAAIAAAAABAMAAcAAAAIAAAAADAGAAcAAAAIAAAAACAHAAkAAAAGAAAAAAAIAAkAAAAGAAAAAAAJAAkAAAAGAAAAAAAKAAkAAAAGAAAAAAALAAkAAAAGAAAAAAAHAAcAAAAGAAAAACAIAAcAAAAGAAAAACAJAAcAAAAGAAAAACAKAAcAAAAGAAAAACALAAcAAAAGAAAAACAGAAgAAAAJAAAAAAAMAAgAAAAJAAAAABAHAAgAAAAHAAAAAAAIAAgAAAAHAAAAAAAJAAgAAAAHAAAAAAAKAAgAAAAHAAAAAAALAAgAAAAHAAAAAAD8/w8AAAANAAAAAAD9/w8AAAANAAAAAAD+/w8AAAANAAAAAAD//w8AAAANAAAAAAAAAA8AAAANAAAAAAABAA8AAAANAAAAAAACAA8AAAANAAAAAAADAA8AAAANAAAAAAAEAA8AAAANAAAAAAAFAA8AAAANAAAAAAAGAA8AAAANAAAAAAAHAA8AAAANAAAAAAAIAA8AAAANAAAAAAAJAA8AAAANAAAAAAAKAA8AAAANAAAAAAALAA8AAAANAAAAAAAMAA8AAAANAAAAAAA=")
+tile_set = SubResource("TileSet_qgspi")
+
+[node name="barrier" type="TileMapLayer" parent="tilemap"]
+z_index = 10
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAD5//7/AAADAAAAAAD6//7/AAADAAAAAAD7//7/AAADAAAAAAD7//3/AAADAAAAAAD+//v/AAADAAAAAAAEAP3/AAADAAAAAAAEAP7/AAADAAAAAAAEAP//AAADAAAAAAAEAAIAAAADAAAAAAD7/wMAAAADAAAAAAD6/wMAAAADAAAAAAD5/wMAAAADAAAAAAD4/wIAAAADAAAAAAD4////AAADAAAAAAD3////AAADAAAAAAD3/wIAAAADAAAAAAD2////AAAAAAAAAAD2/wAAAAAAAAAAAAD2/wEAAAAAAAAAAAD2/wIAAAAAAAAAAAADAAMAAAADAAAAAAACAAMAAAADAAAAAAABAAMAAAADAAAAAAAAAAMAAAADAAAAAAD//wMAAAADAAAAAAD+/wMAAAADAAAAAAD9/wMAAAADAAAAAAABAPz/AAAEAAAAAAACAPz/AAAEAAAAAAADAPz/AAAEAAAAAAD9//z/AAAEAAAAAAD8//z/AAAEAAAAAAD///3/AAAEAAAAAAAAAP3/AAAEAAAAAAD///z/AAADAAAAAAAFAP//AAAAAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAD7/wQAAAADAAAAAAD7/wUAAAADAAAAAAD7/wYAAAADAAAAAAD7/wcAAAADAAAAAAD7/wgAAAADAAAAAAD7/wkAAAADAAAAAAD7/woAAAADAAAAAAD7/wsAAAADAAAAAAD7/w4AAAADAAAAAAD7/w8AAAADAAAAAAD7/w0AAAADAAAAAAD7/wwAAAADAAAAAAD8/xAAAAADAAAAAAD9/xAAAAADAAAAAAD+/xAAAAADAAAAAAD//xAAAAADAAAAAAAAABAAAAADAAAAAAABABAAAAADAAAAAAACABAAAAADAAAAAAADABAAAAADAAAAAAAEABAAAAADAAAAAAAMABAAAAADAAAAAAALABAAAAADAAAAAAAKABAAAAADAAAAAAAJABAAAAADAAAAAAAIABAAAAADAAAAAAAHABAAAAADAAAAAAAGABAAAAADAAAAAAAFABAAAAADAAAAAAANAA8AAAADAAAAAAANAA4AAAADAAAAAAANAA0AAAADAAAAAAANAAwAAAADAAAAAAANAAsAAAADAAAAAAANAAoAAAADAAAAAAAMAAkAAAADAAAAAAALAAkAAAADAAAAAAAKAAkAAAADAAAAAAAJAAkAAAADAAAAAAAIAAkAAAADAAAAAAAHAAkAAAADAAAAAAAGAAkAAAADAAAAAAAFAAoAAAADAAAAAAAFAAsAAAADAAAAAAAFAAwAAAADAAAAAAAEAAwAAAADAAAAAAADAAwAAAADAAAAAAACAAwAAAADAAAAAAABAAwAAAADAAAAAAAAAAwAAAADAAAAAAD//wwAAAADAAAAAAD+/wwAAAADAAAAAAD9/wwAAAADAAAAAAD9/wsAAAADAAAAAAD9/woAAAADAAAAAAD9/wkAAAADAAAAAAD9/wQAAAADAAAAAAD9/wUAAAADAAAAAAD9/wYAAAADAAAAAAD9/wcAAAADAAAAAAD9/wgAAAADAAAAAAA=")
+tile_set = SubResource("TileSet_jobkd")
+
+[node name="ysorting" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="player" parent="ysorting" instance=ExtResource("6_74pxv")]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" parent="ysorting/player/player" index="0"]
+y_sort_enabled = true
+
+[node name="AnimatedSprite2D" parent="ysorting/player/player" index="1"]
+y_sort_enabled = true
+
+[node name="objects" type="TileMapLayer" parent="ysorting"]
+y_sort_enabled = true
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAD8//z/AAAFAAAAAAD9//z/AAAFAAAAABD///3/AAAEAAAAAAAAAP3/AAAEAAAAABABAPz/AAAGAAAAAAADAPz/AAAGAAAAABACAPz/AAAHAAAAAAD//wMAAAAHAAAAAAD9/wMAAAAGAAAAAAD+/wMAAAAHAAAAAAAAAAMAAAAHAAAAAAABAAMAAAAHAAAAAAACAAMAAAAHAAAAAAADAAMAAAAGAAAAABD5/wIAAAAAAAAAAAD7/wIAAAAAAAAAABA=")
+tile_set = SubResource("TileSet_jkym4")
+
+[node name="overobjects" type="TileMapLayer" parent="ysorting"]
+y_sort_enabled = true
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_jkym4")
+
+[node name="dzem" type="Area2D" parent="ysorting"]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-96, -133)
+script = SubResource("GDScript_c0hyh")
+dialogue_text = "gdyby co to jestem w tej szfaie niga"
+portrait_texture = ExtResource("12_3kxp8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/dzem"]
+position = Vector2(0, 18)
+shape = SubResource("RectangleShape2D_at5dv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ysorting/dzem"]
+position = Vector2(-240, -144)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/dzem/StaticBody2D"]
+position = Vector2(240.5, 162)
+shape = SubResource("RectangleShape2D_tecch")
+
+[node name="Sprite2D" type="Sprite2D" parent="ysorting/dzem"]
+position = Vector2(0, -8)
+scale = Vector2(2, 2)
+texture = ExtResource("12_3kxp8")
+region_enabled = true
+region_rect = Rect2(0, 128, 16, 32)
+
+[node name="qorus" type="Area2D" parent="ysorting"]
+y_sort_enabled = true
+position = Vector2(-153, 19)
+script = SubResource("GDScript_c0hyh")
+dialogue_text = "steven, u must goon to melody r34 steven"
+portrait_texture = ExtResource("7_3kxp8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/qorus"]
+position = Vector2(1, 18)
+shape = SubResource("RectangleShape2D_at5dv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ysorting/qorus"]
+position = Vector2(0, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/qorus/StaticBody2D"]
+shape = SubResource("RectangleShape2D_tecch")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ysorting/qorus"]
+position = Vector2(0, -8)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_jkym4")
+
+[node name="glut" type="Area2D" parent="ysorting"]
+y_sort_enabled = true
+position = Vector2(-27, -19)
+script = ExtResource("13_j4awy")
+dialogue_text = "Steven her-! wait a minute... youre not steven"
+
+[node name="Sprite2D" type="Sprite2D" parent="ysorting/glut"]
+scale = Vector2(2, 2)
+texture = ExtResource("14_0rrt8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/glut"]
+shape = SubResource("RectangleShape2D_2i8gf")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ysorting/glut"]
+stream = ExtResource("15_0rrt8")
+
+[node name="misupi" type="Area2D" parent="ysorting"]
+y_sort_enabled = true
+position = Vector2(101, -51)
+script = SubResource("GDScript_c0hyh")
+dialogue_text = "heyyy jestem twinkiem chcesz sex?"
+portrait_texture = ExtResource("15_jobkd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/misupi"]
+position = Vector2(1, 18)
+shape = SubResource("RectangleShape2D_at5dv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ysorting/misupi"]
+position = Vector2(0, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/misupi/StaticBody2D"]
+shape = SubResource("RectangleShape2D_tecch")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ysorting/misupi"]
+position = Vector2(0, -8)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_tecch")
+animation = &"igor"
+
+[node name="debug" type="Node2D" parent="."]
+position = Vector2(0, 0.5)
+script = ExtResource("13_0rrt8")
+gloo_scene = ExtResource("14_2i8gf")
+
+[connection signal="body_entered" from="ysorting/dzem" to="ysorting/dzem" method="_on_body_entered"]
+[connection signal="body_exited" from="ysorting/dzem" to="ysorting/dzem" method="_on_body_exited"]
+[connection signal="body_entered" from="ysorting/qorus" to="ysorting/qorus" method="_on_body_entered"]
+[connection signal="body_exited" from="ysorting/qorus" to="ysorting/qorus" method="_on_body_exited"]
+[connection signal="body_entered" from="ysorting/glut" to="ysorting/glut" method="_on_body_entered"]
+[connection signal="body_exited" from="ysorting/glut" to="ysorting/glut" method="_on_body_exited"]
+[connection signal="body_entered" from="ysorting/misupi" to="ysorting/misupi" method="_on_body_entered"]
+[connection signal="body_exited" from="ysorting/misupi" to="ysorting/misupi" method="_on_body_exited"]
+[connection signal="ready" from="debug" to="ysorting/dzem" method="_on_debug_ready"]
+[connection signal="ready" from="debug" to="debug" method="_on_ready"]
+
+[editable path="ysorting/player"]

@@ -17,8 +17,8 @@ func _ready():
 	nextturn()
 	print(runda)
 func nextturn():
-	attack()
-	await get_tree().create_timer(20000.0).timeout
+	#attack()
+	#await get_tree().create_timer(20000.0).timeout
 	for i in range(runda+1):
 		attack()
 		await get_tree().create_timer(2.0).timeout
@@ -34,31 +34,31 @@ func attack():
 	var ran = randi()%4
 	await get_tree().create_timer(2.0).timeout
 	
-	gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_boneside.tscn")
-	bullet = instantiateall(gloo_scene)
-	bullet.summoned(bullet, soul, bullet_speed)
-	#if ran == 0: 
-		#gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_bonepit.tscn")
-		#bullet = instantiateall(gloo_scene)
-		#bullet.summoned(bullet, soul, bullet_speed)
-	#elif ran == 1: 
-		#gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_bonetunnel.tscn")
-		#bullet = instantiateall(gloo_scene)
-		#bullet.summoned(bullet, soul, bullet_speed)
-	#elif ran == 2: 
-		#battle.current_mode=battle.mode.RED
-		#gloo_scene = preload("res://scenes/attackscenes/gloo/gloo.tscn")
-		##gloo_scene = preload("res://attackscenes/bone/bone.tscn")
-		#bullet = instantiateall(gloo_scene)
-		##bullet.summoned(bullet, soul, bullet_speed, true, randi()%10+3)
-		#bullet.summoned(bullet, soul, bullet_speed)
-		#bullet.modulate.a = 0.0
-		#var tween = get_tree().create_tween()
-		#tween.tween_property(bullet, "modulate:a", 1.0, 0.25).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	#elif ran == 3: 
-		#gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_boneside.tscn")
-		#bullet = instantiateall(gloo_scene)
-		#bullet.summoned(bullet, soul, bullet_speed)
+	#gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_boneside.tscn")
+	#bullet = instantiateall(gloo_scene)
+	#bullet.summoned(bullet, soul, bullet_speed)
+	if ran == 0: 
+		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_bonepit.tscn")
+		bullet = instantiateall(gloo_scene)
+		bullet.summoned(bullet, soul, bullet_speed)
+	elif ran == 1: 
+		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_bonetunnel.tscn")
+		bullet = instantiateall(gloo_scene)
+		bullet.summoned(bullet, soul, bullet_speed)
+	elif ran == 2: 
+		battle.current_mode=battle.mode.RED
+		gloo_scene = preload("res://scenes/attackscenes/gloo/gloo.tscn")
+		#gloo_scene = preload("res://attackscenes/bone/bone.tscn")
+		bullet = instantiateall(gloo_scene)
+		#bullet.summoned(bullet, soul, bullet_speed, true, randi()%10+3)
+		bullet.summoned(bullet, soul, bullet_speed)
+		bullet.modulate.a = 0.0
+		var tween = get_tree().create_tween()
+		tween.tween_property(bullet, "modulate:a", 1.0, 0.25).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	elif ran == 3: 
+		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_boneside.tscn")
+		bullet = instantiateall(gloo_scene)
+		bullet.summoned(bullet, soul, bullet_speed)
 
 #func wywolaj(modeserca, res, bullet, soul, bullet_speed):
 		#battle.current_mode=battle.mode.modeserca

@@ -1,5 +1,5 @@
 extends Node2D
-@onready var gloo_scene = preload("res://attackscenes/bone/bone.tscn")
+@onready var gloo_scene = preload("res://scenes/attackscenes/bone/bone.tscn")
 
 func summoned(bullet, soul, speed):
 	#startsequence(bullet, soul, 40,true,5)

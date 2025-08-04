@@ -1,6 +1,6 @@
 [gd_scene load_steps=167 format=3 uid="uid://chprno7b2lppf"]
 
-[ext_resource type="Script" uid="uid://dwvuwahq7qjmu" path="res://scenes/battle/battle.gd" id="1_6ofp8"]
+[ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_6ofp8"]
 [ext_resource type="Texture2D" uid="uid://b45tvv1w8286c" path="res://assets/sprite/battle/bg/b0001.png" id="2_2ys7f"]
 [ext_resource type="Script" uid="uid://du1pctbd3kbws" path="res://scenes/battle/character_body_2d.gd" id="3_0yh6x"]
 [ext_resource type="Texture2D" uid="uid://g8cdod2m8j0o" path="res://assets/sprite/battle/box.png" id="3_agsc7"]

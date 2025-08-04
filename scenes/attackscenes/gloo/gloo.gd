@@ -5,7 +5,7 @@ var direction := Vector2.DOWN
 
 @onready var player = get_tree().get_root().get_node("/root/fight/soul")
 func _process(delta):
-	if player.is_alive():
+	if player.soul_is_alive():
 		position += direction * speed * delta
 		if position.y < -50 or position.y > 700:
 			queue_free()

@@ -19,5 +19,5 @@ func _process(delta: float) -> void:
 	if selected and visible and Input.is_action_just_pressed("interact"):
 		selected = false
 		battle.mercy += 10
-		print(battle.mercy)
+		print("mercy: " + battle.mercy)
 		notui.enemyturn()

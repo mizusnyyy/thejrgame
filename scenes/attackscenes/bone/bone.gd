@@ -24,9 +24,6 @@ func _on_body_entered(body):
 			else:
 				body.take_damage(10,true)
 			
-func give_tp():
-	battle.tp+=1
-	print(battle.tp)
 func size(wielkosc):
 	for i in range(wielkosc):
 		var bonebodyinst = instantiateall(bonebody)

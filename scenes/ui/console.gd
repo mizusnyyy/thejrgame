@@ -1,19 +1,23 @@
 extends Node2D
 
-@onready var input_field: LineEdit = $CanvasLayer/LineEdit
-@onready var output_label: RichTextLabel = $CanvasLayer/RichTextLabel
+@onready var input_field: LineEdit = $CanvasLayer/Panel/LineEdit
+@onready var output_label: RichTextLabel = $CanvasLayer/Panel/RichTextLabel
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 
 var expression = Expression.new()
 var custom_commands = {}
 
+
+
 func goto_scene(path: String):
 	get_tree().change_scene_to_file(path)
+
 
 func _ready():
 	canvas_layer.hide()
 	input_field.text_submitted.connect(_on_text_submitted)
 	register_command("goto_scene", Callable(self, "goto_scene"))
+
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("console"):
@@ -40,12 +44,12 @@ func _on_text_submitted(command: String):
 
 	var error = expression.parse(command)
 	if error != OK:
-		output("[color=red]Błąd składni: %s[/color]" % expression.get_error_text())
+		output("[color=red]error bro: %s[/color]" % expression.get_error_text())
 		return
 
 	var result = expression.execute()
 	if expression.has_execute_failed():
-		output("[color=red]Błąd wykonania[/color]")
+		output("[color=red]error bc game yes[/color]")
 	else:
 		output(str(result))
 

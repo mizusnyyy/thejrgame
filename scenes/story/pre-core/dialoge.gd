@@ -22,13 +22,13 @@ func _ready() -> void:
 func show_dialogue(text: String, portrait_texture: Texture = null) -> void:
 	label.horizontal_alignment=HORIZONTAL_ALIGNMENT_LEFT
 	label.vertical_alignment=VERTICAL_ALIGNMENT_CENTER
-	player.can_move=false
+	global.can_move=false
 	full_text = text
 	char_index = 0
 	label.text = ""
 	typing = true
 	dialogue_active = true
-	player.can_move = false
+	global.can_move = false
 	choice.can_choose = true
 	if portrait_texture:
 		portrait.texture = portrait_texture
@@ -41,13 +41,13 @@ func show_dialogue(text: String, portrait_texture: Texture = null) -> void:
 	_type_text()
 	await dialogue_finished
 	hide()
-	player.can_move=true
+	global.can_move=true
 
 func choose(opt1=null,opt2=null,opt3=null,opt4=null):
 	show()
 	choice.show()
 	choice.can_choose=true
-	player.can_move=false
+	global.can_move=false
 
 	label.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
 	label.text=opt1+"\n"+opt2+"\n"+opt3+"\n"+opt4+"\n"

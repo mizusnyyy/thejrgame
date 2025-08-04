@@ -11,20 +11,28 @@ var custom_commands = {}
 
 func goto_scene(path: String):
 	get_tree().change_scene_to_file(path)
-
+func set_var(variable, value):
+	if has_variable(global, variable):
+		global.set(variable, value)
+		output("global." + str(variable) + " = " + str(value))
+	else:
+		output("[color=red]No such global variable: %s[/color]" % variable)
 
 func _ready():
 	canvas_layer.hide()
 	input_field.text_submitted.connect(_on_text_submitted)
 	register_command("goto_scene", Callable(self, "goto_scene"))
-
-
+	register_command("set_var", Callable(self, "set_var"))
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("console"):
 		if canvas_layer.visible==true:
 			canvas_layer.hide()
 		else:
 			canvas_layer.show()
+
+
+
+
 
 func register_command(name: String, callback: Callable):
 	custom_commands[name] = callback
@@ -53,6 +61,11 @@ func _on_text_submitted(command: String):
 	else:
 		output(str(result))
 
+
+
+
+
+
 func _try_execute_custom_command(command: String) -> bool:
 	command = command.strip_edges()
 	if command.find("(") == -1 or not command.ends_with(")"):
@@ -80,3 +93,11 @@ func _try_execute_custom_command(command: String) -> bool:
 
 	custom_commands[cmd_name].callv(args)
 	return true
+
+
+
+func has_variable(obj: Object, name: String) -> bool:
+	for prop in obj.get_property_list():
+		if prop.name == name:
+			return true
+	return false

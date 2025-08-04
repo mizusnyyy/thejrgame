@@ -58,7 +58,7 @@ func take_damage(amount,blue=false):
 		global.health -= amount
 		print("bullet taken:", amount, " → the one holding the gun:", global.health)
 		flash_effect()
-func is_alive():
+func soul_is_alive():
 	return alive
 	
 func _physics_process(delta: float) -> void:

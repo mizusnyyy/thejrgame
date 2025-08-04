@@ -1,10 +1,6 @@
-[gd_scene load_steps=22 format=4 uid="uid://b60l2pd8phig8"]
+[gd_scene load_steps=18 format=4 uid="uid://b60l2pd8phig8"]
 
-[ext_resource type="Script" uid="uid://dp6bgu4j6w5ly" path="res://scenes/story/pre-core/dialoge.gd" id="1_ghtf3"]
-[ext_resource type="Texture2D" uid="uid://dunbchuq6bjn6" path="res://assets/dialogue/text.png" id="2_bf63m"]
-[ext_resource type="Texture2D" uid="uid://c5gvlhpyi8sa4" path="res://assets/sprite/i.png" id="3_dru0o"]
-[ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="4_xix80"]
-[ext_resource type="AudioStream" uid="uid://ccl33ypnn74xt" path="res://assets/sprite/intro/sans.wav" id="5_0wohv"]
+[ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_y0cq1"]
 [ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/players/teto.tscn" id="6_m0j0v"]
 [ext_resource type="Texture2D" uid="uid://bxq2w808td2io" path="res://assets/sprite/characters/glut/glut.png" id="7_3pd33"]
 [ext_resource type="Script" uid="uid://cbg8nph3tsk6a" path="res://scenes/story/pre-core/glut.gd" id="7_ngnqd"]
@@ -83,79 +79,7 @@ size = Vector2(168, 96)
 
 [node name="outsidemap" type="Node2D"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="dialoge" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -296.0
-offset_top = -216.0
-offset_bottom = -131.0
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(2, 2)
-script = ExtResource("1_ghtf3")
-metadata/_edit_use_anchors_ = true
-
-[node name="Timer" type="Timer" parent="CanvasLayer/dialoge"]
-wait_time = 0.05
-autostart = true
-
-[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/dialoge"]
-layout_mode = 0
-offset_right = 593.0
-offset_bottom = 162.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_bf63m")
-patch_margin_top = 162
-patch_margin_right = 593
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/dialoge"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 11.0
-offset_right = 56.0
-offset_bottom = 51.0
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("3_dru0o")
-metadata/_edit_use_anchors_ = true
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/dialoge"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0135135
-anchor_top = -0.0705882
-anchor_right = 0.0135135
-anchor_bottom = 0.0823529
-offset_left = 80.0
-offset_top = 18.0
-offset_right = 277.0
-offset_bottom = 65.0
-theme_override_fonts/normal_font = ExtResource("4_xix80")
-theme_override_font_sizes/normal_font_size = 16
-scroll_active = false
-metadata/_edit_use_anchors_ = true
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer/dialoge"]
-stream = ExtResource("5_0wohv")
-volume_db = -5.0
-
-[node name="NameLabel" type="RichTextLabel" parent="CanvasLayer/dialoge"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 0.5
-offset_right = 140.0
-offset_bottom = 18.5
-scale = Vector2(0.4, 0.4)
-theme_override_fonts/normal_font = ExtResource("4_xix80")
-text = "pablo game"
-scroll_active = false
-autowrap_mode = 0
+[node name="CanvasLayer" parent="." instance=ExtResource("1_y0cq1")]
 
 [node name="tp" type="Node2D" parent="."]
 

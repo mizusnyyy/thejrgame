@@ -1,11 +1,6 @@
-[gd_scene load_steps=33 format=4 uid="uid://bpmn0ng1q8ox"]
+[gd_scene load_steps=26 format=4 uid="uid://bpmn0ng1q8ox"]
 
-[ext_resource type="Script" uid="uid://dp6bgu4j6w5ly" path="res://scenes/story/pre-core/dialoge.gd" id="1_ph408"]
-[ext_resource type="Texture2D" uid="uid://dunbchuq6bjn6" path="res://assets/dialogue/text.png" id="2_jobkd"]
-[ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="4_v2lem"]
-[ext_resource type="AudioStream" uid="uid://ccl33ypnn74xt" path="res://assets/sprite/intro/sans.wav" id="5_00pxf"]
-[ext_resource type="Script" uid="uid://t6s4f322ej5p" path="res://scenes/story/pre-core/choice.gd" id="5_1e2cb"]
-[ext_resource type="Texture2D" uid="uid://p7lahx6ptxxe" path="res://assets/sprite/battle/heart_red.png" id="6_0j0oh"]
+[ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_tecch"]
 [ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/players/teto.tscn" id="6_74pxv"]
 [ext_resource type="Texture2D" uid="uid://blo5yr7xsgygh" path="res://assets/sprite/characters/party/shadow/shadowspritesheet.png" id="7_3kxp8"]
 [ext_resource type="Texture2D" uid="uid://b7632vv4ixuwo" path="res://assets/tiles/tilebg.png" id="9_0rrt8"]
@@ -16,20 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://bxq2w808td2io" path="res://assets/sprite/characters/glut/glut.png" id="14_0rrt8"]
 [ext_resource type="AudioStream" uid="uid://bk6wuwnskch7u" path="res://assets/sprite/characters/glut/squeek.wav" id="15_0rrt8"]
 [ext_resource type="Texture2D" uid="uid://b5jp252jvsneo" path="res://assets/sprite/characters/party/misupi/misupispritesheet.png" id="15_jobkd"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6qe5"]
-size = Vector2(21, 21)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_aqtk2"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_0j0oh")
-}],
-"loop": false,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qgspi"]
 texture = ExtResource("9_0rrt8")
@@ -171,74 +152,7 @@ animations = [{
 
 [node name="01" type="Node2D"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="dialoge" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -368.0
-offset_top = -224.0
-offset_right = -72.0
-offset_bottom = -139.0
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(2.5, 2.5)
-script = ExtResource("1_ph408")
-
-[node name="Timer" type="Timer" parent="CanvasLayer/dialoge"]
-wait_time = 0.05
-autostart = true
-
-[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/dialoge"]
-layout_mode = 0
-offset_right = 593.0
-offset_bottom = 162.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_jobkd")
-patch_margin_top = 162
-patch_margin_right = 593
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/dialoge"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 11.0
-offset_right = 56.0
-offset_bottom = 51.0
-scale = Vector2(1.5, 1.5)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/dialoge"]
-layout_mode = 0
-offset_left = 80.0
-offset_top = 10.0
-offset_right = 296.0
-offset_bottom = 77.0
-scale = Vector2(0.95, 0.95)
-theme_override_fonts/normal_font = ExtResource("4_v2lem")
-text = "pablo games og"
-scroll_active = false
-autowrap_mode = 2
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer/dialoge"]
-stream = ExtResource("5_00pxf")
-volume_db = -5.0
-
-[node name="choice" type="Node2D" parent="CanvasLayer/dialoge"]
-position = Vector2(52, 20)
-
-[node name="indicator" type="CharacterBody2D" parent="CanvasLayer/dialoge/choice"]
-position = Vector2(12, -0.8)
-script = ExtResource("5_1e2cb")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/dialoge/choice/indicator"]
-shape = SubResource("RectangleShape2D_b6qe5")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/dialoge/choice/indicator"]
-sprite_frames = SubResource("SpriteFrames_aqtk2")
-autoplay = "default"
+[node name="CanvasLayer" parent="." instance=ExtResource("1_tecch")]
 
 [node name="tilemap" type="Node2D" parent="."]
 y_sort_enabled = true

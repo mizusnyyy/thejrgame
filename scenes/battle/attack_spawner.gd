@@ -34,7 +34,6 @@ func attack():
 		battle.current_mode=battle.mode.BLUE
 		gloo_scene = preload("res://attackscenes/attack_sequence/attack_bonepit.tscn")
 		bullet = instantiateall(gloo_scene)
-		print(bullet)
 		bullet.summoned(bullet, soul, bullet_speed)
 	elif ran == 1: 
 		battle.current_mode=battle.mode.RED
@@ -42,7 +41,6 @@ func attack():
 		bullet = instantiateall(gloo_scene)
 		bullet.summoned(bullet, soul, bullet_speed)
 	elif ran == 2: 
-		battle.current_mode=battle.mode.RED
 		gloo_scene = preload("res://attackscenes/gloo/gloo.tscn")
 		#gloo_scene = preload("res://attackscenes/bone/bone.tscn")
 		bullet = instantiateall(gloo_scene)

@@ -1,8 +1,8 @@
 extends Area2D
 
 @onready var anim = $defend
-@onready var battle = $"../.."  # Battle
-@onready var notui = $".."      # UI
+@onready var battle = $"../.."
+@onready var notui = $".."     
 
 var selected = false
 

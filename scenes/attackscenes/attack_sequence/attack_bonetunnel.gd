@@ -2,7 +2,7 @@ extends Node2D
 @onready var gloo_scene = preload("res://scenes/attackscenes/bone/bone.tscn")
 
 func summoned(bullet, soul, speed):
-	battle.current_mode=battle.mode.RED
+	global.current_mode=global.mode.RED
 	#startsequence(bullet, soul, 40,true,5)
 	#await get_tree().create_timer(2.0).timeout
 	#startsequence(bullet, soul, 60, true,50)

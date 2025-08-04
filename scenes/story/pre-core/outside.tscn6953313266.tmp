@@ -1,0 +1,117 @@
+[gd_scene load_steps=14 format=3 uid="uid://b60l2pd8phig8"]
+
+[ext_resource type="Script" uid="uid://dp6bgu4j6w5ly" path="res://scenes/story/pre-core/dialoge.gd" id="1_ghtf3"]
+[ext_resource type="Texture2D" uid="uid://dunbchuq6bjn6" path="res://assets/dialogue/text.png" id="2_bf63m"]
+[ext_resource type="Texture2D" uid="uid://c5gvlhpyi8sa4" path="res://assets/sprite/i.png" id="3_dru0o"]
+[ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="4_xix80"]
+[ext_resource type="AudioStream" uid="uid://ccl33ypnn74xt" path="res://assets/sprite/intro/sans.wav" id="5_0wohv"]
+[ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/players/teto.tscn" id="6_m0j0v"]
+[ext_resource type="Texture2D" uid="uid://bxq2w808td2io" path="res://assets/sprite/characters/glut/glut.png" id="7_3pd33"]
+[ext_resource type="PackedScene" uid="uid://bdf1o5ijc1m8l" path="res://scenes/story/pre-core/outsidemap.tscn" id="7_aju5t"]
+[ext_resource type="Script" uid="uid://cbg8nph3tsk6a" path="res://scenes/story/pre-core/glut.gd" id="7_ngnqd"]
+[ext_resource type="PackedScene" uid="uid://drii5ui75n5aa" path="res://scenes/story/pre-core/door/teleportermap/teleportermap.tscn" id="8_xokh1"]
+[ext_resource type="Script" uid="uid://cxdj47olgmxen" path="res://scenes/story/pre-core/door/teleportermap/teleportermap.gd" id="9_jt1e3"]
+[ext_resource type="PackedScene" uid="uid://pgr1hxlmxihq" path="res://scenes/story/pre-core/door/doors.tscn" id="10_ett3c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_at5dv"]
+size = Vector2(168, 96)
+
+[node name="test" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="dialoge" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -296.0
+offset_top = -216.0
+offset_bottom = -131.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+script = ExtResource("1_ghtf3")
+
+[node name="Timer" type="Timer" parent="CanvasLayer/dialoge"]
+wait_time = 0.05
+autostart = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/dialoge"]
+layout_mode = 0
+offset_right = 593.0
+offset_bottom = 162.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_bf63m")
+patch_margin_top = 162
+patch_margin_right = 593
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/dialoge"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 11.0
+offset_right = 56.0
+offset_bottom = 51.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_dru0o")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/dialoge"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 18.0
+offset_right = 277.0
+offset_bottom = 65.0
+theme_override_fonts/normal_font = ExtResource("4_xix80")
+theme_override_font_sizes/normal_font_size = 16
+scroll_active = false
+autowrap_mode = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer/dialoge"]
+stream = ExtResource("5_0wohv")
+volume_db = -5.0
+
+[node name="player" parent="." instance=ExtResource("6_m0j0v")]
+position = Vector2(0, 31)
+
+[node name="glut" type="Area2D" parent="."]
+z_index = 3
+position = Vector2(160, 46)
+script = ExtResource("7_ngnqd")
+
+[node name="Sprite2D" type="Sprite2D" parent="glut"]
+position = Vector2(240, 144)
+scale = Vector2(2, 2)
+texture = ExtResource("7_3pd33")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="glut"]
+position = Vector2(244, 146)
+shape = SubResource("RectangleShape2D_at5dv")
+
+[node name="Node2D" parent="." instance=ExtResource("7_aju5t")]
+
+[node name="TP" type="Node2D" parent="."]
+position = Vector2(6, -6)
+
+[node name="TP2Outside" parent="TP" instance=ExtResource("8_xokh1")]
+script = ExtResource("9_jt1e3")
+ishorizontal = false
+namescene = "house.tscn"
+
+[node name="teleporter" parent="TP/TP2Outside" index="0"]
+position = Vector2(-6, -12)
+
+[node name="Area2D2" parent="TP/TP2Outside" instance=ExtResource("10_ett3c")]
+position = Vector2(26, -26)
+rotation = 1.5708
+
+[node name="door1" parent="TP/TP2Outside/Area2D2" index="1"]
+z_index = 12
+
+[connection signal="body_entered" from="glut" to="glut" method="_on_body_entered"]
+[connection signal="body_exited" from="glut" to="glut" method="_on_body_exited"]
+
+[editable path="player"]
+[editable path="TP/TP2Outside"]
+[editable path="TP/TP2Outside/Area2D2"]

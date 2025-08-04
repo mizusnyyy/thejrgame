@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://drii5ui75n5aa"]
+
+[ext_resource type="Script" uid="uid://bldcpu8ib6drm" path="res://scenes/story/pre-core/door/teleporter/teleporter.gd" id="1_phsmn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h8g46"]
+size = Vector2(64, 36)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_phsmn")
+
+[node name="teleporter" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_h8g46")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

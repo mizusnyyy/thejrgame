@@ -1,0 +1,160 @@
+[gd_scene load_steps=11 format=3 uid="uid://bpmn0ng1q8ox"]
+
+[ext_resource type="PackedScene" uid="uid://bbxnb0xrisyk4" path="res://scenes/teto/teto.tscn" id="1_errlg"]
+[ext_resource type="Script" uid="uid://dp6bgu4j6w5ly" path="res://scenes/test/dialoge.gd" id="2_74lek"]
+[ext_resource type="Texture2D" uid="uid://dunbchuq6bjn6" path="res://assets/dialog/text.png" id="2_bl13t"]
+[ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="5_j5jx5"]
+[ext_resource type="AudioStream" uid="uid://ccl33ypnn74xt" path="res://assets/sprite/intro/sans.wav" id="5_jcd4p"]
+[ext_resource type="Texture2D" uid="uid://c5gvlhpyi8sa4" path="res://assets/sprite/i.png" id="6_lpvoh"]
+[ext_resource type="PackedScene" uid="uid://ddpm51ef2tuj2" path="res://scenes/tilemap/node_2d.tscn" id="8_2ns80"]
+[ext_resource type="PackedScene" uid="uid://b5bxnr2plabon" path="res://scenes/teleporter/teleporter.tscn" id="9_5unt0"]
+[ext_resource type="Script" uid="uid://bamdx56271kdb" path="res://scenes/test/i2.gd" id="10_saoeg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_at5dv"]
+size = Vector2(64, 64)
+
+[node name="test" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="dialoge" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -153.0
+offset_right = 71.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+script = ExtResource("2_74lek")
+
+[node name="Timer" type="Timer" parent="CanvasLayer/dialoge"]
+wait_time = 0.05
+autostart = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/dialoge"]
+layout_mode = 0
+offset_right = 593.0
+offset_bottom = 162.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_bl13t")
+patch_margin_top = 162
+patch_margin_right = 593
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/dialoge"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 11.0
+offset_right = 56.0
+offset_bottom = 51.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_lpvoh")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/dialoge"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 18.0
+offset_right = 277.0
+offset_bottom = 65.0
+theme_override_fonts/normal_font = ExtResource("5_j5jx5")
+theme_override_font_sizes/normal_font_size = 16
+scroll_active = false
+autowrap_mode = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer/dialoge"]
+stream = ExtResource("5_jcd4p")
+volume_db = -5.0
+
+[node name="player" parent="." instance=ExtResource("1_errlg")]
+position = Vector2(1229, 282)
+scale = Vector2(0.875, 0.875)
+
+[node name="i" type="Area2D" parent="."]
+z_index = 3
+position = Vector2(990, 220)
+script = ExtResource("10_saoeg")
+textinteract = "czesc kocham teto naprawde"
+maptogo = "battle.tscn"
+
+[node name="Sprite2D" type="Sprite2D" parent="i"]
+position = Vector2(240, 144)
+scale = Vector2(3, 3)
+texture = ExtResource("6_lpvoh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="i"]
+position = Vector2(240, 144)
+shape = SubResource("RectangleShape2D_at5dv")
+
+[node name="i2" type="Area2D" parent="."]
+z_index = 3
+position = Vector2(-716, 242)
+script = ExtResource("10_saoeg")
+textinteract = "steven hello steven"
+maptogo = "battle.tscn"
+
+[node name="Sprite2D" type="Sprite2D" parent="i2"]
+position = Vector2(240, 144)
+scale = Vector2(3, 3)
+texture = ExtResource("6_lpvoh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="i2"]
+position = Vector2(240, 144)
+shape = SubResource("RectangleShape2D_at5dv")
+
+[node name="Node2D" parent="." instance=ExtResource("8_2ns80")]
+z_index = -1
+position = Vector2(302, 290)
+
+[node name="TP12" parent="." instance=ExtResource("9_5unt0")]
+position = Vector2(1118, 386)
+
+[node name="gdzie" parent="TP12" index="1"]
+position = Vector2(-640, 0)
+
+[node name="TP21" parent="." instance=ExtResource("9_5unt0")]
+position = Vector2(510, 386)
+
+[node name="gdzie" parent="TP21" index="1"]
+position = Vector2(640, 0)
+
+[node name="TP23" parent="." instance=ExtResource("9_5unt0")]
+position = Vector2(94, 386)
+
+[node name="gdzie" parent="TP23" index="1"]
+position = Vector2(-450, 0)
+
+[node name="TP32" parent="." instance=ExtResource("9_5unt0")]
+position = Vector2(-322, 386)
+
+[node name="gdzie" parent="TP32" index="1"]
+position = Vector2(450, 0)
+
+[node name="TP24" parent="." instance=ExtResource("9_5unt0")]
+position = Vector2(94, 226)
+
+[node name="gdzie" parent="TP24" index="1"]
+position = Vector2(-1090, 0)
+
+[node name="TP42" parent="." instance=ExtResource("9_5unt0")]
+position = Vector2(-962, 226)
+
+[node name="gdzie" parent="TP42" index="1"]
+position = Vector2(1090, 0)
+
+[connection signal="body_entered" from="i" to="i" method="_on_body_entered"]
+[connection signal="body_exited" from="i" to="i" method="_on_body_exited"]
+[connection signal="body_entered" from="i2" to="i2" method="_on_body_entered"]
+[connection signal="body_exited" from="i2" to="i2" method="_on_body_exited"]
+
+[editable path="player"]
+[editable path="TP12"]
+[editable path="TP21"]
+[editable path="TP23"]
+[editable path="TP32"]
+[editable path="TP24"]
+[editable path="TP42"]

@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://chprno7b2lppf"]
+
+[ext_resource type="Script" uid="uid://4byxmesk7me" path="res://scenes/battle/battle.gd" id="1_6ofp8"]
+[ext_resource type="Texture2D" uid="uid://colmlcmam31o5" path="res://assets/sprite/intro/black.png" id="1_ffvsa"]
+[ext_resource type="Texture2D" uid="uid://wkahfsoq15qa" path="res://assets/sprite/battle/box.png" id="2_xd4uy"]
+[ext_resource type="Script" uid="uid://du1pctbd3kbws" path="res://scenes/battle/character_body_2d.gd" id="3_0yh6x"]
+[ext_resource type="Texture2D" uid="uid://p7lahx6ptxxe" path="res://assets/sprite/battle/heart.png" id="3_xd4uy"]
+[ext_resource type="Script" uid="uid://c4oi6ypdwigjp" path="res://scenes/battle/attack_spawner.gd" id="4_pll4o"]
+[ext_resource type="Texture2D" uid="uid://bxq2w808td2io" path="res://assets/sprite/characters/glut/glut.png" id="5_h0kxc"]
+[ext_resource type="PackedScene" uid="uid://cn87j1gquie6b" path="res://attack scenes/gloo.tscn" id="5_pll4o"]
+[ext_resource type="AudioStream" uid="uid://cqtqlbe7co1q0" path="res://scenes/battle/hurt.wav" id="9_agsc7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yh6x"]
+size = Vector2(8.15216, 128.696)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agsc7"]
+size = Vector2(16, 16)
+
+[node name="fight" type="Node2D"]
+script = ExtResource("1_6ofp8")
+
+[node name="black" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+texture = ExtResource("1_ffvsa")
+
+[node name="box" type="Sprite2D" parent="."]
+position = Vector2(320, 192)
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("2_xd4uy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="box"]
+
+[node name="left" type="CollisionShape2D" parent="box/StaticBody2D"]
+position = Vector2(-61.3043, 0)
+rotation = -3.14159
+shape = SubResource("RectangleShape2D_0yh6x")
+
+[node name="top" type="CollisionShape2D" parent="box/StaticBody2D"]
+position = Vector2(6.10352e-05, -61.5218)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_0yh6x")
+
+[node name="bottom" type="CollisionShape2D" parent="box/StaticBody2D"]
+position = Vector2(0, 61.1956)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_0yh6x")
+
+[node name="right" type="CollisionShape2D" parent="box/StaticBody2D"]
+position = Vector2(61.4674, 0)
+rotation = -3.14159
+shape = SubResource("RectangleShape2D_0yh6x")
+
+[node name="enemy" type="Node2D" parent="."]
+
+[node name="Glut" type="Sprite2D" parent="enemy"]
+position = Vector2(544, 192)
+scale = Vector2(2, 2)
+texture = ExtResource("5_h0kxc")
+
+[node name="attackspawner" type="Node2D" parent="."]
+script = ExtResource("4_pll4o")
+gloo_scene = ExtResource("5_pll4o")
+
+[node name="action" type="Node2D" parent="."]
+
+[node name="soul" type="CharacterBody2D" parent="."]
+position = Vector2(320, 192)
+script = ExtResource("3_0yh6x")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="soul"]
+stream = ExtResource("9_agsc7")
+volume_db = -5.0
+
+[node name="heart" type="Sprite2D" parent="soul"]
+texture = ExtResource("3_xd4uy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="soul"]
+shape = SubResource("RectangleShape2D_agsc7")

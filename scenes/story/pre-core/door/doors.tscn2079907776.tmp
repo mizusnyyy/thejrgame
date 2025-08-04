@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://pgr1hxlmxihq"]
+
+[ext_resource type="Script" uid="uid://edknpfh2mqcg" path="res://scenes/Doors/doors.gd" id="1_xj4xd"]
+[ext_resource type="Texture2D" uid="uid://cdo7snklldf5b" path="res://assets/tiles/tilemapjr.png" id="2_al4iq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xj4xd"]
+size = Vector2(34, 96)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_xj4xd")
+
+[node name="dooropener" type="CollisionShape2D" parent="."]
+position = Vector2(39, 32)
+shape = SubResource("RectangleShape2D_xj4xd")
+
+[node name="door1" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+scale = Vector2(2, 2)
+texture = ExtResource("2_al4iq")
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="door2" type="Sprite2D" parent="."]
+position = Vector2(16, 48)
+scale = Vector2(2, -2)
+texture = ExtResource("2_al4iq")
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

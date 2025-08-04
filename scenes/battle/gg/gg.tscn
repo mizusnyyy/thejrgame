@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://irkvac84688"]
+
+[ext_resource type="Texture2D" uid="uid://colmlcmam31o5" path="res://assets/sprite/intro/black.png" id="1_xjwhv"]
+[ext_resource type="Texture2D" uid="uid://b3nmtrapp60la" path="res://assets/sprite/battle/gn.png" id="2_xjwhv"]
+[ext_resource type="Texture2D" uid="uid://b5ilujtrv0pal" path="res://assets/sprite/battle/z.png" id="3_nvcjw"]
+
+[sub_resource type="Curve" id="Curve_w34rq"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ogis7"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Node2D2" type="Node2D"]
+scale = Vector2(2, 2)
+
+[node name="Black" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+texture = ExtResource("1_xjwhv")
+metadata/_edit_lock_ = true
+
+[node name="Gn" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(320, 184)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_xjwhv")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Gn"]
+position = Vector2(-5.24521e-06, 133.333)
+amount = 64
+texture = ExtResource("3_nvcjw")
+lifetime = 1.5
+preprocess = 0.4
+speed_scale = 0.15
+lifetime_randomness = 0.12
+emission_shape = 3
+emission_rect_extents = Vector2(230, 1)
+gravity = Vector2(0, -980)
+angular_velocity_min = -10.0
+angular_velocity_curve = SubResource("Curve_w34rq")
+linear_accel_max = 10.0
+radial_accel_max = 100.0
+radial_accel_curve = SubResource("Curve_ogis7")
+scale_amount_max = 2.0

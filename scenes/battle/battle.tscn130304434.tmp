@@ -1,0 +1,210 @@
+[gd_scene load_steps=24 format=3 uid="uid://chprno7b2lppf"]
+
+[ext_resource type="Texture2D" uid="uid://colmlcmam31o5" path="res://assets/sprite/intro/black.png" id="1_ffvsa"]
+[ext_resource type="Texture2D" uid="uid://wkahfsoq15qa" path="res://assets/sprite/battle/box.png" id="2_xd4uy"]
+[ext_resource type="Script" uid="uid://du1pctbd3kbws" path="res://scenes/battle/character_body_2d.gd" id="3_0yh6x"]
+[ext_resource type="Texture2D" uid="uid://p7lahx6ptxxe" path="res://assets/sprite/battle/heart.png" id="3_xd4uy"]
+[ext_resource type="Script" uid="uid://c4oi6ypdwigjp" path="res://scenes/battle/attack_spawner.gd" id="4_pll4o"]
+[ext_resource type="Texture2D" uid="uid://bxq2w808td2io" path="res://assets/sprite/characters/glut/glut.png" id="5_h0kxc"]
+[ext_resource type="PackedScene" uid="uid://cn87j1gquie6b" path="res://attack scenes/gloo.tscn" id="5_pll4o"]
+[ext_resource type="Texture2D" uid="uid://d17fttsw8k26x" path="res://assets/sprite/battle/fight.png" id="8_agsc7"]
+[ext_resource type="Script" uid="uid://d2ryb4allpkjo" path="res://scenes/battle/fight.gd" id="8_n6gaa"]
+[ext_resource type="Texture2D" uid="uid://sqrx4ena20jm" path="res://assets/sprite/battle/act_sel.png" id="9_oiw7q"]
+[ext_resource type="Texture2D" uid="uid://gy44n1i8gdka" path="res://assets/sprite/battle/fight_sel.png" id="9_t1kk3"]
+[ext_resource type="Texture2D" uid="uid://dqq4qnrum3lee" path="res://assets/sprite/battle/act.png" id="10_kd6yx"]
+[ext_resource type="Texture2D" uid="uid://7qosruxicnnm" path="res://assets/sprite/battle/item.png" id="11_t1kk3"]
+[ext_resource type="Texture2D" uid="uid://c63p06rs8d7la" path="res://assets/sprite/battle/item_sel.png" id="12_n6gaa"]
+[ext_resource type="Texture2D" uid="uid://3exu52inao1b" path="res://assets/sprite/battle/mercy.png" id="13_6ofp8"]
+[ext_resource type="Texture2D" uid="uid://borvg3mmbw5e1" path="res://assets/sprite/battle/mercy_sel.png" id="14_mvulk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yh6x"]
+size = Vector2(10, 136.813)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_icoan"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_agsc7")
+}],
+"loop": false,
+"name": &"f",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_t1kk3")
+}],
+"loop": false,
+"name": &"fp",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oiw7q"]
+size = Vector2(110, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_agsc7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_kd6yx")
+}],
+"loop": false,
+"name": &"a",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_oiw7q")
+}],
+"loop": true,
+"name": &"ap",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kd6yx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_t1kk3")
+}],
+"loop": true,
+"name": &"i",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_n6gaa")
+}],
+"loop": true,
+"name": &"ip",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t1kk3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_6ofp8")
+}],
+"loop": true,
+"name": &"m",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_mvulk")
+}],
+"loop": true,
+"name": &"mp",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xd4uy"]
+radius = 8.0
+
+[node name="fight" type="Node2D"]
+
+[node name="black" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+texture = ExtResource("1_ffvsa")
+
+[node name="box" type="Sprite2D" parent="black"]
+position = Vector2(0, 12)
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("2_xd4uy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="black/box"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="black/box/StaticBody2D"]
+position = Vector2(-2.5, -64)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_0yh6x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="black/box/StaticBody2D"]
+position = Vector2(-64, -0.59375)
+shape = SubResource("RectangleShape2D_0yh6x")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="black/box/StaticBody2D"]
+position = Vector2(64, -1.1875)
+scale = Vector2(0.998441, 0.999165)
+shape = SubResource("RectangleShape2D_0yh6x")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="black/box/StaticBody2D"]
+position = Vector2(146.087, 76.5217)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_0yh6x")
+
+[node name="enemy" type="Node2D" parent="."]
+
+[node name="Glut" type="Sprite2D" parent="enemy"]
+position = Vector2(544, 192)
+scale = Vector2(2, 2)
+texture = ExtResource("5_h0kxc")
+
+[node name="attack spawner" type="Node2D" parent="."]
+script = ExtResource("4_pll4o")
+gloo_scene = ExtResource("5_pll4o")
+
+[node name="action" type="Node2D" parent="."]
+
+[node name="fight" type="Area2D" parent="action"]
+position = Vector2(176, 336)
+scale = Vector2(0.75, 0.75)
+script = ExtResource("8_n6gaa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="action/fight"]
+sprite_frames = SubResource("SpriteFrames_icoan")
+animation = &"f"
+autoplay = "f"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="action/fight"]
+shape = SubResource("RectangleShape2D_oiw7q")
+
+[node name="act" type="Area2D" parent="action"]
+position = Vector2(272, 336)
+scale = Vector2(0.75, 0.75)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="action/act"]
+sprite_frames = SubResource("SpriteFrames_agsc7")
+animation = &"a"
+autoplay = "a"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="action/act"]
+shape = SubResource("RectangleShape2D_oiw7q")
+
+[node name="item" type="Area2D" parent="action"]
+position = Vector2(368, 336)
+scale = Vector2(0.75, 0.75)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="action/item"]
+sprite_frames = SubResource("SpriteFrames_kd6yx")
+animation = &"i"
+autoplay = "i"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="action/item"]
+shape = SubResource("RectangleShape2D_oiw7q")
+
+[node name="mercy" type="Area2D" parent="action"]
+position = Vector2(456, 336)
+scale = Vector2(0.75, 0.75)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="action/mercy"]
+sprite_frames = SubResource("SpriteFrames_t1kk3")
+animation = &"m"
+autoplay = "m"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="action/mercy"]
+shape = SubResource("RectangleShape2D_oiw7q")
+
+[node name="soul" type="CharacterBody2D" parent="."]
+position = Vector2(320, 192)
+script = ExtResource("3_0yh6x")
+
+[node name="Sprite2D" type="Sprite2D" parent="soul"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_xd4uy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="soul"]
+shape = SubResource("CircleShape2D_xd4uy")
+
+[connection signal="body_entered" from="action/fight" to="action/fight" method="_on_body_entered"]

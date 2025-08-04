@@ -281,6 +281,7 @@ sprite_frames = SubResource("SpriteFrames_tecch")
 animation = &"igor"
 
 [node name="phone" parent="." instance=ExtResource("12_510yu")]
+process_mode = 3
 position = Vector2(384, -32)
 
 [connection signal="body_entered" from="ysorting/dzem" to="ysorting/dzem" method="_on_body_entered"]

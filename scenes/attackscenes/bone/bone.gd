@@ -3,7 +3,7 @@ extends Area2D
 var speed := 0.5
 var direction := Vector2.DOWN
 var amount
-var bonebody = load("res://attackscenes/bone/bonebody.tscn")
+var bonebody = load("res://scenes/attackscenes/bone/bonebody.tscn")
 @onready var lastbone = $Sprite2Dlast
 @onready var collisionbone = $CollisionShape2D
 @onready var sprite = $Sprite2D

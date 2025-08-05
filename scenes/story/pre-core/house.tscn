@@ -1,22 +1,17 @@
-[gd_scene load_steps=39 format=4 uid="uid://bpmn0ng1q8ox"]
+[gd_scene load_steps=27 format=4 uid="uid://bpmn0ng1q8ox"]
 
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_tecch"]
-[ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/players/teto.tscn" id="6_74pxv"]
-[ext_resource type="Texture2D" uid="uid://blo5yr7xsgygh" path="res://assets/sprite/characters/party/shadow/shadowspritesheet.png" id="7_3kxp8"]
+[ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/player/teto.tscn" id="6_74pxv"]
 [ext_resource type="Texture2D" uid="uid://b7632vv4ixuwo" path="res://assets/tiles/tilebg.png" id="9_0rrt8"]
 [ext_resource type="Texture2D" uid="uid://blq2libb70yvf" path="res://assets/tiles/tilebarrier.png" id="10_2i8gf"]
-[ext_resource type="Texture2D" uid="uid://cnmsr8v22thcc" path="res://assets/sprite/characters/party/jamorrr/jamorrrspritesheet.png" id="12_3kxp8"]
+[ext_resource type="Script" uid="uid://ceododdxd8fru" path="res://scenes/story/pre-core/teto.gd" id="12_aqtk2"]
 [ext_resource type="Texture2D" uid="uid://c72wlne1fh1ho" path="res://assets/tiles/tileobjects.png" id="12_qgspi"]
 [ext_resource type="AudioStream" uid="uid://bx51gveawpw6c" path="res://JacksWithHats.wav" id="13_0j0oh"]
 [ext_resource type="Script" uid="uid://bejskw4sl3ymu" path="res://scenes/battle/debug.gd" id="13_0rrt8"]
-[ext_resource type="Script" uid="uid://cbg8nph3tsk6a" path="res://scenes/story/pre-core/glut.gd" id="13_j4awy"]
-[ext_resource type="Texture2D" uid="uid://bxq2w808td2io" path="res://assets/sprite/characters/glut/glut.png" id="14_0rrt8"]
 [ext_resource type="PackedScene" uid="uid://pegs4ep6hjc5" path="res://scenes/attackscenes/bone/bone.tscn" id="14_2i8gf"]
 [ext_resource type="Script" uid="uid://bkdklstb2wyg2" path="res://scenes/story/pre-core/quickchange.gd" id="14_jkym4"]
 [ext_resource type="Texture2D" uid="uid://e5q4i0heuvg3" path="res://assets/sprite/characters/party/jr/teto_front.png" id="14_qgspi"]
-[ext_resource type="AudioStream" uid="uid://bk6wuwnskch7u" path="res://assets/sprite/characters/glut/squeek.wav" id="15_0rrt8"]
 [ext_resource type="Texture2D" uid="uid://6kf44nmw8j3i" path="res://assets/sprite/characters/party/jr/teto_side_better.png" id="15_jkym4"]
-[ext_resource type="Texture2D" uid="uid://b5jp252jvsneo" path="res://assets/sprite/characters/party/misupi/misupispritesheet.png" id="15_jobkd"]
 [ext_resource type="Texture2D" uid="uid://cmj27cly056f7" path="res://assets/sprite/characters/party/jr/teto_back.png" id="16_1e2cb"]
 [ext_resource type="Texture2D" uid="uid://bq1mj2osrqcqs" path="res://assets/sprite/characters/party/jr/teto_side.png" id="17_0j0oh"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="18_jobkd"]
@@ -99,74 +94,11 @@ texture = ExtResource("12_qgspi")
 [sub_resource type="TileSet" id="TileSet_jkym4"]
 sources/0 = SubResource("TileSetAtlasSource_jkym4")
 
-[sub_resource type="GDScript" id="GDScript_c0hyh"]
-script/source = "extends Area2D
-
-var player_in_range := false
-var can_talk := true
-
-@export var dialogue_text := \"ok\"
-@export var portrait_texture: Texture
-@onready var dialog = $\"../../CanvasLayer/dialoge\"
-func _on_body_entered(body):
-	if body.name == \"player\":
-		player_in_range = true
-
-func _on_body_exited(body):
-	if body.name == \"player\":
-		player_in_range = false
-
-func _process(_delta):
-	if player_in_range and Input.is_action_just_pressed(\"interact\") and can_talk:
-		if not dialog.dialogue_active:
-			can_talk = false
-			dialog.show_dialogue(dialogue_text, portrait_texture)
-			await dialog.dialogue_finished
-			await get_tree().create_timer(0.3).timeout
-			can_talk = true
-"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_at5dv"]
-size = Vector2(48, 24)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tecch"]
-size = Vector2(32, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jobkd"]
-atlas = ExtResource("7_3kxp8")
-region = Rect2(0, 0, 16, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_jkym4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jobkd")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2i8gf"]
-size = Vector2(168, 96)
+size = Vector2(168, 110)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_510yu"]
 size = Vector2(150, 34)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jkym4"]
-atlas = ExtResource("15_jobkd")
-region = Rect2(0, 0, 16, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_tecch"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jkym4")
-}],
-"loop": true,
-"name": &"igor",
-"speed": 5.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4awy"]
 size = Vector2(20, 40)
@@ -240,104 +172,13 @@ scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAD5/wIAAAAAAAIAAGD5//z/AAAAAAIAAED8//n/AAAAAAIAAEADAPn/AAAAAAIAAFADAAMAAAAAAAIAAHD8/wMAAAAAAAIAAGA=")
 tile_set = SubResource("TileSet_jkym4")
 
-[node name="dzem" type="Area2D" parent="ysorting"]
-z_index = -1
-y_sort_enabled = true
-position = Vector2(-96, -133)
-script = SubResource("GDScript_c0hyh")
-dialogue_text = "gdyby co to jestem w tej szfaie niga"
-portrait_texture = ExtResource("12_3kxp8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/dzem"]
-position = Vector2(0, 18)
-shape = SubResource("RectangleShape2D_at5dv")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="ysorting/dzem"]
-position = Vector2(-240, -144)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/dzem/StaticBody2D"]
-position = Vector2(240.5, 162)
-shape = SubResource("RectangleShape2D_tecch")
-
-[node name="Sprite2D" type="Sprite2D" parent="ysorting/dzem"]
-position = Vector2(0, -8)
-scale = Vector2(2, 2)
-texture = ExtResource("12_3kxp8")
-region_enabled = true
-region_rect = Rect2(0, 128, 16, 32)
-
-[node name="qorus" type="Area2D" parent="ysorting"]
-y_sort_enabled = true
-position = Vector2(-153, 19)
-script = SubResource("GDScript_c0hyh")
-dialogue_text = "steven, u must goon to melody r34 steven"
-portrait_texture = ExtResource("7_3kxp8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/qorus"]
-position = Vector2(1, 18)
-shape = SubResource("RectangleShape2D_at5dv")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="ysorting/qorus"]
-position = Vector2(0, 18)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/qorus/StaticBody2D"]
-shape = SubResource("RectangleShape2D_tecch")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ysorting/qorus"]
-position = Vector2(0, -8)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_jkym4")
-
-[node name="glut" type="Area2D" parent="ysorting"]
-y_sort_enabled = true
-position = Vector2(-27, -19)
-script = ExtResource("13_j4awy")
-dialogue_text = "Steven her-! wait a minute... youre not steven"
-
-[node name="Sprite2D" type="Sprite2D" parent="ysorting/glut"]
-scale = Vector2(2, 2)
-texture = ExtResource("14_0rrt8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/glut"]
-shape = SubResource("RectangleShape2D_2i8gf")
-
-[node name="AudioStreamPlayer2Dhere" type="AudioStreamPlayer2D" parent="ysorting/glut"]
-stream = ExtResource("15_0rrt8")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="ysorting/glut"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/glut/StaticBody2D"]
-position = Vector2(-1, 18)
-shape = SubResource("RectangleShape2D_510yu")
-
-[node name="misupi" type="Area2D" parent="ysorting"]
-y_sort_enabled = true
-position = Vector2(101, -51)
-script = SubResource("GDScript_c0hyh")
-dialogue_text = "heyyy jestem twinkiem chcesz sex?"
-portrait_texture = ExtResource("15_jobkd")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/misupi"]
-position = Vector2(1, 18)
-shape = SubResource("RectangleShape2D_at5dv")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="ysorting/misupi"]
-position = Vector2(0, 18)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/misupi/StaticBody2D"]
-shape = SubResource("RectangleShape2D_tecch")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ysorting/misupi"]
-position = Vector2(0, -8)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_tecch")
-animation = &"igor"
-
-[node name="teto" type="Area2D" parent="ysorting"]
+[node name="teto" type="Area2D" parent="ysorting" node_paths=PackedStringArray("typesound")]
 y_sort_enabled = true
 position = Vector2(304, 398)
-script = ExtResource("13_j4awy")
-dialogue_text = "What? am I blocking your way? F OFF"
+script = ExtResource("12_aqtk2")
+dialogue_text = "teeetooo"
+portrait_texture = ExtResource("14_qgspi")
+typesound = NodePath("AudioStreamPlayer2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="ysorting/teto"]
 position = Vector2(0, -11)
@@ -345,9 +186,10 @@ scale = Vector2(6, 3)
 texture = ExtResource("17_0j0oh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/teto"]
+position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_2i8gf")
 
-[node name="AudioStreamPlayer2Dhere" type="AudioStreamPlayer2D" parent="ysorting/teto"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ysorting/teto"]
 stream = ExtResource("13_0j0oh")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ysorting/teto"]
@@ -408,17 +250,8 @@ volume_db = -6.769
 autoplay = true
 max_distance = 26.0
 
-[connection signal="body_entered" from="ysorting/dzem" to="ysorting/dzem" method="_on_body_entered"]
-[connection signal="body_exited" from="ysorting/dzem" to="ysorting/dzem" method="_on_body_exited"]
-[connection signal="body_entered" from="ysorting/qorus" to="ysorting/qorus" method="_on_body_entered"]
-[connection signal="body_exited" from="ysorting/qorus" to="ysorting/qorus" method="_on_body_exited"]
-[connection signal="body_entered" from="ysorting/glut" to="ysorting/glut" method="_on_body_entered"]
-[connection signal="body_exited" from="ysorting/glut" to="ysorting/glut" method="_on_body_exited"]
-[connection signal="body_entered" from="ysorting/misupi" to="ysorting/misupi" method="_on_body_entered"]
-[connection signal="body_exited" from="ysorting/misupi" to="ysorting/misupi" method="_on_body_exited"]
 [connection signal="body_entered" from="ysorting/teto" to="ysorting/teto" method="_on_body_entered"]
 [connection signal="body_exited" from="ysorting/teto" to="ysorting/teto" method="_on_body_exited"]
-[connection signal="ready" from="debug" to="ysorting/dzem" method="_on_debug_ready"]
 [connection signal="ready" from="debug" to="debug" method="_on_ready"]
 [connection signal="body_entered" from="quickchange" to="quickchange" method="_on_body_entered"]
 [connection signal="ready" from="quickchange" to="quickchange" method="_on_ready"]

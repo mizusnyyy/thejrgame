@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://jxpo5xgkhpos"]
+[gd_scene load_steps=8 format=3 uid="uid://jxpo5xgkhpos"]
 
 [ext_resource type="Script" uid="uid://dp6bgu4j6w5ly" path="res://scenes/story/pre-core/dialoge.gd" id="1_0xy2d"]
 [ext_resource type="Texture2D" uid="uid://dunbchuq6bjn6" path="res://assets/dialogue/text.png" id="2_ivdui"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_k308d"]
-[ext_resource type="AudioStream" uid="uid://ccl33ypnn74xt" path="res://assets/sprite/intro/sans.wav" id="4_m26o2"]
 [ext_resource type="Script" uid="uid://t6s4f322ej5p" path="res://scenes/story/pre-core/choice.gd" id="5_io7n7"]
 [ext_resource type="Texture2D" uid="uid://p7lahx6ptxxe" path="res://assets/sprite/battle/heart_red.png" id="6_cy6f8"]
 
@@ -69,15 +68,9 @@ offset_bottom = 78.0
 scale = Vector2(0.95, 0.95)
 theme_override_constants/line_separation = 1
 theme_override_fonts/normal_font = ExtResource("3_k308d")
-text = "pablo games og FFg
-FFF
-fffGg"
+text = "pablo games og"
 scroll_active = false
 autowrap_mode = 2
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="dialoge"]
-stream = ExtResource("4_m26o2")
-volume_db = -5.0
 
 [node name="choice" type="Node2D" parent="dialoge"]
 position = Vector2(52, 20)

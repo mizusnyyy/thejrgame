@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ck27vl245arqc" path="res://scenes/randomthings/spowalniacz.tscn" id="6_7rq4n"]
 [ext_resource type="Texture2D" uid="uid://blq2libb70yvf" path="res://assets/tiles/tilebarrier.png" id="6_o7yvw"]
 [ext_resource type="Script" uid="uid://bkdklstb2wyg2" path="res://scenes/story/pre-core/quickchange.gd" id="7_4kac0"]
-[ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/players/teto.tscn" id="7_7n8tm"]
+[ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/player/teto.tscn" id="7_7n8tm"]
 [ext_resource type="Texture2D" uid="uid://e5q4i0heuvg3" path="res://assets/sprite/characters/party/jr/teto_front.png" id="8_v3mb4"]
 [ext_resource type="Texture2D" uid="uid://6kf44nmw8j3i" path="res://assets/sprite/characters/party/jr/teto_side_better.png" id="9_wkayd"]
 [ext_resource type="Texture2D" uid="uid://cmj27cly056f7" path="res://assets/sprite/characters/party/jr/teto_back.png" id="10_o7yvw"]

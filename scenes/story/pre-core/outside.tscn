@@ -1,9 +1,9 @@
 [gd_scene load_steps=18 format=4 uid="uid://b60l2pd8phig8"]
 
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_y0cq1"]
-[ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/players/teto.tscn" id="6_m0j0v"]
+[ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/player/teto.tscn" id="6_m0j0v"]
 [ext_resource type="Texture2D" uid="uid://bxq2w808td2io" path="res://assets/sprite/characters/glut/glut.png" id="7_3pd33"]
-[ext_resource type="Script" uid="uid://cbg8nph3tsk6a" path="res://scenes/story/pre-core/glut.gd" id="7_ngnqd"]
+[ext_resource type="Script" path="res://scenes/story/pre-core/glut.gd" id="7_ngnqd"]
 [ext_resource type="AudioStream" uid="uid://bk6wuwnskch7u" path="res://assets/sprite/characters/glut/squeek.wav" id="9_87ub6"]
 [ext_resource type="PackedScene" uid="uid://b5bxnr2plabon" path="res://scenes/story/pre-core/door/teleporter/teleporter.tscn" id="9_uur3u"]
 [ext_resource type="PackedScene" uid="uid://pgr1hxlmxihq" path="res://scenes/story/pre-core/door/doors.tscn" id="10_ett3c"]

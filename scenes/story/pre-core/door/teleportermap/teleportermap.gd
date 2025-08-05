@@ -7,7 +7,6 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	var lrud = velocityplayer.lrud
 	if body.is_in_group("player"):
-		player.can_move = false
 		var temp = playersprite.global_position
 		var velocitytemp = velocityplayer.direction
 		if ishorizontal:
@@ -20,7 +19,6 @@ func _on_body_entered(body: Node2D) -> void:
 				playersprite.set_global_position(Vector2(playersprite.global_position.x,playersprite.global_position.y+lrud[1]))
 				await get_tree().create_timer(0.015).timeout
 			playersprite.set_global_position(Vector2(playersprite.global_position.x,playersprite.global_position.y-(45*lrud[1])))
-		player.can_move = true
 		get_tree().change_scene_to_file("res://scenes/story/pre-core/"+namescene)
 		#get_tree().change_scene_to_file("res://scenes/battle/battle.tscn")
 		

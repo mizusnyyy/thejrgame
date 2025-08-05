@@ -24,15 +24,19 @@ func get_var(variable):
 		output("[color=red]no such global variable: %s[/color]" % variable)
 func get_vars():
 	var vars = global.get_property_list()
-	if vars.size() == 0:
-		output("[color=yellow]No global variables found.[/color]")
-		return
+	var found = false	
 
-	output("[b]global variables:[/b]")
+	output("[color=light_blue]global variables:[/color]")
+
 	for var_info in vars:
-		var name = var_info.name
-		var value = global.get(name)
-		output("- [color=white]%s[/color] = %s" % [name, str(value)])
+		if var_info.usage & PROPERTY_USAGE_SCRIPT_VARIABLE != 0:
+			var name = var_info.name
+			var value = global.get(name)
+			output("- [color=white]%s[/color] = %s" % [name, str(value)])
+			found = true
+
+	if not found:
+		output("[color=yellow]no global vars found lol[/color]")
 
 func clear():
 	output_label.text=initial_text

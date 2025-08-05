@@ -81,6 +81,7 @@ autoplay = "tetobest"
 [node name="steamhappy" type="CanvasLayer" parent="."]
 
 [node name="steamhappy" type="Sprite2D" parent="steamhappy"]
+visible = false
 position = Vector2(640, 360)
 scale = Vector2(0.35, 0.7)
 texture = ExtResource("5_0revx")

@@ -3,6 +3,7 @@ enum state { PLAYER_TURN, ENEMY_TURN, WAITING }
 enum mode { RED,BLUE }
 var current_state = state.PLAYER_TURN
 var current_mode = mode.BLUE
+var battleenem
 var tp = 0
 var enemy_hp = 100.0
 var health := 100.0

@@ -7,7 +7,7 @@ var can_talk := true
 @export var portrait_texture: Texture
 @onready var dialog = $"../../CanvasLayer/dialoge"
 @export var preloadscena = preload("res://scenes/battle/battle.tscn")
-@onready var audio = $AudioStreamPlayer2D
+@onready var audio = $AudioStreamPlayer2Dhere
 func _ready() -> void:
 	dialog.typesound=audio
 
@@ -16,6 +16,7 @@ func _on_body_entered(body):
 
 func _on_body_exited(body):
 	if body.name == "player":
+		print(audio)
 		player_in_range = false
 
 func _process(_delta):
@@ -24,4 +25,5 @@ func _process(_delta):
 			can_talk = false
 			dialog.show_dialogue(dialogue_text, portrait_texture)
 			await dialog.dialogue_finished
+			#global.
 			get_tree().change_scene_to_packed(preloadscena)

@@ -301,7 +301,7 @@ texture = ExtResource("14_0rrt8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/glut"]
 shape = SubResource("RectangleShape2D_2i8gf")
 
-[node name="AudioStreamPlayer2Dhere" type="AudioStreamPlayer2D" parent="ysorting/glut"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ysorting/glut"]
 stream = ExtResource("15_0rrt8")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ysorting/glut"]
@@ -347,7 +347,7 @@ texture = ExtResource("17_0j0oh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/teto"]
 shape = SubResource("RectangleShape2D_2i8gf")
 
-[node name="AudioStreamPlayer2Dhere" type="AudioStreamPlayer2D" parent="ysorting/teto"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ysorting/teto"]
 stream = ExtResource("13_0j0oh")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ysorting/teto"]

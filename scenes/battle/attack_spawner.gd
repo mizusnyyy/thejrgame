@@ -32,7 +32,7 @@ func attack():
 	notui.enemyturn()
 	var bullet
 	var ran = randi()%4
-	await get_tree().create_timer(2.0).timeout
+	await notui.enemy_turn
 	
 	#gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_bonetunnel.tscn")
 	#bullet = instantiateall(gloo_scene)

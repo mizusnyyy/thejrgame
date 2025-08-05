@@ -1,6 +1,7 @@
 extends Node2D
 
 signal enemy_turn
+signal player_turn
 @onready var box = $"../box"
 @onready var notui = $"."
 @onready var soul = $"../soul"

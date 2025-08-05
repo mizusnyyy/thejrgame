@@ -17,15 +17,14 @@ func _ready():
 	nextturn()
 	print(runda)
 func nextturn():
-	#attack()
-	await get_tree().create_timer(20000.0).timeout
+	notui.enemyturn()
 	for i in range(runda+1):
 		attack()
 		await get_tree().create_timer(2.0).timeout
 	notui.playerturn()
-	await notui.enemy_turn
 	runda+=1
 	print(runda)
+	await notui.enemy_turn
 	nextturn()
 
 func attack():

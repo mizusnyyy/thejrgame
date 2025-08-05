@@ -63,12 +63,15 @@ scale = Vector2(1.5, 1.5)
 [node name="RichTextLabel" type="RichTextLabel" parent="dialoge"]
 layout_mode = 0
 offset_left = 80.0
-offset_top = 10.0
-offset_right = 296.0
-offset_bottom = 77.0
+offset_top = 9.0
+offset_right = 298.0
+offset_bottom = 78.0
 scale = Vector2(0.95, 0.95)
+theme_override_constants/line_separation = 1
 theme_override_fonts/normal_font = ExtResource("3_k308d")
-text = "pablo games og"
+text = "pablo games og FFg
+FFF
+fffGg"
 scroll_active = false
 autowrap_mode = 2
 

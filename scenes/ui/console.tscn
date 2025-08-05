@@ -1,9 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsg8q0ksmb5lr"]
+[gd_scene load_steps=10 format=3 uid="uid://dsg8q0ksmb5lr"]
 
 [ext_resource type="Script" uid="uid://bw878gwjwl5bw" path="res://scenes/ui/console.gd" id="1_35dvq"]
 [ext_resource type="Script" uid="uid://bk6bdio51usd3" path="res://scenes/ui/panel.gd" id="2_e4lyg"]
 [ext_resource type="Script" uid="uid://o7onsywlm8iu" path="res://scenes/ui/fs.gd" id="2_nv40g"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_7iixm"]
+[ext_resource type="Texture2D" uid="uid://e5q4i0heuvg3" path="res://assets/sprite/characters/party/jr/teto_front.png" id="5_xwmki"]
+[ext_resource type="Texture2D" uid="uid://bq1mj2osrqcqs" path="res://assets/sprite/characters/party/jr/teto_side.png" id="6_4vjlj"]
+[ext_resource type="Texture2D" uid="uid://dkeckrrtbnx8r" path="res://assets/sprite/characters/party/jr/teto_back.png" id="7_o8uho"]
+[ext_resource type="Texture2D" uid="uid://6kf44nmw8j3i" path="res://assets/sprite/characters/party/jr/teto_side_better.png" id="8_c21ug"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1jtug"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_xwmki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_c21ug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_o8uho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4vjlj")
+}],
+"loop": true,
+"name": &"tetobest",
+"speed": 12.0
+}]
 
 [node name="console" type="Node2D"]
 process_mode = 3
@@ -44,3 +68,11 @@ theme_override_fonts/normal_font = ExtResource("3_7iixm")
 text = "pablo game console™
 "
 autowrap_mode = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.254902)
+position = Vector2(478, 98)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_1jtug")
+animation = &"tetobest"
+autoplay = "tetobest"

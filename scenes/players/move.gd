@@ -6,6 +6,8 @@ const JUMP_VELOCITY = -400.0
 var lrud = [0,0]
 var directionstop = 0
 @export var direction:= Vector2()
+
+
 func _physics_process(delta: float) -> void:
 	var directionlr := Input.get_axis("left", "right")
 	var directionud := Input.get_axis("up", "down")
@@ -45,3 +47,23 @@ func _physics_process(delta: float) -> void:
 			anim.play("sidel")
 			anim.stop()
 	move_and_slide()
+
+
+func _on_ready() -> void:
+	await get_tree().create_timer(0.2).timeout
+	global.take_screenshot()
+	await get_tree().create_timer(1).timeout
+	global.take_screenshot()
+	await get_tree().create_timer(1).timeout
+	global.take_screenshot()
+	await get_tree().create_timer(1).timeout
+	global.take_screenshot()
+	
+func timetakescreen():
+	if randi()%5==0:
+		global.take_screenshot()
+		timetakescreen()
+	else:
+		await get_tree().create_timer(5).timeout
+		timetakescreen()
+	

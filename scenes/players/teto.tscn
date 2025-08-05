@@ -306,3 +306,5 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="player/AnimationPlayer"]
 tree_root = SubResource("AnimationRootNode_yghsc")
 advance_expression_base_node = NodePath("..")
+
+[connection signal="ready" from="player" to="player" method="_on_ready"]

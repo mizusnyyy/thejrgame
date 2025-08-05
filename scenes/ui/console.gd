@@ -93,12 +93,6 @@ func _on_text_submitted(command: String):
 		get_tree().change_scene_to_file("res://scenes/players/teto.tscn")
 		return
 
-
-
-
-
-
-
 func _try_execute_command_line(command: String) -> bool:
 	var tokens = command.strip_edges().split(" ", false)
 	if tokens.size() == 0:

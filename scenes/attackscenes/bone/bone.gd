@@ -43,7 +43,7 @@ func changecollision(nr):
 	var shape = collisionbone.shape
 	var base_height = shape.extents.y * 2 # pełna wysokość kształtu
 	collisionbone.scale.y = total_collision_height / base_height
-	collisionbone.position.y = total_collision_height / 2 - (head_height / 2)+1.8
+	collisionbone.position.y = total_collision_height / 2 - (head_height / 2)
 			
 func instantiateall(scene: PackedScene) -> Node2D:
 	var instance = scene.instantiate()

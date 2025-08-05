@@ -40,7 +40,7 @@ texture = ExtResource("9_0rrt8")
 [sub_resource type="TileSet" id="TileSet_qgspi"]
 sources/0 = SubResource("TileSetAtlasSource_qgspi")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jobkd"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_510yu"]
 texture = ExtResource("10_2i8gf")
 0:0/0 = 0
 1:0/0 = 0
@@ -53,7 +53,7 @@ texture = ExtResource("10_2i8gf")
 
 [sub_resource type="TileSet" id="TileSet_jobkd"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_jobkd")
+sources/0 = SubResource("TileSetAtlasSource_510yu")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jkym4"]
 texture = ExtResource("12_qgspi")
@@ -86,6 +86,7 @@ texture = ExtResource("12_qgspi")
 7:0/0/texture_origin = Vector2i(0, 8)
 7:0/0/y_sort_origin = -10
 0:2/0 = 0
+0:2/0/y_sort_origin = -8
 
 [sub_resource type="TileSet" id="TileSet_jkym4"]
 sources/0 = SubResource("TileSetAtlasSource_jkym4")
@@ -205,7 +206,7 @@ tile_set = SubResource("TileSet_jkym4")
 [node name="overobjects" type="TileMapLayer" parent="ysorting"]
 y_sort_enabled = true
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAD5/wIAAAAAAAIAAGD5//z/AAAAAAIAAED8//n/AAAAAAIAAEADAPn/AAAAAAIAAFAEAAAAAAAAAAIAAFAEAAEAAAAAAAIAAHADAAMAAAAAAAIAAHD3/wAAAAAAAAIAAED3/wEAAAAAAAIAAGD8/wMAAAAAAAIAAGA=")
+tile_map_data = PackedByteArray("AAD5/wIAAAAAAAIAAGD5//z/AAAAAAIAAED8//n/AAAAAAIAAEADAPn/AAAAAAIAAFADAAMAAAAAAAIAAHD8/wMAAAAAAAIAAGA=")
 tile_set = SubResource("TileSet_jkym4")
 
 [node name="dzem" type="Area2D" parent="ysorting"]

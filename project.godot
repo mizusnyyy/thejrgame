@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="jr"
-run/main_scene="uid://bpmn0ng1q8ox"
+run/main_scene="uid://dqvdt71w2ek83"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [autoload]

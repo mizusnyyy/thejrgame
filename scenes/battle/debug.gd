@@ -17,11 +17,22 @@ func _process(delta: float) -> void:
 		add_child(instance)
 		instance.summoned(instance, soul, 0, true, size, 570)
 
-	if Input.is_action_pressed("debug.bone.y.up") and instance:
+	if Input.is_action_just_pressed("debug.bone.y.up") and instance:
 		instance.global_position.y -= 1
+		
+		await get_tree().create_timer(0.8).timeout
+		while Input.is_action_pressed("debug.bone.y.up"):
+			instance.global_position.y -= 1
+			await get_tree().create_timer(0.02).timeout
+			
 
-	if Input.is_action_pressed("debug.bone.y.down") and instance:
+	if Input.is_action_just_pressed("debug.bone.y.down") and instance:
 		instance.global_position.y += 1
+		
+		await get_tree().create_timer(0.8).timeout
+		while Input.is_action_pressed("debug.bone.y.down"):
+			instance.global_position.y += 1
+			await get_tree().create_timer(0.02).timeout
 
 	if Input.is_action_just_pressed("debug.bone.size.up") and instance:
 		size += 1

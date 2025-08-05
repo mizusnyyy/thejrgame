@@ -38,6 +38,9 @@ func get_vars():
 	if not found:
 		output("[color=yellow]no global vars found lol[/color]")
 
+func say(text):
+	output(str(text))
+
 func clear():
 	output_label.text=initial_text
 
@@ -49,6 +52,7 @@ func _ready():
 	register_command("get_var", Callable(self, "get_var"))
 	register_command("clear",Callable(self,"clear"))
 	register_command("get_vars", Callable(self, "get_vars"))
+	register_command("say",Callable(self,"say"))
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("console"):
 		if canvas_layer.visible==true:

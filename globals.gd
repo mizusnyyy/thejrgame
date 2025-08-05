@@ -9,6 +9,7 @@ var health := 100.0
 var can_move = true
 var mercy=0
 var photoid = 0
+var playit = false
 func take_screenshot():
 	var image: Image = get_viewport().get_texture().get_image()
 	photoid+=1

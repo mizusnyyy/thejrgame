@@ -10,6 +10,8 @@ var expression = Expression.new()
 var custom_commands = {}
 func goto_scene(path: String):
 	get_tree().change_scene_to_file(path)
+func goto_teto(path: String):
+	get_tree().change_scene_to_file("res://scenes/story/pre-core/"+path+".tscn")
 
 func set_var(variable, value):
 	if has_variable(global, variable):
@@ -50,6 +52,7 @@ func steamhappy():
 func _ready():
 	canvas_layer.hide()
 	input_field.text_submitted.connect(_on_text_submitted)
+	register_command("goto_teto", Callable(self, "goto_teto"))
 	register_command("goto_scene", Callable(self, "goto_scene"))
 	register_command("set_var", Callable(self, "set_var"))
 	register_command("get_var", Callable(self, "get_var"))
@@ -62,8 +65,6 @@ func _process(delta: float) -> void:
 			canvas_layer.hide()
 		else:
 			canvas_layer.show()
-
-
 
 
 

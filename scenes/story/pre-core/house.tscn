@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://bpmn0ng1q8ox"]
+[gd_scene load_steps=29 format=4 uid="uid://bpmn0ng1q8ox"]
 
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_tecch"]
 [ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/players/teto.tscn" id="6_74pxv"]
@@ -141,6 +141,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2i8gf"]
 size = Vector2(168, 96)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_510yu"]
+size = Vector2(130, 34)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_jkym4"]
 atlas = ExtResource("15_jobkd")
 region = Rect2(0, 0, 16, 32)
@@ -268,6 +271,12 @@ shape = SubResource("RectangleShape2D_2i8gf")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ysorting/glut"]
 stream = ExtResource("15_0rrt8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ysorting/glut"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/glut/StaticBody2D"]
+position = Vector2(-1, 18)
+shape = SubResource("RectangleShape2D_510yu")
 
 [node name="misupi" type="Area2D" parent="ysorting"]
 y_sort_enabled = true

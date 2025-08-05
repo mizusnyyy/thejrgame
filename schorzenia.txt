@@ -1,1 +1,7 @@
 hej tu beda pomysly i co trzeba robic
+
+- naprawic kolizje (jak wejdziesz w pocisk i z niego nie wyjdziesz to nie zadaje ci dmg)
+
+- naprawic czekanie az atak sie skonczy aby zaczal sie nastepny albo aby byla tura gracza
+
+- wyjsc z serwera po wakacjach

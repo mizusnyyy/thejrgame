@@ -1,6 +1,6 @@
-[gd_scene load_steps=167 format=3 uid="uid://chprno7b2lppf"]
+[gd_scene load_steps=166 format=3 uid="uid://chprno7b2lppf"]
 
-[ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_6ofp8"]
+[ext_resource type="Script" uid="uid://dwvuwahq7qjmu" path="res://scenes/battle/battle.gd" id="1_6ofp8"]
 [ext_resource type="Texture2D" uid="uid://b45tvv1w8286c" path="res://assets/sprite/battle/bg/b0001.png" id="2_2ys7f"]
 [ext_resource type="Script" uid="uid://du1pctbd3kbws" path="res://scenes/battle/character_body_2d.gd" id="3_0yh6x"]
 [ext_resource type="Texture2D" uid="uid://g8cdod2m8j0o" path="res://assets/sprite/battle/box.png" id="3_agsc7"]
@@ -466,8 +466,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_da7rj"]
-size = Vector2(12.5, 18)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6ty6"]
+size = Vector2(12.5, 17)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2ohwp"]
 animations = [{
@@ -487,9 +487,6 @@ animations = [{
 "name": &"select",
 "speed": 5.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6ty6"]
-size = Vector2(12.5, 18)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kdiof"]
 animations = [{
@@ -530,7 +527,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gkugb"]
-size = Vector2(24, 20)
+size = Vector2(20, 18)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_21vhs"]
 
@@ -629,7 +626,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdiof"]
-size = Vector2(32, 26.6667)
+size = Vector2(26.6667, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_el03i"]
 animations = [{
@@ -637,7 +634,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("115_2ohwp")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -645,13 +642,13 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("116_kdiof")
 }],
-"loop": true,
+"loop": false,
 "name": &"select",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gyfx2"]
-size = Vector2(32, 26.6667)
+size = Vector2(26.6667, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w54gx"]
 animations = [{
@@ -659,7 +656,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("117_gyfx2")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -673,7 +670,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_td478"]
-size = Vector2(32, 26.6667)
+size = Vector2(26.6667, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_21vhs"]
 animations = [{
@@ -695,7 +692,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iygdd"]
-size = Vector2(31.3334, 26.6667)
+size = Vector2(26.3333, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agsc7"]
 size = Vector2(12, 12)
@@ -724,7 +721,7 @@ scale = Vector2(2, 2)
 script = ExtResource("1_6ofp8")
 
 [node name="bg" type="AnimatedSprite2D" parent="."]
-position = Vector2(320, 240)
+position = Vector2(320, 239.5)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_gcnt2")
 autoplay = "default"
@@ -735,10 +732,15 @@ position = Vector2(320, 256)
 texture = ExtResource("3_agsc7")
 
 [node name="ColorRect" type="ColorRect" parent="box"]
-offset_left = -62.0
-offset_top = -62.0
-offset_right = 62.0
-offset_bottom = 62.0
+anchors_preset = -1
+anchor_left = -0.015625
+anchor_top = -0.015625
+anchor_right = -0.015625
+anchor_bottom = -0.015625
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 64.0
+offset_bottom = 64.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -790,8 +792,8 @@ position = Vector2(288, 316)
 script = ExtResource("107_rcqhw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="notui/left arrow"]
-position = Vector2(-3, 0)
-shape = SubResource("RectangleShape2D_da7rj")
+position = Vector2(-4, 0)
+shape = SubResource("RectangleShape2D_p6ty6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="notui/left arrow"]
 scale = Vector2(2, 2)
@@ -803,7 +805,7 @@ position = Vector2(352, 316)
 script = ExtResource("110_qk3tf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="notui/right arrow"]
-position = Vector2(3, 0)
+position = Vector2(4, 0)
 shape = SubResource("RectangleShape2D_p6ty6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="notui/right arrow"]
@@ -857,6 +859,7 @@ sprite_frames = SubResource("SpriteFrames_ielyi")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="notui/item"]
+position = Vector2(1.0252e-05, -2.03848e-05)
 shape = SubResource("RectangleShape2D_kdiof")
 
 [node name="mercy" type="Area2D" parent="notui"]
@@ -869,6 +872,7 @@ sprite_frames = SubResource("SpriteFrames_el03i")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="notui/mercy"]
+position = Vector2(1.0252e-05, -2.03848e-05)
 shape = SubResource("RectangleShape2D_gyfx2")
 
 [node name="spell" type="Area2D" parent="notui"]
@@ -881,6 +885,7 @@ sprite_frames = SubResource("SpriteFrames_w54gx")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="notui/spell"]
+position = Vector2(-1.0252e-05, -1.01725e-05)
 shape = SubResource("RectangleShape2D_td478")
 
 [node name="defend" type="Area2D" parent="notui"]
@@ -893,7 +898,7 @@ sprite_frames = SubResource("SpriteFrames_21vhs")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="notui/defend"]
-position = Vector2(-2.0355e-05, 0)
+position = Vector2(0, -6.10352e-05)
 shape = SubResource("RectangleShape2D_iygdd")
 
 [node name="soul" type="CharacterBody2D" parent="."]

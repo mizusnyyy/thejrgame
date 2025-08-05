@@ -7,7 +7,8 @@ extends Area2D
 var selected = false
 
 func _on_body_entered(body: Node2D) -> void:
-	anim.play("select")
+	if body.name == "soul":
+		anim.play("select")
 	selected = true
 
 func _on_body_exited(body: Node2D) -> void:

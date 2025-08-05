@@ -5,3 +5,5 @@ hej tu beda pomysly i co trzeba robic
 - naprawic czekanie az atak sie skonczy aby zaczal sie nastepny albo aby byla tura gracza
 
 - wyjsc z serwera po wakacjach
+
+- zedgeować minium 8 godzin teto

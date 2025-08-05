@@ -1,8 +1,8 @@
 extends Node2D
 
 var pauza := false
-@onready var screen := $"../ColorRect"
-@onready var label := $"../ColorRect/Label"
+@onready var screen := $"../pause/ColorRect"
+@onready var label := $"../pause/ColorRect/Label"
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("fs"):

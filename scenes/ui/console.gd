@@ -3,6 +3,7 @@ extends Node2D
 @onready var input_field: LineEdit = $CanvasLayer/Panel/LineEdit
 @onready var output_label: RichTextLabel = $CanvasLayer/Panel/RichTextLabel
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
+@onready var steamhappyemoji = $steamhappy/steamhappy
 var initial_text="pablo game console™"
 
 var expression = Expression.new()
@@ -38,9 +39,11 @@ func get_vars():
 	if not found:
 		output("[color=yellow]no global vars found lol[/color]")
 
-func say(text):
-	output(str(text))
-
+func steamhappy():
+	if steamhappyemoji.visible:
+		steamhappyemoji.hide()
+	else:
+		steamhappyemoji.show()
 func clear():
 	output_label.text=initial_text
 
@@ -52,7 +55,7 @@ func _ready():
 	register_command("get_var", Callable(self, "get_var"))
 	register_command("clear",Callable(self,"clear"))
 	register_command("get_vars", Callable(self, "get_vars"))
-	register_command("say",Callable(self,"say"))
+	register_command("steamhappy", Callable(self, "steamhappy"))
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("console"):
 		if canvas_layer.visible==true:

@@ -44,3 +44,23 @@ theme_override_fonts/normal_font = ExtResource("3_7iixm")
 text = "pablo game console™
 "
 autowrap_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = 1000
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 99500.0
+offset_bottom = 99500.0
+color = Color(0, 0, 0, 0.784314)
+
+[node name="Napis" type="Label" parent="ColorRect"]
+visible = false
+layout_mode = 0
+offset_right = 199.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+text = "Pauza :3"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -3,6 +3,8 @@ extends Node2D
 @onready var input_field: LineEdit = $CanvasLayer/Panel/LineEdit
 @onready var output_label: RichTextLabel = $CanvasLayer/Panel/RichTextLabel
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
+@onready var ekran_pauzy := $"ColorRect"
+@onready var napis_pauzy := $"ColorRect/Napis"
 var initial_text="pablo game console™"
 
 var expression = Expression.new()
@@ -86,6 +88,10 @@ func _on_text_submitted(command: String):
 		output("[color=red]no command bro[/color]")
 	else:
 		output(str(result))
+	
+	if command.strip_edges().to_lower() == "teto":
+		get_tree().change_scene_to_file("res://scenes/players/teto.tscn")
+		return
 
 
 

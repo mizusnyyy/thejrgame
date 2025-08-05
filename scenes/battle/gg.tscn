@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://irkvac84688"]
 
-[ext_resource type="Texture2D" uid="uid://colmlcmam31o5" path="res://assets/sprite/intro/black.png" id="1_xjwhv"]
-[ext_resource type="Texture2D" uid="uid://b3nmtrapp60la" path="res://assets/sprite/battle/gn.png" id="2_xjwhv"]
-[ext_resource type="Texture2D" uid="uid://b5ilujtrv0pal" path="res://assets/sprite/battle/z.png" id="3_nvcjw"]
-[ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="4_ogis7"]
-[ext_resource type="Script" uid="uid://ct6cfvd7am4vc" path="res://scenes/battle/gg/label.gd" id="4_w34rq"]
+[ext_resource type="Texture2D" uid="uid://colmlcmam31o5" path="res://assets/sprite/intro/black.png" id="1_xxcb2"]
+[ext_resource type="Texture2D" uid="uid://b3nmtrapp60la" path="res://assets/sprite/battle/gn.png" id="2_ta2i8"]
+[ext_resource type="Texture2D" uid="uid://b5ilujtrv0pal" path="res://assets/sprite/battle/z.png" id="3_mtxmp"]
+[ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="4_rm7i4"]
+[ext_resource type="Script" uid="uid://ct6cfvd7am4vc" path="res://scenes/battle/gg/label.gd" id="5_tk7ny"]
 
 [sub_resource type="Curve" id="Curve_w34rq"]
 _limits = [-360.0, 360.0, 0.0, 1.0]
@@ -21,19 +21,19 @@ scale = Vector2(2, 2)
 
 [node name="Black" type="Sprite2D" parent="."]
 position = Vector2(320, 180)
-texture = ExtResource("1_xjwhv")
+texture = ExtResource("1_xxcb2")
 metadata/_edit_lock_ = true
 
 [node name="Gn" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(320, 184)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_xjwhv")
+texture = ExtResource("2_ta2i8")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Gn"]
 position = Vector2(-5.24521e-06, 133.333)
 amount = 64
-texture = ExtResource("3_nvcjw")
+texture = ExtResource("3_mtxmp")
 lifetime = 1.5
 preprocess = 0.4
 speed_scale = 0.15
@@ -55,9 +55,9 @@ offset_right = 147.333
 offset_bottom = 95.3333
 scale = Vector2(0.5, 0.5)
 mouse_filter = 0
-theme_override_fonts/font = ExtResource("4_ogis7")
+theme_override_fonts/font = ExtResource("4_rm7i4")
 text = "NO MORE SLEEP!?"
-script = ExtResource("4_w34rq")
+script = ExtResource("5_tk7ny")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 30.0

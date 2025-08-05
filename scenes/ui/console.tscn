@@ -85,7 +85,7 @@ position = Vector2(408, 40)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_xwmki")
 autoplay = "default"
-frame_progress = 0.656455
+frame_progress = 0.362494
 
 [node name="pause" type="CanvasLayer" parent="."]
 

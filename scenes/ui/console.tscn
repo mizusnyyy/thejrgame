@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dsg8q0ksmb5lr"]
+[gd_scene load_steps=11 format=3 uid="uid://dsg8q0ksmb5lr"]
 
 [ext_resource type="Script" uid="uid://bw878gwjwl5bw" path="res://scenes/ui/console.gd" id="1_35dvq"]
 [ext_resource type="Script" uid="uid://bk6bdio51usd3" path="res://scenes/ui/panel.gd" id="2_e4lyg"]
 [ext_resource type="Script" uid="uid://o7onsywlm8iu" path="res://scenes/ui/fs.gd" id="2_nv40g"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_7iixm"]
+[ext_resource type="Texture2D" uid="uid://cxjg8v51ap1oy" path="res://steamhappy.png" id="5_0revx"]
 [ext_resource type="Texture2D" uid="uid://e5q4i0heuvg3" path="res://assets/sprite/characters/party/jr/teto_front.png" id="5_xwmki"]
 [ext_resource type="Texture2D" uid="uid://bq1mj2osrqcqs" path="res://assets/sprite/characters/party/jr/teto_side.png" id="6_4vjlj"]
 [ext_resource type="Texture2D" uid="uid://dkeckrrtbnx8r" path="res://assets/sprite/characters/party/jr/teto_back.png" id="7_o8uho"]
@@ -76,3 +77,10 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_1jtug")
 animation = &"tetobest"
 autoplay = "tetobest"
+
+[node name="steamhappy" type="CanvasLayer" parent="."]
+
+[node name="steamhappy" type="Sprite2D" parent="steamhappy"]
+position = Vector2(640, 360)
+scale = Vector2(0.35, 0.7)
+texture = ExtResource("5_0revx")

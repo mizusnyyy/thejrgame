@@ -1,17 +1,49 @@
-[gd_scene load_steps=6 format=3 uid="uid://dsg8q0ksmb5lr"]
+[gd_scene load_steps=11 format=3 uid="uid://dsg8q0ksmb5lr"]
 
 [ext_resource type="Script" uid="uid://bw878gwjwl5bw" path="res://scenes/ui/console.gd" id="1_35dvq"]
 [ext_resource type="Script" uid="uid://bk6bdio51usd3" path="res://scenes/ui/panel.gd" id="2_e4lyg"]
 [ext_resource type="Script" uid="uid://o7onsywlm8iu" path="res://scenes/ui/fs.gd" id="2_nv40g"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_7iixm"]
-[ext_resource type="Script" uid="uid://b58a4vf6p8lpe" path="res://scenes/ui/napis.gd" id="5_0revx"]
+[ext_resource type="Texture2D" uid="uid://e5q4i0heuvg3" path="res://assets/sprite/characters/party/jr/teto_front.png" id="5_xwmki"]
+[ext_resource type="Texture2D" uid="uid://bq1mj2osrqcqs" path="res://assets/sprite/characters/party/jr/teto_side.png" id="6_4vjlj"]
+[ext_resource type="Texture2D" uid="uid://cmj27cly056f7" path="res://assets/sprite/characters/party/jr/teto_back.png" id="7_o8uho"]
+[ext_resource type="Texture2D" uid="uid://6kf44nmw8j3i" path="res://assets/sprite/characters/party/jr/teto_side_better.png" id="8_c21ug"]
+[ext_resource type="Texture2D" uid="uid://cxjg8v51ap1oy" path="res://steamhappy.png" id="9_4vjlj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xwmki"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_xwmki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_c21ug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_o8uho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4vjlj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="console" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_35dvq")
 
-[node name="fullscreen handler" type="Node2D" parent="."]
+[node name="fs&pause handler" type="Node2D" parent="."]
 script = ExtResource("2_nv40g")
+
+[node name="steamhappy" type="CanvasLayer" parent="."]
+
+[node name="steamhappy" type="Sprite2D" parent="steamhappy"]
+visible = false
+position = Vector2(672, 360)
+scale = Vector2(1, 0.5)
+texture = ExtResource("9_4vjlj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -45,27 +77,32 @@ theme_override_fonts/normal_font = ExtResource("3_7iixm")
 text = "pablo game console™
 "
 autowrap_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="teeeto" type="AnimatedSprite2D" parent="CanvasLayer/Panel"]
+modulate = Color(1, 1, 1, 0.388235)
+position = Vector2(408, 40)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_xwmki")
+autoplay = "default"
+frame_progress = 0.369205
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 z_index = 1000
-offset_left = -500.0
-offset_top = -500.0
-offset_right = 99500.0
-offset_bottom = 99500.0
+offset_right = 1280.0
+offset_bottom = 720.0
 color = Color(0, 0, 0, 0.784314)
 
-[node name="Napis" type="Label" parent="ColorRect"]
-visible = false
-layout_mode = 0
-offset_right = 199.0
-offset_bottom = 69.0
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 132.0
+offset_bottom = 37.0
+scale = Vector2(1.5, 1.5)
 mouse_filter = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 50
-text = "Pauza :3"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("5_0revx")
+theme_override_fonts/font = ExtResource("3_7iixm")
+text = "paused :3"
 
-[connection signal="gui_input" from="ColorRect/Napis" to="." method="_on_napis_gui_input"]
+[connection signal="gui_input" from="ColorRect/Label" to="." method="_on_napis_gui_input"]

@@ -3,8 +3,7 @@ extends Node2D
 @onready var input_field: LineEdit = $CanvasLayer/Panel/LineEdit
 @onready var output_label: RichTextLabel = $CanvasLayer/Panel/RichTextLabel
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
-@onready var ekran_pauzy := $"ColorRect"
-@onready var napis_pauzy := $"ColorRect/Napis"
+@onready var steamhappyemoji = $steamhappy/steamhappy
 var initial_text="pablo game console™"
 
 var expression = Expression.new()
@@ -42,6 +41,11 @@ func get_vars():
 
 func clear():
 	output_label.text=initial_text
+func steamhappy():
+	if steamhappyemoji.visible:
+		steamhappyemoji.hide()
+	else:
+		steamhappyemoji.show()
 
 func _ready():
 	canvas_layer.hide()
@@ -51,6 +55,7 @@ func _ready():
 	register_command("get_var", Callable(self, "get_var"))
 	register_command("clear",Callable(self,"clear"))
 	register_command("get_vars", Callable(self, "get_vars"))
+	register_command("steamhappy",Callable(self,"steamhappy"))
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("console"):
 		if canvas_layer.visible==true:
@@ -88,10 +93,6 @@ func _on_text_submitted(command: String):
 		output("[color=red]no command bro[/color]")
 	else:
 		output(str(result))
-	
-	if command.strip_edges().to_lower() == "teto":
-		get_tree().change_scene_to_file("res://scenes/players/teto.tscn")
-		return
 
 func _try_execute_command_line(command: String) -> bool:
 	var tokens = command.strip_edges().split(" ", false)
@@ -101,7 +102,6 @@ func _try_execute_command_line(command: String) -> bool:
 	var cmd_name = tokens[0]
 	var args = tokens.slice(1, tokens.size())
 
-	# Automatyczne konwertowanie argumentów
 	var parsed_args = []
 	for arg in args:
 		if arg.is_valid_float():

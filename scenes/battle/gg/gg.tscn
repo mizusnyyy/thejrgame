@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://irkvac84688"]
+[gd_scene load_steps=8 format=3 uid="uid://irkvac84688"]
 
 [ext_resource type="Texture2D" uid="uid://colmlcmam31o5" path="res://assets/sprite/intro/black.png" id="1_xjwhv"]
 [ext_resource type="Texture2D" uid="uid://b3nmtrapp60la" path="res://assets/sprite/battle/gn.png" id="2_xjwhv"]
 [ext_resource type="Texture2D" uid="uid://b5ilujtrv0pal" path="res://assets/sprite/battle/z.png" id="3_nvcjw"]
-[ext_resource type="Script" uid="uid://ct6cfvd7am4vc" path="res://scenes/battle/gg/label.gd" id="4_w34rq"]
+[ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="4_ogis7"]
+[ext_resource type="Script" path="res://scenes/battle/gg/label.gd" id="4_w34rq"]
 
 [sub_resource type="Curve" id="Curve_w34rq"]
 _limits = [-360.0, 360.0, 0.0, 1.0]
@@ -48,10 +49,12 @@ radial_accel_curve = SubResource("Curve_ogis7")
 scale_amount_max = 2.0
 
 [node name="Label" type="Label" parent="Gn"]
-offset_left = -48.0
-offset_top = 70.6667
-offset_right = 75.0
-offset_bottom = 93.6667
+offset_left = -50.6667
+offset_top = 77.3333
+offset_right = 147.333
+offset_bottom = 95.3333
+scale = Vector2(0.5, 0.5)
 mouse_filter = 0
-text = "ODRÓDŹ SIĘ"
+theme_override_fonts/font = ExtResource("4_ogis7")
+text = "NO MORE SLEEP!?"
 script = ExtResource("4_w34rq")

@@ -1,8 +1,8 @@
 extends Node2D
 
 var pauza := false
-@onready var ekran_pauzy := $"../ColorRect"  
-@onready var napis_pauzy := $"../ColorRect/Napis"
+@onready var screen := $"../ColorRect"
+@onready var label := $"../ColorRect/Label"
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("fs"):
@@ -15,9 +15,5 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		pauza = !pauza
 		get_tree().paused = pauza
-		ekran_pauzy.visible = pauza
-		napis_pauzy.visible = pauza
-		if pauza:
-			print("Jest pauza :3")
-		else:
-			print("Nie ma pauzy :3")
+		screen.visible = pauza
+		label.visible = pauza

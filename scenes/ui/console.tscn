@@ -85,24 +85,24 @@ position = Vector2(408, 40)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_xwmki")
 autoplay = "default"
-frame_progress = 0.369205
+frame_progress = 0.656455
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="pause" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="pause"]
 visible = false
-z_index = 1000
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0, 0, 0, 0.784314)
 
-[node name="Label" type="Label" parent="ColorRect"]
+[node name="Label" type="Label" parent="pause/ColorRect"]
 layout_mode = 1
+anchors_preset = -1
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 132.0
-offset_bottom = 37.0
-scale = Vector2(1.5, 1.5)
-mouse_filter = 0
+offset_bottom = 32.0
+scale = Vector2(2, 2)
 theme_override_fonts/font = ExtResource("3_7iixm")
 text = "paused :3"
-
-[connection signal="gui_input" from="ColorRect/Label" to="." method="_on_napis_gui_input"]
+metadata/_edit_use_anchors_ = true

@@ -22,3 +22,7 @@ func take_screenshot():
 		dir.make_dir("screens")
 		
 	var err = image.save_png(path)
+
+func soultakedamage(body, dmg):
+		body.take_damage(dmg)
+		

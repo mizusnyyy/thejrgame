@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://dqvdt71w2ek83"]
+[gd_scene load_steps=33 format=4 uid="uid://dqvdt71w2ek83"]
 
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_pdshq"]
 [ext_resource type="Texture2D" uid="uid://bnt6ubwr7q3rk" path="res://assets/tiles/coreroom/tilecoreroom.png" id="3_r2r0d"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cmj27cly056f7" path="res://assets/sprite/characters/party/jr/teto_back.png" id="10_o7yvw"]
 [ext_resource type="Texture2D" uid="uid://bq1mj2osrqcqs" path="res://assets/sprite/characters/party/jr/teto_side.png" id="11_7n8tm"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="12_f85h6"]
+[ext_resource type="Texture2D" uid="uid://dmgjeb7lyxop" path="res://assets/tiles/animations/torchanimation.png" id="13_v3mb4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r2r0d"]
 texture = ExtResource("3_r2r0d")
@@ -193,6 +194,56 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkayd"]
+atlas = ExtResource("13_v3mb4")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7yvw"]
+atlas = ExtResource("13_v3mb4")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7n8tm"]
+atlas = ExtResource("13_v3mb4")
+region = Rect2(48, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f85h6"]
+atlas = ExtResource("13_v3mb4")
+region = Rect2(64, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7htdg"]
+atlas = ExtResource("13_v3mb4")
+region = Rect2(80, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3mb4"]
+atlas = ExtResource("13_v3mb4")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_124ib"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkayd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7yvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7n8tm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f85h6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7htdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3mb4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="outsidemap" type="Node2D"]
 
 [node name="CanvasLayer" parent="." instance=ExtResource("1_pdshq")]
@@ -297,6 +348,12 @@ vertical_alignment = 1
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-268, 0)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_124ib")
+autoplay = "default"
 
 [connection signal="body_entered" from="quickchange" to="quickchange" method="_on_body_entered"]
 

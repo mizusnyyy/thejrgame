@@ -31,25 +31,27 @@ animations = [{
 
 [node name="MainMenu" type="Node2D"]
 
-[node name="Control" type="Control" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Panel" type="Panel" parent="Control"]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/Panel"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Control/Panel"]
 modulate = Color(0.590441, 0.590441, 0.590441, 1)
 position = Vector2(479, 359)
 scale = Vector2(5.86585, 4.40244)
 sprite_frames = SubResource("SpriteFrames_0o4t1")
 autoplay = "default"
 
-[node name="graj_button" type="TextureButton" parent="Control"]
+[node name="graj_button" type="TextureButton" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_left = 960.0
 offset_top = 192.0
@@ -60,7 +62,7 @@ texture_pressed = ExtResource("4_pstia")
 texture_hover = ExtResource("5_41tvm")
 script = ExtResource("6_vxdmp")
 
-[node name="ustawienia_button" type="TextureButton" parent="Control"]
+[node name="ustawienia_button" type="TextureButton" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_left = 960.0
 offset_top = 320.0
@@ -71,7 +73,7 @@ texture_pressed = ExtResource("8_uaj4g")
 texture_hover = ExtResource("9_si58d")
 script = ExtResource("10_anexq")
 
-[node name="wyjscie_button" type="TextureButton" parent="Control"]
+[node name="wyjscie_button" type="TextureButton" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_left = 960.0
 offset_top = 448.0
@@ -82,6 +84,6 @@ texture_pressed = ExtResource("12_do53f")
 texture_hover = ExtResource("13_1bw8o")
 script = ExtResource("14_q78k2")
 
-[connection signal="pressed" from="Control/graj_button" to="Control/graj_button" method="_on_pressed"]
-[connection signal="pressed" from="Control/ustawienia_button" to="Control/ustawienia_button" method="_on_pressed"]
-[connection signal="pressed" from="Control/wyjscie_button" to="Control/wyjscie_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/graj_button" to="CanvasLayer/Control/graj_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ustawienia_button" to="CanvasLayer/Control/ustawienia_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/wyjscie_button" to="CanvasLayer/Control/wyjscie_button" method="_on_pressed"]

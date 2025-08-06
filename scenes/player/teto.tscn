@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://dou5xmvh55egf" path="res://scenes/player/move.gd" id="1_3xey1"]
 [ext_resource type="Texture2D" uid="uid://bdo8d0j7y6s7b" path="res://assets/sprite/characters/party/jr/jrspritesheet.png" id="2_1a4v8"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80hx6"]
 size = Vector2(14, 6)
 

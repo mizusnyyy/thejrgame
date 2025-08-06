@@ -29,7 +29,7 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="console" type="Node2D"]
+[node name="console2" type="Node2D"]
 script = ExtResource("1_u3vgo")
 
 [node name="steamhappy" type="CanvasLayer" parent="."]

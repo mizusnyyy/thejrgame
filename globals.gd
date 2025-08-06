@@ -7,6 +7,7 @@ var battleenem
 var tp = 0
 var enemy_hp = 100.0
 var health := 100.0
+var maxhealth := 100.0
 var can_move = true
 var mercy=0
 var photoid = 0
@@ -21,4 +22,3 @@ func take_screenshot():
 		dir.make_dir("screens")
 		
 	var err = image.save_png(path)
-	#print("ZAPIS SCREENA DO:", path, " | SUKCES:", err == OK)

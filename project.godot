@@ -20,7 +20,6 @@ console="*res://scenes/ui/console.gd"
 global="*res://globals.gd"
 Musicsounds="*res://scenes/randomthings/musicsounds.tscn"
 phone="*res://scenes/phone/phone.tscn"
-musicsounds="*res://scenes/randomthings/musicsounds.tscn"
 MenuHandler="*res://scenes/menu/menu_handler.gd"
 
 [display]

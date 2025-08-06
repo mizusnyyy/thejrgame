@@ -9,8 +9,8 @@ func summoned(bullet, soul, speed):
 	#await get_tree().create_timer(2.0).timeout
 	var randomnr = 660
 	var inny = 440
-	for i in range(21):
-		if i < 10:
+	for i in range(13):
+		if i < 6:
 			startsequence(bullet, soul, 300, true,17-i,randomnr)#musi,musi,speed,czyzlewej,wielkosc,poziom-y
 			startsequence(bullet, soul, 300, true,8+i,inny)
 		else:

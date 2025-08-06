@@ -51,6 +51,14 @@ scale = Vector2(5.86585, 4.40244)
 sprite_frames = SubResource("SpriteFrames_0o4t1")
 autoplay = "default"
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/Panel"]
+layout_mode = 0
+offset_left = 937.0
+offset_top = -5.0
+offset_right = 1278.0
+offset_bottom = 721.0
+color = Color(0, 0, 0, 1)
+
 [node name="graj_button" type="TextureButton" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_left = 960.0

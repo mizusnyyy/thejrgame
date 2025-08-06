@@ -43,30 +43,37 @@ texture = ExtResource("1_5md12")
 [node name="console" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="console"]
-offset_left = 64.0
-offset_top = 64.0
-offset_right = 512.0
-offset_bottom = 400.0
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.533
+anchor_right = 0.1
+anchor_bottom = 0.533
+offset_left = 640.0
+offset_top = -319.76
+offset_right = 1088.0
+offset_bottom = 0.23996
 script = ExtResource("2_u3vgo")
+metadata/_edit_use_anchors_ = true
 
 [node name="LineEdit" type="LineEdit" parent="console/Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.0591518
-anchor_top = 0.813988
-anchor_right = 0.297991
-anchor_bottom = 0.813988
-offset_left = 26.5
-offset_top = 22.5
-offset_right = 314.5
-offset_bottom = 62.5
+anchor_top = 0.925
+anchor_bottom = 0.925
+offset_top = -3.05176e-05
+offset_right = 448.0
+offset_bottom = 27.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_fvbip")
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="console/Panel"]
 layout_mode = 1
-offset_right = 448.0
-offset_bottom = 296.0
+anchors_preset = -1
+anchor_right = 0.428571
+anchor_bottom = 0.075
+offset_right = 256.0
+offset_bottom = 264.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("3_fvbip")
 text = "pablo game console™

@@ -1,6 +1,5 @@
 [gd_scene load_steps=166 format=3 uid="uid://chprno7b2lppf"]
 
-[ext_resource type="Script" uid="uid://dwvuwahq7qjmu" path="res://scenes/battle/battle.gd" id="1_6ofp8"]
 [ext_resource type="Texture2D" uid="uid://b45tvv1w8286c" path="res://assets/sprite/battle/bg/b0001.png" id="2_2ys7f"]
 [ext_resource type="Script" uid="uid://du1pctbd3kbws" path="res://scenes/battle/character_body_2d.gd" id="3_0yh6x"]
 [ext_resource type="Texture2D" uid="uid://g8cdod2m8j0o" path="res://assets/sprite/battle/box.png" id="3_agsc7"]
@@ -137,6 +136,10 @@
 [ext_resource type="Texture2D" uid="uid://c2n5lud1gsnrw" path="res://assets/sprite/battle/heart_blue.png" id="135_21vhs"]
 [ext_resource type="Script" uid="uid://bejskw4sl3ymu" path="res://scenes/battle/debug.gd" id="136_w54gx"]
 [ext_resource type="PackedScene" uid="uid://pegs4ep6hjc5" path="res://scenes/attackscenes/bone/bone.tscn" id="137_21vhs"]
+
+[sub_resource type="GDScript" id="GDScript_w54gx"]
+script/source = "extends Node2D
+"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gcnt2"]
 animations = [{
@@ -718,7 +721,7 @@ animations = [{
 
 [node name="fight" type="Node2D"]
 scale = Vector2(2, 2)
-script = ExtResource("1_6ofp8")
+script = SubResource("GDScript_w54gx")
 
 [node name="bg" type="AnimatedSprite2D" parent="."]
 position = Vector2(320, 239.5)

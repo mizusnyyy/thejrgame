@@ -1,0 +1,84 @@
+extends Control
+
+@onready var app_container: Control = get_node_or_null("Panel/Control")
+@onready var app_list: VBoxContainer = get_node_or_null("Panel/VBoxContainer")
+
+var current_app_name: String = ""
+var active: bool = true
+var is_animating: bool = false
+
+# Dodaj tu inne aplikacje wedle potrzeby
+var apps = {
+	"console": preload("res://scenes/phone/apps/console/console.tscn")
+}
+
+func _ready():
+	# Start ukryty i poza ekranem
+	position = Vector2(128, 720)
+	visible = false
+
+	if app_container == null or app_list == null:
+		push_error("phone: app_container or app_list not found````")
+		active = false
+		return
+
+	for app_name in apps.keys():
+		var btn = Button.new()
+		btn.text = app_name.capitalize()
+		btn.pressed.connect(_on_app_button_pressed.bind(app_name))
+		app_list.add_child(btn)
+
+func _process(_delta):
+	if not active or is_animating:
+		return
+
+	if Input.is_action_just_pressed("phone"):
+		if visible:
+			_hide_phone()
+		else:
+			_show_phone()
+
+func _show_phone():
+	visible = true
+	is_animating = true
+
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "position", Vector2(128, 384), 0.25)
+
+	tween.finished.connect(func():
+		is_animating = false
+	)
+
+func _hide_phone():
+	is_animating = true
+
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.set_ease(Tween.EASE_IN)
+	tween.tween_property(self, "position", Vector2(128, 720), 0.25)
+
+	tween.finished.connect(func():
+		visible = false
+		is_animating = false
+		_clear_app()
+	)
+
+func _on_app_button_pressed(app_name: String):
+	if current_app_name == app_name:
+		_clear_app()
+		return
+
+	_clear_app()
+
+	if apps.has(app_name):
+		var app = apps[app_name].instantiate()
+		app_container.add_child(app)
+		current_app_name = app_name
+
+func _clear_app():
+	if app_container:
+		for child in app_container.get_children():
+			child.queue_free()
+	current_app_name = ""

@@ -784,10 +784,11 @@ texture_progress = ExtResource("103_hh7ue")
 script = ExtResource("104_xo5np")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="box"]
-offset_left = -40.0
-offset_top = -100.0
-offset_right = 45.0
-offset_bottom = -70.0
+offset_left = -60.0
+offset_top = -92.0
+offset_right = 60.0
+offset_bottom = -72.0
+theme_override_fonts/normal_font = ExtResource("121_21vhs")
 scroll_active = false
 script = ExtResource("105_wf2x0")
 

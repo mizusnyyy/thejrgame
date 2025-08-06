@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccigygdjcafjv"
-path="res://.godot/imported/progress.png-83c80b1a071770e2a7ba66b36f1a0061.ctex"
+uid="uid://byrh838j3f4tm"
+path="res://.godot/imported/under.png-8aefba580ed9c3c12e590f7aae0637e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/battle/progress.png"
-dest_files=["res://.godot/imported/progress.png-83c80b1a071770e2a7ba66b36f1a0061.ctex"]
+source_file="res://assets/sprite/battle/not ui/under.png"
+dest_files=["res://.godot/imported/under.png-8aefba580ed9c3c12e590f7aae0637e7.ctex"]
 
 [params]
 

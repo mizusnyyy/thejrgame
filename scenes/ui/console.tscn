@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://dlvhjo5wsm8si"]
+[gd_scene load_steps=11 format=3 uid="uid://cevmeaiib8auh"]
 
-[ext_resource type="Script" uid="uid://bk6bdio51usd3" path="res://scenes/ui/panel.gd" id="2_e4lyg"]
+[ext_resource type="Script" path="res://scenes/ui/panel.gd" id="2_e4lyg"]
 [ext_resource type="Script" uid="uid://o7onsywlm8iu" path="res://scenes/ui/fs.gd" id="2_nv40g"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_7iixm"]
 [ext_resource type="Texture2D" uid="uid://e5q4i0heuvg3" path="res://assets/sprite/characters/party/jr/teto_front.png" id="5_xwmki"]

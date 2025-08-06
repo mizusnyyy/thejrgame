@@ -49,14 +49,24 @@ radial_accel_curve = SubResource("Curve_ogis7")
 scale_amount_max = 2.0
 
 [node name="Label" type="Label" parent="Gn"]
-offset_left = -50.6667
-offset_top = 77.3333
-offset_right = 147.333
-offset_bottom = 95.3333
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = 34.0
+offset_right = 5.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(99, 8)
 mouse_filter = 0
 theme_override_fonts/font = ExtResource("4_ogis7")
 text = "NO MORE SLEEP!?"
+horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("4_w34rq")
 
 [node name="TextureRect" type="TextureRect" parent="."]

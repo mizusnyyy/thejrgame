@@ -20,6 +20,13 @@ func _ready() -> void:
 	hide()
 
 func show_dialogue(text: String, portrait_texture: Texture = null, typesound: AudioStreamPlayer2D = null) -> void:
+	if text.begins_with("*"):
+		text = text.substr(1)
+		var parts = text.split(",", false, 3)
+		choose(parts)
+		await get_tree().create_timer(3).timeout
+		emit_signal("dialogue_finished")
+		return
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	global.can_move = false
@@ -61,7 +68,6 @@ func choose(options: Array):
 	emit_signal("choice_finished")
 
 func _type_text() -> void:
-	print(podzielnastrony(full_text))
 	while char_index < full_text.length() and typing:
 		label.text += full_text[char_index]
 		char_index += 1
@@ -70,15 +76,6 @@ func _type_text() -> void:
 			type_sound_player.play()
 		await get_tree().create_timer(text_speed).timeout
 	typing = false
-
-func podzielnastrony(text):
-	var result = []
-	var lines = text.split("\n")
-	for i in range(0, lines.size(), 2):
-		var page = lines.slice(i, i + 2)
-		result.append(String("\n".join(page)))
-		#print(page)
-	return result
 
 func _unhandled_input(event):
 	if not dialogue_active:

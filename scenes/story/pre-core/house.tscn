@@ -180,7 +180,7 @@ y_sort_enabled = true
 position = Vector2(304, 398)
 script = ExtResource("12_aqtk2")
 typesound = NodePath("AudioStreamPlayer2D")
-pages = Array[String](["czesc stefanie jestem twoim kolega", "czy tez jestes moim kolega?", "tetoo chce abys byl moim kolegom", "*igor alan"])
+pages = Array[String](["czesc stefanie jestem twoim kolega", "czy tez jestes moim kolega?", "tetoo chce abys byl moim kolegom", "*napraw te,jebane, opcje MIZU"])
 portrait_texture = Array[Texture]([ExtResource("7_jkym4"), ExtResource("8_1e2cb"), ExtResource("9_0j0oh"), ExtResource("7_jkym4")])
 
 [node name="Sprite2D" type="Sprite2D" parent="ysorting/teto"]

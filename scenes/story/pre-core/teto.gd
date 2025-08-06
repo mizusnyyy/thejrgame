@@ -26,7 +26,6 @@ func _process(_delta):
 				can_talk = false
 				dialogf(pages[currentpage], portrait_texture[currentpage],typesound)
 				await dialog.dialogue_finished
-				#choosef(["alan", "baran"])
 			currentpage+=1
 		get_tree().change_scene_to_packed(preloadscena)
 			

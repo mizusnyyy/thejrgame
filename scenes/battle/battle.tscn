@@ -734,7 +734,7 @@ autoplay = "default"
 speed_scale = 0.5
 
 [node name="box" type="Sprite2D" parent="."]
-position = Vector2(320, 256)
+position = Vector2(320, 252)
 texture = ExtResource("3_agsc7")
 
 [node name="ColorRect" type="ColorRect" parent="box"]
@@ -773,9 +773,9 @@ shape = SubResource("RectangleShape2D_fisqk")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="box"]
 offset_left = -64.0
-offset_top = 76.0
+offset_top = 71.0
 offset_right = 64.0
-offset_bottom = 92.0
+offset_bottom = 87.0
 texture_under = ExtResource("102_w3xua")
 texture_progress = ExtResource("103_hh7ue")
 script = ExtResource("104_xo5np")

@@ -131,7 +131,7 @@
 [ext_resource type="Texture2D" uid="uid://c8klnsxtho7ov" path="res://assets/sprite/battle/not ui/defend_sel.png" id="120_qk3tf"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="121_21vhs"]
 [ext_resource type="Texture2D" uid="uid://di1583l4g5fvg" path="res://assets/sprite/battle/arrow.png" id="121_drnbg"]
-[ext_resource type="Script" uid="uid://bejsm08vb1b13" path="res://scenes/battle/label.gd" id="122_n25ch"]
+[ext_resource type="Script" uid="uid://dpqvr5jv8jbr8" path="res://scenes/battle/rich_text_label.gd" id="122_n25ch"]
 [ext_resource type="Script" uid="uid://bibjdcqqe6ss8" path="res://scenes/battle/spell.gd" id="123_w54gx"]
 [ext_resource type="Script" uid="uid://j2ey1br0lm7a" path="res://scenes/battle/defend.gd" id="126_21vhs"]
 [ext_resource type="AudioStream" uid="uid://yn4sayk7g01s" path="res://assets/sprite/intro/dzem.wav" id="132_ly5g2"]
@@ -874,13 +874,14 @@ offset_right = 186.0
 offset_bottom = -17.0
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="notui/item/ColorRect"]
+[node name="RichTextLabel" type="RichTextLabel" parent="notui/item/ColorRect"]
 layout_mode = 0
-offset_left = 5.0
-offset_top = 6.33333
-offset_right = 45.0
-offset_bottom = 29.3333
-theme_override_fonts/font = ExtResource("121_21vhs")
+offset_left = 7.66667
+offset_top = 6.0
+offset_right = 120.667
+offset_bottom = 25.0
+theme_override_fonts/normal_font = ExtResource("121_21vhs")
+theme_override_fonts/bold_font = ExtResource("121_21vhs")
 text = "P3d4lski"
 script = ExtResource("122_n25ch")
 

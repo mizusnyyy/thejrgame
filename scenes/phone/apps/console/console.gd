@@ -1,9 +1,9 @@
 extends Node2D
 
-@onready var input_field: LineEdit = $CanvasLayer/Panel/LineEdit
-@onready var output_label: RichTextLabel = $CanvasLayer/Panel/RichTextLabel
-@onready var canvas_layer: CanvasLayer = $CanvasLayer
-@onready var steamhappyemoji = $steamhappy/steamhappy
+@onready var input_field: LineEdit = $console/Panel/LineEdit
+@onready var output_label: RichTextLabel = $console/Panel/RichTextLabel
+@onready var canvas_layer: CanvasLayer = $console
+@onready var steamhappyemoji = $steamhappy
 var initial_text="pablo game console™"
 
 var expression = Expression.new()
@@ -50,7 +50,6 @@ func steamhappy():
 		steamhappyemoji.show()
 
 func _ready():
-	canvas_layer.hide()
 	input_field.text_submitted.connect(_on_text_submitted)
 	register_command("goto_teto", Callable(self, "goto_teto"))
 	register_command("goto_scene", Callable(self, "goto_scene"))
@@ -59,14 +58,6 @@ func _ready():
 	register_command("clear",Callable(self,"clear"))
 	register_command("get_vars", Callable(self, "get_vars"))
 	register_command("steamhappy",Callable(self,"steamhappy"))
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("console"):
-		if canvas_layer.visible==true:
-			canvas_layer.hide()
-		else:
-			canvas_layer.show()
-
-
 
 func register_command(name: String, callback: Callable):
 	custom_commands[name] = callback

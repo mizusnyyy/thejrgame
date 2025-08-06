@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=3 uid="uid://dy8ybbtvnclt7"]
+
+[ext_resource type="Texture2D" uid="uid://cxjg8v51ap1oy" path="res://steamhappy.png" id="1_5md12"]
+[ext_resource type="Script" uid="uid://bw878gwjwl5bw" path="res://scenes/phone/apps/console/console.gd" id="1_u3vgo"]
+[ext_resource type="Script" uid="uid://bk6bdio51usd3" path="res://scenes/ui/panel.gd" id="2_u3vgo"]
+[ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_fvbip"]
+[ext_resource type="Texture2D" uid="uid://e5q4i0heuvg3" path="res://assets/sprite/characters/party/jr/teto_front.png" id="4_jhwlk"]
+[ext_resource type="Texture2D" uid="uid://6kf44nmw8j3i" path="res://assets/sprite/characters/party/jr/teto_side_better.png" id="5_avets"]
+[ext_resource type="Texture2D" uid="uid://cmj27cly056f7" path="res://assets/sprite/characters/party/jr/teto_back.png" id="6_f0vpe"]
+[ext_resource type="Texture2D" uid="uid://bq1mj2osrqcqs" path="res://assets/sprite/characters/party/jr/teto_side.png" id="7_rki12"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xwmki"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_jhwlk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_avets")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f0vpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rki12")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="console" type="Node2D"]
+script = ExtResource("1_u3vgo")
+
+[node name="steamhappy" type="CanvasLayer" parent="."]
+
+[node name="steamhappy" type="Sprite2D" parent="steamhappy"]
+visible = false
+position = Vector2(672, 360)
+scale = Vector2(1, 0.5)
+texture = ExtResource("1_5md12")
+
+[node name="console" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="console"]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 512.0
+offset_bottom = 400.0
+script = ExtResource("2_u3vgo")
+
+[node name="LineEdit" type="LineEdit" parent="console/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0591518
+anchor_top = 0.813988
+anchor_right = 0.297991
+anchor_bottom = 0.813988
+offset_left = 26.5
+offset_top = 22.5
+offset_right = 314.5
+offset_bottom = 62.5
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_fvbip")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="console/Panel"]
+layout_mode = 1
+offset_right = 448.0
+offset_bottom = 296.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_fvbip")
+text = "pablo game console™
+"
+autowrap_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="teeeto" type="AnimatedSprite2D" parent="console/Panel"]
+modulate = Color(1, 1, 1, 0.388235)
+position = Vector2(408, 40)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_xwmki")
+autoplay = "default"
+frame_progress = 0.362494

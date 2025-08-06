@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsg8q0ksmb5lr"]
+
+[ext_resource type="Script" uid="uid://o7onsywlm8iu" path="res://scenes/ui/fs.gd" id="2_nv40g"]
+[ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_7iixm"]
+[ext_resource type="Script" uid="uid://cu1w7aj6lvsam" path="res://scenes/ui/phone.gd" id="4_7iixm"]
+
+[node name="phone" type="Node2D"]
+process_mode = 3
+
+[node name="fs&pause handler" type="Node2D" parent="."]
+script = ExtResource("2_nv40g")
+
+[node name="pause" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="pause"]
+visible = false
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0.784314)
+
+[node name="Label" type="Label" parent="pause/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 132.0
+offset_bottom = 32.0
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("3_7iixm")
+text = "paused :3"
+metadata/_edit_use_anchors_ = true
+
+[node name="phone" type="CanvasLayer" parent="."]
+
+[node name="phone" type="Control" parent="phone"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 128.0
+offset_top = 384.0
+offset_right = 136.0
+offset_bottom = 392.0
+script = ExtResource("4_7iixm")
+
+[node name="Panel" type="Panel" parent="phone/phone"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 336.0
+
+[node name="Control" type="Control" parent="phone/phone/Panel"]
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 64.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="phone/phone/Panel"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0

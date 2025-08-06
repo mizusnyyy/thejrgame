@@ -47,8 +47,7 @@ func _physics_process(delta: float) -> void:
 			anim.play("sidel")
 			anim.stop()
 	move_and_slide()
-
-
+	
 func _on_ready() -> void:
 	await get_tree().create_timer(0.2).timeout
 	global.take_screenshot()

@@ -178,7 +178,7 @@ position = Vector2(304, 398)
 script = ExtResource("12_aqtk2")
 portrait_texture = ExtResource("14_qgspi")
 typesound = NodePath("AudioStreamPlayer2D")
-pages = Array[String](["czesc stefanie jestem twoim kolega", "czy tez jestes moim kolega?", "*igor alan"])
+pages = Array[String](["czesc stefanie jestem twoim kolega", "czy tez jestes moim kolega?", "tetoo chce abys byl moim kolegom", "*igor alan"])
 
 [node name="Sprite2D" type="Sprite2D" parent="ysorting/teto"]
 position = Vector2(0, -11)

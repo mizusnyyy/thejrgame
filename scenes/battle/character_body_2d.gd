@@ -28,9 +28,6 @@ var current_top_index := 0
 var top=false
 var heart
 
-func _ready():
-	add_to_group("player")
-
 func update_soul_position():
 	soul.global_position = buttons[current_index].global_position
 

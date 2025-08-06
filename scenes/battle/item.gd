@@ -8,16 +8,14 @@ var selected = false
 
 func _ready() -> void:
 	info_box.visible = false
-	connect("body_entered", Callable(self, "_on_body_entered"))
-	connect("body_exited", Callable(self, "_on_body_exited"))
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
+	if body.name == "soul":
 		anim.play("select")
 		selected = true
 
 func _on_body_exited(body: Node2D) -> void:
-	if body.is_in_group("player"):
+	if body.name == "soul":
 		anim.play("default")
 		selected = false
 

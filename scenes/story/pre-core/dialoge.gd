@@ -45,16 +45,23 @@ func show_dialogue(text: String, portrait_texture: Texture = null, typesound: Au
 	hide()
 	global.can_move = true
 
-func choose(opt1 = null, opt2 = null, opt3 = null, opt4 = null):
+func choose(options: Array):
 	show()
 	choice.show()
 	choice.can_choose = true
 	global.can_move = false
 
+
+#GDYBY CO ZROBILEM NA DOLE ZE POPROSTU TEXT STARY USTAWIA NA "" A NIE CLEARUJE NWM CZY CI SIE PRZYDA
+
+
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	label.text = opt1 + "\n" + opt2 + "\n" + opt3 + "\n" + opt4 + "\n"
+	for i in range(len(options)):
+		label.text += options[i] + "\n"
+	emit_signal("choice_finished")
 
 func _type_text() -> void:
+	print(podzielnastrony(full_text))
 	while char_index < full_text.length() and typing:
 		label.text += full_text[char_index]
 		char_index += 1
@@ -63,6 +70,15 @@ func _type_text() -> void:
 			type_sound_player.play()
 		await get_tree().create_timer(text_speed).timeout
 	typing = false
+
+func podzielnastrony(text):
+	var result = []
+	var lines = text.split("\n")
+	for i in range(0, lines.size(), 2):
+		var page = lines.slice(i, i + 2)
+		result.append(String("\n".join(page)))
+		#print(page)
+	return result
 
 func _unhandled_input(event):
 	if not dialogue_active:
@@ -74,4 +90,5 @@ func _unhandled_input(event):
 		else:
 			dialogue_active = false
 			hide()
+			label.text = ""
 			emit_signal("dialogue_finished")

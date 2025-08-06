@@ -176,9 +176,9 @@ tile_set = SubResource("TileSet_jkym4")
 y_sort_enabled = true
 position = Vector2(304, 398)
 script = ExtResource("12_aqtk2")
+dialogue_text = "teto teta tita tits gyats."
 portrait_texture = ExtResource("14_qgspi")
 typesound = NodePath("AudioStreamPlayer2D")
-pages = Array[String](["czesc stefanie jestem twoim kolega", "czy tez jestes moim kolega?", "*igor alan"])
 
 [node name="Sprite2D" type="Sprite2D" parent="ysorting/teto"]
 position = Vector2(0, -11)

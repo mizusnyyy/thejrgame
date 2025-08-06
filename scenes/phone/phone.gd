@@ -1,7 +1,7 @@
 extends Control
 
-@onready var app_container: Control = get_node_or_null("Panel/Control")
-@onready var app_list: VBoxContainer = get_node_or_null("Panel/VBoxContainer")
+@onready var app_container: Control = $Panel/Control
+@onready var app_list: VBoxContainer = $Panel/VBoxContainer
 
 var current_app_name: String = ""
 var active: bool = true
@@ -18,7 +18,7 @@ func _ready():
 	visible = false
 
 	if app_container == null or app_list == null:
-		push_error("phone: app_container or app_list not found````")
+		push_error("Phone: app_container or app_list not found!")
 		active = false
 		return
 
@@ -58,11 +58,10 @@ func _hide_phone():
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.set_ease(Tween.EASE_IN)
 	tween.tween_property(self, "position", Vector2(128, 720), 0.25)
-
+	#_clear_app() < do ukrywania apki po wylaczeniu phonea ale narazie hasztaguje bo musze cos naprawic!!!
 	tween.finished.connect(func():
 		visible = false
 		is_animating = false
-		_clear_app()
 	)
 
 func _on_app_button_pressed(app_name: String):

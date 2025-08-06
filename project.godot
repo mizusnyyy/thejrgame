@@ -16,12 +16,11 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [autoload]
 
-phone="*res://scenes/ui/phone.tscn"
 global="*res://globals.gd"
 musicsounds="*res://scenes/randomthings/musicsounds.tscn"
-console="*res://scenes/ui/console.tscn"
-Musicsounds="*res://scenes/randomthings/musicsounds.tscn"
 MenuHandler="*res://scenes/menu/menu_handler.gd"
+phone="*res://scenes/phone/phone.tscn"
+console="*res://scenes/ui/console.gd"
 
 [display]
 

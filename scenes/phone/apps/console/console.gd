@@ -49,6 +49,9 @@ func steamhappy():
 	else:
 		steamhappyemoji.show()
 
+func is_busy() -> bool:
+	return input_field.has_focus()
+
 func _ready():
 	input_field.text_submitted.connect(_on_text_submitted)
 	register_command("goto_teto", Callable(self, "goto_teto"))

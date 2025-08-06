@@ -42,6 +42,7 @@ offset_bottom = 424.0
 script = ExtResource("3_1aovg")
 
 [node name="Panel" type="Panel" parent="phone/Control"]
+layout_mode = 0
 offset_right = 256.0
 offset_bottom = 336.0
 

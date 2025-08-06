@@ -131,7 +131,7 @@
 [ext_resource type="Texture2D" uid="uid://c8klnsxtho7ov" path="res://assets/sprite/battle/not ui/defend_sel.png" id="120_qk3tf"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="121_21vhs"]
 [ext_resource type="Texture2D" uid="uid://di1583l4g5fvg" path="res://assets/sprite/battle/arrow.png" id="121_drnbg"]
-[ext_resource type="Script" uid="uid://dpqvr5jv8jbr8" path="res://scenes/battle/rich_text_label.gd" id="122_n25ch"]
+[ext_resource type="Script" path="res://scenes/battle/rich_text_label.gd" id="122_n25ch"]
 [ext_resource type="Script" uid="uid://bibjdcqqe6ss8" path="res://scenes/battle/spell.gd" id="123_w54gx"]
 [ext_resource type="Script" uid="uid://j2ey1br0lm7a" path="res://scenes/battle/defend.gd" id="126_21vhs"]
 [ext_resource type="AudioStream" uid="uid://yn4sayk7g01s" path="res://assets/sprite/intro/dzem.wav" id="132_ly5g2"]

@@ -10,8 +10,10 @@ var expression = Expression.new()
 var custom_commands = {}
 func goto_scene(path: String):
 	get_tree().change_scene_to_file(path)
+	global.can_move = true
 func goto_teto(path: String):
 	get_tree().change_scene_to_file("res://scenes/story/pre-core/"+path+".tscn")
+	global.can_move = true
 
 func set_var(variable, value):
 	if has_variable(global, variable):

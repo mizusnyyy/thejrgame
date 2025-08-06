@@ -3,11 +3,11 @@ extends Area2D
 var player_in_range := false
 var can_talk := true
 
-@export var portrait_texture: Texture
 @onready var dialog = $"../../CanvasLayer/dialoge"
 @export var preloadscena = preload("res://scenes/battle/battle.tscn")
 @export var typesound = AudioStreamPlayer2D
 @export var pages: Array[String]
+@export var portrait_texture: Array[Texture]
 
 func _on_body_entered(body):
 	if body.name=="player":
@@ -24,7 +24,7 @@ func _process(_delta):
 			#print(pages[currentpage])
 			if not dialog.dialogue_active:
 				can_talk = false
-				dialogf(pages[currentpage], portrait_texture,typesound)
+				dialogf(pages[currentpage], portrait_texture[currentpage],typesound)
 				await dialog.dialogue_finished
 				#choosef(["alan", "baran"])
 			currentpage+=1

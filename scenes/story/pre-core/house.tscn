@@ -1,7 +1,10 @@
-[gd_scene load_steps=27 format=4 uid="uid://bpmn0ng1q8ox"]
+[gd_scene load_steps=30 format=4 uid="uid://bpmn0ng1q8ox"]
 
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_tecch"]
 [ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/player/teto.tscn" id="6_74pxv"]
+[ext_resource type="Texture2D" uid="uid://btgr63nfd64su" path="res://assets/sprite/characters/party/shadow/portrait/shadow1.png" id="7_jkym4"]
+[ext_resource type="Texture2D" uid="uid://bos3nf7ok4jml" path="res://assets/sprite/characters/party/shadow/portrait/shadow2.png" id="8_1e2cb"]
+[ext_resource type="Texture2D" uid="uid://bnxmi0qekyy6d" path="res://assets/sprite/characters/party/shadow/portrait/shadow3.png" id="9_0j0oh"]
 [ext_resource type="Texture2D" uid="uid://b7632vv4ixuwo" path="res://assets/tiles/tilebg.png" id="9_0rrt8"]
 [ext_resource type="Texture2D" uid="uid://blq2libb70yvf" path="res://assets/tiles/tilebarrier.png" id="10_2i8gf"]
 [ext_resource type="Script" uid="uid://ceododdxd8fru" path="res://scenes/story/pre-core/teto.gd" id="12_aqtk2"]
@@ -176,9 +179,9 @@ tile_set = SubResource("TileSet_jkym4")
 y_sort_enabled = true
 position = Vector2(304, 398)
 script = ExtResource("12_aqtk2")
-portrait_texture = ExtResource("14_qgspi")
 typesound = NodePath("AudioStreamPlayer2D")
 pages = Array[String](["czesc stefanie jestem twoim kolega", "czy tez jestes moim kolega?", "tetoo chce abys byl moim kolegom", "*igor alan"])
+portrait_texture = Array[Texture]([ExtResource("7_jkym4"), ExtResource("8_1e2cb"), ExtResource("9_0j0oh"), ExtResource("7_jkym4")])
 
 [node name="Sprite2D" type="Sprite2D" parent="ysorting/teto"]
 position = Vector2(0, -11)

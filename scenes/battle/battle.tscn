@@ -1,4 +1,4 @@
-[gd_scene load_steps=172 format=3 uid="uid://chprno7b2lppf"]
+[gd_scene load_steps=173 format=3 uid="uid://chprno7b2lppf"]
 
 [ext_resource type="Texture2D" uid="uid://b45tvv1w8286c" path="res://assets/sprite/battle/bg/b0001.png" id="2_2ys7f"]
 [ext_resource type="Script" uid="uid://du1pctbd3kbws" path="res://scenes/battle/character_body_2d.gd" id="3_0yh6x"]
@@ -464,6 +464,9 @@ size = Vector2(128.696, 3.47826)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_el03i"]
 size = Vector2(129, 3.47826)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_itpkr"]
+bg_color = Color(1, 1, 1, 1)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_p6ty6"]
 animations = [{
 "frames": [{
@@ -774,20 +777,36 @@ position = Vector2(62.6087, -1.52588e-05)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_fisqk")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="box"]
+[node name="Ghost_bar" type="ProgressBar" parent="box/StaticBody2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = -64.0
-offset_top = 68.0
+offset_top = 69.0
 offset_right = 64.0
-offset_bottom = 88.0
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_itpkr")
+value = 90.0
+show_percentage = false
+
+[node name="main_health_bar" type="TextureProgressBar" parent="box/StaticBody2D"]
+offset_left = -64.0
+offset_top = 68.5
+offset_right = 64.0
+offset_bottom = 88.5
+value = 80.0
 texture_under = ExtResource("102_w3xua")
 texture_progress = ExtResource("103_hh7ue")
 script = ExtResource("104_xo5np")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="box"]
-offset_left = -60.0
-offset_top = 71.0
-offset_right = 60.0
-offset_bottom = 85.0
+[node name="RichTextLabel" type="RichTextLabel" parent="box/StaticBody2D/main_health_bar"]
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 124.0
+offset_bottom = 17.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("121_21vhs")
 text = "67/41"
 scroll_active = false

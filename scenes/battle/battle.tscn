@@ -111,7 +111,7 @@
 [ext_resource type="Script" uid="uid://wdk80rf0xc0y" path="res://scenes/battle/texture_progress_bar.gd" id="104_xo5np"]
 [ext_resource type="Script" uid="uid://bcnmmxb6atgap" path="res://scenes/battle/notui.gd" id="106_el03i"]
 [ext_resource type="Texture2D" uid="uid://f7k0j7os4inn" path="res://assets/sprite/characters/party/jr/pick.png" id="106_ly5g2"]
-[ext_resource type="Script" uid="uid://don4w3ltk8mko" path="res://scenes/battle/rich_text_label1.gd" id="106_wf2x0"]
+[ext_resource type="Script" path="res://scenes/battle/rich_text_label1.gd" id="106_wf2x0"]
 [ext_resource type="Script" uid="uid://csgevnic15t4i" path="res://scenes/battle/left_arrow.gd" id="107_rcqhw"]
 [ext_resource type="Texture2D" uid="uid://b4322pu8xlupw" path="res://assets/sprite/battle/not ui/fight.png" id="109_72b3y"]
 [ext_resource type="Texture2D" uid="uid://d1e1h85rhmu71" path="res://assets/sprite/battle/arrow selected.png" id="109_da7rj"]
@@ -826,7 +826,7 @@ position = Vector2(0, 0.5)
 script = ExtResource("4_pll4o")
 
 [node name="notui" type="Node2D" parent="."]
-position = Vector2(0, -24)
+position = Vector2(0, -32)
 script = ExtResource("106_el03i")
 
 [node name="pick" type="AnimatedSprite2D" parent="notui"]

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-var SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+var SPEED = 150.0
+const JUMP_VELOCITY = -200.0
 var alive = true
 var overlapping_button: Area2D = null
 var direction_choose=0

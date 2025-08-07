@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
-var SPEED = 75.0
-const JUMP_VELOCITY = -200.0
+var SPEED = 150.0
 @onready var anim = get_node("AnimatedSprite2D")
 var lrud = [0,0]
 var directionstop = 0

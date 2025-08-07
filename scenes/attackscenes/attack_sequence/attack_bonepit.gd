@@ -1,5 +1,6 @@
 extends Node2D
 @onready var gloo_scene = preload("res://scenes/attackscenes/bone/bone.tscn")
+@onready var midscreen = get_viewport().get_visible_rect().size.x / 2
 
 func summoned(bullet, soul, speed):
 	global.current_mode=global.mode.BLUE
@@ -25,7 +26,7 @@ func summoned(bullet, soul, speed):
 	startsequence(bullet, soul, 480, true,2)
 	startsequence(bullet, soul, 480, false,2)
 
-func startsequence(bullet, soul, speed, left,size,ylevel=620):
+func startsequence(bullet, soul, speed, left,size,ylevel=310):
 	bullet = instantiateall(gloo_scene)
 	bullet.summoned(bullet,soul, speed, left,size,ylevel)
 	bullet.modulate.a = 0.0

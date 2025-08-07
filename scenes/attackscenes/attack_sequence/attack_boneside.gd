@@ -1,5 +1,6 @@
 extends Node2D
 @onready var gloo_scene = preload("res://scenes/attackscenes/bone/bone.tscn")
+@onready var midscreen = get_viewport().get_visible_rect().size.x / 2
 
 func summoned(bullet, soul, speed):
 	global.current_mode=global.mode.RED
@@ -7,15 +8,15 @@ func summoned(bullet, soul, speed):
 	#await get_tree().create_timer(2.0).timeout
 	#startsequence(bullet, soul, 60, true,50)
 	#await get_tree().create_timer(2.0).timeout
-	startsequence(bullet, soul, 300, true,17,662)
+	startsequence(bullet, soul, 300, true,17,331)
 	await get_tree().create_timer(0.7).timeout
-	startsequence(bullet, soul, 300, false,17,529)
+	startsequence(bullet, soul, 300, false,17,265)
 	await get_tree().create_timer(0.7).timeout
-	startsequence(bullet, soul, 300, true,17,662)#lewonagorze
+	startsequence(bullet, soul, 300, true,17,331)#lewonagorze
 	await get_tree().create_timer(0.7).timeout
-	startsequence(bullet, soul, 300, false,17,529)
+	startsequence(bullet, soul, 300, false,17,265)
 
-func startsequence(bullet, soul, speed, left,size,ylevel=620):
+func startsequence(bullet, soul, speed, left,size,ylevel=320):
 	bullet = instantiateall(gloo_scene)
 	bullet.summoned(bullet,soul, speed, left,size,ylevel)
 	bullet.modulate.a = 0.0

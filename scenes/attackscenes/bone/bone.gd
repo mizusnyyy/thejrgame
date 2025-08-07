@@ -10,6 +10,7 @@ var bonebody = load("res://scenes/attackscenes/bone/bonebody.tscn")
 @onready var spritelast =$Sprite2Dlast
 var inbody=false
 var bluecount = 6
+@onready var midscreen = get_viewport().get_visible_rect().size.x / 2
 
 @onready var player = get_tree().get_root().get_node("/root/fight/soul")
 func _process(delta):
@@ -54,13 +55,13 @@ func getsizepls():
 	return amount
 	
 func summoned(bullet, soul, speed, left, size, ylevel=620):
-	var random = -384
+	var random = randf_range(-midscreen*1/8,midscreen*1/8)
 	if left:
 		random *= -1
 		bullet.direction = Vector2.LEFT
 	else:
 		bullet.direction = Vector2.RIGHT
-	bullet.global_position = Vector2(get_viewport().get_visible_rect().size.x / 2 + random, ylevel)
+	bullet.global_position = Vector2(midscreen + random, ylevel)
 	size(size)
 	amount = size
 	bullet.speed = speed / 2

@@ -1,10 +1,9 @@
-[gd_scene load_steps=172 format=3 uid="uid://chprno7b2lppf"]
+[gd_scene load_steps=178 format=3 uid="uid://chprno7b2lppf"]
 
 [ext_resource type="Texture2D" uid="uid://b45tvv1w8286c" path="res://assets/sprite/battle/bg/b0001.png" id="2_2ys7f"]
 [ext_resource type="Script" uid="uid://du1pctbd3kbws" path="res://scenes/battle/character_body_2d.gd" id="3_0yh6x"]
 [ext_resource type="Texture2D" uid="uid://g8cdod2m8j0o" path="res://assets/sprite/battle/box.png" id="3_agsc7"]
 [ext_resource type="Texture2D" uid="uid://ccul4davfobg4" path="res://assets/sprite/battle/bg/b0002.png" id="3_hsvfv"]
-[ext_resource type="Texture2D" uid="uid://p7lahx6ptxxe" path="res://assets/sprite/battle/heart_red.png" id="3_xd4uy"]
 [ext_resource type="Texture2D" uid="uid://dd7j6ibluftfj" path="res://assets/sprite/battle/bg/b0003.png" id="4_4jor3"]
 [ext_resource type="Script" uid="uid://c4oi6ypdwigjp" path="res://scenes/battle/attack_spawner.gd" id="4_pll4o"]
 [ext_resource type="Texture2D" uid="uid://yld1fiwj35oa" path="res://assets/sprite/battle/bg/b0004.png" id="5_xo0fv"]
@@ -135,13 +134,14 @@
 [ext_resource type="Texture2D" uid="uid://c8klnsxtho7ov" path="res://assets/sprite/battle/not ui/defend_sel.png" id="120_qk3tf"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="121_21vhs"]
 [ext_resource type="Texture2D" uid="uid://di1583l4g5fvg" path="res://assets/sprite/battle/arrow.png" id="121_drnbg"]
-[ext_resource type="Script" uid="uid://dpqvr5jv8jbr8" path="res://scenes/battle/rich_text_label.gd" id="122_n25ch"]
+[ext_resource type="Script" path="res://scenes/battle/rich_text_label.gd" id="122_n25ch"]
 [ext_resource type="Script" uid="uid://bibjdcqqe6ss8" path="res://scenes/battle/spell.gd" id="123_w54gx"]
 [ext_resource type="Script" uid="uid://j2ey1br0lm7a" path="res://scenes/battle/defend.gd" id="126_21vhs"]
 [ext_resource type="AudioStream" uid="uid://yn4sayk7g01s" path="res://assets/sprite/intro/dzem.wav" id="132_ly5g2"]
 [ext_resource type="Texture2D" uid="uid://c2n5lud1gsnrw" path="res://assets/sprite/battle/heart_blue.png" id="135_21vhs"]
 [ext_resource type="Script" uid="uid://bejskw4sl3ymu" path="res://scenes/battle/debug.gd" id="136_w54gx"]
 [ext_resource type="PackedScene" uid="uid://pegs4ep6hjc5" path="res://scenes/attackscenes/bone/bone.tscn" id="137_21vhs"]
+[ext_resource type="Texture2D" uid="uid://jouutgjikwq0" path="res://assets/sprite/battle/hearts.png" id="139_wf2x0"]
 
 [sub_resource type="GDScript" id="GDScript_w54gx"]
 script/source = "extends Node2D
@@ -706,6 +706,30 @@ size = Vector2(26.3333, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agsc7"]
 size = Vector2(12, 12)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hr533"]
+atlas = ExtResource("139_wf2x0")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cqqu"]
+atlas = ExtResource("139_wf2x0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xysor"]
+atlas = ExtResource("139_wf2x0")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ue6uc"]
+atlas = ExtResource("139_wf2x0")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlka0"]
+atlas = ExtResource("139_wf2x0")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlgby"]
+atlas = ExtResource("139_wf2x0")
+region = Rect2(80, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_n25ch"]
 animations = [{
 "frames": [{
@@ -718,7 +742,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_xd4uy")
+"texture": SubResource("AtlasTexture_hr533")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cqqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xysor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ue6uc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlka0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlgby")
 }],
 "loop": false,
 "name": &"red",

@@ -1,33 +1,21 @@
 extends RichTextLabel
 
-@onready var original_scale = scale
-@onready var color_rect = get_parent()
 @onready var notui = $"../../.."
-var hovered = false
-var used = false
+@onready var label = $"."
+@onready var button = $"."
 
-func _ready() -> void:
-	mouse_filter = Control.MOUSE_FILTER_STOP
-	set_process(true)
-	connect("mouse_entered", Callable(self, "_on_mouse_entered"))
-	connect("mouse_exited", Callable(self, "_on_mouse_exited"))
+func _ready():
+	visible=false
+	var dir = DirAccess.open("res://scenes/items")
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			if file_name.ends_with(".tres"):
+				var item = load("res://scenes/items/" + file_name)
+				if item != null:
+					global.add_item(item)
+			file_name = dir.get_next()
 
-func _process(delta: float) -> void:
-	if hovered and not used and Input.is_action_just_pressed("interact"):
-		used = true
-		global.health += 10
-		if global.health > global.maxhealth:
-			global.health = global.maxhealth
-		print("Żresz i zyskujesz 10 hp:", global.health)
-		if is_instance_valid(color_rect):
-			color_rect.visible = false
-		queue_free()
-		notui.enemyturn()
-
-func _on_mouse_entered() -> void:
-	hovered = true
-	scale = original_scale * 1.1
-
-func _on_mouse_exited() -> void:
-	hovered = false
-	scale = original_scale
+	for item in global.inventory:
+		print(item.name, " < name healamount > ", item.heal_amount)

@@ -109,9 +109,9 @@
 [ext_resource type="Texture2D" uid="uid://ccigygdjcafjv" path="res://assets/sprite/battle/progress.png" id="103_hh7ue"]
 [ext_resource type="Texture2D" uid="uid://dscgdvsiak2h1" path="res://assets/sprite/characters/glut/glutbattle.png" id="103_w54gx"]
 [ext_resource type="Script" uid="uid://wdk80rf0xc0y" path="res://scenes/battle/texture_progress_bar.gd" id="104_xo5np"]
-[ext_resource type="Script" uid="uid://c1ogbs487j8j4" path="res://scenes/battle/hp label.gd" id="105_wf2x0"]
 [ext_resource type="Script" uid="uid://bcnmmxb6atgap" path="res://scenes/battle/notui.gd" id="106_el03i"]
 [ext_resource type="Texture2D" uid="uid://f7k0j7os4inn" path="res://assets/sprite/characters/party/jr/pick.png" id="106_ly5g2"]
+[ext_resource type="Script" uid="uid://don4w3ltk8mko" path="res://scenes/battle/rich_text_label1.gd" id="106_wf2x0"]
 [ext_resource type="Script" uid="uid://csgevnic15t4i" path="res://scenes/battle/left_arrow.gd" id="107_rcqhw"]
 [ext_resource type="Texture2D" uid="uid://b4322pu8xlupw" path="res://assets/sprite/battle/not ui/fight.png" id="109_72b3y"]
 [ext_resource type="Texture2D" uid="uid://d1e1h85rhmu71" path="res://assets/sprite/battle/arrow selected.png" id="109_da7rj"]
@@ -135,7 +135,7 @@
 [ext_resource type="Texture2D" uid="uid://c8klnsxtho7ov" path="res://assets/sprite/battle/not ui/defend_sel.png" id="120_qk3tf"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="121_21vhs"]
 [ext_resource type="Texture2D" uid="uid://di1583l4g5fvg" path="res://assets/sprite/battle/arrow.png" id="121_drnbg"]
-[ext_resource type="Script" uid="uid://dpqvr5jv8jbr8" path="res://scenes/battle/item label.gd" id="122_n25ch"]
+[ext_resource type="Script" uid="uid://do5oovkvq5jdo" path="res://scenes/battle/rich_text_label.gd" id="122_n25ch"]
 [ext_resource type="Script" uid="uid://bibjdcqqe6ss8" path="res://scenes/battle/spell.gd" id="123_w54gx"]
 [ext_resource type="Script" uid="uid://j2ey1br0lm7a" path="res://scenes/battle/defend.gd" id="126_21vhs"]
 [ext_resource type="AudioStream" uid="uid://yn4sayk7g01s" path="res://assets/sprite/intro/dzem.wav" id="132_ly5g2"]
@@ -740,7 +740,7 @@ autoplay = "default"
 speed_scale = 0.5
 
 [node name="box" type="Sprite2D" parent="."]
-position = Vector2(320, 256)
+position = Vector2(320, 255.5)
 texture = ExtResource("3_agsc7")
 
 [node name="ColorRect" type="ColorRect" parent="box"]
@@ -782,7 +782,6 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -64.0
-<<<<<<< HEAD
 offset_top = 69.0
 offset_right = 64.0
 offset_bottom = 89.0
@@ -798,32 +797,22 @@ offset_top = 68.5
 offset_right = 64.0
 offset_bottom = 88.5
 value = 80.0
-=======
-offset_top = -96.0
-offset_right = 64.0
-offset_bottom = -76.0
->>>>>>> f5fb437b369cf8eafc55677cf2e996523a54a019
 texture_under = ExtResource("102_w3xua")
 texture_progress = ExtResource("103_hh7ue")
 script = ExtResource("104_xo5np")
 
-<<<<<<< HEAD
 [node name="RichTextLabel" type="RichTextLabel" parent="box/StaticBody2D/main_health_bar"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 3.0
 offset_right = 124.0
 offset_bottom = 17.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-=======
-[node name="RichTextLabel" type="RichTextLabel" parent="box"]
-offset_left = -60.0
-offset_top = -92.0
-offset_right = 60.0
-offset_bottom = -72.0
->>>>>>> f5fb437b369cf8eafc55677cf2e996523a54a019
 theme_override_fonts/normal_font = ExtResource("121_21vhs")
+text = "67/41"
 scroll_active = false
-script = ExtResource("105_wf2x0")
+horizontal_alignment = 1
+script = ExtResource("106_wf2x0")
 
 [node name="enemy" type="Node2D" parent="."]
 
@@ -837,7 +826,7 @@ position = Vector2(0, 0.5)
 script = ExtResource("4_pll4o")
 
 [node name="notui" type="Node2D" parent="."]
-position = Vector2(0, -32)
+position = Vector2(0, -24)
 script = ExtResource("106_el03i")
 
 [node name="pick" type="AnimatedSprite2D" parent="notui"]
@@ -918,19 +907,21 @@ script = ExtResource("117_ielyi")
 sprite_frames = SubResource("SpriteFrames_ielyi")
 autoplay = "default"
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="notui/item"]
+position = Vector2(1.0252e-05, -2.03848e-05)
+shape = SubResource("RectangleShape2D_kdiof")
+
 [node name="RichTextLabel" type="RichTextLabel" parent="notui/item"]
 offset_left = -138.667
 offset_top = -144.0
 offset_right = 170.333
 offset_bottom = 20.0
 theme_override_fonts/normal_font = ExtResource("121_21vhs")
+theme_override_fonts/bold_font = ExtResource("121_21vhs")
 bbcode_enabled = true
 text = "itemki DONT TOUCH!!! 😡😡😡😡😡😡😡😡😡😡😡😡"
+scroll_active = false
 script = ExtResource("122_n25ch")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="notui/item"]
-position = Vector2(1.0252e-05, -2.03848e-05)
-shape = SubResource("RectangleShape2D_kdiof")
 
 [node name="mercy" type="Area2D" parent="notui"]
 position = Vector2(336, 344)

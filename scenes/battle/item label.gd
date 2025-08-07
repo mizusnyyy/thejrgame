@@ -18,10 +18,4 @@ func _ready():
 			file_name = dir.get_next()
 
 	for item in global.inventory:
-		print(item.name, " - ", item.heal_amount)
-
-func _process(delta: float) -> void:
-	var text = ""
-	for item in global.inventory:
-		text += item.name + "\n"
-		label.text=text
+		print(item.name, " < name healamount > ", item.heal_amount)

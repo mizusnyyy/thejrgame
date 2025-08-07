@@ -735,7 +735,6 @@ animations = [{
 }]
 
 [node name="fight" type="Node2D"]
-scale = Vector2(2, 2)
 script = SubResource("GDScript_w54gx")
 
 [node name="bg" type="AnimatedSprite2D" parent="."]

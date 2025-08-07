@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 	if selected and global.current_state == global.state.PLAYER_TURN and Input.is_action_just_pressed("interact") and visible:
 		selected = false
 
-		dmg.global_position = Vector2(randf_range(450, 800), randf_range(125, 250))
+		dmg.global_position = Vector2(randf_range(224, 416), randf_range(64, 128))
 		if dmg.global_position.x > 640:
 			dmg.global_rotation = randf_range(0, -0.5)
 		else:

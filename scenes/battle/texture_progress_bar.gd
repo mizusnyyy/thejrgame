@@ -1,6 +1,5 @@
-extends TextureProgressBar
+extends ProgressBar
 @onready var hp_bar = $"."
-@onready var timer = $"."
 @onready var ghost_bar = $"../Ghost_bar"
 
 
@@ -19,5 +18,14 @@ func _process(delta: float) -> void:
 		ghost_bar.value = value
 	if abs(ghost_bar.value - value) < 1.0:
 		ghost_bar.value = value
+		
+	if global.health > 50:
+		modulate = Color("green")
+	if global.health <= 50:
+		modulate = Color("yellow")  
+	if global.health <= 20:
+		modulate = Color("red")
+		
+		
 	
 	

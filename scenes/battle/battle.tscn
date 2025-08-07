@@ -104,7 +104,9 @@
 [ext_resource type="Texture2D" uid="uid://ehf6sq83s60h" path="res://assets/sprite/battle/bg/b0098.png" id="99_s8a08"]
 [ext_resource type="Texture2D" uid="uid://ygndui1q364y" path="res://assets/sprite/battle/bg/b0099.png" id="100_jucj5"]
 [ext_resource type="Texture2D" uid="uid://nciyms0xvnjb" path="res://assets/sprite/battle/bg/b0100.png" id="101_0us13"]
+[ext_resource type="Texture2D" uid="uid://dy60vc61ra17" path="res://assets/sprite/battle/under.png" id="102_w3xua"]
 [ext_resource type="Texture2D" uid="uid://dscgdvsiak2h1" path="res://assets/sprite/characters/glut/glutbattle.png" id="103_w54gx"]
+[ext_resource type="Texture2D" uid="uid://bqiw186ru8o73" path="res://assets/sprite/battle/proggress_background.png" id="103_wf2x0"]
 [ext_resource type="Script" uid="uid://wdk80rf0xc0y" path="res://scenes/battle/texture_progress_bar.gd" id="104_xo5np"]
 [ext_resource type="Script" uid="uid://bcnmmxb6atgap" path="res://scenes/battle/notui.gd" id="106_el03i"]
 [ext_resource type="Texture2D" uid="uid://f7k0j7os4inn" path="res://assets/sprite/characters/party/jr/pick.png" id="106_ly5g2"]
@@ -465,10 +467,6 @@ size = Vector2(129, 3.47826)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_itpkr"]
 bg_color = Color(1, 1, 1, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hh7ue"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xo5np"]
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_p6ty6"]
 animations = [{
 "frames": [{
@@ -788,22 +786,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -64.0
 offset_top = 70.0
-offset_right = 64.0
-offset_bottom = 90.0
+offset_right = 63.0
+offset_bottom = 89.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/fill = SubResource("StyleBoxFlat_itpkr")
 value = 100.0
 show_percentage = false
 
-[node name="main_health_bar" type="ProgressBar" parent="box/StaticBody2D"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="box/StaticBody2D"]
 offset_left = -64.0
 offset_top = 70.0
 offset_right = 64.0
 offset_bottom = 90.0
-theme_override_styles/background = SubResource("StyleBoxFlat_hh7ue")
-theme_override_styles/fill = SubResource("StyleBoxFlat_xo5np")
-show_percentage = false
+texture_under = ExtResource("102_w3xua")
+texture_progress = ExtResource("103_wf2x0")
 script = ExtResource("104_xo5np")
 
 [node name="health_indicator_text" type="RichTextLabel" parent="box/StaticBody2D"]

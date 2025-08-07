@@ -17,7 +17,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name == "soul":
 		anim.play("select")
 		selected = true
-		soul.SPEED=150
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "soul":

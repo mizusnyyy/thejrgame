@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://jxpo5xgkhpos"]
+[gd_scene load_steps=12 format=3 uid="uid://jxpo5xgkhpos"]
 
 [ext_resource type="Script" uid="uid://dp6bgu4j6w5ly" path="res://scenes/story/pre-core/dialoge.gd" id="1_0xy2d"]
 [ext_resource type="Texture2D" uid="uid://dunbchuq6bjn6" path="res://assets/dialogue/text.png" id="2_ivdui"]
@@ -19,6 +19,18 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0gfoe"]
+size = Vector2(3.2, 76.8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xy2d"]
+size = Vector2(3.2, 76.8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivdui"]
+size = Vector2(285.2, 3.59999)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k308d"]
+size = Vector2(285.2, 3.60001)
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -89,3 +101,25 @@ shape = SubResource("RectangleShape2D_b6qe5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="dialoge/choice/indicator"]
 sprite_frames = SubResource("SpriteFrames_aqtk2")
 autoplay = "default"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="dialoge"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dialoge/StaticBody2D"]
+position = Vector2(4.8, 41.6)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_0gfoe")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="dialoge/StaticBody2D"]
+position = Vector2(292.8, 41.6)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_0xy2d")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="dialoge/StaticBody2D"]
+position = Vector2(148.6, 5)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ivdui")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="dialoge/StaticBody2D"]
+position = Vector2(148.6, 78.2)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_k308d")

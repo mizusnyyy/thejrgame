@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://bhq1r07svu2tk"]
+
+[ext_resource type="Script" uid="uid://cilw7dv23nuv5" path="res://scenes/items/item.gd" id="1_ig0bv"]
+
+[resource]
+script = ExtResource("1_ig0bv")
+name = "janekitem"
+heal_amount = 10

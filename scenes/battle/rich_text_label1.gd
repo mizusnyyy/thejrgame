@@ -1,5 +1,5 @@
 extends RichTextLabel
-@onready var hp_bar = $"../main_health_bar" 
+@onready var hp_bar = $"../TextureProgressBar"
 
 func _process(delta: float) -> void:
 	hp_bar.value = global.health

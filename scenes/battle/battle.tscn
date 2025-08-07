@@ -135,7 +135,7 @@
 [ext_resource type="Texture2D" uid="uid://c8klnsxtho7ov" path="res://assets/sprite/battle/not ui/defend_sel.png" id="120_qk3tf"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="121_21vhs"]
 [ext_resource type="Texture2D" uid="uid://di1583l4g5fvg" path="res://assets/sprite/battle/arrow.png" id="121_drnbg"]
-[ext_resource type="Script" path="res://scenes/battle/rich_text_label.gd" id="122_n25ch"]
+[ext_resource type="Script" uid="uid://dpqvr5jv8jbr8" path="res://scenes/battle/rich_text_label.gd" id="122_n25ch"]
 [ext_resource type="Script" uid="uid://bibjdcqqe6ss8" path="res://scenes/battle/spell.gd" id="123_w54gx"]
 [ext_resource type="Script" uid="uid://j2ey1br0lm7a" path="res://scenes/battle/defend.gd" id="126_21vhs"]
 [ext_resource type="AudioStream" uid="uid://yn4sayk7g01s" path="res://assets/sprite/intro/dzem.wav" id="132_ly5g2"]
@@ -737,7 +737,7 @@ autoplay = "default"
 speed_scale = 0.5
 
 [node name="box" type="Sprite2D" parent="."]
-position = Vector2(320, 256)
+position = Vector2(320, 255.5)
 texture = ExtResource("3_agsc7")
 
 [node name="ColorRect" type="ColorRect" parent="box"]
@@ -776,20 +776,22 @@ shape = SubResource("RectangleShape2D_fisqk")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="box"]
 offset_left = -64.0
-offset_top = -96.0
+offset_top = 68.0
 offset_right = 64.0
-offset_bottom = -76.0
+offset_bottom = 88.0
 texture_under = ExtResource("102_w3xua")
 texture_progress = ExtResource("103_hh7ue")
 script = ExtResource("104_xo5np")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="box"]
 offset_left = -60.0
-offset_top = -92.0
+offset_top = 71.0
 offset_right = 60.0
-offset_bottom = -72.0
+offset_bottom = 85.0
 theme_override_fonts/normal_font = ExtResource("121_21vhs")
+text = "67/41"
 scroll_active = false
+horizontal_alignment = 1
 script = ExtResource("105_wf2x0")
 
 [node name="enemy" type="Node2D" parent="."]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bf0wggc601088"]
 
 [ext_resource type="Script" uid="uid://o7onsywlm8iu" path="res://scenes/ui/fs.gd" id="2_nv40g"]
-[ext_resource type="Script" path="res://scenes/phone/phone.gd" id="3_1aovg"]
+[ext_resource type="Script" uid="uid://bi78cs6n8wl7t" path="res://scenes/phone/phone.gd" id="3_1aovg"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_7iixm"]
 
 [node name="phone" type="Node2D"]

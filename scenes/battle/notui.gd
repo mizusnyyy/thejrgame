@@ -33,7 +33,7 @@ func enemyturn():
 	boxcentersizetween.tween_property(
 		box, 
 		"position",          # <- tylko oś X
-		Vector2(320, 252),                # końcowa wartość skali X
+		Vector2(320, 256),                # końcowa wartość skali X
 		0.5                 # czas trwania w sekundach
 	)
 	emit_signal("enemy_turn")
@@ -48,7 +48,7 @@ func playerturn():
 	boxdowntween.tween_property(
 		box, 
 		"position",          # <- tylko oś X
-		Vector2(320, 272),        		        # końcowa wartość skali X
+		Vector2(320, 264),        		        # końcowa wartość skali X
 		0.5                 # czas trwania w sekundach
 	)
 	

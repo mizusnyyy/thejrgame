@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_ig0bv")
 name = "janekitem"
-heal_amount = 123456
+heal_amount = 10

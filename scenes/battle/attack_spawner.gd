@@ -22,6 +22,7 @@ func nextturn():
 		attack()
 		await get_tree().create_timer(2.0).timeout
 	notui.playerturn()
+	global.current_mode=global.mode.RED
 	runda+=1
 	print(runda)
 	await notui.enemy_turn

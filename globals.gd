@@ -25,7 +25,7 @@ func remove_item(item: Item):
 func use_item(index: int, target):
 	var item = inventory[index]
 	if item.heal_amount > 0:
-		global.health+=item.heal_amount
+		global.health=min(global.health+item.heal_amount,global.maxhealth)
 	if item.is_consumable:
 		inventory.remove_at(index)
 
@@ -38,9 +38,8 @@ func take_screenshot():
 	var dir = DirAccess.open("user://")
 	if not dir.dir_exists("screens"):
 		dir.make_dir("screens")
-		
+
 	var err = image.save_png(path)
 
 func soultakedamage(body, dmg):
 		body.take_damage(dmg)
-		

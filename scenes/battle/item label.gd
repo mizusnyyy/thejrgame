@@ -2,7 +2,7 @@ extends RichTextLabel
 
 @onready var notui = $"../../.."
 @onready var label = $"."  # niepotrzebne, można używać self
-@onready var button = $".."
+@onready var button = $"."
 
 func _ready():
 	visible=false
@@ -24,8 +24,4 @@ func _process(delta: float) -> void:
 	var text = ""
 	for item in global.inventory:
 		text += item.name + "\n"
-	await button.show_items
-	visible=true
-	label.text = text
-	await button.hide_items
-	visible=false
+		label.text=text

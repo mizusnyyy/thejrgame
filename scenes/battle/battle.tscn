@@ -108,8 +108,8 @@
 [ext_resource type="Texture2D" uid="uid://dy60vc61ra17" path="res://assets/sprite/battle/under.png" id="102_w3xua"]
 [ext_resource type="Texture2D" uid="uid://ccigygdjcafjv" path="res://assets/sprite/battle/progress.png" id="103_hh7ue"]
 [ext_resource type="Texture2D" uid="uid://dscgdvsiak2h1" path="res://assets/sprite/characters/glut/glutbattle.png" id="103_w54gx"]
-[ext_resource type="Script" path="res://scenes/battle/texture_progress_bar.gd" id="104_xo5np"]
-[ext_resource type="Script" uid="uid://c1ogbs487j8j4" path="res://scenes/battle/rich_text_label1.gd" id="105_wf2x0"]
+[ext_resource type="Script" uid="uid://wdk80rf0xc0y" path="res://scenes/battle/texture_progress_bar.gd" id="104_xo5np"]
+[ext_resource type="Script" uid="uid://c1ogbs487j8j4" path="res://scenes/battle/hp label.gd" id="105_wf2x0"]
 [ext_resource type="Script" uid="uid://bcnmmxb6atgap" path="res://scenes/battle/notui.gd" id="106_el03i"]
 [ext_resource type="Texture2D" uid="uid://f7k0j7os4inn" path="res://assets/sprite/characters/party/jr/pick.png" id="106_ly5g2"]
 [ext_resource type="Script" uid="uid://csgevnic15t4i" path="res://scenes/battle/left_arrow.gd" id="107_rcqhw"]
@@ -135,7 +135,7 @@
 [ext_resource type="Texture2D" uid="uid://c8klnsxtho7ov" path="res://assets/sprite/battle/not ui/defend_sel.png" id="120_qk3tf"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="121_21vhs"]
 [ext_resource type="Texture2D" uid="uid://di1583l4g5fvg" path="res://assets/sprite/battle/arrow.png" id="121_drnbg"]
-[ext_resource type="Script" uid="uid://dpqvr5jv8jbr8" path="res://scenes/battle/rich_text_label.gd" id="122_n25ch"]
+[ext_resource type="Script" uid="uid://dpqvr5jv8jbr8" path="res://scenes/battle/item label.gd" id="122_n25ch"]
 [ext_resource type="Script" uid="uid://bibjdcqqe6ss8" path="res://scenes/battle/spell.gd" id="123_w54gx"]
 [ext_resource type="Script" uid="uid://j2ey1br0lm7a" path="res://scenes/battle/defend.gd" id="126_21vhs"]
 [ext_resource type="AudioStream" uid="uid://yn4sayk7g01s" path="res://assets/sprite/intro/dzem.wav" id="132_ly5g2"]
@@ -804,7 +804,7 @@ position = Vector2(0, 0.5)
 script = ExtResource("4_pll4o")
 
 [node name="notui" type="Node2D" parent="."]
-position = Vector2(0, -24)
+position = Vector2(0, -28)
 script = ExtResource("106_el03i")
 
 [node name="pick" type="AnimatedSprite2D" parent="notui"]
@@ -889,22 +889,15 @@ autoplay = "default"
 position = Vector2(1.0252e-05, -2.03848e-05)
 shape = SubResource("RectangleShape2D_kdiof")
 
-[node name="ColorRect" type="ColorRect" parent="notui/item"]
-offset_left = -143.0
-offset_top = -146.0
-offset_right = 186.0
-offset_bottom = -17.0
-color = Color(0, 0, 0, 1)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="notui/item/ColorRect"]
-layout_mode = 0
-offset_left = 7.66667
-offset_top = 6.0
-offset_right = 120.667
-offset_bottom = 25.0
+[node name="RichTextLabel" type="RichTextLabel" parent="notui/item"]
+offset_left = -135.0
+offset_top = -140.0
+offset_right = 176.0
+offset_bottom = -11.0
 theme_override_fonts/normal_font = ExtResource("121_21vhs")
 theme_override_fonts/bold_font = ExtResource("121_21vhs")
-text = "P3d4lski"
+bbcode_enabled = true
+text = "itemki tutaj som"
 script = ExtResource("122_n25ch")
 
 [node name="mercy" type="Area2D" parent="notui"]

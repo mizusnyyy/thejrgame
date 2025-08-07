@@ -16,19 +16,18 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [autoload]
 
-console="*res://scenes/ui/console.gd"
 global="*res://globals.gd"
-Musicsounds="*res://scenes/randomthings/musicsounds.tscn"
-phone="*res://scenes/phone/phone.tscn"
-MenuHandler="*res://scenes/menu/menu_handler.gd"
 musicsounds="*res://scenes/randomthings/musicsounds.tscn"
+MenuHandler="*res://scenes/menu/menu_handler.gd"
+phone="*res://scenes/phone/phone.tscn"
+console="*res://scenes/ui/console.gd"
+Musicsounds="*res://scenes/randomthings/musicsounds.tscn"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 
 [global_group]
 

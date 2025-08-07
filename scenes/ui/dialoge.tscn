@@ -106,20 +106,16 @@ autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dialoge/StaticBody2D"]
 position = Vector2(4.8, 41.6)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0gfoe")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="dialoge/StaticBody2D"]
 position = Vector2(292.8, 41.6)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0xy2d")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="dialoge/StaticBody2D"]
 position = Vector2(148.6, 5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ivdui")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="dialoge/StaticBody2D"]
 position = Vector2(148.6, 78.2)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_k308d")

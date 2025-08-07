@@ -12,6 +12,24 @@ var can_move = true
 var mercy=0
 var photoid = 0
 var playit = false
+
+var items=[""]
+var inventory: Array[Item] = []
+
+func add_item(item: Item):
+	inventory.append(item)
+
+func remove_item(item: Item):
+	inventory.erase(item)
+
+func use_item(index: int, target):
+	var item = inventory[index]
+	if item.heal_amount > 0:
+		global.health+=item.heal_amount
+	if item.is_consumable:
+		inventory.remove_at(index)
+
+
 func take_screenshot():
 	var image: Image = get_viewport().get_texture().get_image()
 	photoid+=1

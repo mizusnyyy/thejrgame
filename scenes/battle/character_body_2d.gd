@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-var SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+var SPEED = 150.0
+const JUMP_VELOCITY = -300
 var alive = true
 var overlapping_button: Area2D = null
 var direction_choose=0
@@ -66,7 +66,7 @@ func soul_is_alive():
 	
 func _physics_process(delta: float) -> void:
 	if alive and global.current_mode == global.mode.RED:
-		sprite.play("red")
+		sprite.play("jack")
 		var directionlr := Input.get_axis("left", "right")
 		var directionud := Input.get_axis("up", "down")
 		var direction := Vector2(directionlr, directionud)

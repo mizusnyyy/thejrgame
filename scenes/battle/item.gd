@@ -17,7 +17,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name == "soul":
 		anim.play("select")
 		selected = true
-		soul.SPEED=150
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "soul":
@@ -25,7 +24,6 @@ func _on_body_exited(body: Node2D) -> void:
 		selected = false
 		interacting = false
 		label.visible = false
-		soul.SPEED=300
 func _process(_delta: float) -> void:
 	if selected and global.current_state == global.state.PLAYER_TURN:
 		if interacting:

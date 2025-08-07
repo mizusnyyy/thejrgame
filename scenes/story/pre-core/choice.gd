@@ -1,8 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 150.0
 var can_choose = false
 func _ready():
 	hide()

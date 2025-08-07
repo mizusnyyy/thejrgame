@@ -33,14 +33,18 @@ animations = [{
 script = ExtResource("1_u3vgo")
 
 [node name="steamhappy" type="CanvasLayer" parent="."]
+visible = false
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
 
 [node name="steamhappy" type="Sprite2D" parent="steamhappy"]
-visible = false
 position = Vector2(672, 360)
 scale = Vector2(1, 0.5)
 texture = ExtResource("1_5md12")
 
 [node name="console" type="CanvasLayer" parent="."]
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
 
 [node name="Panel" type="Panel" parent="console"]
 anchors_preset = -1
@@ -48,10 +52,10 @@ anchor_left = 0.1
 anchor_top = 0.533
 anchor_right = 0.1
 anchor_bottom = 0.533
-offset_left = 640.0
-offset_top = -319.76
-offset_right = 1088.0
-offset_bottom = 0.23996
+offset_left = 704.0
+offset_top = -143.88
+offset_right = 1152.0
+offset_bottom = 176.12
 script = ExtResource("2_u3vgo")
 metadata/_edit_use_anchors_ = true
 

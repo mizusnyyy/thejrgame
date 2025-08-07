@@ -41,7 +41,6 @@ func _update_style(health_value: float) -> void:
 	else:
 		color = "red"
 
-	# jeszcze debug — który kolor wybrano
 
 	# zabezpieczenie: sprawdź czy tekstura istnieje
 	if not textures.has(color) or textures[color] == null:

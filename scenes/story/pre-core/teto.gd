@@ -25,7 +25,7 @@ func _process(_delta):
 			if not dialog.dialogue_active:
 				can_talk = false
 				dialogf(pages[currentpage], portrait_texture[currentpage],typesound)
-				await dialog.dialogue_finisheds
+				await dialog.dialogue_finished
 			currentpage+=1
 		get_tree().change_scene_to_packed(preloadscena)
 

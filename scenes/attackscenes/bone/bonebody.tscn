@@ -8,6 +8,7 @@ priority = 1
 script = ExtResource("1_jx2gg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
 texture = ExtResource("1_5nh5k")
 region_enabled = true
 region_rect = Rect2(19, 13, 3, 3)

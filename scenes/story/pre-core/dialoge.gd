@@ -44,7 +44,6 @@ func show_dialogue(text: String, portrait_texture: Texture = null, typesound: Au
 		portrait.visible = true
 	else:
 		portrait.visible = false
-
 	show()
 	emit_signal("dialogue_started")
 	_type_text()
@@ -58,9 +57,7 @@ func choose(options: Array):
 	choice.can_choose = true
 	global.can_move = false
 
-
-#GDYBY CO ZROBILEM NA DOLE ZE POPROSTU TEXT STARY USTAWIA NA "" A NIE CLEARUJE NWM CZY CI SIE PRZYDA
-
+	# GDYBY CO ZROBILEM NA DOLE ZE POPROSTU TEXT STARY USTAWIA NA "" A NIE CLEARUJE NWM CZY CI SIE PRZYDA
 
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	for i in range(len(options)):

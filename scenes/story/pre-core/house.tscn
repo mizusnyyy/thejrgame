@@ -197,10 +197,10 @@ shape = SubResource("RectangleShape2D_2i8gf")
 stream = ExtResource("13_0j0oh")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ysorting/teto"]
+position = Vector2(0, 23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/teto/StaticBody2D"]
 z_index = 1000
-position = Vector2(-1, 18)
 shape = SubResource("RectangleShape2D_510yu")
 
 [node name="debug" type="Node2D" parent="."]

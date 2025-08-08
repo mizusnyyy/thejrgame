@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://dqvdt71w2ek83"]
+[gd_scene load_steps=46 format=4 uid="uid://dqvdt71w2ek83"]
 
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_pdshq"]
 [ext_resource type="Texture2D" uid="uid://bnt6ubwr7q3rk" path="res://assets/tiles/coreroom/tilecoreroom.png" id="3_r2r0d"]
@@ -14,6 +14,7 @@
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="12_f85h6"]
 [ext_resource type="Texture2D" uid="uid://dmgjeb7lyxop" path="res://assets/tiles/animations/torchanimation.png" id="13_v3mb4"]
 [ext_resource type="Texture2D" uid="uid://ca3mtvmv4143n" path="res://assets/tiles/animations/torchstand.png" id="14_wkayd"]
+[ext_resource type="PackedScene" uid="uid://csy882se6ixne" path="res://scenes/story/core/core.tscn" id="15_o7yvw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wkayd"]
 texture = ExtResource("3_r2r0d")
@@ -682,6 +683,10 @@ position = Vector2(60, 0)
 scale = Vector2(-2, 2)
 sprite_frames = SubResource("SpriteFrames_3sy6q")
 autoplay = "default"
+
+[node name="Node2D" parent="." instance=ExtResource("15_o7yvw")]
+position = Vector2(0, -1420)
+scale = Vector2(2, 2)
 
 [connection signal="body_entered" from="quickchange" to="quickchange" method="_on_body_entered"]
 

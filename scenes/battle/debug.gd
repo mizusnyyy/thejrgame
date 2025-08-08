@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 		
 		instance = gloo_scene.instantiate()
 		add_child(instance)
-		instance.summoned(instance, soul, 0, true, size, 570)
+		instance.summoned(instance, soul, 0, true, size)
 
 	if Input.is_action_just_pressed("debug.bone.y.up") and instance:
 		instance.global_position.y -= 1

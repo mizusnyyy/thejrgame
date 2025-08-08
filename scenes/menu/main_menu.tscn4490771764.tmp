@@ -1,0 +1,100 @@
+[gd_scene load_steps=16 format=3 uid="uid://nboteo3u85ie"]
+
+[ext_resource type="Texture2D" uid="uid://jv1718wjnql3" path="res://assets/sprite/menu_sprites/JACKTERMINATION.png" id="1_prbor"]
+[ext_resource type="Texture2D" uid="uid://ce7wmmgu7fcmx" path="res://assets/sprite/menu_sprites/GUNTERMINATION.png" id="2_27h4x"]
+[ext_resource type="Texture2D" uid="uid://bn22bqsxe1f7k" path="res://assets/sprite/menu_sprites/Graj_button.png" id="3_gdhp0"]
+[ext_resource type="Texture2D" uid="uid://baloco7gyq3gc" path="res://assets/sprite/menu_sprites/Graj_button_pressed.png" id="4_pstia"]
+[ext_resource type="Texture2D" uid="uid://cor7arbjxl1x6" path="res://assets/sprite/menu_sprites/Graj_button_hover.png" id="5_41tvm"]
+[ext_resource type="Script" uid="uid://de5tb4gmynggc" path="res://scenes/menu/graj_button.gd" id="6_vxdmp"]
+[ext_resource type="Texture2D" uid="uid://bx5p7r45rwuv5" path="res://assets/sprite/menu_sprites/ustawienia_button.png" id="7_3h20m"]
+[ext_resource type="Texture2D" uid="uid://d08j4djf3xoru" path="res://assets/sprite/menu_sprites/ustawienia_button_pressed.png" id="8_uaj4g"]
+[ext_resource type="Texture2D" uid="uid://3maxnqwog80y" path="res://assets/sprite/menu_sprites/ustawienia_button_hover.png" id="9_si58d"]
+[ext_resource type="Script" uid="uid://dsupf5ybexf20" path="res://scenes/menu/ustawienia_button.gd" id="10_anexq"]
+[ext_resource type="Texture2D" uid="uid://b12r1m8mqfy8d" path="res://assets/sprite/menu_sprites/wyjscie_button.png" id="11_qvxhw"]
+[ext_resource type="Texture2D" uid="uid://be31c1onbd2af" path="res://assets/sprite/menu_sprites/wyjscie_button_pressed.png" id="12_do53f"]
+[ext_resource type="Texture2D" uid="uid://buomb0qagpgw0" path="res://assets/sprite/menu_sprites/wyjscie_button_hover.png" id="13_1bw8o"]
+[ext_resource type="Script" uid="uid://b5hys6bj86dfj" path="res://scenes/menu/wyjscie_button.gd" id="14_q78k2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0o4t1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_prbor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_27h4x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.25
+}]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Control/Panel"]
+modulate = Color(0.590441, 0.590441, 0.590441, 1)
+position = Vector2(238, 177)
+scale = Vector2(2.9, 2.175)
+sprite_frames = SubResource("SpriteFrames_0o4t1")
+autoplay = "default"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/Panel"]
+layout_mode = 0
+offset_left = 937.0
+offset_top = -5.0
+offset_right = 1278.0
+offset_bottom = 721.0
+color = Color(0, 0, 0, 1)
+
+[node name="graj_button" type="TextureButton" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 112.0
+offset_right = 704.0
+offset_bottom = 176.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("3_gdhp0")
+texture_pressed = ExtResource("4_pstia")
+texture_hover = ExtResource("5_41tvm")
+script = ExtResource("6_vxdmp")
+
+[node name="ustawienia_button" type="TextureButton" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 176.0
+offset_right = 704.0
+offset_bottom = 240.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("7_3h20m")
+texture_pressed = ExtResource("8_uaj4g")
+texture_hover = ExtResource("9_si58d")
+script = ExtResource("10_anexq")
+
+[node name="wyjscie_button" type="TextureButton" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 248.0
+offset_right = 704.0
+offset_bottom = 312.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("11_qvxhw")
+texture_pressed = ExtResource("12_do53f")
+texture_hover = ExtResource("13_1bw8o")
+script = ExtResource("14_q78k2")
+
+[connection signal="pressed" from="CanvasLayer/Control/graj_button" to="CanvasLayer/Control/graj_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ustawienia_button" to="CanvasLayer/Control/ustawienia_button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/wyjscie_button" to="CanvasLayer/Control/wyjscie_button" method="_on_pressed"]

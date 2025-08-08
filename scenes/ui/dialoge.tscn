@@ -101,8 +101,7 @@ theme_override_constants/line_separation = 1
 theme_override_fonts/normal_font = ExtResource("3_k308d")
 bbcode_enabled = true
 text = "pablo games og
-iii
-AAAaaag"
+"
 scroll_active = false
 autowrap_mode = 2
 tab_size = 3
@@ -112,6 +111,7 @@ position = Vector2(150, 38.1667)
 scale = Vector2(0.8, 0.8)
 
 [node name="indicator" type="CharacterBody2D" parent="dialoge/choice"]
+position = Vector2(-105, -15.2084)
 script = ExtResource("5_io7n7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dialoge/choice/indicator"]

@@ -18,7 +18,6 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 
 global="*res://globals.gd"
 musicsounds="*res://scenes/randomthings/musicsounds.tscn"
-MenuHandler="*res://scenes/menu/menu_handler.gd"
 phone="*res://scenes/phone/phone.tscn"
 console="*res://scenes/ui/console.gd"
 Musicsounds="*res://scenes/randomthings/musicsounds.tscn"

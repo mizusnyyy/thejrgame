@@ -6,7 +6,7 @@ var alive = true
 var overlapping_button: Area2D = null
 var direction_choose=0
 var can_move=true
-@onready var sprite=$heart
+@onready var sprite=$Sprite2D
 @onready var haudio=$hurt
 var invincible := false
 @onready var soul=$"."
@@ -66,7 +66,6 @@ func soul_is_alive():
 	
 func _physics_process(delta: float) -> void:
 	if alive and global.current_mode == global.mode.RED:
-		sprite.play("jack")
 		var directionlr := Input.get_axis("left", "right")
 		var directionud := Input.get_axis("up", "down")
 		var direction := Vector2(directionlr, directionud)
@@ -97,3 +96,5 @@ func _physics_process(delta: float) -> void:
 		alive = true
 
 	move_and_slide()
+
+		

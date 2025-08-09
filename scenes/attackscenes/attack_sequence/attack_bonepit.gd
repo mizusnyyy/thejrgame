@@ -3,7 +3,7 @@ extends Node2D
 @onready var midscreen = get_viewport().get_visible_rect().size.x / 2
 
 func summoned(bullet, soul, speed):
-	global.current_mode=global.mode.BLUE
+	global.current_mode=global.mode.RED
 	#startsequence(bullet, soul, 40,true,5)
 	#await get_tree().create_timer(2.0).timeout
 	#startsequence(bullet, soul, 60, true,50)

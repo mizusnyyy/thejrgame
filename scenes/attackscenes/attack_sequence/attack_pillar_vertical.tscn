@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://cd58dt2spnuk1"]
+
+[ext_resource type="Script" uid="uid://dxocrkdaxbcw3" path="res://scenes/attackscenes/attack_sequence/attack_pillar_vertical.gd" id="1_30dxc"]
+[ext_resource type="Script" uid="uid://x5avrtiqbx5f" path="res://scenes/attackscenes/attack_sequence/blok1.gd" id="2_p5mcb"]
+[ext_resource type="Script" uid="uid://37y48tr4hixr" path="res://scenes/attackscenes/attack_sequence/blok2.gd" id="3_qg0kl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4rrh"]
+size = Vector2(128, 128)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_30dxc")
+
+[node name="Blok1" type="Node2D" parent="."]
+script = ExtResource("2_p5mcb")
+
+[node name="ColorRect" type="ColorRect" parent="Blok1"]
+offset_left = -62.0
+offset_top = -62.0
+offset_right = 62.0
+offset_bottom = 62.0
+pivot_offset = Vector2(62, 62)
+color = Color(0.501961, 0, 0.501961, 1)
+
+[node name="Area2D" type="Area2D" parent="Blok1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blok1/Area2D"]
+shape = SubResource("RectangleShape2D_x4rrh")
+
+[node name="Blok2" type="Node2D" parent="."]
+script = ExtResource("3_qg0kl")
+
+[node name="ColorRect" type="ColorRect" parent="Blok2"]
+offset_left = -62.0
+offset_top = -62.0
+offset_right = 62.0
+offset_bottom = 62.0
+pivot_offset = Vector2(62, 62)
+color = Color(0.501961, 0, 0.501961, 1)
+
+[node name="Area2D" type="Area2D" parent="Blok2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blok2/Area2D"]
+shape = SubResource("RectangleShape2D_x4rrh")

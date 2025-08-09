@@ -211,7 +211,7 @@ gloo_scene = ExtResource("14_2i8gf")
 [node name="quickchange" type="Area2D" parent="."]
 position = Vector2(140, 30)
 script = ExtResource("14_jkym4")
-namescene = "coreroom.tscn"
+namescene = "outside.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="quickchange"]
 shape = SubResource("RectangleShape2D_j4awy")

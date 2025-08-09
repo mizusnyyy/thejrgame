@@ -626,7 +626,7 @@ scale = Vector2(3.5, 1)
 [node name="quickchange" type="Area2D" parent="."]
 position = Vector2(0, 257)
 script = ExtResource("7_4kac0")
-namescene = "house.tscn"
+namescene = "outside.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="quickchange"]
 shape = SubResource("RectangleShape2D_7htdg")

@@ -5,9 +5,11 @@ var can_talk := true
 
 @onready var dialog = $"../../CanvasLayer/dialoge"
 @export var preloadscena = preload("res://scenes/battle/battle.tscn")
-@export var typesound = AudioStreamPlayer2D
+@onready var typesound = $AudioStreamPlayer2D
 @export var pages: Array[String]
 @export var portrait_texture: Array[Texture]
+@export var whoid:int
+@export var texturenpc: Texture
 
 func _on_body_entered(body):
 	if body.name=="player":
@@ -27,6 +29,7 @@ func _process(_delta):
 				dialogf(pages[currentpage], portrait_texture[currentpage],typesound)
 				await dialog.dialogue_finished
 			currentpage+=1
+		Battlepreset.enemidpreset = whoid
 		get_tree().change_scene_to_packed(preloadscena)
 
 func dialogf(text,texture,sound):
@@ -34,3 +37,7 @@ func dialogf(text,texture,sound):
 
 func choosef(options: Array):
 	dialog.choose(options)
+
+
+func _on_ready() -> void:
+	$Sprite2D.texture = texturenpc

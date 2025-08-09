@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://bpmn0ng1q8ox"]
+[gd_scene load_steps=35 format=4 uid="uid://bpmn0ng1q8ox"]
 
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_tecch"]
 [ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/player/teto.tscn" id="6_74pxv"]
@@ -7,14 +7,19 @@
 [ext_resource type="Texture2D" uid="uid://bnxmi0qekyy6d" path="res://assets/sprite/characters/party/shadow/portrait/shadow3.png" id="9_0j0oh"]
 [ext_resource type="Texture2D" uid="uid://b7632vv4ixuwo" path="res://assets/tiles/tilebg.png" id="9_0rrt8"]
 [ext_resource type="Texture2D" uid="uid://blq2libb70yvf" path="res://assets/tiles/tilebarrier.png" id="10_2i8gf"]
+[ext_resource type="PackedScene" uid="uid://cne3a6lmj7c1u" path="res://scenes/randomthings/npc.tscn" id="12_1e2cb"]
 [ext_resource type="Script" uid="uid://ceododdxd8fru" path="res://scenes/story/pre-core/teto.gd" id="12_aqtk2"]
 [ext_resource type="Texture2D" uid="uid://c72wlne1fh1ho" path="res://assets/tiles/tileobjects.png" id="12_qgspi"]
 [ext_resource type="AudioStream" uid="uid://bx51gveawpw6c" path="res://JacksWithHats.wav" id="13_0j0oh"]
 [ext_resource type="Script" uid="uid://bejskw4sl3ymu" path="res://scenes/battle/debug.gd" id="13_0rrt8"]
+[ext_resource type="Texture2D" uid="uid://uprjhy1pj4b4" path="res://teto1.png" id="13_aqtk2"]
 [ext_resource type="PackedScene" uid="uid://pegs4ep6hjc5" path="res://scenes/attackscenes/bone/bone.tscn" id="14_2i8gf"]
+[ext_resource type="Texture2D" uid="uid://b5jp252jvsneo" path="res://assets/sprite/characters/party/misupi/misupispritesheet.png" id="14_aqtk2"]
 [ext_resource type="Script" uid="uid://bkdklstb2wyg2" path="res://scenes/story/pre-core/quickchange.gd" id="14_jkym4"]
 [ext_resource type="Texture2D" uid="uid://e5q4i0heuvg3" path="res://assets/sprite/characters/party/jr/teto_front.png" id="14_qgspi"]
+[ext_resource type="Texture2D" uid="uid://blo5yr7xsgygh" path="res://assets/sprite/characters/party/shadow/shadowspritesheet.png" id="15_b6qe5"]
 [ext_resource type="Texture2D" uid="uid://6kf44nmw8j3i" path="res://assets/sprite/characters/party/jr/teto_side_better.png" id="15_jkym4"]
+[ext_resource type="Texture2D" uid="uid://c7w2uou8gecp8" path="res://teto2.png" id="15_s7kpv"]
 [ext_resource type="Texture2D" uid="uid://cmj27cly056f7" path="res://assets/sprite/characters/party/jr/teto_back.png" id="16_1e2cb"]
 [ext_resource type="Texture2D" uid="uid://bq1mj2osrqcqs" path="res://assets/sprite/characters/party/jr/teto_side.png" id="17_0j0oh"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="18_jobkd"]
@@ -176,11 +181,10 @@ scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAD5/wIAAAAAAAIAAGD5//z/AAAAAAIAAED8//n/AAAAAAIAAEADAPn/AAAAAAIAAFADAAMAAAAAAAIAAHD8/wMAAAAAAAIAAGA=")
 tile_set = SubResource("TileSet_jkym4")
 
-[node name="teto" type="Area2D" parent="ysorting" node_paths=PackedStringArray("typesound")]
+[node name="teto" type="Area2D" parent="ysorting"]
 y_sort_enabled = true
 position = Vector2(304, 398)
 script = ExtResource("12_aqtk2")
-typesound = NodePath("AudioStreamPlayer2D")
 pages = Array[String](["czesc stefanie jestem twoim kolega", "czy tez jestes moim kolega?", "tetoo chce abys byl moim kolegom", ":D"])
 portrait_texture = Array[Texture]([ExtResource("7_jkym4"), ExtResource("8_1e2cb"), ExtResource("9_0j0oh"), ExtResource("7_jkym4")])
 
@@ -202,6 +206,20 @@ position = Vector2(0, 23)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/teto/StaticBody2D"]
 z_index = 1000
 shape = SubResource("RectangleShape2D_510yu")
+
+[node name="npc" parent="ysorting" instance=ExtResource("12_1e2cb")]
+position = Vector2(-206, -52)
+pages = Array[String](["hejo"])
+portrait_texture = Array[Texture]([ExtResource("13_aqtk2")])
+whoid = 1
+texturenpc = ExtResource("14_aqtk2")
+
+[node name="npc2" parent="ysorting" instance=ExtResource("12_1e2cb")]
+position = Vector2(-270, 32)
+pages = Array[String](["hejo", "okret nasz spumil sie", "i wujciczki dwie"])
+portrait_texture = Array[Texture]([ExtResource("13_aqtk2"), ExtResource("13_aqtk2"), ExtResource("15_s7kpv")])
+whoid = 2
+texturenpc = ExtResource("15_b6qe5")
 
 [node name="debug" type="Node2D" parent="."]
 position = Vector2(0, 0.5)

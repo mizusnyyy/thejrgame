@@ -21,6 +21,7 @@ musicsounds="*res://scenes/randomthings/musicsounds.tscn"
 phone="*res://scenes/phone/phone.tscn"
 console="*res://scenes/ui/console.gd"
 Musicsounds="*res://scenes/randomthings/musicsounds.tscn"
+Battlepreset="*res://battlepreset.gd"
 
 [display]
 

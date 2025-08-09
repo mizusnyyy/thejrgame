@@ -4,8 +4,7 @@
 [ext_resource type="Script" uid="uid://bc80s4vm3lhwc" path="res://scenes/attackscenes/bone/bone.gd" id="1_ndqog"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0mdm"]
-resource_local_to_scene = true
-size = Vector2(3, 3)
+size = Vector2(7, 4)
 
 [node name="bone" type="Area2D"]
 priority = 1

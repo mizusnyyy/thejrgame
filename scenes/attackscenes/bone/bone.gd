@@ -35,16 +35,9 @@ func lastbonefunc(nr):
 	changecollision(nr)
 
 func changecollision(nr):
-	# nr = amount (liczba segmentów ciała)
-	var head_height = 8 # dwie głowy po 4 px = 8 px
-	var body_segment_height = 3 # wysokość segmentu ciała w kolizji
-	
-	var total_collision_height = head_height + (body_segment_height * nr)
-	
-	var shape = collisionbone.shape
-	var base_height = shape.extents.y * 2 # pełna wysokość kształtu
-	collisionbone.scale.y = total_collision_height / base_height
-	collisionbone.position.y = total_collision_height / 2 - (head_height / 2)
+	collisionbone.shape.size.y = 8 + (3*nr)
+	print(collisionbone.shape.size.y)
+	collisionbone.position.y += 8 + (3*nr) - 5
 			
 func instantiateall(scene: PackedScene) -> Node2D:
 	var instance = scene.instantiate()

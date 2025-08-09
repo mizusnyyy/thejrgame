@@ -1,4 +1,4 @@
-[gd_scene load_steps=174 format=3 uid="uid://chprno7b2lppf"]
+[gd_scene load_steps=172 format=3 uid="uid://chprno7b2lppf"]
 
 [ext_resource type="Texture2D" uid="uid://b45tvv1w8286c" path="res://assets/sprite/battle/bg/b0001.png" id="2_2ys7f"]
 [ext_resource type="Script" uid="uid://du1pctbd3kbws" path="res://scenes/battle/character_body_2d.gd" id="3_0yh6x"]
@@ -138,9 +138,9 @@
 [ext_resource type="Script" uid="uid://bibjdcqqe6ss8" path="res://scenes/battle/spell.gd" id="123_w54gx"]
 [ext_resource type="Script" uid="uid://j2ey1br0lm7a" path="res://scenes/battle/defend.gd" id="126_21vhs"]
 [ext_resource type="AudioStream" uid="uid://yn4sayk7g01s" path="res://assets/sprite/intro/dzem.wav" id="132_ly5g2"]
-[ext_resource type="Texture2D" uid="uid://c2n5lud1gsnrw" path="res://assets/sprite/battle/heart_blue.png" id="135_21vhs"]
 [ext_resource type="Script" uid="uid://bejskw4sl3ymu" path="res://scenes/battle/debug.gd" id="136_w54gx"]
 [ext_resource type="PackedScene" uid="uid://pegs4ep6hjc5" path="res://scenes/attackscenes/bone/bone.tscn" id="137_21vhs"]
+[ext_resource type="Script" uid="uid://cfw8ku15s2mot" path="res://scenes/battle/sprite_2d.gd" id="139_itpkr"]
 [ext_resource type="Texture2D" uid="uid://jouutgjikwq0" path="res://assets/sprite/battle/hearts.png" id="139_wf2x0"]
 
 [sub_resource type="GDScript" id="GDScript_w54gx"]
@@ -730,29 +730,6 @@ size = Vector2(26.3333, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agsc7"]
 size = Vector2(12, 12)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hr533"]
-atlas = ExtResource("139_wf2x0")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_n25ch"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("135_21vhs")
-}],
-"loop": false,
-"name": &"blue",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hr533")
-}],
-"loop": false,
-"name": &"jack",
-"speed": 5.0
-}]
-
 [node name="fight" type="Node2D"]
 script = SubResource("GDScript_w54gx")
 
@@ -996,10 +973,11 @@ volume_db = -10.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="soul"]
 shape = SubResource("RectangleShape2D_agsc7")
 
-[node name="heart" type="AnimatedSprite2D" parent="soul"]
-scale = Vector2(0.9, 0.9)
-sprite_frames = SubResource("SpriteFrames_n25ch")
-animation = &"jack"
+[node name="Sprite2D" type="Sprite2D" parent="soul"]
+texture = ExtResource("139_wf2x0")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+script = ExtResource("139_itpkr")
 
 [node name="igorplayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("132_ly5g2")

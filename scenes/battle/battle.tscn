@@ -105,13 +105,13 @@
 [ext_resource type="Texture2D" uid="uid://ygndui1q364y" path="res://assets/sprite/battle/bg/b0099.png" id="100_jucj5"]
 [ext_resource type="Texture2D" uid="uid://nciyms0xvnjb" path="res://assets/sprite/battle/bg/b0100.png" id="101_0us13"]
 [ext_resource type="Texture2D" uid="uid://dy60vc61ra17" path="res://assets/sprite/battle/under.png" id="102_w3xua"]
-[ext_resource type="Texture2D" uid="uid://dscgdvsiak2h1" path="res://assets/sprite/characters/glut/glutbattle.png" id="103_w54gx"]
 [ext_resource type="Texture2D" uid="uid://bqiw186ru8o73" path="res://assets/sprite/battle/proggress_background.png" id="103_wf2x0"]
 [ext_resource type="Script" uid="uid://wdk80rf0xc0y" path="res://scenes/battle/texture_progress_bar.gd" id="104_xo5np"]
 [ext_resource type="Script" uid="uid://bcnmmxb6atgap" path="res://scenes/battle/notui.gd" id="106_el03i"]
 [ext_resource type="Texture2D" uid="uid://f7k0j7os4inn" path="res://assets/sprite/characters/party/jr/pick.png" id="106_ly5g2"]
 [ext_resource type="Script" uid="uid://don4w3ltk8mko" path="res://scenes/battle/rich_text_label1.gd" id="106_wf2x0"]
 [ext_resource type="Script" uid="uid://csgevnic15t4i" path="res://scenes/battle/left_arrow.gd" id="107_rcqhw"]
+[ext_resource type="Texture2D" uid="uid://bdnifba5tbke4" path="res://assets/sprite/characters/party/misupi/mizubattle.png" id="107_wf2x0"]
 [ext_resource type="Texture2D" uid="uid://b4322pu8xlupw" path="res://assets/sprite/battle/not ui/fight.png" id="109_72b3y"]
 [ext_resource type="Texture2D" uid="uid://d1e1h85rhmu71" path="res://assets/sprite/battle/arrow selected.png" id="109_da7rj"]
 [ext_resource type="Texture2D" uid="uid://bayu3880yqskw" path="res://assets/sprite/battle/not ui/fight_sel;.png" id="110_drnbg"]
@@ -145,6 +145,27 @@
 
 [sub_resource type="GDScript" id="GDScript_w54gx"]
 script/source = "extends Node2D
+
+@onready var enemtxt = $enemy/enemy
+var enemid
+
+func _on_ready() -> void:
+	enemid = Battlepreset.enemidpreset
+	#0 GLUT 1 MIZU 2 QORUS 3 PAVEY 4 IGREAVIOUS
+	match enemid:
+		0:
+			enemtxt.texture = load(\"res://assets/sprite/characters/glut/glutbattle.png\")
+		1:
+			enemtxt.texture = load(\"res://assets/sprite/characters/party/misupi/mizubattle.png\")
+		2:
+			enemtxt.texture = load(\"res://assets/sprite/characters/party/misupi/mizubattle.png\")
+		_:
+			enemtxt.texture = load(\"res://assets/sprite/characters/party/misupi/glutbattle.png\")
+	
+	await get_tree().create_timer(1).timeout
+	print(enemtxt.texture)
+	var new_script = load(\"res://scenes/battle/attack_spawner_\"+str(enemid)+\".gd\")
+	self.set_script(new_script)
 "
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gcnt2"]
@@ -795,10 +816,10 @@ script = ExtResource("106_wf2x0")
 
 [node name="enemy" type="Node2D" parent="."]
 
-[node name="glut" type="Sprite2D" parent="enemy"]
+[node name="enemy" type="Sprite2D" parent="enemy"]
 position = Vector2(320, 96)
-scale = Vector2(3.5, 3)
-texture = ExtResource("103_w54gx")
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("107_wf2x0")
 
 [node name="attackspawner" type="Node2D" parent="."]
 position = Vector2(0, 0.5)
@@ -968,6 +989,7 @@ position = Vector2(0, 0.5)
 script = ExtResource("136_w54gx")
 gloo_scene = ExtResource("137_21vhs")
 
+[connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="body_entered" from="notui/left arrow" to="notui/left arrow" method="_on_body_entered"]
 [connection signal="body_exited" from="notui/left arrow" to="notui/left arrow" method="_on_body_exited"]
 [connection signal="body_entered" from="notui/right arrow" to="notui/right arrow" method="_on_body_entered"]

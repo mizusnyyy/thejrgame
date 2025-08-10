@@ -166,7 +166,8 @@ func _on_ready() -> void:
 	await get_tree().create_timer(1).timeout
 	print(enemtxt.texture)
 	var new_script = load(\"res://scenes/battle/attack_spawner_\"+str(enemid)+\".gd\")
-	self.set_script(new_script)
+	$attackspawner.set_script(new_script)
+	$attackspawner.start()
 "
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gcnt2"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://pru4c8lnwdxh"]
 
 [ext_resource type="Script" uid="uid://cleopwbw55714" path="res://scenes/attackscenes/attack_sequence/attack_pillar_horizontal.gd" id="1_37lhn"]
-[ext_resource type="Script" uid="uid://x5avrtiqbx5f" path="res://scenes/attackscenes/attack_sequence/blok1.gd" id="2_or0jy"]
+[ext_resource type="Script" path="res://scenes/attackscenes/attack_sequence/blok.gd" id="2_or0jy"]
 [ext_resource type="Script" uid="uid://37y48tr4hixr" path="res://scenes/attackscenes/attack_sequence/blok2.gd" id="3_sxqfk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dikum"]

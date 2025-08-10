@@ -1,19 +1,23 @@
 extends Node2D
 
 var gloo_scene: PackedScene
-@export var spawn_interval: float = 1.0
-@export var bullet_speed: float = 200
-@onready var soul = $"../soul"
-@onready var notui = $"../notui"
 var timer := 0.0
 var runda = 1
 
+var spawn_interval
+var bullet_speed
+var soul
+var notui
 #WAZNE -> GDY GRACZ WEJDZIE W KOLIZJE CHOCIAZBY Z NIEBIESKIM TO DOPOKI NIE WYJDZIE JEST NIESMIERTELNY
 #NAPRAWIC!!!
 #SPIERDLAALLAJJ!!
 #ALE OKEEEJ!!!
 
-func _ready():
+func start():
+	spawn_interval = 1.0
+	bullet_speed = 200.0
+	soul = $"../soul"
+	notui = $"../notui"
 	nextturn()
 	print(runda)
 func nextturn():
@@ -34,10 +38,10 @@ func attack():
 	var ran = randi()%6
 	await notui.enemy_turn
 	
-	#gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_bonetunnel.tscn")
-	#bullet = instantiateall(gloo_scene)
-	#bullet.summoned(bullet, soul, bullet_speed)
-	#return
+	gloo_scene = preload("res://scenes/attackscenes/qorus/clawswipe.tscn")
+	bullet = instantiateall(gloo_scene)
+	bullet.summoned(bullet, soul, bullet_speed)
+	return
 	if ran == 0: 
 		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_bonepit.tscn")
 		bullet = instantiateall(gloo_scene)

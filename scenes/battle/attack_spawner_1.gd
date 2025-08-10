@@ -20,9 +20,6 @@ func start():
 	notui = $"../notui"
 	nextturn()
 	print(runda)
-#func _ready():
-	#nextturn()
-	#print(runda)
 func nextturn():
 	notui.enemyturn()
 	for i in range(runda+1):
@@ -41,10 +38,11 @@ func attack():
 	var ran = randi()%4
 	await notui.enemy_turn
 	
-	#gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_bonetunnel.tscn")
-	#bullet = instantiateall(gloo_scene)
-	#bullet.summoned(bullet, soul, bullet_speed)
-	#return
+	
+	gloo_scene = preload("res://scenes/attackscenes/qorus/clawswipe.tscn")
+	bullet = instantiateall(gloo_scene)
+	bullet.summoned(bullet, soul, bullet_speed)
+	return
 	if ran == 0: 
 		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_bonepit.tscn")
 		bullet = instantiateall(gloo_scene)

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cn8a6ffkgnhcq"]
+
+[ext_resource type="Script" uid="uid://ca003jghtxf1j" path="res://scenes/attackscenes/qorus/clawswipe.gd" id="1_hmvky"]
+[ext_resource type="Texture2D" uid="uid://b7cgba8myvfbs" path="res://assets/sprite/characters/glut/gloo.png" id="2_n8jue"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cg0sa"]
+radius = 8.54998
+
+[node name="gloo" type="Area2D"]
+scale = Vector2(0.75, 0.75)
+priority = 1
+script = ExtResource("1_hmvky")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_n8jue")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.58946e-07, 0)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("CircleShape2D_cg0sa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

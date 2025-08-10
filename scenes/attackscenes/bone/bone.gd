@@ -36,7 +36,6 @@ func lastbonefunc(nr):
 
 func changecollision(nr):
 	collisionbone.shape.size.y = 8 + (3*nr)
-	print(collisionbone.shape.size.y)
 	collisionbone.position.y += 8 + (3*nr) - 5
 			
 func instantiateall(scene: PackedScene) -> Node2D:

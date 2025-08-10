@@ -69,9 +69,9 @@ func _type_text() -> void:
 	while char_index < full_text.length() and typing:
 		label.text += full_text[char_index]
 		text_speed = tempspeed
-		if full_text[char_index] == ".":
+		if full_text[char_index] == "." or full_text[char_index] == "!" or full_text[char_index] == "?":
 			text_speed*=9
-		elif full_text[char_index] == ",":
+		elif full_text[char_index] == "," or full_text[char_index] == ";":
 			text_speed*=5
 			
 		char_index += 1

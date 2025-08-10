@@ -34,8 +34,8 @@ func summoned(bullet, soul, speed):
 	rect1.position = Vector2(-rect1.size.x * 0.5, 0)
 	rect2.position = Vector2(-rect2.size.x * 0.5, -rect2.size.y)
 
-	# Przekaż referencję bullet, soul i speed do bloczków
-	if blok1.has_method("activate"):
-		blok1.call_deferred("activate", soul, speed)
-	if blok2.has_method("activate"):
-		blok2.call_deferred("activate", soul, speed)
+	blok1.call_deferred("update_hitbox", blok1.get_node("Area2D/CollisionShape2D"), rect1)
+	blok2.call_deferred("update_hitbox", blok2.get_node("Area2D/CollisionShape2D"), rect2)
+
+	blok1.call_deferred("activate", soul, speed)
+	blok2.call_deferred("activate", soul, speed)

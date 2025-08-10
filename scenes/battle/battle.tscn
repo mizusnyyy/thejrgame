@@ -108,7 +108,7 @@
 [ext_resource type="Script" uid="uid://bcnmmxb6atgap" path="res://scenes/battle/notui.gd" id="106_el03i"]
 [ext_resource type="Script" path="res://scenes/battle/Enemy_health_bar.gd" id="106_itpkr"]
 [ext_resource type="Texture2D" uid="uid://f7k0j7os4inn" path="res://assets/sprite/characters/party/jr/pick.png" id="106_ly5g2"]
-[ext_resource type="Script" path="res://scenes/battle/rich_text_label1.gd" id="106_wf2x0"]
+[ext_resource type="Script" uid="uid://cm8f4oh1nta1q" path="res://scenes/battle/rich_text_label1.gd" id="106_wf2x0"]
 [ext_resource type="Script" path="res://scenes/battle/enemy_health_indicator_text.gd" id="107_hr533"]
 [ext_resource type="Texture2D" uid="uid://dolekv3q1cx0j" path="res://assets/sprite/battle/Bez nazwy.png" id="107_itpkr"]
 [ext_resource type="Script" uid="uid://csgevnic15t4i" path="res://scenes/battle/left_arrow.gd" id="107_rcqhw"]

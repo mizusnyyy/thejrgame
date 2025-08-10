@@ -17,6 +17,13 @@ var blink_timer: float = 0.0
 func _ready():
 	hitbox.disabled = true
 
+func update_hitbox(hitbox: CollisionShape2D, rect: ColorRect) -> void:
+	var shape = hitbox.shape
+	if shape is RectangleShape2D:
+		shape.extents = Vector2(rect.size.x / 2, rect.size.y / 2)
+		# Hitbox powinien być wyśrodkowany względem recta
+		hitbox.position = rect.position + rect.size / 2
+
 func activate(soul, speed) -> void:
 	original_color = rect.color
 	rect.modulate.a = 0.4
@@ -28,6 +35,7 @@ func activate(soul, speed) -> void:
 	hitbox.disabled = false
 	is_attacking = true
 
+	# Podłącz sygnał tylko raz, jeśli nie jest podłączony
 	var callable = Callable(self, "_on_body_entered")
 	if not area.is_connected("body_entered", callable):
 		area.connect("body_entered", callable)
@@ -37,12 +45,9 @@ func activate(soul, speed) -> void:
 	is_attacking = false
 	rect.color = original_color
 	hitbox.disabled = true
-
-	if area.is_connected("body_entered", callable):
-		area.disconnect("body_entered", callable)
 	queue_free()
 
-func _process(delta: float) -> void:
+func _process(delta):
 	if is_attacking:
 		blink_timer += delta
 		if blink_timer >= blink_interval:
@@ -50,8 +55,6 @@ func _process(delta: float) -> void:
 			blink_toggle = !blink_toggle
 			rect.color = blink_color if blink_toggle else original_color
 
-func _on_body_entered(body: Node) -> void:
-	if not is_attacking:
-		return
-	if body.name == "soul":
+func _on_body_entered(body):
+	if body.name == "soul" and is_attacking:
 		global.soultakedamage(body, 10)

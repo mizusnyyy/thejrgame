@@ -1,6 +1,7 @@
 extends Control
 
 @export var text_speed := 0.05
+@onready var tempspeed = text_speed
 @onready var label := $RichTextLabel
 @onready var portrait := $TextureRect
 @onready var choice = $choice/indicator
@@ -67,6 +68,12 @@ func choose(options: Array):
 func _type_text() -> void:
 	while char_index < full_text.length() and typing:
 		label.text += full_text[char_index]
+		text_speed = tempspeed
+		if full_text[char_index] == ".":
+			text_speed*=9
+		elif full_text[char_index] == ",":
+			text_speed*=5
+			
 		char_index += 1
 		if type_sound_player:
 			type_sound_player.pitch_scale = randf_range(0.95, 1.05)

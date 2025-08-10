@@ -209,14 +209,14 @@ shape = SubResource("RectangleShape2D_510yu")
 
 [node name="npc" parent="ysorting" instance=ExtResource("12_1e2cb")]
 position = Vector2(-206, -52)
-pages = Array[String](["hejo"])
+pages = Array[String](["hejo. z tej strony awruk"])
 portrait_texture = Array[Texture]([ExtResource("13_aqtk2")])
 whoid = 1
 texturenpc = ExtResource("14_aqtk2")
 
 [node name="npc2" parent="ysorting" instance=ExtResource("12_1e2cb")]
 position = Vector2(-270, 32)
-pages = Array[String](["hejo", "okret nasz spumil sie", "i wujciczki dwie"])
+pages = Array[String](["hejo. nig, ger", "okret nasz... spumil sie", "i wujciczki dwie. haha,haha,haha"])
 portrait_texture = Array[Texture]([ExtResource("13_aqtk2"), ExtResource("13_aqtk2"), ExtResource("15_s7kpv")])
 whoid = 2
 texturenpc = ExtResource("15_b6qe5")

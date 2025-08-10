@@ -8,3 +8,6 @@ func _process(delta: float) -> void:
 	append_text(("%d / %d"%[int(global.health), int(global.maxhealth)]))
 	pop()
 	
+	if global.health <= 0:
+		global.health = 0
+	

@@ -9,3 +9,5 @@ func _process(delta: float) -> void:
 	append_text(("%d / %d"%[int(global.enemy_hp), int(global.maxenemy_hp)]))
 	pop()
 	
+	if global.enemy_hp <= 0:
+		global.enemy_hp = 0

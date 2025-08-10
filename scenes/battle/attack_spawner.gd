@@ -31,7 +31,7 @@ func nextturn():
 func attack():
 	notui.enemyturn()
 	var bullet
-	var ran = randi()%5
+	var ran = randi()%6
 	await notui.enemy_turn
 	
 	#gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_bonetunnel.tscn")
@@ -62,6 +62,10 @@ func attack():
 		bullet.summoned(bullet, soul, bullet_speed)
 	elif ran == 4:
 		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_pillar_vertical.tscn")
+		bullet = instantiateall(gloo_scene)
+		bullet.summoned(soul, bullet_speed)
+	elif ran == 5:
+		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_pillar_horizontal.tscn")
 		bullet = instantiateall(gloo_scene)
 		bullet.summoned(soul, bullet_speed)
 

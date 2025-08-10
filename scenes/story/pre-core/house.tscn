@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bnxmi0qekyy6d" path="res://assets/sprite/characters/party/shadow/portrait/shadow3.png" id="9_0j0oh"]
 [ext_resource type="Texture2D" uid="uid://b7632vv4ixuwo" path="res://assets/tiles/tilebg.png" id="9_0rrt8"]
 [ext_resource type="Texture2D" uid="uid://blq2libb70yvf" path="res://assets/tiles/tilebarrier.png" id="10_2i8gf"]
-[ext_resource type="PackedScene" path="res://scenes/randomthings/npc.tscn" id="12_1e2cb"]
+[ext_resource type="PackedScene" uid="uid://cne3a6lmj7c1u" path="res://scenes/randomthings/npc.tscn" id="12_1e2cb"]
 [ext_resource type="Script" uid="uid://ceododdxd8fru" path="res://scenes/story/pre-core/teto.gd" id="12_aqtk2"]
 [ext_resource type="Texture2D" uid="uid://c72wlne1fh1ho" path="res://assets/tiles/tileobjects.png" id="12_qgspi"]
 [ext_resource type="AudioStream" uid="uid://bx51gveawpw6c" path="res://JacksWithHats.wav" id="13_0j0oh"]

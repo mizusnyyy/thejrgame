@@ -1,3 +1,44 @@
-[gd_scene format=3 uid="uid://pru4c8lnwdxh"]
+[gd_scene load_steps=5 format=3 uid="uid://pru4c8lnwdxh"]
 
-[node name="AttackPillarHorizontal" type="Node2D"]
+[ext_resource type="Script" uid="uid://cleopwbw55714" path="res://scenes/attackscenes/attack_sequence/attack_pillar_horizontal.gd" id="1_37lhn"]
+[ext_resource type="Script" uid="uid://x5avrtiqbx5f" path="res://scenes/attackscenes/attack_sequence/blok1.gd" id="2_or0jy"]
+[ext_resource type="Script" uid="uid://37y48tr4hixr" path="res://scenes/attackscenes/attack_sequence/blok2.gd" id="3_sxqfk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dikum"]
+size = Vector2(128, 128)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_37lhn")
+
+[node name="Blok1" type="Node2D" parent="."]
+script = ExtResource("2_or0jy")
+
+[node name="ColorRect" type="ColorRect" parent="Blok1"]
+offset_left = -62.0
+offset_top = -62.0
+offset_right = 62.0
+offset_bottom = 62.0
+pivot_offset = Vector2(62, 62)
+color = Color(0.501961, 0, 0.501961, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="Blok1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blok1/Area2D"]
+shape = SubResource("RectangleShape2D_dikum")
+
+[node name="Blok2" type="Node2D" parent="."]
+script = ExtResource("3_sxqfk")
+
+[node name="ColorRect" type="ColorRect" parent="Blok2"]
+offset_left = -62.0
+offset_top = -62.0
+offset_right = 62.0
+offset_bottom = 62.0
+pivot_offset = Vector2(62, 62)
+color = Color(0.501961, 0, 0.501961, 1)
+
+[node name="Area2D" type="Area2D" parent="Blok2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blok2/Area2D"]
+shape = SubResource("RectangleShape2D_dikum")

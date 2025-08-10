@@ -20,6 +20,7 @@ offset_right = 62.0
 offset_bottom = 62.0
 pivot_offset = Vector2(62, 62)
 color = Color(0.501961, 0, 0.501961, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="Blok1"]
 
@@ -36,6 +37,7 @@ offset_right = 62.0
 offset_bottom = 62.0
 pivot_offset = Vector2(62, 62)
 color = Color(0.501961, 0, 0.501961, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="Blok2"]
 

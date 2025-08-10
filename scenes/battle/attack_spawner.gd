@@ -63,11 +63,12 @@ func attack():
 	elif ran == 4:
 		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_pillar_vertical.tscn")
 		bullet = instantiateall(gloo_scene)
-		bullet.summoned(soul, bullet_speed)
+		bullet.summoned(bullet, soul, bullet_speed)
 	elif ran == 5:
 		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_pillar_horizontal.tscn")
 		bullet = instantiateall(gloo_scene)
-		bullet.summoned(soul, bullet_speed)
+		bullet.summoned(bullet, soul, bullet_speed)
+
 
 
 #func wywolaj(modeserca, res, bullet, soul, bullet_speed):

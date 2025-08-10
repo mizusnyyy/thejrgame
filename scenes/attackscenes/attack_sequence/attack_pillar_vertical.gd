@@ -6,7 +6,7 @@ extends Node2D
 @export var gap: int = 30
 @export var max_total_height: int = 128
 
-func summoned(soul, speed):
+func summoned(bullet, soul, speed):
 	var vp = get_viewport().get_visible_rect()
 	var midscreen_x = vp.size.x / 2.0
 
@@ -28,13 +28,14 @@ func summoned(soul, speed):
 	rect1.size = Vector2(rect1.size.x, height1)
 	rect2.size = Vector2(rect2.size.x, height2)
 
-	blok1.position.x = midscreen_x
-	blok1.position.y = 192
-	blok2.position.x = midscreen_x
-	blok2.position.y = 320
+	blok1.position = Vector2(midscreen_x, 192)
+	blok2.position = Vector2(midscreen_x, 320)
 
 	rect1.position = Vector2(-rect1.size.x * 0.5, 0)
 	rect2.position = Vector2(-rect2.size.x * 0.5, -rect2.size.y)
 
-	blok1.call_deferred("activate", soul, speed)
-	blok2.call_deferred("activate", soul, speed)
+	# Przekaż referencję bullet, soul i speed do bloczków
+	if blok1.has_method("activate"):
+		blok1.call_deferred("activate", soul, speed)
+	if blok2.has_method("activate"):
+		blok2.call_deferred("activate", soul, speed)

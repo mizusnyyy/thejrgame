@@ -26,6 +26,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
 		get_tree().change_scene_to_file("res://scenes/story/pre-core/house.tscn")
 		global.health += 100
+		global.enemy_hp = 100
 
 func loadscreens():
 	var texture_rects = [

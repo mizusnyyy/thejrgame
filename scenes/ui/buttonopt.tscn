@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5tymoyokjole"]
+
+[ext_resource type="Script" uid="uid://cfmq5cii1gnma" path="res://scenes/ui/buttonopttext.gd" id="1_0p4ht"]
+[ext_resource type="AudioStream" uid="uid://b3e0yrmnrd73n" path="res://assets/sprite/battle/aaaawhooya.wav" id="1_favcx"]
+[ext_resource type="Texture2D" uid="uid://e5q4i0heuvg3" path="res://assets/sprite/characters/party/jr/teto_front.png" id="2_5thvu"]
+[ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_5thvu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0p4ht"]
+size = Vector2(50, 25)
+
+[node name="buttonopt" type="Area2D"]
+script = ExtResource("1_0p4ht")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0p4ht")
+
+[node name="dmgsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_favcx")
+volume_db = -10.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 0, 0.811765, 1)
+offset_left = -20.0
+offset_top = -10.0
+offset_right = 20.0
+offset_bottom = 10.0
+pivot_offset = Vector2(20, 10)
+texture = ExtResource("2_5thvu")
+expand_mode = 1
+
+[node name="textoptions" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -40.0
+offset_right = 80.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(80, 40)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 5
+theme_override_constants/line_separation = 1
+theme_override_fonts/normal_font = ExtResource("3_5thvu")
+bbcode_enabled = true
+text = "AWRUK
+"
+scroll_active = false
+autowrap_mode = 2
+tab_size = 3
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

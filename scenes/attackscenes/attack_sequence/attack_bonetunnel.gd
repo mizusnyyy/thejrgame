@@ -12,11 +12,11 @@ func summoned(bullet, soul, speed):
 	var inny = 360
 	for i in range(13):
 		if i < 6:
-			startsequence(bullet, soul, 300, true,17-i,randomnr)#musi,musi,speed,czyzlewej,wielkosc,poziom-y
+			startsequence(bullet, soul, 300, true,17+i,randomnr)#musi,musi,speed,czyzlewej,wielkosc,poziom-y
 			startsequence(bullet, soul, 300, true,8+i,inny)
 		else:
-			startsequence(bullet, soul, 300, true,8+i,randomnr)
-			startsequence(bullet, soul, 300, true,17-i,inny)
+			startsequence(bullet, soul, 300, true,8-(i-6),randomnr-40)
+			startsequence(bullet, soul, 300, true,17-(i-6),inny-40)
 		await get_tree().create_timer(0.12).timeout
 
 func startsequence(bullet, soul, speed, left,size,ylevel=320):

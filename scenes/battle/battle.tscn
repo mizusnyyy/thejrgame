@@ -104,12 +104,12 @@
 [ext_resource type="Texture2D" uid="uid://ehf6sq83s60h" path="res://assets/sprite/battle/bg/b0098.png" id="99_s8a08"]
 [ext_resource type="Texture2D" uid="uid://ygndui1q364y" path="res://assets/sprite/battle/bg/b0099.png" id="100_jucj5"]
 [ext_resource type="Texture2D" uid="uid://nciyms0xvnjb" path="res://assets/sprite/battle/bg/b0100.png" id="101_0us13"]
-[ext_resource type="Script" uid="uid://dx4xtblajk0rm" path="res://scenes/battle/Player_health_bar.gd" id="103_xo5np"]
+[ext_resource type="Script" path="res://scenes/battle/Player_health_bar.gd" id="103_xo5np"]
 [ext_resource type="Script" uid="uid://bcnmmxb6atgap" path="res://scenes/battle/notui.gd" id="106_el03i"]
-[ext_resource type="Script" uid="uid://ba0qm88lne0ys" path="res://scenes/battle/Enemy_health_bar.gd" id="106_itpkr"]
+[ext_resource type="Script" path="res://scenes/battle/Enemy_health_bar.gd" id="106_itpkr"]
 [ext_resource type="Texture2D" uid="uid://f7k0j7os4inn" path="res://assets/sprite/characters/party/jr/pick.png" id="106_ly5g2"]
-[ext_resource type="Script" uid="uid://don4w3ltk8mko" path="res://scenes/battle/Player_health_indicator_text.gd" id="106_wf2x0"]
-[ext_resource type="Script" uid="uid://cp5uyiuhegpvn" path="res://scenes/battle/enemy_health_indicator_text.gd" id="107_hr533"]
+[ext_resource type="Script" uid="uid://fsefgnoiamhk" path="res://scenes/battle/rich_text_label1.gd" id="106_wf2x0"]
+[ext_resource type="Script" path="res://scenes/battle/enemy_health_indicator_text.gd" id="107_hr533"]
 [ext_resource type="Texture2D" uid="uid://dolekv3q1cx0j" path="res://assets/sprite/battle/Bez nazwy.png" id="107_itpkr"]
 [ext_resource type="Script" uid="uid://csgevnic15t4i" path="res://scenes/battle/left_arrow.gd" id="107_rcqhw"]
 [ext_resource type="Texture2D" uid="uid://bdnifba5tbke4" path="res://assets/sprite/characters/party/misupi/mizubattle.png" id="107_wf2x0"]
@@ -157,7 +157,7 @@ func _on_ready() -> void:
 		0:
 			enemtxt.texture = load(\"res://assets/sprite/characters/glut/glutbattle.png\")
 		1:
-			enemtxt.texture = load(\"res://assets/sprite/characters/party/misupi/mizubattle.png\")
+			enemtxt.texture = load(\"res://assets/sprite/characters/party/shadow/shadowbattle.png\")
 		2:
 			enemtxt.texture = load(\"res://assets/sprite/characters/party/misupi/mizubattle.png\")
 		_:
@@ -166,7 +166,8 @@ func _on_ready() -> void:
 	await get_tree().create_timer(1).timeout
 	print(enemtxt.texture)
 	var new_script = load(\"res://scenes/battle/attack_spawner_\"+str(enemid)+\".gd\")
-	self.set_script(new_script)
+	$attackspawner.set_script(new_script)
+	$attackspawner.start()
 "
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gcnt2"]

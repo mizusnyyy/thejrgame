@@ -5,27 +5,24 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0mdm"]
 resource_local_to_scene = true
-size = Vector2(3, 3)
+size = Vector2(7.715, 3)
 
 [node name="bone" type="Area2D"]
 priority = 1
 script = ExtResource("1_ndqog")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
 texture = ExtResource("1_fuk33")
 region_enabled = true
 region_rect = Rect2(17, 0, 7, 4)
 
 [node name="Sprite2Dlast" type="Sprite2D" parent="."]
 rotation = 3.14159
-scale = Vector2(2, 2)
 texture = ExtResource("1_fuk33")
 region_enabled = true
 region_rect = Rect2(17, 0, 7, 4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_r0mdm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

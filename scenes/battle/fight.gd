@@ -28,8 +28,8 @@ func _process(delta: float) -> void:
 			dmg.global_rotation = randf_range(0, 0.5)
 		dmg.play()
 		audio.play()
-		await dmg.animation_finished
 		deal_damage(10) 
+		await dmg.animation_finished
 		print("the very evil enemy: ", global.enemy_hp)
 		notui.enemyturn()
 

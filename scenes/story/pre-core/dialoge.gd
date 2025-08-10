@@ -5,7 +5,7 @@ extends Control
 @onready var label := $RichTextLabel
 @onready var portrait := $TextureRect
 @onready var choice = $choice/indicator
-
+@onready var markeropt = $RichTextLabel/optsetter
 signal dialogue_started
 signal dialogue_finished
 signal label_choice_finished
@@ -25,7 +25,8 @@ func show_dialogue(text: String, portrait_texture: Texture = null, typesound: Au
 		text = text.substr(1)
 		var parts = text.split(",", false, 3)
 		choose(parts)
-		await get_tree().create_timer(3).timeout
+		await choice_finished
+		#await get_tree().create_timer(3).timeout
 		emit_signal("dialogue_finished")
 		return
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
@@ -61,10 +62,44 @@ func choose(options: Array):
 	# GDYBY CO ZROBILEM NA DOLE ZE POPROSTU TEXT STARY USTAWIA NA "" A NIE CLEARUJE NWM CZY CI SIE PRZYDA
 
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.text=""
+	#for i in range(len(options)):
+		#label.text += options[i] + "\n"
+	setoptions(options)
+	
+func setoptions(options):
+	var setteropt = $RichTextLabel/optsetter
+	var sceneopt = load("res://scenes/ui/buttonopt.tscn")
+	var alan = []
 	for i in range(len(options)):
-		label.text += options[i] + "\n"
-	emit_signal("choice_finished")
+		var instance = sceneopt.instantiate()
+		add_child(instance)
 
+		var mar = markeropt.global_position
+		match i:
+			0:
+				instance.global_position = Vector2(mar.x-50, mar.y-25)
+			1:
+				instance.global_position = Vector2(mar.x+50, mar.y-25)
+				instance.dobry = true
+			2:
+				instance.global_position = Vector2(mar.x-50, mar.y+25)
+			3:
+				instance.global_position = Vector2(mar.x+50, mar.y+25)
+		alan.append(instance)
+
+		typing = true
+		instance.settext(options[i])
+	await alan[1].choice_finished
+	emit_signal("dialogue_finished")
+	alan[3].queue_free()
+	alan[2].queue_free()
+	alan[1].queue_free()
+	alan[0].queue_free()
+	choice.hide()
+	choice.can_choose = false
+
+		
 func _type_text() -> void:
 	while char_index < full_text.length() and typing:
 		label.text += full_text[char_index]
@@ -93,3 +128,7 @@ func _unhandled_input(event):
 			hide()
 			label.text = ""
 			emit_signal("dialogue_finished")
+			
+#func _process(delta: float) -> void:
+	#print(get_viewport().get_mouse_position())
+	#print("--- " , markeropt.position , " --- " , mar)

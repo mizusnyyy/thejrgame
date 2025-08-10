@@ -38,7 +38,7 @@ func nextturn():
 func attack():
 	notui.enemyturn()
 	var bullet
-	var ran = randi()%4
+	var ran = randi()%7
 	await notui.enemy_turn
 	
 	#gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_bonetunnel.tscn")
@@ -67,6 +67,29 @@ func attack():
 		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_boneside.tscn")
 		bullet = instantiateall(gloo_scene)
 		bullet.summoned(bullet, soul, bullet_speed)
+	elif ran == 4:
+		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_pillar_vertical.tscn")
+		bullet = instantiateall(gloo_scene)
+		bullet.summoned(bullet, soul, bullet_speed)
+	elif ran == 5:
+		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_pillar_horizontal.tscn")
+		bullet = instantiateall(gloo_scene)
+		bullet.summoned(bullet, soul, bullet_speed)
+	elif ran == 6:
+		global.current_mode = global.mode.RED
+		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_projectile.tscn")
+		var start_time = Time.get_ticks_msec() / 1000.0
+		while (Time.get_ticks_msec() / 1000.0) - start_time < 5.0:
+			bullet = instantiateall(gloo_scene)
+			bullet.summoned(bullet, soul, bullet_speed)
+			bullet.modulate.a = 0.0
+			var tween = get_tree().create_tween()
+			tween.tween_property(bullet, "modulate:a", 1.0, 0.25).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+			await get_tree().create_timer(0.5).timeout
+
+
+
+
 
 #func wywolaj(modeserca, res, bullet, soul, bullet_speed):
 		#battle.current_mode=battle.mode.modeserca

@@ -38,8 +38,7 @@ func attack():
 	var ran = randi()%4
 	await notui.enemy_turn
 	
-	
-	gloo_scene = preload("res://scenes/attackscenes/qorus/clawswipe.tscn")
+	gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_clawswipe.tscn")
 	bullet = instantiateall(gloo_scene)
 	bullet.summoned(bullet, soul, bullet_speed)
 	return

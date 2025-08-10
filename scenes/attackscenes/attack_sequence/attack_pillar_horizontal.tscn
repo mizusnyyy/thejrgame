@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://37y48tr4hixr" path="res://scenes/attackscenes/attack_sequence/blok2.gd" id="3_sxqfk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dikum"]
+resource_local_to_scene = true
 size = Vector2(128, 128)
 
 [node name="Node2D" type="Node2D"]

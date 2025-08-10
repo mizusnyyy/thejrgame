@@ -1,14 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dn4qsnop1u75i"]
+[gd_scene load_steps=2 format=3 uid="uid://dn4qsnop1u75i"]
 
 [ext_resource type="Texture2D" uid="uid://b7cgba8myvfbs" path="res://assets/sprite/characters/glut/gloo.png" id="1_5nh5k"]
-[ext_resource type="Script" uid="uid://b2tiof47sqfha" path="res://scenes/attackscenes/bone/bonebody.gd" id="1_jx2gg"]
 
 [node name="bonebody" type="Area2D"]
 priority = 1
-script = ExtResource("1_jx2gg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
 texture = ExtResource("1_5nh5k")
 region_enabled = true
 region_rect = Rect2(19, 13, 3, 3)

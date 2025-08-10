@@ -47,7 +47,7 @@ func getsizepls():
 	return amount
 	
 func summoned(bullet, soul, speed, left, size, ylevel=620):
-	var random = randf_range(-midscreen*1/8,midscreen*1/8)
+	var random = -172
 	if left:
 		random *= -1
 		bullet.direction = Vector2.LEFT

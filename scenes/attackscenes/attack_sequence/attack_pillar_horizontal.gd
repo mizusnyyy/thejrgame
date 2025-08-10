@@ -6,7 +6,7 @@ extends Node2D
 @export var gap: int = 30
 @export var max_total_width: int = 128
 
-func summoned(soul, speed):
+func summoned(bullet, soul, speed):
 	var vp = get_viewport().get_visible_rect()
 	var midscreen_y = vp.size.y / 2.0
 
@@ -28,13 +28,14 @@ func summoned(soul, speed):
 	rect1.size = Vector2(width1, rect1.size.y)
 	rect2.size = Vector2(width2, rect2.size.y)
 
-	blok1.position.x = 384
-	blok1.position.y = 256
-	blok2.position.x = 256
-	blok2.position.y = 256
+	blok1.position = Vector2(384, 256)
+	blok2.position = Vector2(256, 256)
 
 	rect1.position = Vector2(-rect1.size.x, -rect1.size.y * 0.5)
 	rect2.position = Vector2(0, -rect2.size.y * 0.5)
+
+	blok1.call_deferred("update_hitbox", blok1.get_node("Area2D/CollisionShape2D"), rect1)
+	blok2.call_deferred("update_hitbox", blok2.get_node("Area2D/CollisionShape2D"), rect2)
 
 	blok1.call_deferred("activate", soul, speed)
 	blok2.call_deferred("activate", soul, speed)

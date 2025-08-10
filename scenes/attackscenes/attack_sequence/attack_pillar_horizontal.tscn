@@ -25,6 +25,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Area2D" type="Area2D" parent="Blok1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Blok1/Area2D"]
+position = Vector2(164, -7)
 shape = SubResource("RectangleShape2D_dikum")
 
 [node name="Blok2" type="Node2D" parent="."]
@@ -41,4 +42,5 @@ color = Color(0.501961, 0, 0.501961, 1)
 [node name="Area2D" type="Area2D" parent="Blok2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Blok2/Area2D"]
+position = Vector2(-166, 8)
 shape = SubResource("RectangleShape2D_dikum")

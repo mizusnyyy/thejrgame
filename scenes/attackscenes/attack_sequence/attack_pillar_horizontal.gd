@@ -4,7 +4,7 @@ extends Node2D
 @onready var blok2: Node2D = $Blok2
 
 @export var gap: int = 30
-@export var max_total_width: int = 128  # max suma szerokości bloków
+@export var max_total_width: int = 128
 
 func summoned(soul, speed):
 	var vp = get_viewport().get_visible_rect()
@@ -25,17 +25,14 @@ func summoned(soul, speed):
 	var rect1: ColorRect = blok1.get_node("ColorRect")
 	var rect2: ColorRect = blok2.get_node("ColorRect")
 
-	# ustawiamy wylosowane szerokości
 	rect1.size = Vector2(width1, rect1.size.y)
 	rect2.size = Vector2(width2, rect2.size.y)
 
-	# pozycje bloków niezmienione
 	blok1.position.x = 384
 	blok1.position.y = 256
 	blok2.position.x = 256
 	blok2.position.y = 256
 
-	# ustawienie środka dla prostokątów
 	rect1.position = Vector2(-rect1.size.x, -rect1.size.y * 0.5)
 	rect2.position = Vector2(0, -rect2.size.y * 0.5)
 

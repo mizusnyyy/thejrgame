@@ -16,10 +16,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "soul":
 		if selected:
-			selected = false
-			anim.play("default")
-			interacting = false
-			label.visible = false
+			hideall()
 		else:
 			selected = true
 			anim.play("select")
@@ -43,6 +40,7 @@ func _process(_delta: float) -> void:
 				_show_items()
 			elif Input.is_action_just_pressed("interact"):
 				global.use_item(selected_item_index, "player")
+				hideall()
 
 				_show_items()
 
@@ -75,3 +73,9 @@ func _on_label_meta_clicked(meta: Variant) -> void:
 		global.use_item(index, "player")
 		_show_items()
 		notui.enemyturn()
+
+func hideall():
+	selected = false
+	anim.play("default")
+	interacting = false
+	label.visible = false

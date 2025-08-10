@@ -157,7 +157,7 @@ func _on_ready() -> void:
 		0:
 			enemtxt.texture = load(\"res://assets/sprite/characters/glut/glutbattle.png\")
 		1:
-			enemtxt.texture = load(\"res://assets/sprite/characters/party/misupi/mizubattle.png\")
+			enemtxt.texture = load(\"res://assets/sprite/characters/party/shadow/shadowbattle.png\")
 		2:
 			enemtxt.texture = load(\"res://assets/sprite/characters/party/misupi/mizubattle.png\")
 		_:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byrh838j3f4tm"
-path="res://.godot/imported/under.png-8aefba580ed9c3c12e590f7aae0637e7.ctex"
+uid="uid://dolekv3q1cx0j"
+path="res://.godot/imported/Bez nazwy.png-71c0b073a769b7bf074e7891b839a374.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/battle/not ui/under.png"
-dest_files=["res://.godot/imported/under.png-8aefba580ed9c3c12e590f7aae0637e7.ctex"]
+source_file="res://assets/sprite/battle/Bez nazwy.png"
+dest_files=["res://.godot/imported/Bez nazwy.png-71c0b073a769b7bf074e7891b839a374.ctex"]
 
 [params]
 

@@ -1,5 +1,5 @@
-extends RichTextLabel
-@onready var hp_bar = $"../TextureProgressBar"
+extends RichTextLabel	
+@onready var hp_bar = $"../Player_health_bar"
 
 func _process(delta: float) -> void:
 	hp_bar.value = global.health

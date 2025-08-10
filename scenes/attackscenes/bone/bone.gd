@@ -21,7 +21,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.name == "soul":
-		global.soultakedamage(body,10) #BYL TRUE
+		global.soultakedamage(body,35) #BYL TRUE
 
 func size(wielkosc):
 	for i in range(wielkosc):

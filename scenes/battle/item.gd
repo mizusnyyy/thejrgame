@@ -15,15 +15,18 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "soul":
-		anim.play("select")
-		selected = true
+		if selected:
+			selected = false
+			anim.play("default")
+			interacting = false
+			label.visible = false
+		else:
+			selected = true
+			anim.play("select")
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "soul":
-		anim.play("default")
-		selected = false
-		interacting = false
-		label.visible = false
+		pass
 func _process(_delta: float) -> void:
 	if selected and global.current_state == global.state.PLAYER_TURN:
 		if interacting:
@@ -49,7 +52,7 @@ func _process(_delta: float) -> void:
 				notui.enemyturn()
 
 		else:
-			if Input.is_action_just_pressed("interact"):
+			if Input.is_action_just_pressed("interact") or selected:
 				interacting = true
 				label.visible = true
 				selected_item_index = 0 #reset wyboru

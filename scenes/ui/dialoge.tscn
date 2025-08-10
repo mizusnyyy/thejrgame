@@ -57,11 +57,14 @@ autostart = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="dialoge"]
 layout_mode = 0
-offset_right = 593.0
-offset_bottom = 162.0
+offset_left = -148.0
+offset_top = -41.5
+offset_right = 445.0
+offset_bottom = 125.5
 scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(296, 83)
 texture = ExtResource("2_ivdui")
-patch_margin_top = 162
+patch_margin_top = 167
 patch_margin_right = 593
 
 [node name="StaticBody2D" type="StaticBody2D" parent="dialoge/NinePatchRect"]
@@ -97,9 +100,9 @@ expand_mode = 1
 layout_mode = 0
 offset_left = 79.0
 offset_top = 18.0
-offset_right = 297.0
+offset_right = 279.0
 offset_bottom = 68.0
-scale = Vector2(0.95, 0.95)
+pivot_offset = Vector2(100, 25)
 theme_override_constants/line_separation = 1
 theme_override_fonts/normal_font = ExtResource("3_k308d")
 bbcode_enabled = true
@@ -109,12 +112,14 @@ scroll_active = false
 autowrap_mode = 2
 tab_size = 3
 
+[node name="optsetter" type="Marker2D" parent="dialoge/RichTextLabel"]
+position = Vector2(100, 25)
+
 [node name="choice" type="Node2D" parent="dialoge"]
-position = Vector2(150, 38.1667)
+position = Vector2(179, 43)
 scale = Vector2(0.8, 0.8)
 
 [node name="indicator" type="CharacterBody2D" parent="dialoge/choice"]
-position = Vector2(-105, -15.2084)
 script = ExtResource("5_io7n7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dialoge/choice/indicator"]

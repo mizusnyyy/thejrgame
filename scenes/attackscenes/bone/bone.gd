@@ -26,17 +26,17 @@ func _on_body_entered(body):
 func size(wielkosc):
 	for i in range(wielkosc):
 		var bonebodyinst = instantiateall(bonebody)
-		bonebodyinst.global_position = Vector2(self.global_position.x, self.global_position.y + (6 * (i + 1)))
+		bonebodyinst.global_position = Vector2(self.global_position.x, self.global_position.y + (3 * (i + 1)))
 	lastbonefunc(wielkosc)
 	self.global_position.y -= wielkosc * 8
 
 func lastbonefunc(nr):
-	lastbone.global_position = Vector2(self.global_position.x, self.global_position.y + (6 * (nr + 1)))
+	lastbone.global_position = Vector2(self.global_position.x, self.global_position.y + (3 * (nr + 1)))
 	changecollision(nr)
 
 func changecollision(nr):
 	collisionbone.shape.size.y = 8 + (3*nr)
-	collisionbone.position.y += 8 + (3*nr) - 5
+	collisionbone.position.y = (1.5*nr)+2
 			
 func instantiateall(scene: PackedScene) -> Node2D:
 	var instance = scene.instantiate()
@@ -46,7 +46,7 @@ func instantiateall(scene: PackedScene) -> Node2D:
 func getsizepls():
 	return amount
 	
-func summoned(bullet, soul, speed, left, size, ylevel=620):
+func summoned(bullet, soul, speed, left, size, ylevel=310):
 	var random = -172
 	if left:
 		random *= -1

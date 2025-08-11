@@ -54,6 +54,7 @@ func show_dialogue(text: String, portrait_texture: Texture = null, typesound: Au
 	global.can_move = true
 
 func choose(options: Array):
+	choice.global_position = Vector2(359,309)
 	show()
 	choice.show()
 	choice.can_choose = true
@@ -78,19 +79,19 @@ func setoptions(options):
 		var mar = markeropt.global_position
 		match i:
 			0:
-				instance.global_position = Vector2(mar.x-50, mar.y-25)
-			1:
-				instance.global_position = Vector2(mar.x+50, mar.y-25)
+				instance.global_position = Vector2(mar.x-40, mar.y-20)
 				instance.dobry = true
+			1:
+				instance.global_position = Vector2(mar.x+40, mar.y-20)
 			2:
-				instance.global_position = Vector2(mar.x-50, mar.y+25)
+				instance.global_position = Vector2(mar.x-40, mar.y+20)
 			3:
-				instance.global_position = Vector2(mar.x+50, mar.y+25)
+				instance.global_position = Vector2(mar.x+40, mar.y+20)
 		alan.append(instance)
 
 		typing = true
 		instance.settext(options[i])
-	await alan[1].choice_finished
+	await alan[0].choice_finished or alan[1].choice_finished or alan[2].choice_finished or alan[3].choice_finished
 	emit_signal("dialogue_finished")
 	alan[3].queue_free()
 	alan[2].queue_free()

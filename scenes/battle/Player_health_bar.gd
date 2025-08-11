@@ -5,7 +5,7 @@ extends TextureProgressBar
 var textures = {
 	"green": preload("res://assets/sprite/battle/progress.png"),
 	"yellow": preload("res://assets/sprite/battle/progress_yellow.png"),
-	"red": preload("res://assets/sprite/battle/progress_red.png"),
+	"red": preload("res://assets/sprite/battle/HP_progress_red.png"),
 }
 
 var current_color = ""

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dacerr5xvnfu2"
-path="res://.godot/imported/progress_red.png-e7d64faca0641d6a02053492163b3f96.ctex"
+path="res://.godot/imported/HP_progress_red.png-26cc6911105a90a41f37f26d39792933.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/battle/progress_red.png"
-dest_files=["res://.godot/imported/progress_red.png-e7d64faca0641d6a02053492163b3f96.ctex"]
+source_file="res://assets/sprite/battle/HP_progress_red.png"
+dest_files=["res://.godot/imported/HP_progress_red.png-26cc6911105a90a41f37f26d39792933.ctex"]
 
 [params]
 

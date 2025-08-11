@@ -104,9 +104,9 @@
 [ext_resource type="Texture2D" uid="uid://ehf6sq83s60h" path="res://assets/sprite/battle/bg/b0098.png" id="99_s8a08"]
 [ext_resource type="Texture2D" uid="uid://ygndui1q364y" path="res://assets/sprite/battle/bg/b0099.png" id="100_jucj5"]
 [ext_resource type="Texture2D" uid="uid://nciyms0xvnjb" path="res://assets/sprite/battle/bg/b0100.png" id="101_0us13"]
-[ext_resource type="Script" path="res://scenes/battle/Player_health_bar.gd" id="103_xo5np"]
+[ext_resource type="Script" uid="uid://dx4xtblajk0rm" path="res://scenes/battle/Player_health_bar.gd" id="103_xo5np"]
 [ext_resource type="Script" uid="uid://bcnmmxb6atgap" path="res://scenes/battle/notui.gd" id="106_el03i"]
-[ext_resource type="Script" path="res://scenes/battle/Enemy_health_bar.gd" id="106_itpkr"]
+[ext_resource type="Script" uid="uid://ba0qm88lne0ys" path="res://scenes/battle/Enemy_health_bar.gd" id="106_itpkr"]
 [ext_resource type="Texture2D" uid="uid://f7k0j7os4inn" path="res://assets/sprite/characters/party/jr/pick.png" id="106_ly5g2"]
 [ext_resource type="Script" uid="uid://fsefgnoiamhk" path="res://scenes/battle/rich_text_label1.gd" id="106_wf2x0"]
 [ext_resource type="Script" uid="uid://cp5uyiuhegpvn" path="res://scenes/battle/enemy_health_indicator_text.gd" id="107_hr533"]
@@ -819,14 +819,14 @@ scroll_active = false
 horizontal_alignment = 1
 script = ExtResource("106_wf2x0")
 
-[node name="Enemy__Ghost_bar" type="ProgressBar" parent="box/StaticBody2D"]
+[node name="Mana__Ghost_bar" type="ProgressBar" parent="box/StaticBody2D"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -112.0
-offset_top = -60.0
-offset_right = -94.0
-offset_bottom = 67.0
+offset_left = -113.0
+offset_top = -60.5
+offset_right = -95.0
+offset_bottom = 66.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/fill = SubResource("StyleBoxFlat_itpkr")
@@ -834,16 +834,16 @@ value = 100.0
 fill_mode = 3
 show_percentage = false
 
-[node name="Enemy_health_bar" type="TextureProgressBar" parent="box/StaticBody2D"]
-offset_left = -113.0
+[node name="Mana_bar" type="TextureProgressBar" parent="box/StaticBody2D"]
+offset_left = -114.0
 offset_top = -61.5
-offset_right = -93.0
+offset_right = -94.0
 offset_bottom = 66.5
 fill_mode = 3
 texture_under = ExtResource("107_itpkr")
 script = ExtResource("106_itpkr")
 
-[node name="Enemy_health_indicator_text" type="RichTextLabel" parent="box/StaticBody2D"]
+[node name="Mana_ammount_indicator_text" type="RichTextLabel" parent="box/StaticBody2D"]
 offset_left = -165.0
 offset_top = 73.5
 offset_right = -45.0

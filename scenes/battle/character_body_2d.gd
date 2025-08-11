@@ -9,7 +9,10 @@ var can_move=true
 @onready var sprite=$Sprite2D
 @onready var haudio=$hurt
 var invincible := false
+var state := false
+var tempspeed = SPEED
 @onready var soul=$"."
+@onready var soulsande=load("res://scenes/battle/heartsande.tscn")
 @onready var buttons = [
 	get_node("../notui/fight"),
 	get_node("../notui/act"),
@@ -64,7 +67,24 @@ func take_damage(amount, blue=false):
 func soul_is_alive():
 	return alive
 	
+func toggle():
+	state = !state
+	print("Nowy stan:", state)
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("changeheart"):
+		toggle()
+		if state:
+			tempspeed = SPEED
+			Engine.time_scale = 0.5
+			SPEED = SPEED/Engine.time_scale
+			while state:
+				var instance = soulsande.instantiate()
+				get_parent().get_parent().add_child(instance)
+				instance.global_position = sprite.global_position
+				await get_tree().process_frame
+		else:
+			Engine.time_scale = 1.0
+			SPEED = tempspeed
 	if alive and global.current_mode == global.mode.RED:
 		var directionlr := Input.get_axis("left", "right")
 		var directionud := Input.get_axis("up", "down")

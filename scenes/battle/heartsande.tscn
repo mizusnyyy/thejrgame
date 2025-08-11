@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsjgokmq8asbv"]
+
+[ext_resource type="Texture2D" uid="uid://jouutgjikwq0" path="res://assets/sprite/battle/hearts.png" id="1_0oqbo"]
+[ext_resource type="Script" uid="uid://bm6rc8e1021q1" path="res://heartsande.gd" id="1_sj6x2"]
+
+[node name="heartsande" type="Sprite2D"]
+show_behind_parent = true
+z_index = 2
+texture = ExtResource("1_0oqbo")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+script = ExtResource("1_sj6x2")
+
+[connection signal="ready" from="." to="." method="_on_ready"]

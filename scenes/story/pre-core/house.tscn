@@ -282,6 +282,18 @@ volume_db = -6.769
 autoplay = true
 max_distance = 26.0
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -73.0
+offset_top = -119.0
+offset_right = 160.0
+offset_bottom = 48.0
+text = "PEAK
+SPOJRZ
+WALKE
+Z 
+QORUSEM I KLIKNIJ
+\"SHIFT\""
+
 [connection signal="body_entered" from="ysorting/teto" to="ysorting/teto" method="_on_body_entered"]
 [connection signal="body_exited" from="ysorting/teto" to="ysorting/teto" method="_on_body_exited"]
 [connection signal="ready" from="debug" to="debug" method="_on_ready"]

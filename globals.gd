@@ -5,6 +5,8 @@ var current_state = state.PLAYER_TURN
 var current_mode = mode.RED
 var battleenem
 var tp = 0
+var mana = 0
+var mana_max = 100
 var enemy_hp = 100.0
 var maxenemy_hp = 100.0
 var health := 100.0

@@ -35,6 +35,7 @@ func _process(delta: float) -> void:
 
 func deal_damage(amount: float) -> void:
 	global.enemy_hp -= amount
+	global.mana += 10
 	if global.enemy_hp <= 0:
 		global.enemy_hp = 0
 		call_deferred("_back_to_house")

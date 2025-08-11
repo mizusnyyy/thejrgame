@@ -1,23 +1,21 @@
 extends TextureProgressBar
-@onready var ghost_bar = $"../Enemy__Ghost_bar"
+@onready var ghost_bar = $"../Mana__Ghost_bar"
 
 var textures = {
-	"green": preload("res://assets/sprite/battle/progress.png"),
-	"yellow": preload("res://assets/sprite/battle/progress_yellow.png"),
-	"red": preload("res://assets/sprite/battle/progress_red.png"),
+	"Mana": preload("res://assets/sprite/battle/mana_progress.png"),
 }
 
 var current_color = ""
 
 func _ready():
-	max_value = global.maxenemy_hp
+	max_value = global.mana_max
 	ghost_bar.max_value = max_value
-	value = global.enemy_hp
+	value = global.mana
 	_update_style(value)
 
 func _process(delta: float) -> void:
 	# upewnij się, że value jest aktualizowane
-	value = global.enemy_hp
+	value = global.mana
 
 	if ghost_bar.value > value:
 		ghost_bar.value = lerp(ghost_bar.value, value, delta * 4.0)
@@ -29,16 +27,10 @@ func _process(delta: float) -> void:
 
 	_update_style(value)
 
-func _update_style(health_value: float) -> void:
+func _update_style(mana_value: float) -> void:
 
 	var color = ""
-	# proste, czytelne progi
-	if health_value > 50:
-		color = "green"
-	elif health_value > 30:
-		color = "yellow"
-	else:
-		color = "red"
+	color = "Mana"
 
 
 	# zabezpieczenie: sprawdź czy tekstura istnieje

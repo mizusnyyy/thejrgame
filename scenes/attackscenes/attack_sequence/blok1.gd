@@ -21,7 +21,6 @@ func update_hitbox(hitbox: CollisionShape2D, rect: ColorRect) -> void:
 	var shape = hitbox.shape
 	if shape is RectangleShape2D:
 		shape.extents = Vector2(rect.size.x / 2, rect.size.y / 2)
-		# Hitbox powinien być wyśrodkowany względem recta
 		hitbox.position = rect.position + rect.size / 2
 
 func activate(soul, speed) -> void:
@@ -35,7 +34,6 @@ func activate(soul, speed) -> void:
 	hitbox.disabled = false
 	is_attacking = true
 
-	# Podłącz sygnał tylko raz, jeśli nie jest podłączony
 	var callable = Callable(self, "_on_body_entered")
 	if not area.is_connected("body_entered", callable):
 		area.connect("body_entered", callable)

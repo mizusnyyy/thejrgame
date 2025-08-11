@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cd58dt2spnuk1"]
+[gd_scene load_steps=6 format=3 uid="uid://cd58dt2spnuk1"]
 
 [ext_resource type="Script" uid="uid://dxocrkdaxbcw3" path="res://scenes/attackscenes/attack_sequence/attack_pillar_vertical.gd" id="1_30dxc"]
 [ext_resource type="Script" uid="uid://x5avrtiqbx5f" path="res://scenes/attackscenes/attack_sequence/blok1.gd" id="2_p5mcb"]
 [ext_resource type="Script" uid="uid://37y48tr4hixr" path="res://scenes/attackscenes/attack_sequence/blok2.gd" id="3_qg0kl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qg0kl"]
+size = Vector2(61.125, 126)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4rrh"]
 size = Vector2(61.125, 126)
@@ -26,7 +29,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Blok1/Area2D"]
 position = Vector2(-122, 49)
-shape = SubResource("RectangleShape2D_x4rrh")
+shape = SubResource("RectangleShape2D_qg0kl")
 
 [node name="Blok2" type="Node2D" parent="."]
 script = ExtResource("3_qg0kl")

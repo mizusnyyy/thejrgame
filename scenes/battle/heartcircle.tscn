@@ -3,4 +3,6 @@
 [ext_resource type="Script" uid="uid://d3yq3vallw1uw" path="res://heartcircle.gd" id="1_0h12x"]
 
 [node name="heartcircle" type="Node2D"]
+rotation = -1.5708
+scale = Vector2(1e-05, 1e-05)
 script = ExtResource("1_0h12x")

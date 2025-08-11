@@ -72,18 +72,33 @@ func soul_is_alive():
 func toggle():
 	state = !state
 	print("Nowy stan:", state)
+
+	
+func enginespeed(still=true):
+	while Engine.time_scale > 0.2:
+		if !still:
+			Engine.time_scale=1
+			print("mustard")
+			return
+		Engine.time_scale -= 0.01
+		print("war ", Engine.time_scale)
+		await get_tree().create_timer(0.01/(1/Engine.time_scale)).timeout
+	Engine.time_scale = 0.2
+	print("www aa ", Engine.time_scale)
+	if !still:
+		Engine.time_scale=1
+		
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("changeheart"):
-		for i in range(10):
-			Engine.time_scale = Engine.time_scale-(i/10)
-			await get_tree().process_frame
-			print("hej")
+		enginespeed()
 		circle = soulcircle.instantiate()
 		add_child(circle)
 		circle.global_position = sprite.global_position
 	if Input.is_action_just_released("changeheart"):
+		enginespeed(false)
 		Engine.time_scale = 1
-		circle.selfdel()
+		if circle:
+			circle.selfdel()
 		
 		#toggle()
 		#if state:

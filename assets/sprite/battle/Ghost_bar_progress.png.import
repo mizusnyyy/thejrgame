@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drwbnl2nmpeft"
-path="res://.godot/imported/mana_progress.png-29b561d5c686faefb7828526415aebf8.ctex"
+uid="uid://dq8dvo6ulf1x3"
+path="res://.godot/imported/Ghost_bar_progress.png-c67e78f04c2ccb7bffd82b2808d17929.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/battle/mana_progress.png"
-dest_files=["res://.godot/imported/mana_progress.png-29b561d5c686faefb7828526415aebf8.ctex"]
+source_file="res://assets/sprite/battle/Ghost_bar_progress.png"
+dest_files=["res://.godot/imported/Ghost_bar_progress.png-c67e78f04c2ccb7bffd82b2808d17929.ctex"]
 
 [params]
 

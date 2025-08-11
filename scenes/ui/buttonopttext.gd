@@ -9,7 +9,7 @@ func settext(settext):
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name=="indicator":
-		self.modulate = Color(1, 1, 0, 0.5)
+		self.modulate = Color(1, 1, 1, 0.5)
 		zasieg = true
 
 func _on_body_exited(body: Node2D) -> void:

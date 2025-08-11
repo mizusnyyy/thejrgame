@@ -78,6 +78,8 @@ func _physics_process(delta: float) -> void:
 			Engine.time_scale = 0.5
 			SPEED = SPEED/Engine.time_scale
 			while state:
+				if not is_inside_tree():
+					return
 				var instance = soulsande.instantiate()
 				get_parent().get_parent().add_child(instance)
 				instance.global_position = sprite.global_position

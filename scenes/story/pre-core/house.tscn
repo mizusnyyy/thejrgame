@@ -217,13 +217,6 @@ portrait_texture = Array[Texture]([ExtResource("15_s7kpv"), ExtResource("15_s7kp
 texturenpc = ExtResource("14_aqtk2")
 
 [node name="npc2" parent="ysorting" instance=ExtResource("12_1e2cb")]
-position = Vector2(-508, -74)
-pages = Array[String](["hejo. nig, ger", "okret nasz... spumil sie", "i wujciczki dwie. haha, haha, haha", "go. jack. your. self"])
-portrait_texture = Array[Texture]([ExtResource("13_aqtk2"), ExtResource("13_aqtk2"), ExtResource("15_s7kpv"), null])
-whoid = 2
-texturenpc = ExtResource("15_b6qe5")
-
-[node name="npc3" parent="ysorting" instance=ExtResource("12_1e2cb")]
 position = Vector2(68, 22)
 pages = Array[String](["umieram. pogarszam sie.", "czuje to. CZUJE...", "btw nie mam innych portretow to", "niestety to tak wyglada"])
 portrait_texture = Array[Texture]([ExtResource("7_jkym4"), ExtResource("8_1e2cb"), ExtResource("9_0j0oh"), ExtResource("9_0j0oh")])

@@ -18,6 +18,7 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if body.name=="player":
 		player_in_range = false
+		can_talk = true
 
 func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("interact") and can_talk and player_in_range:

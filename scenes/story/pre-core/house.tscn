@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://bpmn0ng1q8ox"]
+[gd_scene load_steps=37 format=4 uid="uid://bpmn0ng1q8ox"]
 
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_tecch"]
 [ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/player/teto.tscn" id="6_74pxv"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://blo5yr7xsgygh" path="res://assets/sprite/characters/party/shadow/shadowspritesheet.png" id="15_b6qe5"]
 [ext_resource type="Texture2D" uid="uid://6kf44nmw8j3i" path="res://assets/sprite/characters/party/jr/teto_side_better.png" id="15_jkym4"]
 [ext_resource type="Texture2D" uid="uid://c7w2uou8gecp8" path="res://teto2.png" id="15_s7kpv"]
+[ext_resource type="Texture2D" uid="uid://cykdshu25r3nk" path="res://teto4.png" id="15_u8w88"]
 [ext_resource type="Texture2D" uid="uid://cmj27cly056f7" path="res://assets/sprite/characters/party/jr/teto_back.png" id="16_1e2cb"]
 [ext_resource type="Texture2D" uid="uid://bq1mj2osrqcqs" path="res://assets/sprite/characters/party/jr/teto_side.png" id="17_0j0oh"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="18_jobkd"]
@@ -211,15 +212,17 @@ z_index = 1000
 shape = SubResource("RectangleShape2D_510yu")
 
 [node name="npc" parent="ysorting" instance=ExtResource("12_1e2cb")]
-position = Vector2(0, -200)
-pages = Array[String](["Witaj. Mizu.", "Wiec mam nadzieje,", "ze zdajesz sobie sprawe,", "ze bardzo mnie wnerwiles nie robiac NIC", "przez cale 3 dni... (chb)", "takze mam do ciebie tylko jedno pytanie...", "KTO. JEST. NAJLEPSZY. I. KTO. JEST-", "TWOIM. MASTEREM?...", "*AVIRUK,PAVEY,IGGY,SHADOW", "Jezeli nadal rozmawiamy to dobrze odpowiedziales!", "Omedetou."])
-portrait_texture = Array[Texture]([ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("13_aqtk2"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("13_aqtk2"), ExtResource("13_aqtk2"), ExtResource("15_8i2l0")])
+position = Vector2(0, -100)
+pages = Array[String](["Witaj. Mizu. Ponownie.", "Do you wanna have a bad time?", "Zacznij zastanawiac sie czy-", "naprawde chcesz robic ta gre", "przez cale 5 dni juz nic nie zrobiles", "mam nadzieje ze chociaz karierzyles", "Jest tylko jedne pytanie, odpowiedz...", "Dlaczego Steven jest hot?", "podpowiedz:... nie ma podpowiedzi", "*GEJ,MIZU PEDAL,NWM,PAVEY", "Wow... jestes coraz lepszy w to!", "<- Amplected rule 34 btw, (peak)"])
+portrait_texture = Array[Texture]([ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("13_aqtk2"), ExtResource("15_u8w88"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("13_aqtk2"), ExtResource("13_aqtk2"), ExtResource("15_8i2l0")])
+whoid = 1
 texturenpc = ExtResource("14_aqtk2")
 
 [node name="npc2" parent="ysorting" instance=ExtResource("12_1e2cb")]
-position = Vector2(68, 22)
-pages = Array[String](["umieram. pogarszam sie.", "czuje to. CZUJE...", "btw nie mam innych portretow to", "niestety to tak wyglada"])
-portrait_texture = Array[Texture]([ExtResource("7_jkym4"), ExtResource("8_1e2cb"), ExtResource("9_0j0oh"), ExtResource("9_0j0oh")])
+position = Vector2(-200, -25)
+preloadscena = null
+pages = Array[String](["wypierdalaj gadac z misupim"])
+portrait_texture = Array[Texture]([ExtResource("9_0j0oh")])
 whoid = 1
 texturenpc = ExtResource("15_b6qe5")
 
@@ -274,18 +277,6 @@ stream = ExtResource("20_1e2cb")
 volume_db = -6.769
 autoplay = true
 max_distance = 26.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = -73.0
-offset_top = -119.0
-offset_right = 160.0
-offset_bottom = 48.0
-text = "PEAK
-SPOJRZ
-WALKE
-Z 
-QORUSEM I KLIKNIJ
-\"SHIFT\""
 
 [connection signal="body_entered" from="ysorting/teto" to="ysorting/teto" method="_on_body_entered"]
 [connection signal="body_exited" from="ysorting/teto" to="ysorting/teto" method="_on_body_exited"]

@@ -79,9 +79,9 @@ func setoptions(options):
 		match i:
 			0:
 				instance.global_position = Vector2(mar.x-50, mar.y-25)
+				instance.dobry = true
 			1:
 				instance.global_position = Vector2(mar.x+50, mar.y-25)
-				instance.dobry = true
 			2:
 				instance.global_position = Vector2(mar.x-50, mar.y+25)
 			3:
@@ -90,7 +90,7 @@ func setoptions(options):
 
 		typing = true
 		instance.settext(options[i])
-	await alan[1].choice_finished
+	await alan[0].choice_finished or alan[1].choice_finished or alan[2].choice_finished or alan[3].choice_finished
 	emit_signal("dialogue_finished")
 	alan[3].queue_free()
 	alan[2].queue_free()

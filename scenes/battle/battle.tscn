@@ -108,7 +108,7 @@
 [ext_resource type="Script" uid="uid://bcnmmxb6atgap" path="res://scenes/battle/notui.gd" id="106_el03i"]
 [ext_resource type="Texture2D" uid="uid://drwbnl2nmpeft" path="res://assets/sprite/battle/mana_progress.png" id="106_hr533"]
 [ext_resource type="Script" uid="uid://ba0qm88lne0ys" path="res://scenes/battle/Enemy_health_bar.gd" id="106_itpkr"]
-[ext_resource type="Texture2D" uid="uid://f7k0j7os4inn" path="res://assets/sprite/jr/pick.png" id="106_ly5g2"]
+[ext_resource type="Texture2D" uid="uid://f7k0j7os4inn" path="res://assets/sprite/characters/jr/pick.png" id="106_ly5g2"]
 [ext_resource type="Script" uid="uid://fsefgnoiamhk" path="res://scenes/battle/rich_text_label1.gd" id="106_wf2x0"]
 [ext_resource type="Script" uid="uid://cp5uyiuhegpvn" path="res://scenes/battle/enemy_health_indicator_text.gd" id="107_hr533"]
 [ext_resource type="Texture2D" uid="uid://dolekv3q1cx0j" path="res://assets/sprite/battle/Bez nazwy.png" id="107_itpkr"]
@@ -144,7 +144,6 @@
 [ext_resource type="PackedScene" uid="uid://pegs4ep6hjc5" path="res://scenes/attackscenes/bone/bone.tscn" id="137_21vhs"]
 [ext_resource type="Script" uid="uid://cfw8ku15s2mot" path="res://scenes/battle/sprite_2d.gd" id="139_itpkr"]
 [ext_resource type="Texture2D" uid="uid://jouutgjikwq0" path="res://assets/sprite/battle/hearts.png" id="139_wf2x0"]
-
 
 [sub_resource type="GDScript" id="GDScript_w54gx"]
 script/source = "extends Node2D

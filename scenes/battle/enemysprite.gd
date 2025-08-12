@@ -30,7 +30,7 @@ func forparts(name):
 	for index in range(len(parts)):
 		var whichpart = part_names[index]
 		parts[index].texture = load(
-		"res://assets/sprite/characters/party/%s/enemypart/%s_%s.png" % [name, name, whichpart]
+		"res://assets/sprite/characters/%s/enemypart/%s_%s.png" % [name, name, whichpart]
 		)
 
 func swinghand():

@@ -12,6 +12,9 @@ var invincible := false
 var state := false
 var tempspeed = SPEED
 var circle
+
+
+
 @onready var soul=$"."
 @onready var soulsande=load("res://scenes/battle/heartsande.tscn")
 @onready var soulcircle=load("res://scenes/battle/heartcircle.tscn")
@@ -115,6 +118,7 @@ func _physics_process(delta: float) -> void:
 				var instance = soulsande.instantiate()
 				get_parent().get_parent().add_child(instance)
 				instance.global_position = sprite.global_position
+				instance.changeheart(sprite.texture,sprite.region_rect.position.x,sprite.region_rect.position.y)
 				await get_tree().process_frame
 		#else:
 	if Input.is_action_just_released("changeheart"):

@@ -31,5 +31,5 @@ func instantiateall(scene):
 	return instance
 
 func returnbullet():
-	await get_tree().create_timer(3.5).timeout
+	await get_tree().create_timer(2.5).timeout
 	emit_signal("attack_finished")

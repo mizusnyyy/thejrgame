@@ -1,6 +1,6 @@
 
 extends RichTextLabel	
-@onready var mana = $"../Mana__Ghost_bar"
+@onready var mana = $"../Mana_bar"
 
 func _process(delta: float) -> void:
 	mana.value = global.mana

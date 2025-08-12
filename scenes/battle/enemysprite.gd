@@ -34,23 +34,33 @@ func forparts(name):
 		)
 
 func swinghand():
+	var speed = 270.0  # stopni na sekundę
+	var target_up = 48.0
+	var target_down = -88.0
+	var delta = 0.0
 	started = true
-	while parts[3].rotation_degrees < 48:
-		parts[3].rotation_degrees += 1.5
-		await get_tree().create_timer(0.005 * get_process_delta_time()).timeout
-	
-	await get_tree().create_timer(60 * get_process_delta_time()).timeout
-	
-	while parts[3].rotation_degrees > -88:
-		parts[3].rotation_degrees -= 1.5
-		await get_tree().create_timer(0.002 * get_process_delta_time()).timeout
-	
-	await get_tree().create_timer(15 * get_process_delta_time()).timeout
-	print(2 * get_process_delta_time())
-	
+
+	# Swing up
+	while parts[3].rotation_degrees < target_up:
+		delta = get_process_delta_time()
+		parts[3].rotation_degrees += speed * delta/2
+		await get_tree().process_frame
+	# Mała przerwa
+	await get_tree().create_timer(0.4).timeout
+
+	# Swing down
+	while parts[3].rotation_degrees > target_down:
+		delta = get_process_delta_time()
+		parts[3].rotation_degrees -= speed * delta*1.5
+		await get_tree().process_frame
+	# Mała przerwa
+	await get_tree().create_timer(0.2).timeout
+
+	# Powrót do pozycji startowej (0 stopni)
 	while parts[3].rotation_degrees < 0:
-		parts[3].rotation_degrees += 1.5
-		await get_tree().create_timer(0.008 * get_process_delta_time()).timeout
-	
+		delta = get_process_delta_time()
+		parts[3].rotation_degrees += speed * delta
+		await get_tree().process_frame
+
 	parts[3].rotation_degrees = 0
 	started = false

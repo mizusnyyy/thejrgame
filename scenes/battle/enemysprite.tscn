@@ -12,8 +12,9 @@
 script = ExtResource("1_5itas")
 
 [node name="enemy_face" type="Sprite2D" parent="."]
-position = Vector2(0, -40)
+position = Vector2(0, -26)
 texture = ExtResource("1_jgmrr")
+offset = Vector2(0, -14)
 
 [node name="enemy_hair" type="Sprite2D" parent="."]
 position = Vector2(0, -40)

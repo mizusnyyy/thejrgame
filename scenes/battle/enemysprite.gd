@@ -37,19 +37,20 @@ func swinghand():
 	started = true
 	while parts[3].rotation_degrees < 48:
 		parts[3].rotation_degrees += 1.5
-		await get_tree().create_timer(0.005).timeout
+		await get_tree().create_timer(0.005 * get_process_delta_time()).timeout
 	
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(60 * get_process_delta_time()).timeout
 	
 	while parts[3].rotation_degrees > -88:
 		parts[3].rotation_degrees -= 1.5
-		await get_tree().create_timer(0.002).timeout
+		await get_tree().create_timer(0.002 * get_process_delta_time()).timeout
 	
-	await get_tree().create_timer(0.02).timeout
+	await get_tree().create_timer(15 * get_process_delta_time()).timeout
+	print(2 * get_process_delta_time())
 	
 	while parts[3].rotation_degrees < 0:
 		parts[3].rotation_degrees += 1.5
-		await get_tree().create_timer(0.008).timeout
+		await get_tree().create_timer(0.008 * get_process_delta_time()).timeout
 	
 	parts[3].rotation_degrees = 0
 	started = false

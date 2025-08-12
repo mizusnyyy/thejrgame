@@ -9,22 +9,26 @@ extends Control
 signal dialogue_started
 signal dialogue_finished
 signal label_choice_finished
+
 signal choice_finished
+signal any_choice_finished
 
 var full_text := ""
 var char_index := 0
 var typing := false
 var dialogue_active := false
 var type_sound_player: AudioStreamPlayer2D = null
+var curoptid = 0
 
 func _ready() -> void:
 	hide()
 
-func show_dialogue(text: String, portrait_texture: Texture = null, typesound: AudioStreamPlayer2D = null) -> void:
+func show_dialogue(text: String, portrait_texture: Texture = null, typesound: AudioStreamPlayer2D = null, optid = null) -> void:
 	if text.begins_with("*"):
 		text = text.substr(1)
-		var parts = text.split(",", false, 3)
-		choose(parts)
+		var parts = text.split(",", false, 0)
+		choose(parts, optid[curoptid])
+		curoptid+=1
 		await choice_finished
 		#await get_tree().create_timer(3).timeout
 		emit_signal("dialogue_finished")
@@ -52,8 +56,9 @@ func show_dialogue(text: String, portrait_texture: Texture = null, typesound: Au
 	await dialogue_finished
 	hide()
 	global.can_move = true
+	curoptid=0
 
-func choose(options: Array):
+func choose(options: Array, optid):
 	choice.global_position = Vector2(359,309)
 	show()
 	choice.show()
@@ -66,39 +71,47 @@ func choose(options: Array):
 	label.text=""
 	#for i in range(len(options)):
 		#label.text += options[i] + "\n"
-	setoptions(options)
+	setoptions(options,optid)
 	
-func setoptions(options):
+func setoptions(options,optid):
 	var setteropt = $RichTextLabel/optsetter
 	var sceneopt = load("res://scenes/ui/buttonopt.tscn")
 	var alan = []
 	for i in range(len(options)):
-		var instance = sceneopt.instantiate()
-		add_child(instance)
+		var ins = sceneopt.instantiate()
+		add_child(ins)
 
 		var mar = markeropt.global_position
 		match i:
 			0:
-				instance.global_position = Vector2(mar.x-40, mar.y-20)
-				instance.dobry = true
+				ins.global_position = Vector2(mar.x-40, mar.y-20)
 			1:
-				instance.global_position = Vector2(mar.x+40, mar.y-20)
+				ins.global_position = Vector2(mar.x+40, mar.y-20)
 			2:
-				instance.global_position = Vector2(mar.x-40, mar.y+20)
+				ins.global_position = Vector2(mar.x-40, mar.y+20)
 			3:
-				instance.global_position = Vector2(mar.x+40, mar.y+20)
-		alan.append(instance)
+				ins.global_position = Vector2(mar.x+40, mar.y+20)
+			_:
+				ins.global_position = Vector2(mar.x, mar.y)
+		ins.dobry = optid[i]
+		alan.append(ins)
 
 		typing = true
-		instance.settext(options[i])
-	await alan[0].choice_finished or alan[1].choice_finished or alan[2].choice_finished or alan[3].choice_finished
-	emit_signal("dialogue_finished")
-	alan[3].queue_free()
-	alan[2].queue_free()
-	alan[1].queue_free()
-	alan[0].queue_free()
+		ins.settext(options[i])
+		
+	for a in alan:
+		a.choice_finished.connect(func(): emit_signal("any_choice_finished"))
+	await any_choice_finished
+	if not is_inside_tree():
+		return
+	var tempalan = len(alan)
+	var time = 0.1
+	for i in tempalan:
+		alan[i].disappearbut(time)
+	await get_tree().create_timer(time).timeout
 	choice.hide()
 	choice.can_choose = false
+	emit_signal("dialogue_finished")
 
 		
 func _type_text() -> void:

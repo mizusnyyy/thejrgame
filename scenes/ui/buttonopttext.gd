@@ -1,8 +1,9 @@
 extends Area2D
 @onready var text = $textoptions
-@onready var dobry = false
+@onready var dobry = 0
 var zasieg = false
 signal choice_finished
+signal done
 
 func settext(settext):
 	text.text = settext
@@ -18,9 +19,15 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _unhandled_input(event):
 	if event.is_action_pressed("interact") && zasieg:
-		if dobry:
-			emit_signal("choice_finished")
-		else:
-			while true:
-					print("mizu jest glupi")
-					print("mizu to igor")
+		match dobry:
+			1:
+				for i in range(100):
+					global_position += Vector2(100, 0)
+					await get_tree().create_timer(0.1).timeout
+			2:
+				get_tree().change_scene_to_packed(preload("res://scenes/battle/battle.tscn"))
+		emit_signal("choice_finished")
+func disappearbut(v):
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 0.0, v)
+	tween.tween_callback(Callable(self, "queue_free"))

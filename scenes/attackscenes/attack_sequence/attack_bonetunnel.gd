@@ -5,10 +5,6 @@ signal attack_finished
 
 func summoned(bullet, soul, speed):
 	global.current_mode=global.mode.RED
-	#startsequence(bullet, soul, 40,true,5)
-	#await get_tree().create_timer(2.0).timeout
-	#startsequence(bullet, soul, 60, true,50)
-	#await get_tree().create_timer(2.0).timeout
 	var randomnr = 320
 	var inny = 360
 	for i in range(13):

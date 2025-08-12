@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6kf44nmw8j3i"
-path="res://.godot/imported/teto_side_better.png-e3bd245f467f06aa90be2be7ae22725a.ctex"
+uid="uid://otvlkqhktjcc"
+path="res://.godot/imported/shadow_hand_r.png-40e89d74a974a0efe0f6d9bf1e03064e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/characters/party/jr/teto_side_better.png"
-dest_files=["res://.godot/imported/teto_side_better.png-e3bd245f467f06aa90be2be7ae22725a.ctex"]
+source_file="res://assets/sprite/characters/shadow/enemypart/shadow_hand_r.png"
+dest_files=["res://.godot/imported/shadow_hand_r.png-40e89d74a974a0efe0f6d9bf1e03064e.ctex"]
 
 [params]
 

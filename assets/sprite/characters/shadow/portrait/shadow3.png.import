@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5jp252jvsneo"
-path="res://.godot/imported/misupispritesheet.png-ad2153ba225528c0ddbf5dbf21f5e769.ctex"
+uid="uid://bnxmi0qekyy6d"
+path="res://.godot/imported/shadow3.png-f494c32cc0279b791e8e1e33b5cf57f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/characters/party/misupi/misupispritesheet.png"
-dest_files=["res://.godot/imported/misupispritesheet.png-ad2153ba225528c0ddbf5dbf21f5e769.ctex"]
+source_file="res://assets/sprite/characters/shadow/portrait/shadow3.png"
+dest_files=["res://.godot/imported/shadow3.png-f494c32cc0279b791e8e1e33b5cf57f3.ctex"]
 
 [params]
 

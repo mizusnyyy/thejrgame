@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdnifba5tbke4"
-path="res://.godot/imported/mizubattle.png-eee02a6ea9d7374eefa88d40388c9a34.ctex"
+uid="uid://4hxh8vk52udx"
+path="res://.godot/imported/paveyspritesheet.png-f69b92bad55a021d67d4d89ca819d307.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/characters/party/misupi/mizubattle.png"
-dest_files=["res://.godot/imported/mizubattle.png-eee02a6ea9d7374eefa88d40388c9a34.ctex"]
+source_file="res://assets/sprite/characters/pavey/paveyspritesheet.png"
+dest_files=["res://.godot/imported/paveyspritesheet.png-f69b92bad55a021d67d4d89ca819d307.ctex"]
 
 [params]
 

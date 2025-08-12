@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e5q4i0heuvg3"
-path="res://.godot/imported/teto_front.png-bfaf40fdf7984d3924e41681decc715b.ctex"
+uid="uid://c16hu8ypwb34t"
+path="res://.godot/imported/shadow_down.png-337eaec8304f488ec016487dff2be6bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/characters/party/jr/teto_front.png"
-dest_files=["res://.godot/imported/teto_front.png-bfaf40fdf7984d3924e41681decc715b.ctex"]
+source_file="res://assets/sprite/characters/shadow/enemypart/shadow_down.png"
+dest_files=["res://.godot/imported/shadow_down.png-337eaec8304f488ec016487dff2be6bf.ctex"]
 
 [params]
 

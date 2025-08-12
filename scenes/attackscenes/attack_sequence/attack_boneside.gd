@@ -11,11 +11,11 @@ func summoned(bullet, soul, speed):
 	#await get_tree().create_timer(2.0).timeout
 	startsequence(bullet, soul, 300, true,17,331)
 	await get_tree().create_timer(0.7).timeout
-	startsequence(bullet, soul, 300, false,17,265)
+	startsequence(bullet, soul, 300, false,17,400)
 	await get_tree().create_timer(0.7).timeout
 	startsequence(bullet, soul, 300, true,17,331)#lewonagorze
 	await get_tree().create_timer(0.7).timeout
-	startsequence(bullet, soul, 300, false,17,265)
+	startsequence(bullet, soul, 300, false,17,400)
 	returnbullet()
 
 func startsequence(bullet, soul, speed, left,size,ylevel=320):

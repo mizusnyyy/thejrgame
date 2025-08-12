@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmj27cly056f7"
-path="res://.godot/imported/teto_back.png-7a3d674ad36be82ad191b6d5bd186242.ctex"
+uid="uid://f7k0j7os4inn"
+path="res://.godot/imported/pick.png-0670b6c9b5b31534ee68bb431ac8a9ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/characters/party/jr/teto_back.png"
-dest_files=["res://.godot/imported/teto_back.png-7a3d674ad36be82ad191b6d5bd186242.ctex"]
+source_file="res://assets/sprite/characters/jr/pick.png"
+dest_files=["res://.godot/imported/pick.png-0670b6c9b5b31534ee68bb431ac8a9ce.ctex"]
 
 [params]
 

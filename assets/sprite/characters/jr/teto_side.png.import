@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4hxh8vk52udx"
-path="res://.godot/imported/paveyspritesheet.png-62b97169979840c234fe6889bf7d3747.ctex"
+uid="uid://bq1mj2osrqcqs"
+path="res://.godot/imported/teto_side.png-f06ad4382d58d43f4c61108d76662fd3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/characters/party/pavey/paveyspritesheet.png"
-dest_files=["res://.godot/imported/paveyspritesheet.png-62b97169979840c234fe6889bf7d3747.ctex"]
+source_file="res://assets/sprite/characters/jr/teto_side.png"
+dest_files=["res://.godot/imported/teto_side.png-f06ad4382d58d43f4c61108d76662fd3.ctex"]
 
 [params]
 

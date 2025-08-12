@@ -34,15 +34,13 @@ func nextturn():
 func attack(amount):
 	for i in range(amount):
 		global.swing=true
-		var ran = randi() % 4
+		var ran = randi() % 5
 		var bullet = chooseattack(ran)
-		print("Atak nr ", i+1)
 		await bullet.attack_finished
 
 func chooseattack(ran):
 	var bullet
 	var spriteinteract = get_node_or_null("enemy")
-	print(spriteinteract)
 	if spriteinteract:
 		spriteinteract.swinghand()
 	if ran == 0: 

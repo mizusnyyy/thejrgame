@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i2hlkgqnf3oc"
-path="res://.godot/imported/shadow_torso.png-8b73a33c17a73359da4a1154b57dc4a8.ctex"
+uid="uid://b5jp252jvsneo"
+path="res://.godot/imported/misupispritesheet.png-16926a3e99eeadfb3e1c171ff5f69ad7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/characters/party/shadow/enemypart/shadow_torso.png"
-dest_files=["res://.godot/imported/shadow_torso.png-8b73a33c17a73359da4a1154b57dc4a8.ctex"]
+source_file="res://assets/sprite/characters/misupi/misupispritesheet.png"
+dest_files=["res://.godot/imported/misupispritesheet.png-16926a3e99eeadfb3e1c171ff5f69ad7.ctex"]
 
 [params]
 

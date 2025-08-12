@@ -15,3 +15,7 @@ func _on_ready() -> void:
 	await get_tree().create_timer(0.1).timeout
 	self.queue_free()
 	
+func changeheart(txt,vx,vy):
+	self.texture=txt
+	self.region_rect.position.x = vx
+	self.region_rect.position.y = vy

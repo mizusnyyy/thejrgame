@@ -993,7 +993,7 @@ shape = SubResource("RectangleShape2D_agsc7")
 [node name="Sprite2D" type="Sprite2D" parent="soul"]
 texture = ExtResource("139_wf2x0")
 region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
+region_rect = Rect2(48, 0, 16, 16)
 script = ExtResource("139_itpkr")
 
 [node name="igorplayer" type="AudioStreamPlayer2D" parent="."]

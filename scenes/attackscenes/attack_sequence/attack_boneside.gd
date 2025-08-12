@@ -9,13 +9,13 @@ func summoned(bullet, soul, speed):
 	#await get_tree().create_timer(2.0).timeout
 	#startsequence(bullet, soul, 60, true,50)
 	#await get_tree().create_timer(2.0).timeout
-	startsequence(bullet, soul, 300, true,17,331)
+	startsequence(bullet, soul, 500, true,17,331)
 	await get_tree().create_timer(0.7).timeout
-	startsequence(bullet, soul, 300, false,17,400)
+	startsequence(bullet, soul, 500, false,17,400)
 	await get_tree().create_timer(0.7).timeout
-	startsequence(bullet, soul, 300, true,17,331)#lewonagorze
+	startsequence(bullet, soul, 500, true,17,331)#lewonagorze
 	await get_tree().create_timer(0.7).timeout
-	startsequence(bullet, soul, 300, false,17,400)
+	startsequence(bullet, soul, 500, false,17,400)
 	returnbullet()
 
 func startsequence(bullet, soul, speed, left,size,ylevel=320):
@@ -31,5 +31,5 @@ func instantiateall(scene):
 	return instance
 
 func returnbullet():
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(2.5).timeout
 	emit_signal("attack_finished")

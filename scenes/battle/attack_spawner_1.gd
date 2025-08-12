@@ -12,6 +12,7 @@ var notui
 #NAPRAWIC!!!
 #SPIERDLAALLAJJ!!
 #ALE OKEEEJ!!!
+
 func start():
 	spawn_interval = 1.0
 	bullet_speed = 200.0
@@ -32,6 +33,7 @@ func nextturn():
 
 func attack(amount):
 	for i in range(amount):
+		global.swing=true
 		var ran = randi() % 4
 		var bullet = chooseattack(ran)
 		print("Atak nr ", i+1)
@@ -39,6 +41,10 @@ func attack(amount):
 
 func chooseattack(ran):
 	var bullet
+	var spriteinteract = get_node_or_null("enemy")
+	print(spriteinteract)
+	if spriteinteract:
+		spriteinteract.swinghand()
 	if ran == 0: 
 		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_bonepit.tscn")
 		bullet = instantiateall(gloo_scene)

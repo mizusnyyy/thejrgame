@@ -105,13 +105,13 @@
 [ext_resource type="Texture2D" uid="uid://ygndui1q364y" path="res://assets/sprite/battle/bg/b0099.png" id="100_jucj5"]
 [ext_resource type="Texture2D" uid="uid://nciyms0xvnjb" path="res://assets/sprite/battle/bg/b0100.png" id="101_0us13"]
 [ext_resource type="Script" uid="uid://dx4xtblajk0rm" path="res://scenes/battle/Player_health_bar.gd" id="103_xo5np"]
+[ext_resource type="Texture2D" uid="uid://c56wtooh21t5q" path="res://assets/sprite/battle/mana_ball.png" id="105_hr533"]
 [ext_resource type="Script" uid="uid://bcnmmxb6atgap" path="res://scenes/battle/notui.gd" id="106_el03i"]
-[ext_resource type="Texture2D" uid="uid://drwbnl2nmpeft" path="res://assets/sprite/battle/mana_progress.png" id="106_hr533"]
+[ext_resource type="Texture2D" uid="uid://knrjg8aie8wk" path="res://assets/sprite/battle/mana_progress.png" id="106_hr533"]
 [ext_resource type="Script" uid="uid://ba0qm88lne0ys" path="res://scenes/battle/Enemy_health_bar.gd" id="106_itpkr"]
 [ext_resource type="Texture2D" uid="uid://f7k0j7os4inn" path="res://assets/sprite/characters/jr/pick.png" id="106_ly5g2"]
 [ext_resource type="Script" uid="uid://fsefgnoiamhk" path="res://scenes/battle/rich_text_label1.gd" id="106_wf2x0"]
 [ext_resource type="Script" uid="uid://cp5uyiuhegpvn" path="res://scenes/battle/enemy_health_indicator_text.gd" id="107_hr533"]
-[ext_resource type="Texture2D" uid="uid://dolekv3q1cx0j" path="res://assets/sprite/battle/Bez nazwy.png" id="107_itpkr"]
 [ext_resource type="Script" uid="uid://csgevnic15t4i" path="res://scenes/battle/left_arrow.gd" id="107_rcqhw"]
 [ext_resource type="Texture2D" uid="uid://b4322pu8xlupw" path="res://assets/sprite/battle/not ui/fight.png" id="109_72b3y"]
 [ext_resource type="Texture2D" uid="uid://d1e1h85rhmu71" path="res://assets/sprite/battle/arrow selected.png" id="109_da7rj"]
@@ -812,21 +812,23 @@ horizontal_alignment = 1
 script = ExtResource("106_wf2x0")
 
 [node name="Mana_bar" type="TextureProgressBar" parent="box/StaticBody2D"]
-offset_left = -200.0
-offset_top = 33.0
-offset_right = -136.0
-offset_bottom = 97.0
-value = 50.0
+offset_left = -157.0
+offset_top = 15.5
+offset_right = -93.0
+offset_bottom = 79.5
+size_flags_vertical = 3
+value = 100.0
 fill_mode = 3
-texture_under = ExtResource("107_itpkr")
+nine_patch_stretch = true
+texture_under = ExtResource("105_hr533")
 texture_progress = ExtResource("106_hr533")
 script = ExtResource("106_itpkr")
 
 [node name="Mana_ammount_indicator_text" type="RichTextLabel" parent="box/StaticBody2D"]
-offset_left = -165.0
-offset_top = 73.5
-offset_right = -45.0
-offset_bottom = 87.5
+offset_left = -187.0
+offset_top = 81.5
+offset_right = -67.0
+offset_bottom = 95.5
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("121_21vhs")
 bbcode_enabled = true
@@ -928,10 +930,10 @@ position = Vector2(1.0252e-05, -2.03848e-05)
 shape = SubResource("RectangleShape2D_kdiof")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="notui/item"]
-offset_left = -137.333
-offset_top = -133.333
-offset_right = 171.667
-offset_bottom = 30.6667
+offset_left = -138.667
+offset_top = -128.0
+offset_right = 170.333
+offset_bottom = 35.9997
 theme_override_fonts/normal_font = ExtResource("121_21vhs")
 theme_override_fonts/bold_font = ExtResource("121_21vhs")
 bbcode_enabled = true

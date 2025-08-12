@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxg66x3bxomlr"
-path="res://.godot/imported/shadowbattle.png-198ed66543607310fc54fd9d9967aa8e.ctex"
+uid="uid://d0aibe6s6l588"
+path="res://.godot/imported/shadow_hand_l.png-42beb62d9b08719d5448259923fea4cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/characters/party/shadow/shadowbattle.png"
-dest_files=["res://.godot/imported/shadowbattle.png-198ed66543607310fc54fd9d9967aa8e.ctex"]
+source_file="res://assets/sprite/characters/shadow/enemypart/shadow_hand_l.png"
+dest_files=["res://.godot/imported/shadow_hand_l.png-42beb62d9b08719d5448259923fea4cd.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq1mj2osrqcqs"
-path="res://.godot/imported/teto_side.png-bf789fe2efdd23652d3ad4a57c2b3468.ctex"
+uid="uid://btgr63nfd64su"
+path="res://.godot/imported/shadow1.png-6d321101e982a30a2372289f00d095d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/characters/party/jr/teto_side.png"
-dest_files=["res://.godot/imported/teto_side.png-bf789fe2efdd23652d3ad4a57c2b3468.ctex"]
+source_file="res://assets/sprite/characters/shadow/portrait/shadow1.png"
+dest_files=["res://.godot/imported/shadow1.png-6d321101e982a30a2372289f00d095d9.ctex"]
 
 [params]
 

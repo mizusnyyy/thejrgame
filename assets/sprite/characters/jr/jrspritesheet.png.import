@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnmsr8v22thcc"
-path="res://.godot/imported/jamorrrspritesheet.png-74ce08fd56f9e31c1fd9798270211550.ctex"
+uid="uid://bdo8d0j7y6s7b"
+path="res://.godot/imported/jrspritesheet.png-56c04a6822b8434df51db5422faa0c34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/characters/party/jamorrr/jamorrrspritesheet.png"
-dest_files=["res://.godot/imported/jamorrrspritesheet.png-74ce08fd56f9e31c1fd9798270211550.ctex"]
+source_file="res://assets/sprite/characters/jr/jrspritesheet.png"
+dest_files=["res://.godot/imported/jrspritesheet.png-56c04a6822b8434df51db5422faa0c34.ctex"]
 
 [params]
 

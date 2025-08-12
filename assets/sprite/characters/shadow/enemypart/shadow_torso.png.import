@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blo5yr7xsgygh"
-path="res://.godot/imported/shadowspritesheet.png-e45ecd5786cca36d62b12481e7d3328d.ctex"
+uid="uid://i2hlkgqnf3oc"
+path="res://.godot/imported/shadow_torso.png-d7d7a224fd2386f171e1f79c17930c09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/characters/party/shadow/shadowspritesheet.png"
-dest_files=["res://.godot/imported/shadowspritesheet.png-e45ecd5786cca36d62b12481e7d3328d.ctex"]
+source_file="res://assets/sprite/characters/shadow/enemypart/shadow_torso.png"
+dest_files=["res://.godot/imported/shadow_torso.png-d7d7a224fd2386f171e1f79c17930c09.ctex"]
 
 [params]
 

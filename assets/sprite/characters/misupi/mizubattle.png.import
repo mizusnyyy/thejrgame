@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dry6xkf7q8c34"
-path="res://.godot/imported/shadow_face.png-6c04bda518ae89769a332ee16e578bc4.ctex"
+uid="uid://bdnifba5tbke4"
+path="res://.godot/imported/mizubattle.png-697e54c7f456d6bb9031753516590731.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/characters/party/shadow/enemypart/shadow_face.png"
-dest_files=["res://.godot/imported/shadow_face.png-6c04bda518ae89769a332ee16e578bc4.ctex"]
+source_file="res://assets/sprite/characters/misupi/mizubattle.png"
+dest_files=["res://.godot/imported/mizubattle.png-697e54c7f456d6bb9031753516590731.ctex"]
 
 [params]
 

@@ -76,12 +76,14 @@ func attack() -> bool:
 		return false
 
 	elif ran == 4:
+		await get_tree().create_timer(0.5).timeout
 		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_pillar_vertical.tscn")
 		bullet = instantiateall(gloo_scene)
 		bullet.summoned(bullet, soul, bullet_speed)
 		return false
 
 	elif ran == 5:
+		await get_tree().create_timer(0.5).timeout
 		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_pillar_horizontal.tscn")
 		bullet = instantiateall(gloo_scene)
 		bullet.summoned(bullet, soul, bullet_speed)
@@ -97,7 +99,7 @@ func attack() -> bool:
 			print("Wystrzelono pocisk", j + 1, "z", bullet_count)
 			bullet.modulate.a = 0.0
 			var tween = get_tree().create_tween()
-			tween.tween_property(bullet, "modulate:a", 1.0, 0.25).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+			tween.tween_property(bullet, "modulate:a", 0.5, 0.25).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 			await get_tree().create_timer(1.0).timeout
 		print("Wszystkie pociski wystrzelone — koniec tury")
 		return true

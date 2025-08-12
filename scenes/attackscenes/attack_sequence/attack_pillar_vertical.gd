@@ -29,8 +29,8 @@ func summoned(bullet, soul, speed):
 	rect1.size = Vector2(rect1.size.x, height1)
 	rect2.size = Vector2(rect2.size.x, height2)
 
-	blok1.position = Vector2(midscreen_x, 192)
-	blok2.position = Vector2(midscreen_x, 320)
+	blok1.position = Vector2(midscreen_x, 194)
+	blok2.position = Vector2(midscreen_x, 318)
 
 	rect1.position = Vector2(-rect1.size.x * 0.5, 0)
 	rect2.position = Vector2(-rect2.size.x * 0.5, -rect2.size.y)
@@ -43,5 +43,5 @@ func summoned(bullet, soul, speed):
 	returnbullet()
 
 func returnbullet():
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(2).timeout
 	emit_signal("attack_finished")

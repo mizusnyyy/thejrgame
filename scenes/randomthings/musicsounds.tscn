@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bx2r72fqidad2"]
 
-[ext_resource type="Script" uid="uid://bxcaw74cgyw5j" path="res://scenes/randomthings/musicsounds.gd" id="1_btmmi"]
+[ext_resource type="Script" path="res://scenes/randomthings/musicsounds.gd" id="1_btmmi"]
 [ext_resource type="AudioStream" uid="uid://v6xhcphnyegs" path="res://assets/sprite/intro/stevenafterpumming.wav" id="2_iemme"]
 
 [node name="musicsounds" type="Node2D"]

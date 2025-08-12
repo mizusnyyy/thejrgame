@@ -113,9 +113,9 @@
 [ext_resource type="Script" uid="uid://cp5uyiuhegpvn" path="res://scenes/battle/enemy_health_indicator_text.gd" id="107_hr533"]
 [ext_resource type="Texture2D" uid="uid://dolekv3q1cx0j" path="res://assets/sprite/battle/Bez nazwy.png" id="107_itpkr"]
 [ext_resource type="Script" uid="uid://csgevnic15t4i" path="res://scenes/battle/left_arrow.gd" id="107_rcqhw"]
-[ext_resource type="Texture2D" uid="uid://bdnifba5tbke4" path="res://assets/sprite/characters/party/misupi/mizubattle.png" id="107_wf2x0"]
 [ext_resource type="Texture2D" uid="uid://b4322pu8xlupw" path="res://assets/sprite/battle/not ui/fight.png" id="109_72b3y"]
 [ext_resource type="Texture2D" uid="uid://d1e1h85rhmu71" path="res://assets/sprite/battle/arrow selected.png" id="109_da7rj"]
+[ext_resource type="PackedScene" uid="uid://diwc782xe7aw1" path="res://scenes/battle/enemysprite.tscn" id="109_hr533"]
 [ext_resource type="Texture2D" uid="uid://bayu3880yqskw" path="res://assets/sprite/battle/not ui/fight_sel;.png" id="110_drnbg"]
 [ext_resource type="Script" uid="uid://dq74ht2r0bvpx" path="res://scenes/battle/right_arrow.gd" id="110_qk3tf"]
 [ext_resource type="Texture2D" uid="uid://ceb0v4nvpjwuq" path="res://assets/sprite/battle/not ui/act.png" id="111_gkugb"]
@@ -148,24 +148,16 @@
 [sub_resource type="GDScript" id="GDScript_w54gx"]
 script/source = "extends Node2D
 
-@onready var enemtxt = $enemy/enemy
+@onready var enemtxt = $enemy#ENEMY KOD SKRYPT ITP
 var enemid
 
 func _on_ready() -> void:
 	enemid = Battlepreset.enemidpreset
 	#0 GLUT 1 MIZU 2 QORUS 3 PAVEY 4 IGREAVIOUS
-	match enemid:
-		0:
-			enemtxt.texture = load(\"res://assets/sprite/characters/glut/glutbattle.png\")
-		1:
-			enemtxt.texture = load(\"res://assets/sprite/characters/party/shadow/shadowbattle.png\")
-		2:
-			enemtxt.texture = load(\"res://assets/sprite/characters/party/misupi/mizubattle.png\")
-		_:
-			enemtxt.texture = load(\"res://assets/sprite/characters/party/misupi/glutbattle.png\")
+	enemtxt.global_position = Vector2(get_viewport().get_visible_rect().size.x / 2,100)
+	enemtxt.changesprite(enemid)
 	
 	await get_tree().create_timer(1).timeout
-	print(enemtxt.texture)
 	var new_script = load(\"res://scenes/battle/attack_spawner_\"+str(enemid)+\".gd\")
 	$attackspawner.set_script(new_script)
 	$attackspawner.start()
@@ -860,12 +852,7 @@ scroll_active = false
 horizontal_alignment = 1
 script = ExtResource("107_hr533")
 
-[node name="enemy" type="Node2D" parent="."]
-
-[node name="enemy" type="Sprite2D" parent="enemy"]
-position = Vector2(320, 96)
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("107_wf2x0")
+[node name="enemy" parent="." instance=ExtResource("109_hr533")]
 
 [node name="attackspawner" type="Node2D" parent="."]
 position = Vector2(0, 0.5)

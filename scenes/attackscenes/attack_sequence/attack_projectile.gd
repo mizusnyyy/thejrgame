@@ -4,6 +4,7 @@ var speed := 0.5
 var direction := Vector2.DOWN
 @onready var player = get_tree().get_root().get_node("/root/fight/soul")
 @export var bullet_scene: PackedScene
+signal attack_finished
 
 func _process(delta):
 	if player.soul_is_alive():
@@ -22,9 +23,14 @@ func summoned(bullet, soul, speed):
 	bullet.scale = Vector2.ONE
 	bullet.direction = Vector2.DOWN
 	bullet.speed = speed
+	returnbullet()
 
 func summon_wave(soul, speed):
 	for i in range(5):
 		var bullet = bullet_scene.instantiate()
 		get_parent().add_child(bullet)
 		bullet.summoned(bullet, soul, speed)
+
+func returnbullet():
+	await get_tree().create_timer(2).timeout
+	emit_signal("attack_finished")

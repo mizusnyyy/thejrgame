@@ -1,6 +1,7 @@
 extends Node2D
 @onready var gloo_scene = preload("res://scenes/attackscenes/bone/bone.tscn")
 @onready var midscreen = get_viewport().get_visible_rect().size.x / 2
+signal attack_finished
 
 func summoned(bullet, soul, speed):
 	global.current_mode=global.mode.RED
@@ -25,6 +26,7 @@ func summoned(bullet, soul, speed):
 	await get_tree().create_timer(0.04).timeout
 	startsequence(bullet, soul, 480, true,2)
 	startsequence(bullet, soul, 480, false,2)
+	returnbullet()
 
 func startsequence(bullet, soul, speed, left,size,ylevel=310):
 	bullet = instantiateall(gloo_scene)
@@ -37,3 +39,6 @@ func instantiateall(scene):
 	var instance = scene.instantiate()
 	add_child(instance)
 	return instance
+func returnbullet():
+	await get_tree().create_timer(2).timeout
+	emit_signal("attack_finished")

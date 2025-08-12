@@ -23,8 +23,7 @@ func start():
 func nextturn():
 	notui.enemyturn()
 	for i in range(runda+1):
-		attack()
-		await get_tree().create_timer(2.0).timeout
+		await attack()
 	notui.playerturn()
 	global.current_mode=global.mode.RED
 	runda+=1
@@ -72,6 +71,7 @@ func attack():
 		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_pillar_horizontal.tscn")
 		bullet = instantiateall(gloo_scene)
 		bullet.summoned(bullet, soul, bullet_speed)
+	return
 
 
 

@@ -1,6 +1,7 @@
 extends Node2D
 @onready var gloo_scene = preload("res://scenes/attackscenes/qorus/clawswipe.tscn")
 @onready var midscreen = get_viewport().get_visible_rect().size.x / 2
+signal attack_finished
 
 func summoned(bullet, soul, speed):
 	global.current_mode=global.mode.RED
@@ -11,6 +12,7 @@ func summoned(bullet, soul, speed):
 	startsequence(bullet, soul, 200, 1,-1)
 	await get_tree().create_timer(0.6).timeout
 	startsequence(bullet, soul, 200, -1,-1)
+	returnbullet()
 
 func startsequence(bullet, soul, speed, value1=1,value2=1):
 	bullet = instantiateall(gloo_scene)
@@ -31,3 +33,7 @@ func instantiateall(scene):
 	var instance = scene.instantiate()
 	add_child(instance)
 	return instance
+
+func returnbullet():
+	await get_tree().create_timer(2).timeout
+	emit_signal("attack_finished")

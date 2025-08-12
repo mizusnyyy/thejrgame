@@ -3,6 +3,7 @@ extends Area2D
 var speed := 0.5
 var direction := Vector2.DOWN
 @onready var midscreen = get_viewport().get_visible_rect().size.x / 2
+signal attack_finished
 
 @onready var player = get_tree().get_root().get_node("/root/fight/soul")
 func _process(delta):
@@ -20,3 +21,8 @@ func summoned(bullet, soul, speed):
 		bullet.global_position.y = 0
 		bullet.direction = Vector2.DOWN
 		bullet.speed = speed
+		returnbullet()
+
+func returnbullet():
+	await get_tree().create_timer(2).timeout
+	emit_signal("attack_finished")

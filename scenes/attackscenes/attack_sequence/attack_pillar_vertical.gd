@@ -5,6 +5,7 @@ extends Node2D
 
 @export var gap: int = 30
 @export var max_total_height: int = 128
+signal attack_finished
 
 func summoned(bullet, soul, speed):
 	var vp = get_viewport().get_visible_rect()
@@ -39,3 +40,8 @@ func summoned(bullet, soul, speed):
 
 	blok1.call_deferred("activate", soul, speed)
 	blok2.call_deferred("activate", soul, speed)
+	returnbullet()
+
+func returnbullet():
+	await get_tree().create_timer(3).timeout
+	emit_signal("attack_finished")

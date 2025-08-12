@@ -3,7 +3,7 @@ extends Node2D
 var gloo_scene: PackedScene
 var timer := 0.0
 var runda = 1
-
+signal attack_finished
 var spawn_interval
 var bullet_speed
 var soul
@@ -12,36 +12,33 @@ var notui
 #NAPRAWIC!!!
 #SPIERDLAALLAJJ!!
 #ALE OKEEEJ!!!
-
 func start():
 	spawn_interval = 1.0
 	bullet_speed = 200.0
 	soul = $"../soul"
 	notui = $"../notui"
+	runda = 0
 	nextturn()
-	print(runda)
+
 func nextturn():
 	notui.enemyturn()
-	for i in range(runda+1):
-		attack()
-		await get_tree().create_timer(2.0).timeout
+	await attack(runda+1)
 	notui.playerturn()
-	global.current_mode=global.mode.RED
-	runda+=1
-	print(runda)
+	global.current_mode = global.mode.RED
+	runda += 1
+	print("Koniec rundy:", runda)
 	await notui.enemy_turn
 	nextturn()
 
-func attack():
-	notui.enemyturn()
+func attack(amount):
+	for i in range(amount):
+		var ran = randi() % 4
+		var bullet = chooseattack(ran)
+		print("Atak nr ", i+1)
+		await bullet.attack_finished
+
+func chooseattack(ran):
 	var bullet
-	var ran = randi()%4
-	await notui.enemy_turn
-	
-	gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_clawswipe.tscn")
-	bullet = instantiateall(gloo_scene)
-	bullet.summoned(bullet, soul, bullet_speed)
-	return
 	if ran == 0: 
 		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_bonepit.tscn")
 		bullet = instantiateall(gloo_scene)
@@ -64,6 +61,11 @@ func attack():
 		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_boneside.tscn")
 		bullet = instantiateall(gloo_scene)
 		bullet.summoned(bullet, soul, bullet_speed)
+	elif ran == 4:
+		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_clawswipe.tscn")
+		bullet = instantiateall(gloo_scene)
+		bullet.summoned(bullet, soul, bullet_speed)
+	return bullet
 
 #func wywolaj(modeserca, res, bullet, soul, bullet_speed):
 		#battle.current_mode=battle.mode.modeserca

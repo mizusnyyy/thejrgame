@@ -2,6 +2,7 @@ extends Area2D
 
 var speed := 0.5
 var direction := Vector2.DOWN
+signal attack_finished
 @onready var midscreen = get_viewport().get_visible_rect().size / 2
 
 @onready var player = get_tree().get_root().get_node("/root/fight/soul")
@@ -36,4 +37,3 @@ func phase3(bullet,soul,speed):
 		if not is_inside_tree():
 			return
 		await get_tree().process_frame
-	

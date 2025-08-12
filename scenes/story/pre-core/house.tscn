@@ -220,7 +220,6 @@ texturenpc = ExtResource("14_aqtk2")
 
 [node name="npc2" parent="ysorting" instance=ExtResource("12_1e2cb")]
 position = Vector2(-87, -16)
-preloadscena = null
 pages = Array[String](["wypierdalaj gadac z misupim"])
 portrait_texture = Array[Texture]([ExtResource("9_0j0oh")])
 whoid = 1

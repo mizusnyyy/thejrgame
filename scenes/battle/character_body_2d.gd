@@ -97,33 +97,35 @@ func enginespeed():
 		
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("changeheart"):
-		if Engine.time_scale != 1:
-			return
-		speedchange = true
-		enginespeed()
-		circle = soulcircle.instantiate()
-		add_child(circle)
-		circle.global_position = sprite.global_position
-	if Input.is_action_just_released("changeheart"):
-		speedchange = false
-		enginespeed()
-		Engine.time_scale = 1
-		
-		#toggle()
+		#if Engine.time_scale != 1:
+			#return
+		#speedchange = true
+		#enginespeed()
+		#circle = soulcircle.instantiate()
+		#add_child(circle)
+		#circle.global_position = sprite.global_position
 		#if state:
-			#tempspeed = SPEED
-			#Engine.time_scale = 0.5
-			#SPEED = SPEED/Engine.time_scale
-			#while state:
-				#if not is_inside_tree():
-					#return
-				#var instance = soulsande.instantiate()
-				#get_parent().get_parent().add_child(instance)
-				#instance.global_position = sprite.global_position
-				#await get_tree().process_frame
+			state = true
+			tempspeed = SPEED
+			Engine.time_scale = 0.5
+			SPEED = SPEED/Engine.time_scale
+			while state:
+				if not is_inside_tree():
+					return
+				var instance = soulsande.instantiate()
+				get_parent().get_parent().add_child(instance)
+				instance.global_position = sprite.global_position
+				await get_tree().process_frame
 		#else:
-			#Engine.time_scale = 1.0
-			#SPEED = tempspeed
+	if Input.is_action_just_released("changeheart"):
+		state = false
+		Engine.time_scale = 1.0
+		SPEED = tempspeed
+		#speedchange = false
+		#enginespeed()
+		#Engine.time_scale = 1
+		
+		
 	if alive and global.current_mode == global.mode.RED:
 		var directionlr := Input.get_axis("left", "right")
 		var directionud := Input.get_axis("up", "down")

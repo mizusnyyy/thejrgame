@@ -4,11 +4,10 @@
 [ext_resource type="Script" uid="uid://bw878gwjwl5bw" path="res://scenes/phone/apps/console/console.gd" id="1_u3vgo"]
 [ext_resource type="Script" uid="uid://bk6bdio51usd3" path="res://scenes/ui/panel.gd" id="2_u3vgo"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_fvbip"]
-[ext_resource type="Texture2D" uid="uid://e5q4i0heuvg3" path="res://assets/sprite/jr/teto_front.png" id="4_jhwlk"]
-[ext_resource type="Texture2D" uid="uid://6kf44nmw8j3i" path="res://assets/sprite/jr/teto_side_better.png" id="5_avets"]
-[ext_resource type="Texture2D" uid="uid://cmj27cly056f7" path="res://assets/sprite/jr/teto_back.png" id="6_f0vpe"]
-[ext_resource type="Texture2D" uid="uid://bq1mj2osrqcqs" path="res://assets/sprite/jr/teto_side.png" id="7_rki12"]
-
+[ext_resource type="Texture2D" uid="uid://e5q4i0heuvg3" path="res://assets/sprite/characters/jr/teto_front.png" id="4_jhwlk"]
+[ext_resource type="Texture2D" uid="uid://6kf44nmw8j3i" path="res://assets/sprite/characters/jr/teto_side_better.png" id="5_avets"]
+[ext_resource type="Texture2D" uid="uid://cmj27cly056f7" path="res://assets/sprite/characters/jr/teto_back.png" id="6_f0vpe"]
+[ext_resource type="Texture2D" uid="uid://bq1mj2osrqcqs" path="res://assets/sprite/characters/jr/teto_side.png" id="7_rki12"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xwmki"]
 animations = [{

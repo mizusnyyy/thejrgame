@@ -17,7 +17,7 @@ func _on_body_entered(body):
 		global.soultakedamage(body, 10)
 
 func summoned(bullet, soul, speed):
-	var random_x = randf_range(256, 384)
+	var random_x = randf_range(258, 382)
 	bullet.global_position = Vector2(random_x, 0)
 	bullet.rotation = 0
 	bullet.scale = Vector2.ONE

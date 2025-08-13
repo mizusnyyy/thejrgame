@@ -1,12 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctletit4gwd84"]
+[gd_scene load_steps=12 format=3 uid="uid://x46575o5aso3"]
 
+[ext_resource type="Script" uid="uid://cnqo3vqnphf80" path="res://scenes/menu/menu_handler.gd" id="1_dy7ct"]
 [ext_resource type="Texture2D" uid="uid://jv1718wjnql3" path="res://assets/sprite/menu_sprites/JACKTERMINATION.png" id="1_glbon"]
 [ext_resource type="Texture2D" uid="uid://ce7wmmgu7fcmx" path="res://assets/sprite/menu_sprites/GUNTERMINATION.png" id="2_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://bn22bqsxe1f7k" path="res://assets/sprite/menu_sprites/Graj_button.png" id="3_qe12f"]
 [ext_resource type="Texture2D" uid="uid://bx5p7r45rwuv5" path="res://assets/sprite/menu_sprites/ustawienia_button.png" id="4_8qtwp"]
+[ext_resource type="Script" uid="uid://de5tb4gmynggc" path="res://scenes/menu/graj_button.gd" id="5_0o4t1"]
 [ext_resource type="Texture2D" uid="uid://b12r1m8mqfy8d" path="res://assets/sprite/menu_sprites/wyjscie_button.png" id="5_dy7ct"]
+[ext_resource type="Script" uid="uid://dsupf5ybexf20" path="res://scenes/menu/ustawienia_button.gd" id="7_0k4wn"]
+[ext_resource type="Script" uid="uid://b5hys6bj86dfj" path="res://scenes/menu/wyjscie_button.gd" id="9_j5v2v"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_0o4t1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_dy7ct"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -20,49 +24,54 @@ animations = [{
 "speed": 0.25
 }]
 
-[sub_resource type="Theme" id="Theme_0k4wn"]
+[sub_resource type="Theme" id="Theme_0o4t1"]
 
-[node name="MainMenu" type="Node2D"]
-
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dy7ct")
 
-[node name="Panel" type="Panel" parent="Control"]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 640.0
+offset_bottom = 360.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/Panel"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
 modulate = Color(0.590441, 0.590441, 0.590441, 1)
-position = Vector2(479, 359)
-scale = Vector2(5.86585, 4.40244)
-sprite_frames = SubResource("SpriteFrames_0o4t1")
+sprite_frames = SubResource("SpriteFrames_dy7ct")
 autoplay = "default"
+centered = false
 
-[node name="Graj_button" type="TextureButton" parent="Control"]
+[node name="Graj_button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 960.0
-offset_top = 192.0
-offset_right = 1216.0
-offset_bottom = 256.0
-theme = SubResource("Theme_0k4wn")
+offset_left = 493.0
+offset_top = 29.0
+offset_right = 749.0
+offset_bottom = 93.0
+theme = SubResource("Theme_0o4t1")
 texture_normal = ExtResource("3_qe12f")
+script = ExtResource("5_0o4t1")
 
-[node name="ustawienia_button" type="TextureButton" parent="Control"]
+[node name="ustawienia_button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 960.0
-offset_top = 320.0
-offset_right = 1216.0
-offset_bottom = 384.0
+offset_left = 986.0
+offset_top = 344.0
+offset_right = 1242.0
+offset_bottom = 408.0
 texture_normal = ExtResource("4_8qtwp")
+script = ExtResource("7_0k4wn")
 
-[node name="TextureButton" type="TextureButton" parent="Control"]
+[node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 960.0
 offset_top = 448.0
 offset_right = 1216.0
 offset_bottom = 512.0
 texture_normal = ExtResource("5_dy7ct")
+script = ExtResource("9_j5v2v")
+
+[connection signal="pressed" from="Graj_button" to="Graj_button" method="_on_pressed"]

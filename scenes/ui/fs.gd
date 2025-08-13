@@ -1,19 +1,30 @@
 extends Node2D
 
 var pauza := false
-@onready var screen := $"../pause/ColorRect"
-@onready var label := $"../pause/ColorRect/Label"
+var screen : ColorRect
+var label : Label
+
+func _ready():
+	# Spróbuj przypisać od razu
+	if has_node("ColorRect"):
+		screen = $ColorRect
+		if screen.has_node("Label"):
+			label = $ColorRect/Label
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("fs"):
-		var win := get_tree().get_root().get_window()
-		if win.mode == Window.MODE_FULLSCREEN:
-			win.mode = Window.MODE_WINDOWED
-		else:
-			win.mode = Window.MODE_FULLSCREEN
-
 	if event.is_action_pressed("pause"):
-		pauza = !pauza
-		get_tree().paused = pauza
-		screen.visible = pauza
-		label.visible = pauza
+		# Jeśli nie mamy przypisanych nodów, spróbuj wyszukać
+		if screen == null:
+			screen = find_child("ColorRect", true, false)
+		if label == null:
+			label = find_child("Label", true, false)
+
+		# Teraz dopiero przełącz pauzę
+		if screen and label:
+			pauza = !pauza
+			get_tree().paused = pauza
+			screen.visible = pauza
+			label.visible = pauza
+			print("Jest pauza :3" if pauza else "Nie ma pauzy :3")
+		else:
+			print("⚠️ Nie znaleziono ColorRect lub Label, pauza pominięta")

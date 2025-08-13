@@ -13,7 +13,7 @@ var state := false
 var tempspeed = SPEED
 var circle
 var mana_timer := 0.0
-var mana_drain_rate := 1.0 
+var mana_drain_rate := 0.2
 
 
 
@@ -113,7 +113,7 @@ func _physics_process(delta: float) -> void:
 		mana_timer += delta
 		if mana_timer >= mana_drain_rate:
 			mana_timer -= mana_drain_rate
-			global.mana -= 5
+			global.mana -= 1
 			if global.mana <= 0:
 				global.mana = 0
 				state = false

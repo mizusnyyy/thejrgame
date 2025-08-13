@@ -26,10 +26,19 @@ func _hide_menu():
 		menu_canvas = null
 
 # Automatyczne ukrycie menu przy zmianie sceny
-func _ready():
-	get_tree().connect("scene_changed", Callable(self, "_hide_menu"))
+#func _ready():
+	#get_tree().connect("scene_changed", Callable(self, "_hide_menu"))
 
 
 func _on_graj_button_pressed() -> void:
+	_hide_menu()
 	get_tree().change_scene_to_file("res://scenes/story/pre-core/house.tscn")
 	print("Hmmmm maybe")
+
+
+func _on_ustawienia_button_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_texture_button_pressed() -> void:
+	pass # Replace with function body.

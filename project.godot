@@ -23,7 +23,7 @@ console="*res://scenes/ui/console.gd"
 Musicsounds="*res://scenes/randomthings/musicsounds.tscn"
 Battlepreset="*res://battlepreset.gd"
 Console="*res://scenes/ui/console.tscn"
-MainMenu="*res://scenes/menu/main_menu.tscn"
+MainMenu="res://scenes/menu/main_menu.tscn"
 
 [display]
 

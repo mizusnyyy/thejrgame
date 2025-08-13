@@ -1,11 +1,11 @@
 extends TextureProgressBar
 
-@onready var ghost_bar = $"../Player_Ghost_bar"
+@onready var ghost_bar = $"../TextureProgressBar"
 
 var textures = {
 	"green": preload("res://assets/sprite/battle/progress.png"),
 	"yellow": preload("res://assets/sprite/battle/progress_yellow.png"),
-	"red": preload("res://assets/sprite/battle/HP_progress_red.png"),
+	"red": preload("res://assets/sprite/battle/progress_red.png"),
 }
 
 var current_color = ""
@@ -20,12 +20,13 @@ func _process(delta: float) -> void:
 	value = global.health
 
 	if ghost_bar.value > value:
-		ghost_bar.value = lerp(ghost_bar.value, value, delta * 4.0)
+		ghost_bar.value = move_toward(ghost_bar.value, value, delta * 35)
 	else:
 		ghost_bar.value = value
 
-	if abs(ghost_bar.value - value) < 1.0:
+	if abs(ghost_bar.value - value) < 0.01:
 		ghost_bar.value = value
+	_update_style(value)
 	
 
 	

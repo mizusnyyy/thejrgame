@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dacerr5xvnfu2"
-path="res://.godot/imported/HP_progress_red.png-26cc6911105a90a41f37f26d39792933.ctex"
+uid="uid://y1m2vpwobtg7"
+path="res://.godot/imported/mana_ball1.png-93064b9d069d1541da4add83cdd92fc0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/battle/HP_progress_red.png"
-dest_files=["res://.godot/imported/HP_progress_red.png-26cc6911105a90a41f37f26d39792933.ctex"]
+source_file="res://assets/sprite/battle/mana_ball1.png"
+dest_files=["res://.godot/imported/mana_ball1.png-93064b9d069d1541da4add83cdd92fc0.ctex"]
 
 [params]
 

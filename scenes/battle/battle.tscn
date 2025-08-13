@@ -1,4 +1,4 @@
-[gd_scene load_steps=175 format=3 uid="uid://chprno7b2lppf"]
+[gd_scene load_steps=176 format=3 uid="uid://chprno7b2lppf"]
 
 [ext_resource type="Texture2D" uid="uid://b45tvv1w8286c" path="res://assets/sprite/battle/bg/b0001.png" id="2_2ys7f"]
 [ext_resource type="Script" uid="uid://du1pctbd3kbws" path="res://scenes/battle/character_body_2d.gd" id="3_0yh6x"]
@@ -105,6 +105,7 @@
 [ext_resource type="Texture2D" uid="uid://ygndui1q364y" path="res://assets/sprite/battle/bg/b0099.png" id="100_jucj5"]
 [ext_resource type="Texture2D" uid="uid://nciyms0xvnjb" path="res://assets/sprite/battle/bg/b0100.png" id="101_0us13"]
 [ext_resource type="Texture2D" uid="uid://ctohqb5sh5hpn" path="res://assets/sprite/battle/progress_red.png" id="102_0cqqu"]
+[ext_resource type="Script" uid="uid://31070hst34kt" path="res://scenes/battle/box.gd" id="102_ue6uc"]
 [ext_resource type="Script" uid="uid://dx4xtblajk0rm" path="res://scenes/battle/Player_health_bar.gd" id="103_xo5np"]
 [ext_resource type="Texture2D" uid="uid://y1m2vpwobtg7" path="res://assets/sprite/battle/mana_ball1.png" id="104_hr533"]
 [ext_resource type="Script" uid="uid://bcnmmxb6atgap" path="res://scenes/battle/notui.gd" id="106_el03i"]
@@ -739,6 +740,7 @@ speed_scale = 0.5
 [node name="box" type="Sprite2D" parent="."]
 position = Vector2(320, 255.5)
 texture = ExtResource("3_agsc7")
+script = ExtResource("102_ue6uc")
 
 [node name="ColorRect" type="ColorRect" parent="box"]
 anchors_preset = -1
@@ -835,10 +837,12 @@ horizontal_alignment = 1
 script = ExtResource("107_hr533")
 
 [node name="SelectionWheel" parent="box" instance=ExtResource("110_xysor")]
+visible = false
 offset_left = 1.0
 offset_top = 34.5
 offset_right = -1.0
 offset_bottom = 35.5
+options = null
 
 [node name="enemy" parent="." instance=ExtResource("109_hr533")]
 

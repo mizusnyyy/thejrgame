@@ -13,15 +13,17 @@ func _draw():
 	draw_arc(Vector2.ZERO, inner_radius, 0, TAU, 128, line_color, line_width, true)
 	
 	
-	#if len(options) >= 3:
+	if len(options) >= 3:
 		
-		#for i in range(len(options - 1)):
-			#var rads = TAU * i / len(options)
-			#var point = Vector2.from_angle(rads)
-			#draw_line(
-				#point * inner_radius,
-				#point * outer_radius
-				
-			#)
+		for i in range(len(options) - 1):
+			var rads = TAU * i / (len(options) - 1)
+			var point = Vector2.from_angle(rads)
+			draw_line(
+				point * inner_radius,
+				point * outer_radius,
+				line_color,
+				line_width,
+				true
+				)
 func _process(delta):
 	queue_redraw()

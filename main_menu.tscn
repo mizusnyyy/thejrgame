@@ -48,10 +48,10 @@ centered = false
 
 [node name="Graj_button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 493.0
-offset_top = 29.0
-offset_right = 749.0
-offset_bottom = 93.0
+offset_left = 384.0
+offset_top = 24.0
+offset_right = 640.0
+offset_bottom = 88.0
 theme = SubResource("Theme_0o4t1")
 texture_normal = ExtResource("3_qe12f")
 script = ExtResource("5_0o4t1")

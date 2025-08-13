@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://nboteo3u85ie"]
+[gd_scene load_steps=17 format=3 uid="uid://nboteo3u85ie"]
 
+[ext_resource type="Script" uid="uid://cnqo3vqnphf80" path="res://scenes/menu/menu_handler.gd" id="1_27h4x"]
 [ext_resource type="Texture2D" uid="uid://jv1718wjnql3" path="res://assets/sprite/menu_sprites/JACKTERMINATION.png" id="1_prbor"]
 [ext_resource type="Texture2D" uid="uid://ce7wmmgu7fcmx" path="res://assets/sprite/menu_sprites/GUNTERMINATION.png" id="2_27h4x"]
 [ext_resource type="Texture2D" uid="uid://bn22bqsxe1f7k" path="res://assets/sprite/menu_sprites/Graj_button.png" id="3_gdhp0"]
@@ -30,6 +31,8 @@ animations = [{
 }]
 
 [node name="MainMenu" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_27h4x")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -18,3 +18,4 @@ script = ExtResource("1_ofd7g")
 background_color = Color(0.299547, 0.299547, 0.299547, 1)
 outer_radius = 64
 inner_radius = 16
+options = [null, null, null, null, null]

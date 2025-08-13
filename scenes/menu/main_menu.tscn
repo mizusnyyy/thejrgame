@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bttcy67ekgep2"]
+[gd_scene load_steps=16 format=3 uid="uid://cgqxn8v4pmfd8"]
 
 [ext_resource type="Texture2D" uid="uid://jv1718wjnql3" path="res://assets/sprite/menu_sprites/JACKTERMINATION.png" id="1_prbor"]
 [ext_resource type="Texture2D" uid="uid://ce7wmmgu7fcmx" path="res://assets/sprite/menu_sprites/GUNTERMINATION.png" id="2_27h4x"]

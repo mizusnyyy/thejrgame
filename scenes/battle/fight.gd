@@ -41,6 +41,6 @@ func deal_damage(amount: float) -> void:
 		call_deferred("_back_to_house")
 
 func _back_to_house() -> void:
-
 	await get_tree().process_frame
+	var can_move = true
 	get_tree().change_scene_to_file("res://scenes/story/pre-core/house.tscn")

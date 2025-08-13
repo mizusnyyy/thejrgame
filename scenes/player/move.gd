@@ -19,9 +19,10 @@ func _physics_process(delta: float) -> void:
 	direction = Vector2(directionlr, directionud)
 
 	var speed_sprint := 1.0
-	if Input.is_action_pressed("sprint"):
+	anim.speed_scale = 1
+	if Input.is_action_pressed("sprint") && velocity!=Vector2.ZERO:
 		speed_sprint = 2.0
-
+		anim.speed_scale = 3
 	if direction.length() > 0 and global.can_move:
 		if directionlr != 0:
 			lrud[0] = directionlr

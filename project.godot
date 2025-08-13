@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="jr"
-run/main_scene="uid://x46575o5aso3"
+run/main_scene="uid://bpmn0ng1q8ox"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [autoload]
@@ -23,7 +23,6 @@ console="*res://scenes/ui/console.gd"
 Musicsounds="*res://scenes/randomthings/musicsounds.tscn"
 Battlepreset="*res://battlepreset.gd"
 Console="*res://scenes/ui/console.tscn"
-MainMenu="res://scenes/menu/main_menu.tscn"
 
 [display]
 

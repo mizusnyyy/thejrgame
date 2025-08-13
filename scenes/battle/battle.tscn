@@ -1,4 +1,4 @@
-[gd_scene load_steps=174 format=3 uid="uid://chprno7b2lppf"]
+[gd_scene load_steps=175 format=3 uid="uid://chprno7b2lppf"]
 
 [ext_resource type="Texture2D" uid="uid://b45tvv1w8286c" path="res://assets/sprite/battle/bg/b0001.png" id="2_2ys7f"]
 [ext_resource type="Script" uid="uid://du1pctbd3kbws" path="res://scenes/battle/character_body_2d.gd" id="3_0yh6x"]
@@ -119,6 +119,7 @@
 [ext_resource type="PackedScene" uid="uid://diwc782xe7aw1" path="res://scenes/battle/enemysprite.tscn" id="109_hr533"]
 [ext_resource type="Texture2D" uid="uid://bayu3880yqskw" path="res://assets/sprite/battle/not ui/fight_sel;.png" id="110_drnbg"]
 [ext_resource type="Script" uid="uid://dq74ht2r0bvpx" path="res://scenes/battle/right_arrow.gd" id="110_qk3tf"]
+[ext_resource type="PackedScene" uid="uid://ddppe6ehmqxad" path="res://selection_wheel.tscn" id="110_xysor"]
 [ext_resource type="Texture2D" uid="uid://ceb0v4nvpjwuq" path="res://assets/sprite/battle/not ui/act.png" id="111_gkugb"]
 [ext_resource type="Script" uid="uid://u0ufoxo23v3j" path="res://scenes/battle/fight.gd" id="111_ly5g2"]
 [ext_resource type="Texture2D" uid="uid://c0rju4q54hy8u" path="res://assets/sprite/battle/not ui/ass.png" id="112_p6ty6"]
@@ -143,7 +144,7 @@
 [ext_resource type="AudioStream" uid="uid://yn4sayk7g01s" path="res://assets/sprite/intro/dzem.wav" id="132_ly5g2"]
 [ext_resource type="Script" uid="uid://bejskw4sl3ymu" path="res://scenes/battle/debug.gd" id="136_w54gx"]
 [ext_resource type="PackedScene" uid="uid://pegs4ep6hjc5" path="res://scenes/attackscenes/bone/bone.tscn" id="137_21vhs"]
-[ext_resource type="Script" path="res://scenes/battle/sprite_2d.gd" id="139_itpkr"]
+[ext_resource type="Script" uid="uid://cfw8ku15s2mot" path="res://scenes/battle/sprite_2d.gd" id="139_itpkr"]
 [ext_resource type="Texture2D" uid="uid://jouutgjikwq0" path="res://assets/sprite/battle/hearts.png" id="139_wf2x0"]
 
 [sub_resource type="GDScript" id="GDScript_w54gx"]
@@ -832,6 +833,12 @@ text = "67/41"
 scroll_active = false
 horizontal_alignment = 1
 script = ExtResource("107_hr533")
+
+[node name="SelectionWheel" parent="box" instance=ExtResource("110_xysor")]
+offset_left = 1.0
+offset_top = 34.5
+offset_right = -1.0
+offset_bottom = 35.5
 
 [node name="enemy" parent="." instance=ExtResource("109_hr533")]
 

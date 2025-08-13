@@ -96,7 +96,6 @@ func attack() -> bool:
 		for j in range(bullet_count):
 			bullet = instantiateall(gloo_scene)
 			bullet.summoned(bullet, soul, bullet_speed)
-			print("Wystrzelono pocisk", j + 1, "z", bullet_count)
 			bullet.modulate.a = 0.0
 			var tween = get_tree().create_tween()
 			tween.tween_property(bullet, "modulate:a", 0.5, 0.25).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)

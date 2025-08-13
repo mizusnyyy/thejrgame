@@ -26,10 +26,9 @@ func summoned(bullet, soul, speed):
 	returnbullet()
 
 func summon_wave(soul, speed):
-	for i in range(5):
-		var bullet = bullet_scene.instantiate()
-		get_parent().add_child(bullet)
-		bullet.summoned(bullet, soul, speed)
+	var bullet = bullet_scene.instantiate()
+	get_parent().add_child(bullet)
+	bullet.summoned(bullet, soul, speed)
 
 func returnbullet():
 	await get_tree().create_timer(2).timeout

@@ -1,12 +1,19 @@
 extends CharacterBody2D
 
 var SPEED = 150.0
-@onready var anim = get_node("AnimatedSprite2D")
+@onready var anim = $AnimatedSprite2D
 var lrud = [0,0]
 var directionstop = 0
-@export var direction:= Vector2()
+@export var direction := Vector2()
+var anim_locked = false
 
 func _physics_process(delta: float) -> void:
+	# Jeśli animacja jest zablokowana, zatrzymujemy ruch
+	if anim_locked:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+
 	var directionlr := Input.get_axis("left", "right")
 	var directionud := Input.get_axis("up", "down")
 	direction = Vector2(directionlr, directionud)
@@ -51,6 +58,19 @@ func _physics_process(delta: float) -> void:
 			anim.stop()
 
 	move_and_slide()
+
+func obtainanim(txt):
+	if anim_locked:
+		return
+	var item = $AnimatedSprite2D/item
+	anim_locked = true
+	velocity = Vector2.ZERO
+	anim.play("obtain")
+	item.texture=txt
+	item.show()
+	await get_tree().create_timer(0.8).timeout
+	item.hide()
+	anim_locked = false
 
 func _on_ready() -> void:
 	await get_tree().create_timer(0.2).timeout

@@ -22,7 +22,7 @@ func _on_body_exited(body):
 		can_talk = true
 
 func _process(_delta):
-	if player_in_range and Input.is_action_just_pressed("interact") and can_talk and player_in_range:
+	if player_in_range and Input.is_action_just_pressed("interact") and can_talk:
 		var currentpage = 0
 		while currentpage!=len(pages):
 			if not dialog.dialogue_active:
@@ -31,10 +31,11 @@ func _process(_delta):
 				await dialog.dialogue_finished
 			currentpage+=1
 		Battlepreset.enemidpreset = whoid
+		await get_tree().create_timer(0.1).timeout
+		can_talk = true
 
 func dialogf(text,texture,sound,optionid):
 	dialog.show_dialogue(text,texture,sound,optionid)
-
 
 func _on_ready() -> void:
 	$Sprite2D.texture = texturenpc

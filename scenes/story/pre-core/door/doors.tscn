@@ -10,11 +10,11 @@ size = Vector2(34, 96)
 script = ExtResource("1_4a4cn")
 
 [node name="dooropener" type="CollisionShape2D" parent="."]
-position = Vector2(39, 32)
+position = Vector2(24, 0)
 shape = SubResource("RectangleShape2D_xj4xd")
 
 [node name="door1" type="Sprite2D" parent="."]
-position = Vector2(16, 16)
+position = Vector2(0, -16)
 scale = Vector2(2, 2)
 texture = ExtResource("2_ufeaj")
 region_enabled = true
@@ -22,7 +22,7 @@ region_rect = Rect2(0, 0, 16, 16)
 
 [node name="door2" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(16, 48)
+position = Vector2(0, 16)
 scale = Vector2(2, -2)
 texture = ExtResource("2_ufeaj")
 region_enabled = true

@@ -40,6 +40,7 @@ func _process(_delta: float) -> void:
 				_show_items()
 			elif Input.is_action_just_pressed("interact"):
 				global.use_item(selected_item_index, "player")
+				global.mana += 10
 				hideall()
 
 				_show_items()

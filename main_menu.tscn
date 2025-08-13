@@ -1,14 +1,57 @@
 [gd_scene load_steps=12 format=3 uid="uid://x46575o5aso3"]
 
-[ext_resource type="Script" uid="uid://cnqo3vqnphf80" path="res://scenes/menu/menu_handler.gd" id="1_dy7ct"]
 [ext_resource type="Texture2D" uid="uid://jv1718wjnql3" path="res://assets/sprite/menu_sprites/JACKTERMINATION.png" id="1_glbon"]
 [ext_resource type="Texture2D" uid="uid://ce7wmmgu7fcmx" path="res://assets/sprite/menu_sprites/GUNTERMINATION.png" id="2_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://bn22bqsxe1f7k" path="res://assets/sprite/menu_sprites/Graj_button.png" id="3_qe12f"]
 [ext_resource type="Texture2D" uid="uid://bx5p7r45rwuv5" path="res://assets/sprite/menu_sprites/ustawienia_button.png" id="4_8qtwp"]
-[ext_resource type="Script" uid="uid://de5tb4gmynggc" path="res://scenes/menu/graj_button.gd" id="5_0o4t1"]
 [ext_resource type="Texture2D" uid="uid://b12r1m8mqfy8d" path="res://assets/sprite/menu_sprites/wyjscie_button.png" id="5_dy7ct"]
-[ext_resource type="Script" uid="uid://dsupf5ybexf20" path="res://scenes/menu/ustawienia_button.gd" id="7_0k4wn"]
-[ext_resource type="Script" uid="uid://b5hys6bj86dfj" path="res://scenes/menu/wyjscie_button.gd" id="9_j5v2v"]
+
+[sub_resource type="GDScript" id="GDScript_glbon"]
+script/source = "extends Node
+
+@export var menu_scene: PackedScene = preload(\"res://main_menu.tscn\")
+var menu_instance: Node = null
+var menu_canvas: CanvasLayer = null
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed(\"menu\"):
+		_toggle_menu()
+
+func _toggle_menu():
+	if menu_instance == null:
+		# Tworzymy menu i dodajemy do CanvasLayer
+		menu_instance = menu_scene.instantiate()
+		menu_canvas = CanvasLayer.new()
+		menu_canvas.layer = 100  # nad grą
+		menu_canvas.add_child(menu_instance)
+		get_tree().root.add_child(menu_canvas)
+	else:
+		_hide_menu()
+
+func _hide_menu():
+	if menu_instance != null and menu_canvas != null:
+		menu_canvas.queue_free()  # usuwa menu + CanvasLayer
+		menu_instance = null
+		menu_canvas = null
+
+# Automatyczne ukrycie menu przy zmianie sceny
+#func _ready():
+	#get_tree().connect(\"scene_changed\", Callable(self, \"_hide_menu\"))
+
+
+func _on_graj_button_pressed() -> void:
+	_hide_menu()
+	get_tree().change_scene_to_file(\"res://scenes/story/pre-core/house.tscn\")
+
+
+func _on_ustawienia_button_pressed() -> void:
+	_hide_menu()
+	get_tree().change_scene_to_file(\"res://scenes/story/pre-core/house.tscn\")
+
+
+func _on_texture_button_pressed() -> void:
+	get_tree().quit()
+"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dy7ct"]
 animations = [{
@@ -26,52 +69,89 @@ animations = [{
 
 [sub_resource type="Theme" id="Theme_0o4t1"]
 
+[sub_resource type="GDScript" id="GDScript_nlkkf"]
+script/source = "extends TextureButton
+
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/story/pre-core/house.tscn\")
+"
+
+[sub_resource type="GDScript" id="GDScript_qe12f"]
+script/source = "extends TextureButton
+
+
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/menu/settings.tscn\")
+"
+
+[sub_resource type="GDScript" id="GDScript_8qtwp"]
+script/source = "extends TextureButton
+
+
+func _on_pressed() -> void:
+	get_tree().quit()
+"
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -630.0
+offset_bottom = -351.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_dy7ct")
+script = SubResource("GDScript_glbon")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 640.0
-offset_bottom = 360.0
+offset_right = 14.0
+offset_bottom = 11.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
 modulate = Color(0.590441, 0.590441, 0.590441, 1)
+scale = Vector2(2.20122, 2.18902)
 sprite_frames = SubResource("SpriteFrames_dy7ct")
 autoplay = "default"
 centered = false
 
 [node name="Graj_button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 493.0
-offset_top = 29.0
-offset_right = 749.0
-offset_bottom = 93.0
+offset_left = 370.0
+offset_top = 32.0
+offset_right = 626.0
+offset_bottom = 96.0
 theme = SubResource("Theme_0o4t1")
 texture_normal = ExtResource("3_qe12f")
-script = ExtResource("5_0o4t1")
+script = SubResource("GDScript_nlkkf")
 
 [node name="ustawienia_button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 986.0
-offset_top = 344.0
-offset_right = 1242.0
-offset_bottom = 408.0
+offset_left = 368.0
+offset_top = 111.0
+offset_right = 624.0
+offset_bottom = 175.0
 texture_normal = ExtResource("4_8qtwp")
-script = ExtResource("7_0k4wn")
+script = SubResource("GDScript_qe12f")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 960.0
-offset_top = 448.0
-offset_right = 1216.0
-offset_bottom = 512.0
+offset_left = 366.0
+offset_top = 191.0
+offset_right = 622.0
+offset_bottom = 255.0
 texture_normal = ExtResource("5_dy7ct")
-script = ExtResource("9_j5v2v")
+script = SubResource("GDScript_8qtwp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 362.0
+offset_top = 1.0
+offset_right = 639.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="Graj_button" to="Graj_button" method="_on_pressed"]
+[connection signal="pressed" from="ustawienia_button" to="." method="_on_ustawienia_button_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

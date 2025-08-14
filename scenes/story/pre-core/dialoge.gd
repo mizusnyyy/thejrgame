@@ -23,6 +23,8 @@ var type_sound_player: AudioStreamPlayer2D = null
 func _ready() -> void:
 	hide()
 
+func setname(textset):
+	$TextureRect/speaker.text = textset
 # wait_for_close:
 # true  -> zachowanie jak dotąd: czekamy na interact i emitujemy dialogue_finished
 # false -> tylko napisz tekst litera-po-literze i ZWRÓĆ po text_typed (bez zamykania)

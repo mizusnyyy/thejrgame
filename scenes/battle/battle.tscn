@@ -837,12 +837,10 @@ horizontal_alignment = 1
 script = ExtResource("107_hr533")
 
 [node name="SelectionWheel" parent="box" instance=ExtResource("110_xysor")]
-visible = false
-offset_left = 1.0
-offset_top = 34.5
-offset_right = -1.0
-offset_bottom = 35.5
-options = null
+offset_left = -320.0
+offset_top = -255.5
+offset_right = -330.0
+offset_bottom = -254.5
 
 [node name="enemy" parent="." instance=ExtResource("109_hr533")]
 

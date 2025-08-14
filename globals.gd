@@ -7,6 +7,7 @@ var battleenem
 var tp = 0
 var mana = 0
 var mana_max = 100
+var have_hearts = [] #0 jack, 1 mizu, 2 shadow, 3 Pavey, 4 Igreavious, 5 bugzie
 var enemy_hp = 100.0
 var maxenemy_hp = 100.0
 var health := 100.0
@@ -19,6 +20,7 @@ signal opcja
 var swing = false
 var items=[""]
 var inventory: Array[Item] = []
+
 
 func add_item(item: Item):
 	inventory.append(item)

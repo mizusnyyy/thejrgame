@@ -16,6 +16,5 @@ func _ready():
 				if item != null:
 					global.add_item(item)
 			file_name = dir.get_next()
-
 	for item in global.inventory:
 		print(item.name, " < name healamount > ", item.heal_amount)

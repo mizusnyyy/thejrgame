@@ -8,7 +8,6 @@ var directionstop = 0
 var anim_locked = false
 
 func _physics_process(delta: float) -> void:
-	# Jeśli animacja jest zablokowana, zatrzymujemy ruch
 	if anim_locked:
 		velocity = Vector2.ZERO
 		move_and_slide()

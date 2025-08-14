@@ -5,16 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://bxq2w808td2io" path="res://assets/sprite/characters/glut/glut.png" id="7_3pd33"]
 [ext_resource type="Script" uid="uid://bkdklstb2wyg2" path="res://scenes/story/pre-core/quickchange.gd" id="8_2rbrp"]
 [ext_resource type="AudioStream" uid="uid://bk6wuwnskch7u" path="res://assets/sprite/characters/glut/squeek.wav" id="9_87ub6"]
-[ext_resource type="Texture2D" uid="uid://e5q4i0heuvg3" path="res://assets/sprite/jr/teto_front.png" id="9_wgi2f"]
-[ext_resource type="Texture2D" uid="uid://6kf44nmw8j3i" path="res://assets/sprite/jr/teto_side_better.png" id="10_uur3u"]
-[ext_resource type="Texture2D" uid="uid://cmj27cly056f7" path="res://assets/sprite/jr/teto_back.png" id="11_xq3a2"]
-[ext_resource type="Texture2D" uid="uid://bq1mj2osrqcqs" path="res://assets/sprite/jr/teto_side.png" id="12_asfsf"]
+[ext_resource type="Texture2D" uid="uid://e5q4i0heuvg3" path="res://assets/sprite/characters/jr/teto_front.png" id="9_wgi2f"]
+[ext_resource type="Texture2D" uid="uid://6kf44nmw8j3i" path="res://assets/sprite/characters/jr/teto_side_better.png" id="10_uur3u"]
+[ext_resource type="Texture2D" uid="uid://cmj27cly056f7" path="res://assets/sprite/characters/jr/teto_back.png" id="11_xq3a2"]
+[ext_resource type="Texture2D" uid="uid://bq1mj2osrqcqs" path="res://assets/sprite/characters/jr/teto_side.png" id="12_asfsf"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="13_64xt6"]
 [ext_resource type="Texture2D" uid="uid://b7632vv4ixuwo" path="res://assets/tiles/tilebg.png" id="13_xq3a2"]
 [ext_resource type="AudioStream" uid="uid://v6xhcphnyegs" path="res://assets/sprite/intro/stevenafterpumming.wav" id="14_45nvk"]
 [ext_resource type="Texture2D" uid="uid://blq2libb70yvf" path="res://assets/tiles/tilebarrier.png" id="14_asfsf"]
 [ext_resource type="Texture2D" uid="uid://c72wlne1fh1ho" path="res://assets/tiles/tileobjects.png" id="16_64xt6"]
-
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_45nvk"]
 texture = ExtResource("13_xq3a2")

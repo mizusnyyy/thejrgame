@@ -1,0 +1,15 @@
+[
+	{"id": "start", "text": "Welcome, mortal, do you desire power?", "speaker": "???", "portrait": "res://assets/sprite/characters/jr/teto_front.png", "next": "0"},
+	{"id": "0", "text": "Do you know who I AM?", "speaker": "???", "portrait": "res://assets/sprite/characters/jr/teto_side_better.png","next": "1"},
+	{"id": "1", "text": "Well... my name's igor", "speaker": "???", "portrait": "res://assets/sprite/characters/jr/teto_side_better.png","next": "2"},
+	{"id": "2", "text": "jk i am a core", "speaker": "igor", "portrait": "res://assets/sprite/characters/jr/teto_front.png","next": "3"},
+	{"id": "3", "text": "wanna touch me bro?", "speaker": "core", "portrait": "res://assets/sprite/characters/jr/teto_side_better.png",
+	"choices": [
+	  { "text": "yes", "next": "4" },
+	  { "text": "no", "next": "5" },
+	  { "text": "yassss", "next": "6" }
+	]},
+	{"id": "4", "text": "ok.", "speaker": "core", "portrait": "res://assets/sprite/characters/jr/teto_side_better.png",},
+	{"id": "5", "text": "well 2 bad imma touch u.", "speaker": "core", "portrait": "res://assets/sprite/characters/jr/teto_side_better.png",},
+	{"id": "6", "text": "naaa... you made it weird now...", "speaker": "core", "portrait": "res://assets/sprite/characters/jr/teto_side_better.png",}	
+]	

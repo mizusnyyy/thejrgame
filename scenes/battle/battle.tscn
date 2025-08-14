@@ -163,6 +163,7 @@ func _on_ready() -> void:
 	await get_tree().create_timer(1).timeout
 	var new_script = load(\"res://scenes/battle/attack_spawner_\"+str(enemid)+\".gd\")
 	$attackspawner.set_script(new_script)
+	$attackspawner.spriteinteract = $enemy
 	$attackspawner.start()
 "
 

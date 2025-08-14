@@ -3,7 +3,7 @@ extends Node2D
 var gloo_scene: PackedScene
 var timer := 0.0
 var runda = 1
-
+var spriteinteract
 var spawn_interval
 var bullet_speed
 var soul

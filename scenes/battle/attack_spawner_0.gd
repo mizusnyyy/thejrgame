@@ -8,7 +8,7 @@ var spawn_interval
 var bullet_speed
 var soul
 var notui
-@onready var spriteinteract = get_node_or_null("enemy")
+var spriteinteract
 #WAZNE -> GDY GRACZ WEJDZIE W KOLIZJE CHOCIAZBY Z NIEBIESKIM TO DOPOKI NIE WYJDZIE JEST NIESMIERTELNY
 #NAPRAWIC!!!
 #SPIERDLAALLAJJ!!
@@ -35,8 +35,7 @@ func nextturn():
 
 func attack(amount):
 	for i in range(amount):
-		global.swing=true
-		var ran = 1
+		var ran = randi()%5
 		var bullet = chooseattack(ran)
 		await bullet.attack_finished
 
@@ -45,7 +44,6 @@ func chooseattack(ran):
 	print(spriteinteract)
 	if spriteinteract && ran != 1:
 		spriteinteract.swinghand()
-		print("huh???")
 	if ran == 0: 
 		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_bonepit.tscn")
 		bullet = instantiateall(gloo_scene)

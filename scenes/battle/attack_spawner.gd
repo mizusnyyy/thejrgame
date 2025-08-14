@@ -29,6 +29,7 @@ func nextturn():
 	runda+=1
 	print(runda)
 	await notui.enemy_turn
+	await get_tree().create_timer(1).timeout
 	nextturn()
 
 func attack():

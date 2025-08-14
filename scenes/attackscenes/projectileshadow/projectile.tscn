@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdy21tdyy5dl3"]
+
+[ext_resource type="Script" uid="uid://bywren0dw6srn" path="res://scenes/attackscenes/projectileshadow/projectile.gd" id="1_nasci"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufpd2"]
+size = Vector2(5, 40)
+
+[node name="projectile" type="Area2D"]
+script = ExtResource("1_nasci")
+metadata/_edit_horizontal_guides_ = [-8.0]
+metadata/_edit_vertical_guides_ = [2.0]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -16.0
+offset_right = 2.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2.5, 20)
+color = Color(0.501961, 0, 0.501961, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 4)
+shape = SubResource("RectangleShape2D_ufpd2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

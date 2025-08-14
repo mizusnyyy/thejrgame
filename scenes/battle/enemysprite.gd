@@ -64,3 +64,39 @@ func swinghand():
 
 	parts[3].rotation_degrees = 0
 	started = false
+
+func swingboth():
+	var speed = 270.0  # stopni na sekundę
+	var target_up = 48.0
+	var target_down = -88.0
+	var delta = 0.0
+	started = true
+
+	# Swing up
+	while parts[3].rotation_degrees < target_up:
+		delta = get_process_delta_time()
+		parts[3].rotation_degrees += speed * delta/2
+		parts[4].rotation_degrees += speed * delta/2
+		await get_tree().process_frame
+	# Mała przerwa
+	await get_tree().create_timer(2).timeout
+
+	# Swing down
+	while parts[3].rotation_degrees > target_down:
+		delta = get_process_delta_time()
+		parts[3].rotation_degrees -= speed * delta*1.5
+		parts[4].rotation_degrees += speed * delta*1.5
+		await get_tree().process_frame
+	# Mała przerwa
+	await get_tree().create_timer(0.2).timeout
+
+	# Powrót do pozycji startowej (0 stopni)
+	while parts[3].rotation_degrees < 0:
+		delta = get_process_delta_time()
+		parts[3].rotation_degrees += speed * delta
+		parts[4].rotation_degrees += speed * delta
+		await get_tree().process_frame
+
+	parts[3].rotation_degrees = 0
+	parts[4].rotation_degrees = 0
+	started = false

@@ -1,0 +1,73 @@
+extends Node2D
+
+var dialogues: Array = []
+var current_id := "start"
+var dialog: Node = null
+var sound
+
+func startandload(curid: String, path: String, dialogset: Node, soundset):
+	sound = soundset
+	dialog = dialogset
+	if dialog == null:
+		push_error("Nie znaleziono CanvasLayer/dialoge")
+		return
+
+	load_dialogues(path)
+	show_dialog(curid)
+
+func load_dialogues(path: String) -> void:
+	var file = FileAccess.open(path, FileAccess.READ)
+	if file == null:
+		push_error("Nie można otworzyć pliku dialogów: " + path)
+		return
+	var data := file.get_as_text()
+	var json = JSON.parse_string(data)
+	if typeof(json) == TYPE_ARRAY:
+		dialogues = json
+	else:
+		push_error("Plik JSON nie zawiera tablicy!")
+
+func get_dialog_by_id(id: String) -> Dictionary:
+	for d in dialogues:
+		if d.has("id") and d["id"] == id:
+			return d
+	return {}
+
+func show_dialog(id: String) -> void:
+	var d := get_dialog_by_id(id)
+	if d.is_empty():
+		print("Dialog o id ", id, " nie istnieje")
+		return
+
+	current_id = id
+	var text = d.get("text", "")
+	var portrait: Texture = null
+	if d.has("portrait") and typeof(d["portrait"]) == TYPE_STRING and d["portrait"] != "":
+		portrait = load(d["portrait"])
+
+	# 1) JEŚLI SĄ OPCJE
+	if d.has("choices"):
+		# Pokaż tekst i poczekaj tylko do końca pisania (bez zamykania okna)
+		await dialog.show_dialogue(text, portrait, sound, true) # false = nie czekaj na dialogue_finished
+		# Wyślij listy id "next" oraz tekstów opcji do dialogu
+		var next_ids: Array = []
+		var choice_texts: Array = []
+		for choice in d["choices"]:
+			choice_texts.append(choice.get("text", ""))
+			next_ids.append(choice.get("next", ""))
+		dialog.choose(next_ids, choice_texts)
+		# Czekamy na WYBÓR
+		var picked_index: int = await dialog.choice_selected
+		var next_id = next_ids[picked_index]
+		dialog.typing = true
+		show_dialog(next_id)
+		return
+
+	# 2) BEZ OPCJI → normalny tryb
+	await dialog.show_dialogue(text, portrait, sound, true) # true = czekaj na dialogue_finished
+
+	# Automatyczne przejście do "next" jeśli jest
+	if d.has("next"):
+		show_dialog(d["next"])
+	else:
+		print("Dialog zakończony dla id:", current_id)

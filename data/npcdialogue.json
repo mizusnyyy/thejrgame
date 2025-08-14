@@ -1,0 +1,25 @@
+[
+	{"id": "start", "text": "Czesc!", "speaker": "NPC", "portrait": "res://assets/sprite/characters/shadow/portrait/shadow3.png", "next": "0"},
+	{"id": "0", "text": "Jak sie masz?", "speaker": "NPC", "portrait": "res://assets/sprite/characters/shadow/portrait/shadow2.png","next": "1"},
+	{"id": "1", "text": "for igor in range", "speaker": "NPC", "portrait": "res://assets/sprite/characters/shadow/portrait/shadow1.png","next": "2"},
+	{"id": "2", "text": "print(\"dzien dobry\")", "speaker": "NPC", "portrait": "res://assets/sprite/characters/shadow/portrait/shadow2.png","next": "3"},
+	{"id": "3", "text": "*dlatego tez jestes czarny", "speaker": "NPC", "portrait": "res://assets/sprite/characters/shadow/portrait/shadow1.png",
+	"choices": [
+	  { "text": "Pum!", "next": "battle" },
+	  { "text": "Pumnie", "next": "4" },
+	  { "text": "za pare...", "next": "5" }
+	]
+	},
+	{"id": "4", "text": "pusia", "speaker": "NPC", "portrait": "res://assets/sprite/characters/shadow/portrait/shadow1.png","next": "6"},
+	{"id": "5", "text": "DZEM? ZA PARE? ZA PARE GODZIN", "speaker": "NPC", "portrait": "res://assets/sprite/characters/shadow/portrait/shadow3.png","next": "6"},
+	{"id": "6", "text": "a tak na serio to jestes cwelem", "speaker": "NPC", "portrait": "res://assets/sprite/characters/shadow/portrait/shadow3.png","next": "7"},
+	{"id": "7", "text": "zgadzasz sie?", "speaker": "NPC", "portrait": "res://assets/sprite/characters/shadow/portrait/shadow3.png",
+	"choices": [
+	  { "text": "Tak", "next": "8" },
+	  { "text": "Nie", "next": "9" },
+	]
+	},
+	{"id": "8", "text": "to dobrze", "speaker": "NPC", "portrait": "res://assets/sprite/characters/shadow/portrait/shadow2.png"},
+	{"id": "9", "text": "to nie dobrze", "speaker": "NPC", "portrait": "res://assets/sprite/characters/shadow/portrait/shadow1.png"}
+
+]

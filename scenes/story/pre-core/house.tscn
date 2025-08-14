@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://bpmn0ng1q8ox"]
+[gd_scene load_steps=35 format=4 uid="uid://bpmn0ng1q8ox"]
 
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_tecch"]
 [ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/player/teto.tscn" id="6_74pxv"]
@@ -22,7 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://bq1mj2osrqcqs" path="res://assets/sprite/characters/jr/teto_side.png" id="17_0j0oh"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="18_jobkd"]
 [ext_resource type="AudioStream" uid="uid://v6xhcphnyegs" path="res://assets/sprite/intro/stevenafterpumming.wav" id="20_1e2cb"]
-[ext_resource type="PackedScene" path="res://scenes/items/iteminteract.tscn" id="27_5g7yr"]
+[ext_resource type="PackedScene" uid="uid://b6vi5n5gad3lf" path="res://data/dialogue_manager.tscn" id="26_u8w88"]
+[ext_resource type="PackedScene" uid="uid://cvhhll683san2" path="res://scenes/items/iteminteract.tscn" id="27_5g7yr"]
 [ext_resource type="PackedScene" uid="uid://b5bxnr2plabon" path="res://scenes/story/pre-core/door/teleporter/teleporter.tscn" id="28_rhstu"]
 [ext_resource type="PackedScene" uid="uid://pgr1hxlmxihq" path="res://scenes/story/pre-core/door/doors.tscn" id="29_x81t7"]
 
@@ -282,11 +283,20 @@ tile_set = SubResource("TileSet_jkym4")
 
 [node name="npc" parent="ysorting" instance=ExtResource("12_1e2cb")]
 position = Vector2(0, -100)
-pages = Array[String](["Witaj. Mizu. Ponownie.", "Do you wanna have a bad time?", "Zacznij zastanawiac sie czy-", "naprawde chcesz robic ta gre", "przez caly tydzien dni juz nic nie zrobiles", "mam nadzieje ze chociaz karierzyles", "Jest tylko jedne pytanie, odpowiedz...", "Dlaczego Steven jest hot?", "podpowiedz:... nie ma podpowiedzi", "*GEJ,MIZU PEDAL,NWM,WALKA", "Wow... jestes coraz lepszy w to!", "<- Amplected rule 34 btw, (peak)"])
-portrait_texture = Array[Texture]([ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("13_aqtk2"), ExtResource("15_u8w88"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("13_aqtk2"), ExtResource("13_aqtk2"), ExtResource("15_8i2l0")])
-optionid = Array[Array]([[0, 1, 1, 2]])
+pages = Array[String](["Witaj. Mizu. Ponownie.", "Do you wanna have a bad time?", "Zacznij zastanawiac sie czy-", "naprawde chcesz robic ta gre", "przez caly tydzien dni juz nic nie zrobiles", "mam nadzieje ze chociaz karierzyles", "Jest tylko jedne pytanie, odpowiedz...", "Dlaczego Steven jest hot?", "podpowiedz:... nie ma podpowiedzi", "*GEJ,MIZU PEDAL,NWM,WALKA", "Wow... jestes coraz lepszy w to!", "<- Amplected rule 34 btw, (peak)", "chcesz gadac dalej?", "*tak,nie"])
+portrait_texture = Array[Texture]([ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("13_aqtk2"), ExtResource("15_u8w88"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("13_aqtk2"), ExtResource("13_aqtk2"), ExtResource("15_8i2l0"), ExtResource("14_qgspi")])
+optionid = Array[Array]([[0, 1, 1, 2], [0, 4]])
 whoid = 1
 texturenpc = ExtResource("14_aqtk2")
+path = "npcdialogue"
+
+[node name="npc2" parent="ysorting" instance=ExtResource("12_1e2cb")]
+position = Vector2(-72, 24)
+pages = Array[String](["Witaj. Mizu. Ponownie.", "Do you wanna have a bad time?", "Zacznij zastanawiac sie czy-", "naprawde chcesz robic ta gre", "przez caly tydzien dni juz nic nie zrobiles", "mam nadzieje ze chociaz karierzyles", "Jest tylko jedne pytanie, odpowiedz...", "Dlaczego Steven jest hot?", "podpowiedz:... nie ma podpowiedzi", "*GEJ,MIZU PEDAL,NWM,WALKA", "Wow... jestes coraz lepszy w to!", "<- Amplected rule 34 btw, (peak)", "chcesz gadac dalej?", "*tak,nie"])
+portrait_texture = Array[Texture]([ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("13_aqtk2"), ExtResource("15_u8w88"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("13_aqtk2"), ExtResource("13_aqtk2"), ExtResource("15_8i2l0"), ExtResource("14_qgspi")])
+optionid = Array[Array]([[0, 1, 1, 2], [0, 4]])
+whoid = 1
+texturenpc = ExtResource("15_b6qe5")
 
 [node name="npc3" parent="ysorting" instance=ExtResource("12_1e2cb")]
 position = Vector2(-80, -120)
@@ -313,6 +323,8 @@ texturenpc = ExtResource("15_b6qe5")
 position = Vector2(0, 0.5)
 script = ExtResource("13_0rrt8")
 gloo_scene = ExtResource("14_2i8gf")
+
+[node name="DialogueManager" parent="." instance=ExtResource("26_u8w88")]
 
 [connection signal="body_entered" from="tilemap/tp/quickchange" to="tilemap/tp/quickchange" method="_on_body_entered"]
 [connection signal="ready" from="tilemap/tp/quickchange" to="tilemap/tp/quickchange" method="_on_ready"]

@@ -100,17 +100,11 @@ func setoptions(options: Array, texts: Array) -> void:
 
 		ins.settext(texts[i])
 		alan.append(ins)
-
-		# ✅ po wciśnięciu przycisku emitujemy choice_selected z indexem
 		ins.choice_finished.connect(func():
 			emit_signal("choice_selected", ins.selfid)
 		)
-
-	# ✅ Czekamy aż KTOŚ wybierze (odbieramy index)
 	var picked_index: int = await choice_selected
 	just_chose = true
-
-	# Sprzątanie przycisków (fade + free)
 	var time := 0.1
 	for b in alan:
 		b.disappearbut(time)
@@ -119,10 +113,7 @@ func setoptions(options: Array, texts: Array) -> void:
 	choosing = false
 	choice.hide()
 	choice.can_choose = false
-
-	# Uwaga: NIE emitujemy dialogue_finished tutaj!
-	# Manager po otrzymaniu choice_selected od razu wchodzi w kolejną linijkę.
-
+	
 func _type_text() -> void:
 	while char_index < full_text.length() and typing:
 		label.text += full_text[char_index]
@@ -141,7 +132,7 @@ func _type_text() -> void:
 			type_sound_player.play()
 		await get_tree().create_timer(spd).timeout
 	typing = false
-	emit_signal("text_typed") # ✅ koniec pisania
+	emit_signal("text_typed")
 
 func _unhandled_input(event):
 	if just_chose:

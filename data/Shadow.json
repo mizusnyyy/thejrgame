@@ -23,5 +23,7 @@
 	{"id": "9", "text": "nie...", "speaker": "JackJR", "portrait": "res://assets/sprite/menu_sprites/JACKTERMINATION.png","next": "11"},
 	{"id": "10", "text": "B-Baka! Nie mowilem tego na serio!", "speaker": "Shadow", "portrait": "res://assets/sprite/characters/shadow/portrait/shadow3.png"},
 	{"id": "11", "text": "S-So hot!... Naczy- no napewno", "speaker": "Shadow", "portrait": "res://assets/sprite/characters/shadow/portrait/shadow1.png"},
+	{"id": "12", "text": "What took you so long you stupid igor", "speaker": "Shadow", "portrait": "res://assets/sprite/characters/shadow/portrait/shadow3.png","next": "13"},
+	{"id": "13", "text": "Pij wojanka do samego ranka, pij wojanka", "speaker": "Shadow", "portrait": "res://assets/sprite/characters/shadow/portrait/shadow2.png"},
 
 ]

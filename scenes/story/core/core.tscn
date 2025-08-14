@@ -1,10 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://csy882se6ixne"]
+[gd_scene load_steps=7 format=3 uid="uid://csy882se6ixne"]
 
-[ext_resource type="Script" uid="uid://c3pxae2c3dgk" path="res://scenes/story/core/core.gd" id="1_fo86g"]
 [ext_resource type="Texture2D" uid="uid://5del8lqr5cjr" path="res://assets/tiles/animations/core/core.png" id="1_kpxf3"]
-[ext_resource type="Texture2D" uid="uid://uprjhy1pj4b4" path="res://teto1.png" id="2_di8o6"]
-[ext_resource type="Texture2D" uid="uid://c7w2uou8gecp8" path="res://teto2.png" id="3_amf31"]
-[ext_resource type="AudioStream" uid="uid://bjp8poru4lgp8" path="res://assets/soundsmusic/ohhhimjackingitsogooooood.wav" id="3_xcx4n"]
+[ext_resource type="Script" uid="uid://ceododdxd8fru" path="res://scenes/story/pre-core/teto.gd" id="1_xcx4n"]
+[ext_resource type="AudioStream" uid="uid://bk6wuwnskch7u" path="res://assets/sprite/characters/glut/squeek.wav" id="3_xcx4n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xcx4n"]
 animations = [{
@@ -23,11 +21,8 @@ size = Vector2(32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_di8o6"]
 size = Vector2(26, 12)
 
-[node name="Area2D" type="Area2D" node_paths=PackedStringArray("typesound")]
-script = ExtResource("1_fo86g")
-typesound = NodePath("AudioStreamPlayer2D")
-pages = Array[String](["All of a sudden.", "You are being possessed with...", "a weird power. YOU ARE FILLED WITH", "JACK TERMINATION!!!", "NOW PUM!"])
-portrait_texture = Array[Texture]([ExtResource("2_di8o6"), ExtResource("3_amf31"), ExtResource("2_di8o6"), ExtResource("3_amf31"), ExtResource("3_amf31")])
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_xcx4n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xcx4n")

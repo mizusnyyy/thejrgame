@@ -1,23 +1,17 @@
-[gd_scene load_steps=35 format=4 uid="uid://bpmn0ng1q8ox"]
+[gd_scene load_steps=29 format=4 uid="uid://bpmn0ng1q8ox"]
 
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_tecch"]
 [ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/player/teto.tscn" id="6_74pxv"]
-[ext_resource type="Texture2D" uid="uid://bnxmi0qekyy6d" path="res://assets/sprite/characters/shadow/portrait/shadow3.png" id="9_0j0oh"]
 [ext_resource type="Texture2D" uid="uid://b7632vv4ixuwo" path="res://assets/tiles/tilebg.png" id="9_0rrt8"]
 [ext_resource type="Texture2D" uid="uid://blq2libb70yvf" path="res://assets/tiles/tilebarrier.png" id="10_2i8gf"]
 [ext_resource type="PackedScene" uid="uid://cne3a6lmj7c1u" path="res://scenes/randomthings/npc.tscn" id="12_1e2cb"]
 [ext_resource type="Texture2D" uid="uid://c72wlne1fh1ho" path="res://assets/tiles/tileobjects.png" id="12_qgspi"]
 [ext_resource type="Script" uid="uid://bejskw4sl3ymu" path="res://scenes/battle/debug.gd" id="13_0rrt8"]
-[ext_resource type="Texture2D" uid="uid://uprjhy1pj4b4" path="res://teto1.png" id="13_aqtk2"]
 [ext_resource type="PackedScene" uid="uid://pegs4ep6hjc5" path="res://scenes/attackscenes/bone/bone.tscn" id="14_2i8gf"]
-[ext_resource type="Texture2D" uid="uid://b5jp252jvsneo" path="res://assets/sprite/characters/misupi/misupispritesheet.png" id="14_aqtk2"]
 [ext_resource type="Script" uid="uid://bkdklstb2wyg2" path="res://scenes/story/pre-core/quickchange.gd" id="14_jkym4"]
 [ext_resource type="Texture2D" uid="uid://e5q4i0heuvg3" path="res://assets/sprite/characters/jr/teto_front.png" id="14_qgspi"]
-[ext_resource type="Texture2D" uid="uid://bu5tdolmt6pgo" path="res://teto3.png" id="15_8i2l0"]
 [ext_resource type="Texture2D" uid="uid://blo5yr7xsgygh" path="res://assets/sprite/characters/shadow/shadowspritesheet.png" id="15_b6qe5"]
 [ext_resource type="Texture2D" uid="uid://6kf44nmw8j3i" path="res://assets/sprite/characters/jr/teto_side_better.png" id="15_jkym4"]
-[ext_resource type="Texture2D" uid="uid://c7w2uou8gecp8" path="res://teto2.png" id="15_s7kpv"]
-[ext_resource type="Texture2D" uid="uid://cykdshu25r3nk" path="res://teto4.png" id="15_u8w88"]
 [ext_resource type="Texture2D" uid="uid://cmj27cly056f7" path="res://assets/sprite/characters/jr/teto_back.png" id="16_1e2cb"]
 [ext_resource type="Texture2D" uid="uid://bq1mj2osrqcqs" path="res://assets/sprite/characters/jr/teto_side.png" id="17_0j0oh"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="18_jobkd"]
@@ -149,6 +143,7 @@ tile_map_data = PackedByteArray("AAD9//f/AAAIAAAAAAD+//f/AAAGAAAAAAD///f/AAAGAAA
 tile_set = SubResource("TileSet_qgspi")
 
 [node name="barrier" type="TileMapLayer" parent="tilemap"]
+visible = false
 z_index = 10
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAD8//n/AAADAAAAAAD8//r/AAADAAAAAAD8//v/AAADAAAAAAD8//z/AAADAAAAAAD8//3/AAADAAAAAAD8//7/AAADAAAAAAADAPn/AAADAAAAAAADAPr/AAADAAAAAAADAPv/AAADAAAAAAADAPz/AAADAAAAAAADAP3/AAADAAAAAAADAP7/AAADAAAAAAADAP//AAADAAAAAAD8/wEAAAADAAAAAAD9/wIAAAADAAAAAAD+/wIAAAADAAAAAAD//wIAAAADAAAAAAAAAAIAAAADAAAAAAABAAIAAAADAAAAAAACAAIAAAADAAAAAAADAAAAAAADAAAAAAADAAEAAAADAAAAAAD9//j/AAAEAAAAAAD+//j/AAAEAAAAAAD///n/AAAEAAAAAAAAAPn/AAAEAAAAAAABAPj/AAAEAAAAAAACAPj/AAAEAAAAAADp//7/AAAFAAAAABDq//7/AAAEAAAAABDr//7/AAAEAAAAABDs//7/AAAFAAAAAADt/wIAAAADAAAAAADt/wMAAAADAAAAAADu/wIAAAADAAAAAADv/wIAAAADAAAAAADw/wIAAAADAAAAAADx/wEAAAADAAAAAADx//3/AAADAAAAAADx//7/AAADAAAAAADx//z/AAADAAAAAADx//v/AAADAAAAAADx//r/AAADAAAAAADx//n/AAADAAAAAADx//j/AAADAAAAAADt/wQAAAADAAAAAADs/wUAAAADAAAAAADp/wUAAAADAAAAAADo/wQAAAADAAAAAADo/wMAAAADAAAAAADo/wIAAAADAAAAAADn/wIAAAADAAAAAADm/wIAAAADAAAAAADl/wIAAAADAAAAAADk/wEAAAADAAAAAADk//7/AAADAAAAAADk//3/AAADAAAAAADk//z/AAADAAAAAADk//v/AAADAAAAAADk//j/AAADAAAAAADl//f/AAADAAAAAADm//f/AAADAAAAAADn//f/AAADAAAAAADu//f/AAADAAAAAADv//f/AAADAAAAAADw//f/AAADAAAAAADo//j/AAAEAAAAAADp//j/AAAEAAAAAADq//j/AAAEAAAAAADr//j/AAAEAAAAAADs//j/AAAEAAAAAADt//j/AAAEAAAAAADZ//v/AAADAAAAAADZ//j/AAADAAAAAADY//f/AAADAAAAAADX//f/AAADAAAAAADW//f/AAADAAAAAADV//f/AAADAAAAAADU//f/AAADAAAAAADT//f/AAADAAAAAADS//f/AAADAAAAAADR//f/AAADAAAAAADQ//j/AAADAAAAAADQ//n/AAADAAAAAADQ//r/AAADAAAAAADQ//v/AAADAAAAAADR//z/AAADAAAAAADS//z/AAADAAAAAADT//z/AAADAAAAAADU//z/AAADAAAAAADV//z/AAADAAAAAADW//z/AAADAAAAAADX//z/AAADAAAAAADY//z/AAADAAAAAAD///X/AAABAAAAAAD///b/AAABAAAAAAD///f/AAABAAAAAAD///j/AAABAAAAAAAAAPf/AAABAAAAAAAAAPb/AAABAAAAAAAAAPX/AAABAAAAAAAAAPj/AAABAAAAAAC///7/AAADAAAAAAC/////AAADAAAAAAC//wAAAAADAAAAAAC//wEAAAADAAAAAADA//3/AAADAAAAAADA/wIAAAADAAAAAADB//3/AAADAAAAAADB/wIAAAADAAAAAADC//3/AAADAAAAAADC/wIAAAADAAAAAADD//3/AAADAAAAAADD/wIAAAADAAAAAADE//3/AAADAAAAAADE/wIAAAADAAAAAADF//3/AAADAAAAAADF/wIAAAADAAAAAADG//7/AAADAAAAAADG/wEAAAADAAAAAAA=")
@@ -198,6 +193,53 @@ drag_and_drop_selection_enabled = false
 metadata/_edit_use_anchors_ = true
 
 [node name="igorplayer" type="AudioStreamPlayer2D" parent="tilemap/tp/quickchange"]
+stream = ExtResource("20_1e2cb")
+volume_db = -6.769
+autoplay = true
+max_distance = 26.0
+
+[node name="quickchange2" type="Area2D" parent="tilemap/tp"]
+position = Vector2(80, 40)
+script = ExtResource("14_jkym4")
+namescene = "coreroom.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tilemap/tp/quickchange2"]
+shape = SubResource("RectangleShape2D_j4awy")
+
+[node name="teeeto" type="AnimatedSprite2D" parent="tilemap/tp/quickchange2"]
+modulate = Color(0.0901961, 0.239216, 1, 0.388235)
+scale = Vector2(1, 1.8)
+sprite_frames = SubResource("SpriteFrames_aqtk2")
+autoplay = "default"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="tilemap/tp/quickchange2"]
+z_index = 11
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = 13.0
+offset_right = 212.0
+offset_bottom = 213.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(-50, -50)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("18_jobkd")
+theme_override_font_sizes/normal_font_size = 22
+text = "TETOPORTER
+"
+autowrap_mode = 1
+horizontal_alignment = 1
+vertical_alignment = 1
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+metadata/_edit_use_anchors_ = true
+
+[node name="igorplayer" type="AudioStreamPlayer2D" parent="tilemap/tp/quickchange2"]
 stream = ExtResource("20_1e2cb")
 volume_db = -6.769
 autoplay = true
@@ -283,41 +325,16 @@ tile_set = SubResource("TileSet_jkym4")
 
 [node name="npc" parent="ysorting" instance=ExtResource("12_1e2cb")]
 position = Vector2(0, -100)
-pages = Array[String](["Witaj. Mizu. Ponownie.", "Do you wanna have a bad time?", "Zacznij zastanawiac sie czy-", "naprawde chcesz robic ta gre", "przez caly tydzien dni juz nic nie zrobiles", "mam nadzieje ze chociaz karierzyles", "Jest tylko jedne pytanie, odpowiedz...", "Dlaczego Steven jest hot?", "podpowiedz:... nie ma podpowiedzi", "*GEJ,MIZU PEDAL,NWM,WALKA", "Wow... jestes coraz lepszy w to!", "<- Amplected rule 34 btw, (peak)", "chcesz gadac dalej?", "*tak,nie"])
-portrait_texture = Array[Texture]([ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("13_aqtk2"), ExtResource("15_u8w88"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("13_aqtk2"), ExtResource("13_aqtk2"), ExtResource("15_8i2l0"), ExtResource("14_qgspi")])
-optionid = Array[Array]([[0, 1, 1, 2], [0, 4]])
 whoid = 1
-texturenpc = ExtResource("14_aqtk2")
-path = "npcdialogue"
+texturenpc = ExtResource("15_b6qe5")
+path = "res://data/Shadow.json"
 
 [node name="npc2" parent="ysorting" instance=ExtResource("12_1e2cb")]
-position = Vector2(-72, 24)
-pages = Array[String](["Witaj. Mizu. Ponownie.", "Do you wanna have a bad time?", "Zacznij zastanawiac sie czy-", "naprawde chcesz robic ta gre", "przez caly tydzien dni juz nic nie zrobiles", "mam nadzieje ze chociaz karierzyles", "Jest tylko jedne pytanie, odpowiedz...", "Dlaczego Steven jest hot?", "podpowiedz:... nie ma podpowiedzi", "*GEJ,MIZU PEDAL,NWM,WALKA", "Wow... jestes coraz lepszy w to!", "<- Amplected rule 34 btw, (peak)", "chcesz gadac dalej?", "*tak,nie"])
-portrait_texture = Array[Texture]([ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("13_aqtk2"), ExtResource("15_u8w88"), ExtResource("15_s7kpv"), ExtResource("15_s7kpv"), ExtResource("13_aqtk2"), ExtResource("13_aqtk2"), ExtResource("15_8i2l0"), ExtResource("14_qgspi")])
-optionid = Array[Array]([[0, 1, 1, 2], [0, 4]])
+position = Vector2(-672, -56)
 whoid = 1
 texturenpc = ExtResource("15_b6qe5")
-
-[node name="npc3" parent="ysorting" instance=ExtResource("12_1e2cb")]
-position = Vector2(-80, -120)
-pages = Array[String](["wypierdalaj gadac z misupim"])
-portrait_texture = Array[Texture]([ExtResource("9_0j0oh")])
-whoid = 1
-texturenpc = ExtResource("15_b6qe5")
-
-[node name="npc4" parent="ysorting" instance=ExtResource("12_1e2cb")]
-position = Vector2(57, -61)
-pages = Array[String](["wypierdalaj gadac z misupim"])
-portrait_texture = Array[Texture]([ExtResource("9_0j0oh")])
-whoid = 1
-texturenpc = ExtResource("15_b6qe5")
-
-[node name="npc5" parent="ysorting" instance=ExtResource("12_1e2cb")]
-position = Vector2(65, 4)
-pages = Array[String](["wypierdalaj gadac z misupim"])
-portrait_texture = Array[Texture]([ExtResource("9_0j0oh")])
-whoid = 1
-texturenpc = ExtResource("15_b6qe5")
+path = "res://data/Shadow.json"
+startdialog = "12"
 
 [node name="debug" type="Node2D" parent="."]
 position = Vector2(0, 0.5)
@@ -328,6 +345,8 @@ gloo_scene = ExtResource("14_2i8gf")
 
 [connection signal="body_entered" from="tilemap/tp/quickchange" to="tilemap/tp/quickchange" method="_on_body_entered"]
 [connection signal="ready" from="tilemap/tp/quickchange" to="tilemap/tp/quickchange" method="_on_ready"]
+[connection signal="body_entered" from="tilemap/tp/quickchange2" to="tilemap/tp/quickchange2" method="_on_body_entered"]
+[connection signal="ready" from="tilemap/tp/quickchange2" to="tilemap/tp/quickchange2" method="_on_ready"]
 [connection signal="ready" from="debug" to="debug" method="_on_ready"]
 
 [editable path="tilemap/tp/teleporter"]

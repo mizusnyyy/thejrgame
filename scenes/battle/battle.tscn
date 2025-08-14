@@ -105,7 +105,7 @@
 [ext_resource type="Texture2D" uid="uid://ygndui1q364y" path="res://assets/sprite/battle/bg/b0099.png" id="100_jucj5"]
 [ext_resource type="Texture2D" uid="uid://nciyms0xvnjb" path="res://assets/sprite/battle/bg/b0100.png" id="101_0us13"]
 [ext_resource type="Texture2D" uid="uid://ctohqb5sh5hpn" path="res://assets/sprite/battle/progress_red.png" id="102_0cqqu"]
-[ext_resource type="Script" path="res://scenes/battle/box.gd" id="102_ue6uc"]
+[ext_resource type="Script" uid="uid://31070hst34kt" path="res://scenes/battle/box.gd" id="102_ue6uc"]
 [ext_resource type="Script" uid="uid://dx4xtblajk0rm" path="res://scenes/battle/Player_health_bar.gd" id="103_xo5np"]
 [ext_resource type="Texture2D" uid="uid://y1m2vpwobtg7" path="res://assets/sprite/battle/mana_ball1.png" id="104_hr533"]
 [ext_resource type="Script" uid="uid://bcnmmxb6atgap" path="res://scenes/battle/notui.gd" id="106_el03i"]
@@ -145,7 +145,7 @@
 [ext_resource type="AudioStream" uid="uid://yn4sayk7g01s" path="res://assets/sprite/intro/dzem.wav" id="132_ly5g2"]
 [ext_resource type="Script" uid="uid://bejskw4sl3ymu" path="res://scenes/battle/debug.gd" id="136_w54gx"]
 [ext_resource type="PackedScene" uid="uid://pegs4ep6hjc5" path="res://scenes/attackscenes/bone/bone.tscn" id="137_21vhs"]
-[ext_resource type="Script" path="res://scenes/battle/sprite_2d.gd" id="139_itpkr"]
+[ext_resource type="Script" uid="uid://cfw8ku15s2mot" path="res://scenes/battle/sprite_2d.gd" id="139_itpkr"]
 [ext_resource type="Texture2D" uid="uid://jouutgjikwq0" path="res://assets/sprite/battle/hearts.png" id="139_wf2x0"]
 
 [sub_resource type="GDScript" id="GDScript_w54gx"]
@@ -837,12 +837,10 @@ horizontal_alignment = 1
 script = ExtResource("107_hr533")
 
 [node name="SelectionWheel" parent="box" instance=ExtResource("110_xysor")]
-visible = false
-offset_left = 1.0
-offset_top = 34.5
-offset_right = -1.0
-offset_bottom = 35.5
-options = null
+offset_left = -320.0
+offset_top = -255.5
+offset_right = -330.0
+offset_bottom = -254.5
 
 [node name="enemy" parent="." instance=ExtResource("109_hr533")]
 

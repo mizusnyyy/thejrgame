@@ -7,7 +7,7 @@ var textures = {
 	"yellow": preload("res://assets/sprite/battle/progress_yellow.png"),
 	"red": preload("res://assets/sprite/battle/progress_red.png"),
 }
-
+var speed_per_second = 35
 var current_color = ""
 
 func _ready():
@@ -20,11 +20,11 @@ func _process(delta: float) -> void:
 	value = global.health
 
 	if ghost_bar.value > value:
-		ghost_bar.value = move_toward(ghost_bar.value, value, delta * 35)
+		ghost_bar.value = move_toward(ghost_bar.value, value, speed_per_second * delta)
 	else:
 		ghost_bar.value = value
 
-	if abs(ghost_bar.value - value) < 0.01:
+	if abs(ghost_bar.value - value) < 1:
 		ghost_bar.value = value
 	_update_style(value)
 	

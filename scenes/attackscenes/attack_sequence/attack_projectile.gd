@@ -33,3 +33,11 @@ func summon_wave(soul, speed):
 func returnbullet():
 	await get_tree().create_timer(2).timeout
 	emit_signal("attack_finished")
+	
+func summoned_with_position(bullet, soul, speed, pos_x):
+	bullet.global_position = Vector2(pos_x, 0)
+	bullet.rotation = 0
+	bullet.scale = Vector2.ONE
+	bullet.direction = Vector2.DOWN
+	bullet.speed = speed
+	returnbullet()

@@ -44,7 +44,7 @@ func attack() -> bool:
 	print("Rozpoczynam attack()")
 	notui.enemyturn()
 	var bullet = null
-	var ran = randi() % 7
+	var ran = 6
 	print("Wylosowany atak:", ran)
 
 	if ran == 0:
@@ -92,17 +92,32 @@ func attack() -> bool:
 	elif ran == 6:
 		global.current_mode = global.mode.RED
 		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_projectile.tscn")
-		var bullet_count = 5
-		for j in range(bullet_count):
-			bullet = instantiateall(gloo_scene)
-			bullet.summoned(bullet, soul, bullet_speed)
-			bullet.modulate.a = 0.0
-			var tween = get_tree().create_tween()
-			tween.tween_property(bullet, "modulate:a", 0.5, 0.25).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-			await get_tree().create_timer(1.0).timeout
-		print("Wszystkie pociski wystrzelone — koniec tury")
+		var wave_count = randi_range(1, 10)
+		for wave_index in range(wave_count):
+			var wave_size = randi_range(1, 3)
+			var positions_x = []
+			while positions_x.size() < wave_size:
+				var candidate = randf_range(258, 382)
+				var too_close = false
+				for pos in positions_x:
+					if abs(candidate - pos) < 5:
+						too_close = true
+						break
+				if not too_close:
+					positions_x.append(candidate)
+			for pos_x in positions_x:
+				bullet = instantiateall(gloo_scene)
+				bullet.summoned_with_position(bullet, soul, bullet_speed, pos_x)
+				bullet.modulate.a = 0.0
+				var tween = get_tree().create_tween()
+				tween.tween_property(bullet, "modulate:a", 0.5, 0.25) \
+				 	.set_trans(Tween.TRANS_SINE) \
+				 	.set_ease(Tween.EASE_IN_OUT)
+			await get_tree().create_timer(randf_range(0.5, 1)).timeout
 		return true
 	return false
+
+
 
 func instantiateall(scene):
 	var instance = scene.instantiate()

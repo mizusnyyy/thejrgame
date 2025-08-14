@@ -57,19 +57,31 @@ func show_dialog(id: String) -> void:
 		for choice in d["choices"]:
 			choice_texts.append(choice.get("text", ""))
 			next_ids.append(choice.get("next", ""))
+			print("fni ", choice.next)
 		dialog.choose(next_ids, choice_texts)
 		# Czekamy na WYBÓR
 		var picked_index: int = await dialog.choice_selected
 		var next_id = next_ids[picked_index]
+		#if next_id != TYPE_INT:
+		print(next_id)
+		if int(next_id) == 0:
+			matchid(next_id)
+			print("???")
 		dialog.typing = true
 		show_dialog(next_id)
 		return
+	await dialog.show_dialogue(text, portrait, sound, true)
 
-	# 2) BEZ OPCJI → normalny tryb
-	await dialog.show_dialogue(text, portrait, sound, true) # true = czekaj na dialogue_finished
-
-	# Automatyczne przejście do "next" jeśli jest
+	#if d.has("act"):
+		#if d["act"]==
 	if d.has("next"):
+		if int(d.next) == 0:
+			matchid(d.next)
 		show_dialog(d["next"])
-	else:
-		print("Dialog zakończony dla id:", current_id)
+	#else:wa
+
+func matchid(x):
+	print("11111?")
+	match x:
+		"battle":get_tree().change_scene_to_packed(preload("res://scenes/battle/battle.tscn"))
+		_:pass

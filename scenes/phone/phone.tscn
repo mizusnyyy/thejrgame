@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bi78cs6n8wl7t" path="res://scenes/phone/phone.gd" id="3_1aovg"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_7iixm"]
 [ext_resource type="Texture2D" uid="uid://lhw6bn0ctkey" path="res://assets/ui/phone.png" id="4_rlgmi"]
-[ext_resource type="PackedScene" uid="uid://dycobh8i7e7vr" path="res://scenes/ui/phoneeng.tscn" id="5_5v2va"]
+[ext_resource type="PackedScene" path="res://scenes/ui/phoneeng.tscn" id="5_5v2va"]
 [ext_resource type="Script" uid="uid://t6s4f322ej5p" path="res://scenes/story/pre-core/choice.gd" id="6_m21wr"]
 [ext_resource type="Texture2D" uid="uid://jouutgjikwq0" path="res://assets/sprite/battle/hearts.png" id="7_m21wr"]
 
@@ -118,17 +118,14 @@ scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="phone/Control/choice/StaticBody2D"]
 position = Vector2(-38.4375, -1.25)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_m21wr")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="phone/Control/choice/StaticBody2D"]
 position = Vector2(38.4375, -1.25)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_m21wr")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="phone/Control/choice/StaticBody2D"]
 position = Vector2(1.52588e-05, -39.6875)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_jnnxy")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="phone/Control/choice/StaticBody2D"]

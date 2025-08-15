@@ -5,6 +5,7 @@ var current_id := "start"
 var dialog: Node = null
 var sound
 var speakername
+var portrait: Texture
 func startandload(curid: String, path: String, dialogset: Node, soundset):
 	sound = soundset
 	dialog = dialogset
@@ -38,13 +39,15 @@ func show_dialog(id: String) -> void:
 	if d.is_empty():
 		print("Dialog o id ", id, " nie istnieje")
 		return
-	speakername = d.speaker
-	dialog.setname(speakername)
+	if d.has("speaker"):
+		print("yey")
+		speakername = d.speaker
+		dialog.setname(speakername)
 
 	current_id = id
 	var text = d.get("text", "")
-	var portrait: Texture = null
 	if d.has("portrait") and typeof(d["portrait"]) == TYPE_STRING and d["portrait"] != "":
+		print(d.portrait)
 		portrait = load(d["portrait"])
 
 	# 1) JEŚLI SĄ OPCJE

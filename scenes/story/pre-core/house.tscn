@@ -336,7 +336,7 @@ position = Vector2(-672, -56)
 whoid = 1
 texturenpc = ExtResource("15_b6qe5")
 path = "res://data/Shadow.json"
-startdialog = "12"
+startdialog = "3"
 
 [node name="debug" type="Node2D" parent="."]
 position = Vector2(0, 0.5)

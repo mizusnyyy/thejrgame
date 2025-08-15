@@ -24,7 +24,7 @@ func start():
 
 func nextturn():
 	notui.enemyturn()
-	await attack(runda+1)
+	await attack(1) 
 	notui.playerturn()
 	global.current_mode = global.mode.RED
 	runda += 1
@@ -35,9 +35,10 @@ func nextturn():
 
 func attack(amount):
 	for i in range(amount):
-		var ran = randi()%5
+		var ran = randi()%7
 		var bullet = chooseattack(ran)
 		await bullet.attack_finished
+
 
 func chooseattack(ran):
 	var bullet
@@ -53,10 +54,18 @@ func chooseattack(ran):
 			spriteinteract.swingboth()
 			print("11")
 		print("1uerjkrjt")
-		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_projectile.tscn")
+		gloo_scene = preload("res://scenes/attackscenes/projectile_random/attack_projectile.tscn")
 		bullet = instantiateall(gloo_scene)
 		bullet.summoned(bullet, soul, bullet_speed)
 	elif ran == 2: 
+		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_pillar_horizontal.tscn")
+		bullet = instantiateall(gloo_scene)
+		bullet.summoned(bullet, soul, bullet_speed)
+	elif ran == 3: 
+		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_pillar_vertical.tscn")
+		bullet = instantiateall(gloo_scene)
+		bullet.summoned(bullet, soul, bullet_speed)
+	elif ran == 4: 
 		global.current_mode=global.mode.RED
 		gloo_scene = preload("res://scenes/attackscenes/gloo/gloo.tscn")
 		#gloo_scene = preload("res://attackscenes/bone/bone.tscn")
@@ -66,11 +75,11 @@ func chooseattack(ran):
 		bullet.modulate.a = 0.0
 		var tween = get_tree().create_tween()
 		tween.tween_property(bullet, "modulate:a", 1.0, 0.25).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	elif ran == 3: 
+	elif ran == 5: 
 		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_boneside.tscn")
 		bullet = instantiateall(gloo_scene)
 		bullet.summoned(bullet, soul, bullet_speed)
-	elif ran == 4:
+	elif ran == 6:
 		gloo_scene = preload("res://scenes/attackscenes/attack_sequence/attack_clawswipe.tscn")
 		bullet = instantiateall(gloo_scene)
 		bullet.summoned(bullet, soul, bullet_speed)

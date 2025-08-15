@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://cdy21tdyy5dl3"]
 
-[ext_resource type="Script" uid="uid://bywren0dw6srn" path="res://scenes/attackscenes/attack_sequence/attack_projectile.gd" id="1_ufpd2"]
+[ext_resource type="Script" uid="uid://bywren0dw6srn" path="res://scenes/attackscenes/projectileshadow/projectile.gd" id="1_nasci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufpd2"]
 size = Vector2(5, 40)
 
 [node name="projectile" type="Area2D"]
-script = ExtResource("1_ufpd2")
+script = ExtResource("1_nasci")
 metadata/_edit_horizontal_guides_ = [-8.0]
 metadata/_edit_vertical_guides_ = [2.0]
 

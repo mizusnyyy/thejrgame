@@ -3,7 +3,7 @@ extends Node2D
 var gloo_scene: PackedScene
 var timer := 0.0
 var runda = 1
-
+var spriteinteract
 var spawn_interval
 var bullet_speed
 var soul
@@ -29,6 +29,7 @@ func nextturn():
 	runda+=1
 	print(runda)
 	await notui.enemy_turn
+	await get_tree().create_timer(1).timeout
 	nextturn()
 
 func attack():

@@ -144,7 +144,7 @@
 [ext_resource type="AudioStream" uid="uid://yn4sayk7g01s" path="res://assets/sprite/intro/dzem.wav" id="132_ly5g2"]
 [ext_resource type="Script" uid="uid://bejskw4sl3ymu" path="res://scenes/battle/debug.gd" id="136_w54gx"]
 [ext_resource type="PackedScene" uid="uid://pegs4ep6hjc5" path="res://scenes/attackscenes/bone/bone.tscn" id="137_21vhs"]
-[ext_resource type="Script" uid="uid://cfw8ku15s2mot" path="res://scenes/battle/sprite_2d.gd" id="139_itpkr"]
+[ext_resource type="Script" path="res://scenes/battle/sprite_2d.gd" id="139_itpkr"]
 [ext_resource type="Texture2D" uid="uid://jouutgjikwq0" path="res://assets/sprite/battle/hearts.png" id="139_wf2x0"]
 [ext_resource type="PackedScene" uid="uid://btunywoykvm0n" path="res://selectionwheel.2.tscn" id="144_ue6uc"]
 
@@ -163,6 +163,7 @@ func _on_ready() -> void:
 	await get_tree().create_timer(1).timeout
 	var new_script = load(\"res://scenes/battle/attack_spawner_\"+str(enemid)+\".gd\")
 	$attackspawner.set_script(new_script)
+	$attackspawner.spriteinteract = $enemy
 	$attackspawner.start()
 "
 

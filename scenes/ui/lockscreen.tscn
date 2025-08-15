@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=3 uid="uid://ssfcxky4esuu"]
+
+[ext_resource type="Shader" uid="uid://bw1x6d16m18g5" path="res://scenes/ui/phoneeng.gdshader" id="1_pxika"]
+[ext_resource type="Script" uid="uid://ehg1whinu8c6" path="res://lockscreen.gd" id="1_u4t7r"]
+[ext_resource type="Texture2D" uid="uid://din8tkf157r5c" path="res://assets/ui/phonebg.png" id="2_u4t7r"]
+[ext_resource type="Texture2D" uid="uid://dkg70g6anaqms" path="res://assets/ui/lockicon.png" id="3_ircog"]
+[ext_resource type="Script" uid="uid://dnjx1ubylv33c" path="res://scenes/ui/label.gd" id="5_ircog"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ircog"]
+shader = ExtResource("1_pxika")
+shader_parameter/cut_amount = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22flw"]
+size = Vector2(28, 30)
+
+[node name="lockscreen" type="Node2D"]
+script = ExtResource("1_u4t7r")
+
+[node name="lockscreensprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ircog")
+position = Vector2(61, 61)
+texture = ExtResource("2_u4t7r")
+
+[node name="lock" type="Sprite2D" parent="."]
+position = Vector2(61, 93)
+texture = ExtResource("3_ircog")
+
+[node name="locked" type="Sprite2D" parent="lock"]
+position = Vector2(7.5, -5.5)
+texture = ExtResource("3_ircog")
+region_enabled = true
+region_rect = Rect2(6, 8, 3, 3)
+
+[node name="lockshape" type="Area2D" parent="lock"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lock/lockshape"]
+shape = SubResource("RectangleShape2D_22flw")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 33.0
+offset_top = 8.0
+offset_right = 89.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(28, 15.5)
+theme_override_font_sizes/font_size = 22
+text = "18:16"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_ircog")
+
+[node name="Label2" type="Label" parent="Label"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -6.0
+offset_right = 28.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(28, 15.5)
+theme_override_font_sizes/font_size = 9
+text = "6.9.2137"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_ircog")
+t = false
+
+[connection signal="body_entered" from="lock/lockshape" to="." method="_on_lockshape_body_entered"]
+[connection signal="body_exited" from="lock/lockshape" to="." method="_on_lockshape_body_exited"]
+[connection signal="ready" from="Label" to="Label" method="_on_ready"]
+[connection signal="ready" from="Label/Label2" to="Label/Label2" method="_on_ready"]

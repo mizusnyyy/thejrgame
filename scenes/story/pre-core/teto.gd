@@ -12,7 +12,6 @@ var currentpage = 0
 @export var startdialog:String="start"
 
 func _on_body_entered(body):
-	print("gej")
 	if body.name=="player":
 		player_in_range = true
 

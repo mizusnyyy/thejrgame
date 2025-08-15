@@ -13,8 +13,6 @@ var apps = {
 }
 
 func _ready():
-	print("awahhwh")
-	# Start ukryty i poza ekranem
 	position = Vector2(128, 720)
 	visible = false
 
@@ -44,6 +42,7 @@ func _show_phone():
 	is_animating = true
 	
 	showcursor()
+	$TextureRect/phoneeng.inslockscreen()
 	
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK)
@@ -68,6 +67,7 @@ func _hide_phone():
 	)
 	await tween.finished
 	hidecursor()
+	$TextureRect/phoneeng.deleng()
 
 func _on_app_button_pressed(app_name: String):
 	if current_app_name == app_name:
@@ -89,6 +89,7 @@ func _clear_app():
 
 func showcursor():
 	var choice = $choice/indicator
+	choice.position=Vector2(0,0)
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.set_ease(Tween.EASE_IN)

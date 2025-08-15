@@ -120,7 +120,6 @@
 [ext_resource type="PackedScene" uid="uid://diwc782xe7aw1" path="res://scenes/battle/enemysprite.tscn" id="109_hr533"]
 [ext_resource type="Texture2D" uid="uid://bayu3880yqskw" path="res://assets/sprite/battle/not ui/fight_sel;.png" id="110_drnbg"]
 [ext_resource type="Script" uid="uid://dq74ht2r0bvpx" path="res://scenes/battle/right_arrow.gd" id="110_qk3tf"]
-[ext_resource type="PackedScene" uid="uid://ddppe6ehmqxad" path="res://selection_wheel.tscn" id="110_xysor"]
 [ext_resource type="Texture2D" uid="uid://ceb0v4nvpjwuq" path="res://assets/sprite/battle/not ui/act.png" id="111_gkugb"]
 [ext_resource type="Script" uid="uid://u0ufoxo23v3j" path="res://scenes/battle/fight.gd" id="111_ly5g2"]
 [ext_resource type="Texture2D" uid="uid://c0rju4q54hy8u" path="res://assets/sprite/battle/not ui/ass.png" id="112_p6ty6"]
@@ -147,6 +146,7 @@
 [ext_resource type="PackedScene" uid="uid://pegs4ep6hjc5" path="res://scenes/attackscenes/bone/bone.tscn" id="137_21vhs"]
 [ext_resource type="Script" uid="uid://cfw8ku15s2mot" path="res://scenes/battle/sprite_2d.gd" id="139_itpkr"]
 [ext_resource type="Texture2D" uid="uid://jouutgjikwq0" path="res://assets/sprite/battle/hearts.png" id="139_wf2x0"]
+[ext_resource type="PackedScene" uid="uid://btunywoykvm0n" path="res://selectionwheel.2.tscn" id="144_ue6uc"]
 
 [sub_resource type="GDScript" id="GDScript_w54gx"]
 script/source = "extends Node2D
@@ -723,7 +723,7 @@ animations = [{
 size = Vector2(26.3333, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agsc7"]
-size = Vector2(12, 12)
+size = Vector2(16, 16)
 
 [node name="fight" type="Node2D"]
 script = SubResource("GDScript_w54gx")
@@ -835,12 +835,6 @@ text = "67/41"
 scroll_active = false
 horizontal_alignment = 1
 script = ExtResource("107_hr533")
-
-[node name="SelectionWheel" parent="box" instance=ExtResource("110_xysor")]
-offset_left = -320.0
-offset_top = -255.5
-offset_right = -330.0
-offset_bottom = -254.5
 
 [node name="enemy" parent="." instance=ExtResource("109_hr533")]
 
@@ -994,6 +988,11 @@ volume_db = -10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="soul"]
 shape = SubResource("RectangleShape2D_agsc7")
+
+[node name="Node2D" parent="soul" instance=ExtResource("144_ue6uc")]
+line_width = 1
+heart_radius = 30
+options = [null, null, null, null, null, null]
 
 [node name="Sprite2D" type="Sprite2D" parent="soul"]
 texture = ExtResource("139_wf2x0")

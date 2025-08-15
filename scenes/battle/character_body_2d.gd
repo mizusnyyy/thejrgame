@@ -161,4 +161,11 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+func _ready():
+	$Node2D.hide()
+func _process(delta):
+	if Input.is_action_just_pressed("heart_select"):
+		$Node2D.show()
+	if Input.is_action_just_released("heart_select"):
+		$Node2D.hide()
 		

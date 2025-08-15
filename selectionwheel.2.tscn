@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://btunywoykvm0n"]
+
+[ext_resource type="Script" uid="uid://bt2f36ni5erqt" path="res://selectrion_wheel2.gd" id="1_jm1t6"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_jm1t6")
+background_color = Color(0.270222, 0.270222, 0.270222, 1)
+line_color = Color(1, 1, 1, 1)
+outer_radius = 40
+inner_radius = 16

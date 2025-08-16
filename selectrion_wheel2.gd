@@ -9,11 +9,13 @@ extends Node2D
 @export var heart_size: Vector2 = Vector2(16, 16)
 @export var heart_radius: int = 25
 @export var player: Sprite2D
-@export var options: Array = []
-
+@export var number_of_lines = []
+@export var rotation_step_degrees: float = 60
+var current_rotation: float = 0.0
+var rotation_phase: float = 0.0
 var hearts: Array = []
-
 func _ready():
+	self.hide()
 	for i in range(number_of_hearts):
 		var heart = Sprite2D.new()
 		heart.texture = heart_texture
@@ -24,36 +26,55 @@ func _ready():
 	for i in range(number_of_hearts):
 		set_heart_state(i, i)
 	_update_hearts_position()
+	
 
 func _process(delta):
 	if player != null:
-		global_position = player.global_position  # Node2D podąża za graczem
+		global_position = player.global_position  
+	
+	if Input.is_action_just_pressed("heart_select"):
+		rotation_degrees = 0
+		self.show()
+	if Input.is_action_just_released("heart_select"):
+		self.hide()
+	if Input.is_action_just_pressed("changeheart"):
+		rotation_phase += 60 * (TAU / 360)
 	_update_hearts_position()
 	queue_redraw()
 
 func _draw():
-	var center = Vector2.ZERO 
+	var center = Vector2.ZERO
+	
+	# Tło i okręgi
 	draw_circle(center, outer_radius, background_color)
 	draw_arc(center, inner_radius, 0, TAU, 128, line_color, line_width, true)
-	draw_arc(center, outer_radius, 0, TAU, 128, line_color, line_width , true)
+	draw_arc(center, outer_radius, 0, TAU, 128, line_color, line_width, true)
+	
+	# Linie stałe względem ekranu
+	var angle1 = 60 * (-TAU / 360)      # pierwsza linia
+	var angle2 = -120 * (TAU / 360)     # druga linia
+	
+	var start_pos1 = Vector2(cos(angle1), sin(angle1)) * inner_radius
+	var end_pos1 = Vector2(cos(angle1), sin(angle1)) * outer_radius
+	draw_line(start_pos1, end_pos1, line_color, line_width, true)
+	
+	var start_pos2 = Vector2(cos(angle2), sin(angle2)) * inner_radius
+	var end_pos2 = Vector2(cos(angle2), sin(angle2)) * outer_radius
+	draw_line(start_pos2, end_pos2, line_color, line_width, true)
 
-	if options == null or len(options) < 1:
-		return
+	
 
-	var total = len(options)
-	for i in range(total):
-		var rads = i * (TAU / total)
-		var point = Vector2.from_angle(rads)
-		draw_line(center + point * inner_radius, center + point * outer_radius, line_color, line_width)
 
 func _update_hearts_position():
 	if hearts.size() == 0:
 		return
-
-	var angle_step = TAU / hearts.size()
-	for i in range(hearts.size()):
-		var angle = i * angle_step - TAU / 4
-		hearts[i].position = Vector2(cos(angle) * heart_radius, sin(angle) * heart_radius)
+	var angle_step = -TAU / number_of_hearts
+	for i in range(number_of_hearts):
+		# Każde serce ma własny kąt + obrót całego zestawu
+		var angle = i * angle_step - PI / 2 + rotation_phase
+		hearts[i].position = Vector2(cos(angle), sin(angle)) * heart_radius
+		# Serca pozostają prosto względem ekranu
+		hearts[i].rotation = 0
 
 func set_heart_state(index: int, sprite_index: int):
 	if index >= hearts.size():

@@ -1,7 +1,7 @@
 extends Control
 
-@onready var app_container: Control = $Panel/Control
-@onready var app_list: VBoxContainer = $Panel/VBoxContainer
+@onready var app_container: Control = $TextureRect/Control
+@onready var app_list: VBoxContainer = $TextureRect/VBoxContainer
 
 var current_app_name: String = ""
 var active: bool = true
@@ -13,7 +13,6 @@ var apps = {
 }
 
 func _ready():
-	# Start ukryty i poza ekranem
 	position = Vector2(128, 720)
 	visible = false
 
@@ -41,11 +40,14 @@ func _process(_delta):
 func _show_phone():
 	visible = true
 	is_animating = true
-
+	
+	showcursor()
+	$TextureRect/phoneeng.inslockscreen()
+	
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.set_ease(Tween.EASE_OUT)
-	tween.tween_property(self, "position", Vector2(128, 384), 0.25)
+	tween.tween_property(self, "position", Vector2(40, 384), 0.25)
 
 	tween.finished.connect(func():
 		is_animating = false
@@ -63,6 +65,9 @@ func _hide_phone():
 		visible = false
 		is_animating = false
 	)
+	await tween.finished
+	hidecursor()
+	$TextureRect/phoneeng.deleng()
 
 func _on_app_button_pressed(app_name: String):
 	if current_app_name == app_name:
@@ -81,3 +86,23 @@ func _clear_app():
 		for child in app_container.get_children():
 			child.queue_free()
 	current_app_name = ""
+
+func showcursor():
+	var choice = $choice/indicator
+	choice.position=Vector2(0,0)
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.set_ease(Tween.EASE_IN)
+	#tween.tween_property(choice, "modulate", Color(1,1,1,1), 0.5)
+	#choice.global_position = Vector2(128, 720)
+	show()
+	choice.show()
+	choice.can_choose = true
+	global.can_move = false
+
+func hidecursor():
+	var choice = $"choice/indicator"
+	choice.hide()
+	choice.can_choose = false
+	global.can_move = true
+	

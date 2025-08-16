@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://db2wy807vcooi"]
+
+[ext_resource type="Texture2D" uid="uid://cq1vklqwbe630" path="res://assets/ui/apps/mapapp.png" id="1_hgj0u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgj0u"]
+size = Vector2(25, 25)
+
+[node name="phoneapp" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="txt" type="TextureRect" parent="."]
+texture = ExtResource("1_hgj0u")
+
+[node name="appshape" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="appshape"]
+position = Vector2(12.5, 12.5)
+shape = SubResource("RectangleShape2D_hgj0u")

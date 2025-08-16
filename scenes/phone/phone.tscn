@@ -1,8 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://bf0wggc601088"]
+[gd_scene load_steps=13 format=3 uid="uid://bf0wggc601088"]
 
 [ext_resource type="Script" uid="uid://o7onsywlm8iu" path="res://scenes/ui/fs.gd" id="2_nv40g"]
 [ext_resource type="Script" uid="uid://bi78cs6n8wl7t" path="res://scenes/phone/phone.gd" id="3_1aovg"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_7iixm"]
+[ext_resource type="Texture2D" uid="uid://lhw6bn0ctkey" path="res://assets/ui/phone.png" id="4_rlgmi"]
+[ext_resource type="PackedScene" uid="uid://dycobh8i7e7vr" path="res://scenes/ui/phoneeng.tscn" id="5_5v2va"]
+[ext_resource type="Script" uid="uid://t6s4f322ej5p" path="res://scenes/story/pre-core/choice.gd" id="6_m21wr"]
+[ext_resource type="Texture2D" uid="uid://jouutgjikwq0" path="res://assets/sprite/battle/hearts.png" id="7_m21wr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fujbm"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnnxy"]
+atlas = ExtResource("7_m21wr")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lpxus"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnnxy")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m21wr"]
+size = Vector2(0.624995, 76.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnnxy"]
+size = Vector2(76.25, 0.625)
 
 [node name="phone" type="Node2D"]
 process_mode = 3
@@ -33,29 +61,75 @@ text = "paused :3"
 metadata/_edit_use_anchors_ = true
 
 [node name="phone" type="CanvasLayer" parent="."]
-scale = Vector2(0.5, 0.5)
-transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
 
 [node name="Control" type="Control" parent="phone"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
 offset_left = 128.0
-offset_top = 384.0
-offset_right = 168.0
-offset_bottom = 424.0
+offset_top = 360.0
+offset_right = 128.0
+offset_bottom = 360.0
+grow_vertical = 0
 script = ExtResource("3_1aovg")
 
-[node name="Panel" type="Panel" parent="phone/Control"]
+[node name="TextureRect" type="TextureRect" parent="phone/Control"]
 layout_mode = 0
-offset_right = 256.0
-offset_bottom = 336.0
+offset_top = -280.0
+offset_right = 180.0
+offset_bottom = 130.0
+texture = ExtResource("4_rlgmi")
 
-[node name="Control" type="Control" parent="phone/Control/Panel"]
+[node name="Control" type="Control" parent="phone/Control/TextureRect"]
 anchors_preset = 0
-offset_right = 256.0
-offset_bottom = 64.0
+offset_left = 29.0
+offset_top = -90.0
+offset_right = 151.0
+offset_bottom = 32.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="phone/Control/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="phone/Control/TextureRect"]
 layout_mode = 0
-offset_right = 256.0
-offset_bottom = 64.0
+offset_left = 29.0
+offset_top = -90.0
+offset_right = 151.0
+offset_bottom = 32.0
+
+[node name="phoneeng" parent="phone/Control/TextureRect" instance=ExtResource("5_5v2va")]
+z_index = -1
+position = Vector2(29, 33)
+
+[node name="choice" type="Node2D" parent="phone/Control"]
+z_index = 1
+position = Vector2(90, -184)
+scale = Vector2(0.8, 0.8)
+
+[node name="indicator" type="CharacterBody2D" parent="phone/Control/choice"]
+script = ExtResource("6_m21wr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="phone/Control/choice/indicator"]
+shape = SubResource("RectangleShape2D_fujbm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="phone/Control/choice/indicator"]
+sprite_frames = SubResource("SpriteFrames_lpxus")
+autoplay = "default"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="phone/Control/choice"]
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="phone/Control/choice/StaticBody2D"]
+position = Vector2(-38.4375, -1.25)
+shape = SubResource("RectangleShape2D_m21wr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="phone/Control/choice/StaticBody2D"]
+position = Vector2(38.4375, -1.25)
+shape = SubResource("RectangleShape2D_m21wr")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="phone/Control/choice/StaticBody2D"]
+position = Vector2(1.52588e-05, -39.6875)
+shape = SubResource("RectangleShape2D_jnnxy")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="phone/Control/choice/StaticBody2D"]
+position = Vector2(0, 37.1875)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_jnnxy")

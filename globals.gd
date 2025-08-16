@@ -20,7 +20,11 @@ signal opcja
 var swing = false
 var items=[""]
 var inventory: Array[Item] = []
+var phoneapps: Array[String]
 
+func glapps(app:Array[String]):
+	for i in len(app):
+		phoneapps.append(app[i])
 
 func add_item(item: Item):
 	inventory.append(item)

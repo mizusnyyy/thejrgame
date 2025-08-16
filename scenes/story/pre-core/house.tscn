@@ -1,6 +1,6 @@
-[gd_scene load_steps=30 format=4 uid="uid://bpmn0ng1q8ox"]
+[gd_scene load_steps=36 format=4 uid="uid://bpmn0ng1q8ox"]
 
-[ext_resource type="Script" path="res://scenes/story/pre-core/house.gd" id="1_0j0oh"]
+[ext_resource type="Script" uid="uid://cnbovm5fumlj3" path="res://scenes/story/pre-core/house.gd" id="1_0j0oh"]
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_tecch"]
 [ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/player/teto.tscn" id="6_74pxv"]
 [ext_resource type="Texture2D" uid="uid://b7632vv4ixuwo" path="res://assets/tiles/tilebg.png" id="9_0rrt8"]
@@ -17,8 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://bq1mj2osrqcqs" path="res://assets/sprite/characters/jr/teto_side.png" id="17_0j0oh"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="18_jobkd"]
 [ext_resource type="AudioStream" uid="uid://v6xhcphnyegs" path="res://assets/sprite/intro/stevenafterpumming.wav" id="20_1e2cb"]
+[ext_resource type="Texture2D" uid="uid://b7cgba8myvfbs" path="res://assets/sprite/characters/glut/gloo.png" id="22_aqtk2"]
 [ext_resource type="PackedScene" uid="uid://b6vi5n5gad3lf" path="res://data/dialogue_manager.tscn" id="26_u8w88"]
-[ext_resource type="PackedScene" path="res://scenes/items/iteminteract.tscn" id="27_5g7yr"]
+[ext_resource type="PackedScene" uid="uid://cvhhll683san2" path="res://scenes/items/iteminteract.tscn" id="27_5g7yr"]
 [ext_resource type="PackedScene" uid="uid://b5bxnr2plabon" path="res://scenes/story/pre-core/door/teleporter/teleporter.tscn" id="28_rhstu"]
 [ext_resource type="PackedScene" uid="uid://pgr1hxlmxihq" path="res://scenes/story/pre-core/door/doors.tscn" id="29_x81t7"]
 
@@ -123,6 +124,42 @@ texture = ExtResource("12_qgspi")
 
 [sub_resource type="TileSet" id="TileSet_jkym4"]
 sources/0 = SubResource("TileSetAtlasSource_jkym4")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6qe5"]
+atlas = ExtResource("22_aqtk2")
+region = Rect2(0, 16, 10, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7kpv"]
+atlas = ExtResource("22_aqtk2")
+region = Rect2(10, 16, 10, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8i2l0"]
+atlas = ExtResource("22_aqtk2")
+region = Rect2(0, 38, 10, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8w88"]
+atlas = ExtResource("22_aqtk2")
+region = Rect2(10, 38, 10, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5g7yr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6qe5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7kpv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8i2l0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8w88")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_0j0oh")
@@ -344,6 +381,12 @@ script = ExtResource("13_0rrt8")
 gloo_scene = ExtResource("14_2i8gf")
 
 [node name="DialogueManager" parent="." instance=ExtResource("26_u8w88")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(66, -53)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_5g7yr")
+autoplay = "default"
 
 [connection signal="body_entered" from="tilemap/tp/quickchange" to="tilemap/tp/quickchange" method="_on_body_entered"]
 [connection signal="ready" from="tilemap/tp/quickchange" to="tilemap/tp/quickchange" method="_on_ready"]

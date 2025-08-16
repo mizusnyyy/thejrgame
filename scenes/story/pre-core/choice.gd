@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 150.0
 var can_choose = false
 func _ready():
+	position = Vector2(0,0)
 	hide()
 func _physics_process(delta: float) -> void:
 	var directionlr := Input.get_axis("left", "right")

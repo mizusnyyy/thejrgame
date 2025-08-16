@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://6i6hnwyb8xai"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 10.0
+offset_bottom = 9.0
+theme_override_font_sizes/font_size = 6
+text = "jumbo"
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true

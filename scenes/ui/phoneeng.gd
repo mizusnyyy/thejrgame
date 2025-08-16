@@ -24,16 +24,21 @@ func _on_ready() -> void:
 	makeapps()
 
 func makeapps():
-	global.glapps(["Pumsapp","Jumbo maps","Junior Music"])
+	global.glapps(["Pumsapp","Jumbo maps","Junior Music","Jack\'n\'gram"])
 	for i in len(global.phoneapps):
 		var path = preload("res://scenes/ui/phoneapp.tscn")
 		var ins = path.instantiate()
 		var s = global.phoneapps[i]
-		$GridContainer.add_child(ins)
-		var label = Label.new()
-		label.text = s
-		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		ins.add_child(label)
+		setapplabel(ins,s)
+		$MarginContainer/ScrollContainer/GridContainer.add_child(ins)
 		apps.append(ins)
-		print("hawhg", $GridContainer.get_child(i))
-		
+
+func setapplabel(ins, s):
+	var label = preload("res://scenes/ui/phoneapp.tscn").instantiate()
+	label.text = s
+	#label.set_anchors_preset(Control.PRESET_CENTER)
+	#label.add_theme_font_size_override("font_size", 6)
+	#label.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+	#label.vertical_alignment=VERTICAL_ALIGNMENT_CENTER
+	#label.global_position.y += 20
+	ins.add_child(label)

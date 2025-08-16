@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 @onready var txt=$txt
 
 func _on_appshape_body_entered(body: Node2D) -> void:

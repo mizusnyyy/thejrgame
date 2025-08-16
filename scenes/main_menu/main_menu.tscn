@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bc8y1vbb8g1qp"]
+[gd_scene load_steps=19 format=3 uid="uid://bc8y1vbb8g1qp"]
 
 [ext_resource type="Texture2D" uid="uid://jv1718wjnql3" path="res://assets/sprite/menu_sprites/JACKTERMINATION.png" id="1_lqpn7"]
 [ext_resource type="Script" uid="uid://bw4037ckkhutx" path="res://scenes/main_menu/main_menu.gd" id="1_qel0l"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b12r1m8mqfy8d" path="res://assets/sprite/menu_sprites/wyjscie_button.png" id="9_xac7c"]
 [ext_resource type="Texture2D" uid="uid://be31c1onbd2af" path="res://assets/sprite/menu_sprites/wyjscie_button_pressed.png" id="10_0m3cs"]
 [ext_resource type="Texture2D" uid="uid://buomb0qagpgw0" path="res://assets/sprite/menu_sprites/wyjscie_button_hover.png" id="11_i7nm7"]
+[ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="13_rrgl4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrgl4"]
 bg_color = Color(0, 0, 0, 1)
@@ -31,6 +32,14 @@ animations = [{
 }]
 
 [sub_resource type="Theme" id="Theme_0o4t1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qel0l"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rrgl4"]
+line_spacing = 0.0
+font = ExtResource("13_rrgl4")
+font_size = 13
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_qel0l")
@@ -55,6 +64,7 @@ autoplay = "default"
 centered = false
 
 [node name="graj_button" type="TextureButton" parent="CanvasLayer/Panel"]
+layout_mode = 0
 offset_left = 417.0
 offset_top = 50.0
 offset_right = 675.0
@@ -66,6 +76,7 @@ texture_pressed = ExtResource("4_dn3lk")
 texture_hover = ExtResource("5_4ujhu")
 
 [node name="settings_button" type="TextureButton" parent="CanvasLayer/Panel"]
+layout_mode = 0
 offset_left = 417.0
 offset_top = 125.0
 offset_right = 675.0
@@ -77,6 +88,7 @@ texture_hover = ExtResource("8_bq5lc")
 metadata/_edit_use_anchors_ = true
 
 [node name="quit_button" type="TextureButton" parent="CanvasLayer/Panel"]
+layout_mode = 0
 offset_left = 417.0
 offset_top = 200.0
 offset_right = 675.0
@@ -85,3 +97,60 @@ scale = Vector2(0.75, 0.75)
 texture_normal = ExtResource("9_xac7c")
 texture_pressed = ExtResource("10_0m3cs")
 texture_hover = ExtResource("11_i7nm7")
+
+[node name="quit_confirm_panel" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.5
+offset_top = -105.5
+offset_right = 201.5
+offset_bottom = 105.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 105.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_qel0l")
+
+[node name="Label" type="Label" parent="CanvasLayer/quit_confirm_panel"]
+layout_mode = 0
+offset_left = 13.5
+offset_top = 9.5
+offset_right = 445.5
+offset_bottom = 106.5
+text = "Czy ty chcesz opuscic gre????
+
+Jak opuscisz to jestes cwelem btw :3"
+label_settings = SubResource("LabelSettings_rrgl4")
+
+[node name="button_yes" type="Button" parent="CanvasLayer/quit_confirm_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.5
+offset_top = 29.5
+offset_right = -63.5
+offset_bottom = 60.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "TAK"
+
+[node name="button_no" type="Button" parent="CanvasLayer/quit_confirm_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = 29.5
+offset_right = 149.0
+offset_bottom = 60.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "NIE"

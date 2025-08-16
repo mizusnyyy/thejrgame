@@ -1,17 +1,21 @@
-[gd_scene format=3 uid="uid://6i6hnwyb8xai"]
+[gd_scene load_steps=2 format=3 uid="uid://6i6hnwyb8xai"]
 
-[node name="Control" type="Control"]
+[ext_resource type="Script" uid="uid://dduosmyguh2ep" path="res://scenes/ui/namelabel.gd" id="1_slypx"]
+
+[node name="appname" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_slypx")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 10.0
+[node name="labela" type="Label" parent="."]
+layout_mode = 1
+offset_right = 30.0
 offset_bottom = 9.0
 theme_override_font_sizes/font_size = 6
-text = "jumbo"
+text = "jumbwwwwww"
+horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
 clip_text = true
+text_overrun_behavior = 1

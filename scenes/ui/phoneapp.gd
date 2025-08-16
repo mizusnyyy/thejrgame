@@ -1,5 +1,5 @@
 extends Control
-@onready var txt=$txt
+@onready var txt=$label
 
 func _on_appshape_body_entered(body: Node2D) -> void:
 	if body.name=="indicator":

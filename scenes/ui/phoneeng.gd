@@ -29,16 +29,18 @@ func makeapps():
 		var path = preload("res://scenes/ui/phoneapp.tscn")
 		var ins = path.instantiate()
 		var s = global.phoneapps[i]
-		setapplabel(ins,s)
 		$MarginContainer/ScrollContainer/GridContainer.add_child(ins)
+		setapplabel(ins,s)
 		apps.append(ins)
 
 func setapplabel(ins, s):
-	var label = preload("res://scenes/ui/phoneapp.tscn").instantiate()
-	label.text = s
+	var label = preload("res://scenes/ui/appname.tscn").instantiate()
+	ins.add_child(label)
+	var labela = label.get_node("labela")
+	labela.text = s
+	#return
 	#label.set_anchors_preset(Control.PRESET_CENTER)
 	#label.add_theme_font_size_override("font_size", 6)
 	#label.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
 	#label.vertical_alignment=VERTICAL_ALIGNMENT_CENTER
 	#label.global_position.y += 20
-	ins.add_child(label)

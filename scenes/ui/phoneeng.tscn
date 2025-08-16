@@ -24,6 +24,75 @@ offset_right = 122.0
 offset_bottom = 6.0
 color = Color(0, 0, 0, 0.313726)
 
+[node name="GridContainer" type="GridContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 9.0
+offset_top = 18.0
+offset_right = 112.0
+offset_bottom = 121.0
+grow_horizontal = 2
+pivot_offset = Vector2(51.5, 0)
+theme_override_constants/h_separation = 14
+theme_override_constants/v_separation = 14
+columns = 3
+
+[node name="ColorRect" type="ColorRect" parent="GridContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="GridContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="GridContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="GridContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="GridContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="GridContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="GridContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="GridContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect9" type="ColorRect" parent="GridContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect11" type="ColorRect" parent="GridContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect10" type="ColorRect" parent="GridContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 visible = false
 anchors_preset = 10

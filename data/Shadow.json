@@ -1,5 +1,5 @@
 [
-	{"id": "start", "text": "Szybki wybor, bijesz sie?", "speaker": "Shadow", "portrait": "res://assets/sprite/characters/shadow/portrait/shadow3.png",
+	{"id": "start", "text": "Szybki <wybor<, bijesz sie?", "speaker": "Shadow", "portrait": "res://assets/sprite/characters/shadow/portrait/shadow3.png",
 	"choices": [
 	  { "text": "PumTAK", "next": "0" },
 	  { "text": "PumNIE", "next": "1" },

@@ -1,17 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://dycobh8i7e7vr"]
+[gd_scene load_steps=7 format=3 uid="uid://dycobh8i7e7vr"]
 
 [ext_resource type="Script" uid="uid://cdcjiqs3psrs" path="res://scenes/ui/phoneeng.gd" id="1_7snph"]
 [ext_resource type="Texture2D" uid="uid://b8ajnuejvgpja" path="res://assets/ui/tetobg.jpg" id="2_h3714"]
+[ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_1kpth"]
 [ext_resource type="Texture2D" uid="uid://cfehq0sor4h20" path="res://assets/ui/battery.png" id="3_7snph"]
 [ext_resource type="Script" uid="uid://dnjx1ubylv33c" path="res://scenes/ui/label.gd" id="3_h3714"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3714"]
+size = Vector2(122, 20)
+
 [node name="phoneeng" type="Node2D"]
 script = ExtResource("1_7snph")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 122.0
-offset_bottom = 122.0
-color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 122.0
@@ -57,6 +56,11 @@ vertical_scroll_mode = 3
 [node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/ScrollContainer"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 7
+theme_override_fonts/font = ExtResource("3_1kpth")
 text = "hej drodzy koledzy jestem igor!"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -67,6 +71,18 @@ layout_mode = 2
 theme_override_constants/h_separation = 39
 theme_override_constants/v_separation = 34
 columns = 3
+
+[node name="scrolldown" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scrolldown"]
+position = Vector2(61, 112)
+shape = SubResource("RectangleShape2D_h3714")
+
+[node name="scrollup" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scrollup"]
+position = Vector2(61, 10)
+shape = SubResource("RectangleShape2D_h3714")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 visible = false
@@ -90,4 +106,8 @@ centered = false
 offset = Vector2(-9, 1)
 
 [connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="body_entered" from="scrolldown" to="." method="_on_scrolldown_body_entered"]
+[connection signal="body_exited" from="scrolldown" to="." method="_on_scrolldown_body_exited"]
+[connection signal="body_entered" from="scrollup" to="." method="_on_scrollup_body_entered"]
+[connection signal="body_exited" from="scrollup" to="." method="_on_scrollup_body_exited"]
 [connection signal="ready" from="Label" to="Label" method="_on_ready"]

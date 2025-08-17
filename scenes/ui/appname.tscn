@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://6i6hnwyb8xai"]
+
+[ext_resource type="Script" uid="uid://dduosmyguh2ep" path="res://scenes/ui/namelabel.gd" id="1_slypx"]
+
+[node name="appname" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_slypx")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_right = 22.0
+offset_bottom = 8.0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="ScrollContainer"]
+custom_minimum_size = Vector2(22, 0)
+layout_mode = 2
+
+[node name="labela" type="Label" parent="ScrollContainer/CenterContainer"]
+show_behind_parent = true
+custom_minimum_size = Vector2(22, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.446022, 0.355692, 0.270489, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 4
+text = "juww"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="ready" from="." to="." method="_on_ready"]

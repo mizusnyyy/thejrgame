@@ -107,7 +107,6 @@ func _physics_process(delta: float) -> void:
 			tempspeed = SPEED
 			Engine.time_scale = 0.5
 			SPEED = SPEED / Engine.time_scale
-			mana_timer = 0.0
 
 	if state:
 		mana_timer += delta

@@ -24,7 +24,7 @@ func start():
 
 func nextturn():
 	notui.enemyturn()
-	await attack(1) 
+	await attack(runda+1) 
 	notui.playerturn()
 	global.current_mode = global.mode.RED
 	runda += 1

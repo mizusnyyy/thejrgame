@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq1vklqwbe630"
-path="res://.godot/imported/mapapp.png-4e46fccf9dcb9cd4ddf9f69515daeb10.ctex"
+uid="uid://bxnps63jfhbwv"
+path="res://.godot/imported/Junior Music.png-9f440f8bc150090515f54f06291ad8a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/apps/mapapp.png"
-dest_files=["res://.godot/imported/mapapp.png-4e46fccf9dcb9cd4ddf9f69515daeb10.ctex"]
+source_file="res://assets/ui/apps/Junior Music.png"
+dest_files=["res://.godot/imported/Junior Music.png-9f440f8bc150090515f54f06291ad8a7.ctex"]
 
 [params]
 

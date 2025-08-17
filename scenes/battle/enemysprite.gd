@@ -40,8 +40,7 @@ func swinghand():
 	# Swing up
 	while parts[3].rotation_degrees < target_up:
 		delta = get_process_delta_time()
-		parts[3].rotation_degrees += speed * delta/2
-		await get_tree().process_frame
+		parts[3].rotation_degrees += speed * delta/21
 	# Mała przerwa
 	await get_tree().create_timer(0.4).timeout
 

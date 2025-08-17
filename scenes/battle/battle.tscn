@@ -783,7 +783,7 @@ offset_top = 10.0
 offset_right = 164.0
 offset_bottom = 76.0
 value = 100.0
-fill_mode = 3
+fill_mode = 4
 nine_patch_stretch = true
 texture_progress = ExtResource("102_0cqqu")
 
@@ -793,7 +793,7 @@ offset_top = 9.5
 offset_right = 163.0
 offset_bottom = 75.5
 size_flags_vertical = 3
-fill_mode = 3
+fill_mode = 4
 nine_patch_stretch = true
 texture_under = ExtResource("104_hr533")
 script = ExtResource("103_xo5np")

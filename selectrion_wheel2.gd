@@ -33,8 +33,8 @@ func _process(delta):
 		global_position = player.global_position  
 	
 	if Input.is_action_just_pressed("heart_select"):
-		rotation_degrees = 0
 		self.show()
+		rotation_phase = 0.0
 	if Input.is_action_just_released("heart_select"):
 		self.hide()
 	if Input.is_action_just_pressed("changeheart"):
@@ -46,7 +46,6 @@ func _draw():
 	var center = Vector2.ZERO
 	
 	# Tło i okręgi
-	draw_circle(center, outer_radius, background_color)
 	draw_arc(center, inner_radius, 0, TAU, 128, line_color, line_width, true)
 	draw_arc(center, outer_radius, 0, TAU, 128, line_color, line_width, true)
 	

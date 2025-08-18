@@ -8,8 +8,7 @@ var currentpage = 0
 @onready var typesound = $AudioStreamPlayer2D
 @export var whoid:int
 @export var texturenpc: Texture
-@export var path:String
-@export var startdialog:String="start"
+@export var character:String
 
 func _on_body_entered(body):
 	if body.name=="player":
@@ -22,7 +21,7 @@ func _on_body_exited(body):
 
 func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("interact") and can_talk:
-		DialogueManager.startandload(startdialog,path,dialog,typesound)
+		DialogueManager.begin_dialogue(character,dialog,typesound)
 		can_talk=false
 
 func dialogf(text,texture,sound,optionid):
@@ -30,5 +29,4 @@ func dialogf(text,texture,sound,optionid):
 
 func _on_ready() -> void:
 	$Sprite2D.texture = texturenpc
-	#path = "res://data/"+path+".json"
 	

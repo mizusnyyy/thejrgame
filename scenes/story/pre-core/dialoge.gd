@@ -130,7 +130,8 @@ func _type_text() -> void:
 		if type_sound_player:
 			type_sound_player.pitch_scale = randf_range(0.95, 1.05)
 			type_sound_player.play()
-		await get_tree().create_timer(spd).timeout
+		print("spd: ",spd," ts1: ",tempspeed," ts2: ",text_speed)
+		await get_tree().create_timer(1).timeout
 	typing = false
 	emit_signal("text_typed")
 

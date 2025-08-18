@@ -2,8 +2,8 @@ extends Node
 
 var menu_instance: Node2D = null
 
-func _ready():
-	_spawn_menu()
+#func _ready():
+	#_spawn_menu()
 
 func _process(delta):
 	if Input.is_action_just_pressed("menu"):

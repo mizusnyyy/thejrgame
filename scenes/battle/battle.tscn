@@ -105,7 +105,6 @@
 [ext_resource type="Texture2D" uid="uid://ygndui1q364y" path="res://assets/sprite/battle/bg/b0099.png" id="100_jucj5"]
 [ext_resource type="Texture2D" uid="uid://nciyms0xvnjb" path="res://assets/sprite/battle/bg/b0100.png" id="101_0us13"]
 [ext_resource type="Texture2D" uid="uid://ctohqb5sh5hpn" path="res://assets/sprite/battle/progress_red.png" id="102_0cqqu"]
-[ext_resource type="Script" uid="uid://31070hst34kt" path="res://scenes/battle/box.gd" id="102_ue6uc"]
 [ext_resource type="Script" uid="uid://dx4xtblajk0rm" path="res://scenes/battle/Player_health_bar.gd" id="103_xo5np"]
 [ext_resource type="Texture2D" uid="uid://y1m2vpwobtg7" path="res://assets/sprite/battle/mana_ball1.png" id="104_hr533"]
 [ext_resource type="Script" uid="uid://bcnmmxb6atgap" path="res://scenes/battle/notui.gd" id="106_el03i"]
@@ -144,7 +143,7 @@
 [ext_resource type="AudioStream" uid="uid://yn4sayk7g01s" path="res://assets/sprite/intro/dzem.wav" id="132_ly5g2"]
 [ext_resource type="Script" uid="uid://bejskw4sl3ymu" path="res://scenes/battle/debug.gd" id="136_w54gx"]
 [ext_resource type="PackedScene" uid="uid://pegs4ep6hjc5" path="res://scenes/attackscenes/bone/bone.tscn" id="137_21vhs"]
-[ext_resource type="Script" path="res://scenes/battle/sprite_2d.gd" id="139_itpkr"]
+[ext_resource type="Script" uid="uid://cfw8ku15s2mot" path="res://scenes/battle/sprite_2d.gd" id="139_itpkr"]
 [ext_resource type="Texture2D" uid="uid://jouutgjikwq0" path="res://assets/sprite/battle/hearts.png" id="139_wf2x0"]
 [ext_resource type="PackedScene" uid="uid://btunywoykvm0n" path="res://selectionwheel.2.tscn" id="144_ue6uc"]
 
@@ -478,6 +477,10 @@ animations = [{
 "speed": 60.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_xysor"]
+script/source = "extends Sprite2D
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fisqk"]
 size = Vector2(128.696, 3.47826)
 
@@ -741,7 +744,7 @@ speed_scale = 0.5
 [node name="box" type="Sprite2D" parent="."]
 position = Vector2(320, 255.5)
 texture = ExtResource("3_agsc7")
-script = ExtResource("102_ue6uc")
+script = SubResource("GDScript_xysor")
 
 [node name="ColorRect" type="ColorRect" parent="box"]
 anchors_preset = -1

@@ -1,0 +1,117 @@
+[gd_scene load_steps=7 format=3 uid="uid://clwplkby0w3n1"]
+
+[ext_resource type="Script" uid="uid://kxcib30pq70u" path="res://scenes/ui/junior_music.gd" id="1_m5631"]
+[ext_resource type="Texture2D" uid="uid://ccvxcgkjtud2c" path="res://assets/ui/song/music2.png" id="1_uwytd"]
+[ext_resource type="Texture2D" uid="uid://desf6n4nyt7lv" path="res://assets/ui/song/play.png" id="2_e6rrv"]
+[ext_resource type="Texture2D" uid="uid://cgg4s5wp3fe24" path="res://assets/ui/song/stop.png" id="3_m5631"]
+[ext_resource type="Texture2D" uid="uid://c7gc2vw3wnwk6" path="res://assets/ui/apps/closeapp.png" id="6_m5631"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6rrv"]
+size = Vector2(12, 12)
+
+[node name="Junior Music" type="Node2D"]
+script = ExtResource("1_m5631")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(122, 122)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.593134, 0.593134, 0.593134, 1)
+
+[node name="mc" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(122, 122)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 11
+theme_override_constants/margin_top = 11
+theme_override_constants/margin_right = 11
+theme_override_constants/margin_bottom = 11
+
+[node name="sc" type="ScrollContainer" parent="mc"]
+layout_mode = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="vbc" type="VBoxContainer" parent="mc/sc"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="sus" type="ColorRect" parent="mc/sc/vbc"]
+custom_minimum_size = Vector2(100, 38)
+layout_mode = 2
+color = Color(0.370364, 0.370364, 0.370364, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="mc/sc/vbc/sus"]
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 0
+offset_right = 100.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="mc/sc/vbc/sus/CenterContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="mc/sc/vbc/sus/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("1_uwytd")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="mc/sc/vbc/sus/CenterContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="mc/sc/vbc/sus/CenterContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="mc/sc/vbc/sus/CenterContainer/HBoxContainer/HBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(24, 16)
+layout_mode = 2
+size_flags_vertical = 4
+color = Color(0.753984, 0.753984, 0.753984, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="mc/sc/vbc/sus/CenterContainer/HBoxContainer/HBoxContainer/CenterContainer/ColorRect2"]
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 16.0
+
+[node name="TextureRect" type="TextureRect" parent="mc/sc/vbc/sus/CenterContainer/HBoxContainer/HBoxContainer/CenterContainer/ColorRect2/CenterContainer"]
+custom_minimum_size = Vector2(11, 11)
+layout_mode = 2
+texture = ExtResource("2_e6rrv")
+expand_mode = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="mc/sc/vbc/sus/CenterContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="mc/sc/vbc/sus/CenterContainer/HBoxContainer/HBoxContainer/CenterContainer2"]
+custom_minimum_size = Vector2(24, 16)
+layout_mode = 2
+size_flags_vertical = 4
+color = Color(0.753984, 0.753984, 0.753984, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="mc/sc/vbc/sus/CenterContainer/HBoxContainer/HBoxContainer/CenterContainer2/ColorRect2"]
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 16.0
+
+[node name="TextureRect" type="TextureRect" parent="mc/sc/vbc/sus/CenterContainer/HBoxContainer/HBoxContainer/CenterContainer2/ColorRect2/CenterContainer"]
+custom_minimum_size = Vector2(11, 11)
+layout_mode = 2
+texture = ExtResource("3_m5631")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 109.0
+offset_top = 1.0
+offset_right = 121.0
+offset_bottom = 13.0
+texture = ExtResource("6_m5631")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="TextureRect"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Area2D"]
+position = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_e6rrv")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="body_entered" from="TextureRect/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="TextureRect/Area2D" to="." method="_on_area_2d_body_exited"]

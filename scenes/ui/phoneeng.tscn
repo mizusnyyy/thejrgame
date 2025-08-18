@@ -12,7 +12,7 @@ size = Vector2(122, 20)
 [node name="phoneeng" type="Node2D"]
 script = ExtResource("1_7snph")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="bgphone" type="TextureRect" parent="."]
 offset_right = 122.0
 offset_bottom = 122.0
 texture = ExtResource("2_h3714")
@@ -104,6 +104,8 @@ position = Vector2(122, 0)
 texture = ExtResource("3_7snph")
 centered = false
 offset = Vector2(-9, 1)
+
+[node name="apps" type="Node2D" parent="."]
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="body_entered" from="scrolldown" to="." method="_on_scrolldown_body_entered"]

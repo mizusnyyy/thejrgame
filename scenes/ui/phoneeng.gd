@@ -61,6 +61,9 @@ func setapplabel():
 func _on_scrolldown_body_entered(body: Node2D) -> void:
 	if get_node_or_null("lockscreen"):
 		return
+	if $apps.get_child_count()!=0:
+		print("Nigzl")
+		return
 	scroll=true
 	var x = $MarginContainer/ScrollContainer
 	var tween = create_tween()
@@ -74,7 +77,11 @@ func _on_scrolldown_body_exited(body: Node2D) -> void:
 
 
 func _on_scrollup_body_entered(body: Node2D) -> void:
+	print($apps.get_child_count())
 	if get_node_or_null("lockscreen"):
+		return
+	if $apps.get_child_count()!=0:
+		print("Nigzl")
 		return
 	scroll=true
 	var x = $MarginContainer/ScrollContainer

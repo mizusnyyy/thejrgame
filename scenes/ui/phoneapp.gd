@@ -20,6 +20,4 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact")&&caninteract:
 		var y = load("res://scenes/ui/Junior Music.tscn")
 		var pum = y.instantiate()
-		add_child(pum)
-				
-				
+		get_node("../../../../../apps").add_child(pum)

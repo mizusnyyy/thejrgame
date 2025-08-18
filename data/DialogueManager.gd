@@ -1,90 +1,82 @@
 extends Node2D
 
-var dialogues: Array = []
-var current_id := "start"
+var dialogue_list = {}
+const dialogue_json_pth = "res://data/dialogue.json"
+const dlg_e = preload("res://data/dlg_enum.gd").dg # enum with all of dialogue
+const sprite_directory = "res://assets/sprite/characters/"
 var dialog: Node = null
 var sound
 var speakername
 var portrait: Texture
-func startandload(curid: String, path: String, dialogset: Node, soundset):
-	sound = soundset
+
+func _ready() -> void:
+	load_dialogues()
+
+func load_dialogues() -> void:
+	var file = FileAccess.open(dialogue_json_pth, FileAccess.READ)
+	if file:
+		file = JSON.parse_string(file.get_as_text())
+		for entry in file:
+			var id_enum = dlg_e[entry.id]
+			var next_enum
+			if(typeof(entry.next) != TYPE_ARRAY and entry.next!= null):
+				next_enum = dlg_e[entry.next]
+			else:
+				next_enum = entry.next
+			dialogue_list[id_enum] = Dialogue_node.new( 
+				entry.text,
+				next_enum,
+				entry.speaker,
+				entry.portrait
+			)
+	else:
+			push_error("Nie udało się otworzyć pliku dialogów : " + dialogue_json_pth)
+
+func begin_dialogue(character: String, dialogset: Node, soundset):
+	sound = soundset	
 	dialog = dialogset
 	if dialog == null:
 		push_error("Nie znaleziono CanvasLayer/dialoge")
 		return
+	show_dialog(dlg_e[character+"_start"])
 
-	load_dialogues(path)
-	show_dialog(curid)
-
-func load_dialogues(path: String) -> void:
-	var file = FileAccess.open(path, FileAccess.READ)
-	if file == null:
-		push_error("Nie można otworzyć pliku dialogów: " + path)
-		return
-	var data := file.get_as_text()
-	var json = JSON.parse_string(data)
-	if typeof(json) == TYPE_ARRAY:
-		dialogues = json
-	else:
-		push_error("Plik JSON nie zawiera tablicy!")
-
-func get_dialog_by_id(id: String) -> Dictionary:
-	for d in dialogues:
-		if d.has("id") and d["id"] == id:
-			return d
-	return {}
-
-func show_dialog(id: String) -> void:
-	var d := get_dialog_by_id(id)
-	if d.is_empty():
-		print("Dialog o id ", id, " nie istnieje")
-		return
-	if d.has("speaker"):
-		print("yey")
+func show_dialog(id) -> void:
+	
+	var d = dialogue_list[id]
+	if d.speaker!=null:
 		speakername = d.speaker
 		dialog.setname(speakername)
+		
+	if d.portrait!=null:
+		print("portret: ",d.portrait)
+		portrait = load(sprite_directory+d.portrait+".png")
 
-	current_id = id
-	var text = d.get("text", "")
-	if d.has("portrait") and typeof(d["portrait"]) == TYPE_STRING and d["portrait"] != "":
-		print(d.portrait)
-		portrait = load(d["portrait"])
-
-	# 1) JEŚLI SĄ OPCJE
-	if d.has("choices"):
+	# 1) Jeśli next to array (opcje)
+	if typeof(d.next) == TYPE_ARRAY:
 		# Pokaż tekst i poczekaj tylko do końca pisania (bez zamykania okna)
-		await dialog.show_dialogue(text, portrait, sound, true) # false = nie czekaj na dialogue_finished
+		await dialog.show_dialogue(d.text, portrait, sound, true) # false = nie czekaj na dialogue_finished
 		# Wyślij listy id "next" oraz tekstów opcji do dialogu
 		var next_ids: Array = []
 		var choice_texts: Array = []
-		for choice in d["choices"]:
+		for choice in d.next:
 			choice_texts.append(choice.get("text", ""))
 			next_ids.append(choice.get("next", ""))
-			print("fni ", choice.next)
+			print("wybór: ", choice.next)
 		dialog.choose(next_ids, choice_texts)
 		# Czekamy na WYBÓR
 		var picked_index: int = await dialog.choice_selected
 		var next_id = next_ids[picked_index]
-		#if next_id != TYPE_INT:
-		print(next_id)
-		if int(next_id) == 0:
-			matchid(next_id)
-			print("???")
+		if typeof(d.next) == TYPE_INT and d.next == dlg_e.battle:
+			print("11111?")
+			get_tree().change_scene_to_packed(preload("res://scenes/battle/battle.tscn"))
 		dialog.typing = true
-		show_dialog(next_id)
+		show_dialog(dlg_e[next_id])
 		return
-	await dialog.show_dialogue(text, portrait, sound, true)
+	await dialog.show_dialogue(d.text, portrait, sound, true)
 
-	#if d.has("act"):
-		#if d["act"]==
-	if d.has("next"):
-		if int(d.next) == 0:
-			matchid(d.next)
-		show_dialog(d["next"])
-	#else:wa
-
-func matchid(x):
-	print("11111?")
-	match x:
-		"battle":get_tree().change_scene_to_packed(preload("res://scenes/battle/battle.tscn"))
-		_:pass
+	if d.next!=null:
+		if typeof(d.next) == TYPE_INT and d.next == dlg_e.battle:
+			print("11111?")
+			get_tree().change_scene_to_packed(preload("res://scenes/battle/battle.tscn"))
+		else:
+			show_dialog(d.next)

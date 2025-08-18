@@ -621,7 +621,7 @@ tile_set = SubResource("TileSet_ihlf5")
 position = Vector2(7, -162)
 scale = Vector2(2, 2)
 texturenpc = ExtResource("17_f85h6")
-path = "res://data/core.json"
+character = "core"
 
 [node name="spowalniacz2" parent="." instance=ExtResource("6_7rq4n")]
 position = Vector2(160, -1418)

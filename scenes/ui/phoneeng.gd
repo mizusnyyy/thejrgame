@@ -59,10 +59,11 @@ func setapplabel():
 	label.setname(s)
 
 func _on_scrolldown_body_entered(body: Node2D) -> void:
+	if body.name != "indicator":
+		return
 	if get_node_or_null("lockscreen"):
 		return
 	if $apps.get_child_count()!=0:
-		print("Nigzl")
 		return
 	scroll=true
 	var x = $MarginContainer/ScrollContainer
@@ -73,15 +74,17 @@ func _on_scrolldown_body_entered(body: Node2D) -> void:
 		await get_tree().process_frame
 
 func _on_scrolldown_body_exited(body: Node2D) -> void:
+	if body.name != "indicator":
+		return
 	scroll=false
 
 
 func _on_scrollup_body_entered(body: Node2D) -> void:
-	print($apps.get_child_count())
+	if body.name != "indicator":
+		return
 	if get_node_or_null("lockscreen"):
 		return
 	if $apps.get_child_count()!=0:
-		print("Nigzl")
 		return
 	scroll=true
 	var x = $MarginContainer/ScrollContainer
@@ -92,4 +95,6 @@ func _on_scrollup_body_entered(body: Node2D) -> void:
 
 
 func _on_scrollup_body_exited(body: Node2D) -> void:
+	if body.name != "indicator":
+		return
 	scroll=false

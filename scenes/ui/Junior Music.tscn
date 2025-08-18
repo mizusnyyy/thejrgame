@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://clwplkby0w3n1"]
+[gd_scene load_steps=8 format=3 uid="uid://clwplkby0w3n1"]
 
 [ext_resource type="Script" uid="uid://darkr8url1nan" path="res://scenes/ui/junior_music.gd" id="1_e6rrv"]
 [ext_resource type="Texture2D" uid="uid://ccvxcgkjtud2c" path="res://assets/ui/song/music1.png" id="1_uwytd"]
@@ -8,6 +8,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m5631"]
 size = Vector2(11, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6rrv"]
+size = Vector2(122, 20)
 
 [node name="Junior Music" type="Node2D"]
 script = ExtResource("1_e6rrv")
@@ -113,5 +116,22 @@ expand_mode = 1
 position = Vector2(5.5, 5.5)
 shape = SubResource("RectangleShape2D_m5631")
 
+[node name="scrolldown" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scrolldown"]
+position = Vector2(61, 112)
+shape = SubResource("RectangleShape2D_e6rrv")
+
+[node name="scrollup" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scrollup"]
+position = Vector2(61, 10)
+shape = SubResource("RectangleShape2D_e6rrv")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="body_entered" from="TextureRect/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="TextureRect/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="scrolldown" to="." method="_on_scrolldown_body_entered"]
+[connection signal="body_exited" from="scrolldown" to="." method="_on_scrolldown_body_exited"]
+[connection signal="body_entered" from="scrollup" to="." method="_on_scrollup_body_entered"]
+[connection signal="body_exited" from="scrollup" to="." method="_on_scrollup_body_exited"]

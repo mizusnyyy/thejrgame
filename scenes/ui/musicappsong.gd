@@ -2,6 +2,7 @@ extends ColorRect
 @onready var label := $hb/sc/cc/mc/l
 @onready var texture := $songtxt
 @onready var but := $button
+var z:String
 var caninteract := false
 var playing := false
 
@@ -15,12 +16,13 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	caninteract=false
 
 func _input(event: InputEvent) -> void:
-	if event.is_actionpressed("interact") && caninteract:
+	if event.is_action_pressed("interact") && caninteract:
 		if playing:
 			but.texture = load("res://assets/ui/song/play.png")
 			caninteract=false
 			playing=false
 		else:
+			playmusic()
 			but.texture = load("res://assets/ui/song/stop.png")
 			caninteract=true
 			playing=true
@@ -29,11 +31,14 @@ func changename(x):
 	$hb/sc/cc/mc/l.text = x
 
 func changephoto(y):
-	var z:int
 	match y:
-		"crashpeak":z = 1
-		"pineap":z = 2
+		"crashpeak":z = "1"
+		"pineap":z = "2"
+		"f.maska":z = "3"
 		_: 
 			$songtxt.texture = load("res://assets/sprite/characters/jr/teto_front.png")
 			return
-	$songtxt.texture = load("res://assets/ui/song/music"+str(z)+".png")
+	$songtxt.texture = load("res://assets/ui/song/music"+z+".png")
+
+func playmusic():
+	Musicsounds.play_music(load("res://assets/ui/song/music"+z+".mp3"))

@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://i7u3f4x5mljr"
-=======
-uid="uid://dvkm543entead"
->>>>>>> df10f83a4e4f4a900e7ba1ec3b55bf7d70764cf5
-path="res://.godot/imported/jr_torso.png-28e5a6148894248a7c141ff56254e64d.ctex"
+uid="uid://ccvxcgkjtud2c"
+path="res://.godot/imported/music2.png-c1b4d06f2a29d99d294e15b4401973e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/characters/shadow/enemypart/jr_torso.png"
-dest_files=["res://.godot/imported/jr_torso.png-28e5a6148894248a7c141ff56254e64d.ctex"]
+source_file="res://assets/ui/song/music2.png"
+dest_files=["res://.godot/imported/music2.png-c1b4d06f2a29d99d294e15b4401973e6.ctex"]
 
 [params]
 

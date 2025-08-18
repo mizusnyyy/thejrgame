@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://2xj1lr0ofume"]
+
+[ext_resource type="Script" uid="uid://cs1i30ugie76g" path="res://scenes/ui/musicappsong.gd" id="1_xg3wb"]
+[ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="2_gudaj"]
+[ext_resource type="Texture2D" uid="uid://ccvxcgkjtud2c" path="res://assets/ui/song/music2.png" id="2_ouusg"]
+[ext_resource type="Texture2D" uid="uid://desf6n4nyt7lv" path="res://assets/ui/song/play.png" id="3_gudaj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xg3wb"]
+size = Vector2(10, 10)
+
+[node name="musicchoose" type="ColorRect"]
+custom_minimum_size = Vector2(100, 12)
+color = Color(0.753984, 0.753984, 0.753984, 1)
+script = ExtResource("1_xg3wb")
+
+[node name="hb" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(100, 12)
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 12.0
+
+[node name="sc" type="ScrollContainer" parent="hb"]
+custom_minimum_size = Vector2(52, 12)
+layout_mode = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="cc" type="CenterContainer" parent="hb/sc"]
+custom_minimum_size = Vector2(48, 12)
+layout_mode = 2
+
+[node name="mc" type="MarginContainer" parent="hb/sc/cc"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_right = 2
+
+[node name="l" type="Label" parent="hb/sc/cc/mc"]
+show_behind_parent = true
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.446022, 0.355692, 0.270489, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("2_gudaj")
+theme_override_font_sizes/font_size = 6
+text = "juwww"
+vertical_alignment = 1
+
+[node name="songtxt" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 78.0
+offset_top = 1.0
+offset_right = 88.0
+offset_bottom = 11.0
+texture = ExtResource("2_ouusg")
+expand_mode = 1
+
+[node name="button" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 89.0
+offset_top = 1.0
+offset_right = 99.0
+offset_bottom = 11.0
+texture = ExtResource("3_gudaj")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="button"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="button/Area2D"]
+position = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_xg3wb")
+
+[connection signal="body_entered" from="button/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="button/Area2D" to="." method="_on_area_2d_body_exited"]

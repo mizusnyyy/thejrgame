@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://i7u3f4x5mljr"
-=======
-uid="uid://dvkm543entead"
->>>>>>> df10f83a4e4f4a900e7ba1ec3b55bf7d70764cf5
-path="res://.godot/imported/jr_torso.png-28e5a6148894248a7c141ff56254e64d.ctex"
+uid="uid://euiwry2bpa3m"
+path="res://.godot/imported/jrbattlechibi.png-6a7324f56be72238e8985a8869f0d8a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/characters/shadow/enemypart/jr_torso.png"
-dest_files=["res://.godot/imported/jr_torso.png-28e5a6148894248a7c141ff56254e64d.ctex"]
+source_file="res://assets/sprite/characters/jr/jrbattlechibi.png"
+dest_files=["res://.godot/imported/jrbattlechibi.png-6a7324f56be72238e8985a8869f0d8a0.ctex"]
 
 [params]
 

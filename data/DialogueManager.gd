@@ -32,27 +32,23 @@ func load_dialogues() -> void:
 	else:
 			push_error("Nie udało się otworzyć pliku dialogów : " + dialogue_json_pth)
 
-
 func begin_dialogue(character: String, dialogset: Node, soundset):
-	sound = soundset
-	print(character)
-	
+	sound = soundset	
 	dialog = dialogset
 	if dialog == null:
 		push_error("Nie znaleziono CanvasLayer/dialoge")
 		return
-	show_dialog(character+"_start")
-
+	show_dialog(dlg_e[character+"_start"])
 
 func show_dialog(id) -> void:
 	
-	var d = dialogue_list[dlg_e[id]]
+	var d = dialogue_list[id]
 	if d.speaker!=null:
-		print("yey")
 		speakername = d.speaker
 		dialog.setname(speakername)
+		
 	if d.portrait!=null:
-		print(d.portrait)
+		print("portret: ",d.portrait)
 		portrait = load(sprite_directory+d.portrait+".png")
 
 	# 1) Jeśli next to array (opcje)
@@ -65,24 +61,22 @@ func show_dialog(id) -> void:
 		for choice in d.next:
 			choice_texts.append(choice.get("text", ""))
 			next_ids.append(choice.get("next", ""))
-			print("fni ", choice.next)
+			print("wybór: ", choice.next)
 		dialog.choose(next_ids, choice_texts)
 		# Czekamy na WYBÓR
 		var picked_index: int = await dialog.choice_selected
 		var next_id = next_ids[picked_index]
-		#if next_id != TYPE_INT:
-		print(next_id)
-		if next_id:
+		if typeof(d.next) == TYPE_INT and d.next == dlg_e.battle:
 			print("11111?")
 			get_tree().change_scene_to_packed(preload("res://scenes/battle/battle.tscn"))
-			print("???")
 		dialog.typing = true
-		show_dialog(next_id)
+		show_dialog(dlg_e[next_id])
 		return
 	await dialog.show_dialogue(d.text, portrait, sound, true)
 
 	if d.next!=null:
-		if d.next=="battle":
+		if typeof(d.next) == TYPE_INT and d.next == dlg_e.battle:
 			print("11111?")
 			get_tree().change_scene_to_packed(preload("res://scenes/battle/battle.tscn"))
-		show_dialog(d.next)
+		else:
+			show_dialog(d.next)

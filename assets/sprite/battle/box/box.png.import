@@ -2,24 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-uid="uid://i7u3f4x5mljr"
-=======
-uid="uid://dvkm543entead"
->>>>>>> df10f83a4e4f4a900e7ba1ec3b55bf7d70764cf5
-=======
-uid="uid://cx7mw08w1uei3"
->>>>>>> Stashed changes
-path="res://.godot/imported/jr_torso.png-28e5a6148894248a7c141ff56254e64d.ctex"
+uid="uid://dw1bhn8eey7yb"
+path="res://.godot/imported/box.png-effb328e6a55b2dbcfe3748a4b210e1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/characters/shadow/enemypart/jr_torso.png"
-dest_files=["res://.godot/imported/jr_torso.png-28e5a6148894248a7c141ff56254e64d.ctex"]
+source_file="res://assets/sprite/battle/box/box.png"
+dest_files=["res://.godot/imported/box.png-effb328e6a55b2dbcfe3748a4b210e1c.ctex"]
 
 [params]
 

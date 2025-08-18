@@ -5,8 +5,15 @@ extends Node2D
 @onready var soul := $soul
 @onready var soulsprite := $soul/heart
 @onready var label := $enemy/RichTextLabel
+
+@onready var leftside = $box/leftside
+@onready var rightside = $box/rightside
+@onready var upside = $box/upside
+@onready var downside = $box/downside
+
 var turn := false
 #false to enemy a true to player
+var is_rectangle = false
 
 signal itsplayerturn
 signal itsenemyturn

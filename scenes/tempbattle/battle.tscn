@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=3 uid="uid://chdd5rrfb285v"]
+[gd_scene load_steps=131 format=3 uid="uid://chdd5rrfb285v"]
 
 [ext_resource type="Script" uid="uid://dpt315f3ojcla" path="res://scenes/thebattle/battle.gd" id="1_gqj3t"]
 [ext_resource type="Texture2D" uid="uid://b45tvv1w8286c" path="res://assets/sprite/battle/bg/b0001.png" id="2_13gys"]
@@ -102,7 +102,6 @@
 [ext_resource type="Texture2D" uid="uid://ygndui1q364y" path="res://assets/sprite/battle/bg/b0099.png" id="100_3umbg"]
 [ext_resource type="Texture2D" uid="uid://nciyms0xvnjb" path="res://assets/sprite/battle/bg/b0100.png" id="101_riox6"]
 [ext_resource type="Texture2D" uid="uid://cjygwch3ndpin" path="res://assets/sprite/battle/box/side.png" id="102_1yjtx"]
-[ext_resource type="Texture2D" uid="uid://g8cdod2m8j0o" path="res://assets/sprite/battle/box.png" id="102_lt7kn"]
 [ext_resource type="Script" uid="uid://coq5ljd0rkn17" path="res://scenes/battle/enemysprite.gd" id="103_kqs8s"]
 [ext_resource type="Texture2D" uid="uid://dry6xkf7q8c34" path="res://assets/sprite/characters/shadow/enemypart/shadow_face.png" id="104_x6l8r"]
 [ext_resource type="Texture2D" uid="uid://1id6kbtf5h4n" path="res://assets/sprite/characters/shadow/enemypart/shadow_hair.png" id="105_3mpuu"]
@@ -434,9 +433,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ssef"]
 size = Vector2(128.696, 3.47826)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4argi"]
-size = Vector2(129, 3.47826)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eysmq"]
 size = Vector2(16, 16)
 
@@ -521,55 +517,49 @@ autoplay = "default"
 speed_scale = 0.5
 metadata/_edit_lock_ = true
 
-[node name="box2" type="Node2D" parent="."]
+[node name="box" type="Node2D" parent="."]
 
-[node name="rightside" type="Sprite2D" parent="box2"]
-position = Vector2(416, 245)
+[node name="rightside" type="Sprite2D" parent="box"]
+position = Vector2(383, 256)
 texture = ExtResource("102_1yjtx")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="box2/rightside"]
+[node name="StaticBody2D" type="StaticBody2D" parent="box/rightside"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="box2/rightside/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box/rightside/StaticBody2D"]
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_1ssef")
 
-[node name="leftside" type="Sprite2D" parent="box2"]
-position = Vector2(227, 181)
+[node name="leftside" type="Sprite2D" parent="box"]
+position = Vector2(257, 256)
 texture = ExtResource("102_1yjtx")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="box2/leftside"]
+[node name="StaticBody2D" type="StaticBody2D" parent="box/leftside"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="box2/leftside/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box/leftside/StaticBody2D"]
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_1ssef")
 
-[node name="box" type="Sprite2D" parent="."]
-position = Vector2(320, 256)
-texture = ExtResource("102_lt7kn")
+[node name="upside" type="Sprite2D" parent="box"]
+position = Vector2(320, 193)
+rotation = 1.5708
+texture = ExtResource("102_1yjtx")
 
-[node name="ColorRect" type="ColorRect" parent="box"]
-anchors_preset = -1
-anchor_left = -0.015625
-anchor_top = -0.015625
-anchor_right = -0.015625
-anchor_bottom = -0.015625
-offset_left = -60.0
-offset_top = -60.0
-offset_right = 64.0
-offset_bottom = 64.0
-color = Color(0, 0, 0, 1)
-metadata/_edit_use_anchors_ = true
+[node name="StaticBody2D" type="StaticBody2D" parent="box/upside"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="box"]
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="box/StaticBody2D"]
-position = Vector2(0, -62.6087)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box/upside/StaticBody2D"]
+rotation = 1.5708
 shape = SubResource("RectangleShape2D_1ssef")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="box/StaticBody2D"]
-position = Vector2(3.05176e-05, 62.6087)
-rotation = -3.14159
-shape = SubResource("RectangleShape2D_4argi")
+[node name="downside" type="Sprite2D" parent="box"]
+position = Vector2(320, 320)
+rotation = 1.5708
+texture = ExtResource("102_1yjtx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="box/downside"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box/downside/StaticBody2D"]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_1ssef")
 
 [node name="enemy" type="Node2D" parent="."]
 position = Vector2(320, -72)

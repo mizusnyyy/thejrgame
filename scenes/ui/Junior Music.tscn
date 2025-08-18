@@ -1,8 +1,7 @@
-
 [gd_scene load_steps=8 format=3 uid="uid://clwplkby0w3n1"]
 
-[ext_resource type="Script" uid="uid://darkr8url1nan" path="res://scenes/ui/junior_music.gd" id="1_e6rrv"]
-[ext_resource type="Texture2D" uid="uid://ccvxcgkjtud2c" path="res://assets/ui/song/music1.png" id="1_uwytd"]
+[ext_resource type="Script" uid="uid://kxcib30pq70u" path="res://scenes/ui/junior_music.gd" id="1_e6rrv"]
+[ext_resource type="Texture2D" uid="uid://dq5f3f48wixa5" path="res://assets/ui/song/music1.png" id="1_uwytd"]
 [ext_resource type="Texture2D" uid="uid://desf6n4nyt7lv" path="res://assets/ui/song/play.png" id="2_e6rrv"]
 [ext_resource type="Texture2D" uid="uid://cgg4s5wp3fe24" path="res://assets/ui/song/stop.png" id="3_m5631"]
 [ext_resource type="Texture2D" uid="uid://c18ygwhusf0ny" path="res://assets/ui/song/closeapp.png" id="6_m5631"]

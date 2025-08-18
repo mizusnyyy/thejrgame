@@ -20,12 +20,14 @@ func bgup():
 	tween.tween_property(self, "position:y", position.y - 124, 0.42)
 	tween.tween_property($lock, "modulate", Color(1,1,1,0), 0.4)
 	tween.tween_property($Label, "modulate", Color(1,1,1,0), 0.1)
+	if get_parent().apps==[]:
+		get_parent().makeapps()
+	get_parent().scrollit()
 	await tween.finished
 	$lockscreensprite.material.set("shader_parameter/cut_amount", 0.0)
-
+	
 	self.queue_free()
-
-
+	
 func _on_ready() -> void:
 	#print("przed ", texture)
 	$lockscreensprite.texture = preload("res://assets/ui/phonebg.png")

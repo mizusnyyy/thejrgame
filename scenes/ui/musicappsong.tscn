@@ -1,33 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://2xj1lr0ofume"]
+[gd_scene load_steps=5 format=3 uid="uid://2xj1lr0ofume"]
 
-[ext_resource type="Texture2D" uid="uid://cykdshu25r3nk" path="res://teto4.png" id="1_w5lde"]
+[ext_resource type="Script" uid="uid://cs1i30ugie76g" path="res://scenes/ui/musicappsong.gd" id="1_xg3wb"]
+[ext_resource type="Texture2D" uid="uid://ccvxcgkjtud2c" path="res://assets/ui/song/music1.png" id="2_ouusg"]
+[ext_resource type="Texture2D" uid="uid://desf6n4nyt7lv" path="res://assets/ui/song/play.png" id="3_gudaj"]
 
-[node name="ColorRect" type="ColorRect"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xg3wb"]
+size = Vector2(10, 10)
+
+[node name="musicchoose" type="ColorRect"]
 custom_minimum_size = Vector2(100, 12)
 color = Color(0.753984, 0.753984, 0.753984, 1)
+script = ExtResource("1_xg3wb")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="hb" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(100, 12)
 layout_mode = 2
 offset_right = 100.0
 offset_bottom = 12.0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
+[node name="sc" type="ScrollContainer" parent="hb"]
 custom_minimum_size = Vector2(52, 12)
 layout_mode = 2
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 3
 
-[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/ScrollContainer"]
+[node name="cc" type="CenterContainer" parent="hb/sc"]
 custom_minimum_size = Vector2(48, 12)
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/ScrollContainer/CenterContainer"]
+[node name="mc" type="MarginContainer" parent="hb/sc/cc"]
 layout_mode = 2
 theme_override_constants/margin_left = 2
 theme_override_constants/margin_right = 2
 
-[node name="labela" type="Label" parent="HBoxContainer/ScrollContainer/CenterContainer/MarginContainer"]
+[node name="l" type="Label" parent="hb/sc/cc/mc"]
 show_behind_parent = true
 custom_minimum_size = Vector2(48, 0)
 layout_mode = 2
@@ -39,12 +45,31 @@ theme_override_font_sizes/font_size = 4
 text = "juwww"
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="songtxt" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 78.0
+offset_top = 1.0
+offset_right = 88.0
+offset_bottom = 11.0
+texture = ExtResource("2_ouusg")
+expand_mode = 1
+
+[node name="button" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 offset_left = 89.0
 offset_top = 1.0
 offset_right = 99.0
 offset_bottom = 11.0
-texture = ExtResource("1_w5lde")
+texture = ExtResource("3_gudaj")
 expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="button"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="button/Area2D"]
+position = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_xg3wb")
+
+[connection signal="body_entered" from="button/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="button/Area2D" to="." method="_on_area_2d_body_exited"]

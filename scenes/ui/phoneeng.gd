@@ -24,8 +24,6 @@ func deleng():
 
 func _on_ready() -> void:
 	inslockscreen()
-	makeapps()
-	scrollit()
 
 func scrollit():
 	var tween = create_tween()
@@ -61,6 +59,8 @@ func setapplabel():
 	label.setname(s)
 
 func _on_scrolldown_body_entered(body: Node2D) -> void:
+	if get_node_or_null("lockscreen"):
+		return
 	scroll=true
 	var x = $MarginContainer/ScrollContainer
 	var tween = create_tween()
@@ -68,22 +68,20 @@ func _on_scrolldown_body_entered(body: Node2D) -> void:
 		if x.scroll_vertical < x.get_v_scroll_bar().max_value:
 			x.scroll_vertical+=1
 		await get_tree().process_frame
-	print("downing")
 
 func _on_scrolldown_body_exited(body: Node2D) -> void:
 	scroll=false
 
 
 func _on_scrollup_body_entered(body: Node2D) -> void:
+	if get_node_or_null("lockscreen"):
+		return
 	scroll=true
 	var x = $MarginContainer/ScrollContainer
-	#var tween = create_tween()
 	while scroll:
 		if x.scroll_vertical > 0:
 			x.scroll_vertical-=1
 		await get_tree().process_frame
-		#tween.tween_property(x, "scroll_vertical", 0, 3)
-	print("upping")
 
 
 func _on_scrollup_body_exited(body: Node2D) -> void:

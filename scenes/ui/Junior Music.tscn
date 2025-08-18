@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://clwplkby0w3n1"]
 
-[ext_resource type="Texture2D" uid="uid://bu5tdolmt6pgo" path="res://teto3.png" id="1_ybok4"]
-[ext_resource type="Texture2D" uid="uid://uprjhy1pj4b4" path="res://teto1.png" id="2_uwytd"]
-[ext_resource type="Texture2D" uid="uid://c7w2uou8gecp8" path="res://teto2.png" id="3_e6rrv"]
+[ext_resource type="Texture2D" uid="uid://ccvxcgkjtud2c" path="res://assets/ui/song/music1.png" id="1_uwytd"]
+[ext_resource type="Texture2D" uid="uid://desf6n4nyt7lv" path="res://assets/ui/song/play.png" id="2_e6rrv"]
+[ext_resource type="Texture2D" uid="uid://cgg4s5wp3fe24" path="res://assets/ui/song/stop.png" id="3_m5631"]
 [ext_resource type="PackedScene" uid="uid://2xj1lr0ofume" path="res://scenes/ui/musicappsong.tscn" id="4_uwytd"]
 
 [node name="Junior Music" type="Node2D"]
@@ -47,7 +47,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/sus/CenterContainer/HBoxContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-texture = ExtResource("1_ybok4")
+texture = ExtResource("1_uwytd")
 expand_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/sus/CenterContainer/HBoxContainer"]
@@ -70,7 +70,7 @@ offset_bottom = 16.0
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/sus/CenterContainer/HBoxContainer/HBoxContainer/CenterContainer/ColorRect2/CenterContainer"]
 custom_minimum_size = Vector2(11, 11)
 layout_mode = 2
-texture = ExtResource("2_uwytd")
+texture = ExtResource("2_e6rrv")
 expand_mode = 1
 
 [node name="CenterContainer2" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/sus/CenterContainer/HBoxContainer/HBoxContainer"]
@@ -90,17 +90,14 @@ offset_bottom = 16.0
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/sus/CenterContainer/HBoxContainer/HBoxContainer/CenterContainer2/ColorRect2/CenterContainer"]
 custom_minimum_size = Vector2(11, 11)
 layout_mode = 2
-texture = ExtResource("3_e6rrv")
+texture = ExtResource("3_m5631")
 expand_mode = 1
 
-[node name="ColorRect" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwytd")]
+[node name="musicchoose" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwytd")]
 layout_mode = 2
 
-[node name="ColorRect2" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwytd")]
+[node name="musicchoose2" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwytd")]
 layout_mode = 2
 
-[node name="ColorRect3" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwytd")]
-layout_mode = 2
-
-[node name="ColorRect4" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwytd")]
+[node name="musicchoose3" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwytd")]
 layout_mode = 2

@@ -1,24 +1,24 @@
 extends Node2D
 enum state { PLAYER_TURN, ENEMY_TURN, WAITING }
 enum mode { RED,BLUE }
-var current_state = state.PLAYER_TURN
-var current_mode = mode.RED
+var current_state := state.PLAYER_TURN
+var current_mode := mode.RED
 var battleenem
-var tp = 0
-var mana = 0
-var mana_max = 100
-var have_hearts = [] #0 jack, 1 mizu, 2 shadow, 3 Pavey, 4 Igreavious, 5 bugzie
-var enemy_hp = 100.0
-var maxenemy_hp = 100.0
+var tp := 0
+var mana := 0.0
+var mana_max := 100.0
+var have_hearts := [] #0 jack, 1 mizu, 2 shadow, 3 Pavey, 4 Igreavious, 5 bugzie
+var enemy_hp := 100.0
+var maxenemy_hp := 100.0
 var health := 100.0
 var maxhealth := 100.0
-var can_move = true
-var mercy=0
-var photoid = 0
-var playit = false
+var can_move := true
+var mercy:=0
+var photoid := 0
+var playit := false
 signal opcja
-var swing = false
-var items=[""]
+var swing := false
+var items:=[""]
 var inventory: Array[Item] = []
 var phoneapps: Array[String]
 

@@ -1,16 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://clwplkby0w3n1"]
 
-[ext_resource type="Script" uid="uid://kxcib30pq70u" path="res://scenes/ui/junior_music.gd" id="1_m5631"]
-[ext_resource type="Texture2D" uid="uid://ccvxcgkjtud2c" path="res://assets/ui/song/music2.png" id="1_uwytd"]
+[gd_scene load_steps=8 format=3 uid="uid://clwplkby0w3n1"]
+
+[ext_resource type="Script" uid="uid://darkr8url1nan" path="res://scenes/ui/junior_music.gd" id="1_e6rrv"]
+[ext_resource type="Texture2D" uid="uid://ccvxcgkjtud2c" path="res://assets/ui/song/music1.png" id="1_uwytd"]
 [ext_resource type="Texture2D" uid="uid://desf6n4nyt7lv" path="res://assets/ui/song/play.png" id="2_e6rrv"]
 [ext_resource type="Texture2D" uid="uid://cgg4s5wp3fe24" path="res://assets/ui/song/stop.png" id="3_m5631"]
-[ext_resource type="Texture2D" uid="uid://c7gc2vw3wnwk6" path="res://assets/ui/apps/closeapp.png" id="6_m5631"]
+[ext_resource type="Texture2D" uid="uid://c18ygwhusf0ny" path="res://assets/ui/song/closeapp.png" id="6_m5631"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5631"]
+size = Vector2(11, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e6rrv"]
-size = Vector2(12, 12)
+size = Vector2(122, 20)
 
 [node name="Junior Music" type="Node2D"]
-script = ExtResource("1_m5631")
+script = ExtResource("1_e6rrv")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(122, 122)
@@ -41,77 +45,94 @@ custom_minimum_size = Vector2(100, 38)
 layout_mode = 2
 color = Color(0.370364, 0.370364, 0.370364, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="mc/sc/vbc/sus"]
+[node name="cc" type="CenterContainer" parent="mc/sc/vbc/sus"]
 custom_minimum_size = Vector2(0, 38)
 layout_mode = 0
 offset_right = 100.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="mc/sc/vbc/sus/CenterContainer"]
+[node name="hbc" type="HBoxContainer" parent="mc/sc/vbc/sus/cc"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="mc/sc/vbc/sus/CenterContainer/HBoxContainer"]
+[node name="nowsong" type="TextureRect" parent="mc/sc/vbc/sus/cc/hbc"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("1_uwytd")
 expand_mode = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="mc/sc/vbc/sus/CenterContainer/HBoxContainer"]
+[node name="hbc" type="HBoxContainer" parent="mc/sc/vbc/sus/cc/hbc"]
 layout_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="mc/sc/vbc/sus/CenterContainer/HBoxContainer/HBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="mc/sc/vbc/sus/cc/hbc/hbc"]
 layout_mode = 2
 
-[node name="ColorRect2" type="ColorRect" parent="mc/sc/vbc/sus/CenterContainer/HBoxContainer/HBoxContainer/CenterContainer"]
+[node name="ColorRect2" type="ColorRect" parent="mc/sc/vbc/sus/cc/hbc/hbc/CenterContainer"]
 custom_minimum_size = Vector2(24, 16)
 layout_mode = 2
 size_flags_vertical = 4
 color = Color(0.753984, 0.753984, 0.753984, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="mc/sc/vbc/sus/CenterContainer/HBoxContainer/HBoxContainer/CenterContainer/ColorRect2"]
+[node name="CenterContainer" type="CenterContainer" parent="mc/sc/vbc/sus/cc/hbc/hbc/CenterContainer/ColorRect2"]
 layout_mode = 0
 offset_right = 24.0
 offset_bottom = 16.0
 
-[node name="TextureRect" type="TextureRect" parent="mc/sc/vbc/sus/CenterContainer/HBoxContainer/HBoxContainer/CenterContainer/ColorRect2/CenterContainer"]
+[node name="TextureRect" type="TextureRect" parent="mc/sc/vbc/sus/cc/hbc/hbc/CenterContainer/ColorRect2/CenterContainer"]
 custom_minimum_size = Vector2(11, 11)
 layout_mode = 2
 texture = ExtResource("2_e6rrv")
 expand_mode = 1
 
-[node name="CenterContainer2" type="CenterContainer" parent="mc/sc/vbc/sus/CenterContainer/HBoxContainer/HBoxContainer"]
+[node name="CenterContainer2" type="CenterContainer" parent="mc/sc/vbc/sus/cc/hbc/hbc"]
 layout_mode = 2
 
-[node name="ColorRect2" type="ColorRect" parent="mc/sc/vbc/sus/CenterContainer/HBoxContainer/HBoxContainer/CenterContainer2"]
+[node name="ColorRect2" type="ColorRect" parent="mc/sc/vbc/sus/cc/hbc/hbc/CenterContainer2"]
 custom_minimum_size = Vector2(24, 16)
 layout_mode = 2
 size_flags_vertical = 4
 color = Color(0.753984, 0.753984, 0.753984, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="mc/sc/vbc/sus/CenterContainer/HBoxContainer/HBoxContainer/CenterContainer2/ColorRect2"]
+[node name="CenterContainer" type="CenterContainer" parent="mc/sc/vbc/sus/cc/hbc/hbc/CenterContainer2/ColorRect2"]
 layout_mode = 0
 offset_right = 24.0
 offset_bottom = 16.0
 
-[node name="TextureRect" type="TextureRect" parent="mc/sc/vbc/sus/CenterContainer/HBoxContainer/HBoxContainer/CenterContainer2/ColorRect2/CenterContainer"]
+[node name="TextureRect" type="TextureRect" parent="mc/sc/vbc/sus/cc/hbc/hbc/CenterContainer2/ColorRect2/CenterContainer"]
 custom_minimum_size = Vector2(11, 11)
 layout_mode = 2
 texture = ExtResource("3_m5631")
 expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 109.0
+custom_minimum_size = Vector2(11, 11)
+offset_left = 110.0
 offset_top = 1.0
 offset_right = 121.0
-offset_bottom = 13.0
+offset_bottom = 12.0
 texture = ExtResource("6_m5631")
 expand_mode = 1
 
 [node name="Area2D" type="Area2D" parent="TextureRect"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Area2D"]
-position = Vector2(6, 6)
+position = Vector2(5.5, 5.5)
+shape = SubResource("RectangleShape2D_m5631")
+
+[node name="scrolldown" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scrolldown"]
+position = Vector2(61, 112)
+shape = SubResource("RectangleShape2D_e6rrv")
+
+[node name="scrollup" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scrollup"]
+position = Vector2(61, 10)
 shape = SubResource("RectangleShape2D_e6rrv")
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="body_entered" from="TextureRect/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="TextureRect/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="scrolldown" to="." method="_on_scrolldown_body_entered"]
+[connection signal="body_exited" from="scrolldown" to="." method="_on_scrolldown_body_exited"]
+[connection signal="body_entered" from="scrollup" to="." method="_on_scrollup_body_entered"]
+[connection signal="body_exited" from="scrollup" to="." method="_on_scrollup_body_exited"]

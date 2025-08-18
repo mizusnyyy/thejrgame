@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://db2wy807vcooi"]
+
+[ext_resource type="Texture2D" uid="uid://cq1vklqwbe630" path="res://assets/ui/apps/Jumbo maps.png" id="1_hgj0u"]
+[ext_resource type="Script" uid="uid://ch6fiw2sooiqh" path="res://scenes/ui/phoneapp.gd" id="1_onxm5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgj0u"]
+size = Vector2(22, 22)
+
+[node name="phoneapp" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_onxm5")
+
+[node name="txt" type="TextureRect" parent="."]
+layout_mode = 0
+texture = ExtResource("1_hgj0u")
+
+[node name="appshape" type="Area2D" parent="."]
+position = Vector2(11, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="appshape"]
+shape = SubResource("RectangleShape2D_hgj0u")
+
+[connection signal="body_entered" from="appshape" to="." method="_on_appshape_body_entered"]
+[connection signal="body_exited" from="appshape" to="." method="_on_appshape_body_exited"]

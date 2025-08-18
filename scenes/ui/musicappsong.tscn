@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://2xj1lr0ofume"]
+[gd_scene load_steps=5 format=3 uid="uid://b5fijjiaxhx2u"]
 
-[ext_resource type="Script" uid="uid://cs1i30ugie76g" path="res://scenes/ui/musicappsong.gd" id="1_xg3wb"]
-[ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="2_gudaj"]
-[ext_resource type="Texture2D" uid="uid://ccvxcgkjtud2c" path="res://assets/ui/song/music2.png" id="2_ouusg"]
+[ext_resource type="Script" uid="uid://dhpw70ni0r42a" path="res://scenes/ui/musicappsong.gd" id="1_xg3wb"]
+[ext_resource type="Texture2D" uid="uid://dq5f3f48wixa5" path="res://assets/ui/song/music1.png" id="2_ouusg"]
 [ext_resource type="Texture2D" uid="uid://desf6n4nyt7lv" path="res://assets/ui/song/play.png" id="3_gudaj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xg3wb"]
@@ -42,8 +41,7 @@ theme_override_colors/font_shadow_color = Color(0.446022, 0.355692, 0.270489, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 0
 theme_override_constants/shadow_outline_size = 2
-theme_override_fonts/font = ExtResource("2_gudaj")
-theme_override_font_sizes/font_size = 6
+theme_override_font_sizes/font_size = 4
 text = "juwww"
 vertical_alignment = 1
 

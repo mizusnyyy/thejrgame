@@ -61,15 +61,28 @@ func show_confirm_panel():
 	confirm_panel.modulate.a = 0.0
 	confirm_panel.visible = true
 
+	var label = confirm_panel.get_node("Label")
+	var yes_button = confirm_panel.get_node("button_yes")
+	var no_button = confirm_panel.get_node("button_no")
+
+	label.modulate.a = 0.0
+	yes_button.modulate.a = 0.0
+	no_button.modulate.a = 0.0
+
 	var tween = create_tween()
 	tween.tween_property(confirm_panel, "scale:x", 1, 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	tween.parallel().tween_property(confirm_panel, "modulate:a", 1.0, 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
-	var yes_button = confirm_panel.get_node("button_yes")
+	tween.finished.connect(func():
+		var tween_content = create_tween()
+		tween_content.set_parallel(true)
+		tween_content.tween_property(label, "modulate:a", 1.0, 0.25)
+		tween_content.tween_property(yes_button, "modulate:a", 1.0, 0.25)
+		tween_content.tween_property(no_button, "modulate:a", 1.0, 0.25)
+	)
+
 	if not yes_button.is_connected("pressed", Callable(self, "_on_confirm_quit")):
 		yes_button.pressed.connect(Callable(self, "_on_confirm_quit"))
-
-	var no_button = confirm_panel.get_node("button_no")
 	if not no_button.is_connected("pressed", Callable(self, "_on_cancel_quit")):
 		no_button.pressed.connect(Callable(self, "_on_cancel_quit"))
 

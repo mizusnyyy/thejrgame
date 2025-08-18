@@ -731,8 +731,6 @@ size = Vector2(16, 16)
 
 [node name="fight" type="Node2D"]
 script = SubResource("GDScript_w54gx")
-metadata/_edit_horizontal_guides_ = [163.0, 132.0, 112.0, 113.0, 256.0, 245.0]
-metadata/_edit_vertical_guides_ = [384.0, 239.0]
 
 [node name="bg" type="AnimatedSprite2D" parent="."]
 position = Vector2(321, 240)

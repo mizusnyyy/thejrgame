@@ -6,6 +6,7 @@ extends Node2D
 var apps = []
 var ins
 var s
+var scroll=false
 #func _input(event: InputEvent) -> void:
 	#if event.is_action_pressed("interact"):
 		#COS CO BEDZIE WCZESNIEJ TU
@@ -23,16 +24,13 @@ func deleng():
 
 func _on_ready() -> void:
 	inslockscreen()
-	makeapps()
-	scrollit()
 
 func scrollit():
-	val.scroll_horizontal=0
 	var tween = create_tween()
 	tween.tween_property(val, "scroll_horizontal", val.get_h_scroll_bar().max_value, 3)
 	await tween.finished
 	val.scroll_horizontal=0
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1.5).timeout
 	#val.scroll_horizontal += 1
 	#var max_scroll = val.get_h_scroll_bar().max_value
 	#print(val.scroll_horizontal," 1hiweje ", val.get_h_scroll_bar().max_value)
@@ -44,25 +42,53 @@ func scrollit():
 	scrollit()
 
 func makeapps():
-	global.glapps(["Pumsapp","Jumbo maps","Junior Music","Jack\'n\'gram"])
+	global.glapps(["Pumsapp","Jumbo maps","Junior Music","Jack'n'gram","CalPUMlator","igorapp","igorapp","igorapp","igorapp","igorapp"])
 	for i in len(global.phoneapps):
 		var path = preload("res://scenes/ui/phoneapp.tscn")
 		ins = path.instantiate()
 		s = global.phoneapps[i]
 		$MarginContainer/ScrollContainer/VBoxContainer/GridContainer.add_child(ins)
 		setapplabel()
-		print(i, " hisejnhh i ", s)
 		ins.setphoto(s)
 		apps.append(ins)
-
 func setapplabel():
 	var label = preload("res://scenes/ui/appname.tscn").instantiate()
 	ins.add_child(label)
 	label.position.y += 18
 	label.setname(s)
-	#return
-	#label.set_anchors_preset(Control.PRESET_CENTER)
-	#label.add_theme_font_size_override("font_size", 6)
-	#label.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
-	#label.vertical_alignment=VERTICAL_ALIGNMENT_CENTER
-	#label.global_position.y += 20
+
+func _on_scrolldown_body_entered(body: Node2D) -> void:
+	if get_node_or_null("lockscreen"):
+		return
+	if $apps.get_child_count()!=0:
+		print("Nigzl")
+		return
+	scroll=true
+	var x = $MarginContainer/ScrollContainer
+	var tween = create_tween()
+	while scroll:
+		if x.scroll_vertical < x.get_v_scroll_bar().max_value:
+			x.scroll_vertical+=1
+		await get_tree().process_frame
+
+func _on_scrolldown_body_exited(body: Node2D) -> void:
+	scroll=false
+
+
+func _on_scrollup_body_entered(body: Node2D) -> void:
+	print($apps.get_child_count())
+	if get_node_or_null("lockscreen"):
+		return
+	if $apps.get_child_count()!=0:
+		print("Nigzl")
+		return
+	scroll=true
+	var x = $MarginContainer/ScrollContainer
+	while scroll:
+		if x.scroll_vertical > 0:
+			x.scroll_vertical-=1
+		await get_tree().process_frame
+
+
+func _on_scrollup_body_exited(body: Node2D) -> void:
+	scroll=false

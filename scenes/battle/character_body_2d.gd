@@ -6,8 +6,6 @@ var alive = true
 var overlapping_button: Area2D = null
 var direction_choose=0
 var can_move=true
-@onready var sprite=$Sprite2D
-@onready var haudio=$hurt
 var invincible := false
 var state := false
 var tempspeed = SPEED
@@ -15,34 +13,10 @@ var circle
 var mana_timer := 0.0
 var mana_drain_rate := 0.2
 
-
-
-@onready var soul=$"."
-@onready var soulsande=load("res://scenes/battle/heartsande.tscn")
-@onready var soulcircle=load("res://scenes/battle/heartcircle.tscn")
-@onready var buttons = [
-	get_node("../notui/fight"),
-	get_node("../notui/act"),
-	get_node("../notui/item"),
-	get_node("../notui/mercy"),
-	get_node("../notui/spell"),
-	get_node("../notui/defend")
-]
-@onready var topbuttons = [
-	get_node("../notui/left arrow"),
-	get_node("../notui/right arrow")
-]
-
-var current_index := 0
-var current_top_index := 0
-var top=false
-var heart
-
-func update_soul_position():
-	soul.global_position = buttons[current_index].global_position
-
-func update_top_soul_position():
-	soul.global_position = topbuttons[current_top_index].global_position
+@onready var haudio:=$hurt
+@onready var sprite := $heart
+@onready var soul:=$"."
+@onready var jack:=$jack
 
 func flash_effect():
 	invincible = true
@@ -59,7 +33,6 @@ func flash_effect():
 		sprite.modulate.a = 1.0
 		await get_tree().create_timer(0.1).timeout
 	invincible = false
-
 func take_damage(amount, blue=false):
 	if velocity.x == 0 and velocity.y == 0 and blue:
 		print("bullet oh no im invicible oh no")
@@ -70,86 +43,31 @@ func take_damage(amount, blue=false):
 		global.health -= amount
 		print("bullet taken:", amount, " → the one holding the gun:", global.health)
 		flash_effect()
-
 func soul_is_alive():
 	return alive
-	
-func toggle():
-	state = !state
-	print("Nowy stan:", state)
 
-var speedchange = true
-func enginespeed():
-	if !speedchange:
-		while Engine.time_scale < 1:
-			Engine.time_scale += 0.01
-			print("war ", Engine.time_scale)
-			await get_tree().create_timer(0.01/(1/Engine.time_scale)).timeout
-		Engine.time_scale = 1
-		if circle:
-			circle.selfdel()
-		print("www aa ", Engine.time_scale)
-	else:
-		while Engine.time_scale > 0.2:
-			if !speedchange:
-				break
-				print("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW")
-			Engine.time_scale -= 0.01
-			print("war ", Engine.time_scale)
-			await get_tree().create_timer(0.01/(1/Engine.time_scale)).timeout
-		Engine.time_scale = 0.2
-		print("www aa ", Engine.time_scale)
 		
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("changeheart"):
-		if global.mana > 0:
-			state = true
-			tempspeed = SPEED
-			Engine.time_scale = 0.5
-			SPEED = SPEED / Engine.time_scale
-
-	if state:
-		mana_timer += delta
-		if mana_timer >= mana_drain_rate:
-			mana_timer -= mana_drain_rate
-			global.mana -= 1
-			if global.mana <= 0:
-				global.mana = 0
-				state = false
-				Engine.time_scale = 1.0
-				SPEED = tempspeed
-		var instance = soulsande.instantiate()
-		get_parent().get_parent().add_child(instance)
-		instance.global_position = sprite.global_position
-		instance.changeheart(sprite.texture, sprite.region_rect.position.x, sprite.region_rect.position.y)
-		
-	if Input.is_action_just_released("changeheart"):
-		state = false
-		Engine.time_scale = 1.0
-		SPEED = tempspeed
-
 	if alive and global.current_mode == global.mode.RED:
 		var directionlr := Input.get_axis("left", "right")
 		var directionud := Input.get_axis("up", "down")
 		var direction := Vector2(directionlr, directionud)
+		
 		if direction.length() > 0:
 			direction = direction.normalized()
 			velocity = direction * SPEED
+			if abs(direction.x) > abs(direction.y):
+				jack.play("leftright")
+				if direction.x < 0:
+					jack.flip_h = false
+				else:
+					jack.flip_h = true
+			else:
+				jack.play("frontback")
 		else:
 			velocity.x = move_toward(velocity.x, 0.0, SPEED)
 			velocity.y = move_toward(velocity.y, 0.0, SPEED)
-	
-	if alive and global.current_mode == global.mode.BLUE:
-		sprite.play("blue")
-		if not is_on_floor():
-			velocity += get_gravity() * delta
-		if Input.is_action_pressed("up") and is_on_floor():
-			velocity.y = JUMP_VELOCITY
-		var direction := Input.get_axis("left", "right")
-		if direction:
-			velocity.x = direction * SPEED
-		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+			jack.stop()
 	
 	if global.health <= 0:
 		alive = false

@@ -14,8 +14,8 @@ signal itsenemyturn
 func playerturn():
 	emit_signal("itsplayerturn")
 	
-	soul.can_move=false
 	var movesouldown = get_tree().create_tween()
+	soul.can_move=false
 	movesouldown.tween_property(soul, "position:y", 320.0, 1.0).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN_OUT)
 	soul.can_move=true
 	turn = true
@@ -24,14 +24,15 @@ func enemyturn():
 	
 	await get_tree().create_timer(1.0).timeout
 	
-	var movesoulup = get_tree().create_tween()
-	movesoulup.tween_property(soul, "position:y", 256.0, 1.0).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN_OUT)
+	#var movesoulup = get_tree().create_tween()
+	#movesoulup.tween_property(soul, "position:y", 256.0, 1.0).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN_OUT)
 	turn = false
 	
 	say("janek... to ty omb omb serio janek!")
 
 func _ready() -> void:
 	label.text=""
+	await get_tree().create_timer(3.0).timeout
 	var showenemy = get_tree().create_tween()
 	showenemy.tween_property(enemy, "position:y", 96.0, 1.0).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN_OUT)
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=131 format=3 uid="uid://chdd5rrfb285v"]
+[gd_scene load_steps=133 format=3 uid="uid://chdd5rrfb285v"]
 
 [ext_resource type="Script" uid="uid://dpt315f3ojcla" path="res://scenes/thebattle/battle.gd" id="1_gqj3t"]
 [ext_resource type="Texture2D" uid="uid://b45tvv1w8286c" path="res://assets/sprite/battle/bg/b0001.png" id="2_13gys"]
@@ -101,6 +101,7 @@
 [ext_resource type="Texture2D" uid="uid://ehf6sq83s60h" path="res://assets/sprite/battle/bg/b0098.png" id="99_fl11w"]
 [ext_resource type="Texture2D" uid="uid://ygndui1q364y" path="res://assets/sprite/battle/bg/b0099.png" id="100_3umbg"]
 [ext_resource type="Texture2D" uid="uid://nciyms0xvnjb" path="res://assets/sprite/battle/bg/b0100.png" id="101_riox6"]
+[ext_resource type="Texture2D" uid="uid://cjygwch3ndpin" path="res://assets/sprite/battle/box/side.png" id="102_1yjtx"]
 [ext_resource type="Texture2D" uid="uid://g8cdod2m8j0o" path="res://assets/sprite/battle/box.png" id="102_lt7kn"]
 [ext_resource type="Script" uid="uid://coq5ljd0rkn17" path="res://scenes/battle/enemysprite.gd" id="103_kqs8s"]
 [ext_resource type="Texture2D" uid="uid://dry6xkf7q8c34" path="res://assets/sprite/characters/shadow/enemypart/shadow_face.png" id="104_x6l8r"]
@@ -113,10 +114,7 @@
 [ext_resource type="Script" uid="uid://du1pctbd3kbws" path="res://scenes/battle/character_body_2d.gd" id="111_heaca"]
 [ext_resource type="AudioStream" uid="uid://cqtqlbe7co1q0" path="res://assets/sprite/battle/hurt.wav" id="112_kk2pp"]
 [ext_resource type="PackedScene" uid="uid://btunywoykvm0n" path="res://selectionwheel.2.tscn" id="113_kbdau"]
-[ext_resource type="Texture2D" uid="uid://cmj27cly056f7" path="res://assets/sprite/characters/jr/teto_back.png" id="114_c60p6"]
-[ext_resource type="Texture2D" uid="uid://6kf44nmw8j3i" path="res://assets/sprite/characters/jr/teto_side_better.png" id="115_2v481"]
-[ext_resource type="Texture2D" uid="uid://e5q4i0heuvg3" path="res://assets/sprite/characters/jr/teto_front.png" id="116_1uihe"]
-[ext_resource type="Texture2D" uid="uid://bq1mj2osrqcqs" path="res://assets/sprite/characters/jr/teto_side.png" id="117_4xgat"]
+[ext_resource type="Texture2D" uid="uid://euiwry2bpa3m" path="res://assets/sprite/characters/jr/jrbattlechibi.png" id="114_5jqvb"]
 [ext_resource type="Texture2D" uid="uid://jouutgjikwq0" path="res://assets/sprite/battle/hearts.png" id="118_471wb"]
 [ext_resource type="Script" uid="uid://c2qgeon711fgd" path="res://scenes/thebattle/hearth.gd" id="119_oe57y"]
 [ext_resource type="Script" uid="uid://bejskw4sl3ymu" path="res://scenes/battle/debug.gd" id="120_x87lg"]
@@ -442,24 +440,45 @@ size = Vector2(129, 3.47826)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eysmq"]
 size = Vector2(16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jqvb"]
+atlas = ExtResource("114_5jqvb")
+region = Rect2(0, 0, 6, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yjtx"]
+atlas = ExtResource("114_5jqvb")
+region = Rect2(6, 0, 6, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrso7"]
+atlas = ExtResource("114_5jqvb")
+region = Rect2(18, 0, 6, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqj3t"]
+atlas = ExtResource("114_5jqvb")
+region = Rect2(12, 0, 6, 15)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_yrjgu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("114_c60p6")
+"texture": SubResource("AtlasTexture_5jqvb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("115_2v481")
-}, {
-"duration": 1.0,
-"texture": ExtResource("116_1uihe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("117_4xgat")
+"texture": SubResource("AtlasTexture_1yjtx")
 }],
-"loop": false,
-"name": &"teto",
-"speed": 0.0
+"loop": true,
+"name": &"frontback",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrso7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqj3t")
+}],
+"loop": true,
+"name": &"leftright",
+"speed": 3.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ikebu"]
@@ -502,6 +521,28 @@ autoplay = "default"
 speed_scale = 0.5
 metadata/_edit_lock_ = true
 
+[node name="box2" type="Node2D" parent="."]
+
+[node name="rightside" type="Sprite2D" parent="box2"]
+position = Vector2(416, 245)
+texture = ExtResource("102_1yjtx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="box2/rightside"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box2/rightside/StaticBody2D"]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_1ssef")
+
+[node name="leftside" type="Sprite2D" parent="box2"]
+position = Vector2(227, 181)
+texture = ExtResource("102_1yjtx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="box2/leftside"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box2/leftside/StaticBody2D"]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_1ssef")
+
 [node name="box" type="Sprite2D" parent="."]
 position = Vector2(320, 256)
 texture = ExtResource("102_lt7kn")
@@ -522,23 +563,13 @@ metadata/_edit_use_anchors_ = true
 [node name="StaticBody2D" type="StaticBody2D" parent="box"]
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="box/StaticBody2D"]
-position = Vector2(2.04636e-12, -62.6087)
-shape = SubResource("RectangleShape2D_1ssef")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="box/StaticBody2D"]
-position = Vector2(-62.6087, 4.05312e-06)
-rotation = 1.5708
+position = Vector2(0, -62.6087)
 shape = SubResource("RectangleShape2D_1ssef")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="box/StaticBody2D"]
 position = Vector2(3.05176e-05, 62.6087)
 rotation = -3.14159
 shape = SubResource("RectangleShape2D_4argi")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="box/StaticBody2D"]
-position = Vector2(62.6087, -1.52588e-05)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_1ssef")
 
 [node name="enemy" type="Node2D" parent="."]
 position = Vector2(320, -72)
@@ -602,8 +633,8 @@ number_of_lines = [null, null, null, null, null, null]
 position = Vector2(0, -0.5)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_yrjgu")
-animation = &"teto"
-autoplay = "teto"
+animation = &"frontback"
+autoplay = "frontback"
 
 [node name="heart" type="AnimatedSprite2D" parent="soul"]
 sprite_frames = SubResource("SpriteFrames_72u7m")

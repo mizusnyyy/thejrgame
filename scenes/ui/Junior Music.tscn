@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://clwplkby0w3n1"]
+[gd_scene load_steps=7 format=3 uid="uid://clwplkby0w3n1"]
 
+[ext_resource type="Script" uid="uid://darkr8url1nan" path="res://scenes/ui/junior_music.gd" id="1_e6rrv"]
 [ext_resource type="Texture2D" uid="uid://ccvxcgkjtud2c" path="res://assets/ui/song/music1.png" id="1_uwytd"]
 [ext_resource type="Texture2D" uid="uid://desf6n4nyt7lv" path="res://assets/ui/song/play.png" id="2_e6rrv"]
 [ext_resource type="Texture2D" uid="uid://cgg4s5wp3fe24" path="res://assets/ui/song/stop.png" id="3_m5631"]
-[ext_resource type="PackedScene" uid="uid://2xj1lr0ofume" path="res://scenes/ui/musicappsong.tscn" id="4_uwytd"]
+[ext_resource type="Texture2D" uid="uid://c18ygwhusf0ny" path="res://assets/ui/song/closeapp.png" id="6_m5631"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5631"]
+size = Vector2(11, 11)
 
 [node name="Junior Music" type="Node2D"]
+script = ExtResource("1_e6rrv")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(122, 122)
@@ -13,7 +18,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.593134, 0.593134, 0.593134, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="mc" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(122, 122)
 offset_right = 40.0
 offset_bottom = 40.0
@@ -22,82 +27,91 @@ theme_override_constants/margin_top = 11
 theme_override_constants/margin_right = 11
 theme_override_constants/margin_bottom = 11
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+[node name="sc" type="ScrollContainer" parent="mc"]
 layout_mode = 2
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+[node name="vbc" type="VBoxContainer" parent="mc/sc"]
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="sus" type="ColorRect" parent="MarginContainer/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 38)
+[node name="sus" type="ColorRect" parent="mc/sc/vbc"]
+custom_minimum_size = Vector2(100, 38)
 layout_mode = 2
 color = Color(0.370364, 0.370364, 0.370364, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/sus"]
+[node name="cc" type="CenterContainer" parent="mc/sc/vbc/sus"]
 custom_minimum_size = Vector2(0, 38)
 layout_mode = 0
 offset_right = 100.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/sus/CenterContainer"]
+[node name="hbc" type="HBoxContainer" parent="mc/sc/vbc/sus/cc"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/sus/CenterContainer/HBoxContainer"]
+[node name="nowsong" type="TextureRect" parent="mc/sc/vbc/sus/cc/hbc"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("1_uwytd")
 expand_mode = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/sus/CenterContainer/HBoxContainer"]
+[node name="hbc" type="HBoxContainer" parent="mc/sc/vbc/sus/cc/hbc"]
 layout_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/sus/CenterContainer/HBoxContainer/HBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="mc/sc/vbc/sus/cc/hbc/hbc"]
 layout_mode = 2
 
-[node name="ColorRect2" type="ColorRect" parent="MarginContainer/ScrollContainer/VBoxContainer/sus/CenterContainer/HBoxContainer/HBoxContainer/CenterContainer"]
+[node name="ColorRect2" type="ColorRect" parent="mc/sc/vbc/sus/cc/hbc/hbc/CenterContainer"]
 custom_minimum_size = Vector2(24, 16)
 layout_mode = 2
 size_flags_vertical = 4
 color = Color(0.753984, 0.753984, 0.753984, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/sus/CenterContainer/HBoxContainer/HBoxContainer/CenterContainer/ColorRect2"]
+[node name="CenterContainer" type="CenterContainer" parent="mc/sc/vbc/sus/cc/hbc/hbc/CenterContainer/ColorRect2"]
 layout_mode = 0
 offset_right = 24.0
 offset_bottom = 16.0
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/sus/CenterContainer/HBoxContainer/HBoxContainer/CenterContainer/ColorRect2/CenterContainer"]
+[node name="TextureRect" type="TextureRect" parent="mc/sc/vbc/sus/cc/hbc/hbc/CenterContainer/ColorRect2/CenterContainer"]
 custom_minimum_size = Vector2(11, 11)
 layout_mode = 2
 texture = ExtResource("2_e6rrv")
 expand_mode = 1
 
-[node name="CenterContainer2" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/sus/CenterContainer/HBoxContainer/HBoxContainer"]
+[node name="CenterContainer2" type="CenterContainer" parent="mc/sc/vbc/sus/cc/hbc/hbc"]
 layout_mode = 2
 
-[node name="ColorRect2" type="ColorRect" parent="MarginContainer/ScrollContainer/VBoxContainer/sus/CenterContainer/HBoxContainer/HBoxContainer/CenterContainer2"]
+[node name="ColorRect2" type="ColorRect" parent="mc/sc/vbc/sus/cc/hbc/hbc/CenterContainer2"]
 custom_minimum_size = Vector2(24, 16)
 layout_mode = 2
 size_flags_vertical = 4
 color = Color(0.753984, 0.753984, 0.753984, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/sus/CenterContainer/HBoxContainer/HBoxContainer/CenterContainer2/ColorRect2"]
+[node name="CenterContainer" type="CenterContainer" parent="mc/sc/vbc/sus/cc/hbc/hbc/CenterContainer2/ColorRect2"]
 layout_mode = 0
 offset_right = 24.0
 offset_bottom = 16.0
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/sus/CenterContainer/HBoxContainer/HBoxContainer/CenterContainer2/ColorRect2/CenterContainer"]
+[node name="TextureRect" type="TextureRect" parent="mc/sc/vbc/sus/cc/hbc/hbc/CenterContainer2/ColorRect2/CenterContainer"]
 custom_minimum_size = Vector2(11, 11)
 layout_mode = 2
 texture = ExtResource("3_m5631")
 expand_mode = 1
 
-[node name="musicchoose" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwytd")]
-layout_mode = 2
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(11, 11)
+offset_left = 110.0
+offset_top = 1.0
+offset_right = 121.0
+offset_bottom = 12.0
+texture = ExtResource("6_m5631")
+expand_mode = 1
 
-[node name="musicchoose2" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwytd")]
-layout_mode = 2
+[node name="Area2D" type="Area2D" parent="TextureRect"]
 
-[node name="musicchoose3" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_uwytd")]
-layout_mode = 2
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Area2D"]
+position = Vector2(5.5, 5.5)
+shape = SubResource("RectangleShape2D_m5631")
+
+[connection signal="body_entered" from="TextureRect/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="TextureRect/Area2D" to="." method="_on_area_2d_body_exited"]

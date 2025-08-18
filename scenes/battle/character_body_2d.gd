@@ -48,7 +48,7 @@ func soul_is_alive():
 
 		
 func _physics_process(delta: float) -> void:
-	if alive and global.current_mode == global.mode.RED:
+	if alive and global.current_mode == global.mode.RED && can_move:
 		var directionlr := Input.get_axis("left", "right")
 		var directionud := Input.get_axis("up", "down")
 		var direction := Vector2(directionlr, directionud)

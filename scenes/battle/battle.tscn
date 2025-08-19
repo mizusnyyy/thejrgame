@@ -1035,7 +1035,7 @@ line_width = 1
 heart_radius = 28
 number_of_lines = [null, null, null, null, null, null]
 
-[node name="Sprite2D" type="Sprite2D" parent="soul"]
+[node name="heart" type="Sprite2D" parent="soul"]
 texture = ExtResource("139_wf2x0")
 region_enabled = true
 region_rect = Rect2(64, 0, 16, 16)

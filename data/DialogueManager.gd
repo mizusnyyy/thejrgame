@@ -68,7 +68,7 @@ func show_dialog(id) -> void:
 		var next_id = next_ids[picked_index]
 		if typeof(d.next) == TYPE_INT and d.next == dlg_e.battle:
 			print("11111?")
-			get_tree().change_scene_to_packed(preload("res://scenes/battle/battle.tscn"))
+			get_tree().change_scene_to_packed(preload("res://scenes/tempbattle/battle.tscn"))
 		dialog.typing = true
 		show_dialog(dlg_e[next_id])
 		return
@@ -77,6 +77,6 @@ func show_dialog(id) -> void:
 	if d.next!=null:
 		if typeof(d.next) == TYPE_INT and d.next == dlg_e.battle:
 			print("11111?")
-			get_tree().change_scene_to_packed(preload("res://scenes/battle/battle.tscn"))
+			get_tree().change_scene_to_packed(preload("res://scenes/tempbattle/battle.tscn"))
 		else:
 			show_dialog(d.next)

@@ -134,7 +134,12 @@ var shaking := false
 var urturn := false
 var is_rectangle = false
 
+var bullet
+var attack_scene: PackedScene
+
 signal itsplayerturn
+signal playerturnend
+signal enemyturnend
 signal itsenemyturn
 signal yousawitcoming
 signal said
@@ -148,17 +153,29 @@ func _ready() -> void:
 	await said
 	say(\"ITS PUM TIME!!!\",1)
 	await said
+	loop()
+
+func loop():
 	enemyturn()
-	#playerturn()
-
-func attack(id,)
-
+	for i in range(5):
+		attack()
+		await get_tree().create_timer(0.5).timeout
+	await enemyturnend
+	loop()
+func attack():
+	attack_scene = preload(\"res://scenes/attack/sword.tscn\")
+	bullet = instantiateall(attack_scene)
+	bullet.player=soul
+	bullet.summoned(bullet, soul, 600.0)
+	return
 func playerturn():
 	emit_signal(\"itsplayerturn\")
 	if soulsprite.visible:
 		changevisibilty()
 	var boxscaleplayerturn = get_tree().create_tween()
 	boxscaleplayerturn.tween_property(fbox, \"scale\", 1.5, 1.0)
+	await get_tree().create_timer(3.0).timeout
+	emit_signal(\"playerturnend\")
 func enemyturn():
 	emit_signal(\"itsenemyturn\")
 	if !soulsprite.visible:
@@ -167,12 +184,8 @@ func enemyturn():
 	var boxscaleenemyturn = get_tree().create_tween()
 	boxscaleenemyturn.tween_property(fbox, \"scale\", 1.0, 1.0)
 	
-	await get_tree().create_timer(1.0).timeout
-
-	#var movesoulup = get_tree().create_tween()
-	#movesoulup.tween_property(soul, \"position:y\", 256.0, 1.0).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN_OUT)
-	urturn = false
-
+	await get_tree().create_timer(3.0).timeout
+	emit_signal(\"enemyturnend\")
 func instantiateall(scene):
 	var instance = scene.instantiate()
 	add_child(instance)
@@ -660,7 +673,7 @@ func checkhearthsprite():
 		anim.frame=2
 "
 
-[node name="battle" type="Node2D"]
+[node name="fight" type="Node2D"]
 script = SubResource("GDScript_8th7f")
 
 [node name="bg" type="AnimatedSprite2D" parent="."]

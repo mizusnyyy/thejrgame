@@ -14,6 +14,7 @@ var bluecount = 6
 
 @onready var player = get_tree().get_root().get_node("/root/fight/soul")
 func _process(delta):
+	print(player)
 	if player && player.soul_is_alive():
 		position += direction * speed * delta
 		if position.y < -50 or position.y > 700 or position.y > 500 or position.y < -5000:

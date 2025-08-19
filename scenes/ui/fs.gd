@@ -34,7 +34,3 @@ func _input(event: InputEvent) -> void:
 			print("Jest pauza :3" if pauza else "Nie ma pauzy :3")
 		else:
 			print("⚠️ Nie znaleziono ColorRect lub Label, pauza pominięta")
-	if event.is_action_pressed("fs"):
-		print("fullscreen")
-		toggle_fullscreen()
-	

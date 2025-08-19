@@ -2,7 +2,7 @@ extends Node2D
 
 var dialogue_list = {}
 const dialogue_json_pth = "res://data/dialogue.json"
-const dlg_e = preload("res://data/dlg_enum.gd").dg # enum with all of dialogue
+const dlg_e = preload("res://data/dialogue_enum.gd").dg # enum with all of dialogue
 const sprite_directory = "res://assets/sprite/characters/"
 var dialog: Node = null
 var sound

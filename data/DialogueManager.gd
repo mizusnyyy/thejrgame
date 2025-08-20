@@ -46,11 +46,9 @@ func show_dialog(id) -> void:
 	if d.speaker!=null:
 		speakername = d.speaker
 		dialog.setname(speakername)
-		
 	if d.portrait!=null:
 		print("portret: ",d.portrait)
 		portrait = load(sprite_directory+d.portrait+".png")
-
 	# 1) Jeśli next to array (opcje)
 	if typeof(d.next) == TYPE_ARRAY:
 		# Pokaż tekst i poczekaj tylko do końca pisania (bez zamykania okna)

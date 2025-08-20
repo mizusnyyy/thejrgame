@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=3 uid="uid://jxpo5xgkhpos"]
 
 [ext_resource type="Script" uid="uid://dp6bgu4j6w5ly" path="res://scenes/story/pre-core/dialoge.gd" id="1_0xy2d"]
-[ext_resource type="Texture2D" uid="uid://cetj6jkrix8o0" path="res://assets/dialogue/dialogbox.png" id="2_0xy2d"]
+[ext_resource type="Texture2D" uid="uid://chfy62uw6qrga" path="res://assets/dialogue/dialogbox.png" id="2_0xy2d"]
 [ext_resource type="Texture2D" uid="uid://uprjhy1pj4b4" path="res://teto1.png" id="3_0xy2d"]
-[ext_resource type="Texture2D" uid="uid://dueln5ikys0bu" path="res://assets/dialogue/dialogadd1.png" id="3_ivdui"]
+[ext_resource type="Texture2D" uid="uid://cnijv0oqkh6jc" path="res://assets/dialogue/dialogadd1.png" id="3_ivdui"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_k308d"]
 [ext_resource type="Script" uid="uid://t6s4f322ej5p" path="res://scenes/story/pre-core/choice.gd" id="5_io7n7"]
 [ext_resource type="Texture2D" uid="uid://jouutgjikwq0" path="res://assets/sprite/battle/hearts.png" id="6_0xy2d"]

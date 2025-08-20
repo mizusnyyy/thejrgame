@@ -20,8 +20,10 @@ var dialogue_active := false
 var choosing := false
 var type_sound_player: AudioStreamPlayer2D = null
 
-func _ready() -> void:
+func _ready():
 	hide()
+	label.bbcode_enabled = true
+	label.install_effect(BounceEffect.new())
 
 func setname(textset):
 	$TextureRect/speaker.text = textset
@@ -115,8 +117,9 @@ func setoptions(options: Array, texts: Array) -> void:
 	choice.can_choose = false
 	
 func _type_text() -> void:
+	
 	while char_index < full_text.length() and typing:
-		label.text += full_text[char_index]
+		label.append_text("[bounce]" + full_text[char_index] + "[/bounce]")
 		var spd = tempspeed
 		match full_text[char_index]:
 			".", "!", "?":

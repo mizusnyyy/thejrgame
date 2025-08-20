@@ -1,4 +1,4 @@
-[gd_scene load_steps=176 format=3 uid="uid://chprno7b2lppf"]
+[gd_scene load_steps=182 format=3 uid="uid://chprno7b2lppf"]
 
 [ext_resource type="Texture2D" uid="uid://b45tvv1w8286c" path="res://assets/sprite/battle/bg/b0001.png" id="2_2ys7f"]
 [ext_resource type="Script" uid="uid://du1pctbd3kbws" path="res://scenes/battle/character_body_2d.gd" id="3_0yh6x"]
@@ -105,7 +105,7 @@
 [ext_resource type="Texture2D" uid="uid://ygndui1q364y" path="res://assets/sprite/battle/bg/b0099.png" id="100_jucj5"]
 [ext_resource type="Texture2D" uid="uid://nciyms0xvnjb" path="res://assets/sprite/battle/bg/b0100.png" id="101_0us13"]
 [ext_resource type="Texture2D" uid="uid://ctohqb5sh5hpn" path="res://assets/sprite/battle/progress_red.png" id="102_0cqqu"]
-[ext_resource type="Script" uid="uid://31070hst34kt" path="res://scenes/battle/box.gd" id="102_ue6uc"]
+[ext_resource type="Script" path="res://scenes/battle/box.gd" id="102_ue6uc"]
 [ext_resource type="Script" uid="uid://dx4xtblajk0rm" path="res://scenes/battle/Player_health_bar.gd" id="103_xo5np"]
 [ext_resource type="Texture2D" uid="uid://y1m2vpwobtg7" path="res://assets/sprite/battle/mana_ball1.png" id="104_hr533"]
 [ext_resource type="Script" uid="uid://bcnmmxb6atgap" path="res://scenes/battle/notui.gd" id="106_el03i"]
@@ -147,6 +147,7 @@
 [ext_resource type="Script" uid="uid://cfw8ku15s2mot" path="res://scenes/battle/sprite_2d.gd" id="139_itpkr"]
 [ext_resource type="Texture2D" uid="uid://jouutgjikwq0" path="res://assets/sprite/battle/hearts.png" id="139_wf2x0"]
 [ext_resource type="PackedScene" uid="uid://btunywoykvm0n" path="res://selectionwheel.2.tscn" id="144_ue6uc"]
+[ext_resource type="Texture2D" uid="uid://euiwry2bpa3m" path="res://assets/sprite/characters/jr/jrbattlechibi.png" id="145_dlka0"]
 
 [sub_resource type="GDScript" id="GDScript_w54gx"]
 script/source = "extends Node2D
@@ -726,6 +727,47 @@ size = Vector2(26.3333, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agsc7"]
 size = Vector2(16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jqvb"]
+atlas = ExtResource("145_dlka0")
+region = Rect2(0, 0, 6, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yjtx"]
+atlas = ExtResource("145_dlka0")
+region = Rect2(6, 0, 6, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrso7"]
+atlas = ExtResource("145_dlka0")
+region = Rect2(18, 0, 6, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqj3t"]
+atlas = ExtResource("145_dlka0")
+region = Rect2(12, 0, 6, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vlgby"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jqvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yjtx")
+}],
+"loop": true,
+"name": &"frontback",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrso7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqj3t")
+}],
+"loop": true,
+"name": &"leftright",
+"speed": 3.0
+}]
+
 [node name="fight" type="Node2D"]
 script = SubResource("GDScript_w54gx")
 
@@ -993,11 +1035,19 @@ line_width = 1
 heart_radius = 28
 number_of_lines = [null, null, null, null, null, null]
 
-[node name="Sprite2D" type="Sprite2D" parent="soul"]
+[node name="heart" type="Sprite2D" parent="soul"]
 texture = ExtResource("139_wf2x0")
 region_enabled = true
 region_rect = Rect2(64, 0, 16, 16)
 script = ExtResource("139_itpkr")
+
+[node name="jack" type="AnimatedSprite2D" parent="soul"]
+visible = false
+position = Vector2(0, -0.5)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_vlgby")
+animation = &"frontback"
+autoplay = "frontback"
 
 [node name="igorplayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("132_ly5g2")

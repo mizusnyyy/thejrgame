@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7smwd34t0dlc"]
+
+[ext_resource type="Script" uid="uid://by3ct5f3vigoc" path="res://scenes/attack/sword.gd" id="1_1nkrx"]
+[ext_resource type="Texture2D" uid="uid://b5kjtpfo12pye" path="res://assets/sprite/attacks/sword.png" id="1_gt7ni"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1nkrx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gt7ni")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1nkrx"]
+size = Vector2(8, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ucdqg"]
+size = Vector2(10, 2.5)
+
+[node name="sword" type="Node2D"]
+script = ExtResource("1_1nkrx")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_1nkrx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_1nkrx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -18.5)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_ucdqg")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

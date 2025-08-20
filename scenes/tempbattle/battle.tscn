@@ -1,6 +1,5 @@
 [gd_scene load_steps=132 format=3 uid="uid://chdd5rrfb285v"]
 
-[ext_resource type="Script" uid="uid://dpt315f3ojcla" path="res://scenes/thebattle/battle.gd" id="1_gqj3t"]
 [ext_resource type="Texture2D" uid="uid://b45tvv1w8286c" path="res://assets/sprite/battle/bg/b0001.png" id="2_13gys"]
 [ext_resource type="Texture2D" uid="uid://ccul4davfobg4" path="res://assets/sprite/battle/bg/b0002.png" id="3_7ikuy"]
 [ext_resource type="Texture2D" uid="uid://dd7j6ibluftfj" path="res://assets/sprite/battle/bg/b0003.png" id="4_tl6of"]
@@ -115,10 +114,160 @@
 [ext_resource type="PackedScene" uid="uid://btunywoykvm0n" path="res://selectionwheel.2.tscn" id="113_kbdau"]
 [ext_resource type="Texture2D" uid="uid://euiwry2bpa3m" path="res://assets/sprite/characters/jr/jrbattlechibi.png" id="114_5jqvb"]
 [ext_resource type="Texture2D" uid="uid://jouutgjikwq0" path="res://assets/sprite/battle/hearts.png" id="118_471wb"]
-[ext_resource type="AudioStream" uid="uid://g4j1usbewuu8" path="res://assets/sprite/battle/lastsuprise.mp3" id="119_1yjtx"]
-[ext_resource type="Script" uid="uid://c2qgeon711fgd" path="res://scenes/thebattle/hearth.gd" id="119_oe57y"]
+[ext_resource type="AudioStream" uid="uid://dq238q6fbhdl4" path="res://assets/sprite/battle/lastsuprise.mp3" id="119_1yjtx"]
 [ext_resource type="Script" uid="uid://bejskw4sl3ymu" path="res://scenes/battle/debug.gd" id="120_x87lg"]
 [ext_resource type="PackedScene" uid="uid://pegs4ep6hjc5" path="res://scenes/attackscenes/bone/bone.tscn" id="121_qabj5"]
+
+[sub_resource type="GDScript" id="GDScript_8th7f"]
+script/source = "extends Node2D
+
+@onready var enemy := $enemy
+@onready var jack := $soul/jack
+@onready var soul := $soul
+@onready var soulsprite := $soul/heart
+@onready var label := $enemy/RichTextLabel
+@onready var fbox := $box
+@onready var bg := $bg
+@onready var musicplayer := $music
+
+var shaking := false
+var urturn := false
+var is_rectangle = false
+
+var bullet
+var attack_scene: PackedScene
+
+signal itsplayerturn
+signal playerturnend
+signal enemyturnend
+signal itsenemyturn
+signal yousawitcoming
+signal said
+
+
+func _ready() -> void:
+	label.text=\"\"
+	youneverseeitcoming()
+	await yousawitcoming
+	say(\"YOU... STUPID\\nJAAAAACK!\",2)
+	await said
+	say(\"ITS PUM TIME!!!\",1)
+	await said
+	loop()
+
+func loop():
+	enemyturn()
+	for i in range(5):
+		attack()
+		await get_tree().create_timer(0.5).timeout
+	await enemyturnend
+	loop()
+func attack():
+	attack_scene = preload(\"res://scenes/attack/sword.tscn\")
+	bullet = instantiateall(attack_scene)
+	bullet.player=soul
+	bullet.summoned(bullet, soul, 600.0)
+	return
+func playerturn():
+	emit_signal(\"itsplayerturn\")
+	if soulsprite.visible:
+		changevisibilty()
+	var boxscaleplayerturn = get_tree().create_tween()
+	boxscaleplayerturn.tween_property(fbox, \"scale\", 1.5, 1.0)
+	await get_tree().create_timer(3.0).timeout
+	emit_signal(\"playerturnend\")
+func enemyturn():
+	emit_signal(\"itsenemyturn\")
+	if !soulsprite.visible:
+		changevisibilty()
+	
+	var boxscaleenemyturn = get_tree().create_tween()
+	boxscaleenemyturn.tween_property(fbox, \"scale\", 1.0, 1.0)
+	
+	await get_tree().create_timer(3.0).timeout
+	emit_signal(\"enemyturnend\")
+func instantiateall(scene):
+	var instance = scene.instantiate()
+	add_child(instance)
+	return instance
+
+func say(text: String, decaytime: float = 3.0, speed: float = 0.05) -> void:
+	label.text = \"\"
+	for i in text.length():
+		label.text += text[i]
+		
+		if text[i] == \".\":
+			await get_tree().create_timer(speed * 6).timeout
+		elif text[i] == \" \":
+			await get_tree().create_timer(speed * 2).timeout
+		else:
+			await get_tree().create_timer(speed).timeout
+	
+	await get_tree().create_timer(decaytime).timeout
+	label.text = \"\"
+	emit_signal(\"said\")
+
+
+func youneverseeitcoming():
+	bg.visible=false
+	fbox.visible=false
+	soul.can_move=false
+	soulsprite.visible=false
+	jack.visible=true
+	soul.position=Vector2(320,180)
+	
+	await get_tree().create_timer(2.0).timeout
+	var movesouldown = get_tree().create_tween()
+	movesouldown.tween_property(soul, \"position:y\", 304.0, 0.5).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN_OUT)
+	fbox.visible=true
+	
+	var showenemy = get_tree().create_tween()
+	showenemy.tween_property(enemy, \"position:y\", 96.0, 0.5).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	await get_tree().create_timer(0.2).timeout
+	shake(self,1,2.5)
+	shake(self,0.25,1)
+	musicplayer.play()
+	await showenemy.finished
+	shake(enemy,0.2,4)
+	for i in range(2):
+		jack.visible=false
+		bg.visible=true
+		soulsprite.visible=true
+		await get_tree().create_timer(0.1).timeout
+		jack.visible=true
+		soulsprite.visible=false
+		await get_tree().create_timer(0.1).timeout
+	soul.can_move=true
+	emit_signal(\"yousawitcoming\")
+
+func changevisibilty():
+	for i in range(5):
+		soulsprite.visible=!soulsprite.visible
+		jack.visible=!jack.visible
+		await get_tree().create_timer(0.1).timeout
+
+func shake(who: Node2D, duration: float = 0.3, strength: float = 5.0) -> void:
+	if shaking:
+		return
+	shaking = true
+	_do_shake(who, duration, strength)
+func _do_shake(who: Node2D, duration: float, strength: float) -> void:
+	var timer := duration
+	var original_pos := who.position
+
+	while timer > 0:
+		who.position = original_pos + Vector2(
+			randf_range(-strength, strength),
+			randf_range(-strength, strength)
+		)
+		await get_tree().create_timer(0.02).timeout
+		timer -= 0.02
+
+	who.position = original_pos
+	shaking = false
+	who.position = original_pos
+	shaking = false
+"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0cftw"]
 animations = [{
@@ -507,8 +656,25 @@ animations = [{
 "speed": 0.0
 }]
 
-[node name="battle" type="Node2D"]
-script = ExtResource("1_gqj3t")
+[sub_resource type="GDScript" id="GDScript_5jqvb"]
+script/source = "extends AnimatedSprite2D
+@onready var anim :=$\".\"
+
+
+func _process(delta: float) -> void:
+	checkhearthsprite()
+
+func checkhearthsprite():
+	if global.health>50:
+		anim.frame=0
+	elif global.health>20:
+		anim.frame=1
+	else:
+		anim.frame=2
+"
+
+[node name="fight" type="Node2D"]
+script = SubResource("GDScript_8th7f")
 
 [node name="bg" type="AnimatedSprite2D" parent="."]
 position = Vector2(321, 240)
@@ -613,7 +779,7 @@ autoplay = "frontback"
 sprite_frames = SubResource("SpriteFrames_72u7m")
 animation = &"jack"
 autoplay = "jack"
-script = ExtResource("119_oe57y")
+script = SubResource("GDScript_5jqvb")
 
 [node name="debug" type="Node2D" parent="."]
 position = Vector2(0, 0.5)

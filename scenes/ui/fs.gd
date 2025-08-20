@@ -4,6 +4,12 @@ var pauza := false
 var screen : ColorRect
 var label : Label
 
+func toggle_fullscreen():
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+
 func _ready():
 	# Spróbuj przypisać od razu
 	if has_node("ColorRect"):

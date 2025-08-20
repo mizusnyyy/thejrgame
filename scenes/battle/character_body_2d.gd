@@ -20,7 +20,7 @@ var mana_drain_rate := 0.2
 
 func flash_effect():
 	invincible = true
-	var flash_times = 4
+	var flash_times = 2
 	if global.health == 0:
 		haudio.pitch_scale = 0.5
 		haudio.play()

@@ -2,7 +2,7 @@ extends Control
 
 @export var text_speed := 0.05
 @onready var tempspeed = text_speed
-@onready var label := $RichTextLabel
+@onready var label: RichTextLabel = $RichTextLabel
 @onready var portrait := $TextureRect
 @onready var choice = $choice/indicator
 @onready var markeropt = $RichTextLabel/optsetter
@@ -20,10 +20,15 @@ var dialogue_active := false
 var choosing := false
 var type_sound_player: AudioStreamPlayer2D = null
 
-func _ready():
+func _process(_delta: float) -> void:
+	label.queue_redraw()
+
+func _ready() -> void:
 	hide()
 	label.bbcode_enabled = true
+	var BounceEffect = preload("res://scenes/ui/BounceEffect.gd")
 	label.install_effect(BounceEffect.new())
+	set_process(true)
 
 func setname(textset):
 	$TextureRect/speaker.text = textset
@@ -149,7 +154,8 @@ func _unhandled_input(event):
 	if event.is_action_pressed("interact"):
 		if typing:
 			typing = false
-			label.text = full_text
+			label.clear()
+			label.append_text("[bounce]%s[/bounce]" % full_text)
 			emit_signal("text_typed")
 		else:
 			dialogue_active = false

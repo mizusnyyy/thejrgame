@@ -73,6 +73,7 @@ func _physics_process(delta: float) -> void:
 		alive = false
 		await get_tree().create_timer(1.5).timeout
 		get_tree().change_scene_to_file("res://scenes/battle/gg/gg.tscn")
+		global.can_phone=true
 	else:
 		alive = true
 

@@ -22,6 +22,8 @@ var items:=[""]
 var inventory: Array[Item] = []
 var phoneapps: Array[String]
 
+var can_phone := true
+
 func glapps(app:Array[String]):
 	for i in len(app):
 		phoneapps.append(app[i])

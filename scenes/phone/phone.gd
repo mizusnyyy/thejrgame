@@ -38,6 +38,8 @@ func _process(_delta):
 			_show_phone()
 
 func _show_phone():
+	if not global.can_phone:
+		return
 	visible = true
 	is_animating = true
 	

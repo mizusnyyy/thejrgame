@@ -62,6 +62,7 @@ func _physics_process(delta: float) -> void:
 func obtainanim(txt):
 	if anim_locked:
 		return
+	global.can_phone = false
 	var item = $AnimatedSprite2D/item
 	anim_locked = true
 	velocity = Vector2.ZERO
@@ -71,6 +72,7 @@ func obtainanim(txt):
 	await get_tree().create_timer(0.8).timeout
 	item.hide()
 	anim_locked = false
+	global.can_phone = true
 
 func _on_ready() -> void:
 	await get_tree().create_timer(0.2).timeout

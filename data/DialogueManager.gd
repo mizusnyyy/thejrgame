@@ -78,3 +78,5 @@ func show_dialog(id) -> void:
 			get_tree().change_scene_to_packed(preload("res://scenes/tempbattle/battle.tscn"))
 		else:
 			show_dialog(d.next)
+	else:
+		global.can_phone = true

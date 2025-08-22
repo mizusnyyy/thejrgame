@@ -129,6 +129,7 @@ script/source = "extends Node2D
 @onready var fbox := $box
 @onready var bg := $bg
 @onready var musicplayer := $music
+@onready var collision := $soul/CollisionShape2D
 
 var shaking := false
 var urturn := false
@@ -162,6 +163,7 @@ func loop():
 		attack()
 		await get_tree().create_timer(0.5).timeout
 	await enemyturnend
+	changevisibilty()
 	loop()
 func attack():
 	attack_scene = preload(\"res://scenes/attack/sword.tscn\")
@@ -230,14 +232,7 @@ func youneverseeitcoming():
 	musicplayer.play()
 	await showenemy.finished
 	shake(enemy,0.2,4)
-	for i in range(2):
-		jack.visible=false
-		bg.visible=true
-		soulsprite.visible=true
-		await get_tree().create_timer(0.1).timeout
-		jack.visible=true
-		soulsprite.visible=false
-		await get_tree().create_timer(0.1).timeout
+	changevisibilty()
 	soul.can_move=true
 	emit_signal(\"yousawitcoming\")
 
@@ -245,6 +240,10 @@ func changevisibilty():
 	for i in range(5):
 		soulsprite.visible=!soulsprite.visible
 		jack.visible=!jack.visible
+		if jack.visible:
+			collision.scale.y=2.0
+		else:
+			collision.scale.y=1.0
 		await get_tree().create_timer(0.1).timeout
 
 func shake(who: Node2D, duration: float = 0.3, strength: float = 5.0) -> void:
@@ -769,7 +768,6 @@ heart_radius = 28
 number_of_lines = [null, null, null, null, null, null]
 
 [node name="jack" type="AnimatedSprite2D" parent="soul"]
-visible = false
 position = Vector2(0, -0.5)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_yrjgu")

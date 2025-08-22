@@ -30,5 +30,9 @@
 	]},
 	{"id": "core_walka_1", "text": "ok.", "speaker": "core", "portrait": "jr/teto_side_better","next":null},
 	{"id": "core_walka_2", "text": "well 2 bad imma touch u.", "speaker": "core", "portrait": "jr/teto_side_better","next":null},
-	{"id": "core_weird_1", "text": "naaa... you made it weird now...", "speaker": "core", "portrait": "jr/teto_side_better","next":null}	
+	{"id": "core_weird_1", "text": "naaa... you made it weird now...", "speaker": "core", "portrait": "jr/teto_side_better","next":null},
+	{"id": "shadow1_start", "text": "hej jacek", "speaker": "shadow", "portrait": "shadow/portrait/shadow4","next":"shadow_intro_8"},
+	{"id": "shadow_intro_8", "text": "id love to touch you", "speaker": "shadow", "portrait": "shadow/portrait/shadow4","next":"shadow_intro_9"},
+	{"id": "shadow_intro_9", "text": "uwielbian nwordy", "speaker": "freaky shadow", "portrait": "shadow/portrait/shadow4","next":null}	
+
 ]

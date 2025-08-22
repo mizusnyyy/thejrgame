@@ -105,7 +105,7 @@
 [ext_resource type="Texture2D" uid="uid://ygndui1q364y" path="res://assets/sprite/battle/bg/b0099.png" id="100_jucj5"]
 [ext_resource type="Texture2D" uid="uid://nciyms0xvnjb" path="res://assets/sprite/battle/bg/b0100.png" id="101_0us13"]
 [ext_resource type="Texture2D" uid="uid://ctohqb5sh5hpn" path="res://assets/sprite/battle/progress_red.png" id="102_0cqqu"]
-[ext_resource type="Script" path="res://scenes/battle/box.gd" id="102_ue6uc"]
+[ext_resource type="Script" uid="uid://31070hst34kt" path="res://scenes/battle/box.gd" id="102_ue6uc"]
 [ext_resource type="Script" uid="uid://dx4xtblajk0rm" path="res://scenes/battle/Player_health_bar.gd" id="103_xo5np"]
 [ext_resource type="Texture2D" uid="uid://y1m2vpwobtg7" path="res://assets/sprite/battle/mana_ball1.png" id="104_hr533"]
 [ext_resource type="Script" uid="uid://bcnmmxb6atgap" path="res://scenes/battle/notui.gd" id="106_el03i"]

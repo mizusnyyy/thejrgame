@@ -55,7 +55,14 @@ func _show_phone():
 		is_animating = false
 	)
 
-func _hide_phone():
+func _hide_phone(prevent=false):
+	if prevent:
+		visible=false
+		hidecursor()
+		$TextureRect/phoneeng.deleng()
+		await get_tree().create_timer(0.6).timeout
+		self.position = Vector2(128, 720)
+		return
 	is_animating = true
 
 	var tween = create_tween()

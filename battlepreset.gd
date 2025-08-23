@@ -1,4 +1,4 @@
 extends Node2D
 
 var enemtxt: Texture
-var enemidpreset = 0
+var enemidpreset := 0

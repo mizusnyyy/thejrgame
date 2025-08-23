@@ -155,13 +155,8 @@ func _ready() -> void:
 	say(\"YOU... STUPID\\nJAAAAACK!\",2)
 	await said
 	say(\"ITS PUM TIME!!!\",1)
-	makesmallbox(15,15,0,76)
-	makesmallbox(40,30,61,15)
-	makesmallbox(40,30,-61,76+61)
 	await said
 	say(\"a tak szczerze\\ndzem to cwel\\n... serio\",1)
-	makesmallbox(40,30,61,76+61)
-	makesmallbox(90,30,-61,15)
 	await said
 	loop()
 
@@ -171,23 +166,9 @@ func loop():
 		attack()
 		await get_tree().create_timer(0.5).timeout
 	await enemyturnend
-	for i in range(5):
-		if i==2:
-			makesmallbox(30,30,randi()%90-45,76+randi()%90-45)
-			
-	if len(boxes)>1:
-		delbox()
+	makesmallbox(randi()%50+25,randi()%50+25,randi()%122-61,randi()%122+15)
 	changevisibilty()
 	loop()
-
-func delbox():
-	var ran := randi()%(len(boxes)-1)+1
-	var tween:=create_tween()
-	tween.tween_property(boxes[ran], \"modulate:a\", 0, 0.6).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_IN_OUT)
-	await tween.finished
-	boxes[ran].queue_free()
-	boxes.remove_at(ran)
-
 func attack():
 	attack_scene = preload(\"res://scenes/attack/sword.tscn\")
 	bullet = instantiateall(attack_scene)
@@ -234,26 +215,24 @@ func say(text: String, decaytime: float = 3.0, speed: float = 0.05) -> void:
 	emit_signal(\"said\")
 
 func makesmallbox(x:float=122,y:float=122, posx:float=0.0, posy:float=256.0):
-	var posb = boxes[0].position
-	#if boxes.size() > 1 and boxes[1]:
-		#boxes[1].queue_free()
-		#boxes.remove_at(1)
+	#if x>boxes[0].
+	if boxes.size() > 1 and boxes[1]:
+		boxes[1].queue_free()
+		boxes.remove_at(1)
 	var scene := preload(\"res://scenes/battle/box.tscn\")
 	var box = instantiateall(scene)
-	box.setall(x,y,posx,posy,posb)
+	box.setall(x,y,posx,posy,false)
 	add_child(box)
 	boxes.append(box)
-	print(\"boxy -> \", box.position, \" gl -> \", box.global_position)
 	
 
 func makebox(x:float=122,y:float=122, posx:float=0.0, posy:float=256.0):
 	var scene := preload(\"res://scenes/battle/box.tscn\")
 	var box = instantiateall(scene)
-	box.setall(x,y,posx,posy,Vector2(-500,0))
+	box.setall(x,y,posx,posy)
 	add_child(box)
 	fbox = box
 	boxes.append(box)
-	print(\"BOX REAL -> \", box.position, \" gl -> \", box.global_position)
 
 func youneverseeitcoming():
 	bg.visible=false

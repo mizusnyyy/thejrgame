@@ -1,6 +1,6 @@
 extends Node2D
-@onready var gloo_scene = preload("res://scenes/attackscenes/bone/bone.tscn")
-@onready var midscreen = get_viewport().get_visible_rect().size.x / 2
+@onready var gloo_scene := preload("res://scenes/attackscenes/bone/bone.tscn")
+@onready var midscreen := get_viewport().get_visible_rect().size.x / 2
 signal attack_finished
 
 func summoned(bullet, soul, speed):
@@ -22,7 +22,7 @@ func startsequence(bullet, soul, speed, left,size,ylevel=320):
 	bullet = instantiateall(gloo_scene)
 	bullet.summoned(bullet,soul, speed, left,size,ylevel)
 	bullet.modulate.a = 0.0
-	var tween = get_tree().create_tween()
+	var tween := get_tree().create_tween()
 	tween.tween_property(bullet, "modulate:a", 1.0, 0.25).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 
 func instantiateall(scene):

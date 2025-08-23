@@ -387,6 +387,15 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_5g7yr")
 autoplay = "default"
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -92.0
+offset_top = -45.0
+offset_right = 132.0
+offset_bottom = 24.0
+theme_override_colors/default_color = Color(0.768618, 0.00181568, 0.927939, 1)
+text = "go outsideth, outsideth!
+<----"
+
 [connection signal="body_entered" from="tilemap/tp/quickchange" to="tilemap/tp/quickchange" method="_on_body_entered"]
 [connection signal="ready" from="tilemap/tp/quickchange" to="tilemap/tp/quickchange" method="_on_ready"]
 [connection signal="body_entered" from="tilemap/tp/quickchange2" to="tilemap/tp/quickchange2" method="_on_body_entered"]

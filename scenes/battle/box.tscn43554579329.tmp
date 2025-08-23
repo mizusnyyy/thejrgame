@@ -1,0 +1,117 @@
+[gd_scene load_steps=7 format=3 uid="uid://wo5sd5udhqg6"]
+
+[ext_resource type="Texture2D" uid="uid://ktcbup6ebxp" path="res://assets/sprite/battle/box/boxside.png" id="1_hgwoi"]
+[ext_resource type="Script" uid="uid://31070hst34kt" path="res://scenes/battle/box.gd" id="1_vyhm3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vyhm3"]
+resource_local_to_scene = true
+size = Vector2(122, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nyxj7"]
+resource_local_to_scene = true
+size = Vector2(122, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dn7fb"]
+resource_local_to_scene = true
+size = Vector2(122, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2ywv"]
+resource_local_to_scene = true
+size = Vector2(122, 4)
+
+[node name="box" type="Node2D"]
+script = ExtResource("1_vyhm3")
+
+[node name="colfull" type="StaticBody2D" parent="."]
+z_index = -1
+
+[node name="bg" type="ColorRect" parent="colfull"]
+offset_left = -61.0
+offset_top = -61.0
+offset_right = 61.0
+offset_bottom = 61.0
+color = Color(0, 0, 0, 1)
+
+[node name="lcol" type="CollisionShape2D" parent="colfull"]
+position = Vector2(-63, 0)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_vyhm3")
+
+[node name="ttxt" type="TextureRect" parent="colfull/lcol"]
+show_behind_parent = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -2.0
+offset_right = 61.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hgwoi")
+expand_mode = 1
+
+[node name="rcol" type="CollisionShape2D" parent="colfull"]
+position = Vector2(63, 0)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_nyxj7")
+
+[node name="ttxt" type="TextureRect" parent="colfull/rcol"]
+show_behind_parent = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -2.0
+offset_right = 61.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hgwoi")
+expand_mode = 1
+
+[node name="tcol" type="CollisionShape2D" parent="colfull"]
+position = Vector2(0, -63)
+shape = SubResource("RectangleShape2D_dn7fb")
+
+[node name="ttxt" type="TextureRect" parent="colfull/tcol"]
+show_behind_parent = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -2.0
+offset_right = 61.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hgwoi")
+expand_mode = 1
+
+[node name="dcol" type="CollisionShape2D" parent="colfull"]
+position = Vector2(0, 63)
+rotation = -3.14159
+shape = SubResource("RectangleShape2D_c2ywv")
+
+[node name="ttxt" type="TextureRect" parent="colfull/dcol"]
+show_behind_parent = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -2.0
+offset_right = 61.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(61, 2)
+texture = ExtResource("1_hgwoi")
+expand_mode = 1

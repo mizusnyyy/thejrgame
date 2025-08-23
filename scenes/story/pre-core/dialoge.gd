@@ -1,12 +1,14 @@
 extends Control
 
 @export var text_speed := 0.05
-@onready var tempspeed = text_speed
+@onready var tempspeed := text_speed
 @onready var label: RichTextLabel = $RichTextLabel
 @onready var portrait := $TextureRect
-@onready var choice = $choice/indicator
-@onready var markeropt = $RichTextLabel/optsetter
+@onready var choice := $choice/indicator
+@onready var markeropt := $RichTextLabel/optsetter
+@onready var hand := $TextureRect/hand
 var just_chose := false
+const pathhand := "res://assets/dialogue/hand/hand"
 
 signal dialogue_started
 signal dialogue_finished         # sygnał końca linii BEZ opcji (zamknięcie okna)
@@ -29,6 +31,12 @@ func _ready() -> void:
 	var BounceEffect = preload("res://scenes/ui/BounceEffect.gd")
 	label.install_effect(BounceEffect.new())
 	set_process(true)
+func delhand():
+	hand.hide()
+func sethand(handset):
+	hand.get_child(0).texture = load(pathhand+handset+".png")
+	hand.show()
+	print("ihwihwhiihih ", hand.visible)
 
 func setname(textset):
 	$TextureRect/speaker.text = textset
@@ -72,7 +80,6 @@ func show_dialogue(
 		hide()
 		global.can_move = true
 	else:
-		# Nie zamykamy okna – pozwalamy managerowi pokazać opcje
 		return
 
 func choose(options: Array, texts: Array):
@@ -89,7 +96,6 @@ func choose(options: Array, texts: Array):
 	await setoptions(options, texts) # czeka do momentu wyboru (obsługa w setoptions)
 
 func setoptions(options: Array, texts: Array) -> void:
-	print("wwwzz",typing)
 	var sceneopt = load("res://scenes/ui/buttonopt.tscn")
 	var alan: Array = []
 	for i in range(options.size()):
@@ -125,7 +131,7 @@ func _type_text() -> void:
 	
 	while char_index < full_text.length() and typing:
 		label.append_text("[bounce]" + full_text[char_index] + "[/bounce]")
-		var spd = tempspeed
+		var spd := tempspeed
 		match full_text[char_index]:
 			".", "!", "?":
 				spd *= 9

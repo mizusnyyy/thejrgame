@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://wo5sd5udhqg6"]
+
+[ext_resource type="Texture2D" uid="uid://ktcbup6ebxp" path="res://assets/sprite/battle/box/boxside.png" id="1_hgwoi"]
+[ext_resource type="Script" uid="uid://31070hst34kt" path="res://scenes/battle/box.gd" id="1_vyhm3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vyhm3"]
+size = Vector2(122, 2)
+
+[node name="box" type="Node2D"]
+script = ExtResource("1_vyhm3")
+
+[node name="colfull" type="StaticBody2D" parent="."]
+
+[node name="lcol" type="CollisionShape2D" parent="colfull"]
+position = Vector2(-62, 0)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_vyhm3")
+
+[node name="ttxt" type="TextureRect" parent="colfull/lcol"]
+show_behind_parent = true
+offset_left = -61.0
+offset_top = -3.0
+offset_right = 61.0
+offset_bottom = 1.0
+texture = ExtResource("1_hgwoi")
+
+[node name="rcol" type="CollisionShape2D" parent="colfull"]
+position = Vector2(62, 0)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_vyhm3")
+
+[node name="ttxt" type="TextureRect" parent="colfull/rcol"]
+show_behind_parent = true
+offset_left = -61.0
+offset_top = -3.0
+offset_right = 61.0
+offset_bottom = 1.0
+texture = ExtResource("1_hgwoi")
+
+[node name="tcol" type="CollisionShape2D" parent="colfull"]
+position = Vector2(0, -62)
+shape = SubResource("RectangleShape2D_vyhm3")
+
+[node name="ttxt" type="TextureRect" parent="colfull/tcol"]
+show_behind_parent = true
+offset_left = -61.0
+offset_top = -3.0
+offset_right = 61.0
+offset_bottom = 1.0
+texture = ExtResource("1_hgwoi")
+
+[node name="dcol" type="CollisionShape2D" parent="colfull"]
+position = Vector2(0, 62)
+rotation = -3.14159
+shape = SubResource("RectangleShape2D_vyhm3")
+
+[node name="ttxt" type="TextureRect" parent="colfull/dcol"]
+show_behind_parent = true
+offset_left = -61.0
+offset_top = -3.0
+offset_right = 61.0
+offset_bottom = 1.0
+texture = ExtResource("1_hgwoi")

@@ -23,7 +23,6 @@ func _on_body_entered(body: Node2D) -> void:
 		var step = speed * get_process_delta_time()
 		playersprite.global_position += dir * step
 		await get_tree().create_timer(0.015).timeout
-		print(phone.visible)
 	playersprite.position = temp
 	# Możesz ustawić dokładną pozycję docelową względem punktu "gdzie"
 	velocityplayer.global_position.x = $gdzie.global_position.x

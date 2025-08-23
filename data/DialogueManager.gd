@@ -1,13 +1,15 @@
 extends Node2D
 
-var dialogue_list = {}
-const dialogue_json_pth = "res://data/dialogue.json"
-const dlg_e = preload("res://data/dialogue_enum.gd").dg # enum with all of dialogue
-const sprite_directory = "res://assets/sprite/characters/"
+var dialogue_list := {}
+const dialogue_json_pth := "res://data/dialogue.json"
+const dlg_e := preload("res://data/dialogue_enum.gd").dg # enum with all of dialogue
+const sprite_directory := "res://assets/sprite/characters/"
 var dialog: Node = null
 var sound
-var speakername
+var speakername:String
+var hand:String
 var portrait: Texture
+var temp := false
 
 func _ready() -> void:
 	load_dialogues()
@@ -27,7 +29,8 @@ func load_dialogues() -> void:
 				entry.text,
 				next_enum,
 				entry.speaker,
-				entry.portrait
+				entry.portrait,
+				entry.hand
 			)
 	else:
 			push_error("Nie udało się otworzyć pliku dialogów : " + dialogue_json_pth)
@@ -43,6 +46,14 @@ func begin_dialogue(character: String, dialogset: Node, soundset):
 func show_dialog(id) -> void:
 	
 	var d = dialogue_list[id]
+	print("h9jewajihuwuihwiu ",d)
+	if d.hand!=null:
+		temp = true
+		hand = d.hand
+		dialog.sethand(hand)
+	elif temp:
+		dialog.delhand()
+		temp = false
 	if d.speaker!=null:
 		speakername = d.speaker
 		dialog.setname(speakername)

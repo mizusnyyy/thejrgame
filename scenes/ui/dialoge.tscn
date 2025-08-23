@@ -1,11 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://jxpo5xgkhpos"]
+[gd_scene load_steps=16 format=3 uid="uid://jxpo5xgkhpos"]
 
 [ext_resource type="Script" uid="uid://dp6bgu4j6w5ly" path="res://scenes/story/pre-core/dialoge.gd" id="1_0xy2d"]
 [ext_resource type="Texture2D" uid="uid://cetj6jkrix8o0" path="res://assets/dialogue/dialogbox.png" id="2_0xy2d"]
-[ext_resource type="Texture2D" uid="uid://uprjhy1pj4b4" path="res://teto1.png" id="3_0xy2d"]
 [ext_resource type="Texture2D" uid="uid://dueln5ikys0bu" path="res://assets/dialogue/dialogadd1.png" id="3_ivdui"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_k308d"]
+[ext_resource type="Texture2D" uid="uid://btgr63nfd64su" path="res://assets/sprite/characters/shadow/portrait/shadow1.png" id="4_k308d"]
 [ext_resource type="Script" uid="uid://t6s4f322ej5p" path="res://scenes/story/pre-core/choice.gd" id="5_io7n7"]
+[ext_resource type="PackedScene" uid="uid://bmcjis4xi20sm" path="res://scenes/ui/hand.tscn" id="5_k308d"]
 [ext_resource type="Texture2D" uid="uid://jouutgjikwq0" path="res://assets/sprite/battle/hearts.png" id="6_0xy2d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0gfoe"]
@@ -66,7 +67,7 @@ texture = ExtResource("2_0xy2d")
 [node name="TextureRect" type="TextureRect" parent="dialoge/NinePatchRect"]
 z_index = 2
 layout_mode = 0
-offset_right = 256.0
+offset_right = 328.0
 offset_bottom = 96.0
 texture = ExtResource("3_ivdui")
 
@@ -90,26 +91,30 @@ shape = SubResource("RectangleShape2D_k308d")
 
 [node name="TextureRect" type="TextureRect" parent="dialoge"]
 layout_mode = 0
-offset_left = 23.0
-offset_top = 18.0
-offset_right = 73.0
-offset_bottom = 68.0
-texture = ExtResource("3_0xy2d")
+offset_left = 16.0
+offset_top = 11.0
+offset_right = 80.0
+offset_bottom = 75.0
+texture = ExtResource("4_k308d")
 expand_mode = 1
+
+[node name="hand" parent="dialoge/TextureRect" instance=ExtResource("5_k308d")]
+visible = false
 
 [node name="speaker" type="RichTextLabel" parent="dialoge/TextureRect"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = 27.0
-offset_right = 200.0
-offset_bottom = 83.0
+offset_left = 2.0
+offset_top = 28.0
+offset_right = 242.0
+offset_bottom = 84.0
 grow_vertical = 2
 scale = Vector2(0.25, 0.25)
 theme_override_constants/line_separation = 1
 theme_override_fonts/normal_font = ExtResource("3_k308d")
-theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "IGREAVIOUS"
 fit_content = true
@@ -127,7 +132,7 @@ anchor_top = 0.5
 anchor_right = 0.615
 anchor_bottom = 0.5
 offset_left = -97.72
-offset_top = -36.0
+offset_top = -34.0
 offset_right = 104.28
 offset_bottom = 36.0
 grow_horizontal = 2

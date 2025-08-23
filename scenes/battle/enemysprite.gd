@@ -8,10 +8,10 @@ var started = false
 var temp
 
 func _process(delta):
-	temp = parts[0].global_position
-	parts[0].global_position += Vector2(randf()*8,randf()*8)
+	temp = parts[0].position
+	parts[0].position += Vector2(randf()*8,randf()*8)
 	await get_tree().process_frame
-	parts[0].global_position = temp
+	parts[0].position = temp
 	
 func changesprite(enemid):
 	match enemid:

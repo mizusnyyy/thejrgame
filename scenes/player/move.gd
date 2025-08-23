@@ -85,9 +85,10 @@ func _on_ready() -> void:
 	global.take_screenshot()
 
 func timetakescreen():
-	if randi() % 5 == 0:
-		global.take_screenshot()
-		timetakescreen()
-	else:
-		await get_tree().create_timer(5).timeout
-		timetakescreen()
+	pass
+	#if randi() % 5 == 0:
+		#global.take_screenshot()
+		#timetakescreen()
+	#else:
+		#await get_tree().create_timer(5).timeout
+		#timetakescreen()

@@ -988,15 +988,16 @@ volume_db = -10.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="soul"]
 shape = SubResource("RectangleShape2D_agsc7")
 
-[node name="Node2D" parent="soul" instance=ExtResource("144_ue6uc")]
+[node name="Node2D" parent="soul" node_paths=PackedStringArray("player") instance=ExtResource("144_ue6uc")]
 line_width = 1
 heart_radius = 28
+player = NodePath("../Sprite2D")
 number_of_lines = [null, null, null, null, null, null]
 
 [node name="Sprite2D" type="Sprite2D" parent="soul"]
 texture = ExtResource("139_wf2x0")
 region_enabled = true
-region_rect = Rect2(64, 0, 16, 16)
+region_rect = Rect2(48, 0, 16, 16)
 script = ExtResource("139_itpkr")
 
 [node name="igorplayer" type="AudioStreamPlayer2D" parent="."]

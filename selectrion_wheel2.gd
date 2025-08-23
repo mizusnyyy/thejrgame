@@ -14,6 +14,7 @@ extends Node2D
 var current_rotation: float = 0.0
 var rotation_phase: float = 0.0
 var hearts: Array = []
+var selected_heart_index: int = -1
 func _ready():
 	self.hide()
 	for i in range(number_of_hearts):
@@ -28,19 +29,7 @@ func _ready():
 	_update_hearts_position()
 	
 
-func _process(delta):
-	if player != null:
-		global_position = player.global_position  
-	
-	if Input.is_action_just_pressed("heart_select"):
-		self.show()
-		rotation_phase = 0.0
-	if Input.is_action_just_released("heart_select"):
-		self.hide()
-	if Input.is_action_just_pressed("changeheart"):
-		rotation_phase += 60 * (TAU / 360)
-	_update_hearts_position()
-	queue_redraw()
+
 
 func _draw():
 	var center = Vector2.ZERO
@@ -80,8 +69,26 @@ func _update_hearts_position():
 		if diff < min_diff:
 			min_diff = diff
 			closest_heart_index = i
-	if $"../Sprite2D" != null:
-		$"../Sprite2D".region_rect = hearts[closest_heart_index].region_rect
+	selected_heart_index = closest_heart_index 
+			
+			
+func _process(delta):
+	if player != null:
+		global_position = player.global_position  
+	
+	if Input.is_action_just_pressed("heart_select"):
+		self.show()
+		rotation_phase = 0.0
+	if Input.is_action_just_released("heart_select"):
+		self.hide()
+	if Input.is_action_just_pressed("changeheart"):
+		rotation_phase += 60 * (TAU / 360)
+	if Input.is_action_just_pressed("ui_accept"):
+		if player != null:
+			player.region_rect = hearts[selected_heart_index].region_rect
+			self.hide()
+	_update_hearts_position()
+	queue_redraw()
 		
 
 

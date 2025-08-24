@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://6v4dxtuywy4r"]
+[gd_scene load_steps=25 format=3 uid="uid://6v4dxtuywy4r"]
 
 [ext_resource type="Script" uid="uid://dou5xmvh55egf" path="res://scenes/player/move.gd" id="1_3xey1"]
 [ext_resource type="Texture2D" uid="uid://bdo8d0j7y6s7b" path="res://assets/sprite/characters/jr/jrspritesheet.png" id="2_1a4v8"]
@@ -173,124 +173,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_08dw6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"front"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_68huh"]
-resource_name = "back"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"back"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_yghsc"]
-resource_name = "front"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"front"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_nr6i5"]
-resource_name = "side"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"side"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_n0y7n"]
-_data = {
-&"RESET": SubResource("Animation_08dw6"),
-&"back": SubResource("Animation_68huh"),
-&"front": SubResource("Animation_yghsc"),
-&"side": SubResource("Animation_nr6i5")
-}
-
-[sub_resource type="AnimationRootNode" id="AnimationRootNode_yghsc"]
-
 [node name="plyer" type="Node2D"]
 
 [node name="player" type="CharacterBody2D" parent="." groups=["player"]]
@@ -315,15 +197,5 @@ region_rect = Rect2(18, 45, 13, 9)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 limit_smoothed = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="player"]
-root_node = NodePath("../AnimatedSprite2D")
-libraries = {
-&"": SubResource("AnimationLibrary_n0y7n")
-}
-
-[node name="AnimationTree" type="AnimationTree" parent="player/AnimationPlayer"]
-tree_root = SubResource("AnimationRootNode_yghsc")
-advance_expression_base_node = NodePath("..")
 
 [connection signal="ready" from="player" to="player" method="_on_ready"]

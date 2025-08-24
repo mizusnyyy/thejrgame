@@ -12,11 +12,11 @@
 	  { "text": "PumNIE", "next": "shadow_weird_1" }
 	]},
 	{"id": "shadow_weird_1", "text": "give me your big juicy IGOR", "hand":"2", "speaker":null, "portrait": "shadow/portrait/shadow4", "next":null},
-	{"id": "shadow_intro_3", "text": "Watashi no na wa Kira Yoshikage.", "hand":"3","speaker": "Shadow", "portrait": "shadow/portrait/shadow1","next":"shadow_intro_4"},
-	{"id": "shadow_intro_4", "text": "Renrei sanjyuu sansai.", "hand":"1", "speaker":null, "portrait": "shadow/portrait/shadow2","next":"shadow_intro_5"},
-	{"id": "shadow_intro_5", "text": "kekkon wa shiite-inai, Shigoto wa", "hand":"1", "speaker":null,"portrait":null, "next":"shadow_intro_6"},
-	{"id": "shadow_intro_6", "text": "Kame-yu chen-ten no kai sha-in de,", "hand":null, "speaker":null,"portrait":null, "next":"shadow_intro_7"},
-	{"id": "shadow_intro_7", "text": "maiinichi osokuto mo yoru hachii-ji", "hand":null,"speaker":null,"portrait":null,"next":null},
+	{"id": "shadow_intro_3", "text": "Baseball, huh?", "hand":"5","speaker": "Shadow", "portrait": "shadow/portrait/shadow1","next":"shadow_intro_4"},
+	{"id": "shadow_intro_4", "text": "...", "hand":null, "speaker":null, "portrait": "shadow/portrait/shadow5","next":"shadow_intro_5"},
+	{"id": "shadow_intro_5", "text": "BASEBALL... HUH?", "hand":"1", "speaker":null,"portrait":null, "next":"shadow_intro_6"},
+	{"id": "shadow_intro_6", "text": "...", "hand":null, "speaker":null,"portrait":"shadow/portrait/shadow1", "next":"shadow_intro_7"},
+	{"id": "shadow_intro_7", "text": "YOU STUPID IGOR!!!", "hand":"2","speaker":null,"portrait":"shadow/portrait/shadow2","next":null},
 	
 	{"id": "core_start", "text": "Welcome, mortal, do you desire power?", "hand":null, "speaker": "???", "portrait": "jr/teto_front", "next": "core_intro_1"},
 	{"id": "core_intro_1", "text": "Do you know who I AM?", "hand":null, "speaker": "???", "portrait": "jr/teto_side_better","next": "core_intro_2"},

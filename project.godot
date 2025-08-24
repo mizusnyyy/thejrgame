@@ -25,6 +25,7 @@ Battlepreset="*res://battlepreset.gd"
 Console="*res://scenes/ui/console.tscn"
 DialogueManager="*res://data/DialogueManager.gd"
 MenuHandler="*res://scenes/main_menu/menu_handler.gd"
+CutsceneManager="*res://CutsceneManager.gd"
 
 [display]
 

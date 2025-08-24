@@ -6,7 +6,7 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("player"):
 		return
-	
+	blackout()
 	global.can_phone=false
 	phone.get_child(2).get_child(0)._hide_phone(true)
 	global.can_move=false
@@ -29,3 +29,21 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	global.can_move=true
 	global.can_phone=true
+
+func blackout():
+	var anim = $"../../../AnimationPlayer"
+	anim.play("tp")
+	#var anim = $"../../../AnimationPlayer"
+	#var x = $"../../../ysorting/player/player"
+	#var rect = ColorRect.new()
+	#print("made rect!!! ", rect)
+	#rect.size = Vector2(320,180)
+	#rect.z_index = 2
+	#rect.position = Vector2(-160,-90)
+	#x.add_child(rect)
+	##$"../../../ColorRect".global_position = Vector2(x.x-320,x.y-180)
+	#anim.play("tp")
+	#await anim.animation_finished
+	#var del = x.find_child("ColorRect")
+	#del.queue_free()
+	

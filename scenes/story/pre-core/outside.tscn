@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://b60l2pd8phig8"]
+[gd_scene load_steps=26 format=4 uid="uid://b60l2pd8phig8"]
 
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_y0cq1"]
 [ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/player/teto.tscn" id="6_m0j0v"]
@@ -13,7 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://b7632vv4ixuwo" path="res://assets/tiles/tilebg.png" id="13_xq3a2"]
 [ext_resource type="AudioStream" uid="uid://v6xhcphnyegs" path="res://assets/sprite/intro/stevenafterpumming.wav" id="14_45nvk"]
 [ext_resource type="Texture2D" uid="uid://blq2libb70yvf" path="res://assets/tiles/tilebarrier.png" id="14_asfsf"]
+[ext_resource type="Texture2D" uid="uid://cykdshu25r3nk" path="res://teto4.png" id="15_uur3u"]
 [ext_resource type="Texture2D" uid="uid://c72wlne1fh1ho" path="res://assets/tiles/tileobjects.png" id="16_64xt6"]
+[ext_resource type="Texture2D" uid="uid://cxjg8v51ap1oy" path="res://steamhappy.png" id="16_xq3a2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_45nvk"]
 texture = ExtResource("13_xq3a2")
@@ -258,6 +260,65 @@ stream = ExtResource("14_45nvk")
 volume_db = -6.769
 autoplay = true
 max_distance = 26.0
+
+[node name="light" type="Node2D" parent="quickchange2"]
+position = Vector2(0, 22)
+
+[node name="PointLight2D5" type="PointLight2D" parent="quickchange2/light"]
+position = Vector2(62, -32)
+color = Color(0.643137, 0.611765, 0, 1)
+shadow_enabled = true
+texture = ExtResource("15_uur3u")
+texture_scale = 0.1
+
+[node name="PointLight2D6" type="PointLight2D" parent="quickchange2/light"]
+position = Vector2(64, -59)
+color = Color(0.643137, 0.611765, 0, 1)
+shadow_enabled = true
+texture = ExtResource("16_xq3a2")
+texture_scale = 0.01
+
+[node name="PointLight2D7" type="PointLight2D" parent="quickchange2/light"]
+position = Vector2(132, -32)
+color = Color(0.643137, 0.611765, 0, 1)
+shadow_enabled = true
+texture = ExtResource("15_uur3u")
+texture_scale = 0.1
+
+[node name="PointLight2D8" type="PointLight2D" parent="quickchange2/light"]
+position = Vector2(132, -51)
+color = Color(0.643137, 0.611765, 0, 1)
+shadow_enabled = true
+texture = ExtResource("16_xq3a2")
+texture_scale = 0.01
+
+[node name="PointLight2D3" type="PointLight2D" parent="quickchange2/light"]
+position = Vector2(-132, -32)
+color = Color(0.643137, 0.611765, 0, 1)
+shadow_enabled = true
+texture = ExtResource("15_uur3u")
+texture_scale = 0.1
+
+[node name="PointLight2D4" type="PointLight2D" parent="quickchange2/light"]
+position = Vector2(-132, -51)
+color = Color(0.643137, 0.611765, 0, 1)
+shadow_enabled = true
+texture = ExtResource("16_xq3a2")
+texture_scale = 0.01
+
+[node name="PointLight2D" type="PointLight2D" parent="quickchange2/light"]
+position = Vector2(-62, -32)
+color = Color(0.643137, 0.611765, 0, 1)
+shadow_enabled = true
+texture = ExtResource("15_uur3u")
+texture_scale = 0.1
+
+[node name="PointLight2D2" type="PointLight2D" parent="quickchange2/light"]
+position = Vector2(-64, -60)
+color = Color(0.643137, 0.611765, 0, 1)
+shadow_enabled = true
+texture = ExtResource("16_xq3a2")
+texture_scale = 0.01
 
 [connection signal="body_entered" from="ysorting/glut" to="ysorting/glut" method="_on_body_entered"]
 [connection signal="body_exited" from="ysorting/glut" to="ysorting/glut" method="_on_body_exited"]

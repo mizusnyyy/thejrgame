@@ -132,9 +132,9 @@ anchor_top = 0.5
 anchor_right = 0.615
 anchor_bottom = 0.5
 offset_left = -97.72
-offset_top = -34.0
+offset_top = -69.0
 offset_right = 104.28
-offset_bottom = 36.0
+offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(100, 25)
@@ -143,12 +143,13 @@ theme_override_fonts/normal_font = ExtResource("3_k308d")
 bbcode_enabled = true
 text = "pablo games og
 "
+fit_content = true
 scroll_active = false
 autowrap_mode = 2
 tab_size = 3
 
 [node name="optsetter" type="Marker2D" parent="dialoge/RichTextLabel"]
-position = Vector2(100, 25)
+position = Vector2(100, 67)
 
 [node name="choice" type="Node2D" parent="dialoge"]
 z_index = 1

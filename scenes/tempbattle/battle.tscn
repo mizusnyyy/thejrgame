@@ -240,7 +240,7 @@ func makesmallbox(x:float=122,y:float=122, posx:float=0.0, posy:float=256.0):
 		#boxes.remove_at(1)
 	var scene := preload(\"res://scenes/battle/box.tscn\")
 	var box = instantiateall(scene)
-	box.setall(x,y,posx,posy,posb)
+	box.setall(x,y,posx,posy,posb, true)
 	add_child(box)
 	boxes.append(box)
 	print(\"boxy -> \", box.position, \" gl -> \", box.global_position)

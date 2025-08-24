@@ -7,13 +7,18 @@ extends Node2D
 	$colfull/tcol,
 	$colfull/dcol
 ]
-func setall(x,y,posx,posy,posb:Vector2):
+func setall(x,y,posx,posy,posb:Vector2,inside:bool=false):
 	posset(posx,posy,posb)
-	sizeset(x,y)
+	sizeset(x,y,inside)
 
-func sizeset(x:float,y:float):
+func sizeset(x:float,y:float,inside:bool):
 	bg.size = Vector2(x+1,y+1)
 	bg.position = Vector2(-x/2-0.5,-y/2-0.5)
+	var corner_tex := preload("res://assets/sprite/battle/box/boxcorner.png")
+	var cornoffset=5
+	if inside:
+		corner_tex = preload("res://assets/sprite/battle/box/boxincorner.png")
+		cornoffset=4
 	for i in len(walls):
 		var wall=walls[i]
 		var temp:=[y,-y/2]
@@ -31,26 +36,24 @@ func sizeset(x:float,y:float):
 		wall.shape.size.x = temp[0]
 		wall.get_child(0).size.x = temp[0]
 		wall.get_child(0).position.x = temp[1]
-		if true:
-			#var getposwall = wall.getposition
-			var corner_tex := preload("res://assets/sprite/battle/box/boxcorner.png")
-			var corner := TextureRect.new()
-			corner.texture = corner_tex
-			$colfull.add_child(corner)
-			corner.size = Vector2(8,8)
-			var tempx := x/2
-			var tempy := y/2
-			match i:
+		#var getposwall = wall.getposition
+		var corner := TextureRect.new()
+		corner.texture = corner_tex
+		$colfull.add_child(corner)
+		corner.size = Vector2(8,8)
+		var tempx := x/2
+		var tempy := y/2
+		match i:
 					0:
-						corner.position=Vector2(-tempx-5,-tempy-5)
+						corner.position=Vector2(-tempx-cornoffset,-tempy-cornoffset)
 					1:
-						corner.position=Vector2(tempx+5,-tempy-5)
+						corner.position=Vector2(tempx+cornoffset,-tempy-cornoffset)
 						corner.rotation_degrees=90
 					2:
-						corner.position=Vector2(tempx+5,tempy+5)
+						corner.position=Vector2(tempx+cornoffset,tempy+cornoffset)
 						corner.rotation_degrees=180
 					3:
-						corner.position=Vector2(-tempx-5,tempy+5)
+						corner.position=Vector2(-tempx-cornoffset,tempy+cornoffset)
 						corner.rotation_degrees=270
 	
 func posset(posx:float,posy:float,posb:Vector2):

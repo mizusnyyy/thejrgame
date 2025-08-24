@@ -10,6 +10,7 @@ var speakername:String
 var hand:String
 var portrait: Texture
 var temp := false
+signal dialogue_done
 
 func _ready() -> void:
 	load_dialogues()
@@ -46,7 +47,6 @@ func begin_dialogue(character: String, dialogset: Node, soundset):
 func show_dialog(id) -> void:
 	
 	var d = dialogue_list[id]
-	print("h9jewajihuwuihwiu ",d)
 	if d.hand!=null:
 		temp = true
 		hand = d.hand
@@ -58,7 +58,6 @@ func show_dialog(id) -> void:
 		speakername = d.speaker
 		dialog.setname(speakername)
 	if d.portrait!=null:
-		print("portret: ",d.portrait)
 		portrait = load(sprite_directory+d.portrait+".png")
 	# 1) Jeśli next to array (opcje)
 	if typeof(d.next) == TYPE_ARRAY:
@@ -70,13 +69,12 @@ func show_dialog(id) -> void:
 		for choice in d.next:
 			choice_texts.append(choice.get("text", ""))
 			next_ids.append(choice.get("next", ""))
-			print("wybór: ", choice.next)
+			#print("wybór: ", choice.next)
 		dialog.choose(next_ids, choice_texts)
 		# Czekamy na WYBÓR
 		var picked_index: int = await dialog.choice_selected
 		var next_id = next_ids[picked_index]
 		if typeof(d.next) == TYPE_INT and d.next == dlg_e.battle:
-			print("11111?")
 			get_tree().change_scene_to_packed(preload("res://scenes/tempbattle/battle.tscn"))
 		dialog.typing = true
 		show_dialog(dlg_e[next_id])
@@ -85,9 +83,10 @@ func show_dialog(id) -> void:
 
 	if d.next!=null:
 		if typeof(d.next) == TYPE_INT and d.next == dlg_e.battle:
-			print("11111?")
 			get_tree().change_scene_to_packed(preload("res://scenes/tempbattle/battle.tscn"))
 		else:
 			show_dialog(d.next)
 	else:
 		global.can_phone = true
+		await get_tree().create_timer(0.1).timeout
+		emit_signal("dialogue_done")

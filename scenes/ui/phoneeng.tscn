@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dycobh8i7e7vr"]
+[gd_scene load_steps=8 format=3 uid="uid://dycobh8i7e7vr"]
 
 [ext_resource type="Script" uid="uid://cdcjiqs3psrs" path="res://scenes/ui/phoneeng.gd" id="1_7snph"]
 [ext_resource type="Texture2D" uid="uid://b8ajnuejvgpja" path="res://assets/ui/tetobg.jpg" id="2_h3714"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_1kpth"]
 [ext_resource type="Texture2D" uid="uid://cfehq0sor4h20" path="res://assets/ui/battery.png" id="3_7snph"]
 [ext_resource type="Script" uid="uid://dnjx1ubylv33c" path="res://scenes/ui/label.gd" id="3_h3714"]
+[ext_resource type="Script" uid="uid://dduosmyguh2ep" path="res://scenes/ui/namelabel.gd" id="4_7uppp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h3714"]
 size = Vector2(122, 20)
@@ -64,6 +65,7 @@ theme_override_fonts/font = ExtResource("3_1kpth")
 text = "hej drodzy koledzy jestem igor!"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_7uppp")
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 0)

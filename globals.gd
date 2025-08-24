@@ -43,15 +43,16 @@ func use_item(index: int, target):
 
 
 func take_screenshot():
-	var image: Image = get_viewport().get_texture().get_image()
-	photoid+=1
-	var path = "user://screens/alangooner" + str(photoid) + ".png"
-
-	var dir = DirAccess.open("user://")
-	if not dir.dir_exists("screens"):
-		dir.make_dir("screens")
-
-	var err = image.save_png(path)
+	pass
+	#var image: Image = get_viewport().get_texture().get_image()
+	#photoid+=1
+	#var path = "user://screens/alangooner" + str(photoid) + ".png"
+#
+	#var dir = DirAccess.open("user://")
+	#if not dir.dir_exists("screens"):
+		#dir.make_dir("screens")
+#
+	#var err = image.save_png(path)
 
 func soultakedamage(body, dmg):
 		body.take_damage(dmg)

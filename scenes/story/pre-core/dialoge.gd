@@ -14,6 +14,7 @@ signal dialogue_started
 signal dialogue_finished         # sygnał końca linii BEZ opcji (zamknięcie okna)
 signal text_typed                # ✅ NOWY: koniec animacji pisania
 signal choice_selected(index:int)# ✅ NOWY: wybrano opcję (zwraca index)
+signal dialogue_done
 
 var full_text := ""
 var char_index := 0

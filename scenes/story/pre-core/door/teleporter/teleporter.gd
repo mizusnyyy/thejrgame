@@ -1,6 +1,7 @@
 extends Area2D
 @onready var playersprite = $"../../../ysorting/player/player/AnimatedSprite2D"
 @onready var velocityplayer = $"../../../ysorting/player/player"
+@onready var anim = $"../../../AnimationPlayer"
 @export var ishorizontal = true
 
 func _on_body_entered(body: Node2D) -> void:
@@ -26,24 +27,10 @@ func _on_body_entered(body: Node2D) -> void:
 	playersprite.position = temp
 	# Możesz ustawić dokładną pozycję docelową względem punktu "gdzie"
 	velocityplayer.global_position.x = $gdzie.global_position.x
-	
+	await anim.animation_finished
 	global.can_move=true
 	global.can_phone=true
 
 func blackout():
-	var anim = $"../../../AnimationPlayer"
 	anim.play("tp")
-	#var anim = $"../../../AnimationPlayer"
-	#var x = $"../../../ysorting/player/player"
-	#var rect = ColorRect.new()
-	#print("made rect!!! ", rect)
-	#rect.size = Vector2(320,180)
-	#rect.z_index = 2
-	#rect.position = Vector2(-160,-90)
-	#x.add_child(rect)
-	##$"../../../ColorRect".global_position = Vector2(x.x-320,x.y-180)
-	#anim.play("tp")
-	#await anim.animation_finished
-	#var del = x.find_child("ColorRect")
-	#del.queue_free()
 	

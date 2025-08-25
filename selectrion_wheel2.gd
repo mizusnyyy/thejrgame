@@ -8,12 +8,13 @@ extends Node2D
 @export var line_width: int = 4
 @export var heart_size: Vector2 = Vector2(16, 16)
 @export var heart_radius: int = 25
-@export var player: Sprite2D
+@export var player: AnimatedSprite2D
 @export var number_of_lines = []
 @export var rotation_step_degrees: float = 60
 var current_rotation: float = 0.0
 var rotation_phase: float = 0.0
 var hearts: Array = []
+var selected_heart_index: int = -1
 func _ready():
 	self.hide()
 	for i in range(number_of_hearts):
@@ -39,6 +40,9 @@ func _process(delta):
 		self.hide()
 	if Input.is_action_just_pressed("changeheart"):
 		rotation_phase += 60 * (TAU / 360)
+		if player != null:
+			$"../heart".region_enabled = true
+			$"../heart".region_rect = hearts[selected_heart_index].region_rect
 	_update_hearts_position()
 	queue_redraw()
 
@@ -68,12 +72,20 @@ func _update_hearts_position():
 	if hearts.size() == 0:
 		return
 	var angle_step = -TAU / number_of_hearts
+	var center_angle = -PI / 2
+	var closest_index = 0
+	var min_diff = TAU
 	for i in range(number_of_hearts):
-		# Każde serce ma własny kąt + obrót całego zestawu
 		var angle = i * angle_step - PI / 2 + rotation_phase
 		hearts[i].position = Vector2(cos(angle), sin(angle)) * heart_radius
 		# Serca pozostają prosto względem ekranu
 		hearts[i].rotation = 0
+		var diff = abs(fmod(angle - center_angle + TAU, TAU))
+		if diff < min_diff:
+			min_diff = diff
+			closest_index = i
+	
+		selected_heart_index = closest_index   # <--- zapamiętanie indeksu
 
 func set_heart_state(index: int, sprite_index: int):
 	if index >= hearts.size():

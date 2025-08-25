@@ -551,7 +551,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="outsidemap" type="Node2D"]
+[node name="outsidemap2" type="Node2D"]
 
 [node name="CanvasLayer" parent="." instance=ExtResource("1_pdshq")]
 

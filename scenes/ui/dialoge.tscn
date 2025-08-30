@@ -126,18 +126,11 @@ vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="dialoge"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.615
-anchor_top = 0.5
-anchor_right = 0.615
-anchor_bottom = 0.5
-offset_left = -97.72
-offset_top = -69.0
-offset_right = 104.28
-offset_bottom = 71.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(100, 25)
+offset_left = 104.0
+offset_top = -22.0
+offset_right = 306.0
+offset_bottom = 118.0
+pivot_offset = Vector2(101, 70)
 theme_override_constants/line_separation = 5
 theme_override_fonts/normal_font = ExtResource("3_k308d")
 bbcode_enabled = true
@@ -148,8 +141,19 @@ scroll_active = false
 autowrap_mode = 2
 tab_size = 3
 
-[node name="optsetter" type="Marker2D" parent="dialoge/RichTextLabel"]
-position = Vector2(100, 67)
+[node name="opt" type="CenterContainer" parent="dialoge"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 10.0
+offset_right = 302.0
+offset_bottom = 86.0
+pivot_offset = Vector2(97, 38)
+
+[node name="gc" type="GridContainer" parent="dialoge/opt"]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 10
+columns = 3
 
 [node name="choice" type="Node2D" parent="dialoge"]
 z_index = 1

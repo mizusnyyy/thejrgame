@@ -2,10 +2,10 @@ extends Area2D
 
 var player_in_range := false
 var can_talk := true
-var currentpage = 0
+var currentpage := 0
 
-@onready var dialog = $"../../CanvasLayer/dialoge"
-@onready var typesound = $AudioStreamPlayer2D
+@onready var dialog := $"../../CanvasLayer/dialoge"
+@onready var typesound := $AudioStreamPlayer2D
 @export var whoid:int
 @export var texturenpc: Texture
 @export var character:String

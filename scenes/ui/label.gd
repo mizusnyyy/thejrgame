@@ -1,5 +1,5 @@
 extends Label
-@export var t=true
+@export var t:=true
 func _on_ready() -> void:
 	if t:
 		timeset()
@@ -7,7 +7,7 @@ func _on_ready() -> void:
 	dateset()
 
 func timeset():
-	var time = Time.get_datetime_dict_from_system()
+	var time := Time.get_datetime_dict_from_system()
 	var h = time.hour
 	var m = time.minute
 	var s = time.second
@@ -16,7 +16,7 @@ func timeset():
 	timeset()
 
 func dateset():
-	var time = Time.get_datetime_dict_from_system()
+	var time := Time.get_datetime_dict_from_system()
 	var d = time.day
 	var m = time.month
 	var y = time.year

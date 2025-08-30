@@ -9,7 +9,9 @@
 	{"id": "shadow_intro_2", "text": "A chcesz gadac?", "hand":"2", "speaker":null, "portrait": "shadow/portrait/shadow1",
 	"next": [
 	  { "text": "PumTAK", "next": "shadow_intro_3" },
-	  { "text": "PumNIE", "next": "shadow_weird_1" }
+	  { "text": "PumNIE", "next": "shadow_weird_1" },
+	  { "text": "tak z ciekawosci", "next": "shadow_intro_5" },
+	  { "text": "tak z NIEciekawosci", "next": "shadow_intro_7" }
 	]},
 	{"id": "shadow_weird_1", "text": "give me your big juicy IGOR", "hand":"9", "speaker":null, "portrait": "shadow/portrait/shadow4", "next":null},
 	{"id": "shadow_intro_3", "text": "Baseball, huh?", "hand":"7","speaker": "Shadow", "portrait": "shadow/portrait/shadow1","next":"shadow_intro_4"},

@@ -4,8 +4,8 @@ extends Control
 @onready var app_list: VBoxContainer = $TextureRect/VBoxContainer
 
 var current_app_name: String = ""
-var active: bool = true
-var is_animating: bool = false
+var active:= true
+var is_animating:= false
 
 # Dodaj tu inne aplikacje wedle potrzeby
 var apps = {
@@ -30,13 +30,11 @@ func _ready():
 func _process(_delta):
 	if not active or is_animating:
 		return
-
 	if Input.is_action_just_pressed("phone"):
 		if visible:
 			_hide_phone()
 		else:
 			_show_phone()
-
 func _show_phone():
 	if not global.can_phone:
 		return
@@ -46,16 +44,16 @@ func _show_phone():
 	showcursor()
 	$TextureRect/phoneeng.inslockscreen()
 	
-	var tween = create_tween()
+	var tween := create_tween()
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(self, "position", Vector2(40, 384), 0.25)
-
 	tween.finished.connect(func():
 		is_animating = false
 	)
 
 func _hide_phone(prevent=false):
+	var x := get_tree().get_first_node_in_group("appsnode")
 	if prevent:
 		visible=false
 		hidecursor()
@@ -65,7 +63,7 @@ func _hide_phone(prevent=false):
 		return
 	is_animating = true
 
-	var tween = create_tween()
+	var tween := create_tween()
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.set_ease(Tween.EASE_IN)
 	tween.tween_property(self, "position", Vector2(128, 720), 0.25)
@@ -75,6 +73,9 @@ func _hide_phone(prevent=false):
 		is_animating = false
 	)
 	await tween.finished
+	for i in x.get_child_count():
+		x.get_child(i).queue_free()
+		print(get_tree().get_first_node_in_group("appsnode").get_child_count())
 	hidecursor()
 	$TextureRect/phoneeng.deleng()
 
@@ -97,9 +98,9 @@ func _clear_app():
 	current_app_name = ""
 
 func showcursor():
-	var choice = $choice/indicator
+	var choice := $choice/indicator
 	choice.position=Vector2(0,0)
-	var tween = create_tween()
+	var tween := create_tween()
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.set_ease(Tween.EASE_IN)
 	#tween.tween_property(choice, "modulate", Color(1,1,1,1), 0.5)

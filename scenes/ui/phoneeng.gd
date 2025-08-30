@@ -1,12 +1,12 @@
 extends Node2D
 
-@onready var cursor = $"../../choice/indicator"
-@onready var lock = $lockscreen/lock
-@onready var val = $MarginContainer/ScrollContainer/VBoxContainer/ScrollContainer
-var apps = []
+@onready var cursor := $"../../choice/indicator"
+@onready var lock := $lockscreen/lock
+@onready var val := $MarginContainer/ScrollContainer/VBoxContainer/ScrollContainer
+var apps := []
 var ins
-var s
-var scroll=false
+var s:String
+var scroll:=false
 #func _input(event: InputEvent) -> void:
 	#if event.is_action_pressed("interact"):
 		#COS CO BEDZIE WCZESNIEJ TU
@@ -14,8 +14,8 @@ var scroll=false
 			#$lockscreen.bgup()
 
 func inslockscreen():
-	var path = preload("res://scenes/ui/lockscreen.tscn")
-	var ins = path.instantiate()
+	var path := preload("res://scenes/ui/lockscreen.tscn")
+	var ins := path.instantiate()
 	add_child(ins)
 
 func deleng():
@@ -26,7 +26,7 @@ func _on_ready() -> void:
 	inslockscreen()
 
 func scrollit():
-	var tween = create_tween()
+	var tween := create_tween()
 	tween.tween_property(val, "scroll_horizontal", val.get_h_scroll_bar().max_value, 3)
 	await tween.finished
 	val.scroll_horizontal=0
@@ -43,8 +43,8 @@ func scrollit():
 
 func makeapps():
 	global.glapps(["Pumsapp","Jumbo maps","Junior Music","Jack\'n\'gram","CalPUMlator","igorapp","igorapp","igorapp","igorapp","igorapp"])
+	var path = preload("res://scenes/ui/phoneapp.tscn")
 	for i in len(global.phoneapps):
-		var path = preload("res://scenes/ui/phoneapp.tscn")
 		ins = path.instantiate()
 		s = global.phoneapps[i]
 		$MarginContainer/ScrollContainer/VBoxContainer/GridContainer.add_child(ins)

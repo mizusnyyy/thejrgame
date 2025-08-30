@@ -5,8 +5,8 @@ extends Control
 @onready var label: RichTextLabel = $RichTextLabel
 @onready var portrait := $TextureRect
 @onready var choice := $choice/indicator
-@onready var markeropt := $RichTextLabel/optsetter
 @onready var hand := $TextureRect/hand
+@onready var grid = $opt/gc
 var just_chose := false
 const pathhand := "res://assets/dialogue/hand/hand"
 
@@ -97,21 +97,20 @@ func choose(options: Array, texts: Array):
 	await setoptions(options, texts) # czeka do momentu wyboru (obsługa w setoptions)
 
 func setoptions(options: Array, texts: Array) -> void:
-	var sceneopt = load("res://scenes/ui/buttonopt.tscn")
+	var up := false
+	var sceneopt = preload("res://scenes/ui/buttonopt.tscn")
 	var alan: Array = []
+	var whenup := options.size()/2
+	if options.size()<=4:
+		grid.columns = 2
+		grid.add_theme_constant_override("h_separation", 45)
+	else:
+		grid.columns = 3
+		grid.add_theme_constant_override("h_separation", 15)
 	for i in range(options.size()):
 		var ins = sceneopt.instantiate()
-		add_child(ins)
+		grid.add_child(ins)
 		ins.selfid = i
-		# rozstawienie
-		var mar = markeropt.global_position
-		match i:
-			0: ins.global_position = Vector2(mar.x-40, mar.y-20)
-			1: ins.global_position = Vector2(mar.x+40, mar.y-20)
-			2: ins.global_position = Vector2(mar.x-40, mar.y+20)
-			3: ins.global_position = Vector2(mar.x+40, mar.y+20)
-			_: ins.global_position = Vector2(mar.x, mar.y)
-
 		ins.settext(texts[i])
 		alan.append(ins)
 		ins.choice_finished.connect(func():

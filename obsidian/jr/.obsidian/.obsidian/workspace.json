@@ -1,14 +1,14 @@
 {
   "main": {
-    "id": "87ee7985331b2287",
+    "id": "9aa9ac480317a210",
     "type": "split",
     "children": [
       {
-        "id": "a1a06ec2259fce5e",
+        "id": "075d5e69bfc9e9d1",
         "type": "tabs",
         "children": [
           {
-            "id": "4900346c1be31f9a",
+            "id": "6bc17c3751db08ea",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -23,15 +23,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "99d27f50e6245ea7",
+    "id": "d877e228d2bf935a",
     "type": "split",
     "children": [
       {
-        "id": "42276d3e459a67c8",
+        "id": "034ac40942c1ce95",
         "type": "tabs",
         "children": [
           {
-            "id": "0aed0ed93509aaac",
+            "id": "561ca901f01a5688",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,7 +44,7 @@
             }
           },
           {
-            "id": "6fe31f6175c7efaa",
+            "id": "ca6e3c960c88a625",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -61,7 +61,7 @@
             }
           },
           {
-            "id": "8b724cf2ef49ae4d",
+            "id": "e59e6a81a948e2b4",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -77,20 +77,19 @@
     "width": 300
   },
   "right": {
-    "id": "8716bbdbac1a1dba",
+    "id": "e52126ef48c73435",
     "type": "split",
     "children": [
       {
-        "id": "9d818f93c806da78",
+        "id": "08ae9138967b8cd1",
         "type": "tabs",
         "children": [
           {
-            "id": "fdc5ba3ddbfd7fe8",
+            "id": "2accdf65b2180015",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Untitled.base",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,11 +99,11 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Untitled"
+              "title": "Backlinks"
             }
           },
           {
-            "id": "1fc565e9c4899c33",
+            "id": "1356519f746650c3",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -117,7 +116,7 @@
             }
           },
           {
-            "id": "302edc84806c0b8a",
+            "id": "78ac601e3459da0e",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -132,7 +131,7 @@
             }
           },
           {
-            "id": "b2f8ec057b20094a",
+            "id": "40e737970c18fe18",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -149,7 +148,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -162,35 +162,6 @@
       "bases:Create new base": false
     }
   },
-  "active": "4900346c1be31f9a",
-  "lastOpenFiles": [
-    "jr/janek.md",
-    "npc-ty/Nickayl.md",
-    "npc-ty/3.14 pi.md",
-    "npc-ty",
-    "Zdarzenia/Wybuch.md",
-    "Zdarzenia/Ostatnia kłótnia.md",
-    "Zdarzenia",
-    "Postacie/Yumii.md",
-    "Postacie/Taxman Tox.md",
-    "Postacie/Shadow.md",
-    "Postacie/Pavey.md",
-    "Postacie/morro.md",
-    "Postacie/P.md",
-    "Postacie/Misupi.md",
-    "Postacie/Jan w..md",
-    "Postacie/Jack Junior.md",
-    "Postacie/Igreavious.md",
-    "Postacie/Hexer.md",
-    "Postacie/Goldenram.md",
-    "Postacie/Geralt.md",
-    "Postacie/Cpt. Wavestorm.md",
-    "Postacie/Core (postać).md",
-    "Postacie/Bagzo.md",
-    "Postacie",
-    "Lokacje/Wyspa.md",
-    "Lokacje/Core (Odłamek).md",
-    "Lokacje/Core (cały).md",
-    "Lokacje"
-  ]
+  "active": "6bc17c3751db08ea",
+  "lastOpenFiles": []
 }

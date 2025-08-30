@@ -71,6 +71,25 @@ func obtainanim(txt):
 	anim_locked = false
 	global.can_phone = true
 
+func animtoggle():
+	anim_locked=!anim_locked
+func animl() -> void:
+	anim.play("sidel")
+	anim.stop()
+func animr() -> void:
+	anim.play("sider")
+	anim.stop()
+func animd() -> void:
+	anim.play("idle")
+	anim.stop()
+func animu() -> void:
+	anim.play("back")
+	anim.stop()
+func playanim(a:String,b:bool) -> void:
+	anim.play(a)
+	if b:
+		anim.stop()
+
 func _on_ready() -> void:
 	await get_tree().create_timer(0.2).timeout
 	global.take_screenshot()

@@ -98,7 +98,7 @@ texture = ExtResource("12_qgspi")
 4:0/size_in_atlas = Vector2i(1, 3)
 4:0/0 = 0
 4:0/0/texture_origin = Vector2i(0, 16)
-4:0/0/y_sort_origin = -24
+4:0/0/y_sort_origin = -6
 5:0/size_in_atlas = Vector2i(1, 3)
 5:0/0 = 0
 5:0/0/texture_origin = Vector2i(0, 16)
@@ -189,7 +189,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, -252)]
+"values": [Vector2(-50, -245)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -203,45 +203,6 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_aqtk2"]
-resource_name = "intro"
-length = 2.7
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ysorting/player")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ysorting/player:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ysorting/player/player/AnimatedSprite2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.50648, 1.56667, 1.76667, 2.03333, 2.33333, 2.46365, 2.56667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 3.24901, 0.116629, 1.10957),
-"update": 0,
-"values": [Vector2(25, -4), Vector2(25, -4), Vector2(25, -2.5), Vector2(15.5, -11.5), Vector2(4.7, -9.5), Vector2(1.2, 3), Vector2(0.5, -1), Vector2(0, 0)]
-}
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
@@ -253,6 +214,139 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ysorting/player:z_index")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_aqtk2"]
+resource_name = "intro"
+length = 5.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ysorting/player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ysorting/player/player/AnimatedSprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.24167, 4.3, 4.53333, 4.63333, 4.76666, 4.83333, 5.04396, 5.2, 5.35333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 3.24901, 0.116629, 4.92458),
+"update": 0,
+"values": [Vector2(25, -9.5), Vector2(25, -9.5), Vector2(25, -1.5), Vector2(15.5, -11.5), Vector2(11.5, -11.5), Vector2(4.7, -9.5), Vector2(1.5, -5), Vector2(0, 8), Vector2(0, -1), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ysorting/player/player/AnimatedSprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4.24167, 4.3, 4.48498, 4.63333, 4.88886, 5.03333, 5.23333),
+"transitions": PackedFloat32Array(1, 1, 3.13834, 1, 1, 1, 4, 2.2974),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 0.5), Vector2(1, 1.2), Vector2(1, 1), Vector2(1, 1), Vector2(1.3, 0.5), Vector2(1, 1)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ysorting/player")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ysorting/player/player")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.33333, 1.73333, 2.33333, 2.56667, 3.13333, 4.46667, 4.56667, 4.66667, 4.76667, 4.95),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": ["sleep", true],
+"method": &"playanim"
+}, {
+"args": ["sleepopen", true],
+"method": &"playanim"
+}, {
+"args": ["sleep", true],
+"method": &"playanim"
+}, {
+"args": ["sleepopen", true],
+"method": &"playanim"
+}, {
+"args": ["sleep", true],
+"method": &"playanim"
+}, {
+"args": ["sleepno", true],
+"method": &"playanim"
+}, {
+"args": ["sidel", true],
+"method": &"playanim"
+}, {
+"args": ["back", true],
+"method": &"playanim"
+}, {
+"args": ["sider", true],
+"method": &"playanim"
+}, {
+"args": ["front", true],
+"method": &"playanim"
+}, {
+"args": [],
+"method": &"animtoggle"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ysorting/player:z_index")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4.24167),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ysorting/player/player")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"animtoggle"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_s7kpv"]
@@ -488,13 +582,14 @@ position = Vector2(48, -256)
 
 [node name="player" parent="ysorting" instance=ExtResource("6_74pxv")]
 y_sort_enabled = true
-position = Vector2(1, -252)
+position = Vector2(-50, -245)
 
 [node name="CollisionShape2D" parent="ysorting/player/player" index="0"]
 y_sort_enabled = true
 
 [node name="AnimatedSprite2D" parent="ysorting/player/player" index="1"]
 y_sort_enabled = true
+animation = &"sleep"
 
 [node name="ColorRect" type="ColorRect" parent="ysorting/player/player" index="3"]
 visible = false

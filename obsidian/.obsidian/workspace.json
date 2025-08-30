@@ -1,20 +1,24 @@
 {
   "main": {
-    "id": "2bfaa463820c8bbd",
+    "id": "d44102412d95b1bf",
     "type": "split",
     "children": [
       {
-        "id": "db2817259c42e01f",
+        "id": "0b5b62199decb36e",
         "type": "tabs",
         "children": [
           {
-            "id": "01e6954c46977677",
+            "id": "a8d569802ff74c01",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Zdarzenia/Wybuch.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Wybuch"
             }
           }
         ]
@@ -23,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "d6fc7a2d6454cc7d",
+    "id": "2550f5774f608a32",
     "type": "split",
     "children": [
       {
-        "id": "5d41984a827b297a",
+        "id": "0e4684b964114b4f",
         "type": "tabs",
         "children": [
           {
-            "id": "0a796b0cfed82993",
+            "id": "ff4d74c768f939a3",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,7 +48,7 @@
             }
           },
           {
-            "id": "cc2cbe88e1d0858e",
+            "id": "6ff3c1b4398a048b",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -61,7 +65,7 @@
             }
           },
           {
-            "id": "187a19a33ad673c2",
+            "id": "ba490ca21f5dd8c1",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -77,19 +81,20 @@
     "width": 300
   },
   "right": {
-    "id": "1db7730cb677c995",
+    "id": "63ac3fcb415d6cfe",
     "type": "split",
     "children": [
       {
-        "id": "9fc82821891addc8",
+        "id": "cf71d026b4f9c0ff",
         "type": "tabs",
         "children": [
           {
-            "id": "f8e548e294f028b0",
+            "id": "5bddf26a902f2744",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Zdarzenia/Wybuch.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,24 +104,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for Wybuch"
             }
           },
           {
-            "id": "48c2dedbbea31f1b",
+            "id": "2d81e9927df3f228",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Zdarzenia/Wybuch.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from Wybuch"
             }
           },
           {
-            "id": "8dbc3c76d8c186f3",
+            "id": "948e5be9b3e96db4",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -131,17 +137,18 @@
             }
           },
           {
-            "id": "b06bbdd4d824304d",
+            "id": "ce9849623e1e4dcd",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
+                "file": "Zdarzenia/Wybuch.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Wybuch"
             }
           }
         ]
@@ -162,10 +169,38 @@
       "bases:Create new base": false
     }
   },
-  "active": "01e6954c46977677",
+  "active": "a8d569802ff74c01",
   "lastOpenFiles": [
-    "janek.md",
-    "budzisz sie.md",
-    "Untitled.canvas"
+    "Lokacje/Core (cały).md",
+    "Zdarzenia/Wybuch.md",
+    "Lokacje/Core.md",
+    "Zdarzenia/Ostatnia kłótnia.md",
+    "Postacie/Core (postać).md",
+    "Postacie/Yumii.md",
+    "Postacie/Pavey.md",
+    "npc-ty/3.14 pi.md",
+    "Postacie/Taxman Tox.md",
+    "Postacie/Shadow.md",
+    "Postacie/Igreavious.md",
+    "Postacie/Misupi.md",
+    "Postacie/Jack Junior.md",
+    "Postacie/Bagzo.md",
+    "Postacie/Cpt. Wavestorm.md",
+    "Postacie/Goldenram.md",
+    "Postacie/Hexer.md",
+    "Zdarzenia",
+    "Lokacje",
+    "Postacie/Geralt.md",
+    "Postacie/morro.md",
+    "questline-y",
+    "rout-y",
+    "Postacie/P.md",
+    "Postacie/Jan w..md",
+    "Ramsie.md",
+    "npc-ty/Nickayl.md",
+    "npc-ty",
+    "Postacie",
+    "jr/Mizu.md",
+    "jr/janek.md"
   ]
 }

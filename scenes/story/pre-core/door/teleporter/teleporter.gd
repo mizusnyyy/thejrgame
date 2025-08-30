@@ -1,8 +1,8 @@
 extends Area2D
-@onready var playersprite = $"../../../ysorting/player/player/AnimatedSprite2D"
-@onready var velocityplayer = $"../../../ysorting/player/player"
-@onready var anim = $"../../../AnimationPlayer"
-@export var ishorizontal = true
+@onready var playersprite := $"../../../ysorting/player/player/AnimatedSprite2D"
+@onready var velocityplayer := $"../../../ysorting/player/player"
+@onready var anim := $"../../../AnimationPlayer"
+@export var ishorizontal := true
 
 func _on_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("player"):
@@ -11,7 +11,7 @@ func _on_body_entered(body: Node2D) -> void:
 	global.can_phone=false
 	phone.get_child(2).get_child(0)._hide_phone(true)
 	global.can_move=false
-	var dir = Vector2.LEFT.rotated(rotation).normalized()
+	var dir := Vector2.LEFT.rotated(rotation).normalized()
 	if scale.x < 0:
 		dir = Vector2.RIGHT.rotated(rotation).normalized()
 	body.transporting=true
@@ -26,12 +26,12 @@ func _on_body_entered(body: Node2D) -> void:
 			body.anim.play("back")
 		else:
 			body.anim.play("front")
-	var distance = 45.0
-	var steps = 45
-	var speed = 170.0
-	var temp = playersprite.get_position()
+	var distance := 45.0
+	var steps := 45
+	var speed := 170.0
+	var temp:Vector2 = playersprite.get_position()
 	for i in range(steps):
-		var step = speed * get_process_delta_time()
+		var step := speed * get_process_delta_time()
 		playersprite.global_position += dir * step
 		await get_tree().create_timer(0.015).timeout
 	playersprite.position = temp
@@ -43,6 +43,4 @@ func _on_body_entered(body: Node2D) -> void:
 
 func blackout(body):
 	anim.play("tp")
-	#await anim.animation_finished
-	#body.transporting=false
 	

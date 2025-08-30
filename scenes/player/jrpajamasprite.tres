@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=21 format=3 uid="uid://bqeyirdd5862o"]
+[gd_resource type="SpriteFrames" load_steps=24 format=3 uid="uid://bqeyirdd5862o"]
 
 [ext_resource type="Texture2D" uid="uid://crfhtnxg5xwmv" path="res://assets/sprite/characters/jr/jrspritesheetpajamas.png" id="2_076ey"]
 
@@ -77,6 +77,18 @@ region = Rect2(0, 32, 16, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ou710"]
 atlas = ExtResource("2_076ey")
 region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvm2t"]
+atlas = ExtResource("2_076ey")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0fvf"]
+atlas = ExtResource("2_076ey")
+region = Rect2(112, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cy4sa"]
+atlas = ExtResource("2_076ey")
+region = Rect2(96, 0, 16, 32)
 
 [resource]
 animations = [{
@@ -165,5 +177,29 @@ animations = [{
 }],
 "loop": true,
 "name": &"sider",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvm2t")
+}],
+"loop": false,
+"name": &"sleep",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0fvf")
+}],
+"loop": false,
+"name": &"sleepno",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cy4sa")
+}],
+"loop": false,
+"name": &"sleepopen",
 "speed": 5.0
 }]

@@ -94,7 +94,7 @@ func choose(options: Array, texts: Array):
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.text = ""
 
-	await setoptions(options, texts) # czeka do momentu wyboru (obsługa w setoptions)
+	await setoptions(options, texts)
 
 func setoptions(options: Array, texts: Array) -> void:
 	var up := false

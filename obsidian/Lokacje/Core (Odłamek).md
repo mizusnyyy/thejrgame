@@ -1,0 +1,1 @@
+Odłamek [[Core (cały)]] który jest na północy 

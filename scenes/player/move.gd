@@ -2,13 +2,14 @@ extends CharacterBody2D
 
 var SPEED = 150.0
 @onready var anim = $AnimatedSprite2D
-var lrud = [0,0]
-var directionstop = 0
+var directionstop := 0
 @export var direction := Vector2()
-var anim_locked = false
+var anim_locked := false
+var transporting := false
 
 func _physics_process(delta: float) -> void:
-	if anim_locked:
+	if anim_locked or transporting:
+		anim.speed_scale = 1
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
@@ -23,10 +24,6 @@ func _physics_process(delta: float) -> void:
 		speed_sprint = 2.0
 		anim.speed_scale = 3
 	if direction.length() > 0 and global.can_move:
-		if directionlr != 0:
-			lrud[0] = directionlr
-		if directionud != 0:
-			lrud[1] = directionud
 		direction = direction.normalized()
 		velocity = direction * SPEED * speed_sprint
 		if direction.x != 0:
@@ -73,6 +70,25 @@ func obtainanim(txt):
 	item.hide()
 	anim_locked = false
 	global.can_phone = true
+
+func animtoggle():
+	anim_locked=!anim_locked
+func animl() -> void:
+	anim.play("sidel")
+	anim.stop()
+func animr() -> void:
+	anim.play("sider")
+	anim.stop()
+func animd() -> void:
+	anim.play("idle")
+	anim.stop()
+func animu() -> void:
+	anim.play("back")
+	anim.stop()
+func playanim(a:String,b:bool) -> void:
+	anim.play(a)
+	if b:
+		anim.stop()
 
 func _on_ready() -> void:
 	await get_tree().create_timer(0.2).timeout

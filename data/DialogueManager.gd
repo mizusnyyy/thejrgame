@@ -69,9 +69,8 @@ func show_dialog(id) -> void:
 		for choice in d.next:
 			choice_texts.append(choice.get("text", ""))
 			next_ids.append(choice.get("next", ""))
-			#print("wybór: ", choice.next)
+			print("wybór: ", choice.next)
 		dialog.choose(next_ids, choice_texts)
-		# Czekamy na WYBÓR
 		var picked_index: int = await dialog.choice_selected
 		var next_id = next_ids[picked_index]
 		if typeof(d.next) == TYPE_INT and d.next == dlg_e.battle:

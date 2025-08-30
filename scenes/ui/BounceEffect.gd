@@ -6,7 +6,7 @@ var random_phase: Dictionary = {}
 
 func _process_custom_fx(char_fx: CharFXTransform) -> bool:
 	var speed: float = 4.0
-	var height: float = 20.0
+	var height: float = 2.0
 
 	var i: int = char_fx.range.x + char_fx.relative_index
 	if not random_phase.has(i):

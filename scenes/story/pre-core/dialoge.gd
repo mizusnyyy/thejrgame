@@ -41,9 +41,6 @@ func sethand(handset):
 
 func setname(textset):
 	$TextureRect/speaker.text = textset
-# wait_for_close:
-# true  -> zachowanie jak dotąd: czekamy na interact i emitujemy dialogue_finished
-# false -> tylko napisz tekst litera-po-literze i ZWRÓĆ po text_typed (bez zamykania)
 func show_dialogue(
 	text: String,
 	portrait_texture: Texture = null,
@@ -94,7 +91,7 @@ func choose(options: Array, texts: Array):
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.text = ""
 
-	await setoptions(options, texts) # czeka do momentu wyboru (obsługa w setoptions)
+	await setoptions(options, texts)
 
 func setoptions(options: Array, texts: Array) -> void:
 	var up := false
@@ -103,10 +100,10 @@ func setoptions(options: Array, texts: Array) -> void:
 	var whenup := options.size()/2
 	if options.size()<=4:
 		grid.columns = 2
-		grid.add_theme_constant_override("h_separation", 45)
+		grid.add_theme_constant_override("h_separation", 60)
 	else:
 		grid.columns = 3
-		grid.add_theme_constant_override("h_separation", 15)
+		grid.add_theme_constant_override("h_separation", 5)
 	for i in range(options.size()):
 		var ins = sceneopt.instantiate()
 		grid.add_child(ins)
@@ -128,18 +125,20 @@ func setoptions(options: Array, texts: Array) -> void:
 	choice.can_choose = false
 	
 func _type_text() -> void:
-	
 	while char_index < full_text.length() and typing:
-		label.append_text("[bounce]" + full_text[char_index] + "[/bounce]")
 		var spd := tempspeed
 		match full_text[char_index]:
 			".", "!", "?":
 				spd *= 9
 			",", ";":
 				spd *= 5
-			_:
-				pass
-
+			#"(":
+			#TO ZMIENIAC BEDZIE NASTEPNA LITERE NA COS (TU AKURAT NA NIC)
+				#print(char_index)
+				#full_text[char_index]=""
+				#if len(full_text)>char_index:
+					#full_text[char_index]=""
+		label.append_text("[bounce]" + full_text[char_index] + "[/bounce]")
 		char_index += 1
 		if type_sound_player:
 			type_sound_player.pitch_scale = randf_range(0.95, 1.05)

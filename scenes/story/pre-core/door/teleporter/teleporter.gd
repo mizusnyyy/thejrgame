@@ -39,7 +39,7 @@ func _on_body_entered(body: Node2D) -> void:
 	body.anim.play(s)
 	var distance := 45.0
 	var steps := 45
-	var speed := 170.0
+	var speed := 75.0
 	var temp:Vector2 = playersprite.get_position()
 	var offset:=22
 	

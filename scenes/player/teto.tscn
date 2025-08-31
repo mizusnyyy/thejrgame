@@ -28,9 +28,10 @@ z_index = 2
 position = Vector2(0, -15.5)
 texture = ExtResource("3_42hny")
 region_enabled = true
-region_rect = Rect2(18, 45, 13, 9)
+region_rect = Rect2(18, 42, 11, 13)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(2, 2)
 limit_smoothed = true
 
 [connection signal="ready" from="player" to="player" method="_on_ready"]

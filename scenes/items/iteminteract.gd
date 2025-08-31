@@ -1,6 +1,6 @@
 extends Area2D
-var igor=false
-var inrange=false
+var igor:=false
+var inrange:=false
 var anime
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -21,17 +21,20 @@ func _on_ready() -> void:
 	idleanim()
 
 func idleanim():
-	igor=!igor
-	var dur=1
-	var val=[20,Vector2(1.6,1.6),Color(0.2,0.2,1,0.2),10]
-	if igor:
-		val=[-20,Vector2(1.3,1.3),Color(1,1,1,0.5),-10]
-	var tween = create_tween()
-	tween.set_ease(Tween.EASE_IN_OUT)
-	tween.set_parallel(true)
-	tween.tween_property($behind,"global_rotation",deg_to_rad(val[0]),dur)
-	tween.tween_property($behind,"scale",val[1],dur)
-	tween.tween_property($behind,"modulate",val[2],dur)
-	tween.tween_property($behind,"skew",deg_to_rad(val[3]),dur)
-	await tween.finished
-	idleanim()
+	var dur:=1
+	var val:Array
+	while true:
+		igor=!igor
+		if igor:
+			val=[Vector2(1.3,1.3),Color(1,1,1,0.5),-5]
+		else:
+			val=[Vector2(1.6,1.6),Color(0.2,0.2,1,0.2),5]
+		var t := create_tween()
+		t.set_ease(Tween.EASE_IN_OUT)
+		t.set_parallel(true)
+		t.tween_property($behind,"global_rotation",deg_to_rad(90),dur)
+		t.tween_property($behind,"scale",val[0],dur)
+		t.tween_property($behind,"modulate",val[1],dur)
+		#t.tween_property($behind,"skew",deg_to_rad(val[2]),dur)
+		$behind.global_rotation=0
+		await t.finished

@@ -2,7 +2,6 @@ extends Node2D
 @onready var anim := $AnimationPlayer
 @onready var item := preload("res://scenes/items/iteminteract.tscn")
 func _ready():
-	#CutsceneManager.cutsceneset()
 	$ysorting/player/player/ColorRect.visible=false
 	print(CutsceneManager.has_played(CutsceneManager.cutscenes.intro))
 	if CutsceneManager.has_played(CutsceneManager.cutscenes.intro):
@@ -17,4 +16,4 @@ func _ready():
 func spawnphone():
 	var ins = item.instantiate()
 	$ysorting.add_child(ins)
-	ins.position=Vector2(48.0,-256.0)
+	ins.position=Vector2(24.0,-128.0)

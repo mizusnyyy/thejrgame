@@ -15,7 +15,7 @@ func _input(event: InputEvent) -> void:
 			bgup()
 
 func bgup():
-	var tween = create_tween()
+	var tween := create_tween()
 	tween.tween_property(lss.material, "shader_parameter/cut_amount", 1.0, 0.5)
 	tween.set_parallel(true)
 	tween.tween_property(self, "position:y", position.y - 124, 0.42)

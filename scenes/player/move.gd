@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-var SPEED = 150.0
-@onready var anim = $AnimatedSprite2D
+var SPEED := 75.0
+@onready var anim := $AnimatedSprite2D
 var directionstop := 0
 @export var direction := Vector2()
 var anim_locked := false
@@ -45,17 +45,12 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0.0, SPEED)
 		velocity.y = move_toward(velocity.y, 0.0, SPEED)
-		var b:=true
 		match directionstop:
-			0:
-				s="idle"
-				b=false
-			1:s="back"
-			2:s="sider"
-			3:s="sidel"
+			0:s="idle"
+			1:s="idleb"
+			2:s="idler"
+			3:s="idlel"
 		anim.play(s)
-		if b:
-			anim.stop()
 	move_and_slide()
 
 func obtainanim(txt):

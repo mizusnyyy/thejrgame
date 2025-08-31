@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cne3a6lmj7c1u"]
 
-[ext_resource type="Script" uid="uid://ceododdxd8fru" path="res://scenes/story/pre-core/teto.gd" id="1_riiin"]
+[ext_resource type="Script" uid="uid://ceododdxd8fru" path="res://scenes/player/teto.gd" id="1_riiin"]
 [ext_resource type="AudioStream" uid="uid://bx51gveawpw6c" path="res://JacksWithHats.wav" id="3_vaavk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yq7e7"]

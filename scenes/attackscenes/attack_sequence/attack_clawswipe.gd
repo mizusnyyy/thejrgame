@@ -1,6 +1,6 @@
 extends Node2D
-@onready var gloo_scene = preload("res://scenes/attackscenes/qorus/clawswipe.tscn")
-@onready var midscreen = get_viewport().get_visible_rect().size.x / 2
+@onready var gloo_scene := preload("res://scenes/attackscenes/qorus/clawswipe.tscn")
+@onready var midscreen := get_viewport().get_visible_rect().size.x / 2
 signal attack_finished
 
 func summoned(bullet, soul, speed):

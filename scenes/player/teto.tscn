@@ -24,6 +24,7 @@ animation = &"front"
 
 [node name="item" type="Sprite2D" parent="player/AnimatedSprite2D"]
 visible = false
+z_index = 2
 position = Vector2(0, -15.5)
 texture = ExtResource("3_42hny")
 region_enabled = true

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://csy882se6ixne"]
 
 [ext_resource type="Texture2D" uid="uid://5del8lqr5cjr" path="res://assets/tiles/animations/core/core.png" id="1_kpxf3"]
-[ext_resource type="Script" uid="uid://ceododdxd8fru" path="res://scenes/story/pre-core/teto.gd" id="1_xcx4n"]
+[ext_resource type="Script" uid="uid://ceododdxd8fru" path="res://scenes/player/teto.gd" id="1_xcx4n"]
 [ext_resource type="AudioStream" uid="uid://bk6wuwnskch7u" path="res://assets/sprite/characters/glut/squeek.wav" id="3_xcx4n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xcx4n"]

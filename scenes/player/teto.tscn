@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://6v4dxtuywy4r"]
 
 [ext_resource type="Script" uid="uid://dou5xmvh55egf" path="res://scenes/player/move.gd" id="1_3xey1"]
-[ext_resource type="SpriteFrames" uid="uid://cyfimtbocgidh" path="res://scenes/player/jrsprite.tres" id="2_42hny"]
+[ext_resource type="SpriteFrames" uid="uid://bqeyirdd5862o" path="res://scenes/player/jrpajamasprite.tres" id="2_42hny"]
 [ext_resource type="Texture2D" uid="uid://c72wlne1fh1ho" path="res://assets/tiles/tileobjects.png" id="3_42hny"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80hx6"]

@@ -1,4 +1,8 @@
+
 [gd_scene load_steps=42 format=4 uid="uid://bpmn0ng1q8ox"]
+=======
+[gd_scene load_steps=40 format=4 uid="uid://bpmn0ng1q8ox"]
+>>>>>>> 07f42ecb11ca97418a90c7ea3f72a5d9ee862bd0
 
 [ext_resource type="Script" uid="uid://cnbovm5fumlj3" path="res://scenes/story/pre-core/house.gd" id="1_0j0oh"]
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_tecch"]
@@ -7,10 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://blq2libb70yvf" path="res://assets/tiles/tilebarrier.png" id="10_2i8gf"]
 [ext_resource type="PackedScene" uid="uid://cne3a6lmj7c1u" path="res://scenes/randomthings/npc.tscn" id="12_1e2cb"]
 [ext_resource type="Texture2D" uid="uid://c72wlne1fh1ho" path="res://assets/tiles/tileobjects.png" id="12_qgspi"]
+[ext_resource type="Script" uid="uid://bejskw4sl3ymu" path="res://scenes/battle/debug.gd" id="13_0rrt8"]
+[ext_resource type="PackedScene" uid="uid://pegs4ep6hjc5" path="res://scenes/attackscenes/bone/bone.tscn" id="14_2i8gf"]
 [ext_resource type="Script" uid="uid://bkdklstb2wyg2" path="res://scenes/story/pre-core/quickchange.gd" id="14_jkym4"]
 [ext_resource type="Texture2D" uid="uid://e5q4i0heuvg3" path="res://assets/sprite/characters/jr/teto_front.png" id="14_qgspi"]
+<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://d1c5k4fpq80d8" path="res://scenes/story/pre-core/paralaxhousebg.gd" id="15_0j0oh"]
 [ext_resource type="PackedScene" uid="uid://cvhhll683san2" path="res://scenes/items/iteminteract.tscn" id="15_1e2cb"]
+=======
+>>>>>>> 07f42ecb11ca97418a90c7ea3f72a5d9ee862bd0
 [ext_resource type="Texture2D" uid="uid://blo5yr7xsgygh" path="res://assets/sprite/characters/shadow/shadowspritesheet.png" id="15_b6qe5"]
 [ext_resource type="Texture2D" uid="uid://6kf44nmw8j3i" path="res://assets/sprite/characters/jr/teto_side_better.png" id="15_jkym4"]
 [ext_resource type="Texture2D" uid="uid://cmj27cly056f7" path="res://assets/sprite/characters/jr/teto_back.png" id="16_1e2cb"]
@@ -19,6 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://v6xhcphnyegs" path="res://assets/sprite/intro/stevenafterpumming.wav" id="20_1e2cb"]
 [ext_resource type="Texture2D" uid="uid://b7cgba8myvfbs" path="res://assets/sprite/characters/glut/gloo.png" id="22_aqtk2"]
 [ext_resource type="PackedScene" uid="uid://b6vi5n5gad3lf" path="res://data/dialogue_manager.tscn" id="26_u8w88"]
+[ext_resource type="PackedScene" path="res://scenes/items/iteminteract.tscn" id="27_5g7yr"]
 [ext_resource type="PackedScene" uid="uid://b5bxnr2plabon" path="res://scenes/story/pre-core/door/teleporter/teleporter.tscn" id="28_rhstu"]
 [ext_resource type="PackedScene" uid="uid://pgr1hxlmxihq" path="res://scenes/story/pre-core/door/doors.tscn" id="29_x81t7"]
 
@@ -399,11 +409,6 @@ texture = ExtResource("12_qgspi")
 8:2/0 = 0
 8:2/0/texture_origin = Vector2i(0, 8)
 8:2/0/y_sort_origin = -18
-2:2/size_in_atlas = Vector2i(2, 2)
-2:2/0 = 0
-2:2/0/texture_origin = Vector2i(-5, 8)
-0:3/0 = 0
-0:3/0/texture_origin = Vector2i(-5, 8)
 
 [sub_resource type="TileSet" id="TileSet_jkym4"]
 sources/0 = SubResource("TileSetAtlasSource_jkym4")
@@ -625,20 +630,6 @@ tracks/6/keys = {
 "values": [{
 "args": [],
 "method": &"animtoggle"
-}]
-}
-tracks/7/type = "method"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath(".")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"spawnphone"
 }]
 }
 
@@ -865,6 +856,9 @@ position = Vector2(-57, 0)
 [node name="ysorting" type="Node2D" parent="."]
 y_sort_enabled = true
 
+[node name="iteminteract" parent="ysorting" instance=ExtResource("27_5g7yr")]
+position = Vector2(48, -256)
+
 [node name="player" parent="ysorting" instance=ExtResource("6_74pxv")]
 y_sort_enabled = true
 position = Vector2(-25, -122.5)
@@ -877,6 +871,10 @@ y_sort_enabled = true
 
 [node name="AnimatedSprite2D" parent="ysorting/player/player" index="1"]
 y_sort_enabled = true
+animation = &"idleb"
+
+[node name="Camera2D" parent="ysorting/player/player" index="2"]
+zoom = Vector2(1, 1)
 
 [node name="ColorRect" type="ColorRect" parent="ysorting/player/player" index="3"]
 visible = false
@@ -893,6 +891,7 @@ offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(320, 180)
+<<<<<<< HEAD
 color = Color(0, 0, 0, 0)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="ysorting/player"]
@@ -900,6 +899,9 @@ script = ExtResource("15_0j0oh")
 scroll_speed = 0.25
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ysorting/player/ParallaxBackground"]
+=======
+color = Color(0, 0, 0, 0.649997)
+>>>>>>> 07f42ecb11ca97418a90c7ea3f72a5d9ee862bd0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="ysorting/player/ParallaxBackground/ParallaxLayer"]
 tile_map_data = PackedByteArray("AAAGAPr/AQAEAAMAAAD6//7/AQAEAAMAAAD2//b/AQAEAAQAAAAJAPT/AQAEAAMAAADy//z/AQAEAAMAAADw//L/AQAFAAQAAADj//X/AQAEAAMAAADh//P/AQAFAAQAAADk/wMAAQAEAAQAAADe/wMAAQAEAAMAAADb/wEAAQAEAAMAAADw/wQAAQAEAAMAAAD0/wEAAQAEAAMAAAD4/wMAAQAEAAMAAADl//L/AQAEAAMAAADy//T/AQAEAAMAAADy//L/AQAEAAQAAADh/wAAAQAEAAQAAADd//3/AQAEAAMAAADf//j/AQAEAAMAAADR//3/AQAEAAQAAADI/wIAAQAFAAQAAAC9//7/AQAFAAQAAADJ//v/AQAEAAQAAAC///n/AQAEAAMAAAA=")
@@ -907,7 +909,7 @@ tile_set = SubResource("TileSet_0j0oh")
 
 [node name="objects" type="TileMapLayer" parent="ysorting"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD///n/AAAEAAAAAAAAAPn/AAAEAAAAABD9//j/AAAFAAAAAAABAPj/AAAGAAAAAAACAPj/AAAGAAAAABD+//j/AAAFAAAAABDp//7/AAAAAAAAAADr//7/AAAAAAAAABDo//j/AAAGAAAAAADt//j/AAAGAAAAABDp//j/AAAHAAAAAADq//j/AAAHAAAAAADr//j/AAAHAAAAAADs//j/AAAHAAAAAAD9/wEAAAAAAAIAACACAAEAAAAAAAIAADDw/wEAAAAAAAIAADDl/wEAAAAAAAIAACDR//v/AAAAAAIAACDY//v/AAAAAAIAADDA/wEAAAACAAAAAADF/wEAAAAAAAIAADD///j/AAAIAAIAAAAAAPj/AAAIAAIAABABAPb/AAACAAIAAAABAPf/AAAAAAMAABD+//b/AAAAAAMAAHD9//X/AAAAAAMAAADn//f/AAAAAAMAAADl//X/AAAAAAMAAADs//f/AAAAAAMAABDq//X/AAAAAAMAACDv//X/AAAAAAMAAFDo//X/AAAAAAMAAEDl//f/AAAAAAMAABDt//X/AAAAAAMAADDp//f/AAAAAAMAACDv//f/AAAAAAMAAHDr//b/AAAAAAMAAHA=")
+tile_map_data = PackedByteArray("AAD///n/AAAEAAAAAAAAAPn/AAAEAAAAABD9//j/AAAFAAAAAAABAPj/AAAGAAAAAAACAPj/AAAGAAAAABD+//j/AAAFAAAAABDp//7/AAAAAAAAAADr//7/AAAAAAAAABDo//j/AAAGAAAAAADt//j/AAAGAAAAABDp//j/AAAHAAAAAADq//j/AAAHAAAAAADr//j/AAAHAAAAAADs//j/AAAHAAAAAAD9/wEAAAAAAAIAACACAAEAAAAAAAIAADDw/wEAAAAAAAIAADDl/wEAAAAAAAIAACDR//v/AAAAAAIAACDY//v/AAAAAAIAADDA/wEAAAACAAAAAADF/wEAAAAAAAIAADD///j/AAAIAAIAAAAAAPj/AAAIAAIAABABAPb/AAACAAIAAAD+//T/AAAAAAMAAFAAAPT/AAAAAAMAAEABAPf/AAAAAAMAABD+//b/AAAAAAMAAHD9//X/AAAAAAMAAAA=")
 tile_set = SubResource("TileSet_jkym4")
 
 [node name="overobjects" type="TileMapLayer" parent="ysorting"]
@@ -927,17 +929,10 @@ whoid = 1
 texturenpc = ExtResource("15_b6qe5")
 character = "shadow1"
 
-[node name="iteminteract" parent="ysorting" instance=ExtResource("15_1e2cb")]
-position = Vector2(-293, -4)
-
-[node name="iteminteract2" parent="ysorting" instance=ExtResource("15_1e2cb")]
-position = Vector2(-399, -52)
-
-[node name="iteminteract3" parent="ysorting" instance=ExtResource("15_1e2cb")]
-position = Vector2(-329, -99)
-
-[node name="iteminteract4" parent="ysorting" instance=ExtResource("15_1e2cb")]
-position = Vector2(-684, -110)
+[node name="debug" type="Node2D" parent="."]
+position = Vector2(0, 0.5)
+script = ExtResource("13_0rrt8")
+gloo_scene = ExtResource("14_2i8gf")
 
 [node name="DialogueManager" parent="." instance=ExtResource("26_u8w88")]
 
@@ -967,6 +962,7 @@ libraries = {
 [connection signal="ready" from="tilemap/tp/quickchange" to="tilemap/tp/quickchange" method="_on_ready"]
 [connection signal="body_entered" from="tilemap/tp/quickchange2" to="tilemap/tp/quickchange2" method="_on_body_entered"]
 [connection signal="ready" from="tilemap/tp/quickchange2" to="tilemap/tp/quickchange2" method="_on_ready"]
+[connection signal="ready" from="debug" to="debug" method="_on_ready"]
 
 [editable path="tilemap/tp/teleporter"]
 [editable path="tilemap/tp/teleporter2"]

@@ -571,7 +571,7 @@ position = Vector2(-504, 0)
 [node name="Area2D" parent="tilemap/tp/teleporter6" instance=ExtResource("29_x81t7")]
 
 [node name="teleporter7" parent="tilemap/tp" instance=ExtResource("28_rhstu")]
-position = Vector2(-351, 37.5)
+position = Vector2(-352, 40)
 rotation = 1.5708
 
 [node name="gdzie" parent="tilemap/tp/teleporter7" index="1"]

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var SPEED := 150.0
+var SPEED := 75.0
 @onready var anim := $AnimatedSprite2D
 var directionstop := 0
 @export var direction := Vector2()
@@ -84,7 +84,7 @@ func itemupanim(txt):
 	tween.tween_property(item,"position", Vector2(0.0, -16.0),0.1)
 	await get_tree().create_timer(0.9).timeout
 	item.position.y=-7.0
-	item.scale.y=0.6
+	item.scale.y=0.4
 	item.hide()
 	
 func animtoggle():

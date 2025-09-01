@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://bpmn0ng1q8ox"]
+[gd_scene load_steps=38 format=4 uid="uid://bpmn0ng1q8ox"]
 
 [ext_resource type="Script" uid="uid://cnbovm5fumlj3" path="res://scenes/story/pre-core/house.gd" id="1_0j0oh"]
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_tecch"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c72wlne1fh1ho" path="res://assets/tiles/tileobjects.png" id="12_qgspi"]
 [ext_resource type="Script" uid="uid://bkdklstb2wyg2" path="res://scenes/story/pre-core/quickchange.gd" id="14_jkym4"]
 [ext_resource type="Texture2D" uid="uid://e5q4i0heuvg3" path="res://assets/sprite/characters/jr/teto_front.png" id="14_qgspi"]
+[ext_resource type="PackedScene" uid="uid://cvhhll683san2" path="res://scenes/items/iteminteract.tscn" id="15_1e2cb"]
 [ext_resource type="Texture2D" uid="uid://blo5yr7xsgygh" path="res://assets/sprite/characters/shadow/shadowspritesheet.png" id="15_b6qe5"]
 [ext_resource type="Texture2D" uid="uid://6kf44nmw8j3i" path="res://assets/sprite/characters/jr/teto_side_better.png" id="15_jkym4"]
 [ext_resource type="Texture2D" uid="uid://cmj27cly056f7" path="res://assets/sprite/characters/jr/teto_back.png" id="16_1e2cb"]
@@ -122,6 +123,11 @@ texture = ExtResource("12_qgspi")
 8:2/0 = 0
 8:2/0/texture_origin = Vector2i(0, 8)
 8:2/0/y_sort_origin = -18
+2:2/size_in_atlas = Vector2i(2, 2)
+2:2/0 = 0
+2:2/0/texture_origin = Vector2i(-5, 8)
+0:3/0 = 0
+0:3/0/texture_origin = Vector2i(-5, 8)
 
 [sub_resource type="TileSet" id="TileSet_jkym4"]
 sources/0 = SubResource("TileSetAtlasSource_jkym4")
@@ -596,9 +602,6 @@ y_sort_enabled = true
 [node name="AnimatedSprite2D" parent="ysorting/player/player" index="1"]
 y_sort_enabled = true
 
-[node name="Camera2D" parent="ysorting/player/player" index="2"]
-zoom = Vector2(1, 1)
-
 [node name="ColorRect" type="ColorRect" parent="ysorting/player/player" index="3"]
 visible = false
 z_index = 2
@@ -616,9 +619,13 @@ grow_vertical = 2
 pivot_offset = Vector2(320, 180)
 color = Color(0, 0, 0, 0)
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="ysorting/player"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ysorting/player/ParallaxBackground"]
+
 [node name="objects" type="TileMapLayer" parent="ysorting"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD///n/AAAEAAAAAAAAAPn/AAAEAAAAABD9//j/AAAFAAAAAAABAPj/AAAGAAAAAAACAPj/AAAGAAAAABD+//j/AAAFAAAAABDp//7/AAAAAAAAAADr//7/AAAAAAAAABDo//j/AAAGAAAAAADt//j/AAAGAAAAABDp//j/AAAHAAAAAADq//j/AAAHAAAAAADr//j/AAAHAAAAAADs//j/AAAHAAAAAAD9/wEAAAAAAAIAACACAAEAAAAAAAIAADDw/wEAAAAAAAIAADDl/wEAAAAAAAIAACDR//v/AAAAAAIAACDY//v/AAAAAAIAADDA/wEAAAACAAAAAADF/wEAAAAAAAIAADD///j/AAAIAAIAAAAAAPj/AAAIAAIAABABAPb/AAACAAIAAAD+//T/AAAAAAMAAFAAAPT/AAAAAAMAAEABAPf/AAAAAAMAABD+//b/AAAAAAMAAHD9//X/AAAAAAMAAAA=")
+tile_map_data = PackedByteArray("AAD///n/AAAEAAAAAAAAAPn/AAAEAAAAABD9//j/AAAFAAAAAAABAPj/AAAGAAAAAAACAPj/AAAGAAAAABD+//j/AAAFAAAAABDp//7/AAAAAAAAAADr//7/AAAAAAAAABDo//j/AAAGAAAAAADt//j/AAAGAAAAABDp//j/AAAHAAAAAADq//j/AAAHAAAAAADr//j/AAAHAAAAAADs//j/AAAHAAAAAAD9/wEAAAAAAAIAACACAAEAAAAAAAIAADDw/wEAAAAAAAIAADDl/wEAAAAAAAIAACDR//v/AAAAAAIAACDY//v/AAAAAAIAADDA/wEAAAACAAAAAADF/wEAAAAAAAIAADD///j/AAAIAAIAAAAAAPj/AAAIAAIAABABAPb/AAACAAIAAAABAPf/AAAAAAMAABD+//b/AAAAAAMAAHD9//X/AAAAAAMAAADn//f/AAAAAAMAAADl//X/AAAAAAMAAADs//f/AAAAAAMAABDq//X/AAAAAAMAACDv//X/AAAAAAMAAFDo//X/AAAAAAMAAEDl//f/AAAAAAMAABDt//X/AAAAAAMAADDp//f/AAAAAAMAACDv//f/AAAAAAMAAHDr//b/AAAAAAMAAHA=")
 tile_set = SubResource("TileSet_jkym4")
 
 [node name="overobjects" type="TileMapLayer" parent="ysorting"]
@@ -637,6 +644,18 @@ position = Vector2(-336, -28)
 whoid = 1
 texturenpc = ExtResource("15_b6qe5")
 character = "shadow1"
+
+[node name="iteminteract" parent="ysorting" instance=ExtResource("15_1e2cb")]
+position = Vector2(-293, -4)
+
+[node name="iteminteract2" parent="ysorting" instance=ExtResource("15_1e2cb")]
+position = Vector2(-399, -52)
+
+[node name="iteminteract3" parent="ysorting" instance=ExtResource("15_1e2cb")]
+position = Vector2(-329, -99)
+
+[node name="iteminteract4" parent="ysorting" instance=ExtResource("15_1e2cb")]
+position = Vector2(-684, -110)
 
 [node name="DialogueManager" parent="." instance=ExtResource("26_u8w88")]
 

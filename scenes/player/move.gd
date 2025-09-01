@@ -1,12 +1,19 @@
 extends CharacterBody2D
 
-var SPEED := 150.0
+var SPEED := 75.0
 @onready var anim := $AnimatedSprite2D
 var directionstop := 0
 @export var direction := Vector2()
 var anim_locked := false
 var transporting := false
 var s:String
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("gyro"):
+		anim_locked=true
+		anim.play("obtain")
+	if event.is_action_released("gyro"):
+		anim_locked=false
 
 func _physics_process(delta: float) -> void:
 	if anim_locked or transporting:
@@ -57,31 +64,31 @@ func obtainanim(txt):
 	if anim_locked:
 		return
 	global.can_phone = false
-	var item = $AnimatedSprite2D/item
 	anim_locked = true
 	velocity = Vector2.ZERO
 	anim.play("obtain")
-	item.texture=txt
-	item.show()
-	await get_tree().create_timer(0.8).timeout
-	item.hide()
+	await get_tree().create_timer(0.5).timeout
+	anim.play("obtainfull")
+	await get_tree().create_timer(0.1).timeout
+	itemupanim(txt)
+	await get_tree().create_timer(0.9).timeout
 	anim_locked = false
 	global.can_phone = true
 
+func itemupanim(txt):
+	var item := $AnimatedSprite2D/item
+	var tween := create_tween().set_parallel(true)
+	item.texture=txt
+	item.show()
+	tween.tween_property(item,"scale",Vector2(1.0,1.0),0.1)
+	tween.tween_property(item,"position", Vector2(0.0, -16.0),0.1)
+	await get_tree().create_timer(0.9).timeout
+	item.position.y=-7.0
+	item.scale.y=0.4
+	item.hide()
+	
 func animtoggle():
 	anim_locked=!anim_locked
-func animl() -> void:
-	anim.play("sidel")
-	anim.stop()
-func animr() -> void:
-	anim.play("sider")
-	anim.stop()
-func animd() -> void:
-	anim.play("idle")
-	anim.stop()
-func animu() -> void:
-	anim.play("back")
-	anim.stop()
 func playanim(a:String,b:bool) -> void:
 	anim.play(a)
 	if b:

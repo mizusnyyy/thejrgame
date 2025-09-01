@@ -184,9 +184,6 @@ y_sort_enabled = true
 [node name="AnimatedSprite2D" parent="ysorting/player/player" index="1"]
 y_sort_enabled = true
 
-[node name="Camera2D" parent="ysorting/player/player" index="2"]
-zoom = Vector2(1, 1)
-
 [node name="objects" type="TileMapLayer" parent="ysorting"]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD5/wAAAAAGAAIAAAD4/wEAAAAGAAIAAAD2/wEAAAAGAAIAAAD3/wEAAAAGAAIAAAD1/wEAAAAGAAIAAAD0/wIAAAAGAAIAAADz/wIAAAAGAAIAAADy/wEAAAAGAAIAAADx/wEAAAAGAAIAAADw/wEAAAAGAAIAAADv/wAAAAAGAAIAAADu/wAAAAAGAAIAAAD5////AAAGAAIAAAD4/wAAAAAGAAIAAAAFAP7/AAAGAAIAAAAGAP7/AAAGAAIAAAAHAP7/AAAGAAIAAAAIAP7/AAAGAAIAAAAJAP7/AAAGAAIAAAAKAP7/AAAGAAIAAAALAP7/AAAGAAIAAAALAP3/AAAGAAIAAAAMAP3/AAAGAAIAAAAMAPz/AAAGAAIAAAANAPz/AAAGAAIAAAAKAP3/AAAGAAIAAAAJAP3/AAAGAAIAAAAIAP3/AAAGAAIAAAAHAP3/AAAGAAIAAAAGAP3/AAAGAAIAAAAFAP3/AAAGAAIAAAA=")
@@ -215,9 +212,9 @@ shape = SubResource("RectangleShape2D_at5dv")
 stream = ExtResource("9_87ub6")
 
 [node name="quickchange" type="Area2D" parent="ysorting"]
-position = Vector2(-336, 80)
+position = Vector2(0, -15)
 script = ExtResource("8_2rbrp")
-namescene = "outside.tscn"
+namescene = "house.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/quickchange"]
 shape = SubResource("RectangleShape2D_wgi2f")
@@ -262,7 +259,7 @@ max_distance = 26.0
 [node name="quickchange2" type="Area2D" parent="ysorting"]
 position = Vector2(-336, 80)
 script = ExtResource("8_2rbrp")
-namescene = "outside.tscn"
+namescene = "coreroom.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/quickchange2"]
 shape = SubResource("RectangleShape2D_wgi2f")

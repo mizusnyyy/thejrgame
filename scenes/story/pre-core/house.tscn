@@ -596,6 +596,9 @@ y_sort_enabled = true
 [node name="AnimatedSprite2D" parent="ysorting/player/player" index="1"]
 y_sort_enabled = true
 
+[node name="Camera2D" parent="ysorting/player/player" index="2"]
+zoom = Vector2(1, 1)
+
 [node name="ColorRect" type="ColorRect" parent="ysorting/player/player" index="3"]
 visible = false
 z_index = 2

@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=27 format=3 uid="uid://bqeyirdd5862o"]
+[gd_resource type="SpriteFrames" load_steps=32 format=3 uid="uid://bqeyirdd5862o"]
 
 [ext_resource type="Texture2D" uid="uid://crfhtnxg5xwmv" path="res://assets/sprite/characters/jr/jrspritesheetpajamas.png" id="2_076ey"]
 
@@ -71,6 +71,26 @@ atlas = ExtResource("2_076ey")
 region = Rect2(0, 32, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dd4h0"]
+atlas = ExtResource("2_076ey")
+region = Rect2(32, 32, 19, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fnmd"]
+atlas = ExtResource("2_076ey")
+region = Rect2(70, 32, 19, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdcjo"]
+atlas = ExtResource("2_076ey")
+region = Rect2(51, 32, 19, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ddjh"]
+atlas = ExtResource("2_076ey")
+region = Rect2(89, 32, 19, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vc0jt"]
+atlas = ExtResource("2_076ey")
+region = Rect2(108, 32, 19, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cytr"]
 atlas = ExtResource("2_076ey")
 region = Rect2(64, 0, 16, 32)
 
@@ -188,10 +208,30 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dd4h0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fnmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdcjo")
+}],
+"loop": true,
+"name": &"obtain",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ddjh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vc0jt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cytr")
 }],
 "loop": false,
-"name": &"obtain",
-"speed": 5.0
+"name": &"obtainfull",
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,

@@ -20,12 +20,13 @@ shape = SubResource("RectangleShape2D_80hx6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
 sprite_frames = ExtResource("2_42hny")
-animation = &"front"
+animation = &"idle"
 
 [node name="item" type="Sprite2D" parent="player/AnimatedSprite2D"]
 visible = false
 z_index = 2
-position = Vector2(0, -15.5)
+position = Vector2(0, -2)
+scale = Vector2(1, 0.6)
 texture = ExtResource("3_42hny")
 region_enabled = true
 region_rect = Rect2(18, 42, 11, 13)

@@ -36,6 +36,8 @@ func _on_body_entered(body: Node2D) -> void:
 			v*=-1
 		else:
 			s="front"
+	if not ishorizontal && is_instance_valid($Area2D):
+		$Area2D/door1.z_index = 1
 	body.anim.play(s)
 	var distance := 45.0
 	var steps := 45

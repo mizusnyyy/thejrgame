@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://b60l2pd8phig8"]
+[gd_scene load_steps=28 format=4 uid="uid://b60l2pd8phig8"]
 
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_y0cq1"]
 [ext_resource type="Texture2D" uid="uid://cnmgudlrg0n7e" path="res://assets/tiles/coreroom/grass.png" id="5_xq3a2"]
@@ -14,9 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b7632vv4ixuwo" path="res://assets/tiles/tilebg.png" id="13_xq3a2"]
 [ext_resource type="AudioStream" uid="uid://v6xhcphnyegs" path="res://assets/sprite/intro/stevenafterpumming.wav" id="14_45nvk"]
 [ext_resource type="Texture2D" uid="uid://blq2libb70yvf" path="res://assets/tiles/tilebarrier.png" id="14_asfsf"]
-[ext_resource type="Texture2D" uid="uid://cykdshu25r3nk" path="res://teto4.png" id="15_uur3u"]
 [ext_resource type="Texture2D" uid="uid://c72wlne1fh1ho" path="res://assets/tiles/tileobjects.png" id="16_64xt6"]
-[ext_resource type="Texture2D" uid="uid://cxjg8v51ap1oy" path="res://steamhappy.png" id="16_xq3a2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_45nvk"]
 texture = ExtResource("13_xq3a2")
@@ -112,12 +110,12 @@ texture = ExtResource("5_xq3a2")
 sources/2 = SubResource("TileSetAtlasSource_asfsf")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_at5dv"]
-size = Vector2(168, 96)
+size = Vector2(84, 48)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ulw3"]
-size = Vector2(20, 40)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wgi2f"]
+size = Vector2(10, 20)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_hd6hv"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_uur3u"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -167,27 +165,30 @@ y_sort_enabled = true
 [node name="player" parent="ysorting" instance=ExtResource("6_m0j0v")]
 y_sort_enabled = true
 
+[node name="player" parent="ysorting/player" index="0"]
+scale = Vector2(1, 1)
+
 [node name="CollisionShape2D" parent="ysorting/player/player" index="0"]
 y_sort_enabled = true
 
 [node name="AnimatedSprite2D" parent="ysorting/player/player" index="1"]
 y_sort_enabled = true
 
+[node name="Camera2D" parent="ysorting/player/player" index="2"]
+zoom = Vector2(1, 1)
+
 [node name="objects" type="TileMapLayer" parent="ysorting"]
 y_sort_enabled = true
-scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAD5/wAAAAAGAAIAAAD4/wEAAAAGAAIAAAD2/wEAAAAGAAIAAAD3/wEAAAAGAAIAAAD1/wEAAAAGAAIAAAD0/wIAAAAGAAIAAADz/wIAAAAGAAIAAADy/wEAAAAGAAIAAADx/wEAAAAGAAIAAADw/wEAAAAGAAIAAADv/wAAAAAGAAIAAADu/wAAAAAGAAIAAAD5////AAAGAAIAAAD4/wAAAAAGAAIAAAAFAP7/AAAGAAIAAAAGAP7/AAAGAAIAAAAHAP7/AAAGAAIAAAAIAP7/AAAGAAIAAAAJAP7/AAAGAAIAAAAKAP7/AAAGAAIAAAALAP7/AAAGAAIAAAALAP3/AAAGAAIAAAAMAP3/AAAGAAIAAAAMAPz/AAAGAAIAAAANAPz/AAAGAAIAAAAKAP3/AAAGAAIAAAAJAP3/AAAGAAIAAAAIAP3/AAAGAAIAAAAHAP3/AAAGAAIAAAAGAP3/AAAGAAIAAAAFAP3/AAAGAAIAAAA=")
 tile_set = SubResource("TileSet_ihlf5")
 
 [node name="house" type="TileMapLayer" parent="ysorting"]
 y_sort_enabled = true
-scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAD6/wAAAAACAAYAAAA=")
 tile_set = SubResource("TileSet_8ulw3")
 
 [node name="overobjects" type="TileMapLayer" parent="ysorting"]
 y_sort_enabled = true
-scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_ihlf5")
 
 [node name="glut" type="Area2D" parent="ysorting"]
@@ -195,7 +196,6 @@ y_sort_enabled = true
 position = Vector2(560, 170)
 
 [node name="Sprite2D" type="Sprite2D" parent="ysorting/glut"]
-scale = Vector2(2, 2)
 texture = ExtResource("7_3pd33")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/glut"]
@@ -204,38 +204,36 @@ shape = SubResource("RectangleShape2D_at5dv")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ysorting/glut"]
 stream = ExtResource("9_87ub6")
 
-[node name="quickchange" type="Area2D" parent="."]
-position = Vector2(-752, -1379)
+[node name="quickchange" type="Area2D" parent="ysorting"]
+position = Vector2(-336, 80)
 script = ExtResource("8_2rbrp")
-namescene = "coreroom.tscn"
+namescene = "outside.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="quickchange"]
-shape = SubResource("RectangleShape2D_8ulw3")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/quickchange"]
+shape = SubResource("RectangleShape2D_wgi2f")
 
-[node name="teeeto" type="AnimatedSprite2D" parent="quickchange"]
+[node name="teeeto" type="AnimatedSprite2D" parent="ysorting/quickchange"]
 modulate = Color(0.0901961, 0.239216, 1, 0.388235)
-scale = Vector2(1, 1.8)
-sprite_frames = SubResource("SpriteFrames_hd6hv")
+scale = Vector2(0.5, 0.9)
+sprite_frames = SubResource("SpriteFrames_uur3u")
 autoplay = "default"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="quickchange"]
-z_index = 11
+[node name="RichTextLabel" type="RichTextLabel" parent="ysorting/quickchange"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 12.0
-offset_top = 13.0
-offset_right = 212.0
-offset_bottom = 213.0
+offset_left = -6.0
+offset_top = -7.0
+offset_right = 94.0
+offset_bottom = 93.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.25, 0.25)
-pivot_offset = Vector2(-50, -50)
+scale = Vector2(0.125, 0.125)
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("13_64xt6")
-theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/normal_font_size = 11
 text = "TETOPORTER
 "
 autowrap_mode = 1
@@ -245,44 +243,42 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 metadata/_edit_use_anchors_ = true
 
-[node name="igorplayer" type="AudioStreamPlayer2D" parent="quickchange"]
+[node name="igorplayer" type="AudioStreamPlayer2D" parent="ysorting/quickchange"]
 stream = ExtResource("14_45nvk")
 volume_db = -6.769
 autoplay = true
 max_distance = 26.0
 
-[node name="quickchange2" type="Area2D" parent="."]
-position = Vector2(0, -22)
+[node name="quickchange2" type="Area2D" parent="ysorting"]
+position = Vector2(-336, 80)
 script = ExtResource("8_2rbrp")
-namescene = "house.tscn"
+namescene = "outside.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="quickchange2"]
-shape = SubResource("RectangleShape2D_8ulw3")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ysorting/quickchange2"]
+shape = SubResource("RectangleShape2D_wgi2f")
 
-[node name="teeeto" type="AnimatedSprite2D" parent="quickchange2"]
+[node name="teeeto" type="AnimatedSprite2D" parent="ysorting/quickchange2"]
 modulate = Color(0.0901961, 0.239216, 1, 0.388235)
-scale = Vector2(1, 1.8)
-sprite_frames = SubResource("SpriteFrames_hd6hv")
+scale = Vector2(0.5, 0.9)
+sprite_frames = SubResource("SpriteFrames_uur3u")
 autoplay = "default"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="quickchange2"]
-z_index = 11
+[node name="RichTextLabel" type="RichTextLabel" parent="ysorting/quickchange2"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 12.0
-offset_top = 13.0
-offset_right = 212.0
-offset_bottom = 213.0
+offset_left = -6.0
+offset_top = -7.0
+offset_right = 94.0
+offset_bottom = 93.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.25, 0.25)
-pivot_offset = Vector2(-50, -50)
+scale = Vector2(0.125, 0.125)
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("13_64xt6")
-theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/normal_font_size = 11
 text = "TETOPORTER
 "
 autowrap_mode = 1
@@ -292,76 +288,17 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 metadata/_edit_use_anchors_ = true
 
-[node name="igorplayer" type="AudioStreamPlayer2D" parent="quickchange2"]
+[node name="igorplayer" type="AudioStreamPlayer2D" parent="ysorting/quickchange2"]
 stream = ExtResource("14_45nvk")
 volume_db = -6.769
 autoplay = true
 max_distance = 26.0
-
-[node name="light" type="Node2D" parent="quickchange2"]
-position = Vector2(0, 22)
-
-[node name="PointLight2D5" type="PointLight2D" parent="quickchange2/light"]
-position = Vector2(62, -32)
-color = Color(0.643137, 0.611765, 0, 1)
-shadow_enabled = true
-texture = ExtResource("15_uur3u")
-texture_scale = 0.1
-
-[node name="PointLight2D6" type="PointLight2D" parent="quickchange2/light"]
-position = Vector2(64, -59)
-color = Color(0.643137, 0.611765, 0, 1)
-shadow_enabled = true
-texture = ExtResource("16_xq3a2")
-texture_scale = 0.01
-
-[node name="PointLight2D7" type="PointLight2D" parent="quickchange2/light"]
-position = Vector2(132, -32)
-color = Color(0.643137, 0.611765, 0, 1)
-shadow_enabled = true
-texture = ExtResource("15_uur3u")
-texture_scale = 0.1
-
-[node name="PointLight2D8" type="PointLight2D" parent="quickchange2/light"]
-position = Vector2(132, -51)
-color = Color(0.643137, 0.611765, 0, 1)
-shadow_enabled = true
-texture = ExtResource("16_xq3a2")
-texture_scale = 0.01
-
-[node name="PointLight2D3" type="PointLight2D" parent="quickchange2/light"]
-position = Vector2(-132, -32)
-color = Color(0.643137, 0.611765, 0, 1)
-shadow_enabled = true
-texture = ExtResource("15_uur3u")
-texture_scale = 0.1
-
-[node name="PointLight2D4" type="PointLight2D" parent="quickchange2/light"]
-position = Vector2(-132, -51)
-color = Color(0.643137, 0.611765, 0, 1)
-shadow_enabled = true
-texture = ExtResource("16_xq3a2")
-texture_scale = 0.01
-
-[node name="PointLight2D" type="PointLight2D" parent="quickchange2/light"]
-position = Vector2(-62, -32)
-color = Color(0.643137, 0.611765, 0, 1)
-shadow_enabled = true
-texture = ExtResource("15_uur3u")
-texture_scale = 0.1
-
-[node name="PointLight2D2" type="PointLight2D" parent="quickchange2/light"]
-position = Vector2(-64, -60)
-color = Color(0.643137, 0.611765, 0, 1)
-shadow_enabled = true
-texture = ExtResource("16_xq3a2")
-texture_scale = 0.01
 
 [connection signal="body_entered" from="ysorting/glut" to="ysorting/glut" method="_on_body_entered"]
 [connection signal="body_exited" from="ysorting/glut" to="ysorting/glut" method="_on_body_exited"]
-[connection signal="body_entered" from="quickchange" to="quickchange" method="_on_body_entered"]
-[connection signal="ready" from="quickchange" to="quickchange" method="_on_ready"]
-[connection signal="body_entered" from="quickchange2" to="quickchange2" method="_on_body_entered"]
-[connection signal="ready" from="quickchange2" to="quickchange2" method="_on_ready"]
+[connection signal="body_entered" from="ysorting/quickchange" to="ysorting/quickchange" method="_on_body_entered"]
+[connection signal="ready" from="ysorting/quickchange" to="ysorting/quickchange" method="_on_ready"]
+[connection signal="body_entered" from="ysorting/quickchange2" to="ysorting/quickchange2" method="_on_body_entered"]
+[connection signal="ready" from="ysorting/quickchange2" to="ysorting/quickchange2" method="_on_ready"]
 
 [editable path="ysorting/player"]

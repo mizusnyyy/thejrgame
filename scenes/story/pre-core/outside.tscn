@@ -1,8 +1,13 @@
+
+[gd_scene load_steps=32 format=4 uid="uid://b60l2pd8phig8"]
+
+[ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_y0cq1"]
+[ext_resource type="Texture2D" uid="uid://dg657glgpk8y6" path="res://assets/tiles/coreroom/grass.png" id="5_xq3a2"]
 [gd_scene load_steps=30 format=4 uid="uid://b60l2pd8phig8"]
 
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_y0cq1"]
-[ext_resource type="Texture2D" uid="uid://53fpxlmcbfid" path="res://assets/tiles/coreroom/On_ground2.png" id="5_uur3u"]
-[ext_resource type="Texture2D" uid="uid://cnmgudlrg0n7e" path="res://assets/tiles/coreroom/grass.png" id="5_xq3a2"]
+[ext_resource type="Texture2D" uid="uid://b4t7phmvk7yff" path="res://assets/tiles/coreroom/On_ground2.png" id="5_uur3u"]
+[ext_resource type="Texture2D" uid="uid://4m3232sye2pt" path="res://assets/tiles/coreroom/grass.png" id="5_xq3a2"]
 [ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/player/teto.tscn" id="6_m0j0v"]
 [ext_resource type="Texture2D" uid="uid://bxq2w808td2io" path="res://assets/sprite/characters/glut/glut.png" id="7_3pd33"]
 [ext_resource type="Script" uid="uid://bkdklstb2wyg2" path="res://scenes/story/pre-core/quickchange.gd" id="8_2rbrp"]
@@ -16,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://v6xhcphnyegs" path="res://assets/sprite/intro/stevenafterpumming.wav" id="14_45nvk"]
 [ext_resource type="Texture2D" uid="uid://blq2libb70yvf" path="res://assets/tiles/tilebarrier.png" id="14_asfsf"]
 [ext_resource type="Texture2D" uid="uid://c72wlne1fh1ho" path="res://assets/tiles/tileobjects.png" id="16_64xt6"]
+[ext_resource type="Script" uid="uid://dfl2a6py4el2t" path="res://scenes/story/pre-core/parallaxoutside.gd" id="16_uur3u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_45nvk"]
 texture = ExtResource("13_xq3a2")
@@ -143,6 +149,28 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 8.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgi2f"]
+atlas = ExtResource("16_64xt6")
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uur3u"]
+atlas = ExtResource("16_64xt6")
+region = Rect2(16, 96, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xq3a2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgi2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uur3u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
 }]
 
 [node name="outsidemap" type="Node2D"]
@@ -300,6 +328,19 @@ stream = ExtResource("14_45nvk")
 volume_db = -6.769
 autoplay = true
 max_distance = 26.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 100
+script = ExtResource("16_uur3u")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(640, 360)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(344, 128)
+sprite_frames = SubResource("SpriteFrames_xq3a2")
+autoplay = "default"
+frame_progress = 0.796111
 
 [connection signal="body_entered" from="ysorting/glut" to="ysorting/glut" method="_on_body_entered"]
 [connection signal="body_exited" from="ysorting/glut" to="ysorting/glut" method="_on_body_exited"]

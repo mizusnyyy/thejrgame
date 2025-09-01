@@ -175,19 +175,16 @@ y_sort_enabled = true
 
 [node name="objects" type="TileMapLayer" parent="ysorting"]
 y_sort_enabled = true
-scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAD5/wAAAAAGAAIAAAD4/wEAAAAGAAIAAAD2/wEAAAAGAAIAAAD3/wEAAAAGAAIAAAD1/wEAAAAGAAIAAAD0/wIAAAAGAAIAAADz/wIAAAAGAAIAAADy/wEAAAAGAAIAAADx/wEAAAAGAAIAAADw/wEAAAAGAAIAAADv/wAAAAAGAAIAAADu/wAAAAAGAAIAAAD5////AAAGAAIAAAD4/wAAAAAGAAIAAAAFAP7/AAAGAAIAAAAGAP7/AAAGAAIAAAAHAP7/AAAGAAIAAAAIAP7/AAAGAAIAAAAJAP7/AAAGAAIAAAAKAP7/AAAGAAIAAAALAP7/AAAGAAIAAAALAP3/AAAGAAIAAAAMAP3/AAAGAAIAAAAMAPz/AAAGAAIAAAANAPz/AAAGAAIAAAAKAP3/AAAGAAIAAAAJAP3/AAAGAAIAAAAIAP3/AAAGAAIAAAAHAP3/AAAGAAIAAAAGAP3/AAAGAAIAAAAFAP3/AAAGAAIAAAA=")
 tile_set = SubResource("TileSet_ihlf5")
 
 [node name="house" type="TileMapLayer" parent="ysorting"]
 y_sort_enabled = true
-scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAD6/wAAAAACAAYAAAA=")
 tile_set = SubResource("TileSet_8ulw3")
 
 [node name="overobjects" type="TileMapLayer" parent="ysorting"]
 y_sort_enabled = true
-scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_ihlf5")
 
 [node name="glut" type="Area2D" parent="ysorting"]

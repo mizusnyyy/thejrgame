@@ -591,6 +591,9 @@ y_sort_enabled = true
 y_sort_enabled = true
 animation = &"sleep"
 
+[node name="Camera2D" parent="ysorting/player/player" index="2"]
+zoom = Vector2(1, 1)
+
 [node name="ColorRect" type="ColorRect" parent="ysorting/player/player" index="3"]
 visible = false
 z_index = 2

@@ -63,15 +63,26 @@ func _physics_process(delta: float) -> void:
 func obtainanim(txt):
 	if anim_locked:
 		return
+	var tween1 := create_tween().set_parallel(true)
+	var pos :Vector2= anim.position
+	tween1.tween_property(anim,"scale",Vector2(1.4,0.6),0.6)
+	tween1.tween_property(anim,"position",Vector2(0,6.4),0.6)
 	global.can_phone = false
 	anim_locked = true
 	velocity = Vector2.ZERO
 	anim.play("obtain")
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.6).timeout
 	anim.play("obtainfull")
 	await get_tree().create_timer(0.1).timeout
 	itemupanim(txt)
-	await get_tree().create_timer(0.9).timeout
+	var tween2 := create_tween().set_parallel(true)
+	tween2.tween_property(anim,"scale",Vector2(0.8,1.3),0.1)
+	tween2.tween_property(anim,"position",Vector2(0,-4.8),0.1)
+	await tween2.finished
+	var tween3 := create_tween().set_parallel(true)
+	tween3.tween_property(anim,"scale",Vector2(1.0,1.0),0.12)
+	tween3.tween_property(anim,"position",Vector2.ZERO,0.12)
+	await get_tree().create_timer(0.6).timeout
 	anim_locked = false
 	global.can_phone = true
 
@@ -82,7 +93,7 @@ func itemupanim(txt):
 	item.show()
 	tween.tween_property(item,"scale",Vector2(1.0,1.0),0.1)
 	tween.tween_property(item,"position", Vector2(0.0, -16.0),0.1)
-	await get_tree().create_timer(0.9).timeout
+	await get_tree().create_timer(0.6).timeout
 	item.position.y=-7.0
 	item.scale.y=0.4
 	item.hide()

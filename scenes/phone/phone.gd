@@ -111,7 +111,7 @@ func showcursor():
 	global.can_move = false
 
 func hidecursor():
-	var choice = $"choice/indicator"
+	var choice := $"choice/indicator"
 	choice.hide()
 	choice.can_choose = false
 	global.can_move = true

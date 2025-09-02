@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://bpmn0ng1q8ox"]
+[gd_scene load_steps=40 format=4 uid="uid://bpmn0ng1q8ox"]
 
 [ext_resource type="Script" uid="uid://cnbovm5fumlj3" path="res://scenes/story/pre-core/house.gd" id="1_0j0oh"]
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_tecch"]
@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bq1mj2osrqcqs" path="res://assets/sprite/characters/jr/teto_side.png" id="17_0j0oh"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="18_jobkd"]
 [ext_resource type="AudioStream" uid="uid://v6xhcphnyegs" path="res://assets/sprite/intro/stevenafterpumming.wav" id="20_1e2cb"]
-[ext_resource type="Texture2D" uid="uid://b7cgba8myvfbs" path="res://assets/sprite/characters/glut/gloo.png" id="22_aqtk2"]
+[ext_resource type="Texture2D" uid="uid://da7fbhx4q2o8t" path="res://assets/sprite/characters/aviruk/avirukspritesheet.png" id="22_aqtk2"]
 [ext_resource type="PackedScene" uid="uid://b6vi5n5gad3lf" path="res://data/dialogue_manager.tscn" id="26_u8w88"]
 [ext_resource type="PackedScene" uid="uid://b5bxnr2plabon" path="res://scenes/story/pre-core/door/teleporter/teleporter.tscn" id="28_rhstu"]
 [ext_resource type="PackedScene" uid="uid://pgr1hxlmxihq" path="res://scenes/story/pre-core/door/doors.tscn" id="29_x81t7"]
@@ -130,19 +130,23 @@ sources/0 = SubResource("TileSetAtlasSource_jkym4")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6qe5"]
 atlas = ExtResource("22_aqtk2")
-region = Rect2(0, 16, 10, 22)
+region = Rect2(0, 0, 26, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s7kpv"]
 atlas = ExtResource("22_aqtk2")
-region = Rect2(10, 16, 10, 22)
+region = Rect2(26, 0, 26, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8i2l0"]
 atlas = ExtResource("22_aqtk2")
-region = Rect2(0, 38, 10, 22)
+region = Rect2(52, 0, 26, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u8w88"]
 atlas = ExtResource("22_aqtk2")
-region = Rect2(10, 38, 10, 22)
+region = Rect2(26, 0, 26, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5g7yr"]
+atlas = ExtResource("22_aqtk2")
+region = Rect2(0, 0, 26, 36)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5g7yr"]
 animations = [{
@@ -158,10 +162,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u8w88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5g7yr")
 }],
 "loop": true,
-"name": &"default",
-"speed": 10.0
+"name": &"avihand",
+"speed": 5.0
 }]
 
 [sub_resource type="Animation" id="Animation_b6qe5"]
@@ -372,10 +379,10 @@ tracks/0/path = NodePath("ysorting/player/player/ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.188887, 0.366667, 0.6, 0.9),
-"transitions": PackedFloat32Array(1, 1, 53.8174, 1, 2.63902),
+"times": PackedFloat32Array(0, 0.15, 0.35, 0.45, 0.65, 0.9),
+"transitions": PackedFloat32Array(1, 1, 53.8174, 1, 2.63902, 2.63902),
 "update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -613,7 +620,7 @@ offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(320, 180)
-color = Color(0, 0, 0, 0.649997)
+color = Color(0, 0, 0, 0)
 
 [node name="objects" type="TileMapLayer" parent="ysorting"]
 y_sort_enabled = true
@@ -644,22 +651,24 @@ gloo_scene = ExtResource("14_2i8gf")
 
 [node name="DialogueManager" parent="." instance=ExtResource("26_u8w88")]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(66, -53)
-scale = Vector2(3, 3)
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.611765, 0.592157, 0.603922, 0.501961)
+position = Vector2(-70, -135)
 sprite_frames = SubResource("SpriteFrames_5g7yr")
-autoplay = "default"
+animation = &"avihand"
+autoplay = "avihand"
+frame = 2
+frame_progress = 0.535663
+flip_h = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = -56.0
-offset_top = -85.0
-offset_right = 56.0
-offset_bottom = -45.0
-theme_override_colors/default_color = Color(0.768618, 0.00181568, 0.927939, 1)
-theme_override_font_sizes/normal_font_size = 8
-text = "Mizu... ty poczwaro ludzka musialem WSZYSTKO ZMIENIAC SIZE NA 1.0 Z 2.0"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.611765, 0.592157, 0.603922, 0.501961)
+position = Vector2(73, -139)
+sprite_frames = SubResource("SpriteFrames_5g7yr")
+animation = &"avihand"
+autoplay = "avihand"
+frame = 2
+frame_progress = 0.535663
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

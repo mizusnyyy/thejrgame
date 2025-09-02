@@ -18,6 +18,6 @@ func setphoto(x):
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact")&&caninteract&&get_node("../../../../../apps").get_child_count()==0:
 		if app == "Junior Music":
-			var y = load("res://scenes/ui/Junior Music.tscn")
-			var pum = y.instantiate()
+			var y := load("res://scenes/ui/Junior Music.tscn")
+			var pum:Node2D = y.instantiate()
 			get_node("../../../../../apps").add_child(pum)

@@ -23,6 +23,7 @@ func _on_ready() -> void:
 func idleanim():
 	var dur:=1
 	var val:Array
+	var beh:=$Sprite2D/behind
 	while true:
 		igor=!igor
 		if igor:
@@ -32,9 +33,9 @@ func idleanim():
 		var t := create_tween()
 		t.set_ease(Tween.EASE_IN_OUT)
 		t.set_parallel(true)
-		t.tween_property($behind,"global_rotation",deg_to_rad(90),dur)
-		t.tween_property($behind,"scale",val[0],dur)
-		t.tween_property($behind,"modulate",val[1],dur)
+		t.tween_property(beh,"global_rotation",deg_to_rad(90),dur)
+		t.tween_property(beh,"scale",val[0],dur)
+		t.tween_property(beh,"modulate",val[1],dur)
 		#t.tween_property($behind,"skew",deg_to_rad(val[2]),dur)
-		$behind.global_rotation=0
+		beh.global_rotation=0
 		await t.finished

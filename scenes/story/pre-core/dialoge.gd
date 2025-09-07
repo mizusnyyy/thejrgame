@@ -98,11 +98,12 @@ func setoptions(options: Array, texts: Array) -> void:
 	var sceneopt = preload("res://scenes/ui/buttonopt.tscn")
 	var alan: Array = []
 	var whenup := options.size()/2
+	print(snapped(options.size(),3)/2)
 	if options.size()<=4:
 		grid.columns = 2
 		grid.add_theme_constant_override("h_separation", 60)
 	else:
-		grid.columns = 3
+		grid.columns = snapped(options.size(),3)/2
 		grid.add_theme_constant_override("h_separation", 5)
 	for i in range(options.size()):
 		var ins = sceneopt.instantiate()

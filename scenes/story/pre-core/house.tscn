@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://bpmn0ng1q8ox"]
+[gd_scene load_steps=43 format=4 uid="uid://bpmn0ng1q8ox"]
 
 [ext_resource type="Script" uid="uid://cnbovm5fumlj3" path="res://scenes/story/pre-core/house.gd" id="1_0j0oh"]
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_tecch"]
@@ -18,6 +18,9 @@
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="18_jobkd"]
 [ext_resource type="AudioStream" uid="uid://v6xhcphnyegs" path="res://assets/sprite/intro/stevenafterpumming.wav" id="20_1e2cb"]
 [ext_resource type="Texture2D" uid="uid://da7fbhx4q2o8t" path="res://assets/sprite/characters/aviruk/avirukspritesheet.png" id="22_aqtk2"]
+[ext_resource type="Texture2D" uid="uid://b5jp252jvsneo" path="res://assets/sprite/characters/misupi/misupispritesheet.png" id="22_s7kpv"]
+[ext_resource type="Texture2D" uid="uid://4hxh8vk52udx" path="res://assets/sprite/characters/pavey/paveyspritesheet.png" id="23_8i2l0"]
+[ext_resource type="Texture2D" uid="uid://cnmsr8v22thcc" path="res://assets/sprite/characters/jamorrr/jamorrrspritesheet.png" id="24_u8w88"]
 [ext_resource type="PackedScene" uid="uid://b6vi5n5gad3lf" path="res://data/dialogue_manager.tscn" id="26_u8w88"]
 [ext_resource type="PackedScene" uid="uid://b5bxnr2plabon" path="res://scenes/story/pre-core/door/teleporter/teleporter.tscn" id="28_rhstu"]
 [ext_resource type="PackedScene" uid="uid://pgr1hxlmxihq" path="res://scenes/story/pre-core/door/doors.tscn" id="29_x81t7"]
@@ -670,10 +673,42 @@ autoplay = "avihand"
 frame = 2
 frame_progress = 0.535663
 
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(35, -81)
+sprite_frames = SubResource("SpriteFrames_5g7yr")
+animation = &"avihand"
+autoplay = "avihand"
+frame = 2
+frame_progress = 0.535663
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_s7kpv")
 }
+
+[node name="Misupispritesheet" type="Sprite2D" parent="."]
+position = Vector2(-38, -79)
+texture = ExtResource("22_s7kpv")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 32)
+
+[node name="Misupispritesheet2" type="Sprite2D" parent="."]
+position = Vector2(-21, -79)
+texture = ExtResource("15_b6qe5")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 32)
+
+[node name="Misupispritesheet3" type="Sprite2D" parent="."]
+position = Vector2(-3, -79)
+texture = ExtResource("23_8i2l0")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 32)
+
+[node name="Misupispritesheet4" type="Sprite2D" parent="."]
+position = Vector2(15, -79)
+texture = ExtResource("24_u8w88")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 32)
 
 [connection signal="body_entered" from="tilemap/tp/quickchange" to="tilemap/tp/quickchange" method="_on_body_entered"]
 [connection signal="ready" from="tilemap/tp/quickchange" to="tilemap/tp/quickchange" method="_on_ready"]

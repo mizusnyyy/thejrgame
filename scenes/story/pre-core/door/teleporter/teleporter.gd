@@ -10,6 +10,7 @@ var v:Vector2
 func _on_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("player"):
 		return
+	body.smoke.changeemit(false)
 	blackout(body)
 	global.can_phone=false
 	phone.get_child(2).get_child(0)._hide_phone(true)

@@ -7,6 +7,7 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	var lrud = velocityplayer.lrud
 	if body.is_in_group("player"):
+		body.smoke.changeemit(false)
 		var temp = playersprite.global_position
 		var velocitytemp = velocityplayer.direction
 		if ishorizontal:

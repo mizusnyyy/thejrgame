@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://bpmn0ng1q8ox"]
+[gd_scene load_steps=52 format=4 uid="uid://bpmn0ng1q8ox"]
 
 [ext_resource type="Script" uid="uid://cnbovm5fumlj3" path="res://scenes/story/pre-core/house.gd" id="1_0j0oh"]
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_tecch"]
@@ -13,14 +13,16 @@
 [ext_resource type="Texture2D" uid="uid://e5q4i0heuvg3" path="res://assets/sprite/characters/jr/teto_front.png" id="14_qgspi"]
 [ext_resource type="Texture2D" uid="uid://blo5yr7xsgygh" path="res://assets/sprite/characters/shadow/shadowspritesheet.png" id="15_b6qe5"]
 [ext_resource type="Texture2D" uid="uid://6kf44nmw8j3i" path="res://assets/sprite/characters/jr/teto_side_better.png" id="15_jkym4"]
+[ext_resource type="Texture2D" uid="uid://bt0gkelrwxaoi" path="res://assets/tiles/fulltiles/carpethousebedroom.png" id="15_u8w88"]
 [ext_resource type="Texture2D" uid="uid://cmj27cly056f7" path="res://assets/sprite/characters/jr/teto_back.png" id="16_1e2cb"]
 [ext_resource type="Texture2D" uid="uid://bq1mj2osrqcqs" path="res://assets/sprite/characters/jr/teto_side.png" id="17_0j0oh"]
+[ext_resource type="Texture2D" uid="uid://gabxxol05f5l" path="res://assets/tiles/fulltiles/shelfhousebedroom.png" id="18_ix2xr"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="18_jobkd"]
+[ext_resource type="Texture2D" uid="uid://cceuea30xr6mi" path="res://assets/tiles/fulltiles/beduphousebedroom.png" id="19_5g7yr"]
+[ext_resource type="Texture2D" uid="uid://ls8flfnycggx" path="res://assets/tiles/fulltiles/tablehousebedroom.png" id="19_rhstu"]
 [ext_resource type="AudioStream" uid="uid://v6xhcphnyegs" path="res://assets/sprite/intro/stevenafterpumming.wav" id="20_1e2cb"]
+[ext_resource type="Texture2D" uid="uid://ljsnbg7wvte4" path="res://assets/tiles/fulltiles/beddownhousebedroom.png" id="20_ix2xr"]
 [ext_resource type="Texture2D" uid="uid://da7fbhx4q2o8t" path="res://assets/sprite/characters/aviruk/avirukspritesheet.png" id="22_aqtk2"]
-[ext_resource type="Texture2D" uid="uid://b5jp252jvsneo" path="res://assets/sprite/characters/misupi/misupispritesheet.png" id="22_s7kpv"]
-[ext_resource type="Texture2D" uid="uid://4hxh8vk52udx" path="res://assets/sprite/characters/pavey/paveyspritesheet.png" id="23_8i2l0"]
-[ext_resource type="Texture2D" uid="uid://cnmsr8v22thcc" path="res://assets/sprite/characters/jamorrr/jamorrrspritesheet.png" id="24_u8w88"]
 [ext_resource type="PackedScene" uid="uid://cvhhll683san2" path="res://scenes/items/iteminteract.tscn" id="25_8i2l0"]
 [ext_resource type="PackedScene" uid="uid://b6vi5n5gad3lf" path="res://data/dialogue_manager.tscn" id="26_u8w88"]
 [ext_resource type="PackedScene" uid="uid://b5bxnr2plabon" path="res://scenes/story/pre-core/door/teleporter/teleporter.tscn" id="28_rhstu"]
@@ -69,6 +71,18 @@ texture = ExtResource("10_2i8gf")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_510yu")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8i2l0"]
+texture = ExtResource("10_2i8gf")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_u8w88"]
+sources/0 = SubResource("TileSetAtlasSource_8i2l0")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4awy"]
 size = Vector2(10, 20)
 
@@ -91,18 +105,6 @@ animations = [{
 "name": &"default",
 "speed": 8.0
 }]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8i2l0"]
-texture = ExtResource("10_2i8gf")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_8i2l0"]
-sources/0 = SubResource("TileSetAtlasSource_8i2l0")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jkym4"]
 texture = ExtResource("12_qgspi")
@@ -140,9 +142,55 @@ texture = ExtResource("12_qgspi")
 8:2/0 = 0
 8:2/0/texture_origin = Vector2i(0, 8)
 8:2/0/y_sort_origin = -18
+2:2/size_in_atlas = Vector2i(2, 2)
+2:2/0 = 0
+2:2/0/texture_origin = Vector2i(-6, 7)
+0:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f2rtj"]
+texture = ExtResource("18_ix2xr")
+0:2/size_in_atlas = Vector2i(2, 3)
+0:2/0 = 0
+0:2/0/texture_origin = Vector2i(-8, 16)
+0:2/0/y_sort_origin = -10
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4i814"]
+texture = ExtResource("19_rhstu")
+4:2/size_in_atlas = Vector2i(2, 4)
+4:2/0 = 0
+4:2/0/texture_origin = Vector2i(-8, 24)
+4:2/0/y_sort_origin = -30
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rhstu"]
+texture = ExtResource("19_5g7yr")
+0:0/size_in_atlas = Vector2i(4, 3)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(-24, 16)
+4:0/size_in_atlas = Vector2i(4, 3)
+4:0/0 = 0
+4:0/0/texture_origin = Vector2i(-24, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x81t7"]
+texture = ExtResource("20_ix2xr")
+0:0/size_in_atlas = Vector2i(4, 3)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(-24, 16)
+4:0/size_in_atlas = Vector2i(4, 3)
+4:0/0 = 0
+4:0/0/texture_origin = Vector2i(-24, 16)
+8:0/size_in_atlas = Vector2i(4, 3)
+8:0/0 = 0
+8:0/0/texture_origin = Vector2i(-24, 16)
+12:0/size_in_atlas = Vector2i(4, 3)
+12:0/0 = 0
+12:0/0/texture_origin = Vector2i(-24, 16)
 
 [sub_resource type="TileSet" id="TileSet_jkym4"]
 sources/0 = SubResource("TileSetAtlasSource_jkym4")
+sources/2 = SubResource("TileSetAtlasSource_f2rtj")
+sources/3 = SubResource("TileSetAtlasSource_4i814")
+sources/4 = SubResource("TileSetAtlasSource_rhstu")
+sources/5 = SubResource("TileSetAtlasSource_x81t7")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6qe5"]
 atlas = ExtResource("22_aqtk2")
@@ -439,10 +487,35 @@ tile_map_data = PackedByteArray("AAD9//f/AAAIAAAAAAD+//f/AAAGAAAAAAD///f/AAAGAAA
 tile_set = SubResource("TileSet_qgspi")
 
 [node name="barrier" type="TileMapLayer" parent="tilemap"]
-visible = false
 z_index = 10
-tile_map_data = PackedByteArray("AAD8//n/AAADAAAAAAD8//r/AAADAAAAAAD8//v/AAADAAAAAAD8//z/AAADAAAAAAD8//3/AAADAAAAAAD8//7/AAADAAAAAAADAPn/AAADAAAAAAADAPr/AAADAAAAAAADAPv/AAADAAAAAAADAPz/AAADAAAAAAADAP3/AAADAAAAAAADAP7/AAADAAAAAAADAP//AAADAAAAAAD8/wEAAAADAAAAAAD9/wIAAAADAAAAAAD+/wIAAAADAAAAAAD//wIAAAADAAAAAAAAAAIAAAADAAAAAAABAAIAAAADAAAAAAACAAIAAAADAAAAAAADAAAAAAADAAAAAAADAAEAAAADAAAAAAD9//j/AAAEAAAAAAD+//j/AAAEAAAAAAD///n/AAAEAAAAAAAAAPn/AAAEAAAAAAABAPj/AAAEAAAAAAACAPj/AAAEAAAAAADp//7/AAAFAAAAABDq//7/AAAEAAAAABDr//7/AAAEAAAAABDs//7/AAAFAAAAAADt/wIAAAADAAAAAADt/wMAAAADAAAAAADu/wIAAAADAAAAAADv/wIAAAADAAAAAADw/wIAAAADAAAAAADx/wEAAAADAAAAAADx//3/AAADAAAAAADx//7/AAADAAAAAADx//z/AAADAAAAAADx//v/AAADAAAAAADx//r/AAADAAAAAADx//n/AAADAAAAAADx//j/AAADAAAAAADt/wQAAAADAAAAAADs/wUAAAADAAAAAADp/wUAAAADAAAAAADo/wQAAAADAAAAAADo/wMAAAADAAAAAADo/wIAAAADAAAAAADn/wIAAAADAAAAAADm/wIAAAADAAAAAADl/wIAAAADAAAAAADk/wEAAAADAAAAAADk//7/AAADAAAAAADk//3/AAADAAAAAADk//z/AAADAAAAAADk//v/AAADAAAAAADk//j/AAADAAAAAADl//f/AAADAAAAAADm//f/AAADAAAAAADn//f/AAADAAAAAADu//f/AAADAAAAAADv//f/AAADAAAAAADw//f/AAADAAAAAADo//j/AAAEAAAAAADp//j/AAAEAAAAAADq//j/AAAEAAAAAADr//j/AAAEAAAAAADs//j/AAAEAAAAAADt//j/AAAEAAAAAADZ//v/AAADAAAAAADZ//j/AAADAAAAAADY//f/AAADAAAAAADX//f/AAADAAAAAADW//f/AAADAAAAAADV//f/AAADAAAAAADU//f/AAADAAAAAADT//f/AAADAAAAAADS//f/AAADAAAAAADR//f/AAADAAAAAADQ//j/AAADAAAAAADQ//n/AAADAAAAAADQ//r/AAADAAAAAADQ//v/AAADAAAAAADR//z/AAADAAAAAADS//z/AAADAAAAAADT//z/AAADAAAAAADU//z/AAADAAAAAADV//z/AAADAAAAAADW//z/AAADAAAAAADX//z/AAADAAAAAADY//z/AAADAAAAAAD///X/AAABAAAAAAD///b/AAABAAAAAAD///f/AAABAAAAAAD///j/AAABAAAAAAAAAPf/AAABAAAAAAAAAPb/AAABAAAAAAAAAPX/AAABAAAAAAAAAPj/AAABAAAAAAC///7/AAADAAAAAAC/////AAADAAAAAAC//wAAAAADAAAAAAC//wEAAAADAAAAAADA//3/AAADAAAAAADA/wIAAAADAAAAAADB//3/AAADAAAAAADB/wIAAAADAAAAAADC//3/AAADAAAAAADC/wIAAAADAAAAAADD//3/AAADAAAAAADD/wIAAAADAAAAAADE//3/AAADAAAAAADE/wIAAAADAAAAAADF//3/AAADAAAAAADF/wIAAAADAAAAAADG//7/AAADAAAAAADG/wEAAAADAAAAAAA=")
+tile_map_data = PackedByteArray("AAD8//n/AAADAAAAAAD8//r/AAADAAAAAAD8//v/AAADAAAAAAD8//z/AAADAAAAAAD8//3/AAADAAAAAAD8//7/AAADAAAAAAADAPn/AAADAAAAAAADAPr/AAADAAAAAAADAPv/AAADAAAAAAADAPz/AAADAAAAAAADAP3/AAADAAAAAAADAP7/AAADAAAAAAADAP//AAADAAAAAAD8/wEAAAADAAAAAAD9/wIAAAADAAAAAAD+/wIAAAADAAAAAAD//wIAAAADAAAAAAAAAAIAAAADAAAAAAABAAIAAAADAAAAAAACAAIAAAADAAAAAAADAAAAAAADAAAAAAADAAEAAAADAAAAAADp//7/AAAFAAAAABDq//7/AAAEAAAAABDr//7/AAAEAAAAABDs//7/AAAFAAAAAADt/wIAAAADAAAAAADt/wMAAAADAAAAAADu/wIAAAADAAAAAADv/wIAAAADAAAAAADw/wIAAAADAAAAAADx/wEAAAADAAAAAADx//3/AAADAAAAAADx//7/AAADAAAAAADx//z/AAADAAAAAADx//v/AAADAAAAAADx//r/AAADAAAAAADx//n/AAADAAAAAADx//j/AAADAAAAAADt/wQAAAADAAAAAADs/wUAAAADAAAAAADp/wUAAAADAAAAAADo/wQAAAADAAAAAADo/wMAAAADAAAAAADo/wIAAAADAAAAAADn/wIAAAADAAAAAADm/wIAAAADAAAAAADl/wIAAAADAAAAAADk/wEAAAADAAAAAADk//7/AAADAAAAAADk//3/AAADAAAAAADk//z/AAADAAAAAADk//v/AAADAAAAAADk//j/AAADAAAAAADl//f/AAADAAAAAADm//f/AAADAAAAAADn//f/AAADAAAAAADu//f/AAADAAAAAADv//f/AAADAAAAAADw//f/AAADAAAAAADo//j/AAAEAAAAAADp//j/AAAEAAAAAADq//j/AAAEAAAAAADr//j/AAAEAAAAAADs//j/AAAEAAAAAADt//j/AAAEAAAAAADZ//v/AAADAAAAAADZ//j/AAADAAAAAADY//f/AAADAAAAAADX//f/AAADAAAAAADW//f/AAADAAAAAADV//f/AAADAAAAAADU//f/AAADAAAAAADT//f/AAADAAAAAADS//f/AAADAAAAAADR//f/AAADAAAAAADQ//j/AAADAAAAAADQ//n/AAADAAAAAADQ//r/AAADAAAAAADQ//v/AAADAAAAAADR//z/AAADAAAAAADS//z/AAADAAAAAADT//z/AAADAAAAAADU//z/AAADAAAAAADV//z/AAADAAAAAADW//z/AAADAAAAAADX//z/AAADAAAAAADY//z/AAADAAAAAAD///X/AAABAAAAAAD///b/AAABAAAAAAD///f/AAABAAAAAAAAAPf/AAABAAAAAAAAAPb/AAABAAAAAAAAAPX/AAABAAAAAAC///7/AAADAAAAAAC/////AAADAAAAAAC//wAAAAADAAAAAAC//wEAAAADAAAAAADA//3/AAADAAAAAADA/wIAAAADAAAAAADB//3/AAADAAAAAADB/wIAAAADAAAAAADC//3/AAADAAAAAADC/wIAAAADAAAAAADD//3/AAADAAAAAADD/wIAAAADAAAAAADE//3/AAADAAAAAADE/wIAAAADAAAAAADF//3/AAADAAAAAADF/wIAAAADAAAAAADG//7/AAADAAAAAADG/wEAAAADAAAAAAD///n/AAADAAAAAAAAAPn/AAADAAAAAAACAPn/AAAEAAAAAFABAPj/AAAEAAAAAAD9//j/AAAEAAAAAAD+//j/AAAEAAAAAAA=")
 tile_set = SubResource("TileSet_jobkd")
+
+[node name="Carpethousebedroom" type="Sprite2D" parent="tilemap"]
+position = Vector2(0, -80)
+texture = ExtResource("15_u8w88")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="tilemap"]
+layer = 100
+visible = false
+follow_viewport_enabled = true
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="tilemap/ParallaxBackground"]
+motion_scale = Vector2(0, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="tilemap/ParallaxBackground/ParallaxLayer"]
+modulate = Color(1, 1, 1, 0.490196)
+tile_map_data = PackedByteArray("AAD9//P/AAAAAAAAAAD8//P/AAAAAAAAAAD8//T/AAAAAAAAAAD9//T/AAAAAAAAAAADAPP/AAAAAAAAAAACAPP/AAAAAAAAAAACAPT/AAAAAAAAAAADAPT/AAAAAAAAAAD8//X/AAAAAAAAAAD+//P/AAAAAAAAAAADAPX/AAAAAAAAAAABAPP/AAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD9/wEAAAAAAAAAAAADAAEAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAADAAAAAAAAAAAAAAABAAIAAAAAAAAAAAD+/wIAAAAAAAAAAAD8/wAAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_u8w88")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="tilemap/ParallaxBackground"]
+motion_scale = Vector2(0, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="tilemap/ParallaxBackground/ParallaxLayer2"]
+modulate = Color(1, 1, 1, 0.490196)
+tile_map_data = PackedByteArray("AAD+//T/AAAAAAAAAAD9//T/AAAAAAAAAAD9//X/AAAAAAAAAAD9//b/AAAAAAAAAAD8//b/AAAAAAAAAAD8//X/AAAAAAAAAAD8//T/AAAAAAAAAAD8//P/AAAAAAAAAAD9//P/AAAAAAAAAAD+//P/AAAAAAAAAAABAPT/AAAAAAAAAAABAPP/AAAAAAAAAAACAPP/AAAAAAAAAAACAPT/AAAAAAAAAAACAPX/AAAAAAAAAAACAPb/AAAAAAAAAAADAPb/AAAAAAAAAAADAPX/AAAAAAAAAAADAPT/AAAAAAAAAAADAPP/AAAAAAAAAAD9/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wEAAAAAAAAAAAACAAEAAAAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAADAAEAAAAAAAAAAAADAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAD9////AAAAAAAAAAD8////AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_u8w88")
 
 [node name="tp" type="Node2D" parent="tilemap"]
 
@@ -605,27 +678,6 @@ position = Vector2(-57, 0)
 
 [node name="Area2D" parent="tilemap/tp/teleporter8" instance=ExtResource("29_x81t7")]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="tilemap"]
-layer = 100
-follow_viewport_enabled = true
-scroll_ignore_camera_zoom = true
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="tilemap/ParallaxBackground"]
-motion_scale = Vector2(1.1, 1.1)
-
-[node name="TileMapLayer" type="TileMapLayer" parent="tilemap/ParallaxBackground/ParallaxLayer"]
-modulate = Color(1, 1, 1, 0.490196)
-tile_map_data = PackedByteArray("AAD9////AAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAACAAEAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAD9//f/AAAAAAAAAAD9//b/AAAAAAAAAAD9//X/AAAAAAAAAAD9//T/AAAAAAAAAAD+//T/AAAAAAAAAAABAPT/AAAAAAAAAAACAPT/AAAAAAAAAAACAPX/AAAAAAAAAAACAPb/AAAAAAAAAAACAPf/AAAAAAAAAAD9/wIAAAAAAAAAAAD+/wIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAD8//f/AAAAAAAAAAD8//b/AAAAAAAAAAD8//X/AAAAAAAAAAD8//T/AAAAAAAAAAADAPT/AAAAAAAAAAADAPX/AAAAAAAAAAADAPb/AAAAAAAAAAADAPf/AAAAAAAAAAADAP//AAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAA=")
-tile_set = SubResource("TileSet_8i2l0")
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="tilemap/ParallaxBackground"]
-motion_scale = Vector2(1.15, 1.15)
-
-[node name="TileMapLayer" type="TileMapLayer" parent="tilemap/ParallaxBackground/ParallaxLayer2"]
-modulate = Color(1, 1, 1, 0.490196)
-tile_map_data = PackedByteArray("AAD9//T/AAAAAAAAAAACAPT/AAAAAAAAAAD9/wIAAAAAAAAAAAACAAIAAAAAAAAAAAADAPT/AAAAAAAAAAD8//T/AAAAAAAAAAD8/wIAAAAAAAAAAAADAAIAAAAAAAAAAAA=")
-tile_set = SubResource("TileSet_8i2l0")
-
 [node name="ysorting" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -661,7 +713,7 @@ color = Color(0, 0, 0, 0)
 
 [node name="objects" type="TileMapLayer" parent="ysorting"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD///n/AAAEAAAAAAAAAPn/AAAEAAAAABD9//j/AAAFAAAAAAABAPj/AAAGAAAAAAACAPj/AAAGAAAAABD+//j/AAAFAAAAABDp//7/AAAAAAAAAADr//7/AAAAAAAAABDo//j/AAAGAAAAAADt//j/AAAGAAAAABDp//j/AAAHAAAAAADq//j/AAAHAAAAAADr//j/AAAHAAAAAADs//j/AAAHAAAAAAD9/wEAAAAAAAIAACACAAEAAAAAAAIAADDw/wEAAAAAAAIAADDl/wEAAAAAAAIAACDR//v/AAAAAAIAACDY//v/AAAAAAIAADDA/wEAAAACAAAAAADF/wEAAAAAAAIAADD///j/AAAIAAIAAAAAAPj/AAAIAAIAABABAPb/AAACAAIAAAD+//T/AAAAAAMAAFAAAPT/AAAAAAMAAEABAPf/AAAAAAMAABD+//b/AAAAAAMAAHD9//X/AAAAAAMAAAA=")
+tile_map_data = PackedByteArray("AADp//7/AAAAAAAAAADr//7/AAAAAAAAABDo//j/AAAGAAAAAADt//j/AAAGAAAAABDp//j/AAAHAAAAAADq//j/AAAHAAAAAADr//j/AAAHAAAAAADs//j/AAAHAAAAAAD9/wEAAAAAAAIAACACAAEAAAAAAAIAADDw/wEAAAAAAAIAADDl/wEAAAAAAAIAACDR//v/AAAAAAIAACDY//v/AAAAAAIAADDA/wEAAAACAAAAAADF/wEAAAAAAAIAADABAPb/AAACAAIAAAD+//T/AAAAAAMAAFAAAPT/AAAAAAMAAEABAPf/AAAAAAMAABD+//b/AAAAAAMAAHD9//X/AAAAAAMAAAD9//j/AgAAAAIAAAABAPn/AwAEAAIAAAD+//r/BQAAAAAAAAD+//n/BAAAAAAAAAA=")
 tile_set = SubResource("TileSet_jkym4")
 
 [node name="overobjects" type="TileMapLayer" parent="ysorting"]
@@ -719,30 +771,6 @@ frame_progress = 0.535663
 libraries = {
 &"": SubResource("AnimationLibrary_s7kpv")
 }
-
-[node name="Misupispritesheet" type="Sprite2D" parent="."]
-position = Vector2(-38, -79)
-texture = ExtResource("22_s7kpv")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 32)
-
-[node name="Misupispritesheet2" type="Sprite2D" parent="."]
-position = Vector2(-21, -79)
-texture = ExtResource("15_b6qe5")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 32)
-
-[node name="Misupispritesheet3" type="Sprite2D" parent="."]
-position = Vector2(-3, -79)
-texture = ExtResource("23_8i2l0")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 32)
-
-[node name="Misupispritesheet4" type="Sprite2D" parent="."]
-position = Vector2(15, -79)
-texture = ExtResource("24_u8w88")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 32)
 
 [node name="iteminteract" parent="." instance=ExtResource("25_8i2l0")]
 position = Vector2(-30, -88)

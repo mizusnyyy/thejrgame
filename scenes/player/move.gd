@@ -3,6 +3,7 @@ extends CharacterBody2D
 var SPEED := 75.0
 @onready var anim := $AnimatedSprite2D
 @onready var obtainpart := preload("res://assets/particles/obtainpart.tscn")
+@onready var smoke := $AnimatedSprite2D/smokerun
 var directionstop := 0
 @export var direction := Vector2()
 var anim_locked := false
@@ -29,9 +30,11 @@ func _physics_process(delta: float) -> void:
 
 	var speed_sprint := 1.0
 	anim.speed_scale = 1
+	smoke.speed_scale=1.0
 	if Input.is_action_pressed("sprint") && velocity!=Vector2.ZERO:
 		speed_sprint = 2.0
-		anim.speed_scale = 3
+		smoke.speed_scale=2.0
+		anim.speed_scale = 3.0
 	if direction.length() > 0 and global.can_move:
 		direction = direction.normalized()
 		velocity = direction * SPEED * speed_sprint
@@ -40,17 +43,23 @@ func _physics_process(delta: float) -> void:
 			if direction.x > 0:
 				s="sider"
 				directionstop = 2
+				smokerot(180)
 			else:
 				s="sidel"
+				smokerot(0)
 				directionstop = 3
 		elif direction.y > 0:
 			s="front"
+			smokerot(270)
 			directionstop = 0
 		elif direction.y < 0:
 			s="back"
+			smokerot(90)
 			directionstop = 1
+		smoke.changeemit(true)
 		anim.play(s)
 	else:
+		smoke.changeemit(false)
 		velocity.x = move_toward(velocity.x, 0.0, SPEED)
 		velocity.y = move_toward(velocity.y, 0.0, SPEED)
 		match directionstop:
@@ -117,21 +126,9 @@ func playanim(a:String,b:bool) -> void:
 	if b:
 		anim.stop()
 
-#func _on_ready() -> void:
-	#await get_tree().create_timer(0.2).timeout
-	#global.take_screenshot()
-	#await get_tree().create_timer(1).timeout
-	#global.take_screenshot()
-	#await get_tree().create_timer(1).timeout
-	#global.take_screenshot()
-	#await get_tree().create_timer(1).timeout
-	#global.take_screenshot()
+func smokerot(x:int):
+	smoke.rotation_degrees=x
 
 func timetakescreen():
-	pass
-	#if randi() % 5 == 0:
-		#global.take_screenshot()
-		#timetakescreen()
-	#else:
-		#await get_tree().create_timer(5).timeout
-		#timetakescreen()
+	global.take_screenshot()
+	timetakescreen()

@@ -92,7 +92,7 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8i2l0"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s7kpv"]
 texture = ExtResource("10_2i8gf")
 0:0/0 = 0
 1:0/0 = 0
@@ -102,7 +102,7 @@ texture = ExtResource("10_2i8gf")
 5:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_8i2l0"]
-sources/0 = SubResource("TileSetAtlasSource_8i2l0")
+sources/0 = SubResource("TileSetAtlasSource_s7kpv")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jkym4"]
 texture = ExtResource("12_qgspi")
@@ -608,24 +608,13 @@ position = Vector2(-57, 0)
 [node name="ParallaxBackground" type="ParallaxBackground" parent="tilemap"]
 layer = 100
 follow_viewport_enabled = true
-scroll_ignore_camera_zoom = true
+scroll_offset = Vector2(25, 122.5)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="tilemap/ParallaxBackground"]
 motion_scale = Vector2(0.1, 0.1)
-motion_offset = Vector2(-34.5, -30.5)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="tilemap/ParallaxBackground/ParallaxLayer"]
-modulate = Color(1, 1, 1, 0.490196)
-tile_map_data = PackedByteArray("AAD9////AAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAACAAEAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAD9//f/AAAAAAAAAAD9//b/AAAAAAAAAAD9//X/AAAAAAAAAAD9//T/AAAAAAAAAAD+//T/AAAAAAAAAAABAPT/AAAAAAAAAAACAPT/AAAAAAAAAAACAPX/AAAAAAAAAAACAPb/AAAAAAAAAAACAPf/AAAAAAAAAAD9/wIAAAAAAAAAAAD+/wIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAD8//f/AAAAAAAAAAD8//b/AAAAAAAAAAD8//X/AAAAAAAAAAD8//T/AAAAAAAAAAADAPT/AAAAAAAAAAADAPX/AAAAAAAAAAADAPb/AAAAAAAAAAADAPf/AAAAAAAAAAADAP//AAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAA=")
-tile_set = SubResource("TileSet_8i2l0")
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="tilemap/ParallaxBackground"]
-motion_scale = Vector2(0.05, 0.05)
-motion_offset = Vector2(-34.5, -30.5)
-
-[node name="TileMapLayer" type="TileMapLayer" parent="tilemap/ParallaxBackground/ParallaxLayer2"]
-modulate = Color(1, 1, 1, 0.490196)
-tile_map_data = PackedByteArray("AAD9//T/AAAAAAAAAAACAPT/AAAAAAAAAAD9/wIAAAAAAAAAAAACAAIAAAAAAAAAAAADAPT/AAAAAAAAAAD8//T/AAAAAAAAAAD8/wIAAAAAAAAAAAADAAIAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD9//b/AAAAAAAAAAD9//X/AAAAAAAAAAD9//T/AAAAAAAAAAD+//T/AAAAAAAAAAABAPT/AAAAAAAAAAACAPT/AAAAAAAAAAACAPX/AAAAAAAAAAACAPb/AAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_8i2l0")
 
 [node name="ysorting" type="Node2D" parent="."]

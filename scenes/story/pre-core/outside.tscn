@@ -1,8 +1,8 @@
-[gd_scene load_steps=30 format=4 uid="uid://b60l2pd8phig8"]
+[gd_scene load_steps=32 format=4 uid="uid://b60l2pd8phig8"]
 
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_y0cq1"]
-[ext_resource type="Texture2D" uid="uid://b4t7phmvk7yff" path="res://assets/tiles/coreroom/On_ground2.png" id="5_uur3u"]
-[ext_resource type="Texture2D" uid="uid://4m3232sye2pt" path="res://assets/tiles/coreroom/grass.png" id="5_xq3a2"]
+[ext_resource type="Texture2D" uid="uid://cd55clldmwg22" path="res://assets/tiles/coreroom/On_ground2.png" id="5_uur3u"]
+[ext_resource type="Texture2D" uid="uid://cpf5412c37a2j" path="res://assets/tiles/coreroom/grass.png" id="5_xq3a2"]
 [ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/player/teto.tscn" id="6_m0j0v"]
 [ext_resource type="Texture2D" uid="uid://bxq2w808td2io" path="res://assets/sprite/characters/glut/glut.png" id="7_3pd33"]
 [ext_resource type="Script" uid="uid://bkdklstb2wyg2" path="res://scenes/story/pre-core/quickchange.gd" id="8_2rbrp"]
@@ -119,6 +119,18 @@ texture = ExtResource("5_xq3a2")
 [sub_resource type="TileSet" id="TileSet_64xt6"]
 sources/2 = SubResource("TileSetAtlasSource_asfsf")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uur3u"]
+texture = ExtResource("14_asfsf")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_xq3a2"]
+sources/0 = SubResource("TileSetAtlasSource_uur3u")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_at5dv"]
 size = Vector2(84, 48)
 
@@ -168,6 +180,18 @@ tile_set = SubResource("TileSet_1eayi")
 [node name="TileMapLayer" type="TileMapLayer" parent="tilemap"]
 tile_map_data = PackedByteArray("AAD//wEAAgACAAEAAAAAAAEAAgACAAEAABAAAAIAAgACAAEAABD//wIAAgACAAEAAAAAAAMAAgACAAEAABD//wMAAgACAAEAAAD//wQAAgACAAEAAAD//wUAAgACAAEAAAAAAAUAAgACAAEAABAAAAQAAgACAAEAABAAAAYAAgACAAEAABAAAAcAAgACAAEAABD//wcAAgACAAEAAAD//wYAAgACAAEAAAD//wgAAgACAAEAAAD//wkAAgACAAEAAAAAAAkAAgACAAEAABAAAAgAAgACAAEAABD//woAAgACAAEAAAAAAAoAAgACAAEAABAAAAsAAgACAAEAABD//wsAAgACAAEAAAD//wwAAgACAAEAAAAAAAwAAgACAAEAABD+/w8AAgACAAEAAGAAAA0AAgACAAEAABAAAA4AAgACAAEAABD//w4AAgABAAEAADD9/w4AAgACAAEAAFD8/w4AAgACAAEAAFD7/w4AAgACAAEAAFD6/w4AAgACAAEAAFD5/w4AAgACAAEAAFD4/w4AAgACAAEAAFD9/w8AAgACAAEAAGD8/w8AAgACAAEAAGD7/w8AAgACAAEAAGD6/w8AAgACAAEAAGD5/w8AAgACAAEAAGD4/w8AAgACAAEAAGD//w8AAgACAAEAAGD+/w4AAgACAAEAAFDs/w8AAgACAAEAAGDr/w8AAgACAAEAAGDq/w8AAgACAAEAAGDp/w8AAgACAAEAAGDo/w8AAgACAAEAAGDn/w8AAgACAAEAAGDm/w8AAgACAAEAAGDl/w8AAgACAAEAAGDk/w8AAgACAAEAAGDj/w8AAgACAAEAAGDi/w8AAgACAAEAAGDh/w8AAgACAAEAAGDi/w4AAgACAAEAAFDj/w4AAgACAAEAAFDk/w4AAgACAAEAAFDl/w4AAgACAAEAAFDm/w4AAgACAAEAAFDn/w4AAgACAAEAAFDo/w4AAgACAAEAAFDp/w4AAgACAAEAAFDq/w4AAgACAAEAAFDr/w4AAgACAAEAAFDs/w4AAgACAAEAAFDt/w4AAgACAAEAAFDu/w4AAgACAAEAAFDv/w4AAgACAAEAAFDw/w4AAgACAAEAAFDx/w4AAgACAAEAAFDy/w4AAgACAAEAAFDz/w4AAgACAAEAAFD0/w4AAgACAAEAAFD1/w4AAgACAAEAAFD2/w4AAgACAAEAAFD3/w4AAgACAAEAAFDg/w8AAgACAAEAAGDf/w8AAgACAAEAAGDe/w8AAgACAAEAAGDd/w8AAgACAAEAAGDc/w4AAgACAAEAAFDb/w4AAgACAAEAAFDa/w4AAgACAAEAAFDZ/w4AAgACAAEAAFDY/w4AAgACAAEAAFDX/w4AAgACAAEAAFDW/w4AAgACAAEAAFDV/w4AAgACAAEAAFDU/w4AAgACAAEAAFDT/w4AAgACAAEAAFDT/w8AAgACAAEAAGDS/w8AAgACAAEAAGDR/w8AAgACAAEAAGDQ/w8AAgACAAEAAGDP/w8AAgACAAEAAGDO/w8AAgACAAEAAGDN/w8AAgACAAEAAGDM/w8AAgACAAEAAGDN/w4AAgACAAEAAFDO/w4AAgACAAEAAFDP/w4AAgACAAEAAFDQ/w4AAgACAAEAAFDR/w4AAgACAAEAAFDS/w4AAgACAAEAAFDU/w8AAgACAAEAAGDV/w8AAgACAAEAAGDW/w8AAgACAAEAAGDX/w8AAgACAAEAAGDY/w8AAgACAAEAAGDZ/w8AAgACAAEAAGDa/w8AAgACAAEAAGDb/w8AAgACAAEAAGDc/w8AAgACAAEAAGDg/w4AAgACAAEAAFDf/w4AAgACAAEAAFDe/w4AAgACAAEAAFDd/w4AAgACAAEAAFDh/w4AAgACAAEAAFD+/wQAAgABAAAAAAD+/wUAAgABAAAAAADM/w4AAgACAAEAAFDt/w8AAgACAAEAAGDu/w8AAgACAAEAAGDv/w8AAgACAAEAAGDw/w8AAgACAAEAAGDx/w8AAgACAAEAAGDy/w8AAgACAAEAAGDz/w8AAgACAAEAAGD0/w8AAgACAAEAAGD1/w8AAgACAAEAAGD2/w8AAgACAAEAAGD3/w8AAgACAAEAAGAAAA8AAgACAAAAAHD//w0AAgACAAEAAAA=")
 tile_set = SubResource("TileSet_64xt6")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="tilemap"]
+layer = 100
+follow_viewport_enabled = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="tilemap/ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_offset = Vector2(-16, 50)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="tilemap/ParallaxBackground/ParallaxLayer"]
+tile_map_data = PackedByteArray("AAD9//7/AAABAAAAAAD9////AAABAAAAAAD9/wAAAAABAAAAAAD9/wEAAAABAAAAAAD+/wEAAAABAAAAAAABAAEAAAABAAAAAAACAAEAAAABAAAAAAACAAAAAAABAAAAAAACAP//AAABAAAAAAACAP7/AAABAAAAAAD9//f/AAABAAAAAAD9//b/AAABAAAAAAD9//X/AAABAAAAAAD9//T/AAABAAAAAAD+//T/AAABAAAAAAABAPT/AAABAAAAAAACAPT/AAABAAAAAAACAPX/AAABAAAAAAACAPb/AAABAAAAAAACAPf/AAABAAAAAAA=")
+tile_set = SubResource("TileSet_xq3a2")
 
 [node name="ysorting" type="Node2D" parent="."]
 y_sort_enabled = true

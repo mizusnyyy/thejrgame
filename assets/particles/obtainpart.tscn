@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://bki7alcn4ohx1"]
+
+[ext_resource type="Texture2D" uid="uid://bpoua0c2lsl1" path="res://assets/particles/obtain2part.png" id="1_wfmf3"]
+
+[sub_resource type="Gradient" id="Gradient_nk3uf"]
+offsets = PackedFloat32Array(0, 0.234899, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1k7yo"]
+gradient = SubResource("Gradient_nk3uf")
+
+[sub_resource type="Curve" id="Curve_wfmf3"]
+_limits = [0.0, 2.5, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(0.6, 2.5), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_nk3uf"]
+curve = SubResource("Curve_wfmf3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wfmf3"]
+lifetime_randomness = 0.25
+particle_flag_disable_z = true
+angle_min = -130.0
+angle_max = 130.0
+initial_velocity_min = 50.0
+initial_velocity_max = 60.0
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
+gravity = Vector3(0, 250, 0)
+scale_min = 0.3
+scale_max = 0.35
+scale_curve = SubResource("CurveTexture_nk3uf")
+color_ramp = SubResource("GradientTexture1D_1k7yo")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fww38"]
+lifetime_randomness = 0.25
+particle_flag_disable_z = true
+angle_min = -130.0
+angle_max = 130.0
+direction = Vector3(-1, 0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 60.0
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
+gravity = Vector3(0, 250, 0)
+scale_min = 0.3
+scale_max = 0.35
+scale_curve = SubResource("CurveTexture_nk3uf")
+color_ramp = SubResource("GradientTexture1D_1k7yo")
+
+[node name="obtainpart" type="GPUParticles2D"]
+z_index = 2
+amount = 12
+texture = ExtResource("1_wfmf3")
+lifetime = 0.6
+speed_scale = 1.4
+use_fixed_seed = true
+seed = 2775791101
+visibility_rect = Rect2(-25, -25, 50, 65)
+process_material = SubResource("ParticleProcessMaterial_wfmf3")
+
+[node name="child" type="GPUParticles2D" parent="."]
+amount = 12
+texture = ExtResource("1_wfmf3")
+lifetime = 0.6
+speed_scale = 1.4
+use_fixed_seed = true
+seed = 2775791101
+visibility_rect = Rect2(-25, -25, 50, 65)
+process_material = SubResource("ParticleProcessMaterial_fww38")

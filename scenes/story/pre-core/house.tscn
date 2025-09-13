@@ -611,8 +611,7 @@ follow_viewport_enabled = true
 scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="tilemap/ParallaxBackground"]
-motion_scale = Vector2(0.1, 0.1)
-motion_offset = Vector2(-34.5, -30.5)
+motion_scale = Vector2(1.1, 1.1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="tilemap/ParallaxBackground/ParallaxLayer"]
 modulate = Color(1, 1, 1, 0.490196)
@@ -620,8 +619,7 @@ tile_map_data = PackedByteArray("AAD9////AAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAA
 tile_set = SubResource("TileSet_8i2l0")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="tilemap/ParallaxBackground"]
-motion_scale = Vector2(0.05, 0.05)
-motion_offset = Vector2(-34.5, -30.5)
+motion_scale = Vector2(1.15, 1.15)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="tilemap/ParallaxBackground/ParallaxLayer2"]
 modulate = Color(1, 1, 1, 0.490196)

@@ -184,13 +184,22 @@ tile_set = SubResource("TileSet_64xt6")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="tilemap"]
 layer = 100
 follow_viewport_enabled = true
+scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="tilemap/ParallaxBackground"]
-motion_scale = Vector2(0.1, 0.1)
-motion_offset = Vector2(-16, 50)
+motion_scale = Vector2(1.1, 1.1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="tilemap/ParallaxBackground/ParallaxLayer"]
-tile_map_data = PackedByteArray("AAD9//7/AAABAAAAAAD9////AAABAAAAAAD9/wAAAAABAAAAAAD9/wEAAAABAAAAAAD+/wEAAAABAAAAAAABAAEAAAABAAAAAAACAAEAAAABAAAAAAACAAAAAAABAAAAAAACAP//AAABAAAAAAACAP7/AAABAAAAAAD9//f/AAABAAAAAAD9//b/AAABAAAAAAD9//X/AAABAAAAAAD9//T/AAABAAAAAAD+//T/AAABAAAAAAABAPT/AAABAAAAAAACAPT/AAABAAAAAAACAPX/AAABAAAAAAACAPb/AAABAAAAAAACAPf/AAABAAAAAAA=")
+modulate = Color(1, 1, 1, 0.490196)
+tile_map_data = PackedByteArray("AAD9////AAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAACAAEAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAD9//f/AAAAAAAAAAD9//b/AAAAAAAAAAD9//X/AAAAAAAAAAD9//T/AAAAAAAAAAD+//T/AAAAAAAAAAABAPT/AAAAAAAAAAACAPT/AAAAAAAAAAACAPX/AAAAAAAAAAACAPb/AAAAAAAAAAACAPf/AAAAAAAAAAD9/wIAAAAAAAAAAAD+/wIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAD8//f/AAAAAAAAAAD8//b/AAAAAAAAAAD8//X/AAAAAAAAAAD8//T/AAAAAAAAAAADAPT/AAAAAAAAAAADAPX/AAAAAAAAAAADAPb/AAAAAAAAAAADAPf/AAAAAAAAAAADAP//AAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_xq3a2")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="tilemap/ParallaxBackground"]
+motion_scale = Vector2(1.15, 1.15)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="tilemap/ParallaxBackground/ParallaxLayer2"]
+modulate = Color(1, 1, 1, 0.490196)
+tile_map_data = PackedByteArray("AAD9//T/AAAAAAAAAAACAPT/AAAAAAAAAAD9/wIAAAAAAAAAAAACAAIAAAAAAAAAAAADAPT/AAAAAAAAAAD8//T/AAAAAAAAAAD8/wIAAAAAAAAAAAADAAIAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_xq3a2")
 
 [node name="ysorting" type="Node2D" parent="."]

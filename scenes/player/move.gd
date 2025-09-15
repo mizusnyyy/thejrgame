@@ -9,9 +9,10 @@ var directionstop := 0
 var anim_locked := false
 var transporting := false
 var s:String
+var last_position: Vector2
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("gyro"):
+	if event.is_action_pressed("gyro") and !anim_locked:
 		anim_locked=true
 		anim.play("obtain")
 	if event.is_action_released("gyro"):

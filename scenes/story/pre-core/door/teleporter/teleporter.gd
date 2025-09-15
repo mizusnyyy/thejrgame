@@ -13,7 +13,7 @@ func _on_body_entered(body: Node2D) -> void:
 	body.smoke.changeemit(false)
 	blackout(body)
 	global.can_phone=false
-	phone.get_child(2).get_child(0)._hide_phone(true)
+	phone.get_child(1).get_child(0)._hide_phone(true)
 	global.can_move=false
 	var dir:Vector2
 	if scale.x < 0:

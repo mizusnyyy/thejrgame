@@ -36,7 +36,6 @@ region_rect = Rect2(18, 42, 11, 13)
 show_behind_parent = false
 z_index = -1
 position = Vector2(0, 13)
-emitting = false
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(2, 2)

@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bf0wggc601088"]
+[gd_scene load_steps=12 format=3 uid="uid://bf0wggc601088"]
 
 [ext_resource type="Script" uid="uid://o7onsywlm8iu" path="res://scenes/ui/fs.gd" id="2_nv40g"]
 [ext_resource type="Script" uid="uid://bi78cs6n8wl7t" path="res://scenes/phone/phone.gd" id="3_1aovg"]
-[ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_7iixm"]
 [ext_resource type="Texture2D" uid="uid://lhw6bn0ctkey" path="res://assets/ui/phone.png" id="4_rlgmi"]
 [ext_resource type="PackedScene" uid="uid://dycobh8i7e7vr" path="res://scenes/ui/phoneeng.tscn" id="5_5v2va"]
 [ext_resource type="Script" uid="uid://t6s4f322ej5p" path="res://scenes/story/pre-core/choice.gd" id="6_m21wr"]
@@ -37,28 +36,6 @@ process_mode = 3
 
 [node name="fs&pause handler" type="Node2D" parent="."]
 script = ExtResource("2_nv40g")
-
-[node name="pause" type="CanvasLayer" parent="."]
-visible = false
-scale = Vector2(0.5, 0.5)
-transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
-
-[node name="ColorRect" type="ColorRect" parent="pause"]
-offset_right = 1280.0
-offset_bottom = 720.0
-color = Color(0, 0, 0, 0.784314)
-
-[node name="Label" type="Label" parent="pause/ColorRect"]
-layout_mode = 1
-anchors_preset = -1
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 132.0
-offset_bottom = 32.0
-scale = Vector2(2, 2)
-theme_override_fonts/font = ExtResource("3_7iixm")
-text = "paused :3"
-metadata/_edit_use_anchors_ = true
 
 [node name="phone" type="CanvasLayer" parent="."]
 

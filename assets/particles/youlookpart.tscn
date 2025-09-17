@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://skk4ap6u4fjw"]
+
+[ext_resource type="Texture2D" uid="uid://bpoua0c2lsl1" path="res://assets/particles/obtain2part.png" id="1_5xif3"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wfmf3"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_nk3uf"]
+offsets = PackedFloat32Array(0, 0.597315, 1)
+colors = PackedColorArray(1, 1, 1, 0, 0.682353, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1k7yo"]
+gradient = SubResource("Gradient_nk3uf")
+
+[sub_resource type="Curve" id="Curve_wfmf3"]
+_limits = [0.0, 2.5, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(0.6, 2.5), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_nk3uf"]
+curve = SubResource("Curve_wfmf3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wfmf3"]
+lifetime_randomness = 0.25
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -100, 0)
+emission_shape = 3
+emission_box_extents = Vector3(160, 1, 1)
+direction = Vector3(0, 1, 0)
+spread = 80.0
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
+gravity = Vector3(0, 35, 0)
+scale_min = 0.3
+scale_max = 0.35
+scale_curve = SubResource("CurveTexture_nk3uf")
+color_ramp = SubResource("GradientTexture1D_1k7yo")
+
+[node name="obtainpart" type="GPUParticles2D"]
+z_index = 20
+material = SubResource("CanvasItemMaterial_wfmf3")
+amount = 12
+amount_ratio = 0.6
+texture = ExtResource("1_5xif3")
+lifetime = 2.8
+use_fixed_seed = true
+seed = 2775791101
+visibility_rect = Rect2(-25, -25, 50, 65)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_wfmf3")

@@ -12,7 +12,6 @@ size = Vector2(14, 6)
 
 [node name="player" type="CharacterBody2D" parent="." groups=["player"]]
 y_sort_enabled = true
-scale = Vector2(2, 2)
 script = ExtResource("1_3xey1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]

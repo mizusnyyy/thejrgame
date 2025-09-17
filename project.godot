@@ -13,6 +13,7 @@ config_version=5
 config/name="jr"
 run/main_scene="uid://bpmn0ng1q8ox"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/bg_color=Color(0.303291, 4.55317e-05, 0.2905, 1)
 
 [autoload]
 
@@ -179,5 +180,5 @@ textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 viewport/hdr_2d=true
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+environment/defaults/default_clear_color=Color(0.12, 0, 0.15, 1)
 anti_aliasing/quality/screen_space_aa=1

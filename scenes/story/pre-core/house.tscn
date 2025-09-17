@@ -620,6 +620,52 @@ volume_db = -6.769
 autoplay = true
 max_distance = 26.0
 
+[node name="quickchange3" type="Area2D" parent="tilemap/tp"]
+position = Vector2(39, -49)
+script = ExtResource("14_jkym4")
+namescene = "res://scenes/story/test/youlooklonely.tscn"
+diff = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tilemap/tp/quickchange3"]
+shape = SubResource("RectangleShape2D_j4awy")
+
+[node name="teeeto" type="AnimatedSprite2D" parent="tilemap/tp/quickchange3"]
+modulate = Color(0.0901961, 0.239216, 1, 0.388235)
+scale = Vector2(0.5, 0.9)
+sprite_frames = SubResource("SpriteFrames_aqtk2")
+autoplay = "default"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="tilemap/tp/quickchange3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = -7.0
+offset_right = 94.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.125, 0.125)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("18_jobkd")
+theme_override_font_sizes/normal_font_size = 11
+text = "TETOPORTER
+"
+autowrap_mode = 1
+horizontal_alignment = 1
+vertical_alignment = 1
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+metadata/_edit_use_anchors_ = true
+
+[node name="igorplayer" type="AudioStreamPlayer2D" parent="tilemap/tp/quickchange3"]
+stream = ExtResource("20_1e2cb")
+volume_db = -6.769
+autoplay = true
+max_distance = 26.0
+
 [node name="teleporter" parent="tilemap/tp" instance=ExtResource("28_rhstu")]
 position = Vector2(-56, 0)
 
@@ -695,9 +741,6 @@ y_sort_enabled = true
 [node name="player" parent="ysorting" instance=ExtResource("6_74pxv")]
 y_sort_enabled = true
 position = Vector2(-25, -122.5)
-
-[node name="player" parent="ysorting/player" index="0"]
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" parent="ysorting/player/player" index="0"]
 y_sort_enabled = true
@@ -790,6 +833,8 @@ position = Vector2(39, -21)
 [connection signal="ready" from="tilemap/tp/quickchange" to="tilemap/tp/quickchange" method="_on_ready"]
 [connection signal="body_entered" from="tilemap/tp/quickchange2" to="tilemap/tp/quickchange2" method="_on_body_entered"]
 [connection signal="ready" from="tilemap/tp/quickchange2" to="tilemap/tp/quickchange2" method="_on_ready"]
+[connection signal="body_entered" from="tilemap/tp/quickchange3" to="tilemap/tp/quickchange3" method="_on_body_entered"]
+[connection signal="ready" from="tilemap/tp/quickchange3" to="tilemap/tp/quickchange3" method="_on_ready"]
 [connection signal="ready" from="debug" to="debug" method="_on_ready"]
 
 [editable path="tilemap/tp/teleporter"]

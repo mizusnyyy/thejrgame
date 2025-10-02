@@ -113,7 +113,7 @@
 [ext_resource type="PackedScene" uid="uid://btunywoykvm0n" path="res://selectionwheel.2.tscn" id="113_kbdau"]
 [ext_resource type="Texture2D" uid="uid://euiwry2bpa3m" path="res://assets/sprite/characters/jr/jrbattlechibi.png" id="114_5jqvb"]
 [ext_resource type="Texture2D" uid="uid://jouutgjikwq0" path="res://assets/sprite/battle/hearts.png" id="118_471wb"]
-[ext_resource type="AudioStream" uid="uid://dq238q6fbhdl4" path="res://assets/sprite/battle/lastsuprise.mp3" id="119_1yjtx"]
+[ext_resource type="AudioStream" uid="uid://h5t8qfooc8xp" path="res://assets/sprite/battle/lastsuprise.mp3" id="119_1yjtx"]
 [ext_resource type="Script" uid="uid://bejskw4sl3ymu" path="res://scenes/battle/debug.gd" id="120_x87lg"]
 [ext_resource type="PackedScene" uid="uid://pegs4ep6hjc5" path="res://scenes/attackscenes/bone/bone.tscn" id="121_qabj5"]
 

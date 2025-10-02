@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var SPEED := 75.0
 @onready var anim := $AnimatedSprite2D
+@onready var obtainpart := preload("res://assets/particles/obtainpart.tscn")
 var directionstop := 0
 @export var direction := Vector2()
 var anim_locked := false
@@ -63,26 +64,48 @@ func _physics_process(delta: float) -> void:
 func obtainanim(txt):
 	if anim_locked:
 		return
+	var tween1 := create_tween().set_parallel(true)
+	var pos :Vector2= anim.position
+	tween1.tween_property(anim,"scale",Vector2(1.4,0.6),0.6)
+	tween1.tween_property(anim,"position",Vector2(0,6.4),0.6)
 	global.can_phone = false
 	anim_locked = true
 	velocity = Vector2.ZERO
 	anim.play("obtain")
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.6).timeout
 	anim.play("obtainfull")
 	await get_tree().create_timer(0.1).timeout
 	itemupanim(txt)
+	var ins := obtainpart.instantiate()
+	add_child(ins)
+	ins.global_position -= Vector2(0,16)
+	var tween2 := create_tween().set_parallel(true)
+	tween2.tween_property(anim,"scale",Vector2(0.8,1.3),0.1)
+	tween2.tween_property(anim,"position",Vector2(0,-4.8),0.1)
+	await tween2.finished
+	var tween3 := create_tween().set_parallel(true)
+	tween3.tween_property(anim,"scale",Vector2(1.0,1.0),0.12)
+	tween3.tween_property(anim,"position",Vector2.ZERO,0.12)
 	await get_tree().create_timer(0.9).timeout
+	ins.emitting = false
+	ins.get_child(0).emitting = false
 	anim_locked = false
 	global.can_phone = true
+	await get_tree().create_timer(ins.lifetime).timeout
+	ins.queue_free()
 
 func itemupanim(txt):
 	var item := $AnimatedSprite2D/item
 	var tween := create_tween().set_parallel(true)
 	item.texture=txt
+	item.modulate = Color(1,1,1,1)
 	item.show()
 	tween.tween_property(item,"scale",Vector2(1.0,1.0),0.1)
 	tween.tween_property(item,"position", Vector2(0.0, -16.0),0.1)
-	await get_tree().create_timer(0.9).timeout
+	await get_tree().create_timer(0.7).timeout
+	var tween2 := create_tween()
+	tween2.tween_property(item,"modulate", Color(1,1,1,0),0.2)
+	await tween2.finished
 	item.position.y=-7.0
 	item.scale.y=0.4
 	item.hide()

@@ -190,9 +190,6 @@ y_sort_enabled = true
 [node name="player" parent="ysorting" instance=ExtResource("6_m0j0v")]
 y_sort_enabled = true
 
-[node name="player" parent="ysorting/player" index="0"]
-scale = Vector2(1, 1)
-
 [node name="CollisionShape2D" parent="ysorting/player/player" index="0"]
 y_sort_enabled = true
 

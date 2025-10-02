@@ -43,6 +43,7 @@ amount = 12
 amount_ratio = 0.6
 texture = ExtResource("1_5xif3")
 lifetime = 2.8
+preprocess = 2.2
 use_fixed_seed = true
 seed = 2775791101
 visibility_rect = Rect2(-25, -25, 50, 65)

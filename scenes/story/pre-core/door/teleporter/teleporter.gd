@@ -1,7 +1,10 @@
 extends Area2D
-@onready var playersprite := $"../../../ysorting/player/player/AnimatedSprite2D"
-@onready var velocityplayer := $"../../../ysorting/player/player"
-@onready var anim := $"../../../AnimationPlayer"
+#@onready var playersprite := $"../../../ysorting/player/player/AnimatedSprite2D"
+#@onready var velocityplayer := $"../../../ysorting/player/player"
+#@onready var anim := $"../../../AnimationPlayer"
+@export var playersprite:AnimatedSprite2D
+@export var velocityplayer:CharacterBody2D
+@export var anim:AnimationPlayer
 var ishorizontal := true
 var s:String
 var step:float
@@ -40,11 +43,11 @@ func _on_body_entered(body: Node2D) -> void:
 	if not ishorizontal && is_instance_valid($Area2D):
 		$Area2D/door1.z_index = 1
 	body.anim.play(s)
-	var distance := 45.0
-	var steps := 45
-	var speed := 37.5
+	const distance := 45.0
+	const steps := 45
+	const speed := 37.5
+	const offset:=22
 	var temp:Vector2 = playersprite.get_position()
-	var offset:=22
 	
 	for i in range(steps-offset):
 		step = setstep(speed)

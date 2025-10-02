@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://bpmn0ng1q8ox"]
+[gd_scene load_steps=61 format=4 uid="uid://bpmn0ng1q8ox"]
 
 [ext_resource type="Script" uid="uid://cnbovm5fumlj3" path="res://scenes/story/pre-core/house.gd" id="1_0j0oh"]
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_tecch"]
@@ -25,7 +25,9 @@
 [ext_resource type="Texture2D" uid="uid://da7fbhx4q2o8t" path="res://assets/sprite/characters/aviruk/avirukspritesheet.png" id="22_aqtk2"]
 [ext_resource type="PackedScene" uid="uid://cvhhll683san2" path="res://scenes/items/iteminteract.tscn" id="25_8i2l0"]
 [ext_resource type="PackedScene" uid="uid://b6vi5n5gad3lf" path="res://data/dialogue_manager.tscn" id="26_u8w88"]
+[ext_resource type="Texture2D" uid="uid://bdo8d0j7y6s7b" path="res://assets/sprite/characters/jr/jrspritesheet.png" id="28_ix2xr"]
 [ext_resource type="PackedScene" uid="uid://b5bxnr2plabon" path="res://scenes/story/pre-core/door/teleporter/teleporter.tscn" id="28_rhstu"]
+[ext_resource type="SpriteFrames" uid="uid://4x4xjlf3j6jb" path="res://falling.tres" id="28_x81t7"]
 [ext_resource type="PackedScene" uid="uid://pgr1hxlmxihq" path="res://scenes/story/pre-core/door/doors.tscn" id="29_x81t7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qgspi"]
@@ -479,6 +481,56 @@ _data = {
 &"tp": SubResource("Animation_s7kpv")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhstu"]
+atlas = ExtResource("28_ix2xr")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x81t7"]
+atlas = ExtResource("28_ix2xr")
+region = Rect2(80, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2rtj"]
+atlas = ExtResource("28_ix2xr")
+region = Rect2(112, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0iki"]
+atlas = ExtResource("28_ix2xr")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6h5t2"]
+atlas = ExtResource("28_ix2xr")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50mei"]
+atlas = ExtResource("28_ix2xr")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fjho7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhstu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x81t7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2rtj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0iki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6h5t2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50mei")
+}],
+"loop": true,
+"name": &"default",
+"speed": 11.0
+}]
+
 [node name="01" type="Node2D"]
 script = ExtResource("1_0j0oh")
 
@@ -666,69 +718,93 @@ volume_db = -6.769
 autoplay = true
 max_distance = 26.0
 
-[node name="teleporter" parent="tilemap/tp" instance=ExtResource("28_rhstu")]
+[node name="teleporter" parent="tilemap/tp" node_paths=PackedStringArray("playersprite", "velocityplayer", "anim") instance=ExtResource("28_rhstu")]
 position = Vector2(-56, 0)
+playersprite = NodePath("../../../ysorting/player/player/AnimatedSprite2D")
+velocityplayer = NodePath("../../../ysorting/player/player")
+anim = NodePath("../../../AnimationPlayer")
 
 [node name="gdzie" parent="tilemap/tp/teleporter" index="1"]
 position = Vector2(-200, 0)
 
 [node name="Area2D" parent="tilemap/tp/teleporter" instance=ExtResource("29_x81t7")]
 
-[node name="teleporter2" parent="tilemap/tp" instance=ExtResource("28_rhstu")]
+[node name="teleporter2" parent="tilemap/tp" node_paths=PackedStringArray("playersprite", "velocityplayer", "anim") instance=ExtResource("28_rhstu")]
 position = Vector2(-232, 0)
 scale = Vector2(-1, 1)
+playersprite = NodePath("../../../ysorting/player/player/AnimatedSprite2D")
+velocityplayer = NodePath("../../../ysorting/player/player")
+anim = NodePath("../../../AnimationPlayer")
 
 [node name="gdzie" parent="tilemap/tp/teleporter2" index="1"]
 position = Vector2(-200, 0)
 
 [node name="Area2D" parent="tilemap/tp/teleporter2" instance=ExtResource("29_x81t7")]
 
-[node name="teleporter3" parent="tilemap/tp" instance=ExtResource("28_rhstu")]
+[node name="teleporter3" parent="tilemap/tp" node_paths=PackedStringArray("playersprite", "velocityplayer", "anim") instance=ExtResource("28_rhstu")]
 position = Vector2(-440, -96)
+playersprite = NodePath("../../../ysorting/player/player/AnimatedSprite2D")
+velocityplayer = NodePath("../../../ysorting/player/player")
+anim = NodePath("../../../AnimationPlayer")
 
 [node name="gdzie" parent="tilemap/tp/teleporter3" index="1"]
 position = Vector2(-200, 0)
 
 [node name="Area2D" parent="tilemap/tp/teleporter3" instance=ExtResource("29_x81t7")]
 
-[node name="teleporter4" parent="tilemap/tp" instance=ExtResource("28_rhstu")]
+[node name="teleporter4" parent="tilemap/tp" node_paths=PackedStringArray("playersprite", "velocityplayer", "anim") instance=ExtResource("28_rhstu")]
 position = Vector2(-616, -96)
 scale = Vector2(-1, 1)
+playersprite = NodePath("../../../ysorting/player/player/AnimatedSprite2D")
+velocityplayer = NodePath("../../../ysorting/player/player")
+anim = NodePath("../../../AnimationPlayer")
 
 [node name="gdzie" parent="tilemap/tp/teleporter4" index="1"]
 position = Vector2(-200, 0)
 
 [node name="Area2D" parent="tilemap/tp/teleporter4" instance=ExtResource("29_x81t7")]
 
-[node name="teleporter5" parent="tilemap/tp" instance=ExtResource("28_rhstu")]
+[node name="teleporter5" parent="tilemap/tp" node_paths=PackedStringArray("playersprite", "velocityplayer", "anim") instance=ExtResource("28_rhstu")]
 position = Vector2(-920, 0)
 scale = Vector2(-1, 1)
+playersprite = NodePath("../../../ysorting/player/player/AnimatedSprite2D")
+velocityplayer = NodePath("../../../ysorting/player/player")
+anim = NodePath("../../../AnimationPlayer")
 
 [node name="gdzie" parent="tilemap/tp/teleporter5" index="1"]
 position = Vector2(-504, 0)
 
 [node name="Area2D" parent="tilemap/tp/teleporter5" instance=ExtResource("29_x81t7")]
 
-[node name="teleporter6" parent="tilemap/tp" instance=ExtResource("28_rhstu")]
+[node name="teleporter6" parent="tilemap/tp" node_paths=PackedStringArray("playersprite", "velocityplayer", "anim") instance=ExtResource("28_rhstu")]
 position = Vector2(-440, 0)
+playersprite = NodePath("../../../ysorting/player/player/AnimatedSprite2D")
+velocityplayer = NodePath("../../../ysorting/player/player")
+anim = NodePath("../../../AnimationPlayer")
 
 [node name="gdzie" parent="tilemap/tp/teleporter6" index="1"]
 position = Vector2(-504, 0)
 
 [node name="Area2D" parent="tilemap/tp/teleporter6" instance=ExtResource("29_x81t7")]
 
-[node name="teleporter7" parent="tilemap/tp" instance=ExtResource("28_rhstu")]
+[node name="teleporter7" parent="tilemap/tp" node_paths=PackedStringArray("playersprite", "velocityplayer", "anim") instance=ExtResource("28_rhstu")]
 position = Vector2(-351, 37.5)
 rotation = 1.5708
+playersprite = NodePath("../../../ysorting/player/player/AnimatedSprite2D")
+velocityplayer = NodePath("../../../ysorting/player/player")
+anim = NodePath("../../../AnimationPlayer")
 
 [node name="gdzie" parent="tilemap/tp/teleporter7" index="1"]
 position = Vector2(-114, 0)
 
 [node name="Area2D" parent="tilemap/tp/teleporter7" instance=ExtResource("29_x81t7")]
 
-[node name="teleporter8" parent="tilemap/tp" instance=ExtResource("28_rhstu")]
+[node name="teleporter8" parent="tilemap/tp" node_paths=PackedStringArray("playersprite", "velocityplayer", "anim") instance=ExtResource("28_rhstu")]
 position = Vector2(-274, -49)
 rotation = -1.5708
+playersprite = NodePath("../../../ysorting/player/player/AnimatedSprite2D")
+velocityplayer = NodePath("../../../ysorting/player/player")
+anim = NodePath("../../../AnimationPlayer")
 
 [node name="gdzie" parent="tilemap/tp/teleporter8" index="1"]
 position = Vector2(-57, 0)
@@ -828,6 +904,18 @@ libraries = {
 
 [node name="iteminteract" parent="." instance=ExtResource("25_8i2l0")]
 position = Vector2(39, -21)
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(-97, -93)
+sprite_frames = ExtResource("28_x81t7")
+autoplay = "default"
+frame_progress = 0.255653
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
+position = Vector2(-78, -66)
+sprite_frames = SubResource("SpriteFrames_fjho7")
+autoplay = "default"
+frame_progress = 0.771014
 
 [connection signal="body_entered" from="tilemap/tp/quickchange" to="tilemap/tp/quickchange" method="_on_body_entered"]
 [connection signal="ready" from="tilemap/tp/quickchange" to="tilemap/tp/quickchange" method="_on_ready"]

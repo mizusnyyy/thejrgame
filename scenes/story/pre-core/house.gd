@@ -15,7 +15,7 @@ func _ready():
 		CutsceneManager.set_played(CutsceneManager.cutscenes.intro)
 		await anim.animation_finished
 		global.can_move=true
-	await get_tree().create_timer(6).timeout
+	await get_tree().create_timer(4).timeout
 	changebed(true)
 		
 func spawnphone():

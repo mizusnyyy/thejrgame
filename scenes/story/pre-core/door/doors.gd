@@ -1,7 +1,7 @@
 extends Area2D
-var inbody = false
-var lvl1 = 1
-var lvl2 = 1
+var inbody := false
+var lvl1 := 1
+var lvl2 := 1
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		inbody = true

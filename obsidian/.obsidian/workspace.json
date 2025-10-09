@@ -1,20 +1,20 @@
 {
   "main": {
-    "id": "87ee7985331b2287",
+    "id": "362cccd9fb742fe3",
     "type": "split",
     "children": [
       {
-        "id": "a1a06ec2259fce5e",
+        "id": "530a0c8575c5faff",
         "type": "tabs",
         "children": [
           {
-            "id": "6e28bba121708516",
+            "id": "9b898be397f605cf",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "empty",
               "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -23,15 +23,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "99d27f50e6245ea7",
+    "id": "7a7824cc1790f522",
     "type": "split",
     "children": [
       {
-        "id": "42276d3e459a67c8",
+        "id": "1d4e6ed804409b9d",
         "type": "tabs",
         "children": [
           {
-            "id": "0aed0ed93509aaac",
+            "id": "1120fc2086a59474",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,7 +44,7 @@
             }
           },
           {
-            "id": "6fe31f6175c7efaa",
+            "id": "6a6163254a23ca8a",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -61,7 +61,7 @@
             }
           },
           {
-            "id": "8b724cf2ef49ae4d",
+            "id": "e07139bf8025d97b",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -77,15 +77,15 @@
     "width": 300
   },
   "right": {
-    "id": "8716bbdbac1a1dba",
+    "id": "919ad957def22ef9",
     "type": "split",
     "children": [
       {
-        "id": "9d818f93c806da78",
+        "id": "acb28d6dd3990c51",
         "type": "tabs",
         "children": [
           {
-            "id": "fdc5ba3ddbfd7fe8",
+            "id": "2fe609f68aecfed7",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -103,7 +103,7 @@
             }
           },
           {
-            "id": "1fc565e9c4899c33",
+            "id": "8897805b4d6976e8",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -116,7 +116,7 @@
             }
           },
           {
-            "id": "302edc84806c0b8a",
+            "id": "1b92abbe866935de",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -131,7 +131,7 @@
             }
           },
           {
-            "id": "b2f8ec057b20094a",
+            "id": "b415ad5a5df45acb",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -148,7 +148,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
+    "width": 300,
     "collapsed": true
   },
   "left-ribbon": {
@@ -162,40 +162,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "6e28bba121708516",
+  "active": "9b898be397f605cf",
   "lastOpenFiles": [
-    "Zdarzenia/Ostatnia kłótnia.md",
-    "Postacie/Bagzo.md",
-    "Lokacje/Core (Odłamek).md",
-    "Postacie/Core (postać).md",
-    "Zdarzenia/Wybuch.md",
-    "Lokacje/Wyspa.md",
-    "Postacie/Shadow.md",
-    "Lokacje/Core (cały).md",
     "Koncepty/Core.md",
-    "Postacie/Cpt. Wavestorm.md",
-    "Postacie/Geralt.md",
-    "Postacie/Hexer.md",
-    "Postacie/Igreavious.md",
-    "Postacie/Jack Junior.md",
-    "Postacie/Jan w..md",
-    "Postacie/Misupi.md",
-    "Postacie/morro.md",
-    "Postacie/P.md",
-    "Postacie/Pavey.md",
-    "Postacie/Yumii.md",
-    "Łączniki/Strona Igreavious'a.md",
-    "Łączniki/Strona Pavey'a.md",
-    "Łączniki/Stronnictwa.md",
-    "Postacie/Taxman Tox.md",
-    "Łączniki",
-    "Postacie/Aviruk.md",
-    "npc-ty/Nickayl.md",
-    "Koncepty",
-    "Untitled.base",
-    "npc-ty",
-    "Zdarzenia",
-    "Postacie",
-    "Lokacje"
+    "Lokacje/Core (Odłamek).md",
+    "Lokacje/Core (cały).md"
   ]
 }

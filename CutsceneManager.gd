@@ -1,12 +1,16 @@
 extends Node
+var cutscenes := preload("res://data/cutscene_enum.gd").cutscene
+var all := {}
+func _ready():
+	cutsceneset()
+func has_played(id:int) -> bool:
+	print(id in all and all[id])
+	return id in all and all[id]
 
-var played_cutscenes = {"intro": false}  # słownik na cutscenki, np. {"intro": true}
-
-func has_played(name: String) -> bool:
-	return played_cutscenes.has(name) and played_cutscenes[name]
-
-func set_played(name: String) -> void:
-	played_cutscenes[name] = true
-
-#func playanim(name:String) -> void:
+func set_played(id:int) -> void:
+	all[id] = true
 	
+func cutsceneset():
+	for i in len(cutscenes):
+		all[i]=true
+	print(all)

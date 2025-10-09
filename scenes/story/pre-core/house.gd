@@ -1,13 +1,19 @@
 extends Node2D
-@onready var anim = $AnimationPlayer
+@onready var anim := $AnimationPlayer
+@onready var item := preload("res://scenes/items/iteminteract.tscn")
 func _ready():
 	$ysorting/player/player/ColorRect.visible=false
-	if CutsceneManager.has_played("intro"):
-		anim.stop()  # albo w ogóle nie odpalasz
+	print(CutsceneManager.has_played(CutsceneManager.cutscenes.intro))
+	if CutsceneManager.has_played(CutsceneManager.cutscenes.intro):
+		anim.stop()
 	else:
 		global.can_move=false
 		global.can_phone=false
 		anim.play("intro")
-		CutsceneManager.set_played("intro")
+		CutsceneManager.set_played(CutsceneManager.cutscenes.intro)
 		await anim.animation_finished
 		global.can_move=true
+func spawnphone():
+	var ins = item.instantiate()
+	$ysorting.add_child(ins)
+	ins.position=Vector2(24.0,-128.0)

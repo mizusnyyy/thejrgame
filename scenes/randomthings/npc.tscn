@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cne3a6lmj7c1u"]
 
-[ext_resource type="Script" uid="uid://ceododdxd8fru" path="res://scenes/story/pre-core/teto.gd" id="1_riiin"]
+[ext_resource type="Script" path="res://scenes/player/teto.gd" id="1_riiin"]
 [ext_resource type="AudioStream" uid="uid://bx51gveawpw6c" path="res://JacksWithHats.wav" id="3_vaavk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yq7e7"]
@@ -13,20 +13,17 @@ size = Vector2(14, 6)
 script = ExtResource("1_riiin")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 26)
-scale = Vector2(2, 2)
+position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_yq7e7")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_vaavk")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 z_index = 1000

@@ -7,11 +7,6 @@ var apps := []
 var ins
 var s:String
 var scroll:=false
-#func _input(event: InputEvent) -> void:
-	#if event.is_action_pressed("interact"):
-		#COS CO BEDZIE WCZESNIEJ TU
-		#if $lockscreen && !$lockscreen/lock/locked.visible:
-			#$lockscreen.bgup()
 
 func inslockscreen():
 	var path := preload("res://scenes/ui/lockscreen.tscn")
@@ -26,20 +21,12 @@ func _on_ready() -> void:
 	inslockscreen()
 
 func scrollit():
-	var tween := create_tween()
-	tween.tween_property(val, "scroll_horizontal", val.get_h_scroll_bar().max_value, 3)
-	await tween.finished
-	val.scroll_horizontal=0
-	await get_tree().create_timer(1.5).timeout
-	#val.scroll_horizontal += 1
-	#var max_scroll = val.get_h_scroll_bar().max_value
-	#print(val.scroll_horizontal," 1hiweje ", val.get_h_scroll_bar().max_value)
-	#if val.scroll_horizontal >= max_scroll:
-		#await get_tree().create_timer(1).timeout
-		#val.scroll_horizontal = 0
-	#else:
-		#await get_tree().create_timer(0.1).timeout
-	scrollit()
+	while true:
+		var tween := create_tween()
+		tween.tween_property(val, "scroll_horizontal", val.get_h_scroll_bar().max_value, 3)
+		await tween.finished
+		val.scroll_horizontal=0
+		await get_tree().create_timer(1.5).timeout
 
 func makeapps():
 	global.glapps(["Pumsapp","Jumbo maps","Junior Music","Jack\'n\'gram","CalPUMlator","igorapp","igorapp","igorapp","igorapp","igorapp"])
@@ -66,8 +53,8 @@ func _on_scrolldown_body_entered(body: Node2D) -> void:
 	if $apps.get_child_count()!=0:
 		return
 	scroll=true
-	var x = $MarginContainer/ScrollContainer
-	var tween = create_tween()
+	var x := $MarginContainer/ScrollContainer
+	var tween := create_tween()
 	while scroll:
 		if x.scroll_vertical < x.get_v_scroll_bar().max_value:
 			x.scroll_vertical+=1
@@ -87,7 +74,7 @@ func _on_scrollup_body_entered(body: Node2D) -> void:
 	if $apps.get_child_count()!=0:
 		return
 	scroll=true
-	var x = $MarginContainer/ScrollContainer
+	var x := $MarginContainer/ScrollContainer
 	while scroll:
 		if x.scroll_vertical > 0:
 			x.scroll_vertical-=1

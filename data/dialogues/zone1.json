@@ -13,12 +13,12 @@
 	  { "text": "tak z ciekawosci", "next": "shadow_intro_5" },
 	  { "text": "tak z NIEciekawosci", "next": "shadow_intro_7" }
 	]},
-	{"id": "shadow_weird_1", "text": "give me your big juicy IGOR", "hand":"9", "speaker":null, "portrait": "shadow/portrait/shadow4", "next":null},
+	{"id": "shadow_weird_1", "text": "give me your big juicy IGOR", "hand":"9", "speaker":null, "portrait": "shadow/portrait/shadow4", "next":"end"},
 	{"id": "shadow_intro_3", "text": "Baseball, huh?", "hand":"7","speaker": "Shadow", "portrait": "shadow/portrait/shadow1","next":"shadow_intro_4"},
 	{"id": "shadow_intro_4", "text": "...", "hand":null, "speaker":null, "portrait": "shadow/portrait/shadow5","next":"shadow_intro_5"},
 	{"id": "shadow_intro_5", "text": "BASEBALL... HUH?", "hand":"7", "speaker":null,"portrait":null, "next":"shadow_intro_6"},
 	{"id": "shadow_intro_6", "text": "...", "hand":null, "speaker":null,"portrait":"shadow/portrait/shadow1", "next":"shadow_intro_7"},
-	{"id": "shadow_intro_7", "text": "YOU STUPID IGOR!!!", "hand":"8","speaker":null,"portrait":"shadow/portrait/shadow2","next":null},
+	{"id": "shadow_intro_7", "text": "YOU STUPID IGOR!!!", "hand":"8","speaker":null,"portrait":"shadow/portrait/shadow2","next":"end"},
 	
 	{"id": "core_start", "text": "Welcome, mortal, do you desire power?", "hand":null, "speaker": "???", "portrait": "jr/teto_front", "next": "core_intro_1"},
 	{"id": "core_intro_1", "text": "Do you know who I AM?", "hand":"7", "speaker": "???", "portrait": "jr/teto_side_better","next": "core_intro_2"},
@@ -30,11 +30,11 @@
 	  { "text": "no", "next": "core_walka_2" },
 	  { "text": "yassss", "next": "core_weird_1" }
 	]},
-	{"id": "core_walka_1", "text": "ok.", "hand":null, "speaker": "core", "portrait": "jr/teto_side_better","next":null},
-	{"id": "core_walka_2", "text": "well 2 bad imma touch u.", "hand":null, "speaker": "core", "portrait": "jr/teto_side_better","next":null},
-	{"id": "core_weird_1", "text": "naaa... you made it weird now...", "hand":null, "speaker": "core", "portrait": "jr/teto_side_better","next":null},
+	{"id": "core_walka_1", "text": "ok.", "hand":null, "speaker": "core", "portrait": "jr/teto_side_better","next":"end"},
+	{"id": "core_walka_2", "text": "well 2 bad imma touch u.", "hand":null, "speaker": "core", "portrait": "jr/teto_side_better","next":"end"},
+	{"id": "core_weird_1", "text": "naaa... you made it weird now...", "hand":null, "speaker": "core", "portrait": "jr/teto_side_better","next":"end"},
 	{"id": "shadow1_start", "text": "hej jacek", "speaker": "shadow", "hand":null, "portrait": "shadow/portrait/shadow4","next":"shadow_intro_8"},
 	{"id": "shadow_intro_8", "text": "id love to touch you", "hand":null, "speaker": "shadow", "portrait": "shadow/portrait/shadow4","next":"shadow_intro_9"},
-	{"id": "shadow_intro_9", "text": "uwielbian nwordy", "hand":"2", "speaker": "freaky shadow", "portrait": "shadow/portrait/shadow4","next":null}	
+	{"id": "shadow_intro_9", "text": "uwielbian nwordy", "hand":"2", "speaker": "freaky shadow", "portrait": "shadow/portrait/shadow4","next":"end"}	
 
 ]

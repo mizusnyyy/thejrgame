@@ -1,7 +1,7 @@
 extends Node2D
 
 var dialogue_list := {}
-const dialogue_json_pth := "res://data/dialogue.json"
+const dialogue_json_pth := "res://data/dialogues/"
 const dlg_e := preload("res://data/dialogue_enum.gd").dg # enum with all of dialogue
 const sprite_directory := "res://assets/sprite/characters/"
 var dialog: Node = null
@@ -13,10 +13,10 @@ var temp := false
 signal dialogue_done
 
 func _ready() -> void:
-	load_dialogues()
+	load_dialogues("zone1")
 
-func load_dialogues() -> void:
-	var file = FileAccess.open(dialogue_json_pth, FileAccess.READ)
+func load_dialogues(dialogue) -> void:
+	var file = FileAccess.open(dialogue_json_pth+dialogue+".json", FileAccess.READ)
 	if file:
 		file = JSON.parse_string(file.get_as_text())
 		for entry in file:
@@ -80,12 +80,12 @@ func show_dialog(id) -> void:
 		return
 	await dialog.show_dialogue(d.text, portrait, sound, true)
 
-	if d.next!=null:
+	if d.next==dlg_e.end:
+		global.can_phone = true
+		await get_tree().create_timer(0.1).timeout
+		emit_signal("dialogue_finished")
+	else:
 		if typeof(d.next) == TYPE_INT and d.next == dlg_e.battle:
 			get_tree().change_scene_to_packed(preload("res://scenes/tempbattle/battle.tscn"))
 		else:
 			show_dialog(d.next)
-	else:
-		global.can_phone = true
-		await get_tree().create_timer(0.1).timeout
-		emit_signal("dialogue_done")

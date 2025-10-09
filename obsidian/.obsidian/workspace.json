@@ -8,13 +8,13 @@
         "type": "tabs",
         "children": [
           {
-            "id": "4900346c1be31f9a",
+            "id": "6e28bba121708516",
             "type": "leaf",
             "state": {
-              "type": "empty",
+              "type": "graph",
               "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -90,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Untitled.base",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Untitled"
+              "title": "Backlinks"
             }
           },
           {
@@ -149,7 +148,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -162,35 +162,40 @@
       "bases:Create new base": false
     }
   },
-  "active": "4900346c1be31f9a",
+  "active": "6e28bba121708516",
   "lastOpenFiles": [
-    "jr/janek.md",
-    "npc-ty/Nickayl.md",
-    "npc-ty/3.14 pi.md",
-    "npc-ty",
-    "Zdarzenia/Wybuch.md",
     "Zdarzenia/Ostatnia kłótnia.md",
-    "Zdarzenia",
-    "Postacie/Yumii.md",
-    "Postacie/Taxman Tox.md",
+    "Postacie/Bagzo.md",
+    "Lokacje/Core (Odłamek).md",
+    "Postacie/Core (postać).md",
+    "Zdarzenia/Wybuch.md",
+    "Lokacje/Wyspa.md",
     "Postacie/Shadow.md",
-    "Postacie/Pavey.md",
+    "Lokacje/Core (cały).md",
+    "Koncepty/Core.md",
+    "Postacie/Cpt. Wavestorm.md",
+    "Postacie/Geralt.md",
+    "Postacie/Hexer.md",
+    "Postacie/Igreavious.md",
+    "Postacie/Jack Junior.md",
+    "Postacie/Jan w..md",
+    "Postacie/Misupi.md",
     "Postacie/morro.md",
     "Postacie/P.md",
-    "Postacie/Misupi.md",
-    "Postacie/Jan w..md",
-    "Postacie/Jack Junior.md",
-    "Postacie/Igreavious.md",
-    "Postacie/Hexer.md",
-    "Postacie/Goldenram.md",
-    "Postacie/Geralt.md",
-    "Postacie/Cpt. Wavestorm.md",
-    "Postacie/Core (postać).md",
-    "Postacie/Bagzo.md",
+    "Postacie/Pavey.md",
+    "Postacie/Yumii.md",
+    "Łączniki/Strona Igreavious'a.md",
+    "Łączniki/Strona Pavey'a.md",
+    "Łączniki/Stronnictwa.md",
+    "Postacie/Taxman Tox.md",
+    "Łączniki",
+    "Postacie/Aviruk.md",
+    "npc-ty/Nickayl.md",
+    "Koncepty",
+    "Untitled.base",
+    "npc-ty",
+    "Zdarzenia",
     "Postacie",
-    "Lokacje/Wyspa.md",
-    "Lokacje/Core (Odłamek).md",
-    "Lokacje/Core (cały).md",
     "Lokacje"
   ]
 }

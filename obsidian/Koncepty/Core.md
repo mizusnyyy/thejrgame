@@ -1,0 +1,1 @@
+Duża placówka, znajdowała się daleko od głównego  miasta restoracji. Core dawał COŚ mieszkańcom restoracji. Był on bardzo zaawansowaną maszyną z magią w swoim centrum, przez co był on bardzo nie stabilny i wymagał ciągłej konserwacji, przez wielką kłótnię [[Shadow]] nie był w stanie wykonać potrzebnych napraw.

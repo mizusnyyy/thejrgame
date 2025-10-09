@@ -1,5 +1,6 @@
 enum dg { # tutaj dajecie nowe id dialogów
 	battle,
+	end,
 	core_start, 
 	core_intro_1, core_intro_2, core_intro_3, core_intro_4, 
 	core_walka_1, core_walka_2, core_weird_1,

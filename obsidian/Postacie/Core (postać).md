@@ -1,1 +1,1 @@
-Magiczna część [[Core (cały)]] uwolniona w [[wybuch]]'u który nastąpił przez [[Ostatnia kłótnia]]
+Centralna część [[Core]]'a uwolniona w wybuchu który nastąpił przez Ostatnią kłótnię.

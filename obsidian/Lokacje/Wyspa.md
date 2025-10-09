@@ -1,1 +1,1 @@
-Pozostałość po świecie restoracji, zaptopionym przez [[Wybuch]] [[Core (cały)]]'a. Jest ona miejscem akcji gry, zawiera na sobie mnówstwo lokacji oraz na jej północy leży [[Core (Odłamek)]].
+Pozostałość po świecie restoracji, zaptopionym przez [[Wybuch]] [[Core]]'a. Jest ona miejscem akcji gry, zawiera na sobie mnówstwo lokacji oraz na jej północy leży [[Core (Odłamek)]].

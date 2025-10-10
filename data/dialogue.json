@@ -46,8 +46,8 @@
 	{"id": "bedroominteract_stop", "text": "...", "hand":null, "speaker": "YOU", "portrait": null,"next":null},
 	{"id": "bedroominteract_2", "text": "\"Ten kids in ten years, who do you\"", "hand":null, "speaker": "YOU", "portrait": null,"next":"bedroominteract_3"},
 	{"id": "bedroominteract_3", "text": "\"wanna be when you grow up? Steven.\"", "hand":null, "speaker": "YOU", "portrait": null,"next":null},
-	{"id": "nyxel_start", "text": "Nya~! Orewo nawa... don nyxel doflamingo", "hand":"4", "speaker":"nyxel", "portrait": "nyxel/portrait/nyxel2","next": "nyxel_intro_1"},
-	{"id": "nyxel_intro_1", "text": "Tak z ciekawosci... kimzes?", "hand":"3", "speaker":"nyxel", "portrait": "nyxel/portrait/nyxel4","next":"nyxel_intro_2"},
-	{"id": "nyxel_intro_2", "text": "i nie nie jestem cwelem!", "hand":"7", "speaker":"nyxel", "portrait": "nyxel/portrait/nyxel5","next":null}
+	{"id": "nyxel_start", "text": "Nya~! Orewo nawa... don nyxel doflamingo", "hand":"4", "speaker":"nyxel", "portrait": "pavey/portrait/pavey4","next": "nyxel_intro_1"},
+	{"id": "nyxel_intro_1", "text": "Tak z ciekawosci... kimzes?", "hand":"3", "speaker":"nyxel", "portrait": "pavey/portrait/pavey5","next":"nyxel_intro_2"},
+	{"id": "nyxel_intro_2", "text": "i nie nie jestem cwelem!", "hand":"7", "speaker":"nyxel", "portrait": "pavey/portrait/pavey4","next":null}
 
 ]

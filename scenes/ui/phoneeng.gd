@@ -29,11 +29,11 @@ func scrollit():
 		await get_tree().create_timer(1.5).timeout
 
 func makeapps():
-	global.glapps(["Pumsapp","Jumbo maps","Junior Music","Jack\'n\'gram","CalPUMlator","igorapp","igorapp","igorapp","igorapp","igorapp"])
+	Global.glapps(["Pumsapp","Jumbo maps","Junior Music","Jack\'n\'gram","CalPUMlator","igorapp","igorapp","igorapp","igorapp","igorapp"])
 	var path = preload("res://scenes/ui/phoneapp.tscn")
-	for i in len(global.phoneapps):
+	for i in len(Global.phoneapps):
 		ins = path.instantiate()
-		s = global.phoneapps[i]
+		s = Global.phoneapps[i]
 		$MarginContainer/ScrollContainer/VBoxContainer/GridContainer.add_child(ins)
 		setapplabel()
 		ins.setphoto(s)

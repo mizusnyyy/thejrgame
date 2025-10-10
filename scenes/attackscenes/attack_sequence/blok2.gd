@@ -55,4 +55,4 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.name == "soul" and is_attacking:
-		global.soultakedamage(body, 10)
+		Global.soultakedamage(body, 10)

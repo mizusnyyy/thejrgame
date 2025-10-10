@@ -14,7 +14,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.name == "soul":
-		global.soultakedamage(body, 10)
+		Global.soultakedamage(body, 10)
 
 func summoned(bullet, soul, speed, posx):
 	#var random_x = randf_range(258, 382)

@@ -13,7 +13,7 @@ func _process(delta):
 			queue_free()
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "soul":
-		global.soultakedamage(body,10)
+		Global.soultakedamage(body,10)
 func summoned(bullet, soul, speed:= 200.0):
 		bullet.global_position.x = midscreen + randf_range(-midscreen*1/6,midscreen*1/6)
 		bullet.global_position.y = 0

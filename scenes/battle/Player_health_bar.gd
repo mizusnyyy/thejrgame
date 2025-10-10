@@ -11,13 +11,13 @@ var speed_per_second = 35
 var current_color = ""
 
 func _ready():
-	max_value = global.maxhealth
+	max_value = Global.maxhealth
 	ghost_bar.max_value = max_value
-	value = global.health
+	value = Global.health
 	_update_style(value)
 
 func _process(delta: float) -> void:
-	value = global.health
+	value = Global.health
 
 	if ghost_bar.value > value:
 		ghost_bar.value = move_toward(ghost_bar.value, value, speed_per_second * delta)

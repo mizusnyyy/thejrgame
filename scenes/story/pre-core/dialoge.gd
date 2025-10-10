@@ -49,7 +49,7 @@ func show_dialogue(
 ) -> void:
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	global.can_move = false
+	Global.can_move = false
 
 	full_text = text
 	char_index = 0
@@ -76,7 +76,7 @@ func show_dialogue(
 
 	if wait_for_close:
 		await dialogue_finished
-		global.can_move = true
+		Global.can_move = true
 	else:
 		return
 
@@ -86,7 +86,7 @@ func choose(options: Array, texts: Array):
 	show()
 	choice.show()
 	choice.can_choose = true
-	global.can_move = false
+	Global.can_move = false
 
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.text = ""

@@ -14,7 +14,7 @@ func _on_body_exited(body: Node2D) -> void:
 func _unhandled_input(event):
 	if event.is_action_pressed("interact") && inrange:
 		anime.obtainanim($Sprite2D.texture)
-		musicsounds.play_music(load("res://JacksWithHats.wav"))
+		Musicsounds.play_music(load("res://JacksWithHats.wav"))
 		self.queue_free()
 		
 func _on_ready() -> void:

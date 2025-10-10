@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dlvhjo5wsm8si"]
 
-[ext_resource type="Script" path="res://scenes/ui/panel.gd" id="2_e4lyg"]
+[ext_resource type="Script" uid="uid://bk6bdio51usd3" path="res://scenes/ui/panel.gd" id="2_e4lyg"]
 [ext_resource type="Script" uid="uid://o7onsywlm8iu" path="res://scenes/ui/fs.gd" id="2_nv40g"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_7iixm"]
 [ext_resource type="Texture2D" uid="uid://e5q4i0heuvg3" path="res://assets/sprite/characters/jr/teto_front.png" id="5_xwmki"]
@@ -26,19 +26,19 @@ func goto_teto(path: String):
 	get_tree().change_scene_to_file(\"res://scenes/story/pre-core/\"+path+\".tscn\")
 
 func set_var(variable, value):
-	if has_variable(global, variable):
-		global.set(variable, value)
+	if has_variable(Global, variable):
+		Global.set(variable, value)
 		output(\"global.\" + str(variable) + \" = \" + str(value))
 	else:
 		output(\"[color=red]no such global variable: %s[/color]\" % variable)
 func get_var(variable):
-	if has_variable(global, variable):
-		var value = global.get(variable)
+	if has_variable(Global, variable):
+		var value = Global.get(variable)
 		output(\"global.\" + str(variable) + \" = \" + str(value))
 	else:
 		output(\"[color=red]no such global variable: %s[/color]\" % variable)
 func get_vars():
-	var vars = global.get_property_list()
+	var vars = Global.get_property_list()
 	var found = false	
 
 	output(\"[color=light_blue]global variables:[/color]\")
@@ -46,7 +46,7 @@ func get_vars():
 	for var_info in vars:
 		if var_info.usage & PROPERTY_USAGE_SCRIPT_VARIABLE != 0:
 			var name = var_info.name
-			var value = global.get(name)
+			var value = Global.get(name)
 			output(\"- [color=white]%s[/color] = %s\" % [name, str(value)])
 			found = true
 

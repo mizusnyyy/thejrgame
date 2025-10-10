@@ -15,10 +15,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if hovered and not used and Input.is_action_just_pressed("interact"):
 		used = true
-		global.health += 10
-		if global.health > global.maxhealth:
-			global.health = global.maxhealth
-		print("Żresz i zyskujesz 10 hp:", global.health)
+		Global.health += 10
+		if Global.health > Global.maxhealth:
+			Global.health = Global.maxhealth
+		print("Żresz i zyskujesz 10 hp:", Global.health)
 		if is_instance_valid(color_rect):
 			color_rect.visible = false
 		queue_free()

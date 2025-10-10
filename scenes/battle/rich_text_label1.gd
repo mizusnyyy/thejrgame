@@ -2,12 +2,12 @@ extends RichTextLabel
 @onready var hp_bar = $"../Player_health_bar"
 var hp = 0
 func _process(delta: float) -> void:
-	hp_bar.value = global.health
+	hp_bar.value = Global.health
 	clear()
 	push_color(Color("#ffffff"))
-	append_text(("%d / %d"%[int(global.health), int(global.maxhealth)]))
+	append_text(("%d / %d"%[int(Global.health), int(Global.maxhealth)]))
 	pop()
 	
-	if global.health <= 0:
-		global.health = 0
+	if Global.health <= 0:
+		Global.health = 0
 	

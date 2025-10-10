@@ -15,7 +15,7 @@ func _process(delta):
 		scale += Vector2(randf() * delta,randf() * delta)
 func _on_body_entered(body):
 	if body.name == "soul":
-		global.soultakedamage(body,10)
+		Global.soultakedamage(body,10)
 func summoned(bullet, soul, speed):
 		bullet.global_position.x = midscreen + randf_range(-midscreen*1/8,midscreen*1/8)
 		bullet.global_position.y = 0

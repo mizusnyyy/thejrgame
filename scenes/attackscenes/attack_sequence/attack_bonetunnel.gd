@@ -4,7 +4,7 @@ extends Node2D
 signal attack_finished
 
 func summoned(bullet, soul, speed):
-	global.current_mode=global.mode.RED
+	Global.current_mode=Global.mode.RED
 	var randomnr = 320
 	var inny = 360
 	for i in range(13):

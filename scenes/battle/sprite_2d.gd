@@ -4,7 +4,7 @@ extends Sprite2D
 func _process(delta: float) -> void:
 	change_heart_texture()
 func change_heart_texture():
-	hp_bar = global.health
+	hp_bar = Global.health
 	if hp_bar > 50:
 		self.region_rect.position.y=0
 	elif hp_bar > 20:

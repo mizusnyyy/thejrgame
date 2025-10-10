@@ -25,28 +25,28 @@ func _on_body_exited(body: Node2D) -> void:
 	if body.name == "soul":
 		pass
 func _process(_delta: float) -> void:
-	if selected and global.current_state == global.state.PLAYER_TURN:
+	if selected and Global.current_state == Global.state.PLAYER_TURN:
 		if interacting:
-			if global.inventory.size() == 0:
+			if Global.inventory.size() == 0:
 				interacting = false
 				label.visible = false
 				return
 
 			if Input.is_action_just_pressed("down"):
-				selected_item_index = (selected_item_index + 1) % global.inventory.size()
+				selected_item_index = (selected_item_index + 1) % Global.inventory.size()
 				_show_items()
 			elif Input.is_action_just_pressed("up"):
-				selected_item_index = (selected_item_index - 1 + global.inventory.size()) % global.inventory.size()
+				selected_item_index = (selected_item_index - 1 + Global.inventory.size()) % Global.inventory.size()
 				_show_items()
 			elif Input.is_action_just_pressed("interact"):
-				global.use_item(selected_item_index, "player")
-				global.mana += 10
+				Global.use_item(selected_item_index, "player")
+				Global.mana += 10
 				hideall()
 
 				_show_items()
 
-				if selected_item_index >= global.inventory.size():
-					selected_item_index = max(0, global.inventory.size() - 1)
+				if selected_item_index >= Global.inventory.size():
+					selected_item_index = max(0, Global.inventory.size() - 1)
 
 				notui.enemyturn()
 
@@ -59,8 +59,8 @@ func _process(_delta: float) -> void:
 
 func _show_items() -> void:
 	var text = ""
-	for i in range(global.inventory.size()):
-		var item = global.inventory[i]
+	for i in range(Global.inventory.size()):
+		var item = Global.inventory[i]
 		if i == selected_item_index:
 			text += "[color=yellow]%s[/color]\n" % item.name
 		else:
@@ -71,7 +71,7 @@ func _show_items() -> void:
 func _on_label_meta_clicked(meta: Variant) -> void:
 	if typeof(meta) == TYPE_STRING and meta.begins_with("item_"):
 		var index = int(meta.substr(5))
-		global.use_item(index, "player")
+		Global.use_item(index, "player")
 		_show_items()
 		notui.enemyturn()
 

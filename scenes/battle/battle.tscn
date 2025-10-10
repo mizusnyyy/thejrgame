@@ -125,7 +125,7 @@
 [ext_resource type="Texture2D" uid="uid://c0rju4q54hy8u" path="res://assets/sprite/battle/not ui/ass.png" id="112_p6ty6"]
 [ext_resource type="Texture2D" uid="uid://dyfae6vj3xg66" path="res://assets/sprite/battle/not ui/item.png" id="113_rcqhw"]
 [ext_resource type="Texture2D" uid="uid://c6xd1sg5oggf3" path="res://assets/sprite/battle/not ui/item_select.png" id="114_da7rj"]
-[ext_resource type="Script" uid="uid://bkmd0ah840rwm" path="res://scenes/battle/act.gd" id="114_eimsn"]
+[ext_resource type="Script" path="res://scenes/battle/act.gd" id="114_eimsn"]
 [ext_resource type="Texture2D" uid="uid://by1fj063v3e3t" path="res://assets/sprite/battle/not ui/mercy.png" id="115_2ohwp"]
 [ext_resource type="AudioStream" uid="uid://b3e0yrmnrd73n" path="res://assets/sprite/battle/aaaawhooya.wav" id="115_w54gx"]
 [ext_resource type="Texture2D" uid="uid://bka5qqbi2x03e" path="res://assets/sprite/battle/not ui/mercy_select.png" id="116_kdiof"]
@@ -146,8 +146,9 @@
 [ext_resource type="PackedScene" uid="uid://pegs4ep6hjc5" path="res://scenes/attackscenes/bone/bone.tscn" id="137_21vhs"]
 [ext_resource type="Script" uid="uid://cfw8ku15s2mot" path="res://scenes/battle/sprite_2d.gd" id="139_itpkr"]
 [ext_resource type="Texture2D" uid="uid://jouutgjikwq0" path="res://assets/sprite/battle/hearts.png" id="139_wf2x0"]
-[ext_resource type="PackedScene" uid="uid://btunywoykvm0n" path="res://selectionwheel.2.tscn" id="144_ue6uc"]
+[ext_resource type="PackedScene" uid="uid://btunywoykvm0n" path="res://unused/selection_wheal/selectionwheel.2.tscn" id="144_ue6uc"]
 [ext_resource type="Texture2D" uid="uid://euiwry2bpa3m" path="res://assets/sprite/characters/jr/jrbattlechibi.png" id="145_dlka0"]
+
 
 [sub_resource type="GDScript" id="GDScript_w54gx"]
 script/source = "extends Node2D

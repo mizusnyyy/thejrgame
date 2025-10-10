@@ -18,7 +18,7 @@ func _on_body_exited(body: Node2D) -> void:
 	selected = false
 
 func _process(delta: float) -> void:
-	if selected and global.current_state == global.state.PLAYER_TURN and Input.is_action_just_pressed("interact") and visible:
+	if selected and Global.current_state == Global.state.PLAYER_TURN and Input.is_action_just_pressed("interact") and visible:
 		selected = false
 
 		dmg.global_position = Vector2(randf_range(224, 416), randf_range(64, 128))
@@ -30,14 +30,14 @@ func _process(delta: float) -> void:
 		audio.play()
 		deal_damage(10) 
 		await dmg.animation_finished
-		print("the very evil enemy: ", global.enemy_hp)
+		print("the very evil enemy: ", Global.enemy_hp)
 		notui.enemyturn()
 
 func deal_damage(amount: float) -> void:
-	global.enemy_hp -= amount
-	global.mana += 10
-	if global.enemy_hp <= 0:
-		global.enemy_hp = 0
+	Global.enemy_hp -= amount
+	Global.mana += 10
+	if Global.enemy_hp <= 0:
+		Global.enemy_hp = 0
 		call_deferred("_back_to_house")
 
 func _back_to_house() -> void:

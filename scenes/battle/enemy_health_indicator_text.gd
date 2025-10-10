@@ -3,11 +3,11 @@ extends RichTextLabel
 @onready var mana = $"../Mana_bar"
 
 func _process(delta: float) -> void:
-	mana.value = global.mana
+	mana.value = Global.mana
 	clear()
 	push_color(Color("#ffffff"))
-	append_text(("%d / %d"%[int(global.mana), int(global.mana_max)]))
+	append_text(("%d / %d"%[int(Global.mana), int(Global.mana_max)]))
 	pop()
 	
-	if global.mana <= 0:
-		global.mana = 0
+	if Global.mana <= 0:
+		Global.mana = 0

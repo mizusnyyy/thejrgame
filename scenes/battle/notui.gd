@@ -17,7 +17,7 @@ func hidenotui():
 	hidenotuitween.tween_property(self, "modulate:a", 0.0, 0.25).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 func enemyturn():
 	hidenotui()
-	global.current_state=global.state.ENEMY_TURN
+	Global.current_state=Global.state.ENEMY_TURN
 	
 	var boxcentertween: Tween
 	boxcentertween = create_tween()
@@ -41,7 +41,7 @@ func enemyturn():
 
 func playerturn():
 	shownoutui()
-	global.current_state=global.state.PLAYER_TURN
+	Global.current_state=Global.state.PLAYER_TURN
 	
 	var boxdowntween: Tween
 	boxdowntween = create_tween()

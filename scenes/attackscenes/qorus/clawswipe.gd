@@ -8,7 +8,7 @@ signal attack_finished
 @onready var player = get_tree().get_root().get_node("/root/fight/soul")
 func _on_body_entered(body):
 	if body.name == "soul":
-		global.soultakedamage(body,10)
+		Global.soultakedamage(body,10)
 func summoned(bullet, soul, speed, value1, value2):
 		phase1(bullet, soul, speed, value1, value2)
 func phase1(bullet, soul, speed, value1, value2):

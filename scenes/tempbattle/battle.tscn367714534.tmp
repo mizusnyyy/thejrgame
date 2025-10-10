@@ -836,9 +836,9 @@ func _process(delta: float) -> void:
 	checkhearthsprite()
 
 func checkhearthsprite():
-	if Global.health>50:
+	if global.health>50:
 		anim.frame=0
-	elif Global.health>20:
+	elif global.health>20:
 		anim.frame=1
 	else:
 		anim.frame=2

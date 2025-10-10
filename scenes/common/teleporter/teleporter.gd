@@ -15,9 +15,9 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 	body.smoke.changeemit(false)
 	blackout(body)
-	global.can_phone=false
-	phone.get_child(1).get_child(0)._hide_phone(true)
-	global.can_move=false
+	Global.can_phone=false
+	Phone.get_child(1).get_child(0)._hide_phone(true)
+	Global.can_move=false
 	var dir:Vector2
 	if scale.x < 0:
 		dir = Vector2.RIGHT.rotated(rotation).normalized()
@@ -68,8 +68,8 @@ func _on_body_entered(body: Node2D) -> void:
 		
 	await anim.animation_finished
 	
-	global.can_move=true
-	global.can_phone=true
+	Global.can_move=true
+	Global.can_phone=true
 	body.transporting=false
 
 func setstep(spd):

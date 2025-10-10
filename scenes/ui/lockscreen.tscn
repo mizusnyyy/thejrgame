@@ -1,10 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://ssfcxky4esuu"]
 
 [ext_resource type="Shader" uid="uid://bw1x6d16m18g5" path="res://scenes/ui/phoneeng.gdshader" id="1_pxika"]
-[ext_resource type="Script" uid="uid://ehg1whinu8c6" path="res://lockscreen.gd" id="1_u4t7r"]
+[ext_resource type="Script" uid="uid://py0tk82hgs10" path="res://scenes/phone/lockscreen.gd" id="1_u4t7r"]
 [ext_resource type="Texture2D" uid="uid://din8tkf157r5c" path="res://assets/ui/phonebg.png" id="2_u4t7r"]
 [ext_resource type="Texture2D" uid="uid://dkg70g6anaqms" path="res://assets/ui/lockicon.png" id="3_ircog"]
 [ext_resource type="Script" uid="uid://dnjx1ubylv33c" path="res://scenes/ui/label.gd" id="5_ircog"]
+
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ircog"]
 shader = ExtResource("1_pxika")

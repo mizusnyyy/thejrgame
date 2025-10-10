@@ -26,7 +26,7 @@ func nextturn():
 	notui.enemyturn()
 	await attack(runda+1) 
 	notui.playerturn()
-	global.current_mode = global.mode.RED
+	Global.current_mode = Global.mode.RED
 	runda += 1
 	print("Koniec rundy:", runda)
 	await notui.enemy_turn
@@ -66,7 +66,7 @@ func chooseattack(ran):
 		bullet = instantiateall(gloo_scene)
 		bullet.summoned(bullet, soul, bullet_speed)
 	elif ran == 4: 
-		global.current_mode=global.mode.RED
+		Global.current_mode=Global.mode.RED
 		gloo_scene = preload("res://scenes/attackscenes/gloo/gloo.tscn")
 		#gloo_scene = preload("res://attackscenes/bone/bone.tscn")
 		bullet = instantiateall(gloo_scene)

@@ -8,7 +8,7 @@ func summoned(bullet, soul, speed):
 	if attack_in_progress:
 		return
 	attack_in_progress = true
-	global.current_mode = global.mode.RED
+	Global.current_mode = Global.mode.RED
 	var min_x = 258
 	var max_x = 382
 	var min_dist = 15

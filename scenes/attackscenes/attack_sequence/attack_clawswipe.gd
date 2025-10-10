@@ -4,7 +4,7 @@ extends Node2D
 signal attack_finished
 
 func summoned(bullet, soul, speed):
-	global.current_mode=global.mode.RED
+	Global.current_mode=Global.mode.RED
 	startsequence(bullet, soul, 200)
 	await get_tree().create_timer(0.6).timeout
 	startsequence(bullet, soul, 200, -1)

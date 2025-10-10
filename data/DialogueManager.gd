@@ -86,7 +86,7 @@ func show_dialog(id) -> void:
 		else:
 			show_dialog(d.next)
 	else:
-		global.can_phone = true
+		Global.can_phone = true
 		dialog.hideanim()
 		await get_tree().create_timer(0.1).timeout
 		emit_signal("dialogue_done")

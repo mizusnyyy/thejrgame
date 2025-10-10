@@ -36,7 +36,7 @@ func _process(_delta):
 		else:
 			_show_phone()
 func _show_phone():
-	if not global.can_phone:
+	if not Global.can_phone:
 		return
 	visible = true
 	is_animating = true
@@ -108,11 +108,11 @@ func showcursor():
 	show()
 	choice.show()
 	choice.can_choose = true
-	global.can_move = false
+	Global.can_move = false
 
 func hidecursor():
 	var choice := $"choice/indicator"
 	choice.hide()
 	choice.can_choose = false
-	global.can_move = true
+	Global.can_move = true
 	

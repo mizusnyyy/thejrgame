@@ -26,7 +26,7 @@ func _process(_delta):
 func talk():
 	if player_in_range and can_talk:
 		DialogueManager.begin_dialogue(character,dialog,typesound)
-		global.can_phone=false
+		Global.can_phone=false
 		can_talk=false
 		print("WWWWWAGWAG")
 		await DialogueManager.dialogue_done

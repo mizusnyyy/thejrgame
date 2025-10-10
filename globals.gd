@@ -7,7 +7,7 @@ var battleenem
 var tp := 0
 var mana := 0.0
 var mana_max := 100.0
-var have_hearts := [] #0 jack, 1 mizu, 2 shadow, 3 Pavey, 4 Igreavious, 5 bugzie
+var have_hearts := [] #0 jack, 1 mizu, 2 shadoSw, 3 Pavey, 4 Igreavious, 5 bugzie
 var enemy_hp := 100.0
 var maxenemy_hp := 100.0
 var health := 100.0
@@ -37,7 +37,7 @@ func remove_item(item: Item):
 func use_item(index: int, target):
 	var item = inventory[index]
 	if item.heal_amount > 0:
-		global.health=min(global.health+item.heal_amount,global.maxhealth)
+		Global.health=min(Global.health+item.heal_amount,Global.maxhealth)
 	if item.is_consumable:
 		inventory.remove_at(index)
 

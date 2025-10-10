@@ -9,12 +9,12 @@ func _ready():
 	if CutsceneManager.has_played(CutsceneManager.cutscenes.intro):
 		anim.stop()
 	else:
-		global.can_move=false
-		global.can_phone=false
+		Global.can_move=false
+		Global.can_phone=false
 		anim.play("intro")
 		CutsceneManager.set_played(CutsceneManager.cutscenes.intro)
 		await anim.animation_finished
-		global.can_move=true
+		Global.can_move=true
 	await get_tree().create_timer(4).timeout
 	changebed(true)
 		

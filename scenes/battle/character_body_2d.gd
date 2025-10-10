@@ -21,7 +21,7 @@ var mana_drain_rate := 0.2
 func flash_effect():
 	invincible = true
 	var flash_times = 2
-	if global.health == 0:
+	if Global.health == 0:
 		haudio.pitch_scale = 0.5
 		haudio.play()
 	else:
@@ -40,15 +40,15 @@ func take_damage(amount, blue=false):
 	else:
 		if invincible:
 			return
-		global.health -= amount
-		print("bullet taken:", amount, " → the one holding the gun:", global.health)
+		Global.health -= amount
+		print("bullet taken:", amount, " → the one holding the gun:", Global.health)
 		flash_effect()
 func soul_is_alive():
 	return alive
 
 		
 func _physics_process(delta: float) -> void:
-	if alive and global.current_mode == global.mode.RED && can_move:
+	if alive and Global.current_mode == Global.mode.RED && can_move:
 		var directionlr := Input.get_axis("left", "right")
 		var directionud := Input.get_axis("up", "down")
 		var direction := Vector2(directionlr, directionud)
@@ -69,11 +69,11 @@ func _physics_process(delta: float) -> void:
 			velocity.y = move_toward(velocity.y, 0.0, SPEED)
 			jack.stop()
 	
-	if global.health <= 0:
+	if Global.health <= 0:
 		alive = false
 		await get_tree().create_timer(1.5).timeout
 		get_tree().change_scene_to_file("res://scenes/battle/gg/gg.tscn")
-		global.can_phone=true
+		Global.can_phone=true
 	else:
 		alive = true
 

@@ -10,25 +10,25 @@ var expression = Expression.new()
 var custom_commands = {}
 func goto_scene(path: String):
 	get_tree().change_scene_to_file(path)
-	global.can_move = true
+	Global.can_move = true
 func goto_teto(path: String):
 	get_tree().change_scene_to_file("res://scenes/story/pre-core/"+path+".tscn")
-	global.can_move = true
+	Global.can_move = true
 
 func set_var(variable, value):
-	if has_variable(global, variable):
-		global.set(variable, value)
-		output("global." + str(variable) + " = " + str(value))
+	if has_variable(Global, variable):
+		Global.set(variable, value)
+		output("Global." + str(variable) + " = " + str(value))
 	else:
 		output("[color=red]no such global variable: %s[/color]" % variable)
 func get_var(variable):
-	if has_variable(global, variable):
-		var value = global.get(variable)
-		output("global." + str(variable) + " = " + str(value))
+	if has_variable(Global, variable):
+		var value = Global.get(variable)
+		output("Global." + str(variable) + " = " + str(value))
 	else:
 		output("[color=red]no such global variable: %s[/color]" % variable)
 func get_vars():
-	var vars = global.get_property_list()
+	var vars = Global.get_property_list()
 	var found = false	
 
 	output("[color=light_blue]global variables:[/color]")
@@ -36,7 +36,7 @@ func get_vars():
 	for var_info in vars:
 		if var_info.usage & PROPERTY_USAGE_SCRIPT_VARIABLE != 0:
 			var name = var_info.name
-			var value = global.get(name)
+			var value = Global.get(name)
 			output("- [color=white]%s[/color] = %s" % [name, str(value)])
 			found = true
 

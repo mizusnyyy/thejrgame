@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 		speed_sprint = 2.0
 		smoke.speed_scale=2.0
 		anim.speed_scale = 3.0
-	if direction.length() > 0 and global.can_move:
+	if direction.length() > 0 and Global.can_move:
 		direction = direction.normalized()
 		velocity = direction * SPEED * speed_sprint
 			
@@ -78,7 +78,7 @@ func obtainanim(txt):
 	var pos :Vector2= anim.position
 	tween1.tween_property(anim,"scale",Vector2(1.4,0.6),0.6)
 	tween1.tween_property(anim,"position",Vector2(0,6.4),0.6)
-	global.can_phone = false
+	Global.can_phone = false
 	anim_locked = true
 	velocity = Vector2.ZERO
 	anim.play("obtain")
@@ -100,7 +100,7 @@ func obtainanim(txt):
 	ins.emitting = false
 	ins.get_child(0).emitting = false
 	anim_locked = false
-	global.can_phone = true
+	Global.can_phone = true
 	await get_tree().create_timer(ins.lifetime).timeout
 	ins.queue_free()
 
@@ -131,5 +131,5 @@ func smokerot(x:int):
 	smoke.rotation_degrees=x
 
 func timetakescreen():
-	global.take_screenshot()
+	Global.take_screenshot()
 	timetakescreen()

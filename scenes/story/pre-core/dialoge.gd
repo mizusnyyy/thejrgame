@@ -27,7 +27,7 @@ func _process(_delta: float) -> void:
 	label.queue_redraw()
 
 func _ready() -> void:
-	hide()
+	hideanim()
 	label.bbcode_enabled = true
 	var BounceEffect = preload("res://scenes/ui/BounceEffect.gd")
 	label.install_effect(BounceEffect.new())
@@ -66,8 +66,9 @@ func show_dialogue(
 		portrait.visible = true
 	else:
 		portrait.visible = false
-
-	show()
+	
+	showanim()
+	
 	emit_signal("dialogue_started")
 
 	_type_text()
@@ -75,7 +76,6 @@ func show_dialogue(
 
 	if wait_for_close:
 		await dialogue_finished
-		hide()
 		global.can_move = true
 	else:
 		return
@@ -148,6 +148,19 @@ func _type_text() -> void:
 	typing = false
 	emit_signal("text_typed")
 
+func showanim():
+	print("show:")
+	self.visible=true
+	var tween = create_tween()
+	tween.tween_property(self, "modulate", Color(1.0,1.0,1.0,1.0), 0.1)
+	
+func hideanim():
+	print("hide:")
+	var tween = create_tween()
+	tween.tween_property(self, "modulate", Color(1.0,1.0,1.0,0.0), 0.1)
+	await tween.finished
+	self.visible=false
+
 func _unhandled_input(event):
 	if just_chose:
 		if event.is_action_released("interact"):
@@ -165,6 +178,5 @@ func _unhandled_input(event):
 			emit_signal("text_typed")
 		else:
 			dialogue_active = false
-			hide()
 			label.text = ""
 			emit_signal("dialogue_finished")

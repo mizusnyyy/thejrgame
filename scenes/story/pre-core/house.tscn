@@ -863,7 +863,7 @@ tile_set = SubResource("TileSet_jkym4")
 position = Vector2(0, -50)
 whoid = 1
 texturenpc = ExtResource("15_b6qe5")
-character = "bedroominteract"
+character = "shadow"
 
 [node name="npc2" parent="ysorting" instance=ExtResource("12_1e2cb")]
 position = Vector2(-336, -28)

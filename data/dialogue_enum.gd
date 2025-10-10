@@ -8,5 +8,7 @@ enum dg { # tutaj dajecie nowe id dialogów
 	shadow_walka_1, 
 	shadow_intro_1, shadow_intro_2, shadow_intro_3, shadow_intro_4, shadow_intro_5, shadow_intro_6, shadow_intro_7, shadow_intro_8, shadow_intro_9, 
 	shadow_weird_1,
-	bedroominteract_1,bedroominteract_2,bedroominteract_3,bedroominteract_start,bedroominteract_stop
+	bedroominteract_1,bedroominteract_2,bedroominteract_3,bedroominteract_start,bedroominteract_stop,
+	nyxel_start,
+	nyxel_intro_1, nyxel_intro_2
 }

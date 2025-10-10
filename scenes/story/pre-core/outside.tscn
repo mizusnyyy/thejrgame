@@ -1,7 +1,7 @@
 [gd_scene load_steps=31 format=4 uid="uid://b60l2pd8phig8"]
 
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_y0cq1"]
-[ext_resource type="Texture2D" uid="uid://emqycebpw64c" path="res://assets/tiles/coreroom/grass.png" id="5_xq3a2"]
+[ext_resource type="Texture2D" uid="uid://cpf5412c37a2j" path="res://assets/tiles/coreroom/grass.png" id="5_xq3a2"]
 [ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/player/teto.tscn" id="6_m0j0v"]
 [ext_resource type="Texture2D" uid="uid://bxq2w808td2io" path="res://assets/sprite/characters/glut/glut.png" id="7_3pd33"]
 [ext_resource type="Script" uid="uid://bkdklstb2wyg2" path="res://scenes/story/pre-core/quickchange.gd" id="8_2rbrp"]

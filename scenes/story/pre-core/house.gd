@@ -21,7 +21,7 @@ func _ready():
 func spawnphone():
 	var ins = item.instantiate()
 	$ysorting.add_child(ins)
-	ins.position=Vector2(24.0,-128.0)
+	ins.position=Vector2(29.0,-134.0)
 	
 func changebed(make:bool):
 	var coordbeddown = tilesetobj.get_used_cells_by_id(5)

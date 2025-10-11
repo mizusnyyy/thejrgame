@@ -557,6 +557,7 @@ tile_map_data = PackedByteArray("AAD9//f/AAAIAAAAAAD+//f/AAAGAAAAAAD///f/AAAGAAA
 tile_set = SubResource("TileSet_qgspi")
 
 [node name="barrier" type="TileMapLayer" parent="tilemap"]
+visible = false
 z_index = 10
 tile_map_data = PackedByteArray("AAD8//n/AAADAAAAAAD8//r/AAADAAAAAAD8//v/AAADAAAAAAD8//z/AAADAAAAAAD8//3/AAADAAAAAAD8//7/AAADAAAAAAADAPn/AAADAAAAAAADAPr/AAADAAAAAAADAPv/AAADAAAAAAADAPz/AAADAAAAAAADAP3/AAADAAAAAAADAP7/AAADAAAAAAADAP//AAADAAAAAAD8/wEAAAADAAAAAAD9/wIAAAADAAAAAAD+/wIAAAADAAAAAAD//wIAAAADAAAAAAAAAAIAAAADAAAAAAABAAIAAAADAAAAAAACAAIAAAADAAAAAAADAAAAAAADAAAAAAADAAEAAAADAAAAAADp//7/AAAFAAAAABDq//7/AAAEAAAAABDr//7/AAAEAAAAABDs//7/AAAFAAAAAADt/wIAAAADAAAAAADt/wMAAAADAAAAAADu/wIAAAADAAAAAADv/wIAAAADAAAAAADw/wIAAAADAAAAAADx/wEAAAADAAAAAADx//3/AAADAAAAAADx//7/AAADAAAAAADx//z/AAADAAAAAADx//v/AAADAAAAAADx//r/AAADAAAAAADx//n/AAADAAAAAADx//j/AAADAAAAAADt/wQAAAADAAAAAADs/wUAAAADAAAAAADp/wUAAAADAAAAAADo/wQAAAADAAAAAADo/wMAAAADAAAAAADo/wIAAAADAAAAAADn/wIAAAADAAAAAADm/wIAAAADAAAAAADl/wIAAAADAAAAAADk/wEAAAADAAAAAADk//7/AAADAAAAAADk//3/AAADAAAAAADk//z/AAADAAAAAADk//v/AAADAAAAAADk//j/AAADAAAAAADl//f/AAADAAAAAADm//f/AAADAAAAAADn//f/AAADAAAAAADu//f/AAADAAAAAADv//f/AAADAAAAAADw//f/AAADAAAAAADo//j/AAAEAAAAAADp//j/AAAEAAAAAADq//j/AAAEAAAAAADr//j/AAAEAAAAAADs//j/AAAEAAAAAADt//j/AAAEAAAAAADZ//v/AAADAAAAAADZ//j/AAADAAAAAADY//f/AAADAAAAAADX//f/AAADAAAAAADW//f/AAADAAAAAADV//f/AAADAAAAAADU//f/AAADAAAAAADT//f/AAADAAAAAADS//f/AAADAAAAAADR//f/AAADAAAAAADQ//j/AAADAAAAAADQ//n/AAADAAAAAADQ//r/AAADAAAAAADQ//v/AAADAAAAAADR//z/AAADAAAAAADS//z/AAADAAAAAADT//z/AAADAAAAAADU//z/AAADAAAAAADV//z/AAADAAAAAADW//z/AAADAAAAAADX//z/AAADAAAAAADY//z/AAADAAAAAAD///X/AAABAAAAAAD///b/AAABAAAAAAD///f/AAABAAAAAAAAAPf/AAABAAAAAAAAAPb/AAABAAAAAAAAAPX/AAABAAAAAAC///7/AAADAAAAAAC/////AAADAAAAAAC//wAAAAADAAAAAAC//wEAAAADAAAAAADA//3/AAADAAAAAADA/wIAAAADAAAAAADB//3/AAADAAAAAADB/wIAAAADAAAAAADC//3/AAADAAAAAADC/wIAAAADAAAAAADD//3/AAADAAAAAADD/wIAAAADAAAAAADE//3/AAADAAAAAADE/wIAAAADAAAAAADF//3/AAADAAAAAADF/wIAAAADAAAAAADG//7/AAADAAAAAADG/wEAAAADAAAAAAD///n/AAADAAAAAAAAAPn/AAADAAAAAAACAPn/AAAEAAAAAFABAPj/AAAEAAAAAAD9//j/AAAEAAAAAAD+//j/AAAEAAAAAAA=")
 tile_set = SubResource("TileSet_jobkd")
@@ -865,6 +866,11 @@ whoid = 1
 texturenpc = ExtResource("15_b6qe5")
 character = "shadow"
 
+[node name="npc3" parent="ysorting" instance=ExtResource("12_1e2cb")]
+position = Vector2(-336, -129)
+texturenpc = ExtResource("15_b6qe5")
+character = "bedroominteract"
+
 [node name="npc2" parent="ysorting" instance=ExtResource("12_1e2cb")]
 position = Vector2(-280, -6)
 whoid = 1
@@ -919,7 +925,7 @@ libraries = {
 }
 
 [node name="iteminteract" parent="." instance=ExtResource("25_8i2l0")]
-position = Vector2(-281, -24)
+position = Vector2(-337, -60)
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
 position = Vector2(-277, 52)
@@ -974,6 +980,23 @@ position = Vector2(-381, -95)
 texture = ExtResource("35_2d034")
 region_enabled = true
 region_rect = Rect2(0, 0, 17, 34)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -395.0
+offset_top = -178.0
+offset_right = -276.0
+offset_bottom = -129.0
+text = "INTERACT TU
+\\/"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 56.0
+offset_top = -133.0
+offset_right = 175.0
+offset_bottom = -84.0
+text = "<- INTERACT TU
+C for phone"
 
 [connection signal="body_entered" from="tilemap/tp/quickchange" to="tilemap/tp/quickchange" method="_on_body_entered"]
 [connection signal="ready" from="tilemap/tp/quickchange" to="tilemap/tp/quickchange" method="_on_ready"]

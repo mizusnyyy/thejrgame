@@ -153,13 +153,13 @@ func _type_text() -> void:
 	emit_signal("text_typed")
 
 func showanim():
-	print("show:")
+	#print("show:")
 	self.visible=true
 	var tween = create_tween()
 	tween.tween_property(self, "modulate", Color(1.0,1.0,1.0,1.0), 0.1)
 	
 func hideanim():
-	print("hide:")
+	#print("hide:")
 	var tween = create_tween()
 	tween.tween_property(self, "modulate", Color(1.0,1.0,1.0,0.0), 0.1)
 	await tween.finished

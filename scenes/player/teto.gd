@@ -9,6 +9,7 @@ var currentpage := 0
 @export var whoid:int
 @export var texturenpc: Texture
 @export var character:String
+@export var region: Vector2 = Vector2(16.0, 32.0)
 
 func _on_body_entered(body):
 	if body.name=="player":

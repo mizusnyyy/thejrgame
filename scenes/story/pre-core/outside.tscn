@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://b60l2pd8phig8"]
+[gd_scene load_steps=29 format=4 uid="uid://b60l2pd8phig8"]
 
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_y0cq1"]
 [ext_resource type="Texture2D" uid="uid://cpf5412c37a2j" path="res://assets/tiles/coreroom/grass.png" id="5_xq3a2"]
@@ -125,18 +125,6 @@ texture = ExtResource("5_xq3a2")
 [sub_resource type="TileSet" id="TileSet_64xt6"]
 sources/2 = SubResource("TileSetAtlasSource_asfsf")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wgi2f"]
-texture = ExtResource("14_asfsf")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_xq3a2"]
-sources/0 = SubResource("TileSetAtlasSource_wgi2f")
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_at5dv"]
 size = Vector2(84, 48)
 
@@ -208,27 +196,6 @@ tile_set = SubResource("TileSet_8ulw3")
 [node name="overobjects" type="TileMapLayer" parent="ysorting"]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_ihlf5")
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="ysorting"]
-layer = 100
-follow_viewport_enabled = true
-scroll_ignore_camera_zoom = true
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ysorting/ParallaxBackground"]
-motion_scale = Vector2(0, 0)
-
-[node name="TileMapLayer" type="TileMapLayer" parent="ysorting/ParallaxBackground/ParallaxLayer"]
-modulate = Color(1, 1, 1, 0.490196)
-tile_map_data = PackedByteArray("AAD9////AAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAACAAEAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAD9//f/AAAAAAAAAAD9//b/AAAAAAAAAAD9//X/AAAAAAAAAAD9//T/AAAAAAAAAAD+//T/AAAAAAAAAAABAPT/AAAAAAAAAAACAPT/AAAAAAAAAAACAPX/AAAAAAAAAAACAPb/AAAAAAAAAAACAPf/AAAAAAAAAAD9/wIAAAAAAAAAAAD+/wIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAD8//f/AAAAAAAAAAD8//b/AAAAAAAAAAD8//X/AAAAAAAAAAD8//T/AAAAAAAAAAADAPT/AAAAAAAAAAADAPX/AAAAAAAAAAADAPb/AAAAAAAAAAADAPf/AAAAAAAAAAADAP//AAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAA=")
-tile_set = SubResource("TileSet_xq3a2")
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ysorting/ParallaxBackground"]
-motion_scale = Vector2(0, 0)
-
-[node name="TileMapLayer" type="TileMapLayer" parent="ysorting/ParallaxBackground/ParallaxLayer2"]
-modulate = Color(1, 1, 1, 0.490196)
-tile_map_data = PackedByteArray("AAD9//T/AAAAAAAAAAACAPT/AAAAAAAAAAD9/wIAAAAAAAAAAAACAAIAAAAAAAAAAAADAPT/AAAAAAAAAAD8//T/AAAAAAAAAAD8/wIAAAAAAAAAAAADAAIAAAAAAAAAAAA=")
-tile_set = SubResource("TileSet_xq3a2")
 
 [node name="glut" type="Area2D" parent="ysorting"]
 y_sort_enabled = true

@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://dvfwwn4f3nk38"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wfmf3"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_35mum"]
+offsets = PackedFloat32Array(0.0421053, 0.154386, 0.442105)
+colors = PackedColorArray(1, 1, 1, 1, 0.340339, 0.340339, 0.340339, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5om70"]
+gradient = SubResource("Gradient_35mum")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_nk3uf"]
+offsets = PackedFloat32Array(0, 0.597315, 1)
+colors = PackedColorArray(1, 1, 1, 0, 0.215066, 0.401551, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1k7yo"]
+gradient = SubResource("Gradient_nk3uf")
+
+[sub_resource type="Curve" id="Curve_wfmf3"]
+_limits = [0.0, 2.5, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(0.6, 2.5), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_nk3uf"]
+curve = SubResource("Curve_wfmf3")
+
+[sub_resource type="Curve" id="Curve_wf682"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.981, 1), 12.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_01oua"]
+curve = SubResource("Curve_wf682")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wfmf3"]
+lifetime_randomness = 0.25
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -100, 0)
+emission_shape = 3
+emission_box_extents = Vector3(125, 1, 1)
+direction = Vector3(0, 1, 0)
+spread = 80.0
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
+gravity = Vector3(0, 35, 0)
+tangential_accel_min = 49.23
+tangential_accel_max = 100.0
+tangential_accel_curve = SubResource("CurveTexture_01oua")
+scale_min = 0.3
+scale_max = 0.35
+scale_curve = SubResource("CurveTexture_nk3uf")
+color_ramp = SubResource("GradientTexture1D_1k7yo")
+
+[node name="coreroompart" type="GPUParticles2D"]
+z_index = 20
+material = SubResource("CanvasItemMaterial_wfmf3")
+amount = 4
+amount_ratio = 0.7529
+texture = SubResource("GradientTexture2D_5om70")
+lifetime = 2.8
+preprocess = 2.2
+speed_scale = 0.6
+use_fixed_seed = true
+seed = 2775791101
+fixed_fps = 60
+visibility_rect = Rect2(-25, -25, 50, 65)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_wfmf3")

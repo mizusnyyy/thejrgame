@@ -860,6 +860,12 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AADq//j/AAAIAAAAAADr//j/AAAIAAAAAAA=")
 tile_set = SubResource("TileSet_jkym4")
 
+[node name="npc4" parent="ysorting" instance=ExtResource("12_1e2cb")]
+position = Vector2(-687, -135)
+whoid = 1
+texturenpc = ExtResource("31_6h5t2")
+character = "misupi"
+
 [node name="npc" parent="ysorting" instance=ExtResource("12_1e2cb")]
 position = Vector2(0, 4)
 whoid = 1
@@ -868,7 +874,6 @@ character = "shadow"
 
 [node name="npc3" parent="ysorting" instance=ExtResource("12_1e2cb")]
 position = Vector2(-336, -129)
-texturenpc = ExtResource("15_b6qe5")
 character = "bedroominteract"
 
 [node name="npc2" parent="ysorting" instance=ExtResource("12_1e2cb")]

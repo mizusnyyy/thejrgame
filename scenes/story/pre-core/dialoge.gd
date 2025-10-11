@@ -27,7 +27,8 @@ func _process(_delta: float) -> void:
 	label.queue_redraw()
 
 func _ready() -> void:
-	hideanim()
+	hide()
+	self.modulate.a = 0.0
 	label.bbcode_enabled = true
 	var BounceEffect = preload("res://scenes/ui/BounceEffect.gd")
 	label.install_effect(BounceEffect.new())
@@ -101,7 +102,7 @@ func setoptions(options: Array, texts: Array) -> void:
 	print(snapped(options.size(),3)/2)
 	if options.size()<=4:
 		grid.columns = 2
-		grid.add_theme_constant_override("h_separation", 60)
+		grid.add_theme_constant_override("h_separation", 30)
 	else:
 		grid.columns = snapped(options.size(),3)/2
 		grid.add_theme_constant_override("h_separation", 5)
@@ -139,7 +140,10 @@ func _type_text() -> void:
 				#full_text[char_index]=""
 				#if len(full_text)>char_index:
 					#full_text[char_index]=""
-		label.append_text("[bounce]" + full_text[char_index] + "[/bounce]")
+		label.append_text(full_text[char_index])
+		
+		#label.append_text("[bounce]" + full_text[char_index] + "[/bounce]")
+		
 		char_index += 1
 		if type_sound_player:
 			type_sound_player.pitch_scale = randf_range(0.95, 1.05)
@@ -174,7 +178,8 @@ func _unhandled_input(event):
 		if typing:
 			typing = false
 			label.clear()
-			label.append_text("[bounce]%s[/bounce]" % full_text)
+			label.append_text(full_text)
+			#label.append_text("[bounce]%s[/bounce]" % full_text)
 			emit_signal("text_typed")
 		else:
 			dialogue_active = false

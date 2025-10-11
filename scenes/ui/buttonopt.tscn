@@ -2,24 +2,22 @@
 
 [ext_resource type="Script" uid="uid://cfmq5cii1gnma" path="res://scenes/ui/buttonopttext.gd" id="1_0p4ht"]
 [ext_resource type="AudioStream" uid="uid://b3e0yrmnrd73n" path="res://assets/sprite/battle/aaaawhooya.wav" id="1_favcx"]
-[ext_resource type="Texture2D" uid="uid://8eb3a1msxfbu" path="res://assets/dialogue/butdial.png" id="3_0p4ht"]
+[ext_resource type="Texture2D" uid="uid://ck74cvj4vabl3" path="res://assets/dialogue/butdial.png" id="3_0p4ht"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_5thvu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5thvu"]
-size = Vector2(46, 22)
+size = Vector2(24, 10)
 
 [node name="buttonopt" type="TextureRect"]
-offset_left = -24.0
-offset_top = -12.0
 offset_right = 24.0
-offset_bottom = 12.0
+offset_bottom = 10.0
 texture = ExtResource("3_0p4ht")
 script = ExtResource("1_0p4ht")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(24, 12)
+position = Vector2(12, 5)
 shape = SubResource("RectangleShape2D_5thvu")
 
 [node name="dmgsound" type="AudioStreamPlayer2D" parent="."]
@@ -27,27 +25,30 @@ stream = ExtResource("1_favcx")
 volume_db = -10.0
 
 [node name="textoptions" type="RichTextLabel" parent="."]
+z_index = 1
+clip_contents = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -52.0
-offset_top = -25.0
-offset_right = 58.0
-offset_bottom = 25.0
+offset_left = -15.0
+offset_top = -6.0
+offset_right = 85.0
+offset_bottom = 34.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.4, 0.4)
-pivot_offset = Vector2(50, 25)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_outline_size = 5
+scale = Vector2(0.3, 0.3)
+theme_override_colors/default_color = Color(0.729412, 0.521569, 0.372549, 1)
+theme_override_colors/font_shadow_color = Color(0.286275, 0.14902, 0.176471, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 6
 theme_override_constants/line_separation = 1
 theme_override_fonts/normal_font = ExtResource("3_5thvu")
 bbcode_enabled = true
 text = "AWRUK"
-fit_content = true
 scroll_active = false
 autowrap_mode = 2
 tab_size = 3

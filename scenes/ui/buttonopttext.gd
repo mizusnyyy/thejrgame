@@ -16,9 +16,9 @@ func disappearbut(v):
 	tween.tween_callback(Callable(self, "queue_free"))
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name=="indicator":
-		self.modulate = Color(1, 1, 1, 0.5)
+		$textoptions.modulate = Color(0.65, 0.65, 0.65, 1.0)
 		zasieg = true
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.name=="indicator":
-		self.modulate = Color(1, 1, 1, 1)
+		$textoptions.modulate = Color(1.0, 1.0, 1.0, 1.0)
 		zasieg = false

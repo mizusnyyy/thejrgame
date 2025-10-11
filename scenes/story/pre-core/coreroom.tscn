@@ -668,20 +668,17 @@ sprite_frames = ExtResource("5_6aq6h")
 zoom = Vector2(2.2, 2.2)
 
 [node name="PointLight2D" type="PointLight2D" parent="ysorting/player/player" index="3"]
-visible = false
 color = Color(0.482933, 0.560871, 0.660056, 1)
 energy = 1.42
 texture = SubResource("GradientTexture2D_124ib")
 
 [node name="PointLight2D2" type="PointLight2D" parent="ysorting/player/player" index="4"]
-visible = false
 color = Color(0.936026, 0.527421, 0.676558, 1)
 energy = 3.46
 blend_mode = 1
 texture = SubResource("GradientTexture2D_124ib")
 
 [node name="PointLight2D4" type="PointLight2D" parent="ysorting/player/player" index="5"]
-visible = false
 position = Vector2(0, 14)
 scale = Vector2(1, 0.75)
 color = Color(0.21455, 0.145942, 0.139541, 1)

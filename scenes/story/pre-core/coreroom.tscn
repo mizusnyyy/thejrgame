@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://dqvdt71w2ek83"]
+[gd_scene load_steps=62 format=4 uid="uid://dqvdt71w2ek83"]
 
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_pdshq"]
 [ext_resource type="Texture2D" uid="uid://bnt6ubwr7q3rk" path="res://assets/tiles/coreroom/tilecoreroom.png" id="3_r2r0d"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://csy882se6ixne" path="res://scenes/story/core/core.tscn" id="15_o7yvw"]
 [ext_resource type="PackedScene" uid="uid://b6vi5n5gad3lf" path="res://data/dialogue_manager.tscn" id="17_7htdg"]
 [ext_resource type="Texture2D" uid="uid://5del8lqr5cjr" path="res://assets/tiles/animations/core/core.png" id="17_f85h6"]
+[ext_resource type="PackedScene" uid="uid://cne3a6lmj7c1u" path="res://scenes/randomthings/npc.tscn" id="20_5owgv"]
 [ext_resource type="Texture2D" uid="uid://b8kbeqt7s1s6d" path="res://assets/sprite/characters/igreavious/igreavious.png" id="20_124ib"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wkayd"]
@@ -406,6 +407,25 @@ texture = ExtResource("6_o7yvw")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_afe4n")
 
+[sub_resource type="Gradient" id="Gradient_6aq6h"]
+offsets = PackedFloat32Array(0.267081, 0.897516)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_124ib"]
+gradient = SubResource("Gradient_6aq6h")
+width = 300
+height = 190
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_oeq1t"]
+offsets = PackedFloat32Array(0.13354, 0.220497, 0.298137, 0.776398)
+colors = PackedColorArray(1, 1, 1, 1, 0.41598, 0.41598, 0.41598, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rnphu"]
+gradient = SubResource("Gradient_oeq1t")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f577i"]
 texture = ExtResource("5_wkayd")
 10:1/size_in_atlas = Vector2i(3, 2)
@@ -565,31 +585,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_6aq6h"]
-offsets = PackedFloat32Array(0.267081, 0.897516)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_124ib"]
-gradient = SubResource("Gradient_6aq6h")
-width = 300
-height = 190
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-
 [sub_resource type="Gradient" id="Gradient_j2vmm"]
 offsets = PackedFloat32Array(0, 0.686335)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_5owgv"]
 gradient = SubResource("Gradient_j2vmm")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-
-[sub_resource type="Gradient" id="Gradient_oeq1t"]
-offsets = PackedFloat32Array(0.13354, 0.220497, 0.298137, 0.776398)
-colors = PackedColorArray(1, 1, 1, 1, 0.41598, 0.41598, 0.41598, 1, 1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_rnphu"]
-gradient = SubResource("Gradient_oeq1t")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -666,7 +667,26 @@ y_sort_enabled = true
 sprite_frames = ExtResource("5_6aq6h")
 
 [node name="Camera2D" parent="ysorting/player/player" index="2"]
-position = Vector2(0, -32)
+zoom = Vector2(2.2, 2.2)
+
+[node name="PointLight2D" type="PointLight2D" parent="ysorting/player/player" index="3"]
+color = Color(0.57743, 0.55111, 0.493329, 1)
+energy = 1.42
+texture = SubResource("GradientTexture2D_124ib")
+
+[node name="PointLight2D2" type="PointLight2D" parent="ysorting/player/player" index="4"]
+color = Color(0.914462, 0.574643, 0.472283, 1)
+energy = 3.46
+blend_mode = 1
+texture = SubResource("GradientTexture2D_124ib")
+
+[node name="PointLight2D4" type="PointLight2D" parent="ysorting/player/player" index="5"]
+position = Vector2(0, 14)
+scale = Vector2(1, 0.75)
+color = Color(0.177404, 0.233879, 7.21961e-08, 1)
+energy = 3.2
+blend_mode = 1
+texture = SubResource("GradientTexture2D_rnphu")
 
 [node name="objects" type="TileMapLayer" parent="ysorting"]
 y_sort_enabled = true
@@ -687,6 +707,16 @@ position = Vector2(0, -697)
 scale = Vector2(2, 2)
 texturenpc = ExtResource("17_f85h6")
 character = "core"
+
+[node name="npc" parent="ysorting" instance=ExtResource("20_5owgv")]
+position = Vector2(0, -653)
+whoid = 1
+character = "core"
+
+[node name="Igreavious" type="Sprite2D" parent="ysorting"]
+position = Vector2(0, -655)
+scale = Vector2(0.9, 0.8)
+texture = ExtResource("20_124ib")
 
 [node name="spowalniacz2" parent="." instance=ExtResource("6_7rq4n")]
 position = Vector2(80, -709)
@@ -760,19 +790,6 @@ autoplay = "default"
 
 [node name="DialogueManager" parent="." instance=ExtResource("17_7htdg")]
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(1, -654)
-color = Color(0.57743, 0.55111, 0.493329, 1)
-energy = 1.42
-texture = SubResource("GradientTexture2D_124ib")
-
-[node name="PointLight2D2" type="PointLight2D" parent="."]
-position = Vector2(1, -653)
-color = Color(0.914462, 0.574643, 0.472283, 1)
-energy = 3.46
-blend_mode = 1
-texture = SubResource("GradientTexture2D_124ib")
-
 [node name="PointLight2D3" type="PointLight2D" parent="."]
 position = Vector2(0, -642)
 scale = Vector2(1, 0.75)
@@ -781,22 +798,9 @@ energy = 4.47
 blend_mode = 1
 texture = SubResource("GradientTexture2D_5owgv")
 
-[node name="PointLight2D4" type="PointLight2D" parent="."]
-position = Vector2(0, -598)
-scale = Vector2(1, 0.75)
-color = Color(0.177404, 0.233879, 7.21961e-08, 1)
-energy = 3.2
-blend_mode = 1
-texture = SubResource("GradientTexture2D_rnphu")
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_j2vmm")
 camera_attributes = SubResource("CameraAttributesPractical_5owgv")
-
-[node name="Igreavious" type="Sprite2D" parent="."]
-position = Vector2(0, -655)
-scale = Vector2(0.9, 0.8)
-texture = ExtResource("20_124ib")
 
 [connection signal="body_entered" from="quickchange" to="quickchange" method="_on_body_entered"]
 [connection signal="ready" from="quickchange" to="quickchange" method="_on_ready"]

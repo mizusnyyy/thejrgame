@@ -635,7 +635,7 @@ autoplay = true
 max_distance = 26.0
 
 [node name="quickchange2" type="Area2D" parent="tilemap/tp"]
-position = Vector2(40, 15)
+position = Vector2(-341, 6)
 script = ExtResource("14_jkym4")
 namescene = "coreroom.tscn"
 
@@ -680,7 +680,7 @@ autoplay = true
 max_distance = 26.0
 
 [node name="quickchange3" type="Area2D" parent="tilemap/tp"]
-position = Vector2(39, -49)
+position = Vector2(-422, -51)
 script = ExtResource("14_jkym4")
 namescene = "res://scenes/story/test/youlooklonely.tscn"
 diff = true
@@ -860,19 +860,13 @@ tile_map_data = PackedByteArray("AADq//j/AAAIAAAAAADr//j/AAAIAAAAAAA=")
 tile_set = SubResource("TileSet_jkym4")
 
 [node name="npc" parent="ysorting" instance=ExtResource("12_1e2cb")]
-position = Vector2(0, -50)
+position = Vector2(0, 4)
 whoid = 1
 texturenpc = ExtResource("15_b6qe5")
 character = "shadow"
 
-[node name="npc3" parent="ysorting" instance=ExtResource("12_1e2cb")]
-position = Vector2(0, -96)
-whoid = 4
-texturenpc = ExtResource("35_2d034")
-character = "nyxel"
-
 [node name="npc2" parent="ysorting" instance=ExtResource("12_1e2cb")]
-position = Vector2(-336, -28)
+position = Vector2(-280, -6)
 whoid = 1
 texturenpc = ExtResource("15_b6qe5")
 character = "shadow1"
@@ -886,7 +880,7 @@ gloo_scene = ExtResource("14_2i8gf")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.611765, 0.592157, 0.603922, 0.501961)
-position = Vector2(-70, -135)
+position = Vector2(-408, -163)
 sprite_frames = SubResource("SpriteFrames_5g7yr")
 animation = &"avihand"
 autoplay = "avihand"
@@ -896,7 +890,7 @@ flip_h = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.611765, 0.592157, 0.603922, 0.501961)
-position = Vector2(73, -139)
+position = Vector2(-265, -167)
 sprite_frames = SubResource("SpriteFrames_5g7yr")
 animation = &"avihand"
 autoplay = "avihand"
@@ -904,7 +898,7 @@ frame = 2
 frame_progress = 0.535663
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
-position = Vector2(35, -81)
+position = Vector2(-269, -130)
 sprite_frames = SubResource("SpriteFrames_5g7yr")
 animation = &"avihand"
 autoplay = "avihand"
@@ -925,16 +919,16 @@ libraries = {
 }
 
 [node name="iteminteract" parent="." instance=ExtResource("25_8i2l0")]
-position = Vector2(39, -21)
+position = Vector2(-281, -24)
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
-position = Vector2(-97, -93)
+position = Vector2(-277, 52)
 sprite_frames = ExtResource("28_x81t7")
 autoplay = "default"
 frame_progress = 0.534536
 
 [node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
-position = Vector2(-78, -66)
+position = Vector2(-258, 79)
 sprite_frames = SubResource("SpriteFrames_fjho7")
 autoplay = "default"
 frame_progress = 0.451563

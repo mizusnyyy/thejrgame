@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://dp6bgu4j6w5ly" path="res://scenes/story/pre-core/dialoge.gd" id="1_0xy2d"]
 [ext_resource type="Texture2D" uid="uid://6j558b265h4i" path="res://assets/dialogue/dialogbox.png" id="2_0xy2d"]
 [ext_resource type="Texture2D" uid="uid://cruyyaalrrtsv" path="res://assets/dialogue/dialogadd1.png" id="3_ivdui"]
-[ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="3_k308d"]
 [ext_resource type="Texture2D" uid="uid://btgr63nfd64su" path="res://assets/sprite/characters/shadow/portrait/shadow1.png" id="4_k308d"]
 [ext_resource type="Shader" uid="uid://3274u8ocy1x8" path="res://scenes/ui/dialogback.gdshader" id="4_m26o2"]
 [ext_resource type="Script" uid="uid://t6s4f322ej5p" path="res://scenes/story/pre-core/choice.gd" id="5_io7n7"]
 [ext_resource type="PackedScene" uid="uid://bmcjis4xi20sm" path="res://scenes/ui/hand.tscn" id="5_k308d"]
 [ext_resource type="Texture2D" uid="uid://jouutgjikwq0" path="res://assets/sprite/battle/hearts.png" id="6_0xy2d"]
+[ext_resource type="FontFile" uid="uid://bwy7rtcvh65ip" path="res://assets/font/Fonjack.ttf" id="8_io7n7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0gfoe"]
 size = Vector2(2, 75.5)
@@ -124,9 +124,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = -5.0
-offset_top = -38.0
+offset_top = -37.0
 offset_right = 283.0
-offset_bottom = 18.0
+offset_bottom = 19.0
 grow_vertical = 2
 scale = Vector2(0.25, 0.25)
 theme_override_colors/default_color = Color(0.286275, 0.14902, 0.176471, 1)
@@ -134,7 +134,7 @@ theme_override_colors/font_shadow_color = Color(0.286275, 0.14902, 0.176471, 1)
 theme_override_constants/shadow_offset_y = 0
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_outline_size = 5
-theme_override_fonts/normal_font = ExtResource("3_k308d")
+theme_override_fonts/normal_font = ExtResource("8_io7n7")
 theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 text = "IGREAVIOUS"
@@ -154,7 +154,8 @@ offset_bottom = 119.0
 pivot_offset = Vector2(101, 70)
 theme_override_colors/default_color = Color(0.286275, 0.14902, 0.176471, 1)
 theme_override_constants/line_separation = 5
-theme_override_fonts/normal_font = ExtResource("3_k308d")
+theme_override_fonts/normal_font = ExtResource("8_io7n7")
+theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "pablo games og
 "

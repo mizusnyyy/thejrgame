@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=4 uid="uid://bh07x3oypu0a"]
 
-[ext_resource type="Texture2D" uid="uid://cksyexh2bua8w" path="res://assets/tiles/tileyoulook.png" id="1_v53kr"]
+[ext_resource type="Texture2D" uid="uid://b84b0r3ucwqsv" path="res://assets/tiles/tileyoulook.png" id="1_v53kr"]
 [ext_resource type="Script" uid="uid://bss0oivvurq8q" path="res://scenes/story/test/youlooklonely.gd" id="1_vdceh"]
 [ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/player/teto.tscn" id="2_vdceh"]
 [ext_resource type="Script" uid="uid://bkdklstb2wyg2" path="res://scenes/story/pre-core/quickchange.gd" id="3_bvcwo"]

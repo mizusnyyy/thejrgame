@@ -14,7 +14,7 @@
 	{"id": "shadow_weird_1", "text": "mhm... Zatem nic nie powiesz", "hand":"9", "speaker":"???", "portrait": "shadow/portrait/shadow5", "next":null},
 	{"id": "shadow_intro_3", "text": "Jacku... Nie masz pojecia jaka", "hand":null,"speaker": "Shadow", "portrait": "shadow/portrait/shadow1","next":"shadow_intro_4"},
 	{"id": "shadow_intro_4", "text": "przygoda cie czeka. Serio.", "hand":null, "speaker":null, "portrait": "shadow/portrait/shadow5","next":"shadow_intro_5"},
-	{"id": "shadow_intro_5", "text": "btw nie wpisuj sobie w googla misupi r34", "hand":"3", "speaker":"Shadow","portrait":"shadow/portrait/shadow4", "next":"shadow_intro_6"},
+	{"id": "shadow_intro_5", "text": "btw nie wpisuj sobie w alan baran", "hand":"3", "speaker":"Shadow","portrait":"shadow/portrait/shadow4", "next":"shadow_intro_6"},
 	{"id": "shadow_intro_6", "text": "...", "hand":null, "speaker":null,"portrait":"shadow/portrait/shadow1", "next":"shadow_intro_7"},
 	{"id": "shadow_intro_7", "text": "SPRAWDZ NASZA GRE!!! ( TLOJJ )", "hand":"8","speaker":null,"portrait":"shadow/portrait/shadow2","next":null},
 	

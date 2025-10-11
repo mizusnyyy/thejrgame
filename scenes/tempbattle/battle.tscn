@@ -110,7 +110,7 @@
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="110_6njtu"]
 [ext_resource type="Script" uid="uid://du1pctbd3kbws" path="res://scenes/battle/character_body_2d.gd" id="111_heaca"]
 [ext_resource type="AudioStream" uid="uid://cqtqlbe7co1q0" path="res://assets/sprite/battle/hurt.wav" id="112_kk2pp"]
-[ext_resource type="PackedScene" path="res://unused/selection_wheal/selectionwheel.2.tscn" id="113_kbdau"]
+[ext_resource type="PackedScene" uid="uid://btunywoykvm0n" path="res://unused/selection_wheal/selectionwheel.2.tscn" id="113_kbdau"]
 [ext_resource type="Texture2D" uid="uid://euiwry2bpa3m" path="res://assets/sprite/characters/jr/jrbattlechibi.png" id="114_5jqvb"]
 [ext_resource type="Texture2D" uid="uid://jouutgjikwq0" path="res://assets/sprite/battle/hearts.png" id="118_471wb"]
 [ext_resource type="AudioStream" uid="uid://b11be3h7mdp3w" path="res://assets/sprite/battle/lastsuprise.mp3" id="119_1yjtx"]
@@ -152,14 +152,14 @@ func _ready() -> void:
 	label.text=\"\"
 	youneverseeitcoming()
 	await yousawitcoming
-	say(\"YOU... STUPID\\nJAAAAACK!\",2)
+	say(\"ebebbebebebeb hej\",2)
 	await said
-	say(\"ITS PUM TIME!!!\",1)
+	say(\"pum\",1)
 	makesmallbox(15,15,0,76)
 	makesmallbox(40,30,61,15)
 	makesmallbox(40,30,-61,76+61)
 	await said
-	say(\"a tak szczerze\\ndzem to cwel\\n... serio\",1)
+	say(\"tak na codzien jestem alan b\",1)
 	makesmallbox(40,30,61,76+61)
 	makesmallbox(90,30,-61,15)
 	await said
@@ -909,11 +909,8 @@ volume_db = -10.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="soul"]
 shape = SubResource("RectangleShape2D_eysmq")
 
-[node name="Node2D" parent="soul" node_paths=PackedStringArray("player") instance=ExtResource("113_kbdau")]
-line_width = 1
-heart_radius = 28
-player = NodePath("../heart")
-number_of_lines = [null, null, null, null, null, null]
+[node name="Node2D" parent="soul" instance=ExtResource("113_kbdau")]
+script = null
 
 [node name="jack" type="AnimatedSprite2D" parent="soul"]
 position = Vector2(0, -0.5)

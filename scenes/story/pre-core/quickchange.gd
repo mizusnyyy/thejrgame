@@ -9,4 +9,4 @@ func _on_body_entered(body: Node2D) -> void:
 			get_tree().change_scene_to_file(namescene)
 		else:
 			get_tree().change_scene_to_file("res://scenes/story/pre-core/"+namescene)
-		Musicsounds.play_music(preload("res://assets/sprite/intro/stevenafterpumming.wav"))
+		Musicsounds.play_sound(preload("res://assets/sprite/intro/stevenafterpumming.wav"))

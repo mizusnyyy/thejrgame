@@ -149,7 +149,6 @@
 [ext_resource type="PackedScene" uid="uid://btunywoykvm0n" path="res://unused/selection_wheal/selectionwheel.2.tscn" id="144_ue6uc"]
 [ext_resource type="Texture2D" uid="uid://euiwry2bpa3m" path="res://assets/sprite/characters/jr/jrbattlechibi.png" id="145_dlka0"]
 
-
 [sub_resource type="GDScript" id="GDScript_w54gx"]
 script/source = "extends Node2D
 
@@ -1032,9 +1031,7 @@ volume_db = -10.0
 shape = SubResource("RectangleShape2D_agsc7")
 
 [node name="Node2D" parent="soul" instance=ExtResource("144_ue6uc")]
-line_width = 1
-heart_radius = 28
-number_of_lines = [null, null, null, null, null, null]
+script = null
 
 [node name="heart" type="Sprite2D" parent="soul"]
 texture = ExtResource("139_wf2x0")

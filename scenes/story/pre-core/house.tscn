@@ -541,6 +541,14 @@ animations = [{
 [node name="01" type="Node2D"]
 script = ExtResource("1_0j0oh")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -167
+offset_left = -1352.0
+offset_top = -472.0
+offset_right = 1160.0
+offset_bottom = 656.0
+color = Color(0.156863, 0, 0.196078, 1)
+
 [node name="CanvasLayer" parent="." instance=ExtResource("1_tecch")]
 
 [node name="tilemap" type="Node2D" parent="."]

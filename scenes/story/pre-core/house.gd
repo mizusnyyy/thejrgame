@@ -15,7 +15,8 @@ func _ready():
 		CutsceneManager.set_played(CutsceneManager.cutscenes.intro)
 		await anim.animation_finished
 		Global.can_move=true
-	await get_tree().create_timer(4).timeout
+		Musicsounds.play_music(load("res://assets/sounds/music/1.ogg"))
+	await get_tree().create_timer(3).timeout
 	changebed(true)
 		
 func spawnphone():

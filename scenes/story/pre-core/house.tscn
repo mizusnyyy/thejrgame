@@ -1046,18 +1046,6 @@ text = "INTERACT TU
 \\/"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="."]
-offset_left = -59.0
-offset_top = -92.0
-offset_right = 60.0
-offset_bottom = -14.0
-theme_override_colors/font_outline_color = Color(0.0132734, 0.281099, 0, 1)
-theme_override_constants/outline_size = 15
-text = "PRESS M
-JAK MIZU
-(JEBAC CIE)"
-horizontal_alignment = 1
-
 [connection signal="body_entered" from="tilemap/tp/quickchange" to="tilemap/tp/quickchange" method="_on_body_entered"]
 [connection signal="ready" from="tilemap/tp/quickchange" to="tilemap/tp/quickchange" method="_on_ready"]
 [connection signal="body_entered" from="tilemap/tp/quickchange2" to="tilemap/tp/quickchange2" method="_on_body_entered"]

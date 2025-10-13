@@ -16,7 +16,6 @@ var can_move := true
 var mercy:=0
 var photoid := 0
 var playit := false
-signal opcja
 var swing := false
 var items:=[""]
 var inventory: Array[Item] = []

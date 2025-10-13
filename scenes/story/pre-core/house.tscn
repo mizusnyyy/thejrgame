@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=4 uid="uid://bpmn0ng1q8ox"]
+[gd_scene load_steps=66 format=4 uid="uid://bpmn0ng1q8ox"]
 
 [ext_resource type="Script" uid="uid://cnbovm5fumlj3" path="res://scenes/story/pre-core/house.gd" id="1_0j0oh"]
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_tecch"]
@@ -7,8 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://blq2libb70yvf" path="res://assets/tiles/tilebarrier.png" id="10_2i8gf"]
 [ext_resource type="PackedScene" uid="uid://cne3a6lmj7c1u" path="res://scenes/randomthings/npc.tscn" id="12_1e2cb"]
 [ext_resource type="Texture2D" uid="uid://c72wlne1fh1ho" path="res://assets/tiles/tileobjects.png" id="12_qgspi"]
-[ext_resource type="Script" uid="uid://bejskw4sl3ymu" path="res://scenes/battle/debug.gd" id="13_0rrt8"]
-[ext_resource type="PackedScene" uid="uid://pegs4ep6hjc5" path="res://scenes/attackscenes/bone/bone.tscn" id="14_2i8gf"]
 [ext_resource type="Script" uid="uid://bkdklstb2wyg2" path="res://scenes/story/pre-core/quickchange.gd" id="14_jkym4"]
 [ext_resource type="Texture2D" uid="uid://e5q4i0heuvg3" path="res://assets/sprite/characters/jr/teto_front.png" id="14_qgspi"]
 [ext_resource type="Texture2D" uid="uid://blo5yr7xsgygh" path="res://assets/sprite/characters/shadow/shadowspritesheet.png" id="15_b6qe5"]
@@ -940,11 +938,6 @@ whoid = 1
 texturenpc = ExtResource("15_b6qe5")
 character = "shadow1"
 
-[node name="debug" type="Node2D" parent="."]
-position = Vector2(0, 0.5)
-script = ExtResource("13_0rrt8")
-gloo_scene = ExtResource("14_2i8gf")
-
 [node name="DialogueManager" parent="." instance=ExtResource("26_u8w88")]
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
@@ -1054,12 +1047,16 @@ text = "INTERACT TU
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 56.0
-offset_top = -133.0
-offset_right = 175.0
-offset_bottom = -84.0
-text = "<- INTERACT TU
-C for phone"
+offset_left = -59.0
+offset_top = -92.0
+offset_right = 60.0
+offset_bottom = -14.0
+theme_override_colors/font_outline_color = Color(0.0132734, 0.281099, 0, 1)
+theme_override_constants/outline_size = 15
+text = "PRESS M
+JAK MIZU
+(JEBAC CIE)"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="tilemap/tp/quickchange" to="tilemap/tp/quickchange" method="_on_body_entered"]
 [connection signal="ready" from="tilemap/tp/quickchange" to="tilemap/tp/quickchange" method="_on_ready"]
@@ -1067,7 +1064,6 @@ C for phone"
 [connection signal="ready" from="tilemap/tp/quickchange2" to="tilemap/tp/quickchange2" method="_on_ready"]
 [connection signal="body_entered" from="tilemap/tp/quickchange3" to="tilemap/tp/quickchange3" method="_on_body_entered"]
 [connection signal="ready" from="tilemap/tp/quickchange3" to="tilemap/tp/quickchange3" method="_on_ready"]
-[connection signal="ready" from="debug" to="debug" method="_on_ready"]
 
 [editable path="tilemap/tp/teleporter"]
 [editable path="tilemap/tp/teleporter2"]

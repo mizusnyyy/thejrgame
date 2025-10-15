@@ -2,6 +2,9 @@ extends Area2D
 var inbody := false
 var lvl1 := 1
 var lvl2 := 1
+@export var tp_pos: Vector2
+@export var ishorizontal : bool = true
+
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		inbody = true

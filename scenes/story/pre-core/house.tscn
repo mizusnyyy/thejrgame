@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=4 uid="uid://bpmn0ng1q8ox"]
+[gd_scene load_steps=65 format=4 uid="uid://bpmn0ng1q8ox"]
 
 [ext_resource type="Script" uid="uid://cnbovm5fumlj3" path="res://scenes/story/pre-core/house.gd" id="1_0j0oh"]
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_tecch"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://6kf44nmw8j3i" path="res://assets/sprite/characters/jr/teto_side_better.png" id="15_jkym4"]
 [ext_resource type="Texture2D" uid="uid://bt0gkelrwxaoi" path="res://assets/tiles/fulltiles/carpethousebedroom.png" id="15_u8w88"]
 [ext_resource type="Texture2D" uid="uid://cmj27cly056f7" path="res://assets/sprite/characters/jr/teto_back.png" id="16_1e2cb"]
-[ext_resource type="PackedScene" uid="uid://b60l2pd8phig8" path="res://scenes/story/pre-core/cottonfield1.tscn" id="16_50mei"]
 [ext_resource type="SpriteFrames" uid="uid://cyfimtbocgidh" path="res://scenes/player/jrsprite.tres" id="16_x81t7"]
 [ext_resource type="Texture2D" uid="uid://bq1mj2osrqcqs" path="res://assets/sprite/characters/jr/teto_side.png" id="17_0j0oh"]
 [ext_resource type="Texture2D" uid="uid://gabxxol05f5l" path="res://assets/tiles/fulltiles/shelfhousebedroom.png" id="18_ix2xr"]
@@ -867,7 +866,6 @@ position = Vector2(-57, 0)
 
 [node name="maptp" parent="tilemap/tp" instance=ExtResource("15_50mei")]
 position = Vector2(-335, 86)
-tp_to = ExtResource("16_50mei")
 
 [node name="ysorting" type="Node2D" parent="."]
 y_sort_enabled = true

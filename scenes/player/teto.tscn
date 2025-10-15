@@ -37,7 +37,26 @@ z_index = -1
 position = Vector2(0, 13)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(2, 2)
+zoom = Vector2(2.5, 2.5)
 limit_smoothed = true
+
+[node name="blackout_screen" type="ColorRect" parent="."]
+visible = false
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -90.0
+offset_right = 160.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(320, 180)
+color = Color(0, 0, 0, 0)
+
+[node name="modulate_screen" type="CanvasModulate" parent="."]
 
 [connection signal="ready" from="player" to="player" method="_on_ready"]

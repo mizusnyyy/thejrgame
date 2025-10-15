@@ -21,6 +21,8 @@ var items:=[""]
 var inventory: Array[Item] = []
 var phoneapps: Array[String]
 
+var new_scene_player_pos : Vector2
+
 var can_phone := true
 
 func glapps(app:Array[String]):
@@ -39,7 +41,6 @@ func use_item(index: int, target):
 		Global.health=min(Global.health+item.heal_amount,Global.maxhealth)
 	if item.is_consumable:
 		inventory.remove_at(index)
-
 
 func take_screenshot():
 	pass

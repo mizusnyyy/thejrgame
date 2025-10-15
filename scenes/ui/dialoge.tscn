@@ -81,6 +81,8 @@ offset_bottom = 104.0
 texture = ExtResource("3_ivdui")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="dialoge/NinePatchRect"]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dialoge/NinePatchRect/StaticBody2D"]
 position = Vector2(93, 48)
@@ -187,6 +189,8 @@ position = Vector2(236, 55)
 scale = Vector2(0.8, 0.8)
 
 [node name="indicator" type="CharacterBody2D" parent="dialoge/choice"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("5_io7n7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dialoge/choice/indicator"]

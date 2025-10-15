@@ -9,10 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://c72wlne1fh1ho" path="res://assets/tiles/tileobjects.png" id="12_qgspi"]
 [ext_resource type="Script" uid="uid://bkdklstb2wyg2" path="res://scenes/story/pre-core/quickchange.gd" id="14_jkym4"]
 [ext_resource type="Texture2D" uid="uid://e5q4i0heuvg3" path="res://assets/sprite/characters/jr/teto_front.png" id="14_qgspi"]
+[ext_resource type="PackedScene" uid="uid://c3fn22nsfymhg" path="res://scenes/mapmechanics/maptp.tscn" id="15_50mei"]
 [ext_resource type="Texture2D" uid="uid://blo5yr7xsgygh" path="res://assets/sprite/characters/shadow/shadowspritesheet.png" id="15_b6qe5"]
 [ext_resource type="Texture2D" uid="uid://6kf44nmw8j3i" path="res://assets/sprite/characters/jr/teto_side_better.png" id="15_jkym4"]
 [ext_resource type="Texture2D" uid="uid://bt0gkelrwxaoi" path="res://assets/tiles/fulltiles/carpethousebedroom.png" id="15_u8w88"]
 [ext_resource type="Texture2D" uid="uid://cmj27cly056f7" path="res://assets/sprite/characters/jr/teto_back.png" id="16_1e2cb"]
+[ext_resource type="PackedScene" uid="uid://b60l2pd8phig8" path="res://scenes/story/pre-core/cottonfield1.tscn" id="16_50mei"]
 [ext_resource type="SpriteFrames" uid="uid://cyfimtbocgidh" path="res://scenes/player/jrsprite.tres" id="16_x81t7"]
 [ext_resource type="Texture2D" uid="uid://bq1mj2osrqcqs" path="res://assets/sprite/characters/jr/teto_side.png" id="17_0j0oh"]
 [ext_resource type="Texture2D" uid="uid://gabxxol05f5l" path="res://assets/tiles/fulltiles/shelfhousebedroom.png" id="18_ix2xr"]
@@ -35,7 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://bd8fk5t1ohhyy" path="res://assets/sprite/characters/pavey/knightspritesheet.png" id="34_7hjaj"]
 [ext_resource type="Texture2D" uid="uid://vur87jfn67p6" path="res://assets/sprite/characters/nyxel/nyxelspritesheet.png" id="35_2d034"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qgspi"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_50mei"]
 texture = ExtResource("9_0rrt8")
 0:0/0 = 0
 1:0/0 = 0
@@ -59,9 +61,9 @@ texture = ExtResource("9_0rrt8")
 2:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_qgspi"]
-sources/0 = SubResource("TileSetAtlasSource_qgspi")
+sources/0 = SubResource("TileSetAtlasSource_50mei")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_510yu"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fjho7"]
 texture = ExtResource("10_2i8gf")
 0:0/0 = 0
 1:0/0 = 0
@@ -76,19 +78,7 @@ texture = ExtResource("10_2i8gf")
 
 [sub_resource type="TileSet" id="TileSet_jobkd"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_510yu")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8i2l0"]
-texture = ExtResource("10_2i8gf")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_u8w88"]
-sources/0 = SubResource("TileSetAtlasSource_8i2l0")
+sources/0 = SubResource("TileSetAtlasSource_fjho7")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4awy"]
 size = Vector2(10, 20)
@@ -113,7 +103,7 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jkym4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7hjaj"]
 texture = ExtResource("12_qgspi")
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
@@ -156,21 +146,21 @@ texture = ExtResource("12_qgspi")
 0:3/0 = 0
 0:3/0/y_sort_origin = -8
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f2rtj"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2d034"]
 texture = ExtResource("18_ix2xr")
 0:2/size_in_atlas = Vector2i(2, 3)
 0:2/0 = 0
 0:2/0/texture_origin = Vector2i(-8, 16)
 0:2/0/y_sort_origin = -15
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4i814"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dchwx"]
 texture = ExtResource("19_rhstu")
 4:2/size_in_atlas = Vector2i(2, 4)
 4:2/0 = 0
 4:2/0/texture_origin = Vector2i(-8, 24)
 4:2/0/y_sort_origin = -30
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rhstu"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_saxyu"]
 texture = ExtResource("19_5g7yr")
 0:0/size_in_atlas = Vector2i(4, 3)
 0:0/0 = 0
@@ -181,7 +171,7 @@ texture = ExtResource("19_5g7yr")
 4:0/0/texture_origin = Vector2i(-24, 16)
 4:0/0/y_sort_origin = -32
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x81t7"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yk3o1"]
 texture = ExtResource("20_ix2xr")
 0:0/size_in_atlas = Vector2i(4, 3)
 0:0/0 = 0
@@ -201,11 +191,11 @@ texture = ExtResource("20_ix2xr")
 12:0/0/y_sort_origin = -20
 
 [sub_resource type="TileSet" id="TileSet_jkym4"]
-sources/0 = SubResource("TileSetAtlasSource_jkym4")
-sources/2 = SubResource("TileSetAtlasSource_f2rtj")
-sources/3 = SubResource("TileSetAtlasSource_4i814")
-sources/4 = SubResource("TileSetAtlasSource_rhstu")
-sources/5 = SubResource("TileSetAtlasSource_x81t7")
+sources/0 = SubResource("TileSetAtlasSource_7hjaj")
+sources/2 = SubResource("TileSetAtlasSource_2d034")
+sources/3 = SubResource("TileSetAtlasSource_dchwx")
+sources/4 = SubResource("TileSetAtlasSource_saxyu")
+sources/5 = SubResource("TileSetAtlasSource_yk3o1")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6qe5"]
 atlas = ExtResource("22_aqtk2")
@@ -331,6 +321,18 @@ tracks/6/path = NodePath("CanvasModulate:color")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ysorting/player/modulate_screen:color")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -498,6 +500,18 @@ tracks/9/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("ysorting/player/modulate_screen:color")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_s7kpv"]
 resource_name = "tp"
@@ -587,8 +601,6 @@ animations = [{
 [node name="01" type="Node2D"]
 script = ExtResource("1_0j0oh")
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -167
 offset_left = -1352.0
@@ -622,32 +634,10 @@ tile_set = SubResource("TileSet_jobkd")
 position = Vector2(0, -80)
 texture = ExtResource("15_u8w88")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="tilemap"]
-layer = 100
-visible = false
-follow_viewport_enabled = true
-scroll_ignore_camera_zoom = true
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="tilemap/ParallaxBackground"]
-motion_scale = Vector2(0, 1)
-
-[node name="TileMapLayer" type="TileMapLayer" parent="tilemap/ParallaxBackground/ParallaxLayer"]
-modulate = Color(1, 1, 1, 0.490196)
-tile_map_data = PackedByteArray("AAD9//P/AAAAAAAAAAD8//P/AAAAAAAAAAD8//T/AAAAAAAAAAD9//T/AAAAAAAAAAADAPP/AAAAAAAAAAACAPP/AAAAAAAAAAACAPT/AAAAAAAAAAADAPT/AAAAAAAAAAD8//X/AAAAAAAAAAD+//P/AAAAAAAAAAADAPX/AAAAAAAAAAABAPP/AAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD9/wEAAAAAAAAAAAADAAEAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAADAAAAAAAAAAAAAAABAAIAAAAAAAAAAAD+/wIAAAAAAAAAAAD8/wAAAAAAAAAAAAA=")
-tile_set = SubResource("TileSet_u8w88")
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="tilemap/ParallaxBackground"]
-motion_scale = Vector2(0, 1)
-
-[node name="TileMapLayer" type="TileMapLayer" parent="tilemap/ParallaxBackground/ParallaxLayer2"]
-modulate = Color(1, 1, 1, 0.490196)
-tile_map_data = PackedByteArray("AAD+//T/AAAAAAAAAAD9//T/AAAAAAAAAAD9//X/AAAAAAAAAAD9//b/AAAAAAAAAAD8//b/AAAAAAAAAAD8//X/AAAAAAAAAAD8//T/AAAAAAAAAAD8//P/AAAAAAAAAAD9//P/AAAAAAAAAAD+//P/AAAAAAAAAAABAPT/AAAAAAAAAAABAPP/AAAAAAAAAAACAPP/AAAAAAAAAAACAPT/AAAAAAAAAAACAPX/AAAAAAAAAAACAPb/AAAAAAAAAAADAPb/AAAAAAAAAAADAPX/AAAAAAAAAAADAPT/AAAAAAAAAAADAPP/AAAAAAAAAAD9/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wEAAAAAAAAAAAACAAEAAAAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAADAAEAAAAAAAAAAAADAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAD9////AAAAAAAAAAD8////AAAAAAAAAAA=")
-tile_set = SubResource("TileSet_u8w88")
-
 [node name="tp" type="Node2D" parent="tilemap"]
 
 [node name="quickchange" type="Area2D" parent="tilemap/tp"]
-position = Vector2(-336, 80)
+position = Vector2(-384, 14)
 script = ExtResource("14_jkym4")
 namescene = "outside.tscn"
 
@@ -852,7 +842,7 @@ position = Vector2(-504, 0)
 [node name="Area2D" parent="tilemap/tp/teleporter6" instance=ExtResource("29_x81t7")]
 
 [node name="teleporter7" parent="tilemap/tp" node_paths=PackedStringArray("playersprite", "velocityplayer", "anim") instance=ExtResource("28_rhstu")]
-position = Vector2(-351, 37.5)
+position = Vector2(-979, -37)
 rotation = 1.5708
 playersprite = NodePath("../../../ysorting/player/player/AnimatedSprite2D")
 velocityplayer = NodePath("../../../ysorting/player/player")
@@ -875,6 +865,10 @@ position = Vector2(-57, 0)
 
 [node name="Area2D" parent="tilemap/tp/teleporter8" instance=ExtResource("29_x81t7")]
 
+[node name="maptp" parent="tilemap/tp" instance=ExtResource("15_50mei")]
+position = Vector2(-335, 86)
+tp_to = ExtResource("16_50mei")
+
 [node name="ysorting" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -888,23 +882,6 @@ y_sort_enabled = true
 [node name="AnimatedSprite2D" parent="ysorting/player/player" index="1"]
 y_sort_enabled = true
 sprite_frames = ExtResource("16_x81t7")
-
-[node name="ColorRect" type="ColorRect" parent="ysorting/player/player" index="3"]
-visible = false
-z_index = 2
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -160.0
-offset_top = -90.0
-offset_right = 160.0
-offset_bottom = 90.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(320, 180)
-color = Color(0, 0, 0, 0)
 
 [node name="objects" type="TileMapLayer" parent="ysorting"]
 y_sort_enabled = true

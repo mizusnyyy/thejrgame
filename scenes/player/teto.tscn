@@ -8,17 +8,17 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80hx6"]
 size = Vector2(14, 6)
 
-[node name="plyer" type="Node2D"]
+[node name="player" type="Node2D"]
 
 [node name="player" type="CharacterBody2D" parent="." groups=["player"]]
 y_sort_enabled = true
 script = ExtResource("1_3xey1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_80hx6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+position = Vector2(0, -13)
 sprite_frames = ExtResource("2_42hny")
 animation = &"idle"
 
@@ -37,6 +37,7 @@ z_index = -1
 position = Vector2(0, 13)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(0, -13)
 zoom = Vector2(2.5, 2.5)
 limit_smoothed = true
 
@@ -58,5 +59,6 @@ pivot_offset = Vector2(320, 180)
 color = Color(0, 0, 0, 0)
 
 [node name="modulate_screen" type="CanvasModulate" parent="."]
+position = Vector2(0, -13)
 
 [connection signal="ready" from="player" to="player" method="_on_ready"]

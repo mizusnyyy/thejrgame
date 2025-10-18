@@ -20,7 +20,7 @@ shape = SubResource("RectangleShape2D_80hx6")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
 position = Vector2(0, -13)
 sprite_frames = ExtResource("2_42hny")
-animation = &"idle"
+animation = &"front"
 
 [node name="item" type="Sprite2D" parent="player/AnimatedSprite2D"]
 visible = false

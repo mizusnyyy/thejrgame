@@ -11,12 +11,12 @@ var transporting := false
 var s:String
 var last_position: Vector2
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("gyro") and !anim_locked:
-		anim_locked=true
-		anim.play("obtain")
-	if event.is_action_released("gyro"):
-		anim_locked=false
+#func _input(event: InputEvent) -> void:
+	#if event.is_action_pressed("gyro") and !anim_locked:
+		#anim_locked=true
+		#anim.play("obtain")
+	#if event.is_action_released("gyro"):
+		#anim_locked=false
 
 func _physics_process(delta: float) -> void:
 	if anim_locked or transporting:
@@ -77,7 +77,7 @@ func obtainanim(txt):
 	var tween1 := create_tween().set_parallel(true)
 	var pos :Vector2= anim.position
 	tween1.tween_property(anim,"scale",Vector2(1.4,0.6),0.6)
-	tween1.tween_property(anim,"position",Vector2(0,6.4),0.6)
+	tween1.tween_property(anim,"position",Vector2(0.0,-6.6),0.6)
 	Global.can_phone = false
 	anim_locked = true
 	velocity = Vector2.ZERO
@@ -91,11 +91,11 @@ func obtainanim(txt):
 	ins.global_position -= Vector2(0,16)
 	var tween2 := create_tween().set_parallel(true)
 	tween2.tween_property(anim,"scale",Vector2(0.8,1.3),0.1)
-	tween2.tween_property(anim,"position",Vector2(0,-4.8),0.1)
+	tween2.tween_property(anim,"position",Vector2(0.0,-17.8),0.1)
 	await tween2.finished
 	var tween3 := create_tween().set_parallel(true)
 	tween3.tween_property(anim,"scale",Vector2(1.0,1.0),0.12)
-	tween3.tween_property(anim,"position",Vector2.ZERO,0.12)
+	tween3.tween_property(anim,"position",Vector2(0.0,-13.0),0.12)
 	await get_tree().create_timer(0.9).timeout
 	ins.emitting = false
 	ins.get_child(0).emitting = false

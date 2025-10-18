@@ -20,55 +20,81 @@ func _ready() -> void:
 	anim = get_tree().get_first_node_in_group("anim_player")
 	ishorizontal = get_parent().ishorizontal
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("gyro") and !player.anim_locked:
+		player.anim_locked=true
+		print("hejo")
+		playersprite.play("obtain")
+	if event.is_action_released("gyro"):
+		player.anim_locked=false
+
 func immobilize_player(body: Node2D):
 	body.smoke.changeemit(false)
 	blackout()
 	Global.can_phone=false
 	Phone.get_child(1).get_child(0)._hide_phone(true)
 	Global.can_move=false
+	player.anim_locked=true
 
 func mobilize_player(body: Node2D):
 	body.smoke.changeemit(true)
 	Global.can_phone=true
 	Global.can_move=true
+	player.anim_locked=false
+
+func move_sprite_to(where:Vector2,move_speed:float):
+	var tempsprite: Vector2 = playersprite.position
+	playersprite.global_position = playersprite.global_position.move_toward(where,get_process_delta_time()*move_speed)
+	await get_tree().create_timer(get_process_delta_time()*move_speed).timeout
+	playersprite.position = tempsprite
+	
 
 func which_side():
-	print("youre going ")
 	
 	var rotation_int: float = round(global_rotation_degrees)
 	
-	print("----------------")
-	print(player.global_position)
-	print(global_position)
-	print(rotation_int)
-	print("----------------")
+	#print("----------------")
+	#print(player.global_position)
+	#print(global_position)
+	#print(rotation_int)
+	#print("----------------")
+	print(playersprite)
 	
 	#IF LEFT ALBO RIGHT
 	if rotation_int==0.0 or rotation_int==180.0 or rotation_int==-180.0: 
 		if player.global_position.x<self.global_position.x:
-			print("right")
+			#right
+			return 0
 		else:
-			print("left")
+			#left
+			return 1
 			
 	#IF DOWN ALBO UP
 	else:
 		if player.global_position.y<self.global_position.y:
-			print("down")
+			#down
+			return 2
 		else:
-			print("up")
+			#up
+			return 3
 			
 func _on_areatp_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("player"):
 		return
 	
-	which_side()
+	var side = which_side()
+	print(side)
 	
 	#IMMOBILIZE
 	immobilize_player(body)
 	
 	#IDZ
-	
-	
+	match side:
+		0: playersprite.play("sider")
+		1: playersprite.play("sidel")
+		2: playersprite.play("front")
+		3: playersprite.play("back")
+	await get_tree().create_timer(0.2).timeout
 	#TP
 	player.global_position = tp_to_pos
 	

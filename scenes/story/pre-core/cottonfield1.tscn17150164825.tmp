@@ -602,6 +602,9 @@ y_sort_enabled = true
 [node name="AnimatedSprite2D" parent="ysorting/player/player" index="1"]
 y_sort_enabled = true
 
+[node name="Camera2D" parent="ysorting/player/player" index="2"]
+zoom = Vector2(1.4, 1.4)
+
 [node name="glut" type="Area2D" parent="ysorting"]
 y_sort_enabled = true
 position = Vector2(560, 170)
@@ -651,38 +654,6 @@ tile_set = SubResource("TileSet_8ulw3")
 y_sort_enabled = true
 tile_map_data = PackedByteArray("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")
 tile_set = SubResource("TileSet_1eayi")
-
-[node name="doors_tp_1" parent="ysorting" instance=ExtResource("38_etjdk")]
-position = Vector2(-56, 0)
-tp_pos = Vector2(-257, -1)
-
-[node name="doors_tp_2" parent="ysorting" instance=ExtResource("38_etjdk")]
-position = Vector2(-440, -96)
-tp_pos = Vector2(-640, -96)
-
-[node name="doors_tp_3" parent="ysorting" instance=ExtResource("38_etjdk")]
-position = Vector2(-336, 88)
-rotation = -1.5708
-tp_pos = Vector2(-2336, 235)
-
-[node name="doors_tp_4" parent="ysorting" instance=ExtResource("38_etjdk")]
-position = Vector2(-232, 0)
-rotation = -3.14159
-tp_pos = Vector2(-30, 0)
-
-[node name="doors_tp_5" parent="ysorting" instance=ExtResource("38_etjdk")]
-position = Vector2(-440, 0)
-tp_pos = Vector2(-938, 1)
-
-[node name="doors_tp_6" parent="ysorting" instance=ExtResource("38_etjdk")]
-position = Vector2(-920, 0)
-rotation = -3.14159
-tp_pos = Vector2(-421, 0)
-
-[node name="doors_tp_7" parent="ysorting" instance=ExtResource("38_etjdk")]
-position = Vector2(-616, -96)
-rotation = -3.14159
-tp_pos = Vector2(-422, -95)
 
 [node name="Bez tytułu" type="Sprite2D" parent="."]
 visible = false
@@ -749,8 +720,29 @@ libraries = {
 }
 
 [node name="doors_loc_help" type="Marker2D" parent="."]
-position = Vector2(-422, -95)
+position = Vector2(-5070, -847)
 rotation = -1.5708
+
+[node name="doors_tp_1" parent="." instance=ExtResource("38_etjdk")]
+position = Vector2(-56, 0)
+tp_pos = Vector2(-257, -1)
+
+[node name="doors_tp_2" parent="." instance=ExtResource("38_etjdk")]
+position = Vector2(-440, -96)
+tp_pos = Vector2(-640, -96)
+ishorizontal = false
+
+[node name="doors_tp_3" parent="." instance=ExtResource("38_etjdk")]
+position = Vector2(-336, 88)
+rotation = -1.5708
+tp_pos = Vector2(-2336, 235)
+ishorizontal = false
+
+[node name="doors_tp_4" parent="." instance=ExtResource("38_etjdk")]
+position = Vector2(-232, 0)
+rotation = -3.14159
+tp_pos = Vector2(-30, 0)
+ishorizontal = false
 
 [node name="tp_1" parent="." instance=ExtResource("7_mymkb")]
 position = Vector2(-2336, 211)

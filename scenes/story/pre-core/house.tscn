@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c72wlne1fh1ho" path="res://assets/tiles/tileobjects.png" id="12_qgspi"]
 [ext_resource type="Script" uid="uid://bkdklstb2wyg2" path="res://scenes/story/pre-core/quickchange.gd" id="14_jkym4"]
 [ext_resource type="Texture2D" uid="uid://e5q4i0heuvg3" path="res://assets/sprite/characters/jr/teto_front.png" id="14_qgspi"]
-[ext_resource type="PackedScene" uid="uid://c3fn22nsfymhg" path="res://scenes/mapmechanics/maptp.tscn" id="15_50mei"]
+[ext_resource type="PackedScene" uid="uid://c3fn22nsfymhg" path="res://scenes/mapmechanics/tp.tscn" id="15_50mei"]
 [ext_resource type="Texture2D" uid="uid://blo5yr7xsgygh" path="res://assets/sprite/characters/shadow/shadowspritesheet.png" id="15_b6qe5"]
 [ext_resource type="Texture2D" uid="uid://6kf44nmw8j3i" path="res://assets/sprite/characters/jr/teto_side_better.png" id="15_jkym4"]
 [ext_resource type="Texture2D" uid="uid://bt0gkelrwxaoi" path="res://assets/tiles/fulltiles/carpethousebedroom.png" id="15_u8w88"]

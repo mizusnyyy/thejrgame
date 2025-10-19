@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://c3fn22nsfymhg"]
 
-[ext_resource type="Script" uid="uid://uttqirf1b5n3" path="res://scenes/mapmechanics/maptp.gd" id="1_rygbq"]
+[ext_resource type="Script" uid="uid://uttqirf1b5n3" path="res://scenes/mapmechanics/tp.gd" id="1_rygbq"]
 
-[node name="maptp" type="Node2D"]
+[node name="tp" type="Node2D"]
 script = ExtResource("1_rygbq")
 
 [node name="areatp" type="Area2D" parent="."]

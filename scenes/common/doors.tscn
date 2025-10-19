@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" uid="uid://edknpfh2mqcg" path="res://scenes/common/doors.gd" id="1_4a4cn"]
 [ext_resource type="Texture2D" uid="uid://bjctqwh5ygacg" path="res://assets/tiles/animations/dooranim.png" id="2_ufeaj"]
-[ext_resource type="PackedScene" uid="uid://c3fn22nsfymhg" path="res://scenes/mapmechanics/maptp.tscn" id="3_l4ndq"]
+[ext_resource type="PackedScene" uid="uid://c3fn22nsfymhg" path="res://scenes/mapmechanics/tp.tscn" id="3_l4ndq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xj4xd"]
 size = Vector2(16.5, 48)
 
-[node name="doors_tp" type="Area2D"]
+[node name="doors_tp" type="Area2D" groups=["teleporter"]]
+y_sort_enabled = true
 script = ExtResource("1_4a4cn")
 
 [node name="dooropener" type="CollisionShape2D" parent="."]
@@ -15,25 +16,26 @@ position = Vector2(16.25, 0)
 shape = SubResource("RectangleShape2D_xj4xd")
 
 [node name="door1" type="Sprite2D" parent="."]
+y_sort_enabled = true
 position = Vector2(0, -8)
 texture = ExtResource("2_ufeaj")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
 [node name="door2" type="Sprite2D" parent="."]
-z_index = 1
+y_sort_enabled = true
 position = Vector2(0, 8)
 scale = Vector2(1, -1)
 texture = ExtResource("2_ufeaj")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="maptp" parent="." instance=ExtResource("3_l4ndq")]
+[node name="tp" parent="." instance=ExtResource("3_l4ndq")]
 
-[node name="areatppoligon" parent="maptp/areatp" index="0"]
+[node name="areatppoligon" parent="tp/areatp" index="0"]
 polygon = PackedVector2Array(-8, -16, -8, 16, 8, 16, 8, -16)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 
-[editable path="maptp"]
+[editable path="tp"]

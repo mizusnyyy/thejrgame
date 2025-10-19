@@ -39,7 +39,6 @@ func _physics_process(delta: float) -> void:
 	if direction.length() > 0 and Global.can_move:
 		direction = direction.normalized()
 		velocity = direction * SPEED * speed_sprint
-			
 		if direction.x != 0:
 			if direction.x > 0:
 				s="sider"

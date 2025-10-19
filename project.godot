@@ -44,6 +44,7 @@ folder_colors={
 
 player=""
 anim_player=""
+teleporter=""
 
 [input]
 

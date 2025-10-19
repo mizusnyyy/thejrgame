@@ -3,10 +3,22 @@ var inbody := false
 var lvl1 := 1
 var lvl2 := 1
 @export var tp_pos: Vector2
-@export var ishorizontal : bool = true
+var checked := false
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		#SPRAWDZANIE CZY ZINDEX JUZ SIE ZMNIEJSZYL
+		if !checked:
+			print("door1")
+			print(round($door1.global_position.y))
+			print("door2")
+			print(round($door2.global_position.y))
+			checked=true
+			if round($door1.global_position.y)!=round($door2.global_position.y):
+				if $door1.global_position.y>=$door2.global_position.y:
+					$door2.z_index=-1
+				else:
+					$door1.z_index=-1
 		inbody = true
 		openclose(true,$door1,lvl1)
 		openclose(true,$door2,lvl2)

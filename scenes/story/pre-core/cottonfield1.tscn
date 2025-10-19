@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://b60l2pd8phig8"]
+[gd_scene load_steps=58 format=4 uid="uid://b60l2pd8phig8"]
 
 [ext_resource type="Script" uid="uid://clkj0hkqugo3e" path="res://scenes/story/pre-core/cottonfield_1.gd" id="1_p45fp"]
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_y0cq1"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/player/teto.tscn" id="6_m0j0v"]
 [ext_resource type="Texture2D" uid="uid://bxq2w808td2io" path="res://assets/sprite/characters/glut/glut.png" id="7_3pd33"]
 [ext_resource type="PackedScene" uid="uid://c3fn22nsfymhg" path="res://scenes/mapmechanics/tp.tscn" id="7_mymkb"]
+[ext_resource type="SpriteFrames" uid="uid://cyfimtbocgidh" path="res://scenes/player/jrsprite.tres" id="8_neanc"]
 [ext_resource type="AudioStream" uid="uid://bk6wuwnskch7u" path="res://assets/sprite/characters/glut/squeek.wav" id="9_87ub6"]
 [ext_resource type="Texture2D" uid="uid://b7632vv4ixuwo" path="res://assets/tiles/tilebg.png" id="13_xq3a2"]
 [ext_resource type="Texture2D" uid="uid://blq2libb70yvf" path="res://assets/tiles/tilebarrier.png" id="14_asfsf"]
@@ -386,10 +387,10 @@ tracks/1/path = NodePath("ysorting/player/player/AnimatedSprite2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 4.24167, 4.3, 4.53333, 4.63333, 4.76666, 4.83333, 5.04396, 5.2, 5.35333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 3.24901, 0.116629, 4.92458),
+"times": PackedFloat32Array(0, 4.24167, 4.3, 4.53333, 4.63333, 4.76666, 4.83333, 4.96667, 5.03333, 5.2, 5.35333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 3.24901, 3.24901, 0.420447, 4.92458),
 "update": 0,
-"values": [Vector2(25, -16), Vector2(25, -16), Vector2(25, -8), Vector2(15.5, -18), Vector2(11.5, -18), Vector2(4.7, -16), Vector2(1.5, -10.5), Vector2(0, -3), Vector2(0, -11.5), Vector2(0, -13)]
+"values": [Vector2(25, -19), Vector2(25, -19), Vector2(25, -12), Vector2(15.5, -22), Vector2(11.5, -23), Vector2(4.7, -18), Vector2(1.5, -14), Vector2(0, -4), Vector2(0, -3), Vector2(0, -17.5), Vector2(0, -13)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -398,10 +399,10 @@ tracks/2/path = NodePath("ysorting/player/player/AnimatedSprite2D:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 4.24167, 4.3, 4.48498, 4.63333, 4.88886, 5.03333, 5.23333, 5.36667),
-"transitions": PackedFloat32Array(1, 1, 3.13834, 1, 1, 1, 4, 2.2974, 2.2974),
+"times": PackedFloat32Array(0, 4.24167, 4.3, 4.48498, 4.63333, 4.88886, 4.99896, 5.13333, 5.3, 5.36667),
+"transitions": PackedFloat32Array(1, 1, 3.13834, 1, 1, 1, 0.307786, 0.307786, 2.2974, 2.2974),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 0.5), Vector2(1, 1.2), Vector2(1, 1), Vector2(1, 1), Vector2(1.3, 0.5), Vector2(1, 1.2), Vector2(1, 1)]
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 0.5), Vector2(1, 1.2), Vector2(1, 1), Vector2(1, 1), Vector2(1.4, 0.5), Vector2(1.5, 0.5), Vector2(1, 1), Vector2(1, 1)]
 }
 tracks/3/type = "method"
 tracks/3/imported = false
@@ -528,7 +529,7 @@ tracks/9/keys = {
 
 [sub_resource type="Animation" id="Animation_s7kpv"]
 resource_name = "tp"
-length = 0.9
+length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -536,7 +537,7 @@ tracks/0/path = NodePath("ysorting/player/modulate_screen:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.433333, 0.9),
+"times": PackedFloat32Array(0, 0.2, 0.433333, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
@@ -601,6 +602,8 @@ y_sort_enabled = true
 
 [node name="AnimatedSprite2D" parent="ysorting/player/player" index="1"]
 y_sort_enabled = true
+sprite_frames = ExtResource("8_neanc")
+animation = &"idle"
 
 [node name="glut" type="Area2D" parent="ysorting"]
 y_sort_enabled = true
@@ -654,7 +657,7 @@ tile_set = SubResource("TileSet_1eayi")
 
 [node name="doors_tp_1" parent="ysorting" instance=ExtResource("38_etjdk")]
 position = Vector2(-56, 0)
-tp_pos = Vector2(-257, -1)
+tp_pos = Vector2(-248, 0)
 
 [node name="doors_tp_2" parent="ysorting" instance=ExtResource("38_etjdk")]
 position = Vector2(-440, -96)
@@ -668,7 +671,7 @@ tp_pos = Vector2(-2336, 235)
 [node name="doors_tp_4" parent="ysorting" instance=ExtResource("38_etjdk")]
 position = Vector2(-232, 0)
 rotation = -3.14159
-tp_pos = Vector2(-30, 0)
+tp_pos = Vector2(-40, 0)
 
 [node name="doors_tp_5" parent="ysorting" instance=ExtResource("38_etjdk")]
 position = Vector2(-440, 0)
@@ -749,7 +752,7 @@ libraries = {
 }
 
 [node name="doors_loc_help" type="Marker2D" parent="."]
-position = Vector2(-422, -95)
+position = Vector2(-248, 0)
 rotation = -1.5708
 
 [node name="tp_1" parent="." instance=ExtResource("7_mymkb")]

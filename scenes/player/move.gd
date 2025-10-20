@@ -4,13 +4,15 @@ var SPEED := 75.0
 @onready var anim := $AnimatedSprite2D
 @onready var obtainpart := preload("res://assets/particles/obtainpart.tscn")
 @onready var smoke := $AnimatedSprite2D/smokerun
-var directionstop := 0
+@onready var dialog := $"../../../CanvasLayer/dialoge"
+
 @export var direction := Vector2()
+
+var directionstop := 0
 var anim_locked := false
 var transporting := false
 var s:String
 var last_position: Vector2
-
 #func _input(event: InputEvent) -> void:
 	#if event.is_action_pressed("gyro") and !anim_locked:
 		#anim_locked=true
@@ -24,6 +26,8 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
+	print(dialog)
+	print(dialog.get_child(0))
 
 	var directionlr := Input.get_axis("left", "right")
 	var directionud := Input.get_axis("up", "down")
@@ -121,6 +125,7 @@ func itemupanim(txt):
 	
 func animtoggle():
 	anim_locked=!anim_locked
+
 func playanim(a:String,b:bool) -> void:
 	anim.play(a)
 	if b:

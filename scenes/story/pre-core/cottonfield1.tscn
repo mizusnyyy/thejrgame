@@ -526,6 +526,20 @@ tracks/9/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
 }
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["bedroominteract", true],
+"method": &"cutscene_talk"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_s7kpv"]
 resource_name = "tp"
@@ -603,7 +617,6 @@ y_sort_enabled = true
 [node name="AnimatedSprite2D" parent="ysorting/player/player" index="1"]
 y_sort_enabled = true
 sprite_frames = ExtResource("8_neanc")
-animation = &"idle"
 
 [node name="glut" type="Area2D" parent="ysorting"]
 y_sort_enabled = true
@@ -795,6 +808,9 @@ position = Vector2(-5070, -824)
 rotation = -1.5708
 scale = Vector2(1, 7)
 tp_to_pos = Vector2(-5064, -389)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_87ub6")
 
 [connection signal="body_entered" from="ysorting/glut" to="ysorting/glut" method="_on_body_entered"]
 [connection signal="body_exited" from="ysorting/glut" to="ysorting/glut" method="_on_body_exited"]

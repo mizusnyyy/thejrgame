@@ -2,8 +2,10 @@ extends Node2D
 @onready var anim := $AnimationPlayer
 @onready var item := preload("res://scenes/items/iteminteract.tscn")
 @onready var tileset_house : TileMapLayer = $ysorting/house_ysort/housejr_objects
+var player : CharacterBody2D
 
 func _ready():
+	player = get_tree().get_first_node_in_group("player")
 	$ysorting/player/blackout_screen.visible=false
 	print(CutsceneManager.has_played(CutsceneManager.cutscenes.intro))
 	if CutsceneManager.has_played(CutsceneManager.cutscenes.intro):
@@ -34,3 +36,10 @@ func changebed(make:bool):
 		tileset_house.set_cell(coordbeddown[0],5,Vector2i(4, 0),0)
 		await get_tree().create_timer(0.08).timeout
 		tileset_house.set_cell(coordbeddown[0],5,Vector2i(8, 0),0)
+
+func cutscene_talk(character:String, pause: bool = true):
+		DialogueManager.begin_dialogue(character,player.dialog,$AudioStreamPlayer)
+		if pause:
+			$AnimationPlayer.pause()
+			await DialogueManager.dialogue_done
+			$AnimationPlayer.play()

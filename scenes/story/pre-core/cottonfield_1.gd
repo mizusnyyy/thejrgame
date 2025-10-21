@@ -17,7 +17,7 @@ func _ready():
 		CutsceneManager.set_played(CutsceneManager.cutscenes.intro)
 		await anim.animation_finished
 		Global.can_move=true
-		Musicsounds.play_music(load("res://assets/sounds/music/1.ogg"))
+	Musicsounds.play_music(load("res://assets/sounds/music/1.ogg"))
 	await get_tree().create_timer(3).timeout
 	changebed(true)
 		
@@ -39,7 +39,12 @@ func changebed(make:bool):
 
 func cutscene_talk(character:String, pause: bool = true):
 		DialogueManager.begin_dialogue(character,player.dialog,$AudioStreamPlayer)
+		Global.isincutscene=true
 		if pause:
 			$AnimationPlayer.pause()
 			await DialogueManager.dialogue_done
+			Global.isincutscene=false
 			$AnimationPlayer.play()
+			return
+		await DialogueManager.dialogue_done
+		Global.isincutscene=false

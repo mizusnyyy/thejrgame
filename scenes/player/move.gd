@@ -21,13 +21,13 @@ var last_position: Vector2
 		#anim_locked=false
 
 func _physics_process(delta: float) -> void:
+	#print(anim_locked)
+	#print(Global.can_move)
 	if anim_locked or transporting:
 		anim.speed_scale = 1
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
-	print(dialog)
-	print(dialog.get_child(0))
 
 	var directionlr := Input.get_axis("left", "right")
 	var directionud := Input.get_axis("up", "down")

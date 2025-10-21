@@ -11,6 +11,7 @@ func _ready():
 	if CutsceneManager.has_played(CutsceneManager.cutscenes.intro):
 		anim.stop()
 	else:
+		Musicsounds.play_music(load("res://assets/sounds/music/0.ogg"))
 		Global.can_move=false
 		Global.can_phone=false
 		anim.play("intro")
@@ -22,7 +23,7 @@ func _ready():
 	changebed(true)
 		
 func spawnphone():
-	var ins = item.instantiate()
+	var ins : Area2D = item.instantiate()
 	$ysorting.add_child(ins)
 	ins.position=Vector2(29.0,-134.0)
 	
@@ -38,7 +39,7 @@ func changebed(make:bool):
 		tileset_house.set_cell(coordbeddown[0],5,Vector2i(8, 0),0)
 
 func cutscene_talk(character:String, pause: bool = true):
-		DialogueManager.begin_dialogue(character,player.dialog,$AudioStreamPlayer)
+		DialogueManager.begin_dialogue(character,player.dialog,$AudioStreamPlayer2D)
 		Global.isincutscene=true
 		if pause:
 			$AnimationPlayer.pause()

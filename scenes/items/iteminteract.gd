@@ -2,6 +2,9 @@ extends Area2D
 var igor:=false
 var inrange:=false
 var anime
+var player : CharacterBody2D
+var first : bool = true
+
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		inrange=true
@@ -12,12 +15,22 @@ func _on_body_exited(body: Node2D) -> void:
 		inrange=false
 
 func _unhandled_input(event):
-	if event.is_action_pressed("interact") && inrange:
+	if event.is_action_pressed("interact") && inrange && first:
+		first = false
 		anime.obtainanim($Sprite2D.texture)
 		Musicsounds.play_sound(load("res://JacksWithHats.wav"))
+		hide()
+		await player.obtain_done
+		phoneout()
+		await get_tree().create_timer(1.4).timeout
+		phonetalk()
+		await DialogueManager.dialogue_done
+		player.anim_locked=false
+		#player.anim.play("idle")
 		self.queue_free()
 		
 func _on_ready() -> void:
+	player = get_tree().get_first_node_in_group("player")
 	idleanim()
 
 func idleanim():
@@ -39,3 +52,11 @@ func idleanim():
 		#t.tween_property($behind,"skew",deg_to_rad(val[2]),dur)
 		beh.global_rotation=0
 		await t.finished
+
+func phonetalk():
+	DialogueManager.begin_dialogue("introgame2",player.dialog,$AudioStreamPlayer2D)
+
+func phoneout():
+	player.anim_locked=true
+	player.anim.play("phone")
+	

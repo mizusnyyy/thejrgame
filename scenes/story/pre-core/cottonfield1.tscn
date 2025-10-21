@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://b60l2pd8phig8"]
+[gd_scene load_steps=58 format=4 uid="uid://b60l2pd8phig8"]
 
 [ext_resource type="Script" uid="uid://clkj0hkqugo3e" path="res://scenes/story/pre-core/cottonfield_1.gd" id="1_p45fp"]
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_y0cq1"]
@@ -241,19 +241,19 @@ texture = ExtResource("22_grflj")
 0:0/size_in_atlas = Vector2i(4, 3)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(-24, 16)
-0:0/0/y_sort_origin = -35
+0:0/0/y_sort_origin = -17
 4:0/size_in_atlas = Vector2i(4, 3)
 4:0/0 = 0
 4:0/0/texture_origin = Vector2i(-24, 16)
-4:0/0/y_sort_origin = -30
+4:0/0/y_sort_origin = -17
 8:0/size_in_atlas = Vector2i(4, 3)
 8:0/0 = 0
 8:0/0/texture_origin = Vector2i(-24, 16)
-8:0/0/y_sort_origin = -26
+8:0/0/y_sort_origin = -17
 12:0/size_in_atlas = Vector2i(4, 3)
 12:0/0 = 0
 12:0/0/texture_origin = Vector2i(-24, 16)
-12:0/0/y_sort_origin = -35
+12:0/0/y_sort_origin = -17
 
 [sub_resource type="TileSet" id="TileSet_bn434"]
 sources/0 = SubResource("TileSetAtlasSource_n01r1")
@@ -366,7 +366,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_aqtk2"]
 resource_name = "intro"
-length = 7.2
+length = 7.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -386,7 +386,7 @@ tracks/1/path = NodePath("ysorting/player/player/AnimatedSprite2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 5.24167, 5.3, 5.53333, 5.63333, 5.76666, 5.83333, 5.96667, 6.03333, 6.2, 6.35333),
+"times": PackedFloat32Array(0, 5.63501, 5.69334, 5.92667, 6.02667, 6.16, 6.22667, 6.36001, 6.42667, 6.59334, 6.74667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 3.24901, 3.24901, 0.420447, 4.92458),
 "update": 0,
 "values": [Vector2(25, -19), Vector2(25, -19), Vector2(25, -12), Vector2(15.5, -22), Vector2(11.5, -23), Vector2(4.7, -18), Vector2(1.5, -14), Vector2(0, -4), Vector2(0, -3), Vector2(0, -17.5), Vector2(0, -13)]
@@ -398,7 +398,7 @@ tracks/2/path = NodePath("ysorting/player/player/AnimatedSprite2D:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 5.24167, 5.3, 5.48498, 5.63333, 5.88886, 5.99896, 6.13333, 6.3, 6.36667),
+"times": PackedFloat32Array(0, 5.63501, 5.69334, 5.87832, 6.02667, 6.2822, 6.3923, 6.52667, 6.69334, 6.76001),
 "transitions": PackedFloat32Array(1, 1, 3.13834, 1, 1, 1, 0.307786, 0.307786, 2.2974, 2.2974),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 0.5), Vector2(1, 1.2), Vector2(1, 1), Vector2(1, 1), Vector2(1.4, 0.5), Vector2(1.5, 0.5), Vector2(1, 1), Vector2(1, 1)]
@@ -421,7 +421,7 @@ tracks/4/path = NodePath("ysorting/player/player")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 1.33333, 1.73333, 2.33333, 2.56667, 3.13333, 5.36667, 5.53333, 5.63333, 5.76667, 6.5),
+"times": PackedFloat32Array(0, 2.06667, 2.46667, 3.06667, 3.30001, 3.86667, 5.76001, 5.92667, 6.02667, 6.16001, 6.89334),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
 "args": ["sleep", true],
@@ -465,7 +465,7 @@ tracks/5/path = NodePath("ysorting/player:z_index")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 5.24167),
+"times": PackedFloat32Array(0, 5.63501),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [2, 0]
@@ -491,7 +491,7 @@ tracks/7/path = NodePath(".")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 5.3),
+"times": PackedFloat32Array(0, 5.69334),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -508,7 +508,7 @@ tracks/8/path = NodePath("ysorting/player/player/Camera2D:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 5.3, 5.5333, 5.6333, 5.76667, 5.8333, 6.06667, 6.23333, 6.34),
+"times": PackedFloat32Array(0, 5.69334, 5.92664, 6.02664, 6.16001, 6.22664, 6.46001, 6.62667, 6.73334),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(25, -13), Vector2(25, -13), Vector2(15.5, -14.2), Vector2(11.5, -16), Vector2(4.7, -14), Vector2(1.5, -9.5), Vector2(0, -6), Vector2(0, -9.5), Vector2(0, -13)]
@@ -532,10 +532,13 @@ tracks/10/path = NodePath(".")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(2.5),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(1.86667, 5.03334),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
-"args": ["bedroominteract", true],
+"args": ["introgame", true],
+"method": &"cutscene_talk"
+}, {
+"args": ["introgame1", true],
 "method": &"cutscene_talk"
 }]
 }
@@ -556,10 +559,14 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_mymkb"]
+resource_name = "intro1"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s7kpv"]
 _data = {
 &"RESET": SubResource("Animation_b6qe5"),
 &"intro": SubResource("Animation_aqtk2"),
+&"intro1": SubResource("Animation_mymkb"),
 &"tp": SubResource("Animation_s7kpv")
 }
 
@@ -615,7 +622,6 @@ y_sort_enabled = true
 
 [node name="AnimatedSprite2D" parent="ysorting/player/player" index="1"]
 y_sort_enabled = true
-animation = &"sleepno"
 
 [node name="glut" type="Area2D" parent="ysorting"]
 y_sort_enabled = true

@@ -36,15 +36,15 @@
 	{"id": "shadow_intro_8", "text": "slyszales o corze?", "hand":null, "speaker": "Shadow", "portrait": "shadow/portrait/4","next":"shadow_intro_9"},
 	{"id": "shadow_intro_9", "text": "sprawdz se rozne czesci mapy! (nic)", "hand":"2", "speaker": "Freaky Shadow", "portrait": "shadow/portrait/4","next":null},
 	
-	{"id": "bedroominteract_start", "text": "Just some paperwork and diary that", "hand":null, "speaker": "", "portrait": "jr/portrait/you","next":"bedroominteract_1"},
-	{"id": "bedroominteract_1", "text": "Jack's been working on, read it?", "hand":null, "speaker": "", "portrait": null,
-	"next": [
-	  { "text": "yes", "next": "bedroominteract_2" },
-	  { "text": "no","next":"bedroominteract_stop"}
-	]},
-	{"id": "bedroominteract_stop", "text": "...", "hand":null, "speaker": "", "portrait": null,"next":null},
-	{"id": "bedroominteract_2", "text": "\"Ten kids in ten years, who do you\"", "hand":null, "speaker": "", "portrait": null,"next":"bedroominteract_3"},
-	{"id": "bedroominteract_3", "text": "\"wanna be when you grow up? Steven.\"", "hand":null, "speaker": "", "portrait": null,"next":null},
+	{"id": "introgame_start", "text": ". . .", "hand":null, "speaker": "", "portrait": "jr/portrait/you","next":"introgame_1"},
+	{"id": "introgame_1", "text": "Agh... Someone's calling me again...", "hand":null, "speaker": "", "portrait": null,"next":"introgame_2"},
+	{"id": "introgame_2", "text": ". . .", "hand":null, "speaker": "", "portrait": null,"next":"introgame_3"},
+	{"id": "introgame_3", "text": "I should really pick it up...", "hand":null, "speaker": "", "portrait": null,"next": null},
+	
+	{"id": "introgame1_start", "text": "Alrighty-o! Let's do this!", "hand":null, "speaker": "", "portrait": null,"next": null},
+	
+	{"id": "introgame2_start", "text": "Hello? Is this Jack?", "hand":null, "speaker": "???", "portrait": "jr/portrait/idk","next": "introgame2_1"},
+	{"id": "introgame2_1", "text": "Hi! Who's this?", "hand":null, "speaker": "", "portrait": "jr/portrait/you","next": null},
 	
 	{"id": "nyxel_start", "text": "Nya~! Orewo nawa... don nyxel doflamingo", "hand":null, "speaker":"???", "portrait": "pavey/portrait/k1","next": "nyxel_intro_1"},
 	{"id": "nyxel_intro_1", "text": "Tak z ciekawosci... kimzes?", "hand":null, "speaker":"???", "portrait": "pavey/portrait/k3","next":"nyxel_intro_2"},

@@ -1,8 +1,10 @@
 extends Node2D
 enum state { PLAYER_TURN, ENEMY_TURN, WAITING }
 enum mode { RED,BLUE }
-var current_state := state.PLAYER_TURN
-var current_mode := mode.RED
+var current_state = state.PLAYER_TURN
+var current_mode = mode.RED
+var current_heart: int = 0
+var heart_textures: Array[Texture2D] = []
 var battleenem
 var tp := 0
 var mana := 0.0

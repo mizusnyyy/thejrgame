@@ -1036,7 +1036,7 @@ script = null
 [node name="heart" type="Sprite2D" parent="soul"]
 texture = ExtResource("139_wf2x0")
 region_enabled = true
-region_rect = Rect2(64, 0, 16, 16)
+region_rect = Rect2(48, 0, 16, 16)
 script = ExtResource("139_itpkr")
 
 [node name="jack" type="AnimatedSprite2D" parent="soul"]

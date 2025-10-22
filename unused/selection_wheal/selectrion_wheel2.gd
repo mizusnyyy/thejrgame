@@ -101,6 +101,7 @@ func _process(delta):
 			else:
 				print("Animacja nie istnieje:", anim_name)
 
+
 	_update_hearts_position()
 	queue_redraw()
 		

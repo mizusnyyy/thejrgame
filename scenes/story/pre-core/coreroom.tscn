@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://csy882se6ixne" path="res://scenes/story/core/core.tscn" id="15_o7yvw"]
 [ext_resource type="PackedScene" uid="uid://b6vi5n5gad3lf" path="res://data/dialogue_manager.tscn" id="17_7htdg"]
 [ext_resource type="PackedScene" uid="uid://cne3a6lmj7c1u" path="res://scenes/randomthings/npc.tscn" id="20_5owgv"]
-[ext_resource type="Texture2D" uid="uid://b8kbeqt7s1s6d" path="res://assets/sprite/characters/igreavious/igreavious.png" id="20_124ib"]
+[ext_resource type="Texture2D" uid="uid://cf7hmfre788kt" path="res://assets/sprite/characters/igreavious/igreavious.png" id="20_124ib"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wkayd"]
 texture = ExtResource("3_r2r0d")

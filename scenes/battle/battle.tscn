@@ -125,7 +125,7 @@
 [ext_resource type="Texture2D" uid="uid://c0rju4q54hy8u" path="res://assets/sprite/battle/not ui/ass.png" id="112_p6ty6"]
 [ext_resource type="Texture2D" uid="uid://dyfae6vj3xg66" path="res://assets/sprite/battle/not ui/item.png" id="113_rcqhw"]
 [ext_resource type="Texture2D" uid="uid://c6xd1sg5oggf3" path="res://assets/sprite/battle/not ui/item_select.png" id="114_da7rj"]
-[ext_resource type="Script" path="res://scenes/battle/act.gd" id="114_eimsn"]
+[ext_resource type="Script" uid="uid://bkmd0ah840rwm" path="res://scenes/battle/act.gd" id="114_eimsn"]
 [ext_resource type="Texture2D" uid="uid://by1fj063v3e3t" path="res://assets/sprite/battle/not ui/mercy.png" id="115_2ohwp"]
 [ext_resource type="AudioStream" uid="uid://b3e0yrmnrd73n" path="res://assets/sprite/battle/aaaawhooya.wav" id="115_w54gx"]
 [ext_resource type="Texture2D" uid="uid://bka5qqbi2x03e" path="res://assets/sprite/battle/not ui/mercy_select.png" id="116_kdiof"]

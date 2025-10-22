@@ -1,1 +1,1 @@
-Krater oraz ruiny [[Core]]'a pozostałe po Wybuchu. Później istotna lokacja do której wraca jack. 
+Krater oraz ruiny [[Core]]'a pozostałe po [[Wybuch]]u. 

@@ -1,20 +1,20 @@
 {
   "main": {
-    "id": "362cccd9fb742fe3",
+    "id": "9aa9ac480317a210",
     "type": "split",
     "children": [
       {
-        "id": "530a0c8575c5faff",
+        "id": "075d5e69bfc9e9d1",
         "type": "tabs",
         "children": [
           {
-            "id": "9b898be397f605cf",
+            "id": "6bc17c3751db08ea",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "empty",
               "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -23,15 +23,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "7a7824cc1790f522",
+    "id": "d877e228d2bf935a",
     "type": "split",
     "children": [
       {
-        "id": "1d4e6ed804409b9d",
+        "id": "034ac40942c1ce95",
         "type": "tabs",
         "children": [
           {
-            "id": "1120fc2086a59474",
+            "id": "561ca901f01a5688",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,7 +44,7 @@
             }
           },
           {
-            "id": "6a6163254a23ca8a",
+            "id": "ca6e3c960c88a625",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -61,7 +61,7 @@
             }
           },
           {
-            "id": "e07139bf8025d97b",
+            "id": "e59e6a81a948e2b4",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -77,15 +77,15 @@
     "width": 300
   },
   "right": {
-    "id": "919ad957def22ef9",
+    "id": "e52126ef48c73435",
     "type": "split",
     "children": [
       {
-        "id": "acb28d6dd3990c51",
+        "id": "08ae9138967b8cd1",
         "type": "tabs",
         "children": [
           {
-            "id": "2fe609f68aecfed7",
+            "id": "2accdf65b2180015",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -103,7 +103,7 @@
             }
           },
           {
-            "id": "8897805b4d6976e8",
+            "id": "1356519f746650c3",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -116,7 +116,7 @@
             }
           },
           {
-            "id": "1b92abbe866935de",
+            "id": "78ac601e3459da0e",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -131,7 +131,7 @@
             }
           },
           {
-            "id": "b415ad5a5df45acb",
+            "id": "40e737970c18fe18",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -162,29 +162,6 @@
       "bases:Create new base": false
     }
   },
-  "active": "9b898be397f605cf",
-  "lastOpenFiles": [
-    "Lokacje/Core (Odłamek).md",
-    "Zdarzenia/Ostatnia kłótnia.md",
-    "Postacie/Yumii.md",
-    "Zdarzenia/Wybuch.md",
-    "Koncepty/Flota.md",
-    "Koncepty/Restoracja.md",
-    "Koncepty/Runy kwantowe.md",
-    "Koncepty/Core.md",
-    "Koncepty/Anomalia.md",
-    "[[flota.md",
-    "Lokacje/Wyspa.md",
-    "Lokacje/Core (cały).md",
-    "Postacie/Bagzo.md",
-    "Postacie/Core (postać).md",
-    "Postacie/Cpt. Wavestorm.md",
-    "Postacie/Hexer.md",
-    "Postacie/Jan w..md",
-    "Postacie/morro.md",
-    "Postacie/Shadow.md",
-    "Postacie/P.md",
-    "Postacie/Igreavious.md",
-    "Postacie/Aviruk.md"
-  ]
+  "active": "6bc17c3751db08ea",
+  "lastOpenFiles": []
 }

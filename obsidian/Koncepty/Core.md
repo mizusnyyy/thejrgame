@@ -1,1 +1,2 @@
-Duża placówka, znajdowała się daleko od głównego  miasta restoracji. Core dawał COŚ mieszkańcom restoracji. Był on bardzo zaawansowaną maszyną z magią w swoim centrum, przez co był on bardzo nie stabilny i wymagał ciągłej konserwacji, przez wielką kłótnię [[Shadow]] nie był w stanie wykonać potrzebnych napraw.
+Duża placówka, znajdowała się na biegunie północnym planety restoracji. Core dawał zapewniał energię restoracji. Był on bardzo zaawansowaną maszyną, a w swoim centrum zawierał 
+[[Runy kwantowe]]  przez co był on bardzo nie stabilny i wymagał ciągłej konserwacji, przez [[Ostatnia kłótnia]]  [[Shadow]] nie był w stanie wykonać potrzebnych napraw przez co doprowadził do [[Wybuch]].

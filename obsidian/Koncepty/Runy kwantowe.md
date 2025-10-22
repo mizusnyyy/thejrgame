@@ -1,0 +1,1 @@
+Kwantowe w skali maszyny (układ materii) będące w stanie wpływać na prawa fizyki w małym obrębie od siebie.

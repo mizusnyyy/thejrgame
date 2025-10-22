@@ -24,7 +24,6 @@ var heart_animations = {
 	4: "shadow_heart",
 	5: "the_fallen_footballer_heart"
 }
-
 func _ready():
 	self.hide()
 	for i in range(number_of_hearts):
@@ -101,7 +100,6 @@ func _process(delta):
 				self.hide()
 			else:
 				print("Animacja nie istnieje:", anim_name)
-
 
 	_update_hearts_position()
 	queue_redraw()

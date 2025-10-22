@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/player/teto.tscn" id="6_m0j0v"]
 [ext_resource type="Texture2D" uid="uid://bxq2w808td2io" path="res://assets/sprite/characters/glut/glut.png" id="7_3pd33"]
 [ext_resource type="PackedScene" uid="uid://c3fn22nsfymhg" path="res://scenes/mapmechanics/tp.tscn" id="7_mymkb"]
-[ext_resource type="SpriteFrames" uid="uid://cyfimtbocgidh" path="res://scenes/player/jrsprite.tres" id="8_neanc"]
 [ext_resource type="AudioStream" uid="uid://bk6wuwnskch7u" path="res://assets/sprite/characters/glut/squeek.wav" id="9_87ub6"]
 [ext_resource type="Texture2D" uid="uid://b7632vv4ixuwo" path="res://assets/tiles/tilebg.png" id="13_xq3a2"]
 [ext_resource type="Texture2D" uid="uid://blq2libb70yvf" path="res://assets/tiles/tilebarrier.png" id="14_asfsf"]
@@ -242,19 +241,19 @@ texture = ExtResource("22_grflj")
 0:0/size_in_atlas = Vector2i(4, 3)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(-24, 16)
-0:0/0/y_sort_origin = -20
+0:0/0/y_sort_origin = -17
 4:0/size_in_atlas = Vector2i(4, 3)
 4:0/0 = 0
 4:0/0/texture_origin = Vector2i(-24, 16)
-4:0/0/y_sort_origin = -20
+4:0/0/y_sort_origin = -17
 8:0/size_in_atlas = Vector2i(4, 3)
 8:0/0 = 0
 8:0/0/texture_origin = Vector2i(-24, 16)
-8:0/0/y_sort_origin = -20
+8:0/0/y_sort_origin = -17
 12:0/size_in_atlas = Vector2i(4, 3)
 12:0/0 = 0
 12:0/0/texture_origin = Vector2i(-24, 16)
-12:0/0/y_sort_origin = -20
+12:0/0/y_sort_origin = -17
 
 [sub_resource type="TileSet" id="TileSet_bn434"]
 sources/0 = SubResource("TileSetAtlasSource_n01r1")
@@ -367,7 +366,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_aqtk2"]
 resource_name = "intro"
-length = 5.7
+length = 7.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -387,7 +386,7 @@ tracks/1/path = NodePath("ysorting/player/player/AnimatedSprite2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 4.24167, 4.3, 4.53333, 4.63333, 4.76666, 4.83333, 4.96667, 5.03333, 5.2, 5.35333),
+"times": PackedFloat32Array(0, 5.63501, 5.69334, 5.92667, 6.02667, 6.16, 6.22667, 6.36001, 6.42667, 6.59334, 6.74667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 3.24901, 3.24901, 0.420447, 4.92458),
 "update": 0,
 "values": [Vector2(25, -19), Vector2(25, -19), Vector2(25, -12), Vector2(15.5, -22), Vector2(11.5, -23), Vector2(4.7, -18), Vector2(1.5, -14), Vector2(0, -4), Vector2(0, -3), Vector2(0, -17.5), Vector2(0, -13)]
@@ -399,7 +398,7 @@ tracks/2/path = NodePath("ysorting/player/player/AnimatedSprite2D:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 4.24167, 4.3, 4.48498, 4.63333, 4.88886, 4.99896, 5.13333, 5.3, 5.36667),
+"times": PackedFloat32Array(0, 5.63501, 5.69334, 5.87832, 6.02667, 6.2822, 6.3923, 6.52667, 6.69334, 6.76001),
 "transitions": PackedFloat32Array(1, 1, 3.13834, 1, 1, 1, 0.307786, 0.307786, 2.2974, 2.2974),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 0.5), Vector2(1, 1.2), Vector2(1, 1), Vector2(1, 1), Vector2(1.4, 0.5), Vector2(1.5, 0.5), Vector2(1, 1), Vector2(1, 1)]
@@ -422,7 +421,7 @@ tracks/4/path = NodePath("ysorting/player/player")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 1.33333, 1.73333, 2.33333, 2.56667, 3.13333, 4.36667, 4.53333, 4.63333, 4.76667, 4.95),
+"times": PackedFloat32Array(0, 2.06667, 2.46667, 3.06667, 3.30001, 3.86667, 5.76001, 5.92667, 6.02667, 6.16001, 6.89334),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
 "args": ["sleep", true],
@@ -440,7 +439,7 @@ tracks/4/keys = {
 "args": ["sleep", true],
 "method": &"playanim"
 }, {
-"args": ["sleepno", true],
+"args": ["sleepno", false],
 "method": &"playanim"
 }, {
 "args": ["sidel", true],
@@ -452,7 +451,7 @@ tracks/4/keys = {
 "args": ["sider", true],
 "method": &"playanim"
 }, {
-"args": ["front", true],
+"args": ["idle", false],
 "method": &"playanim"
 }, {
 "args": [],
@@ -466,7 +465,7 @@ tracks/5/path = NodePath("ysorting/player:z_index")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 4.24167),
+"times": PackedFloat32Array(0, 5.63501),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [2, 0]
@@ -492,7 +491,7 @@ tracks/7/path = NodePath(".")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 4.3),
+"times": PackedFloat32Array(0, 5.69334),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -509,7 +508,7 @@ tracks/8/path = NodePath("ysorting/player/player/Camera2D:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 4.3, 4.5333, 4.6333, 4.76667, 4.8333, 5.06667, 5.23333, 5.34),
+"times": PackedFloat32Array(0, 5.69334, 5.92664, 6.02664, 6.16001, 6.22664, 6.46001, 6.62667, 6.73334),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(25, -13), Vector2(25, -13), Vector2(15.5, -14.2), Vector2(11.5, -16), Vector2(4.7, -14), Vector2(1.5, -9.5), Vector2(0, -6), Vector2(0, -9.5), Vector2(0, -13)]
@@ -525,6 +524,23 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1, 3.6),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(1.86667, 5.03334),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["introgame", true],
+"method": &"cutscene_talk"
+}, {
+"args": ["introgame1", true],
+"method": &"cutscene_talk"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_s7kpv"]
@@ -543,10 +559,14 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_mymkb"]
+resource_name = "intro1"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s7kpv"]
 _data = {
 &"RESET": SubResource("Animation_b6qe5"),
 &"intro": SubResource("Animation_aqtk2"),
+&"intro1": SubResource("Animation_mymkb"),
 &"tp": SubResource("Animation_s7kpv")
 }
 
@@ -604,6 +624,7 @@ y_sort_enabled = true
 y_sort_enabled = true
 sprite_frames = ExtResource("8_neanc")
 
+
 [node name="glut" type="Area2D" parent="ysorting"]
 y_sort_enabled = true
 position = Vector2(560, 170)
@@ -628,7 +649,7 @@ y_sort_enabled = true
 
 [node name="housejr_objects" type="TileMapLayer" parent="ysorting/house_ysort"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AADp//7/AAAAAAAAAADr//7/AAAAAAAAABDo//j/AAAGAAAAAADt//j/AAAGAAAAABDp//j/AAAHAAAAAADq//j/AAAHAAAAAADr//j/AAAHAAAAAADs//j/AAAHAAAAAAD9/wEAAAAAAAIAAGACAAEAAAAAAAIAAHDw/wEAAAAAAAIAADDl/wEAAAAAAAIAACDR//v/AAAAAAIAACDY//v/AAAAAAIAADDA/wEAAAACAAAAAADF/wEAAAAAAAIAADABAPb/AAACAAIAAAD+//T/AAAAAAMAAFAAAPT/AAAAAAMAAEABAPf/AAAAAAMAABD+//b/AAAAAAMAAHD9//X/AAAAAAMAAAD9//j/AgAAAAIAAAABAPn/AwAEAAIAAAD+//r/BQAAAAAAAAD+//n/BAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AADp//7/AAAAAAAAAADr//7/AAAAAAAAABDo//j/AAAGAAAAAADt//j/AAAGAAAAABDp//j/AAAHAAAAAADq//j/AAAHAAAAAADr//j/AAAHAAAAAADs//j/AAAHAAAAAAD9/wEAAAAAAAIAAGACAAEAAAAAAAIAAHDw/wEAAAAAAAIAADDl/wEAAAAAAAIAACDR//v/AAAAAAIAACDY//v/AAAAAAIAADDA/wEAAAACAAAAAADF/wEAAAAAAAIAADABAPb/AAACAAIAAAD+//T/AAAAAAMAAFAAAPT/AAAAAAMAAEABAPf/AAAAAAMAABD+//b/AAAAAAMAAHD9//X/AAAAAAMAAAD9//j/AgAAAAIAAAD+//r/BQAAAAAAAAD+//n/BAAAAAAAAAABAPn/AwAEAAIAAAA=")
 tile_set = SubResource("TileSet_bn434")
 
 [node name="housejr_overobjects" type="TileMapLayer" parent="ysorting/house_ysort"]
@@ -794,6 +815,17 @@ position = Vector2(-5070, -824)
 rotation = -1.5708
 scale = Vector2(1, 7)
 tp_to_pos = Vector2(-5064, -389)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_87ub6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
+offset_left = -1249.0
+offset_top = -368.0
+offset_right = 306.0
+offset_bottom = 280.0
+color = Color(0.156863, 0, 0.196078, 1)
 
 [connection signal="body_entered" from="ysorting/glut" to="ysorting/glut" method="_on_body_entered"]
 [connection signal="body_exited" from="ysorting/glut" to="ysorting/glut" method="_on_body_exited"]

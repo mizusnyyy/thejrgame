@@ -37,7 +37,7 @@ func load_dialogues() -> void:
 			push_error("Nie udało się otworzyć pliku dialogów : " + dialogue_json_pth)
 
 func begin_dialogue(character: String, dialogset: Node, soundset):
-	sound = soundset	
+	sound = soundset
 	dialog = dialogset
 	if dialog == null:
 		push_error("Nie znaleziono CanvasLayer/dialoge")
@@ -90,3 +90,4 @@ func show_dialog(id) -> void:
 		dialog.hideanim()
 		await get_tree().create_timer(0.1).timeout
 		emit_signal("dialogue_done")
+		print("wyglada dziwnie!")

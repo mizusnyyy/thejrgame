@@ -15,5 +15,15 @@ enum dg { # tutaj dajecie nowe id dialogów
 	misupi_intro_1,
 	misupi_intro_2,
 	misupi_intro_3,
-	misupi_intro_4
+	misupi_intro_4,
+	
+	introgame_start,
+	introgame_1,
+	introgame_2,
+	introgame_3,
+	
+	introgame1_start,
+	
+	introgame2_start,
+	introgame2_1
 }

@@ -25,6 +25,8 @@ var new_scene_player_pos : Vector2
 
 var can_phone := true
 
+var isincutscene:= false
+
 func glapps(app:Array[String]):
 	for i in len(app):
 		phoneapps.append(app[i])

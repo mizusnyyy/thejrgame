@@ -4,12 +4,17 @@ var SPEED := 75.0
 @onready var anim := $AnimatedSprite2D
 @onready var obtainpart := preload("res://assets/particles/obtainpart.tscn")
 @onready var smoke := $AnimatedSprite2D/smokerun
-var directionstop := 0
+@onready var dialog := $"../../../CanvasLayer/dialoge"
+
 @export var direction := Vector2()
+
+var directionstop := 0
 var anim_locked := false
 var transporting := false
 var s:String
 var last_position: Vector2
+
+signal obtain_done
 
 #func _input(event: InputEvent) -> void:
 	#if event.is_action_pressed("gyro") and !anim_locked:
@@ -19,6 +24,8 @@ var last_position: Vector2
 		#anim_locked=false
 
 func _physics_process(delta: float) -> void:
+	#print(anim_locked)
+	#print(Global.can_move)
 	if anim_locked or transporting:
 		anim.speed_scale = 1
 		velocity = Vector2.ZERO
@@ -83,11 +90,11 @@ func obtainanim(txt):
 	anim.play("obtain")
 	await get_tree().create_timer(0.6).timeout
 	anim.play("obtainfull")
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.12).timeout
 	itemupanim(txt)
 	var ins := obtainpart.instantiate()
 	add_child(ins)
-	ins.global_position -= Vector2(0,16)
+	ins.global_position -= Vector2(0.0,16.0)
 	var tween2 := create_tween().set_parallel(true)
 	tween2.tween_property(anim,"scale",Vector2(0.8,1.3),0.1)
 	tween2.tween_property(anim,"position",Vector2(0.0,-17.8),0.1)
@@ -100,6 +107,7 @@ func obtainanim(txt):
 	ins.get_child(0).emitting = false
 	anim_locked = false
 	Global.can_phone = true
+	emit_signal("obtain_done")
 	await get_tree().create_timer(ins.lifetime).timeout
 	ins.queue_free()
 
@@ -111,16 +119,21 @@ func itemupanim(txt):
 	item.show()
 	tween.tween_property(item,"scale",Vector2(1.0,1.0),0.1)
 	tween.tween_property(item,"position", Vector2(0.0, -16.0),0.1)
+	
 	await get_tree().create_timer(0.7).timeout
+	
 	var tween2 := create_tween()
 	tween2.tween_property(item,"modulate", Color(1,1,1,0),0.2)
+	
 	await tween2.finished
+	
 	item.position.y=-7.0
 	item.scale.y=0.4
 	item.hide()
 	
 func animtoggle():
 	anim_locked=!anim_locked
+
 func playanim(a:String,b:bool) -> void:
 	anim.play(a)
 	if b:

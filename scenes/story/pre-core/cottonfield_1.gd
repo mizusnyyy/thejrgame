@@ -2,25 +2,28 @@ extends Node2D
 @onready var anim := $AnimationPlayer
 @onready var item := preload("res://scenes/items/iteminteract.tscn")
 @onready var tileset_house : TileMapLayer = $ysorting/house_ysort/housejr_objects
+var player : CharacterBody2D
 
 func _ready():
+	player = get_tree().get_first_node_in_group("player")
 	$ysorting/player/blackout_screen.visible=false
 	print(CutsceneManager.has_played(CutsceneManager.cutscenes.intro))
 	if CutsceneManager.has_played(CutsceneManager.cutscenes.intro):
 		anim.stop()
 	else:
+		Musicsounds.play_music(load("res://assets/sounds/music/0.ogg"))
 		Global.can_move=false
 		Global.can_phone=false
 		anim.play("intro")
 		CutsceneManager.set_played(CutsceneManager.cutscenes.intro)
 		await anim.animation_finished
 		Global.can_move=true
-		Musicsounds.play_music(load("res://assets/sounds/music/1.ogg"))
+	Musicsounds.play_music(load("res://assets/sounds/music/1.ogg"))
 	await get_tree().create_timer(3).timeout
 	changebed(true)
 		
 func spawnphone():
-	var ins = item.instantiate()
+	var ins : Area2D = item.instantiate()
 	$ysorting.add_child(ins)
 	ins.position=Vector2(29.0,-134.0)
 	
@@ -34,3 +37,15 @@ func changebed(make:bool):
 		tileset_house.set_cell(coordbeddown[0],5,Vector2i(4, 0),0)
 		await get_tree().create_timer(0.08).timeout
 		tileset_house.set_cell(coordbeddown[0],5,Vector2i(8, 0),0)
+
+func cutscene_talk(character:String, pause: bool = true):
+		DialogueManager.begin_dialogue(character,player.dialog,$AudioStreamPlayer2D)
+		Global.isincutscene=true
+		if pause:
+			$AnimationPlayer.pause()
+			await DialogueManager.dialogue_done
+			Global.isincutscene=false
+			$AnimationPlayer.play()
+			return
+		await DialogueManager.dialogue_done
+		Global.isincutscene=false

@@ -1,0 +1,1 @@
+Ostatnia z serii kłótni prowadzonych między członkami restoracji. Przez kłótnie Shadow zapomniał??? o konserwacji [[Core]]'a i spowodował jego [[Wybuch]].

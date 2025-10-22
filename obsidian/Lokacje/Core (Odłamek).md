@@ -1,1 +1,1 @@
-Odłamek [[Core (cały)]] który jest na północy [[Wyspa]]
+Odłamek [[Core]]'a który jest na północy [[Wyspa]]

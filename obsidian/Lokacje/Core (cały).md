@@ -1,1 +1,1 @@
-Duża placówka, znajdowała się daleko od głównego  miasta restoracji
+Krater oraz ruiny [[Core]]'a pozostałe po [[Wybuch]]u.

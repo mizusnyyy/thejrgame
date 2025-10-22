@@ -9,7 +9,7 @@
 	{"id": "shadow_intro_2", "text": "Czego chcesz wiedziec?", "hand":"2", "speaker":"Shadow", "portrait": "shadow/portrait/1",
 	"next": [
 	  { "text": "cokolwiek", "next": "shadow_intro_3" },
-	  { "text": "nic", "next": "shadow_walka_1" },
+	  { "text": "nic", "next": "shadow_walka_1" }
 	]},
 	{"id": "shadow_weird_1", "text": "mhm... Zatem nic nie powiesz", "hand":"9", "speaker":"???", "portrait": "shadow/portrait/5", "next":null},
 	{"id": "shadow_intro_3", "text": "Jacku... Nie masz pojecia jaka", "hand":null,"speaker": "Shadow", "portrait": "shadow/portrait/1","next":"shadow_intro_4"},
@@ -17,6 +17,7 @@
 	{"id": "shadow_intro_5", "text": "btw nie wpisuj sobie w alan baran", "hand":"3", "speaker":"Shadow","portrait":"shadow/portrait/4", "next":"shadow_intro_6"},
 	{"id": "shadow_intro_6", "text": "...", "hand":null, "speaker":null,"portrait":"shadow/portrait/1", "next":"shadow_intro_7"},
 	{"id": "shadow_intro_7", "text": "SPRAWDZ NASZA GRE!!! ( TLOJJ )", "hand":"8","speaker":null,"portrait":"shadow/portrait/2","next":null},
+
 	
 	{"id": "core_start", "text": "Out of curiousity do you desire power?", "hand":null, "speaker": "???", "portrait": "Igreavious/portrait/2", "next": "core_intro_1"},
 	{"id": "core_intro_1", "text": "The rulefull thing is that...", "hand":"7", "speaker": "???", "portrait": "Igreavious/portrait/1","next": "core_intro_2"},
@@ -49,6 +50,7 @@
 	{"id": "nyxel_start", "text": "Nya~! Orewo nawa... don nyxel doflamingo", "hand":null, "speaker":"???", "portrait": "pavey/portrait/k1","next": "nyxel_intro_1"},
 	{"id": "nyxel_intro_1", "text": "Tak z ciekawosci... kimzes?", "hand":null, "speaker":"???", "portrait": "pavey/portrait/k3","next":"nyxel_intro_2"},
 	{"id": "nyxel_intro_2", "text": "i nie nie jestem cwelem!", "hand":"7", "speaker":"???", "portrait": "pavey/portrait/k2","next":null},
+
 
 	{"id": "misupi_start", "text": "Hej braciszku! To ja mizus uwu", "hand":"4", "speaker":"Misupi","portrait": "misupi/portrait/2","next": "misupi_intro_1"},
 	{"id": "misupi_intro_1", "text": "Tak wiem jestem fembojowski... no coz", "hand":"2", "speaker":"Misupi", "portrait": "misupi/portrait/1","next": "misupi_intro_2"},

@@ -38,7 +38,7 @@ func _ready():
 		set_heart_state(i, i)
 	_update_hearts_position()
 	
-
+	
 
 
 func _draw():

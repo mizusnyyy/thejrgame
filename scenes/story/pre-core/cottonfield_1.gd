@@ -49,3 +49,10 @@ func cutscene_talk(character:String, pause: bool = true):
 			return
 		await DialogueManager.dialogue_done
 		Global.isincutscene=false
+
+func makebarrier(text_id:String="", glob_pos:Vector2=Vector2(0.0,0.0)):
+	var barrier = load("res://scenes/randomthings/no_enter.tscn").instantiate()
+	add_child(barrier)
+	barrier.text_id=text_id
+	barrier.global_position = glob_pos
+	print("yesss!")

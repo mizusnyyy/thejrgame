@@ -25,5 +25,17 @@ enum dg { # tutaj dajecie nowe id dialogów
 	introgame1_start,
 	
 	introgame2_start,
-	introgame2_1
+	introgame2_1,
+	introgame2_2,
+	introgame2_3,
+	introgame2_4,
+	introgame2_5,
+	introgame2_6,
+	introgame2_7,
+	introgame2_8,
+	introgame2_9,
+	introgame2_10,
+	introgame2_11,
+	introgame2_12,
+	introgame2_13,
 }

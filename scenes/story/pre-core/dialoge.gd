@@ -130,24 +130,26 @@ func setoptions(options: Array, texts: Array) -> void:
 	
 func _type_text() -> void:
 	while char_index < full_text.length() and typing:
+		var letter : String = full_text[char_index]
 		var spd := tempspeed
-		match full_text[char_index]:
+		match letter:
 			".", "!", "?":
 				spd *= 9
 			",", ";":
 				spd *= 5
+				
 			#"(":
 			#TO ZMIENIAC BEDZIE NASTEPNA LITERE NA COS (TU AKURAT NA NIC)
 				#print(char_index)
-				#full_text[char_index]=""
+				#letter=""
 				#if len(full_text)>char_index:
-					#full_text[char_index]=""
-		label.append_text(full_text[char_index])
+					#letter=""
+		label.append_text(letter)
 		
-		#label.append_text("[bounce]" + full_text[char_index] + "[/bounce]")
+		#label.append_text("[bounce]" + letter + "[/bounce]")
 		
 		char_index += 1
-		if type_sound_player:
+		if type_sound_player && letter!=" ":
 			type_sound_player.pitch_scale = randf_range(0.95, 1.05)
 			type_sound_player.play()
 		await get_tree().create_timer(spd).timeout

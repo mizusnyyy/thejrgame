@@ -12,17 +12,17 @@
 [ext_resource type="PackedScene" uid="uid://c3fn22nsfymhg" path="res://scenes/mapmechanics/tp.tscn" id="15_50mei"]
 [ext_resource type="Texture2D" uid="uid://blo5yr7xsgygh" path="res://assets/sprite/characters/shadow/shadowspritesheet.png" id="15_b6qe5"]
 [ext_resource type="Texture2D" uid="uid://6kf44nmw8j3i" path="res://assets/sprite/characters/jr/teto_side_better.png" id="15_jkym4"]
-[ext_resource type="Texture2D" uid="uid://bt0gkelrwxaoi" path="res://assets/tiles/fulltiles/carpethousebedroom.png" id="15_u8w88"]
+[ext_resource type="Texture2D" uid="uid://pi8b1eem5rh3" path="res://assets/tiles/fulltiles/carpethousebedroom.png" id="15_u8w88"]
 [ext_resource type="Texture2D" uid="uid://cmj27cly056f7" path="res://assets/sprite/characters/jr/teto_back.png" id="16_1e2cb"]
 [ext_resource type="SpriteFrames" uid="uid://cyfimtbocgidh" path="res://scenes/player/jrsprite.tres" id="16_x81t7"]
 [ext_resource type="Texture2D" uid="uid://bq1mj2osrqcqs" path="res://assets/sprite/characters/jr/teto_side.png" id="17_0j0oh"]
-[ext_resource type="Texture2D" uid="uid://gabxxol05f5l" path="res://assets/tiles/fulltiles/shelfhousebedroom.png" id="18_ix2xr"]
+[ext_resource type="Texture2D" uid="uid://casvun2kd7n5b" path="res://assets/tiles/fulltiles/shelfhousebedroom.png" id="18_ix2xr"]
 [ext_resource type="FontFile" uid="uid://bipo0dsq476dk" path="res://assets/font/dialoge8.ttf" id="18_jobkd"]
-[ext_resource type="Texture2D" uid="uid://cceuea30xr6mi" path="res://assets/tiles/fulltiles/beduphousebedroom.png" id="19_5g7yr"]
-[ext_resource type="Texture2D" uid="uid://ls8flfnycggx" path="res://assets/tiles/fulltiles/tablehousebedroom.png" id="19_rhstu"]
+[ext_resource type="Texture2D" uid="uid://oukk4ugvgimb" path="res://assets/tiles/fulltiles/beduphousebedroom.png" id="19_5g7yr"]
+[ext_resource type="Texture2D" uid="uid://b256vj73ibmi3" path="res://assets/tiles/fulltiles/tablehousebedroom.png" id="19_rhstu"]
 [ext_resource type="AudioStream" uid="uid://v6xhcphnyegs" path="res://assets/sprite/intro/stevenafterpumming.wav" id="20_1e2cb"]
-[ext_resource type="Texture2D" uid="uid://ljsnbg7wvte4" path="res://assets/tiles/fulltiles/beddownhousebedroom.png" id="20_ix2xr"]
-[ext_resource type="Texture2D" uid="uid://da7fbhx4q2o8t" path="res://assets/sprite/characters/aviruk/avirukspritesheet.png" id="22_aqtk2"]
+[ext_resource type="Texture2D" uid="uid://du3asebu253j" path="res://assets/tiles/fulltiles/beddownhousebedroom.png" id="20_ix2xr"]
+[ext_resource type="Texture2D" uid="uid://b4b31s7x1ty4v" path="res://assets/sprite/characters/aviruk/avirukspritesheet.png" id="22_aqtk2"]
 [ext_resource type="PackedScene" uid="uid://cvhhll683san2" path="res://scenes/items/iteminteract.tscn" id="25_8i2l0"]
 [ext_resource type="PackedScene" uid="uid://b6vi5n5gad3lf" path="res://data/dialogue_manager.tscn" id="26_u8w88"]
 [ext_resource type="Texture2D" uid="uid://bdo8d0j7y6s7b" path="res://assets/sprite/characters/jr/jrspritesheet.png" id="28_ix2xr"]
@@ -31,10 +31,10 @@
 [ext_resource type="PackedScene" uid="uid://pgr1hxlmxihq" path="res://scenes/common/doors.tscn" id="29_x81t7"]
 [ext_resource type="Texture2D" uid="uid://b5jp252jvsneo" path="res://assets/sprite/characters/misupi/misupispritesheet.png" id="31_6h5t2"]
 [ext_resource type="Texture2D" uid="uid://4hxh8vk52udx" path="res://assets/sprite/characters/pavey/paveyspritesheet.png" id="32_50mei"]
-[ext_resource type="Texture2D" uid="uid://dq2qd1wfxluo0" path="res://assets/sprite/characters/yeelan/yeelan.png" id="32_fjho7"]
-[ext_resource type="Texture2D" uid="uid://cnmsr8v22thcc" path="res://assets/sprite/characters/zhemor/jamorrrspritesheet.png" id="33_fjho7"]
-[ext_resource type="Texture2D" uid="uid://bd8fk5t1ohhyy" path="res://assets/sprite/characters/pavey/knightspritesheet.png" id="34_7hjaj"]
-[ext_resource type="Texture2D" uid="uid://vur87jfn67p6" path="res://assets/sprite/characters/nyxel/nyxelspritesheet.png" id="35_2d034"]
+[ext_resource type="Texture2D" uid="uid://skj2fie0hwqn" path="res://assets/sprite/characters/yeelan/yeelan.png" id="32_fjho7"]
+[ext_resource type="Texture2D" uid="uid://c545mlieehbhf" path="res://assets/sprite/characters/zhemor/jamorrrspritesheet.png" id="33_fjho7"]
+[ext_resource type="Texture2D" uid="uid://ba5c1le4xda0p" path="res://assets/sprite/characters/pavey/knightspritesheet.png" id="34_7hjaj"]
+[ext_resource type="Texture2D" uid="uid://1e6f6ecloe3t" path="res://assets/sprite/characters/nyxel/nyxelspritesheet.png" id="35_2d034"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_50mei"]
 texture = ExtResource("9_0rrt8")
@@ -879,7 +879,11 @@ y_sort_enabled = true
 
 [node name="AnimatedSprite2D" parent="ysorting/player/player" index="1"]
 y_sort_enabled = true
+position = Vector2(0, 0)
 sprite_frames = ExtResource("16_x81t7")
+
+[node name="Camera2D" parent="ysorting/player/player" index="2"]
+position = Vector2(0, 0)
 
 [node name="objects" type="TileMapLayer" parent="ysorting"]
 y_sort_enabled = true

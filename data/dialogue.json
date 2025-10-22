@@ -46,7 +46,7 @@
 	{"id": "introgame2_start", "text": "Hello? Is this Jack?", "hand":null, "speaker": "", "portrait": "jr/portrait/idk","next": "introgame2_1"},
 	{"id": "introgame2_1", "text": "Hi! Who's this?", "hand":null, "speaker": "", "portrait": "jr/portrait/you","next": null},
 	
-	{"id": "nyxel_start", "text": "Nya~! Orewo nawa... don nyxel doflamingo", "hand":null, "speaker":"???", "portrait": "pavey/portrait/k1","next": "nyxel_intro_1"},
+	{"id": "nyxel_start", "text": "Nya~! Orewo nawa... don nyxel doflamingo", "hand":null, "speaker":"", "portrait": "pavey/portrait/k1","next": "nyxel_intro_1"},
 	{"id": "nyxel_intro_1", "text": "Tak z ciekawosci... kimzes?", "hand":null, "speaker":"???", "portrait": "pavey/portrait/k3","next":"nyxel_intro_2"},
 	{"id": "nyxel_intro_2", "text": "i nie nie jestem cwelem!", "hand":"7", "speaker":"???", "portrait": "pavey/portrait/k2","next":null},
 

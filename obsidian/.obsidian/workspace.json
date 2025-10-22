@@ -1,20 +1,24 @@
 {
   "main": {
-    "id": "87ee7985331b2287",
+    "id": "362cccd9fb742fe3",
     "type": "split",
     "children": [
       {
-        "id": "a1a06ec2259fce5e",
+        "id": "530a0c8575c5faff",
         "type": "tabs",
         "children": [
           {
-            "id": "4900346c1be31f9a",
+            "id": "9b898be397f605cf",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Lokacje/Wyspa.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Wyspa"
             }
           }
         ]
@@ -23,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "99d27f50e6245ea7",
+    "id": "7a7824cc1790f522",
     "type": "split",
     "children": [
       {
-        "id": "42276d3e459a67c8",
+        "id": "1d4e6ed804409b9d",
         "type": "tabs",
         "children": [
           {
-            "id": "0aed0ed93509aaac",
+            "id": "1120fc2086a59474",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,7 +48,7 @@
             }
           },
           {
-            "id": "6fe31f6175c7efaa",
+            "id": "6a6163254a23ca8a",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -61,7 +65,7 @@
             }
           },
           {
-            "id": "8b724cf2ef49ae4d",
+            "id": "e07139bf8025d97b",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -77,15 +81,15 @@
     "width": 300
   },
   "right": {
-    "id": "8716bbdbac1a1dba",
+    "id": "919ad957def22ef9",
     "type": "split",
     "children": [
       {
-        "id": "9d818f93c806da78",
+        "id": "acb28d6dd3990c51",
         "type": "tabs",
         "children": [
           {
-            "id": "fdc5ba3ddbfd7fe8",
+            "id": "2fe609f68aecfed7",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -103,7 +107,7 @@
             }
           },
           {
-            "id": "1fc565e9c4899c33",
+            "id": "8897805b4d6976e8",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -116,7 +120,7 @@
             }
           },
           {
-            "id": "302edc84806c0b8a",
+            "id": "1b92abbe866935de",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -131,7 +135,7 @@
             }
           },
           {
-            "id": "b2f8ec057b20094a",
+            "id": "b415ad5a5df45acb",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -162,36 +166,39 @@
       "bases:Create new base": false
     }
   },
-  "active": "0aed0ed93509aaac",
+  "active": "1120fc2086a59474",
   "lastOpenFiles": [
     "Untitled.base",
+    "Postacie/Goldenram.md",
+    "Postacie/Core (postać).md",
+    "Lokacje/Core (Odłamek).md",
+    "Lokacje/Core (cały).md",
+    "jr/Mizu.md",
     "jr/janek.md",
+    "Lokacje/Wyspa.md",
+    "Ramsie.md",
+    "Postacie/Aviruk.md",
+    "Koncepty/Runy kwantowe.md",
+    "Koncepty/Flota.md",
+    "Koncepty/Core.md",
+    "Koncepty/Restoracja.md",
+    "Koncepty/Anomalia.md",
+    "Koncepty",
+    "Zdarzenia/Ostatnia kłótnia.md",
+    "Zdarzenia/Wybuch.md",
     "npc-ty/Nickayl.md",
     "npc-ty/3.14 pi.md",
     "npc-ty",
-    "Zdarzenia/Wybuch.md",
-    "Zdarzenia/Ostatnia kłótnia.md",
+    "jr",
     "Zdarzenia",
+    "Postacie/morro.md",
     "Postacie/Yumii.md",
     "Postacie/Taxman Tox.md",
     "Postacie/Shadow.md",
     "Postacie/Pavey.md",
-    "Postacie/morro.md",
     "Postacie/P.md",
     "Postacie/Misupi.md",
-    "Postacie/Jan w..md",
-    "Postacie/Jack Junior.md",
-    "Postacie/Igreavious.md",
-    "Postacie/Hexer.md",
-    "Postacie/Goldenram.md",
-    "Postacie/Geralt.md",
-    "Postacie/Cpt. Wavestorm.md",
-    "Postacie/Core (postać).md",
-    "Postacie/Bagzo.md",
     "Postacie",
-    "Lokacje/Wyspa.md",
-    "Lokacje/Core (Odłamek).md",
-    "Lokacje/Core (cały).md",
     "Lokacje"
   ]
 }

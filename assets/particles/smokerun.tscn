@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cwts7ae2nrmv3"]
 
-[ext_resource type="Texture2D" uid="uid://bqvg8h82d7gxl" path="res://assets/particles/smokerun1.png" id="1_csm6a"]
-[ext_resource type="Texture2D" uid="uid://cg6alemmsbmud" path="res://assets/particles/smokerun2.png" id="2_hg8mo"]
+[ext_resource type="Texture2D" uid="uid://dxybdm4hn8mg2" path="res://assets/particles/smokerun1.png" id="1_csm6a"]
+[ext_resource type="Texture2D" uid="uid://lh410xe6328g" path="res://assets/particles/smokerun2.png" id="2_hg8mo"]
 [ext_resource type="Script" uid="uid://d27k6rioqk0op" path="res://assets/particles/smokerun.gd" id="2_v3ksm"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wfmf3"]

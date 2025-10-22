@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://3nlfv7s30qdj"]
 
-[ext_resource type="Script" uid="uid://d3yq3vallw1uw" path="res://heartcircle.gd" id="1_0h12x"]
+[ext_resource type="Script" uid="uid://c35ais71gq71i" path="res://unused/selection_wheal/heartcircle.gd" id="1_0h12x"]
+
 
 [node name="heartcircle" type="Node2D"]
 rotation = -1.5708

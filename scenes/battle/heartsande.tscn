@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://dsjgokmq8asbv"]
 
 [ext_resource type="Texture2D" uid="uid://jouutgjikwq0" path="res://assets/sprite/battle/hearts.png" id="1_0oqbo"]
-[ext_resource type="Script" uid="uid://bm6rc8e1021q1" path="res://heartsande.gd" id="1_sj6x2"]
+[ext_resource type="Script" uid="uid://bo60n4y4dikda" path="res://unused/selection_wheal/heartsande.gd" id="1_sj6x2"]
+
 
 [node name="heartsande" type="Sprite2D"]
 show_behind_parent = true

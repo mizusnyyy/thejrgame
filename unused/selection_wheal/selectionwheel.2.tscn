@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://btunywoykvm0n"]
 
-[ext_resource type="Script" uid="uid://bt2f36ni5erqt" path="res://selectrion_wheel2.gd" id="1_jm1t6"]
+[ext_resource type="Script" uid="uid://b2etl850kl1f8" path="res://unused/selection_wheal/selectrion_wheel2.gd" id="1_jm1t6"]
+
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_jm1t6")

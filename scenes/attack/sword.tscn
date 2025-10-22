@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c7smwd34t0dlc"]
 
 [ext_resource type="Script" uid="uid://by3ct5f3vigoc" path="res://scenes/attack/sword.gd" id="1_1nkrx"]
-[ext_resource type="Texture2D" uid="uid://b5kjtpfo12pye" path="res://assets/sprite/attacks/sword.png" id="1_gt7ni"]
+[ext_resource type="Texture2D" uid="uid://t74h44akftbs" path="res://assets/sprite/attacks/sword.png" id="1_gt7ni"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1nkrx"]
 animations = [{

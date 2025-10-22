@@ -81,7 +81,7 @@ func show_dialog(id) -> void:
 	await dialog.show_dialogue(d.text, portrait, sound, true)
 
 	if d.next==dlg_e.end:
-		global.can_phone = true
+		Global.can_phone = true
 		await get_tree().create_timer(0.1).timeout
 		emit_signal("dialogue_finished")
 	else:
@@ -89,7 +89,7 @@ func show_dialog(id) -> void:
 			get_tree().change_scene_to_packed(preload("res://scenes/tempbattle/battle.tscn"))
 		else:
 			show_dialog(d.next)
-	else:
+	#else:
 		Global.can_phone = true
 		dialog.hideanim()
 		await get_tree().create_timer(0.1).timeout

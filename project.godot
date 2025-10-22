@@ -14,6 +14,9 @@ config/name="jr"
 run/main_scene="uid://b60l2pd8phig8"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+boot_splash/image="uid://di7tv72rclinm"
 
 [autoload]
 
@@ -25,6 +28,7 @@ DialogueManager="*res://data/DialogueManager.gd"
 MenuHandler="*res://scenes/main_menu/menu_handler.gd"
 CutsceneManager="*res://CutsceneManager.gd"
 Battlepreset="*res://battlepreset.gd"
+Lighting="*res://scenes/lighting/lightinghandler.gd"
 
 [display]
 

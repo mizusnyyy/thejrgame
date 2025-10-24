@@ -1,0 +1,1 @@
+Biegun południowy na południu [[Wyspa]]'y aby się do niego dostać należy naprawić a potem użyć zepsute metro, bardzo duży biom z małą ilością lokacji do eksplorowania

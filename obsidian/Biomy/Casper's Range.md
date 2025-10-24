@@ -1,0 +1,1 @@
+Pasmo górskie które leży na północy [[Wyspa]]'y, tu leży [[Core (Odłamek)]]

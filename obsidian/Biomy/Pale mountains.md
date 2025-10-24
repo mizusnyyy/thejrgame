@@ -1,0 +1,1 @@
+Pasmo górskie na wschodzie [[Wyspa]]'y 

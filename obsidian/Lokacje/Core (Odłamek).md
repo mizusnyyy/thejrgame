@@ -1,1 +1,1 @@
-Odłamek [[Core]]'a który jest na północy [[Wyspa]]
+Centralna część [[Core]]'a która znajdująca się na północy [[Casper's Range]], zakryty przez gruzy wydziela niebieską poświatę.

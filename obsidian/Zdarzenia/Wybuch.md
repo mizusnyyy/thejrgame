@@ -1,3 +1,3 @@
 [[Core]] po zaniedbaniu wybuchł, co stopiło cały biegun północny, zmniejszając łatwo dostępne zasoby i dostępny teren. Wybuch ściągnął również pierścienie asteroid który krążył wokół Restoracji wraz z [[Flota]]'ą bombardując równik i niszcząc najbardziej zaawansowany obszar Restoracji. 
-W miejscu wybuchy pozostał duży krater widoczny z orbity, część [[Core]] wylądowała na dużym paśmie górskim na północy [[Wyspa]]'y. 
+W miejscu wybuchy pozostał duży krater widoczny z orbity, część [[Core]] wylądowała na dużym paśmie górskim na północy Wyspy. 
 Wybuch uwolnił bardzo potężne EMP, które zakłóciło pracę wszystkich urządzeń elektrycznych oraz pracę neuronów ludzi i innych istot żywych powodując zaniki pamięci długotrwałej oraz tymczasowe szaleństwo.

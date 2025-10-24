@@ -1,0 +1,1 @@
+Lasek na [[Wyspa]] znajdujący się na południu [[Żółty las]]. Jest on bezpiecznym zakątkiem z mała opuszczoną wioską. (Może będzie się dało ją odbudować?)

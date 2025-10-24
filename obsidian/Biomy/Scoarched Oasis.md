@@ -1,0 +1,1 @@
+Pustynia na zachodzie [[Wyspa]]'y

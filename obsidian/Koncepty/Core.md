@@ -1,2 +1,3 @@
+(Worker name)
 Duża placówka, znajdowała się na biegunie północnym planety restoracji. Core dawał zapewniał energię restoracji. Był on bardzo zaawansowaną maszyną, a w swoim centrum zawierał 
 [[Runy kwantowe]]  przez co był on bardzo nie stabilny i wymagał ciągłej konserwacji, przez [[Ostatnia kłótnia]]  [[Shadow]] nie był w stanie wykonać potrzebnych napraw przez co doprowadził do [[Wybuch]].

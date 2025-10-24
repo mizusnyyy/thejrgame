@@ -1,0 +1,1 @@
+Miasto na [[Scoarched Oasis]] dzielące bogaty i biedny region. Panują w nim ciągłe zamieszki 

@@ -1,0 +1,1 @@
+Dolina i rzeka w której znajduje się [[Night city]] (worker name), leży na południu [[Pale mountains]]

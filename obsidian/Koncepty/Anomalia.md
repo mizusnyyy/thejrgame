@@ -1,0 +1,1 @@
+Biała sfera znajdująca się perfekcyjnie nad biegunem północnym na osi rotacji Restoracji, dzięki niej [[Core]] był w stanie produkować energię, bardzo mała grupa osób wiedziała o niej przed wybuchem.

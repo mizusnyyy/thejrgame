@@ -1,0 +1,1 @@
+Jezioro w samym centrum [[Cukrowa polana]], to tutaj znajdowała się fabryka która wybuchła i zmieniła okolicę

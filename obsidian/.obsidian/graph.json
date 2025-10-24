@@ -5,13 +5,13 @@
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
-  "collapse-color-groups": false,
+  "collapse-color-groups": true,
   "colorGroups": [
     {
       "query": "path:Postacie  ",
       "color": {
         "a": 1,
-        "rgb": 16514816
+        "rgb": 22015
       }
     },
     {
@@ -25,7 +25,7 @@
       "query": "path:Lokacje  ",
       "color": {
         "a": 1,
-        "rgb": 11657298
+        "rgb": 2883328
       }
     },
     {
@@ -39,20 +39,27 @@
       "query": "path:npc-ty  ",
       "color": {
         "a": 1,
-        "rgb": 16711592
+        "rgb": 1733119
+      }
+    },
+    {
+      "query": "path:Biomy",
+      "color": {
+        "a": 1,
+        "rgb": 16771584
       }
     }
   ],
   "collapse-display": true,
   "showArrow": false,
   "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1,
-  "lineSizeMultiplier": 1,
-  "collapse-forces": true,
-  "centerStrength": 0.518713248970312,
-  "repelStrength": 10,
+  "nodeSizeMultiplier": 1.42708333333333,
+  "lineSizeMultiplier": 1.12083333333333,
+  "collapse-forces": false,
+  "centerStrength": 0.671875,
+  "repelStrength": 15.9375,
   "linkStrength": 1,
-  "linkDistance": 250,
-  "scale": 0.9999999999999698,
+  "linkDistance": 140,
+  "scale": 0.6316046762907407,
   "close": true
 }

@@ -3,10 +3,12 @@
 [ext_resource type="Script" uid="uid://blulkcgheovn0" path="res://scenes/randomthings/no_enter.gd" id="1_sdmev"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_71c72"]
-size = Vector2(26, 65)
+resource_local_to_scene = true
+size = Vector2(26, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdmev"]
-size = Vector2(22, 62)
+resource_local_to_scene = true
+size = Vector2(16, 16)
 
 [node name="don\'t leave" type="Area2D"]
 script = ExtResource("1_sdmev")

@@ -147,7 +147,10 @@ func _type_text() -> void:
 				spd_multiply=2.0
 			"\\": #ZMIENIA PREDKOSC NA SZYBSZY TEKST
 				letter = ""
-				spd_multiply=0.5
+				spd_multiply=0.7
+			"|":
+				letter = ""
+				spd_multiply=1.0
 				
 			#"(":
 			#TO ZMIENIAC BEDZIE NASTEPNA LITERE NA COS (TU AKURAT NA NIC)
@@ -196,7 +199,7 @@ func _unhandled_input(event):
 			label.clear()
 			
 			#USUWANIE NIECHCIANYCH ZNAKOW Z TEKSTU
-			var full_text_complete = full_text.replace("/","").replace("\\","")
+			var full_text_complete = full_text.replace("/","").replace("\\","").replace("|","")
 			
 			label.append_text(full_text_complete)
 			

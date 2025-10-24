@@ -9,8 +9,6 @@ enum dg { # tutaj dajecie nowe id dialogów
 	shadow_intro_1, shadow_intro_2, shadow_intro_3, shadow_intro_4, shadow_intro_5, shadow_intro_6, shadow_intro_7, shadow_intro_8, shadow_intro_9, 
 	shadow_weird_1,
 	bedroominteract_1,bedroominteract_2,bedroominteract_3,bedroominteract_start,bedroominteract_stop,
-	nyxel_start,
-	nyxel_intro_1, nyxel_intro_2,
 	misupi_start,
 	misupi_intro_1,
 	misupi_intro_2,
@@ -38,4 +36,11 @@ enum dg { # tutaj dajecie nowe id dialogów
 	introgame2_11,
 	introgame2_12,
 	introgame2_13,
+	introgame2_14,
+	
+	barrier_home_start,
+	barrier_home1_start,
+	
+	introgame3_start,
+	introgame3_1,
 }

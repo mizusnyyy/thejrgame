@@ -12,7 +12,9 @@ var enemy_hp := 100.0
 var maxenemy_hp := 100.0
 var health := 100.0
 var maxhealth := 100.0
+
 var can_move := true
+
 var mercy:=0
 var photoid := 0
 var playit := false

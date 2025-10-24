@@ -33,6 +33,7 @@ func _unhandled_input(event):
 func _on_ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 	idleanim()
+	print($"../../AudioStreamPlayer2D")
 
 func idleanim():
 	var dur:=1
@@ -55,7 +56,7 @@ func idleanim():
 		await t.finished
 
 func phonetalk():
-	DialogueManager.begin_dialogue("introgame2",player.dialog,$AudioStreamPlayer2D)
+	DialogueManager.begin_dialogue("introgame2",player.dialog,$"../../AudioStreamPlayer2D")
 
 func phoneout():
 	player.anim_locked=true

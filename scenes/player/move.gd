@@ -94,7 +94,7 @@ func obtainanim(txt):
 	itemupanim(txt)
 	var ins := obtainpart.instantiate()
 	add_child(ins)
-	ins.global_position -= Vector2(0.0,16.0)
+	ins.global_position -= Vector2(0.0,29.0)
 	var tween2 := create_tween().set_parallel(true)
 	tween2.tween_property(anim,"scale",Vector2(0.8,1.3),0.1)
 	tween2.tween_property(anim,"position",Vector2(0.0,-17.8),0.1)

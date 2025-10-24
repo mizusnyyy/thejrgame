@@ -27,6 +27,7 @@ func _unhandled_input(event):
 		await DialogueManager.dialogue_done
 		player.anim_locked=false
 		#player.anim.play("idle")
+		get_tree().current_scene.delbarrier()
 		self.queue_free()
 		
 func _on_ready() -> void:

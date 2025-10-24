@@ -3,6 +3,7 @@ extends Node2D
 @onready var item := preload("res://scenes/items/iteminteract.tscn")
 @onready var tileset_house : TileMapLayer = $ysorting/house_ysort/housejr_objects
 var player : CharacterBody2D
+var barrier
 
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
@@ -51,8 +52,10 @@ func cutscene_talk(character:String, pause: bool = true):
 		Global.isincutscene=false
 
 func makebarrier(text_id:String="", glob_pos:Vector2=Vector2(0.0,0.0)):
-	var barrier = load("res://scenes/randomthings/no_enter.tscn").instantiate()
+	barrier = load("res://scenes/randomthings/no_enter.tscn").instantiate()
 	add_child(barrier)
 	barrier.text_id=text_id
 	barrier.global_position = glob_pos
-	print("yesss!")
+
+func delbarrier():
+	barrier.del()

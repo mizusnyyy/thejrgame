@@ -36,14 +36,14 @@
 	{"id": "shadow_intro_8", "text": "slyszales o corze?", "hand":null, "speaker": "Shadow", "portrait": "shadow/portrait/4","next":"shadow_intro_9"},
 	{"id": "shadow_intro_9", "text": "sprawdz se rozne czesci mapy! (nic)", "hand":"2", "speaker": "Freaky Shadow", "portrait": "shadow/portrait/4","next":null},
 	
-	{"id": "introgame_start", "text": ". . .", "hand":null, "speaker": "", "portrait": "jr/portrait/you","next":"introgame_1"},
+	{"id": "introgame_start", "text": "/. . .", "hand":null, "speaker": "", "portrait": "jr/portrait/you","next":"introgame_1"},
 	{"id": "introgame_1", "text": "Agh... Someone's calling me again...", "hand":null, "speaker": "", "portrait": null,"next":"introgame_2"},
-	{"id": "introgame_2", "text": ". . .", "hand":null, "speaker": "", "portrait": null,"next":"introgame_3"},
+	{"id": "introgame_2", "text": "/. . .", "hand":null, "speaker": "", "portrait": null,"next":"introgame_3"},
 	{"id": "introgame_3", "text": "I should really pick it up...", "hand":null, "speaker": "", "portrait": null,"next": null},
 	
 	{"id": "introgame1_start", "text": "Alrighty-o! Let's do this!", "hand":null, "speaker": "", "portrait": null,"next": null},
 	
-	{"id": "introgame2_start", "text": "Yooo wassup Jack!", "hand":null, "speaker": "", "portrait": "jr/portrait/idk","next": "introgame2_1"},
+	{"id": "introgame2_start", "text": "\\Yooo wassup Jack!", "hand":null, "speaker": "", "portrait": "jr/portrait/idk","next": "introgame2_1"},
 	{"id": "introgame2_1", "text": "Wha-? Who's that?", "hand":null, "speaker": "", "portrait": "jr/portrait/you","next": "introgame2_2"},
 	{"id": "introgame2_2", "text": "What? It's me, Pavey, don't-ya remember?", "hand":null, "speaker": "", "portrait": "jr/portrait/idk","next": "introgame2_3"},
 	{"id": "introgame2_3", "text": "Oh.. Hi! What is it Pavey?", "hand":null, "speaker": "", "portrait": "jr/portrait/you","next": "introgame2_4"},

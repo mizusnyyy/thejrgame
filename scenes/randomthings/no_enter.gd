@@ -9,3 +9,6 @@ func _on_body_entered(body: Node2D) -> void:
 		var where_to_go : Vector2
 		
 		DialogueManager.begin_dialogue(text_id,body.dialog,$AudioStreamPlayer2D)
+
+func del():
+	self.queue_free()

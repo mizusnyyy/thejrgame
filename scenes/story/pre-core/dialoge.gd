@@ -7,6 +7,8 @@ extends Control
 @onready var choice := $choice/indicator
 @onready var hand := $TextureRect/hand
 @onready var grid = $opt/gc
+
+var spd_multiply := 1.0
 var just_chose := false
 const pathhand := "res://assets/dialogue/hand/hand"
 
@@ -131,12 +133,21 @@ func setoptions(options: Array, texts: Array) -> void:
 func _type_text() -> void:
 	while char_index < full_text.length() and typing:
 		var letter : String = full_text[char_index]
-		var spd := tempspeed
+		var spd := tempspeed * spd_multiply
+		
+		#TO NIE JEST KURWA SPEED TYLKO DELAY XD DEBIL MIZU
+		
 		match letter:
-			".", "!", "?":
+			".", "!", "?": #DUZY DELAY
 				spd *= 9
-			",", ";":
+			",", ";": #MALY DELAY
 				spd *= 5
+			"/": #ZMIENIA PREDKOSC NA WOLNIEJSZY TEKST
+				letter = ""
+				spd_multiply=2.0
+			"\\": #ZMIENIA PREDKOSC NA SZYBSZY TEKST
+				letter = ""
+				spd_multiply=0.5
 				
 			#"(":
 			#TO ZMIENIAC BEDZIE NASTEPNA LITERE NA COS (TU AKURAT NA NIC)
@@ -153,6 +164,7 @@ func _type_text() -> void:
 			type_sound_player.pitch_scale = randf_range(0.95, 1.05)
 			type_sound_player.play()
 		await get_tree().create_timer(spd).timeout
+	spd_multiply=1.0
 	typing = false
 	emit_signal("text_typed")
 
@@ -182,7 +194,12 @@ func _unhandled_input(event):
 		if typing:
 			typing = false
 			label.clear()
-			label.append_text(full_text)
+			
+			#USUWANIE NIECHCIANYCH ZNAKOW Z TEKSTU
+			var full_text_complete = full_text.replace("/","").replace("\\","")
+			
+			label.append_text(full_text_complete)
+			
 			#label.append_text("[bounce]%s[/bounce]" % full_text)
 			emit_signal("text_typed")
 		else:

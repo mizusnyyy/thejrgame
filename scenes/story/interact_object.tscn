@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b00bosebxbqrm"]
+
+[ext_resource type="Script" uid="uid://dv282o2fv1w7l" path="res://scenes/story/interact_object.gd" id="1_gihm6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqm1c"]
+resource_local_to_scene = true
+
+[node name="interact" type="Area2D"]
+script = ExtResource("1_gihm6")
+
+[node name="col" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yqm1c")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

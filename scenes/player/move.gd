@@ -35,7 +35,9 @@ func _physics_process(delta: float) -> void:
 	var directionlr := Input.get_axis("left", "right")
 	var directionud := Input.get_axis("up", "down")
 	direction = Vector2(directionlr, directionud)
-
+	
+	#print(directionstop)
+	
 	var speed_sprint := 1.0
 	anim.speed_scale = 1
 	smoke.speed_scale=1.0

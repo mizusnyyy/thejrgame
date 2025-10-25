@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://hh1q8a3ntrfc"]
+[gd_scene load_steps=59 format=4 uid="uid://hh1q8a3ntrfc"]
 
 [ext_resource type="Script" uid="uid://clkj0hkqugo3e" path="res://scenes/story/pre-core/cottonfield_1.gd" id="1_p45fp"]
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_y0cq1"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://dslts5drci47s" path="res://assets/sprite/characters/wavestorm/portrait/4.png" id="29_wy566"]
 [ext_resource type="Texture2D" uid="uid://ksww6bvk3aj0" path="res://assets/sprite/characters/yeelan/portrait/2.png" id="30_27rjx"]
 [ext_resource type="Texture2D" uid="uid://qkxpoujcdmgk" path="res://assets/sprite/characters/zhemor/portrait/2.png" id="31_2h7yc"]
+[ext_resource type="PackedScene" uid="uid://b00bosebxbqrm" path="res://scenes/story/interact_object.tscn" id="33_neanc"]
 [ext_resource type="PackedScene" uid="uid://pgr1hxlmxihq" path="res://scenes/common/doors.tscn" id="38_etjdk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7p5uw"]
@@ -936,6 +937,10 @@ offset_top = -368.0
 offset_right = 306.0
 offset_bottom = 280.0
 color = Color(0.156863, 0, 0.196078, 1)
+
+[node name="interact" parent="." instance=ExtResource("33_neanc")]
+position = Vector2(-33, -76)
+where_need_look = 3
 
 [connection signal="body_entered" from="ysorting/glut" to="ysorting/glut" method="_on_body_entered"]
 [connection signal="body_exited" from="ysorting/glut" to="ysorting/glut" method="_on_body_exited"]

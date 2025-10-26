@@ -750,7 +750,7 @@ shape = SubResource("RectangleShape2D_at5dv")
 stream = ExtResource("9_87ub6")
 
 [node name="npc" parent="ysorting" instance=ExtResource("18_64xt6")]
-position = Vector2(-736, -80)
+position = Vector2(28, -86)
 whoid = 1
 texturenpc = ExtResource("19_45nvk")
 character = "shadow"
@@ -939,8 +939,9 @@ offset_bottom = 280.0
 color = Color(0.156863, 0, 0.196078, 1)
 
 [node name="interact" parent="." instance=ExtResource("33_neanc")]
-position = Vector2(-33, -76)
-where_need_look = 3
+position = Vector2(-22, -108)
+where_need_look = 2
+text_id = "shadow"
 
 [connection signal="body_entered" from="ysorting/glut" to="ysorting/glut" method="_on_body_entered"]
 [connection signal="body_exited" from="ysorting/glut" to="ysorting/glut" method="_on_body_exited"]

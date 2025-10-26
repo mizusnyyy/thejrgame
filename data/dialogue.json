@@ -66,6 +66,8 @@
 	{"id": "introgame3_start", "text": "Ahh... I should probably", "hand":null, "speaker":"", "portrait": "jr/portrait/you","next":"introgame3_1"},
 	{"id": "introgame3_1", "text": "wear something different.", "hand":null, "speaker":"", "portrait": "jr/portrait/you","next":null},
 
+	{"id": "home_interact_bed_start", "text": "Hej braciszku! To ja mizus uwu", "hand":null, "speaker":"","portrait": "jr/portrait/you","next": null},
+
 	{"id": "misupi_start", "text": "Hej braciszku! To ja mizus uwu", "hand":"4", "speaker":"Misupi","portrait": "misupi/portrait/2","next": "misupi_intro_1"},
 	{"id": "misupi_intro_1", "text": "Tak wiem jestem fembojowski... no coz", "hand":"2", "speaker":"Misupi", "portrait": "misupi/portrait/1","next": "misupi_intro_2"},
 	{"id": "misupi_intro_2", "text": "Mamy pare postaci ale komu by sie-", "hand":"1", "speaker":"Misupi", "portrait": "misupi/portrait/5","next": "misupi_intro_3"},

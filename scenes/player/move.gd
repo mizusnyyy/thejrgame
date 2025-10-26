@@ -108,7 +108,10 @@ func obtainanim(txt):
 	ins.emitting = false
 	ins.get_child(0).emitting = false
 	anim_locked = false
-	Global.can_phone = true
+	
+	Global.temp_can_phone=true
+	Global.toggle_can_phone(true)
+	
 	emit_signal("obtain_done")
 	await get_tree().create_timer(ins.lifetime).timeout
 	ins.queue_free()

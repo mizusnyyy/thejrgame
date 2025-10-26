@@ -43,4 +43,6 @@ enum dg { # tutaj dajecie nowe id dialogów
 	
 	introgame3_start,
 	introgame3_1,
+	
+	home_interact_bed_start,
 }

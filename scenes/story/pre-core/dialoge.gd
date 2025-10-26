@@ -40,7 +40,7 @@ func delhand():
 func sethand(handset):
 	hand.get_child(0).texture = load(pathhand+handset+".png")
 	hand.show()
-	print("ihwihwhiihih ", hand.visible)
+	#print("is hand visible - ", hand.visible)
 
 func setname(textset):
 	$TextureRect/speaker.text = textset
@@ -53,6 +53,8 @@ func show_dialogue(
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	Global.can_move = false
+	
+	Global.toggle_can_phone(false)
 
 	full_text = text
 	char_index = 0
@@ -76,6 +78,7 @@ func show_dialogue(
 
 	_type_text()
 	await text_typed
+	print("text typed")
 
 	if wait_for_close:
 		await dialogue_finished
@@ -194,6 +197,7 @@ func _unhandled_input(event):
 		return
 
 	if event.is_action_pressed("interact"):
+		#print(typing)
 		if typing:
 			typing = false
 			label.clear()

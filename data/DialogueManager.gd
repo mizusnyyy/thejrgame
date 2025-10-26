@@ -78,6 +78,7 @@ func show_dialog(id) -> void:
 		dialog.typing = true
 		show_dialog(dlg_e[next_id])
 		return
+	Global.can_talk=false
 	await dialog.show_dialogue(d.text, portrait, sound, true)
 
 	if d.next!=null:
@@ -86,8 +87,7 @@ func show_dialog(id) -> void:
 		else:
 			show_dialog(d.next)
 	else:
-		Global.can_phone = true
+		Global.toggle_can_phone(true)
 		dialog.hideanim()
-		await get_tree().create_timer(0.1).timeout
+		await get_tree().create_timer(0.15).timeout
 		emit_signal("dialogue_done")
-		print("wyglada dziwnie!")

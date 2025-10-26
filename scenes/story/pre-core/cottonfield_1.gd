@@ -14,13 +14,14 @@ func _ready():
 	else:
 		Musicsounds.play_music(load("res://assets/sounds/music/0.ogg"))
 		Global.can_move=false
-		Global.can_phone=false
+		Global.toggle_can_phone(false)
 		
 		play_cutscene("intro")
 		
 		CutsceneManager.set_played(CutsceneManager.cutscenes.intro)
 		await anim.animation_finished
 		Global.can_move=true
+		Global.toggle_can_phone(false)
 	Musicsounds.play_music(load("res://assets/sounds/music/1.ogg"))
 	await get_tree().create_timer(3.0).timeout
 	changebed(true)
@@ -51,6 +52,7 @@ func cutscene_talk(character:String, pause_cutscene: bool = true):
 			$AnimationPlayer.play()
 			return
 		await DialogueManager.dialogue_done
+		Global.toggle_can_phone(false)
 		Global.isincutscene=false
 
 func makebarrier(text_id:String="", glob_pos:Vector2=Vector2(0.0,0.0), size_barrier:Vector2=Vector2(16.0,16.0)):

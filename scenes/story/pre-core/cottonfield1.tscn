@@ -376,6 +376,18 @@ tracks/6/keys = {
 "update": 0,
 "values": [Vector2(2.2, 2.2)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ysorting/player/player/Camera2D:offset")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_aqtk2"]
 resource_name = "intro"
@@ -564,6 +576,48 @@ tracks/10/keys = {
 
 [sub_resource type="Animation" id="Animation_mymkb"]
 resource_name = "intro1"
+length = 5.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ysorting/player/modulate_screen:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.87),
+"transitions": PackedFloat32Array(1.56917, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ysorting/player/player/Camera2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(0.594604, 1),
+"update": 0,
+"values": [Vector2(-200, 0), Vector2(0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5.08),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["barrier_home1", Vector2(-336, 64), Vector2(64, 16)],
+"method": &"makebarrier"
+}, {
+"args": ["introgame3", true],
+"method": &"cutscene_talk"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_s7kpv"]
 resource_name = "tp"
@@ -903,7 +957,7 @@ text_id = "home_interact_bookshelf"
 position = Vector2(-316, -86)
 text_id = "home_interact_desk"
 
-[node name="interact" parent="." instance=ExtResource("33_neanc")]
+[node name="interact_mirror" parent="." instance=ExtResource("33_neanc")]
 position = Vector2(-290, -86)
 text_id = "home_interact_mirror"
 

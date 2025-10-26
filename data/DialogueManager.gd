@@ -49,6 +49,7 @@ func show_dialog(id) -> void:
 	print(id)
 
 	var d = dialogue_list[id]
+	print("hmm ",  d)
 	if d.hand!=null:
 		temp = true
 		hand = d.hand
@@ -71,15 +72,22 @@ func show_dialog(id) -> void:
 		for choice in d.next:
 			choice_texts.append(choice.get("text", ""))
 			next_ids.append(choice.get("next", ""))
-			#print("wybór: ", choice.next)
+			print("wybór: ", choice.next)
 		dialog.choose(next_ids, choice_texts)
 		var picked_index: int = await dialog.choice_selected
 		var next_id = next_ids[picked_index]
 		if typeof(d.next) == TYPE_INT and d.next == dlg_e.battle:
 			get_tree().change_scene_to_packed(preload("res://scenes/tempbattle/battle.tscn"))
 		dialog.typing = true
-		show_dialog(dlg_e[next_id])
+		if next_id != "" and next_id != "end":
+			show_dialog(dlg_e[next_id])
+		else:
+			dialogue_finish_sequence()
+			if !Global.isincutscene:
+				Global.can_move = true
 		return
+	#elif choice.next != "end":
+		#return
 	await dialog.show_dialogue(d.text, portrait, sound, true)
 
 	if d.next!=dlg_e.end:
@@ -91,7 +99,11 @@ func show_dialog(id) -> void:
 		else:
 			show_dialog(d.next)
 	else:
+		dialogue_finish_sequence()
+
+func dialogue_finish_sequence():
 		Global.toggle_can_phone(true)
 		dialog.hideanim()
 		await get_tree().create_timer(0.15).timeout
 		emit_signal("dialogue_done")
+	

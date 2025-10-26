@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://hh1q8a3ntrfc"]
+[gd_scene load_steps=60 format=4 uid="uid://hh1q8a3ntrfc"]
 
 [ext_resource type="Script" uid="uid://clkj0hkqugo3e" path="res://scenes/story/pre-core/cottonfield_1.gd" id="1_p45fp"]
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_y0cq1"]
@@ -682,6 +682,10 @@ _data = {
 &"tp": SubResource("Animation_s7kpv")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_neanc"]
+resource_local_to_scene = true
+size = Vector2(48, 20)
+
 [node name="cottonfield_1" type="Node2D"]
 script = ExtResource("1_p45fp")
 
@@ -949,8 +953,35 @@ where_need_look = 3
 text_id = "home_interact_bed"
 
 [node name="interact_couch" parent="." instance=ExtResource("33_neanc")]
-position = Vector2(-23, -60)
+position = Vector2(-336, -40)
 text_id = "home_interact_couch"
+
+[node name="col" parent="interact_couch" index="0"]
+shape = SubResource("RectangleShape2D_neanc")
+
+[node name="interact_fridge" parent="." instance=ExtResource("33_neanc")]
+position = Vector2(-686, -113)
+
+[node name="interact_crystal" parent="." instance=ExtResource("33_neanc")]
+position = Vector2(32, -49)
+text_id = "home_interact_crystal"
+
+[node name="interact_tv" parent="." instance=ExtResource("33_neanc")]
+position = Vector2(32, -22)
+text_id = "home_interact_tv"
+
+[node name="interact_toilet" parent="." instance=ExtResource("33_neanc")]
+position = Vector2(-1014, 22)
+where_need_look = 3
+text_id = "home_interact_toilet"
+
+[node name="interact_clock" parent="." instance=ExtResource("33_neanc")]
+position = Vector2(0, 18)
+text_id = "home_interact_clock"
+
+[node name="interact_wardrobe" parent="." instance=ExtResource("33_neanc")]
+position = Vector2(-34, -44)
+text_id = "home_interact_wardrobe"
 
 [connection signal="body_entered" from="ysorting/glut" to="ysorting/glut" method="_on_body_entered"]
 [connection signal="body_exited" from="ysorting/glut" to="ysorting/glut" method="_on_body_exited"]
@@ -962,3 +993,4 @@ text_id = "home_interact_couch"
 [editable path="tp_5"]
 [editable path="tp_6"]
 [editable path="tp_7"]
+[editable path="interact_couch"]

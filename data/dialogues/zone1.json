@@ -74,7 +74,7 @@
 	  { "text": "No", "next": "end" },
 	]},
 	
-	{"id": "home_interact_couch_start", "text": "Ahh… My beatiful couch,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next": "home_interact_couch_1"},
+	{"id": "home_interact_couch_start", "text": "Ahh... My beatiful couch,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next": "home_interact_couch_1"},
 	{"id": "home_interact_couch_1", "text": "Shall I have a sit and perhaps,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next": "home_interact_couch_2"},
 	{"id": "home_interact_couch_2", "text": "rest for a moment?", "hand":null, "speaker":"","portrait": "jr/portrait/you",
 	"next": [
@@ -82,15 +82,39 @@
 	  { "text": "No", "next": "end" },
 	]},
 	
-	{"id": "home_interact_crystal_start", "text": "", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+	{"id": "home_interact_crystal_start", "text": "Memories are calling...", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_crystal_1"},
+	{"id": "home_interact_crystal_1", "text": "I had so much fun mining them", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_crystal_2"},
+	{"id": "home_interact_crystal_2", "text": "with pavey, also they seemed", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_crystal_3"},
+	{"id": "home_interact_crystal_3", "text": "valuable so I took them home.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
 
-	{"id": "home_interact_tv_start", "text": "", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+	{"id": "home_interact_crystal1_start", "text": "Nothing more to add.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_crystal1_1"},
+	{"id": "home_interact_crystal1_1", "text": "They're just cool.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+	
+	{"id": "home_interact_tv_start", "text": "Why would I even want", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_tv_1"},
+	{"id": "home_interact_tv_1", "text": "to watch TV now,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_tv_2"},
+	{"id": "home_interact_tv_2", "text": "I've got a meeting to attend!", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
 
-	{"id": "home_interact_toilet_start", "text": "", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+	{"id": "home_interact_toilet_start", "text": "...", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_toilet_1"},
+	{"id": "home_interact_toilet_1", "text": "Just a toilet,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_toilet_2"},
+	{"id": "home_interact_toilet_2", "text": "What were you expecting?", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
 
-	{"id": "home_interact_clock_start", "text": "", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+	{"id": "home_interact_clock_start", "text": "I think that clock belonged", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_clock_1"},
+	{"id": "home_interact_clock_1", "text": "to my grandfather,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_clock_2"},
+	{"id": "home_interact_clock_2", "text": "So sad I've never met him...", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
 
-	{"id": "home_interact_wardrobe_start", "text": "", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+	{"id": "home_interact_wardrobe_start", "text": "Ah, I can finally change,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_wardrobe_1"},
+	{"id": "home_interact_wardrobe_1", "text": "those pajamas wouldn't", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_wardrobe_2"},
+	{"id": "home_interact_wardrobe_2", "text": "really fit for a meeting...", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_wardrobe_3"},
+	{"id": "home_interact_wardrobe_3", "text": "Change?", "hand":null, "speaker":"","portrait": "jr/portrait/you",
+	"next": [
+	  { "text": "Yes", "next": "end" },
+	  { "text": "No", "next": "end" },
+	]},
+	
+	{"id": "home_interact_wardrobe1_start", "text": "What? I used it already.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+
+	{"id": "home_interact_wardrobe2_start", "text": "Yeah, I know my wardrobe's", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_wardrobe2_1"},
+	{"id": "home_interact_wardrobe2_1", "text": "pretty cool", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
 
 	{"id": "home_interact_bath_start", "text": "", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
 
@@ -100,6 +124,6 @@
 
 	{"id": "home_interact_mirror_start", "text": "", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
 
-	{"id": "home_interact_fridge_start", "text": "", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+	{"id": "home_interact_fridge_start", "text": "Hmm… I'm not that hungry,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
 
 ]

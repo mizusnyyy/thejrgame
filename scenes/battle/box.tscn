@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://wo5sd5udhqg6"]
 
-[ext_resource type="Texture2D" uid="uid://ci7qor0afgrn5" path="res://assets/sprite/battle/box/boxside.png" id="1_hgwoi"]
+[ext_resource type="Texture2D" uid="uid://caesfl70vu0kg" path="res://assets/sprite/battle/box/boxside.png" id="1_hgwoi"]
 [ext_resource type="Script" uid="uid://31070hst34kt" path="res://scenes/battle/box.gd" id="1_vyhm3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vyhm3"]

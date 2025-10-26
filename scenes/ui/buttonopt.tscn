@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cfmq5cii1gnma" path="res://scenes/ui/buttonopttext.gd" id="1_0p4ht"]
 [ext_resource type="AudioStream" uid="uid://b3e0yrmnrd73n" path="res://assets/sprite/battle/aaaawhooya.wav" id="1_favcx"]
-[ext_resource type="Texture2D" uid="uid://qvpwkjc2hqru" path="res://assets/dialogue/butdial.png" id="3_0p4ht"]
-[ext_resource type="FontFile" uid="uid://cq7v0m044o442" path="res://assets/font/Fonjack.ttf" id="4_0p4ht"]
+[ext_resource type="Texture2D" uid="uid://bjl7f2b6flc7u" path="res://assets/dialogue/butdial.png" id="3_0p4ht"]
+[ext_resource type="FontFile" uid="uid://78k0ipy37m4x" path="res://assets/font/Fonjack.ttf" id="4_0p4ht"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5thvu"]
 size = Vector2(24, 10)

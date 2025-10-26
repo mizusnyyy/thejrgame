@@ -4,7 +4,7 @@ extends Node2D
 @onready var tilesetobj := $ysorting/objects
 
 func _ready():
-	$ysorting/player/blackoutscreen.visible=false
+	#idk nie dziala > $ysorting/player/blackoutscreen.visible=false
 	print(CutsceneManager.has_played(CutsceneManager.cutscenes.intro))
 	if CutsceneManager.has_played(CutsceneManager.cutscenes.intro):
 		anim.stop()

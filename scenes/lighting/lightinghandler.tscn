@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://jgk0ciu6b7rh"]
+
+[ext_resource type="Script" uid="uid://byj0fo2j2r6yr" path="res://scenes/lighting/lightinghandler.gd" id="1_35y01"]
+
+[node name="lightinghandler" type="Node2D"]
+script = ExtResource("1_35y01")

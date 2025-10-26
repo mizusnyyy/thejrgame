@@ -116,15 +116,50 @@
 	{"id": "home_interact_wardrobe2_start", "text": "Yeah, I know my wardrobe's", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_wardrobe2_1"},
 	{"id": "home_interact_wardrobe2_1", "text": "pretty cool", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
 
-	{"id": "home_interact_bath_start", "text": "", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+	{"id": "home_interact_bath_start", "text": "I love taking baths,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_bath_1"},
+	{"id": "home_interact_bath_1", "text": "they ease my mind-", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_bath_2"},
+	{"id": "home_interact_bath_2", "text": "Oh!", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_bath_3"},
+	{"id": "home_interact_bath_3", "text": "You're probably looking at the duck,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_bath_4"},
+	{"id": "home_interact_bath_4", "text": "Yeah, it has its charm.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
 
-	{"id": "home_interact_bookshelf_start", "text": "", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+	{"id": "home_interact_bath1_start", "text": "I love you my ducky~", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
 
-	{"id": "home_interact_desk_start", "text": "", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+	{"id": "home_interact_bookshelf_start", "text": "Did I mention that I", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_bookshelf_1"},
+	{"id": "home_interact_bookshelf_1", "text": "like writing? Poetry and stuff.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_bookshelf_2"},
+	{"id": "home_interact_bookshelf_2", "text": "Eh, It's just my hobby.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
 
-	{"id": "home_interact_mirror_start", "text": "", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+	{"id": "home_interact_bookshelf1_start", "text": "Did you not hear?", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_bookshelf1_1"},
+	{"id": "home_interact_bookshelf1_1", "text": "Yes I write books.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
 
-	{"id": "home_interact_fridge_start", "text": "Hmm… I'm not that hungry,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+	{"id": "home_interact_desk_start", "text": "...", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+
+	{"id": "home_interact_desk1_start", "text": "What?", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_desk1_1"},
+	{"id": "home_interact_desk1_1", "text": "Nothing special here.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+
+	{"id": "home_interact_mirror_start", "text": "Ohh… Just look at me,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_mirror_1"},
+	{"id": "home_interact_mirror_1", "text": "so handsome and gray,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_mirror_2"},
+	{"id": "home_interact_mirror_2", "text": "The \"JR\" on my forehead", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_mirror_3"},
+	{"id": "home_interact_mirror_3", "text": "fits me so well, doesn't it?", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+
+	{"id": "home_interact_mirror1_start", "text": "Now that I think about it,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_mirror1_1"},
+	{"id": "home_interact_mirror1_1", "text": "the \"JR\" symbol", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_mirror1_2"},
+	{"id": "home_interact_mirror1_2", "text": "is just like my name.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_mirror1_3"},
+	{"id": "home_interact_mirror1_3", "text": "How convenient!", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+
+	{"id": "home_interact_fridge_start", "text": "Hmm... I'm not that hungry,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_fridge_1"},
+	{"id": "home_interact_fridge_1", "text": "but I could use a snack or two.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_fridge_2"},
+	{"id": "home_interact_fridge_2", "text": "Take an apple?", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end",
+	"next": [
+	  { "text": "Yes", "next": "end" },
+	  { "text": "No", "next": "end" }
+	]},
+	
+	{"id": "home_interact_fridge1_start", "text": "I think your expectations", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_fridge1_1"},
+	{"id": "home_interact_fridge1_1", "text": "of me are too high,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_fridge1_2"},
+	{"id": "home_interact_fridge1_2", "text": "I'm not rich, I'm just a miner.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_fridge1_3"},
+	{"id": "home_interact_fridge1_3", "text": "I don't have more food.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+
+
 
 	{"id": "nyxel_start", "text": "Nya~! Orewo nawa... don nyxel doflamingo", "hand":null, "speaker":"", "portrait": "pavey/portrait/k1","next": "nyxel_intro_1"},
 	{"id": "nyxel_intro_1", "text": "Tak z ciekawosci... kimzes?", "hand":null, "speaker":"???", "portrait": "pavey/portrait/k3","next":"nyxel_intro_2"},

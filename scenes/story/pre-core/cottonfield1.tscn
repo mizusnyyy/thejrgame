@@ -891,6 +891,22 @@ text_id = "home_interact_clock"
 position = Vector2(-34, -44)
 text_id = "home_interact_wardrobe"
 
+[node name="interact_bath" parent="." instance=ExtResource("33_neanc")]
+position = Vector2(-382, -86)
+text_id = "home_interact_bath"
+
+[node name="interact_bookshelf" parent="." instance=ExtResource("33_neanc")]
+position = Vector2(-350, -86)
+text_id = "home_interact_bookshelf"
+
+[node name="interact_desk" parent="." instance=ExtResource("33_neanc")]
+position = Vector2(-316, -86)
+text_id = "home_interact_desk"
+
+[node name="interact" parent="." instance=ExtResource("33_neanc")]
+position = Vector2(-290, -86)
+text_id = "home_interact_mirror"
+
 [connection signal="body_entered" from="ysorting/glut" to="ysorting/glut" method="_on_body_entered"]
 [connection signal="body_exited" from="ysorting/glut" to="ysorting/glut" method="_on_body_exited"]
 

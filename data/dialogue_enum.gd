@@ -65,13 +65,18 @@ enum dg { # tutaj dajecie nowe id dialogów
 	home_interact_wardrobe1_start,
 	home_interact_wardrobe2_start,home_interact_wardrobe2_1,
 	
-	home_interact_bath_start,
+	home_interact_bath_start,home_interact_bath_1,home_interact_bath_2,home_interact_bath_3,home_interact_bath_4,
+	home_interact_bath1_start,
 	
-	home_interact_bookshelf_start,
+	home_interact_bookshelf_start,home_interact_bookshelf_1,home_interact_bookshelf_2,
+	home_interact_bookshelf1_start,home_interact_bookshelf1_1,
 	
 	home_interact_desk_start,
+	home_interact_desk1_start,home_interact_desk1_1,
 	
-	home_interact_mirror_start,
+	home_interact_mirror_start,home_interact_mirror_1,home_interact_mirror_2,home_interact_mirror_3,
+	home_interact_mirror1_start,home_interact_mirror1_1,home_interact_mirror1_2,home_interact_mirror1_3,
 	
-	home_interact_fridge_start,
+	home_interact_fridge_start,home_interact_fridge_1,home_interact_fridge_2,
+	home_interact_fridge1_start,home_interact_fridge1_1,home_interact_fridge1_2,home_interact_fridge1_3,
 }

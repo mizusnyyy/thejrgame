@@ -2,6 +2,7 @@ extends Area2D
 
 var inbody := false
 var player : Node2D
+## PRZYDA SIE --> 1 GORA 2 PRAWO 3 LEWO 0 DOL
 @export var where_need_look: Array[int] = [0]
 @export var text_id: String = ""
 

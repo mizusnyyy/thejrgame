@@ -10,7 +10,7 @@ func _ready():
 		anim.stop()
 	else:
 		Global.can_move=false
-		Global.can_phone=false
+		Global.toggle_can_phone(false)
 		anim.play("intro")
 		CutsceneManager.set_played(CutsceneManager.cutscenes.intro)
 		await anim.animation_finished

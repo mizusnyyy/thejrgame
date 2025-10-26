@@ -16,7 +16,7 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 	body.smoke.changeemit(false)
 	blackout(body)
-	Global.can_phone=false
+	Global.toggle_can_phone(false)
 	Phone.get_child(1).get_child(0)._hide_phone(true)
 	Global.can_move=false
 	var dir:Vector2
@@ -70,7 +70,7 @@ func _on_body_entered(body: Node2D) -> void:
 	await anim.animation_finished
 	
 	Global.can_move=true
-	Global.can_phone=true
+	Global.toggle_can_phone(true)
 	body.transporting=false
 
 func setstep(spd):

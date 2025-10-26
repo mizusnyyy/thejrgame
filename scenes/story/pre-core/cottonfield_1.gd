@@ -3,6 +3,7 @@ extends Node2D
 @onready var item := preload("res://scenes/items/iteminteract.tscn")
 @onready var tileset_house : TileMapLayer = $ysorting/house_ysort/housejr_objects
 var player : CharacterBody2D
+var barrier
 
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
@@ -13,13 +14,16 @@ func _ready():
 	else:
 		Musicsounds.play_music(load("res://assets/sounds/music/0.ogg"))
 		Global.can_move=false
-		Global.can_phone=false
-		anim.play("intro")
+		Global.toggle_can_phone(false)
+		
+		play_cutscene("intro")
+		
 		CutsceneManager.set_played(CutsceneManager.cutscenes.intro)
 		await anim.animation_finished
 		Global.can_move=true
+		Global.toggle_can_phone(false)
 	Musicsounds.play_music(load("res://assets/sounds/music/1.ogg"))
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(3.0).timeout
 	changebed(true)
 		
 func spawnphone():
@@ -38,14 +42,40 @@ func changebed(make:bool):
 		await get_tree().create_timer(0.08).timeout
 		tileset_house.set_cell(coordbeddown[0],5,Vector2i(8, 0),0)
 
-func cutscene_talk(character:String, pause: bool = true):
+func cutscene_talk(character:String, pause_cutscene: bool = true):
 		DialogueManager.begin_dialogue(character,player.dialog,$AudioStreamPlayer2D)
 		Global.isincutscene=true
-		if pause:
+		if pause_cutscene:
 			$AnimationPlayer.pause()
 			await DialogueManager.dialogue_done
 			Global.isincutscene=false
 			$AnimationPlayer.play()
 			return
 		await DialogueManager.dialogue_done
+		Global.toggle_can_phone(false)
 		Global.isincutscene=false
+
+func makebarrier(text_id:String="", glob_pos:Vector2=Vector2(0.0,0.0), size_barrier:Vector2=Vector2(16.0,16.0)):
+	
+	var outer_size_barrier = Vector2(14.0,14.0)
+	
+	barrier = load("res://scenes/randomthings/no_enter.tscn").instantiate()
+	add_child(barrier)
+	
+	barrier.get_child(0).get_child(0).get_child(0).shape.size = size_barrier
+	barrier.get_child(0).shape.size = size_barrier + outer_size_barrier
+	
+	barrier.text_id=text_id
+	barrier.global_position = glob_pos
+
+func delbarrier():
+	barrier.del()
+
+func play_cutscene(cutscene:String):
+	anim.play(cutscene)
+
+func make_trigger_cutscene(name_t: String, pos_t: Vector2, size_t: Vector2):
+	var trigger = load("res://scenes/story/trigger_cutscene.tscn").instantiate()
+	add_child(trigger)
+	
+	trigger.changes(name_t,pos_t,size_t)

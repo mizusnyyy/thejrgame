@@ -1,9 +1,9 @@
-[gd_scene load_steps=60 format=4 uid="uid://hh1q8a3ntrfc"]
+[gd_scene load_steps=59 format=4 uid="uid://hh1q8a3ntrfc"]
 
 [ext_resource type="Script" uid="uid://clkj0hkqugo3e" path="res://scenes/story/pre-core/cottonfield_1.gd" id="1_p45fp"]
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_y0cq1"]
-[ext_resource type="Texture2D" uid="uid://b5ummkx71yc1x" path="res://assets/tiles/fulltiles/carpethousebedroom.png" id="4_fxkrp"]
-[ext_resource type="Texture2D" uid="uid://c1ht0f06lf16l" path="res://assets/tiles/grass.png" id="5_xq3a2"]
+[ext_resource type="Texture2D" uid="uid://c5j3rxb6i4gw1" path="res://assets/tiles/fulltiles/carpethousebedroom.png" id="4_fxkrp"]
+[ext_resource type="Texture2D" uid="uid://dyeeqpwgykd67" path="res://assets/tiles/coreroom/grass.png" id="5_xq3a2"]
 [ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/player/teto.tscn" id="6_m0j0v"]
 [ext_resource type="Texture2D" uid="uid://bxq2w808td2io" path="res://assets/sprite/characters/glut/glut.png" id="7_3pd33"]
 [ext_resource type="PackedScene" uid="uid://c3fn22nsfymhg" path="res://scenes/mapmechanics/tp.tscn" id="7_mymkb"]
@@ -11,27 +11,27 @@
 [ext_resource type="Texture2D" uid="uid://b7632vv4ixuwo" path="res://assets/tiles/tilebg.png" id="13_xq3a2"]
 [ext_resource type="Texture2D" uid="uid://blq2libb70yvf" path="res://assets/tiles/tilebarrier.png" id="14_asfsf"]
 [ext_resource type="Texture2D" uid="uid://c72wlne1fh1ho" path="res://assets/tiles/tileobjects.png" id="16_64xt6"]
-[ext_resource type="Texture2D" uid="uid://dprlmqoi5s7vm" path="res://Bez tytułu.png" id="16_xq3a2"]
-[ext_resource type="Texture2D" uid="uid://3urjvtojk3ne" path="res://assets/sprite/characters/misupi/portrait/2.png" id="17_xq3a2"]
+[ext_resource type="Texture2D" uid="uid://cuvs87ukv6dym" path="res://Bez tytułu.png" id="16_xq3a2"]
+[ext_resource type="Texture2D" uid="uid://dko655qgtlrn0" path="res://assets/sprite/characters/misupi/portrait/2.png" id="17_xq3a2"]
 [ext_resource type="PackedScene" uid="uid://cne3a6lmj7c1u" path="res://scenes/randomthings/npc.tscn" id="18_64xt6"]
 [ext_resource type="Texture2D" uid="uid://blo5yr7xsgygh" path="res://assets/sprite/characters/shadow/shadowspritesheet.png" id="19_45nvk"]
-[ext_resource type="Texture2D" uid="uid://buthghil4kxva" path="res://assets/sprite/characters/aviruk/portrait/2.png" id="19_jgjda"]
-[ext_resource type="Texture2D" uid="uid://c7e5japgvjpxi" path="res://assets/tiles/fulltiles/shelfhousebedroom.png" id="19_p45fp"]
-[ext_resource type="Texture2D" uid="uid://cudjlckh4kfkw" path="res://assets/tiles/fulltiles/tablehousebedroom.png" id="20_etjdk"]
-[ext_resource type="Texture2D" uid="uid://cs88fq0p61eqi" path="res://assets/sprite/characters/bugzo/portrait/2.png" id="20_vmiso"]
-[ext_resource type="Texture2D" uid="uid://dqptib4bv1lkq" path="res://assets/tiles/fulltiles/beduphousebedroom.png" id="21_hgdsg"]
-[ext_resource type="Texture2D" uid="uid://bc1nr62qegpi1" path="res://assets/sprite/characters/igreavious/portrait/2.png" id="21_xla32"]
-[ext_resource type="Texture2D" uid="uid://bact2jbnuu2dr" path="res://assets/tiles/fulltiles/beddownhousebedroom.png" id="22_grflj"]
-[ext_resource type="Texture2D" uid="uid://bboj0pm4spsek" path="res://assets/sprite/characters/jr/portrait/you.png" id="22_wstsy"]
-[ext_resource type="Texture2D" uid="uid://cpeastkfdjqfu" path="res://assets/sprite/characters/nyxel/portrait/2.png" id="24_jewwt"]
-[ext_resource type="Texture2D" uid="uid://bklfbe5c6uom0" path="res://assets/sprite/characters/pavey/portrait/4.png" id="25_h0um3"]
-[ext_resource type="Texture2D" uid="uid://btrb1pe3b3n8i" path="res://assets/sprite/characters/pavey/portrait/k3.png" id="26_8xmim"]
-[ext_resource type="Texture2D" uid="uid://dd7lh4e6i7r1n" path="res://assets/sprite/characters/shadow/portrait/5.png" id="27_aiqwk"]
-[ext_resource type="Texture2D" uid="uid://cxy2fba5c84pp" path="res://assets/sprite/characters/verdite/portrait/2.png" id="28_5nkmf"]
-[ext_resource type="Texture2D" uid="uid://dwn6mj62gkinw" path="res://assets/sprite/characters/wavestorm/portrait/4.png" id="29_wy566"]
-[ext_resource type="Texture2D" uid="uid://dfy67rl1s8lj0" path="res://assets/sprite/characters/yeelan/portrait/2.png" id="30_27rjx"]
-[ext_resource type="Texture2D" uid="uid://bf1lbk6derhlv" path="res://assets/sprite/characters/zhemor/portrait/2.png" id="31_2h7yc"]
-[ext_resource type="PackedScene" uid="uid://b00bosebxbqrm" path="res://scenes/story/interact_object.tscn" id="33_neanc"]
+[ext_resource type="Texture2D" uid="uid://cmqwmr2gp1dg" path="res://assets/sprite/characters/aviruk/portrait/2.png" id="19_jgjda"]
+[ext_resource type="Texture2D" uid="uid://jmsx1fsabtvs" path="res://assets/tiles/fulltiles/shelfhousebedroom.png" id="19_p45fp"]
+[ext_resource type="Texture2D" uid="uid://borf6lgkp0jmt" path="res://assets/tiles/fulltiles/tablehousebedroom.png" id="20_etjdk"]
+[ext_resource type="Texture2D" uid="uid://p1podn4u7ty0" path="res://assets/sprite/characters/bugzo/portrait/2.png" id="20_vmiso"]
+[ext_resource type="Texture2D" uid="uid://blen6vkqpqepb" path="res://assets/tiles/fulltiles/beduphousebedroom.png" id="21_hgdsg"]
+[ext_resource type="Texture2D" uid="uid://c4sdhs3aencje" path="res://assets/sprite/characters/igreavious/portrait/2.png" id="21_xla32"]
+[ext_resource type="Texture2D" uid="uid://bixmi1p6mhko7" path="res://assets/tiles/fulltiles/beddownhousebedroom.png" id="22_grflj"]
+[ext_resource type="Texture2D" uid="uid://bfv6cj4xayatm" path="res://assets/sprite/characters/jr/portrait/you.png" id="22_wstsy"]
+[ext_resource type="Texture2D" uid="uid://5am0y5vgrk36" path="res://assets/sprite/characters/nyxel/portrait/2.png" id="24_jewwt"]
+[ext_resource type="Texture2D" uid="uid://cfx14pq8b7ann" path="res://assets/sprite/characters/pavey/portrait/4.png" id="25_h0um3"]
+[ext_resource type="Texture2D" uid="uid://ggsneivtujcu" path="res://assets/sprite/characters/pavey/portrait/k3.png" id="26_8xmim"]
+[ext_resource type="Texture2D" uid="uid://uwl5ukrf1rmv" path="res://assets/sprite/characters/shadow/portrait/5.png" id="27_aiqwk"]
+[ext_resource type="Texture2D" uid="uid://dqp64rk7k2xnq" path="res://assets/sprite/characters/verdite/portrait/2.png" id="28_5nkmf"]
+[ext_resource type="Texture2D" uid="uid://dslts5drci47s" path="res://assets/sprite/characters/wavestorm/portrait/4.png" id="29_wy566"]
+[ext_resource type="Texture2D" uid="uid://ksww6bvk3aj0" path="res://assets/sprite/characters/yeelan/portrait/2.png" id="30_27rjx"]
+[ext_resource type="Texture2D" uid="uid://qkxpoujcdmgk" path="res://assets/sprite/characters/zhemor/portrait/2.png" id="31_2h7yc"]
+[ext_resource type="PackedScene" uid="uid://je1m4p44dwn8" path="res://scenes/randomthings/no_enter.tscn" id="33_neanc"]
 [ext_resource type="PackedScene" uid="uid://pgr1hxlmxihq" path="res://scenes/common/doors.tscn" id="38_etjdk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7p5uw"]
@@ -364,18 +364,6 @@ tracks/5/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("ysorting/player/player/Camera2D:zoom")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2.2, 2.2)]
-}
 
 [sub_resource type="Animation" id="Animation_aqtk2"]
 resource_name = "intro"
@@ -545,10 +533,10 @@ tracks/10/path = NodePath(".")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 1.86667, 5.03334, 5.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.86667, 5.03334),
+"transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
-"args": ["barrier_home", Vector2(-56, 0), Vector2(16, 32)],
+"args": ["nyxel", Vector2(-50, 0), Vector2(16, 32)],
 "method": &"makebarrier"
 }, {
 "args": ["introgame", true],
@@ -556,9 +544,6 @@ tracks/10/keys = {
 }, {
 "args": ["introgame1", true],
 "method": &"cutscene_talk"
-}, {
-"args": ["intro1", Vector2(-258, 0), Vector2(16, 32)],
-"method": &"make_trigger_cutscene"
 }]
 }
 
@@ -588,10 +573,6 @@ _data = {
 &"intro1": SubResource("Animation_mymkb"),
 &"tp": SubResource("Animation_s7kpv")
 }
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_neanc"]
-resource_local_to_scene = true
-size = Vector2(48, 20)
 
 [node name="cottonfield_1" type="Node2D"]
 script = ExtResource("1_p45fp")
@@ -645,7 +626,6 @@ y_sort_enabled = true
 
 [node name="AnimatedSprite2D" parent="ysorting/player/player" index="1"]
 y_sort_enabled = true
-animation = &"idlel"
 
 [node name="glut" type="Area2D" parent="ysorting"]
 y_sort_enabled = true
@@ -661,7 +641,7 @@ shape = SubResource("RectangleShape2D_at5dv")
 stream = ExtResource("9_87ub6")
 
 [node name="npc" parent="ysorting" instance=ExtResource("18_64xt6")]
-position = Vector2(28, -86)
+position = Vector2(-736, -80)
 whoid = 1
 texturenpc = ExtResource("19_45nvk")
 character = "shadow"
@@ -849,46 +829,9 @@ offset_right = 306.0
 offset_bottom = 280.0
 color = Color(0.156863, 0, 0.196078, 1)
 
-[node name="interact_bed" parent="." instance=ExtResource("33_neanc")]
-position = Vector2(-22, -108)
-where_need_look = 2
-text_id = "home_interact_bed"
-
-[node name="interact_bed_2" parent="." instance=ExtResource("33_neanc")]
-position = Vector2(22, -109)
-where_need_look = 3
-text_id = "home_interact_bed"
-
-[node name="interact_couch" parent="." instance=ExtResource("33_neanc")]
-position = Vector2(-336, -40)
-text_id = "home_interact_couch"
-
-[node name="col" parent="interact_couch" index="0"]
-shape = SubResource("RectangleShape2D_neanc")
-
-[node name="interact_fridge" parent="." instance=ExtResource("33_neanc")]
-position = Vector2(-686, -113)
-
-[node name="interact_crystal" parent="." instance=ExtResource("33_neanc")]
-position = Vector2(32, -49)
-text_id = "home_interact_crystal"
-
-[node name="interact_tv" parent="." instance=ExtResource("33_neanc")]
-position = Vector2(32, -22)
-text_id = "home_interact_tv"
-
-[node name="interact_toilet" parent="." instance=ExtResource("33_neanc")]
-position = Vector2(-1014, 22)
-where_need_look = 3
-text_id = "home_interact_toilet"
-
-[node name="interact_clock" parent="." instance=ExtResource("33_neanc")]
-position = Vector2(0, 18)
-text_id = "home_interact_clock"
-
-[node name="interact_wardrobe" parent="." instance=ExtResource("33_neanc")]
-position = Vector2(-34, -44)
-text_id = "home_interact_wardrobe"
+[node name="don\'t leave" parent="." instance=ExtResource("33_neanc")]
+position = Vector2(0, -56)
+text_id = "nyxel"
 
 [connection signal="body_entered" from="ysorting/glut" to="ysorting/glut" method="_on_body_entered"]
 [connection signal="body_exited" from="ysorting/glut" to="ysorting/glut" method="_on_body_exited"]
@@ -900,4 +843,3 @@ text_id = "home_interact_wardrobe"
 [editable path="tp_5"]
 [editable path="tp_6"]
 [editable path="tp_7"]
-[editable path="interact_couch"]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://6v4dxtuywy4r"]
 
 [ext_resource type="Script" uid="uid://dou5xmvh55egf" path="res://scenes/player/move.gd" id="1_3xey1"]
-[ext_resource type="SpriteFrames" uid="uid://bqeyirdd5862o" path="res://scenes/player/jrpajamasprite.tres" id="2_42hny"]
+[ext_resource type="SpriteFrames" uid="uid://djf0e47d04h7s" path="res://scenes/player/jrpajamasprite.tres" id="2_42hny"]
 [ext_resource type="Texture2D" uid="uid://c72wlne1fh1ho" path="res://assets/tiles/tileobjects.png" id="3_42hny"]
-[ext_resource type="PackedScene" uid="uid://cwts7ae2nrmv3" path="res://assets/particles/smokerun.tscn" id="4_8hdff"]
+[ext_resource type="PackedScene" path="res://assets/particles/smokerun.tscn" id="4_8hdff"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80hx6"]
 size = Vector2(14, 6)

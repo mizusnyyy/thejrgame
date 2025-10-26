@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d1dhfnkfa5rhk" path="res://assets/sprite/characters/shadow/portrait/1.png" id="4_k308d"]
 [ext_resource type="Shader" uid="uid://3274u8ocy1x8" path="res://scenes/ui/dialogback.gdshader" id="4_m26o2"]
 [ext_resource type="Script" uid="uid://t6s4f322ej5p" path="res://scenes/story/pre-core/choice.gd" id="5_io7n7"]
-[ext_resource type="PackedScene" uid="uid://bmcjis4xi20sm" path="res://scenes/ui/hand.tscn" id="5_k308d"]
+[ext_resource type="PackedScene" uid="uid://bag50ieyi705m" path="res://scenes/ui/hand.tscn" id="5_k308d"]
 [ext_resource type="Texture2D" uid="uid://jouutgjikwq0" path="res://assets/sprite/battle/hearts.png" id="6_0xy2d"]
 [ext_resource type="FontFile" uid="uid://78k0ipy37m4x" path="res://assets/font/Fonjack.ttf" id="8_io7n7"]
 [ext_resource type="Script" uid="uid://dbxqp47sdbgs3" path="res://scenes/ui/menuopenanim.gd" id="10_586yk"]

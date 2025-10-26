@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://je1m4p44dwn8"]
+
+[ext_resource type="Script" uid="uid://blulkcgheovn0" path="res://scenes/randomthings/no_enter.gd" id="1_sdmev"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71c72"]
+resource_local_to_scene = true
+size = Vector2(26, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdmev"]
+resource_local_to_scene = true
+size = Vector2(16, 16)
+
+[node name="don\'t leave" type="Area2D"]
+script = ExtResource("1_sdmev")
+
+[node name="col" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_71c72")
+
+[node name="static" type="StaticBody2D" parent="col"]
+
+[node name="colstatic" type="CollisionShape2D" parent="col/static"]
+shape = SubResource("RectangleShape2D_sdmev")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

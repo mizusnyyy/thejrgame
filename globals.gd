@@ -12,7 +12,9 @@ var enemy_hp := 100.0
 var maxenemy_hp := 100.0
 var health := 100.0
 var maxhealth := 100.0
+
 var can_move := true
+
 var mercy:=0
 var photoid := 0
 var playit := false
@@ -23,9 +25,22 @@ var phoneapps: Array[String]
 
 var new_scene_player_pos : Vector2
 
-var can_phone := true
+var can_phone := false
+var can_talk := true
 
 var isincutscene:= false
+var temp_can_phone := false
+
+
+
+func toggle_can_phone(can:bool=true):
+	if temp_can_phone:
+		can_phone=can
+
+#func toggle_is_in_cutscene(can:bool=true):
+	#if temp_can_phone:
+		#can_phone=can
+
 
 func glapps(app:Array[String]):
 	for i in len(app):

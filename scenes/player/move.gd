@@ -35,7 +35,9 @@ func _physics_process(delta: float) -> void:
 	var directionlr := Input.get_axis("left", "right")
 	var directionud := Input.get_axis("up", "down")
 	direction = Vector2(directionlr, directionud)
-
+	
+	#print(directionstop)
+	
 	var speed_sprint := 1.0
 	anim.speed_scale = 1
 	smoke.speed_scale=1.0
@@ -94,7 +96,7 @@ func obtainanim(txt):
 	itemupanim(txt)
 	var ins := obtainpart.instantiate()
 	add_child(ins)
-	ins.global_position -= Vector2(0.0,16.0)
+	ins.global_position -= Vector2(0.0,29.0)
 	var tween2 := create_tween().set_parallel(true)
 	tween2.tween_property(anim,"scale",Vector2(0.8,1.3),0.1)
 	tween2.tween_property(anim,"position",Vector2(0.0,-17.8),0.1)
@@ -106,7 +108,10 @@ func obtainanim(txt):
 	ins.emitting = false
 	ins.get_child(0).emitting = false
 	anim_locked = false
-	Global.can_phone = true
+	
+	Global.temp_can_phone=true
+	Global.toggle_can_phone(true)
+	
 	emit_signal("obtain_done")
 	await get_tree().create_timer(ins.lifetime).timeout
 	ins.queue_free()

@@ -1,7 +1,6 @@
 extends Area2D
 
 var player_in_range := false
-var can_talk := true
 var currentpage := 0
 
 var player : CharacterBody2D
@@ -13,35 +12,26 @@ var player : CharacterBody2D
 @export var region: Vector2 = Vector2(16.0, 32.0)
 
 func _on_body_entered(body):
-	if body.name=="player":
-		player = $"../player/player"
+	if body.is_in_group("player"):
+		player = body
 		player_in_range = true
 
 func _on_body_exited(body):
-	if body.name=="player":
+	if body.is_in_group("player"):
 		player_in_range = false
-		can_talk=true
+		Global.can_talk=true
 
 func _process(_delta):
 	if Input.is_action_just_pressed("interact"):
 		talk()
 
 func talk():
-	if player_in_range and can_talk:
+	if player_in_range and Global.can_talk:
 		DialogueManager.begin_dialogue(character,player.dialog,typesound)
-		Global.can_phone=false
-		can_talk=false
-		#print("WWWWWAGWAG")
+		Global.toggle_can_phone(false)
+		Global.can_talk=false
 		await DialogueManager.dialogue_done
-		can_talk=true
-		#print("KURWA")
-
-func dialogf(text,texture,sound,optionid):
-	#print("WWWWWAGWAG")
-	player.dialog.show_dialogue(text,texture,sound,optionid)
-	can_talk=true
-	#print("KURWA")
-	
+		Global.can_talk=true
 
 func _on_ready() -> void:
 	$Sprite2D.texture = texturenpc

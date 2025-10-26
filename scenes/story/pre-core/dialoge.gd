@@ -7,6 +7,8 @@ extends Control
 @onready var choice := $choice/indicator
 @onready var hand := $TextureRect/hand
 @onready var grid = $opt/gc
+
+var spd_multiply := 1.0
 var just_chose := false
 const pathhand := "res://assets/dialogue/hand/hand"
 
@@ -38,7 +40,7 @@ func delhand():
 func sethand(handset):
 	hand.get_child(0).texture = load(pathhand+handset+".png")
 	hand.show()
-	print("ihwihwhiihih ", hand.visible)
+	#print("is hand visible - ", hand.visible)
 
 func setname(textset):
 	$TextureRect/speaker.text = textset
@@ -51,6 +53,8 @@ func show_dialogue(
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	Global.can_move = false
+	
+	Global.toggle_can_phone(false)
 
 	full_text = text
 	char_index = 0
@@ -130,27 +134,42 @@ func setoptions(options: Array, texts: Array) -> void:
 	
 func _type_text() -> void:
 	while char_index < full_text.length() and typing:
-		var spd := tempspeed
-		match full_text[char_index]:
-			".", "!", "?":
+		var letter : String = full_text[char_index]
+		var spd := tempspeed * spd_multiply
+		
+		#TO NIE JEST KURWA SPEED TYLKO DELAY XD DEBIL MIZU
+		
+		match letter:
+			".", "!", "?": #DUZY DELAY
 				spd *= 9
-			",", ";":
+			",", ";": #MALY DELAY
 				spd *= 5
+			"/": #ZMIENIA PREDKOSC NA WOLNIEJSZY TEKST
+				letter = ""
+				spd_multiply=2.0
+			"\\": #ZMIENIA PREDKOSC NA SZYBSZY TEKST
+				letter = ""
+				spd_multiply=0.7
+			"|":
+				letter = ""
+				spd_multiply=1.0
+				
 			#"(":
 			#TO ZMIENIAC BEDZIE NASTEPNA LITERE NA COS (TU AKURAT NA NIC)
 				#print(char_index)
-				#full_text[char_index]=""
+				#letter=""
 				#if len(full_text)>char_index:
-					#full_text[char_index]=""
-		label.append_text(full_text[char_index])
+					#letter=""
+		label.append_text(letter)
 		
-		#label.append_text("[bounce]" + full_text[char_index] + "[/bounce]")
+		#label.append_text("[bounce]" + letter + "[/bounce]")
 		
 		char_index += 1
-		if type_sound_player:
+		if type_sound_player && letter!=" ":
 			type_sound_player.pitch_scale = randf_range(0.95, 1.05)
 			type_sound_player.play()
 		await get_tree().create_timer(spd).timeout
+	spd_multiply=1.0
 	typing = false
 	emit_signal("text_typed")
 
@@ -177,10 +196,16 @@ func _unhandled_input(event):
 		return
 
 	if event.is_action_pressed("interact"):
+		#print(typing)
 		if typing:
 			typing = false
 			label.clear()
-			label.append_text(full_text)
+			
+			#USUWANIE NIECHCIANYCH ZNAKOW Z TEKSTU
+			var full_text_complete = full_text.replace("/","").replace("\\","").replace("|","")
+			
+			label.append_text(full_text_complete)
+			
 			#label.append_text("[bounce]%s[/bounce]" % full_text)
 			emit_signal("text_typed")
 		else:

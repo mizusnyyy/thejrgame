@@ -76,11 +76,15 @@ func show_dialog(id) -> void:
 		dialog.choose(next_ids, choice_texts)
 		var picked_index: int = await dialog.choice_selected
 		var next_id = next_ids[picked_index]
+		
 		if typeof(d.next) == TYPE_INT and d.next == dlg_e.battle:
+			
 			get_tree().change_scene_to_packed(preload("res://scenes/tempbattle/battle.tscn"))
 		dialog.typing = true
+		
 		if next_id != "" and next_id != "end":
 			show_dialog(dlg_e[next_id])
+			
 		else:
 			dialogue_finish_sequence()
 			if !Global.isincutscene:

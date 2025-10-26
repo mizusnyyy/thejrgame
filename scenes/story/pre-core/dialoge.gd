@@ -88,7 +88,7 @@ func show_dialogue(
 
 func choose(options: Array, texts: Array):
 	choosing = true
-	choice.global_position = Vector2(359,309)
+	choice.global_position = Vector2(359,288)
 	show()
 	choice.show()
 	choice.can_choose = true

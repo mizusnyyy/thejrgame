@@ -12,5 +12,6 @@ func set_played(id:int) -> void:
 	
 func cutsceneset():
 	for i in len(cutscenes):
-		all[i]=true
+		#TRUE = POMINIECIE CUTSCENEK, FALSE = NIE
+		all[i]=false
 	print(all)

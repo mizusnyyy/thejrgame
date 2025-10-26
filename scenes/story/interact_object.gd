@@ -2,7 +2,7 @@ extends Area2D
 
 var inbody := false
 var player : Node2D
-@export var where_need_look: int = 0
+@export var where_need_look: Array[int] = [0]
 @export var text_id: String = ""
 
 func _on_body_entered(body: Node2D) -> void:
@@ -20,7 +20,10 @@ func _process(delta: float) -> void:
 		talk()
 
 func talk():
-	if inbody and Global.can_talk and player.directionstop == where_need_look and !Global.isincutscene:
+	
+	#WHERE NEED LOOK --> 1 GORA 2 PRAWO 3 LEWO 0 DOL
+	
+	if inbody and Global.can_talk and player.directionstop in where_need_look and !Global.isincutscene:
 		DialogueManager.begin_dialogue(text_id,player.dialog,$"../AudioStreamPlayer2D")
 		Global.toggle_can_phone(false)
 		Global.can_talk=false

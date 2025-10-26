@@ -11,12 +11,12 @@
 	  { "text": "cokolwiek", "next": "shadow_intro_3" },
 	  { "text": "nic", "next": "shadow_walka_1" },
 	]},
-	{"id": "shadow_weird_1", "text": "mhm... Zatem nic nie powiesz", "hand":"9", "speaker":"???", "portrait": "shadow/portrait/5", "next":null},
+	{"id": "shadow_weird_1", "text": "mhm... Zatem nic nie powiesz", "hand":"9", "speaker":"???", "portrait": "shadow/portrait/5", "next":"end"},
 	{"id": "shadow_intro_3", "text": "Jacku... Nie masz pojecia jaka", "hand":null,"speaker": "Shadow", "portrait": "shadow/portrait/1","next":"shadow_intro_4"},
 	{"id": "shadow_intro_4", "text": "przygoda cie czeka. Serio.", "hand":null, "speaker":null, "portrait": "shadow/portrait/5","next":"shadow_intro_5"},
 	{"id": "shadow_intro_5", "text": "btw nie wpisuj sobie w alan baran", "hand":"3", "speaker":"Shadow","portrait":"shadow/portrait/4", "next":"shadow_intro_6"},
 	{"id": "shadow_intro_6", "text": "...", "hand":null, "speaker":null,"portrait":"shadow/portrait/1", "next":"shadow_intro_7"},
-	{"id": "shadow_intro_7", "text": "SPRAWDZ NASZA GRE!!! ( TLOJJ )", "hand":"8","speaker":null,"portrait":"shadow/portrait/2","next":null},
+	{"id": "shadow_intro_7", "text": "SPRAWDZ NASZA GRE!!! ( TLOJJ )", "hand":"8","speaker":null,"portrait":"shadow/portrait/2","next":"end"},
 	
 	{"id": "core_start", "text": "Out of curiousity do you desire power?", "hand":null, "speaker": "???", "portrait": "Igreavious/portrait/2", "next": "core_intro_1"},
 	{"id": "core_intro_1", "text": "The rulefull thing is that...", "hand":"7", "speaker": "???", "portrait": "Igreavious/portrait/1","next": "core_intro_2"},
@@ -28,20 +28,20 @@
 	  { "text": "no", "next": "core_walka_2" },
 	  { "text": "what", "next": "core_weird_1" }
 	]},
-	{"id": "core_walka_1", "text": "WHAT??? WHY DID YOU SAY IT LIKE THAT!!!", "hand":null, "speaker": "Igreavious", "portrait": "Igreavious/portrait/1","next":null},
-	{"id": "core_walka_2", "text": "THIS IS STUPID! THIS IS STUPID!", "hand":null, "speaker": "Igreavious", "portrait": "Igreavious/portrait/2","next":null},
-	{"id": "core_weird_1", "text": "naaa... you have a weird voice now...", "hand":null, "speaker": "Igreavious", "portrait": "Igreavious/portrait/2","next":null},
+	{"id": "core_walka_1", "text": "WHAT??? WHY DID YOU SAY IT LIKE THAT!!!", "hand":null, "speaker": "Igreavious", "portrait": "Igreavious/portrait/1","next":"end"},
+	{"id": "core_walka_2", "text": "THIS IS STUPID! THIS IS STUPID!", "hand":null, "speaker": "Igreavious", "portrait": "Igreavious/portrait/2","next":"end"},
+	{"id": "core_weird_1", "text": "naaa... you have a weird voice now...", "hand":null, "speaker": "Igreavious", "portrait": "Igreavious/portrait/2","next":"end"},
 	
 	{"id": "shadow1_start", "text": "hej jacek", "speaker": "Shadow", "hand":null, "portrait": "shadow/portrait/4","next":"shadow_intro_8"},
 	{"id": "shadow_intro_8", "text": "slyszales o corze?", "hand":null, "speaker": "Shadow", "portrait": "shadow/portrait/4","next":"shadow_intro_9"},
-	{"id": "shadow_intro_9", "text": "sprawdz se rozne czesci mapy! (nic)", "hand":"2", "speaker": "Freaky Shadow", "portrait": "shadow/portrait/4","next":null},
+	{"id": "shadow_intro_9", "text": "sprawdz se rozne czesci mapy! (nic)", "hand":"2", "speaker": "Freaky Shadow", "portrait": "shadow/portrait/4","next":"end"},
 	
 	{"id": "introgame_start", "text": "/. . .", "hand":null, "speaker": "", "portrait": "jr/portrait/you","next":"introgame_1"},
 	{"id": "introgame_1", "text": "Agh... Someone's calling me again...", "hand":null, "speaker": "", "portrait": null,"next":"introgame_2"},
 	{"id": "introgame_2", "text": "/. . .", "hand":null, "speaker": "", "portrait": null,"next":"introgame_3"},
-	{"id": "introgame_3", "text": "I should really pick it up...", "hand":null, "speaker": "", "portrait": null,"next": null},
+	{"id": "introgame_3", "text": "I should really pick it up...", "hand":null, "speaker": "", "portrait": null,"next":"end"},
 	
-	{"id": "introgame1_start", "text": "Alrighty-o! Let's do this!", "hand":null, "speaker": "", "portrait": null,"next": null},
+	{"id": "introgame1_start", "text": "Alrighty-o! Let's do this!", "hand":null, "speaker": "", "portrait": null,"next":"end"},
 	
 	{"id": "introgame2_start", "text": "\\Yooo wassup Jack!", "hand":null, "speaker": "", "portrait": "jr/portrait/idk","next": "introgame2_1"},
 	{"id": "introgame2_1", "text": "/Wha-? Who's that?", "hand":null, "speaker": "", "portrait": "jr/portrait/you","next": "introgame2_2"},
@@ -57,21 +57,49 @@
 	{"id": "introgame2_11", "text": "but come and we'll check it out together!", "hand":null, "speaker": "Pavey", "portrait": "jr/portrait/idk","next": "introgame2_12"},
 	{"id": "introgame2_12", "text": "/...", "hand":null, "speaker": "", "portrait": "jr/portrait/you","next": "introgame2_13"},
 	{"id": "introgame2_13", "text": "But I'm still in my pajamas/... Fine,| I'll come", "hand":null, "speaker": "", "portrait": "jr/portrait/you","next": "introgame2_14"},
-	{"id": "introgame2_14", "text": "Nice! Meet me at my house in the village!", "hand":null, "speaker": "Pavey", "portrait": "jr/portrait/idk","next": null},
+	{"id": "introgame2_14", "text": "Nice! Meet me at my house in the village!", "hand":null, "speaker": "Pavey", "portrait": "jr/portrait/idk","next":"end"},
 	
-	{"id": "barrier_home_start", "text": "\\Uhhh...| I should pick up the phone...", "hand":null, "speaker":"???", "portrait": "jr/portrait/you","next": null},
+	{"id": "barrier_home_start", "text": "\\Uhhh...| I should pick up the phone...", "hand":null, "speaker":"???", "portrait": "jr/portrait/you","next":"end"},
 	
-	{"id": "barrier_home1_start", "text": "\\NO!/ I've gotta change first!", "hand":null, "speaker":"", "portrait": "jr/portrait/you","next":null},
+	{"id": "barrier_home1_start", "text": "\\NO!/ I've gotta change first!", "hand":null, "speaker":"", "portrait": "jr/portrait/you","next":"end"},
 	
 	{"id": "introgame3_start", "text": "Ahh... I should probably", "hand":null, "speaker":"", "portrait": "jr/portrait/you","next":"introgame3_1"},
-	{"id": "introgame3_1", "text": "wear something different.", "hand":null, "speaker":"", "portrait": "jr/portrait/you","next":null},
+	{"id": "introgame3_1", "text": "wear something different.", "hand":null, "speaker":"", "portrait": "jr/portrait/you","next":"end"},
 
-	{"id": "home_interact_bed_start", "text": "Hej braciszku! To ja mizus uwu", "hand":null, "speaker":"","portrait": "jr/portrait/you","next": null},
 
-	{"id": "misupi_start", "text": "Hej braciszku! To ja mizus uwu", "hand":"4", "speaker":"Misupi","portrait": "misupi/portrait/2","next": "misupi_intro_1"},
-	{"id": "misupi_intro_1", "text": "Tak wiem jestem fembojowski... no coz", "hand":"2", "speaker":"Misupi", "portrait": "misupi/portrait/1","next": "misupi_intro_2"},
-	{"id": "misupi_intro_2", "text": "Mamy pare postaci ale komu by sie-", "hand":"1", "speaker":"Misupi", "portrait": "misupi/portrait/5","next": "misupi_intro_3"},
-	{"id": "misupi_intro_3", "text": "chcialo tyle dialogow robic?", "hand":"1", "speaker":"Misupi", "portrait": "misupi/portrait/5","next": "misupi_intro_4"},
-	{"id": "misupi_intro_4", "text": "Mam nadzieje ze ci sie podoba ta gierka. U-uwu!", "hand":"7", "speaker":"Misupi", "portrait": "misupi/portrait/3","next": null},
+	{"id": "home_interact_bed_start", "text": "Just my bed, no use going back to sleep", "hand":null, "speaker":"","portrait": "jr/portrait/you","next": "home_interact_bed_1"},
+	{"id": "home_interact_bed_1", "text": "Make the bed?", "hand":null, "speaker":"","portrait": "jr/portrait/you",
+	"next": [
+	  { "text": "Yes", "next": "end" },
+	  { "text": "No", "next": "end" },
+	]},
 	
+	{"id": "home_interact_couch_start", "text": "Ahh… My beatiful couch,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next": "home_interact_couch_1"},
+	{"id": "home_interact_couch_1", "text": "Shall I have a sit and perhaps,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next": "home_interact_couch_2"},
+	{"id": "home_interact_couch_2", "text": "rest for a moment?", "hand":null, "speaker":"","portrait": "jr/portrait/you",
+	"next": [
+	  { "text": "Yes", "next": "end" },
+	  { "text": "No", "next": "end" },
+	]},
+	
+	{"id": "home_interact_crystal_start", "text": "", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+
+	{"id": "home_interact_tv_start", "text": "", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+
+	{"id": "home_interact_toilet_start", "text": "", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+
+	{"id": "home_interact_clock_start", "text": "", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+
+	{"id": "home_interact_wardrobe_start", "text": "", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+
+	{"id": "home_interact_bath_start", "text": "", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+
+	{"id": "home_interact_bookshelf_start", "text": "", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+
+	{"id": "home_interact_desk_start", "text": "", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+
+	{"id": "home_interact_mirror_start", "text": "", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+
+	{"id": "home_interact_fridge_start", "text": "", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+
 ]

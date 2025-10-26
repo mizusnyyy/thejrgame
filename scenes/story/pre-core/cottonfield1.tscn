@@ -938,10 +938,19 @@ offset_right = 306.0
 offset_bottom = 280.0
 color = Color(0.156863, 0, 0.196078, 1)
 
-[node name="interact" parent="." instance=ExtResource("33_neanc")]
+[node name="interact_bed" parent="." instance=ExtResource("33_neanc")]
 position = Vector2(-22, -108)
 where_need_look = 2
-text_id = "shadow"
+text_id = "home_interact_bed"
+
+[node name="interact_bed_2" parent="." instance=ExtResource("33_neanc")]
+position = Vector2(22, -109)
+where_need_look = 3
+text_id = "home_interact_bed"
+
+[node name="interact_couch" parent="." instance=ExtResource("33_neanc")]
+position = Vector2(-23, -60)
+text_id = "home_interact_couch"
 
 [connection signal="body_entered" from="ysorting/glut" to="ysorting/glut" method="_on_body_entered"]
 [connection signal="body_exited" from="ysorting/glut" to="ysorting/glut" method="_on_body_exited"]

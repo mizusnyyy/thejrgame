@@ -12,12 +12,12 @@ var player : CharacterBody2D
 @export var region: Vector2 = Vector2(16.0, 32.0)
 
 func _on_body_entered(body):
-	if body.name=="player":
+	if body.is_in_group("player"):
 		player = body
 		player_in_range = true
 
 func _on_body_exited(body):
-	if body.name=="player":
+	if body.is_in_group("player"):
 		player_in_range = false
 		Global.can_talk=true
 

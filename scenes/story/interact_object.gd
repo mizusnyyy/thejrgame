@@ -13,13 +13,9 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		inbody = false
-		player = null
+		Global.can_talk=true
 
 func _process(delta: float) -> void:
-	print(Global.isincutscene)
-	print(inbody)
-	print(Global.can_talk)
-	print("__-_---___----")
 	if Input.is_action_just_pressed("interact"):
 		talk()
 

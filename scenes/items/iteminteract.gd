@@ -4,6 +4,7 @@ var inrange:=false
 var anime
 var player : CharacterBody2D
 var first : bool = true
+var where_need_look := 1
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -15,7 +16,7 @@ func _on_body_exited(body: Node2D) -> void:
 		inrange=false
 
 func _unhandled_input(event):
-	if event.is_action_pressed("interact") && inrange && first:
+	if event.is_action_pressed("interact") && inrange && first && player.directionstop == where_need_look:
 		first = false
 		anime.obtainanim($Sprite2D.texture)
 		Musicsounds.play_sound(load("res://JacksWithHats.wav"))

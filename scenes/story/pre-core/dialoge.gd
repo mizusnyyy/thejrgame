@@ -78,7 +78,6 @@ func show_dialogue(
 
 	_type_text()
 	await text_typed
-	print("text typed")
 
 	if wait_for_close:
 		await dialogue_finished

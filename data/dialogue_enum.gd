@@ -1,5 +1,6 @@
 enum dg { # tutaj dajecie nowe id dialogów
 	battle,
+	end,
 	core_start, 
 	core_intro_1, core_intro_2, core_intro_3, core_intro_4, 
 	core_walka_1, core_walka_2, core_weird_1,
@@ -45,4 +46,18 @@ enum dg { # tutaj dajecie nowe id dialogów
 	introgame3_1,
 	
 	home_interact_bed_start,
+	home_interact_bed_1,
+	home_interact_couch_start,
+	home_interact_couch_1,
+	home_interact_couch_2,
+	home_interact_crystal_start,
+	home_interact_tv_start,
+	home_interact_toilet_start,
+	home_interact_clock_start,
+	home_interact_wardrobe_start,
+	home_interact_bath_start,
+	home_interact_bookshelf_start,
+	home_interact_desk_start,
+	home_interact_mirror_start,
+	home_interact_fridge_start,
 }

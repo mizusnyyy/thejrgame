@@ -14,3 +14,7 @@ func play_music(music: AudioStream):
 func play_sound(sound: AudioStream):
 	soundstream.stream = sound
 	soundstream.play()
+func stop_music(music: AudioStream):
+	musicstream.stop()
+func stop_sound(music: AudioStream):
+	soundstream.stop()

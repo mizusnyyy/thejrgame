@@ -3,16 +3,13 @@ extends Node2D
 @onready var player : CharacterBody2D
 
 @export var tp_to_pos : Vector2
+## 0 RIGHT 1 LEFT 2 FRONT 3 BACK
+@export var different_out: int=4
 
 var tp_to: PackedScene
 
 var playersprite : AnimatedSprite2D
 var anim : AnimationPlayer
-
-var ishorizontal : bool
-var s:String
-var step:float
-var v:Vector2
 
 var player_teleporting := false
 
@@ -34,12 +31,6 @@ func _ready() -> void:
 	#print(playersprite.global_position)
 	
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("gyro") and !player.anim_locked:
-		player.anim_locked=true
-		playersprite.play("obtain")
-	if event.is_action_released("gyro"):
-		player.anim_locked=false
 
 func immobilize_player(body: Node2D):
 	body.smoke.changeemit(false)
@@ -102,7 +93,7 @@ func _on_areatp_body_entered(body: Node2D) -> void:
 	print(playersprite.position)
 	
 	var side = which_side()
-	print(side)
+	print(side," hej")
 	
 	#IMMOBILIZE
 	immobilize_player(body)
@@ -114,21 +105,24 @@ func _on_areatp_body_entered(body: Node2D) -> void:
 	var how_far := 25.0
 	var speed_player : float = 60.0
 	var tempsprite: Vector2 = playersprite.position
-	
+		
+	animation_update(side)
 	match side:
 		0: 
-			playersprite.play("sider")
 			move_sprite_to(Vector2(sprite_temp_pos_x+how_far,sprite_temp_pos_y),speed_player)
 		1: 
-			playersprite.play("sidel")
 			move_sprite_to(Vector2(sprite_temp_pos_x-how_far,sprite_temp_pos_y),speed_player)
 		2: 
-			playersprite.play("front")
 			move_sprite_to(Vector2(sprite_temp_pos_x,sprite_temp_pos_y+how_far),speed_player)
 		3: 
-			playersprite.play("back")
 			move_sprite_to(Vector2(sprite_temp_pos_x,sprite_temp_pos_y-how_far),speed_player)
 	await get_tree().create_timer(0.2).timeout
+	
+	if different_out!=4: #4 TO DEFAULT, CZYLI WYCHODZI ODPOWIEDNIO, 0-3 TO INNE JAKIE CHCESZ ODEJSCIA!
+		side = different_out
+		animation_update(side)
+		
+	
 	#GRACZ NIE TELEPORTUJE SIE
 	player_teleporting=false
 	
@@ -172,5 +166,14 @@ func _on_areatp_body_entered(body: Node2D) -> void:
 
 func blackout():
 	anim.play("tp")
-	
-	
+
+func animation_update(side):
+	match side:
+			0: 
+				playersprite.play("sider")
+			1: 
+				playersprite.play("sidel")
+			2: 
+				playersprite.play("front")
+			3: 
+				playersprite.play("back")

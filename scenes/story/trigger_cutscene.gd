@@ -1,20 +1,28 @@
 extends Area2D
 
 var anim_player : AnimationPlayer
-var cutscene : String
+var cutscene_play : String
+var cutscene_enum
 
 func _ready() -> void:
 	anim_player = $"../AnimationPlayer"
 
 func _on_body_entered(body: Node2D) -> void:
 	print("WGHIWNHGAUBHGNWWH")
-	play_cutscene()
+	if !CutsceneManager.has_played(get_enum_value(cutscene_play)):
+		play_cutscene()
+	CutsceneManager.set_played(get_enum_value(cutscene_play))
+
 	queue_free()
+	
+func get_enum_value(name: String): 
+	return CutsceneManager.cutscenes.get(name)
 
 func changes(name : String, new_pos: Vector2, new_size: Vector2):
-	cutscene = name
+	cutscene_play = name
 	global_position = new_pos
 	$col.shape.size = new_size
 
 func play_cutscene():
-	anim_player.play(cutscene)
+	print(cutscene_play)
+	anim_player.play(cutscene_play)

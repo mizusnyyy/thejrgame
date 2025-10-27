@@ -43,7 +43,7 @@
 	
 	{"id": "introgame1_start", "text": "Alrighty-o! Let's do this!", "hand":null, "speaker": "", "portrait": null,"next":"end"},
 	
-	{"id": "introgame2_start", "text": "\\Yooo wassup Jack!", "hand":null, "speaker": "", "portrait": "jr/portrait/idk","next": "introgame2_1"},
+	{"id": "introgame2_start", "text": "\\Yooo wassup Jack!", "hand":null, "speaker": "", "portrait": "jr/portrait/idk","next": "end"},
 	{"id": "introgame2_1", "text": "/Wha-? Who's that?", "hand":null, "speaker": "", "portrait": "jr/portrait/you","next": "introgame2_2"},
 	{"id": "introgame2_2", "text": "/What?| It's me, Pavey, \\don't-ya remember?", "hand":null, "speaker": "", "portrait": "jr/portrait/idk","next": "introgame2_3"},
 	{"id": "introgame2_3", "text": "Oh.. Hi! What is it Pavey?", "hand":null, "speaker": "", "portrait": "jr/portrait/you","next": "introgame2_4"},

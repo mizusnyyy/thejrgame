@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://c8fex6ne8qvpa" path="res://scenes/randomthings/spowalniacz.gd" id="1_xbbsp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ak1n3"]
+resource_local_to_scene = true
+size = Vector2(20, 39)
 
 [node name="spowalniacz" type="Area2D"]
 script = ExtResource("1_xbbsp")

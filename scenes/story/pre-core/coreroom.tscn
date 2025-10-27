@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_pdshq"]
 [ext_resource type="Texture2D" uid="uid://bnt6ubwr7q3rk" path="res://assets/tiles/coreroom/tilecoreroom.png" id="3_r2r0d"]
-[ext_resource type="SpriteFrames" uid="uid://cyfimtbocgidh" path="res://scenes/player/jrsprite.tres" id="5_6aq6h"]
+[ext_resource type="SpriteFrames" uid="uid://bmedoseo2p0jj" path="res://scenes/player/jrsprite.tres" id="5_6aq6h"]
 [ext_resource type="Texture2D" uid="uid://c72wlne1fh1ho" path="res://assets/tiles/tileobjects.png" id="5_wkayd"]
-[ext_resource type="PackedScene" uid="uid://ck27vl245arqc" path="res://scenes/randomthings/spowalniacz.tscn" id="6_7rq4n"]
-[ext_resource type="PackedScene" uid="uid://dvfwwn4f3nk38" path="res://assets/particles/coreroompart.tscn" id="6_j2vmm"]
+[ext_resource type="PackedScene" uid="uid://ck27vl245arqc" path="res://scenes/mapmechanics/spowalniacz.tscn" id="6_7rq4n"]
+[ext_resource type="PackedScene" path="res://assets/particles/coreroompart.tscn" id="6_j2vmm"]
 [ext_resource type="Texture2D" uid="uid://blq2libb70yvf" path="res://assets/tiles/tilebarrier.png" id="6_o7yvw"]
 [ext_resource type="Script" uid="uid://bkdklstb2wyg2" path="res://scenes/story/pre-core/quickchange.gd" id="7_4kac0"]
 [ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/player/teto.tscn" id="7_7n8tm"]
@@ -20,7 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://csy882se6ixne" path="res://scenes/story/core/core.tscn" id="15_o7yvw"]
 [ext_resource type="PackedScene" uid="uid://b6vi5n5gad3lf" path="res://data/dialogue_manager.tscn" id="17_7htdg"]
 [ext_resource type="PackedScene" uid="uid://cne3a6lmj7c1u" path="res://scenes/randomthings/npc.tscn" id="20_5owgv"]
-[ext_resource type="Texture2D" uid="uid://cf7hmfre788kt" path="res://assets/sprite/characters/igreavious/igreavious.png" id="20_124ib"]
+[ext_resource type="Texture2D" uid="uid://ccb5v7icy5bie" path="res://assets/sprite/characters/igreavious/igreavious.png" id="20_124ib"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wkayd"]
 texture = ExtResource("3_r2r0d")

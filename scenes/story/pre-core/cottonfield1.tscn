@@ -205,9 +205,6 @@ texture = ExtResource("13_xq3a2")
 12:13/0 = 0
 13:13/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_fxkrp"]
-sources/0 = SubResource("TileSetAtlasSource_be3xl")
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p45fp"]
 texture = ExtResource("13_xq3a2")
 0:0/0 = 0

@@ -1319,6 +1319,7 @@ y_sort_enabled = true
 [node name="housejr_objects" type="TileMapLayer" parent="ysorting/house_ysort"]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD9/wEAAAAAAAIAAGACAAEAAAAAAAIAAHDw/wEAAAAAAAIAADDl/wEAAAAAAAIAACDR//v/AAAAAAIAACDY//v/AAAAAAIAADDF/wEAAAAAAAIAADABAPb/AAACAAIAAAD+//T/AAAAAAMAAFAAAPT/AAAAAAMAAED+//b/AAAAAAMAAHD9//X/AAAAAAMAAAD+//r/BQAAAAAAAAD+//n/BAAAAAAAAAA=")
+
 tile_set = SubResource("TileSet_bn434")
 
 [node name="housejr_updated_objects" type="TileMapLayer" parent="ysorting/house_ysort"]

@@ -49,7 +49,7 @@ func show_dialog(id) -> void:
 	print(id)
 
 	var d = dialogue_list[id]
-	print("hmm ",  d)
+	#print("hmm ",  d)
 	if d.hand!=null:
 		temp = true
 		hand = d.hand

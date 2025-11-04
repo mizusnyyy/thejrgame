@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=4 uid="uid://hh1q8a3ntrfc"]
+[gd_scene load_steps=73 format=4 uid="uid://hh1q8a3ntrfc"]
 
 [ext_resource type="Script" uid="uid://clkj0hkqugo3e" path="res://scenes/story/pre-core/cottonfield_1.gd" id="1_p45fp"]
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_y0cq1"]
@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://qkxpoujcdmgk" path="res://assets/sprite/characters/zhemor/portrait/2.png" id="31_2h7yc"]
 [ext_resource type="PackedScene" uid="uid://b00bosebxbqrm" path="res://scenes/story/interact_object.tscn" id="33_neanc"]
 [ext_resource type="PackedScene" uid="uid://ck27vl245arqc" path="res://scenes/mapmechanics/spowalniacz.tscn" id="34_hr6u8"]
+[ext_resource type="Texture2D" uid="uid://vc0q6y17rgo" path="res://paveycity.png" id="36_fxkrp"]
 [ext_resource type="PackedScene" uid="uid://pgr1hxlmxihq" path="res://scenes/common/doors.tscn" id="38_etjdk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_be3xl"]
@@ -1618,6 +1619,13 @@ text_id = "home_interact_mirror"
 
 [node name="spowalniacz" parent="." instance=ExtResource("34_hr6u8")]
 position = Vector2(342, -130)
+
+[node name="Paveycity" type="Sprite2D" parent="."]
+position = Vector2(-8264, -1369)
+texture = ExtResource("36_fxkrp")
+
+[node name="player" parent="." instance=ExtResource("6_m0j0v")]
+position = Vector2(-7761, -1398)
 
 [connection signal="body_entered" from="ysorting/glut" to="ysorting/glut" method="_on_body_entered"]
 [connection signal="body_exited" from="ysorting/glut" to="ysorting/glut" method="_on_body_exited"]

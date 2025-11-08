@@ -3,12 +3,17 @@ extends Node2D
 var dialogue_list := {}
 const dialogue_json_pth := "res://data/dialogues/"
 const dlg_e := preload("res://data/dialogue_enum.gd").dg # enum with all of dialogue
+const act_e := preload("res://data/action_enum.gd").act
+
+
 const sprite_directory := "res://assets/sprite/characters/"
 var dialog: Node = null
 var sound
 var speakername:String
 var hand:String
 var portrait: Texture
+var action: String
+
 var temp := false
 signal dialogue_done
 
@@ -22,17 +27,37 @@ func load_dialogues(dialogue) -> void:
 		for entry in file:
 			var id_enum = dlg_e[entry.id]
 			var next_enum
+			
 			if(typeof(entry.next) != TYPE_ARRAY and entry.next!= null):
 				next_enum = dlg_e[entry.next]
 			else:
 				next_enum = entry.next
-			dialogue_list[id_enum] = Dialogue_node.new( 
-				entry.text,
-				next_enum,
-				entry.speaker,
-				entry.portrait,
-				entry.hand
-			)
+			
+			#print(entry.has("action"))
+			if entry.has("action"):
+				var action_enum
+				action_enum = act_e[entry.action]
+				
+				print(action_enum)
+				print(entry.action)
+				print("_!_!_!_!_!_!_!_!_!_")
+				
+				dialogue_list[id_enum] = Dialogue_node.new( 
+					entry.text,
+					next_enum,
+					entry.speaker,
+					entry.portrait,
+					entry.hand,
+					action_enum
+				)
+			else:
+				dialogue_list[id_enum] = Dialogue_node.new( 
+					entry.text,
+					next_enum,
+					entry.speaker,
+					entry.portrait,
+					entry.hand
+				)
 	else:
 			push_error("Nie udało się otworzyć pliku dialogów : " + dialogue_json_pth)
 
@@ -49,7 +74,7 @@ func show_dialog(id) -> void:
 	print(id)
 
 	var d = dialogue_list[id]
-	print("hmm ",  d)
+	#print("hmm ",  d)
 	if d.hand!=null:
 		temp = true
 		hand = d.hand
@@ -62,6 +87,9 @@ func show_dialog(id) -> void:
 		dialog.setname(speakername)
 	if d.portrait!=null:
 		portrait = load(sprite_directory+d.portrait+".png")
+	
+	
+	
 	# 1) Jeśli next to array (opcje)
 	if typeof(d.next) == TYPE_ARRAY:
 		# Pokaż tekst i poczekaj tylko do końca pisania (bez zamykania okna)
@@ -69,20 +97,34 @@ func show_dialog(id) -> void:
 		# Wyślij listy id "next" oraz tekstów opcji do dialogu
 		var next_ids: Array = []
 		var choice_texts: Array = []
+		var action_ids: Array = []
 		for choice in d.next:
 			choice_texts.append(choice.get("text", ""))
 			next_ids.append(choice.get("next", ""))
-			print("wybór: ", choice.next)
+			action_ids.append(choice.get("action", ""))
+		print("Do wyboru: ", next_ids)
+		print("Akcje: ", action_ids)
+			
 		dialog.choose(next_ids, choice_texts)
 		var picked_index: int = await dialog.choice_selected
 		var next_id = next_ids[picked_index]
+		var action_id = action_ids[picked_index]
 		
 		if typeof(d.next) == TYPE_INT and d.next == dlg_e.battle:
 			
 			get_tree().change_scene_to_packed(preload("res://scenes/tempbattle/battle.tscn"))
+		
+		print(action_id+ " ARMSTRONG!!!! YOU'RE DEAD!")
+		
+		#AKCJA TUTAJ
+		#and act_e[action_id].has("action")
+		if action_id != "":
+			start_action(act_e[action_id])
+			
 		dialog.typing = true
 		
-		if next_id != "" and next_id != "end":
+		#CO SIE DZIEJE PO TERAZNIEJSZYM DIALOGU TUTAJ
+		if next_id != "" and next_id != "end": #JESLI TO NIE KONIEC DIALOGU, CZYLI NIE END TO LECI DALEJ
 			show_dialog(dlg_e[next_id])
 			
 		else:
@@ -94,7 +136,21 @@ func show_dialog(id) -> void:
 		#return
 	await dialog.show_dialogue(d.text, portrait, sound, true)
 
+	#if !CutsceneManager.has_played(get_enum_value(cutscene_play)):
+		#play_cutscene()
+	#CutsceneManager.set_played(get_enum_value(cutscene_play))
+#
+	#queue_free()
+	#
+#func get_enum_value(name: String): 
+	#return CutsceneManager.cutscenes.get(name)
 
+	if d.action!=null:
+		print(dialogue_list[id].get("action","niga"))
+		#start_action(act_e[d.action])
+		#print(d.next)
+		print("wow")
+	#print("www")
 	if d.next==dlg_e.end:
 		dialogue_finish_sequence()
 	else:
@@ -112,3 +168,7 @@ func dialogue_finish_sequence():
 		await get_tree().create_timer(0.15).timeout
 		emit_signal("dialogue_done")
 	
+
+func start_action(name):
+	print(name)
+	print("kurnaa")

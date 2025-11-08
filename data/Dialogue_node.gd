@@ -4,10 +4,12 @@ var next
 var speaker
 var portrait
 var hand
+var action
 
-func _init(_text: String = "", _next = null, _speaker = null,_portrait = null,_hand = null):
+func _init(_text: String = "", _next = null, _speaker = null,_portrait = null,_hand = null,_action = null):
 	text = _text
 	next = _next
 	speaker = _speaker
 	portrait = _portrait
 	hand = _hand
+	action = _action

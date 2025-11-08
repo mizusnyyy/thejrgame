@@ -41,7 +41,7 @@
 	{"id": "introgame_2", "text": "/. . .", "hand":null, "speaker": "", "portrait": null,"next":"introgame_3"},
 	{"id": "introgame_3", "text": "I should really pick it up...", "hand":null, "speaker": "", "portrait": null,"next":"end"},
 	
-	{"id": "introgame1_start", "text": "Alrighty-o! Let's do this!", "hand":null, "speaker": "", "portrait": null,"next":"end"},
+	{"id": "introgame1_start", "text": "Alrighty-o! Let's do this!", "hand":null, "speaker": "", "portrait": null,"next":"end", "action": "home_bed_action"},
 	
 	{"id": "introgame2_start", "text": "\\Yooo wassup Jack!", "hand":null, "speaker": "", "portrait": "jr/portrait/idk","next": "end"},
 	{"id": "introgame2_1", "text": "/Wha-? Who's that?", "hand":null, "speaker": "", "portrait": "jr/portrait/you","next": "introgame2_2"},
@@ -70,7 +70,7 @@
 	{"id": "home_interact_bed_start", "text": "Just my bed, no use going back to sleep", "hand":null, "speaker":"","portrait": "jr/portrait/you","next": "home_interact_bed_1"},
 	{"id": "home_interact_bed_1", "text": "Make the bed?", "hand":null, "speaker":"","portrait": "jr/portrait/you",
 	"next": [
-	  { "text": "Yes", "next": "end" },
+	  { "text": "Yes", "next": "end", "action": "home_bed_action"},
 	  { "text": "No", "next": "end" }
 	]},
 	
@@ -78,7 +78,7 @@
 	{"id": "home_interact_couch_1", "text": "Shall I have a sit and perhaps,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next": "home_interact_couch_2"},
 	{"id": "home_interact_couch_2", "text": "rest for a moment?", "hand":null, "speaker":"","portrait": "jr/portrait/you",
 	"next": [
-	  { "text": "Yes", "next": "end" },
+	  { "text": "Yes", "next": "end"},
 	  { "text": "No", "next": "end" }
 	]},
 	

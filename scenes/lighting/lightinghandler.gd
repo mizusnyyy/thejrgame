@@ -14,4 +14,4 @@ func _process(delta: float) -> void:
 		time += delta * time_speed
 	if time >= day:
 		time -= day
-		print("day passed")
+		#print("day passed")

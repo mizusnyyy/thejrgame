@@ -1617,7 +1617,7 @@ position = Vector2(21, -2.5)
 shape = SubResource("RectangleShape2D_fxkrp")
 
 [node name="interact_tv" parent="." instance=ExtResource("33_neanc")]
-position = Vector2(-338, -118)
+position = Vector2(-338, -115)
 where_need_look = Array[int]([1])
 text_id = "home_interact_tv"
 

@@ -5,7 +5,6 @@ const dialogue_json_pth := "res://data/dialogues/"
 const dlg_e := preload("res://data/dialogue_enum.gd").dg # enum with all of dialogue
 const act_e := preload("res://data/action_enum.gd").act
 
-
 const sprite_directory := "res://assets/sprite/characters/"
 var dialog: Node = null
 var sound
@@ -18,6 +17,8 @@ var temp := false
 signal dialogue_done
 
 func _ready() -> void:
+	print("ActionMan:", ActionMan)
+
 	load_dialogues("zone1")
 
 func load_dialogues(dialogue) -> void:
@@ -71,7 +72,7 @@ func begin_dialogue(character: String, dialogset: Node, soundset):
 	show_dialog(dlg_e[character+"_start"])
 
 func show_dialog(id) -> void:
-	print(id)
+	#print(id)
 
 	var d = dialogue_list[id]
 	#print("hmm ",  d)
@@ -88,7 +89,7 @@ func show_dialog(id) -> void:
 	if d.portrait!=null:
 		portrait = load(sprite_directory+d.portrait+".png")
 	
-	
+	#print(id, " halo halo halo")
 	
 	# 1) Jeśli next to array (opcje)
 	if typeof(d.next) == TYPE_ARRAY:
@@ -106,7 +107,9 @@ func show_dialog(id) -> void:
 		print("Akcje: ", action_ids)
 			
 		dialog.choose(next_ids, choice_texts)
+		
 		var picked_index: int = await dialog.choice_selected
+		
 		var next_id = next_ids[picked_index]
 		var action_id = action_ids[picked_index]
 		
@@ -114,12 +117,12 @@ func show_dialog(id) -> void:
 			
 			get_tree().change_scene_to_packed(preload("res://scenes/tempbattle/battle.tscn"))
 		
-		print(action_id+ " ARMSTRONG!!!! YOU'RE DEAD!")
+		#print(action_id+ " ARMSTRONG!!!! YOU'RE DEAD!")
 		
 		#AKCJA TUTAJ
 		#and act_e[action_id].has("action")
 		if action_id != "":
-			start_action(act_e[action_id])
+			start_action(action_id)
 			
 		dialog.typing = true
 		
@@ -132,6 +135,7 @@ func show_dialog(id) -> void:
 			if !Global.isincutscene:
 				Global.can_move = true
 		return
+
 	#elif choice.next != "end":
 		#return
 	await dialog.show_dialogue(d.text, portrait, sound, true)
@@ -146,11 +150,9 @@ func show_dialog(id) -> void:
 	#return CutsceneManager.cutscenes.get(name)
 
 	if d.action!=null:
-		print(dialogue_list[id].get("action","niga"))
-		#start_action(act_e[d.action])
-		#print(d.next)
-		print("wow")
-	#print("www")
+		var action_name = act_e.keys()[act_e.values().find(d.action)]
+		start_action(action_name)
+
 	if d.next==dlg_e.end:
 		dialogue_finish_sequence()
 	else:
@@ -169,6 +171,5 @@ func dialogue_finish_sequence():
 		emit_signal("dialogue_done")
 	
 
-func start_action(name):
-	print(name)
-	print("kurnaa")
+func start_action(name:String):
+	ActionMan.do_action(name)

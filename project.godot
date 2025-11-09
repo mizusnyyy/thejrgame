@@ -26,6 +26,7 @@ Phone="*res://scenes/phone/phone.tscn"
 Console="*res://scenes/ui/console.tscn"
 DialogueManager="*res://data/DialogueManager.gd"
 CutsceneManager="*res://CutsceneManager.gd"
+ActionMan="*res://data/ActionManager.gd"
 Lighting="*res://scenes/lighting/lightinghandler.gd"
 
 [display]

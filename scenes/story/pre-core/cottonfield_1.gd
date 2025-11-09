@@ -6,6 +6,8 @@ var player : CharacterBody2D
 var barrier
 
 func _ready():
+	ActionMan.register_scene(self)
+	
 	player = get_tree().get_first_node_in_group("player")
 	$ysorting/player/blackout_screen.visible=false
 	print(CutsceneManager.has_played(CutsceneManager.cutscenes.intro))
@@ -23,24 +25,13 @@ func _ready():
 		Global.can_move=true
 		Global.toggle_can_phone(false)
 	Musicsounds.play_music(load("res://assets/sounds/music/1.ogg"))
-	await get_tree().create_timer(3.0).timeout
-	changebed(true)
+	#await get_tree().create_timer(3.0).timeout
+	#changebed(true)
 		
 func spawnphone():
 	var ins : Area2D = item.instantiate()
 	$ysorting.add_child(ins)
 	ins.position=Vector2(29.0,-134.0)
-	
-func changebed(make:bool):
-	var coordbeddown = tileset_house.get_used_cells_by_id(5)
-	var coordbedup = tileset_house.get_used_cells_by_id(4)
-	if make:
-		tileset_house.set_cell(coordbeddown[0],5,Vector2i(12, 0),0)
-		tileset_house.set_cell(coordbedup[0],4,Vector2i(4, 0),0)
-	else:
-		tileset_house.set_cell(coordbeddown[0],5,Vector2i(4, 0),0)
-		await get_tree().create_timer(0.08).timeout
-		tileset_house.set_cell(coordbeddown[0],5,Vector2i(8, 0),0)
 
 func cutscene_talk(character:String, pause_cutscene: bool = true):
 		DialogueManager.begin_dialogue(character,player.dialog,$AudioStreamPlayer2D)
@@ -54,6 +45,26 @@ func cutscene_talk(character:String, pause_cutscene: bool = true):
 		await DialogueManager.dialogue_done
 		Global.toggle_can_phone(false)
 		Global.isincutscene=false
+
+#
+#ACTION ZONE
+#
+
+
+func changebed(make:bool):
+	var coordbeddown = tileset_house.get_used_cells_by_id(5)
+	var coordbedup = tileset_house.get_used_cells_by_id(4)
+	if make:
+		tileset_house.set_cell(coordbeddown[0],5,Vector2i(12, 0),0)
+		tileset_house.set_cell(coordbedup[0],4,Vector2i(4, 0),0)
+	else:
+		tileset_house.set_cell(coordbeddown[0],5,Vector2i(4, 0),0)
+		await get_tree().create_timer(0.08).timeout
+		tileset_house.set_cell(coordbeddown[0],5,Vector2i(8, 0),0)
+
+#
+#BARRIER ZONE
+#
 
 func makebarrier(text_id:String="", glob_pos:Vector2=Vector2(0.0,0.0), size_barrier:Vector2=Vector2(16.0,16.0)):
 	

@@ -41,7 +41,7 @@
 	{"id": "introgame_2", "text": "/. . .", "hand":null, "speaker": "", "portrait": null,"next":"introgame_3"},
 	{"id": "introgame_3", "text": "I should really pick it up...", "hand":null, "speaker": "", "portrait": null,"next":"end"},
 	
-	{"id": "introgame1_start", "text": "Alrighty-o! Let's do this!", "hand":null, "speaker": "", "portrait": null,"next":"end", "action": "home_bed_action"},
+	{"id": "introgame1_start", "text": "Alrighty-o! Let's do this!", "hand":null, "speaker": "", "portrait": null,"next":"end"},
 	
 	{"id": "introgame2_start", "text": "\\Yooo wassup Jack!", "hand":null, "speaker": "", "portrait": "jr/portrait/idk","next": "end"},
 	{"id": "introgame2_1", "text": "/Wha-? Who's that?", "hand":null, "speaker": "", "portrait": "jr/portrait/you","next": "introgame2_2"},

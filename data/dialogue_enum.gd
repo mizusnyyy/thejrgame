@@ -49,6 +49,7 @@ enum dg { # tutaj dajecie nowe id dialogów
 	introgame3_1,
 	
 	home_interact_bed_start,home_interact_bed_1,
+	home_interact_bed1_start,
 	
 	home_interact_couch_start,home_interact_couch_1,home_interact_couch_2,
 	

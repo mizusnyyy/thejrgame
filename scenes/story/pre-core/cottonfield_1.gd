@@ -2,6 +2,7 @@ extends Node2D
 @onready var anim := $AnimationPlayer
 @onready var item := preload("res://scenes/items/iteminteract.tscn")
 @onready var tileset_house : TileMapLayer = $ysorting/house_ysort/housejr_objects
+@onready var nodes_interact:Array[Node] = []
 var player : CharacterBody2D
 var barrier
 
@@ -50,17 +51,61 @@ func cutscene_talk(character:String, pause_cutscene: bool = true):
 #ACTION ZONE
 #
 
+#to jest mega madre, bierze nody od interactow, sprawdza czy maja w nazwie tego noda co chcesz (variab)
+#i dzieki temu mozesz np zmienic dialog przy nastepnym uzyciu tego interact
+func return_interact(variab:String):
+	if nodes_interact.is_empty():
+		nodes_interact = get_tree().get_nodes_in_group("interact")
+		print("I CREATED NODES INTERACT !!!!!!!!!!!!")
+	var good_nodes:Array[Node]
+	
+	for node in nodes_interact:
+		if node.check_me(variab):
+			good_nodes.append(node)
+	
+	return good_nodes
+	
+#no kurwa dialog zmienia wow
+func change_dialogue(id:String, change_to:String):
+	var nodes:Array[Node] = return_interact(id)
+	for node in nodes:
+		node.text_id = change_to
 
-func changebed(make:bool):
+
+func actionbed(make:bool):
 	var coordbeddown = tileset_house.get_used_cells_by_id(5)
 	var coordbedup = tileset_house.get_used_cells_by_id(4)
+	
 	if make:
+		change_dialogue("bed","home_interact_bed1")
+		
 		tileset_house.set_cell(coordbeddown[0],5,Vector2i(12, 0),0)
 		tileset_house.set_cell(coordbedup[0],4,Vector2i(4, 0),0)
 	else:
 		tileset_house.set_cell(coordbeddown[0],5,Vector2i(4, 0),0)
 		await get_tree().create_timer(0.08).timeout
 		tileset_house.set_cell(coordbeddown[0],5,Vector2i(8, 0),0)
+
+func actioncouch():
+	var nodes:Array[Node] = return_interact("couch")
+		#for node in nodes:
+			#node.text_id = "home_interact_couch1"
+	print(nodes, " i nic sie nie dzieje")
+
+func actioncrystal(): change_dialogue("crystal","home_interact_crystal1")
+
+func actionwardrobe(): change_dialogue("wardrobe","home_interact_wardrobe1")
+func actionwardrobe1(): change_dialogue("wardrobe","home_interact_wardrobe2")
+
+func actionbath(): change_dialogue("bath", "home_interact_bath1")
+
+func actionbookshelf(): change_dialogue("bookshelf", "home_interact_bookshelf1")
+
+func actiondesk(): change_dialogue("desk", "home_interact_desk1")
+
+func actionmirror(): change_dialogue("mirror", "home_interact_mirror1")
+
+func actionfridge(): change_dialogue("fridge", "home_interact_fridge1")
 
 #
 #BARRIER ZONE

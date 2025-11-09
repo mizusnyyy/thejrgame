@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqm1c"]
 resource_local_to_scene = true
 
-[node name="interact" type="Area2D"]
+[node name="interact" type="Area2D" groups=["interact"]]
 script = ExtResource("1_gihm6")
 
 [node name="col" type="CollisionShape2D" parent="."]

@@ -172,4 +172,5 @@ func dialogue_finish_sequence():
 	
 
 func start_action(name:String):
+	print("do kurwy rurwy burwy "+name)
 	ActionMan.do_action(name)

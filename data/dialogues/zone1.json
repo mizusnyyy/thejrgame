@@ -74,18 +74,20 @@
 	  { "text": "No", "next": "end" }
 	]},
 	
+	{"id": "home_interact_bed1_start", "text": "Yup, I made the bed, what now boss?", "hand":null, "speaker":"","portrait": "jr/portrait/you","next": "end"},
+	
 	{"id": "home_interact_couch_start", "text": "Ahh... My beatiful couch,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next": "home_interact_couch_1"},
 	{"id": "home_interact_couch_1", "text": "Shall I have a sit and perhaps,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next": "home_interact_couch_2"},
 	{"id": "home_interact_couch_2", "text": "rest for a moment?", "hand":null, "speaker":"","portrait": "jr/portrait/you",
 	"next": [
-	  { "text": "Yes", "next": "end"},
+	  { "text": "Yes", "next": "end", "action": "home_couch_action"},
 	  { "text": "No", "next": "end" }
 	]},
 	
 	{"id": "home_interact_crystal_start", "text": "Memories are calling...", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_crystal_1"},
 	{"id": "home_interact_crystal_1", "text": "I had so much fun mining them", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_crystal_2"},
 	{"id": "home_interact_crystal_2", "text": "with pavey, also they seemed", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_crystal_3"},
-	{"id": "home_interact_crystal_3", "text": "valuable so I took them home.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+	{"id": "home_interact_crystal_3", "text": "valuable so I took them home.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end", "action": "home_crystal_action"},
 
 	{"id": "home_interact_crystal1_start", "text": "Nothing more to add.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_crystal1_1"},
 	{"id": "home_interact_crystal1_1", "text": "They're just cool.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
@@ -107,31 +109,31 @@
 	{"id": "home_interact_wardrobe_2", "text": "really fit for a meeting...", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_wardrobe_3"},
 	{"id": "home_interact_wardrobe_3", "text": "Change?", "hand":null, "speaker":"","portrait": "jr/portrait/you",
 	"next": [
-	  { "text": "Yes", "next": "end" },
+	  { "text": "Yes", "next": "end", "action": "home_wardrobe_action"},
 	  { "text": "No", "next": "end" }
 	]},
 	
-	{"id": "home_interact_wardrobe1_start", "text": "What? I used it already.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+	{"id": "home_interact_wardrobe1_start", "text": "What? I used it already.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end", "action": "home_wardrobe1_action"},
 
 	{"id": "home_interact_wardrobe2_start", "text": "Yeah, I know my wardrobe's", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_wardrobe2_1"},
-	{"id": "home_interact_wardrobe2_1", "text": "pretty cool", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+	{"id": "home_interact_wardrobe2_1", "text": "pretty cool", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end", "action": "home_wardrobe_action"},
 
 	{"id": "home_interact_bath_start", "text": "I love taking baths,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_bath_1"},
 	{"id": "home_interact_bath_1", "text": "they ease my mind-", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_bath_2"},
 	{"id": "home_interact_bath_2", "text": "Oh!", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_bath_3"},
 	{"id": "home_interact_bath_3", "text": "You're probably looking at the duck,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_bath_4"},
-	{"id": "home_interact_bath_4", "text": "Yeah, it has its charm.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+	{"id": "home_interact_bath_4", "text": "Yeah, it has its charm.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end", "action": "home_bath_action"},
 
 	{"id": "home_interact_bath1_start", "text": "I love you my ducky~", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
 
 	{"id": "home_interact_bookshelf_start", "text": "Did I mention that I", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_bookshelf_1"},
 	{"id": "home_interact_bookshelf_1", "text": "like writing? Poetry and stuff.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_bookshelf_2"},
-	{"id": "home_interact_bookshelf_2", "text": "Eh, It's just my hobby.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+	{"id": "home_interact_bookshelf_2", "text": "Eh, It's just my hobby.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end", "action": "home_bookshelf_action"},
 
 	{"id": "home_interact_bookshelf1_start", "text": "Did you not hear?", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_bookshelf1_1"},
 	{"id": "home_interact_bookshelf1_1", "text": "Yes I write books.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
 
-	{"id": "home_interact_desk_start", "text": "...", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+	{"id": "home_interact_desk_start", "text": "...", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end", "action": "home_desk_action"},
 
 	{"id": "home_interact_desk1_start", "text": "What?", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_desk1_1"},
 	{"id": "home_interact_desk1_1", "text": "Nothing special here.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
@@ -139,7 +141,7 @@
 	{"id": "home_interact_mirror_start", "text": "Ohh… Just look at me,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_mirror_1"},
 	{"id": "home_interact_mirror_1", "text": "so handsome and gray,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_mirror_2"},
 	{"id": "home_interact_mirror_2", "text": "The \"JR\" on my forehead", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_mirror_3"},
-	{"id": "home_interact_mirror_3", "text": "fits me so well, doesn't it?", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end"},
+	{"id": "home_interact_mirror_3", "text": "fits me so well, doesn't it?", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end", "action": "home_mirror_action"},
 
 	{"id": "home_interact_mirror1_start", "text": "Now that I think about it,", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_mirror1_1"},
 	{"id": "home_interact_mirror1_1", "text": "the \"JR\" symbol", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_mirror1_2"},
@@ -150,7 +152,7 @@
 	{"id": "home_interact_fridge_1", "text": "but I could use a snack or two.", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"home_interact_fridge_2"},
 	{"id": "home_interact_fridge_2", "text": "Take an apple?", "hand":null, "speaker":"","portrait": "jr/portrait/you","next":"end",
 	"next": [
-	  { "text": "Yes", "next": "end" },
+	  { "text": "Yes", "next": "end", "action": "home_fridge_action"},
 	  { "text": "No", "next": "end" }
 	]},
 	

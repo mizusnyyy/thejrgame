@@ -32,9 +32,12 @@ func talk():
 		Global.can_talk=true
 		
 		#NIESTETY NIE WIEM JAK ZROBIC ABY POD KONIEC CUTSCENKI MOZNA BYLO OD RAZU DO INNEGO INTERACTABLE GADAC
+		
+		#ni chuja nie wiem o czym pisalem wyzej
 
-				
-#func _physics_process(delta: float) -> void:
-	#if inbody and player and !Global.isincutscene:
-		#if player.directionstop == where_need_look:
-			#DialogueManager.begin_dialogue(text_id,player.dialog,$"../AudioStreamPlayer2D")
+func check_me(variab:String):
+	var name_node = name.trim_prefix("interact_")
+	if variab in name_node:
+		print(name_node)
+		return true
+	return false

@@ -9,7 +9,7 @@ var done_wardrobe := false
 
 func _ready():
 	ActionMan.register_scene(self)
-	xxxx()
+	#xxxx()
 	
 	player = get_tree().get_first_node_in_group("player")
 	#$ysorting/player/blackout_screen.visible=false
@@ -127,6 +127,8 @@ func actionwardrobe():
 	player.anim.play("snap")
 	player.anim.frame=4
 	player.anim.play()
+	if barrier:
+		delbarrier()
 	done_wardrobe=true
 	
 func actionwardrobe1(): change_dialogue("wardrobe","home_interact_wardrobe2")
@@ -165,6 +167,7 @@ func play_cutscene(cutscene:String):
 	anim.play(cutscene)
 
 func make_trigger_cutscene(name_t: String, pos_t: Vector2, size_t: Vector2):
+	print("halo" + name_t)
 	var trigger = load("res://scenes/story/trigger_cutscene.tscn").instantiate()
 	add_child(trigger)
 	

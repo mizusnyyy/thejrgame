@@ -79,7 +79,7 @@ func _update_hearts_position():
 			hearts[i].scale = Vector2.ONE
 			
 			
-func _process(delta):
+func _process(_delta):
 	if player != null:
 		global_position = player.global_position  
 	

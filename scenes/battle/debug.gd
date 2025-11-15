@@ -7,7 +7,7 @@ var instance: Node2D
 var size: int = 10
 var savepos: float = 0.0
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("debug.bone"):
 		# Restart instancji, jeśli już istnieje
 		#if instance != null:

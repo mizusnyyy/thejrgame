@@ -1,8 +1,8 @@
 extends Control
 @onready var labele := $ScrollContainer/CenterContainer/labela
 @onready var val := $ScrollContainer
-func setname(name):
-	labele.text = name
+func setname(name_get:String):
+	labele.text = name_get
 
 func _on_ready() -> void:
 	scrollit()

@@ -10,8 +10,8 @@ var scroll:=false
 
 func inslockscreen():
 	var path := preload("res://scenes/ui/lockscreen.tscn")
-	var ins := path.instantiate()
-	add_child(ins)
+	var ins_get := path.instantiate()
+	add_child(ins_get)
 
 func deleng():
 	if $lockscreen:
@@ -54,7 +54,7 @@ func _on_scrolldown_body_entered(body: Node2D) -> void:
 		return
 	scroll=true
 	var x := $MarginContainer/ScrollContainer
-	var tween := create_tween()
+	#var tween := create_tween()
 	while scroll:
 		if x.scroll_vertical < x.get_v_scroll_bar().max_value:
 			x.scroll_vertical+=1

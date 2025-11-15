@@ -52,7 +52,7 @@ func add_item(item: Item):
 func remove_item(item: Item):
 	inventory.erase(item)
 
-func use_item(index: int, target):
+func use_item(index: int):
 	var item = inventory[index]
 	if item.heal_amount > 0:
 		Global.health=min(Global.health+item.heal_amount,Global.maxhealth)

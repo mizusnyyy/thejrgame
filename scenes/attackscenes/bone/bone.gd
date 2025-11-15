@@ -47,7 +47,7 @@ func instantiateall(scene: PackedScene) -> Node2D:
 func getsizepls():
 	return amount
 	
-func summoned(bullet, soul, speed, left, size, ylevel=310):
+func summoned(bullet, _soul, speed, left, size, ylevel=310):
 	var random = -172
 	if left:
 		random *= -1

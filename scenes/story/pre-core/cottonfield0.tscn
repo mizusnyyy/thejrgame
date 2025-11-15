@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://7suguoagvity"]
+[gd_scene load_steps=45 format=4 uid="uid://21q8265tnt1w"]
 
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_2d5ps"]
 [ext_resource type="Texture2D" uid="uid://b7632vv4ixuwo" path="res://assets/tiles/tilebg.png" id="2_seif0"]

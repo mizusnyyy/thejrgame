@@ -3,7 +3,7 @@ extends TextureRect
 @onready var dobry := 0
 var zasieg := false
 signal choice_finished
-signal done
+#signal done
 var selfid := 0
 func settext(settext):
 	text.text = settext

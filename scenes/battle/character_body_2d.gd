@@ -47,7 +47,7 @@ func soul_is_alive():
 	return alive
 
 		
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if alive and Global.current_mode == Global.mode.RED && can_move:
 		var directionlr := Input.get_axis("left", "right")
 		var directionud := Input.get_axis("up", "down")

@@ -35,9 +35,9 @@ func get_vars():
 
 	for var_info in vars:
 		if var_info.usage & PROPERTY_USAGE_SCRIPT_VARIABLE != 0:
-			var name = var_info.name
-			var value = Global.get(name)
-			output("- [color=white]%s[/color] = %s" % [name, str(value)])
+			var name_get = var_info.name
+			var value = Global.get(name_get)
+			output("- [color=white]%s[/color] = %s" % [name_get, str(value)])
 			found = true
 
 	if not found:
@@ -64,8 +64,8 @@ func _ready():
 	register_command("get_vars", Callable(self, "get_vars"))
 	register_command("steamhappy",Callable(self,"steamhappy"))
 
-func register_command(name: String, callback: Callable):
-	custom_commands[name] = callback
+func register_command(name_get: String, callback: Callable):
+	custom_commands[name_get] = callback
 func output(text: String):
 	output_label.append_text(text + "\n")
 
@@ -118,8 +118,8 @@ func _try_execute_command_line(command: String) -> bool:
 
 
 
-func has_variable(obj: Object, name: String) -> bool:
+func has_variable(obj: Object, name_get: String) -> bool:
 	for prop in obj.get_property_list():
-		if prop.name == name:
+		if prop.name == name_get:
 			return true
 	return false

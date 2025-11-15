@@ -23,11 +23,11 @@ func changesprite(enemid):
 			forparts("shadow")
 		_:
 			forparts("shadow")
-func forparts(name):
+func forparts(name_get):
 	for index in range(len(parts)):
 		var whichpart = part_names[index]
 		parts[index].texture = load(
-		"res://assets/sprite/characters/%s/enemypart/%s_%s.png" % [name, name, whichpart]
+		"res://assets/sprite/characters/%s/enemypart/%s_%s.png" % [name_get, name_get, whichpart]
 		)
 
 func swinghand():

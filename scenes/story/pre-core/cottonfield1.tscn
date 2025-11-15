@@ -35,7 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://b00bosebxbqrm" path="res://scenes/story/interact_object.tscn" id="33_neanc"]
 [ext_resource type="PackedScene" uid="uid://ck27vl245arqc" path="res://scenes/mapmechanics/spowalniacz.tscn" id="34_hr6u8"]
 [ext_resource type="PackedScene" uid="uid://co0fuyqnlfk1f" path="res://scenes/bgs/house_jr_bg.tscn" id="35_hgdsg"]
-[ext_resource type="Texture2D" uid="uid://vc0q6y17rgo" path="res://paveycity.png" id="36_fxkrp"]
+[ext_resource type="Texture2D" uid="uid://bfa2shqajfume" path="res://paveycity.png" id="36_fxkrp"]
 [ext_resource type="Texture2D" uid="uid://bdo8d0j7y6s7b" path="res://assets/sprite/characters/jr/jrspritesheet.png" id="37_p45fp"]
 [ext_resource type="PackedScene" uid="uid://pgr1hxlmxihq" path="res://scenes/common/doors.tscn" id="38_etjdk"]
 

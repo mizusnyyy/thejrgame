@@ -171,6 +171,6 @@ func dialogue_finish_sequence():
 		emit_signal("dialogue_done")
 	
 
-func start_action(name:String):
-	print("do kurwy rurwy burwy "+name)
-	ActionMan.do_action(name)
+func start_action(name_get:String):
+	print("do kurwy rurwy burwy "+name_get)
+	ActionMan.do_action(name_get)

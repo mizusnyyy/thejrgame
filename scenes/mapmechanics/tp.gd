@@ -134,6 +134,7 @@ func _on_areatp_body_entered(body: Node2D) -> void:
 	playersprite.position = tempsprite
 	
 	await get_tree().create_timer(0.1).timeout
+	player_teleporting=true
 	
 	#IDZ
 	match side:
@@ -155,12 +156,16 @@ func _on_areatp_body_entered(body: Node2D) -> void:
 			move_sprite_to(Vector2(sprite_temp_pos_x,sprite_temp_pos_y-how_far),speed_player)
 			
 	
-	#MOBILIZE
-	await anim.animation_finished
-	mobilize_player(body)
-	
-	#UPEWNIJ SIE ZE SPRITE WYLADUJE W DOBRYM MIEJSCU
-	playersprite.position = tempsprite
+	if !player.anim_locked:
+		await anim.animation_finished
+		#MOBILIZE
+		mobilize_player(body)
+	else:
+		#UPEWNIJ SIE ZE SPRITE WYLADUJE W DOBRYM MIEJSCU
+		playersprite.position = tempsprite
+		await anim.animation_finished
+		#MOBILIZE
+		mobilize_player(body)
 	#GRACZ NIE TELEPORTUJE SIE
 	player_teleporting=false
 

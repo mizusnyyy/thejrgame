@@ -79,6 +79,9 @@ func actionbed(make:bool):
 	if make:
 		change_dialogue("bed","home_interact_bed1")
 		
+		player.snapanim()
+		await player.snap_done
+		
 		tileset_house.set_cell(coordbeddown[0],5,Vector2i(12, 0),0)
 		tileset_house.set_cell(coordbedup[0],4,Vector2i(4, 0),0)
 	else:

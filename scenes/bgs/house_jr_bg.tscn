@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://co0fuyqnlfk1f"]
+
+[ext_resource type="Texture2D" uid="uid://hebmpsxhk2af" path="res://assets/sprite/light/circle.png" id="1_48hfy"]
+
+[sub_resource type="Gradient" id="Gradient_48hfy"]
+offsets = PackedFloat32Array(0, 0.106464, 0.444867, 0.760456, 0.954373)
+colors = PackedColorArray(0.858824, 0.811765, 0.960784, 0, 0.859146, 0.810931, 0.961456, 1, 0.816651, 0.820079, 0.889725, 1, 0.669809, 0.546417, 0.88826, 1, 0.858824, 0.811765, 0.960784, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_t6cse"]
+gradient = SubResource("Gradient_48hfy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t6cse"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(300, 300, 1)
+velocity_pivot = Vector3(50, 50, 0)
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 21.13
+initial_velocity_max = 28.17
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = 171.45
+linear_accel_min = -16.55
+linear_accel_max = -3.78
+scale_min = 0.2
+scale_max = 0.3
+color = Color(0.835294, 1, 1, 1)
+color_ramp = SubResource("GradientTexture1D_t6cse")
+
+[node name="house_jr_bg" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+offset = Vector2(200, 200)
+transform = Transform2D(1, 0, 0, 1, 200, 200)
+follow_viewport_enabled = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -9
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(400, 400)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="ParallaxBackground/ParallaxLayer"]
+z_index = -9
+texture = ExtResource("1_48hfy")
+lifetime = 4.25
+fixed_fps = 12
+visibility_rect = Rect2(-200, -200, 400, 400)
+trail_lifetime = 2.87
+process_material = SubResource("ParticleProcessMaterial_t6cse")
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(0.156863, 0, 0.196078, 1)
+z_index = -10
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=4 uid="uid://hh1q8a3ntrfc"]
+[gd_scene load_steps=88 format=4 uid="uid://hh1q8a3ntrfc"]
 
 [ext_resource type="Script" uid="uid://clkj0hkqugo3e" path="res://scenes/story/pre-core/cottonfield_1.gd" id="1_p45fp"]
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_y0cq1"]
@@ -35,6 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://qkxpoujcdmgk" path="res://assets/sprite/characters/zhemor/portrait/2.png" id="31_2h7yc"]
 [ext_resource type="PackedScene" uid="uid://b00bosebxbqrm" path="res://scenes/story/interact_object.tscn" id="33_neanc"]
 [ext_resource type="PackedScene" uid="uid://ck27vl245arqc" path="res://scenes/mapmechanics/spowalniacz.tscn" id="34_hr6u8"]
+[ext_resource type="PackedScene" uid="uid://co0fuyqnlfk1f" path="res://scenes/bgs/house_jr_bg.tscn" id="35_hgdsg"]
 [ext_resource type="Texture2D" uid="uid://vc0q6y17rgo" path="res://paveycity.png" id="36_fxkrp"]
 [ext_resource type="Texture2D" uid="uid://bdo8d0j7y6s7b" path="res://assets/sprite/characters/jr/jrspritesheet.png" id="37_p45fp"]
 [ext_resource type="PackedScene" uid="uid://pgr1hxlmxihq" path="res://scenes/common/doors.tscn" id="38_etjdk"]
@@ -532,19 +533,19 @@ texture = ExtResource("22_grflj")
 0:0/size_in_atlas = Vector2i(4, 3)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(-24, 16)
-0:0/0/y_sort_origin = -17
+0:0/0/y_sort_origin = -40
 4:0/size_in_atlas = Vector2i(4, 3)
 4:0/0 = 0
 4:0/0/texture_origin = Vector2i(-24, 16)
-4:0/0/y_sort_origin = -17
+4:0/0/y_sort_origin = -40
 8:0/size_in_atlas = Vector2i(4, 3)
 8:0/0 = 0
 8:0/0/texture_origin = Vector2i(-24, 16)
-8:0/0/y_sort_origin = -17
+8:0/0/y_sort_origin = -40
 12:0/size_in_atlas = Vector2i(4, 3)
 12:0/0 = 0
 12:0/0/texture_origin = Vector2i(-24, 16)
-12:0/0/y_sort_origin = -17
+12:0/0/y_sort_origin = -40
 
 [sub_resource type="TileSet" id="TileSet_bn434"]
 sources/0 = SubResource("TileSetAtlasSource_n01r1")
@@ -1645,7 +1646,11 @@ rotation = -1.5708
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_87ub6")
 
+[node name="house_jr_bg" parent="." instance=ExtResource("35_hgdsg")]
+z_index = -5
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 z_index = -10
 offset_left = -1249.0
 offset_top = -368.0
@@ -1775,7 +1780,7 @@ texture = ExtResource("36_fxkrp")
 position = Vector2(-69, -119)
 sprite_frames = SubResource("SpriteFrames_fxkrp")
 autoplay = "default"
-frame_progress = 0.851325
+frame_progress = 0.0812681
 
 [connection signal="body_entered" from="ysorting/glut" to="ysorting/glut" method="_on_body_entered"]
 [connection signal="body_exited" from="ysorting/glut" to="ysorting/glut" method="_on_body_exited"]

@@ -15,6 +15,7 @@ var s:String
 var last_position: Vector2
 
 signal obtain_done
+signal snap_done
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("gyro") and !anim_locked:
@@ -116,6 +117,14 @@ func obtainanim(txt):
 	await get_tree().create_timer(ins.lifetime).timeout
 	ins.queue_free()
 
+func snapanim():
+	anim_locked=true
+	anim.play("snap")
+	await get_animduration("snap", 2.0)
+	emit_signal("snap_done")
+	await anim.animation_finished
+	anim_locked=false
+
 func itemupanim(txt):
 	var item := $AnimatedSprite2D/item
 	var tween := create_tween().set_parallel(true)
@@ -150,3 +159,11 @@ func smokerot(x:int):
 func timetakescreen():
 	Global.take_screenshot()
 	timetakescreen()
+
+func get_animduration(name:String, divide:float):
+	var duration : float = anim.sprite_frames.get_animation_speed(name)
+	var frames : float = anim.sprite_frames.get_frame_count(name)
+	var time := float(frames) / float(duration)  # anim time seconds
+	#print(time, " niGEGEGEGEE")
+	await get_tree().create_timer(time / divide).timeout
+	return

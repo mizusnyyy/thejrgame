@@ -25,8 +25,8 @@ func _input(event: InputEvent) -> void:
 		anim_locked=false
 
 func _physics_process(delta: float) -> void:
-	#print(anim_locked)
 	#print(Global.can_move)
+	#print($"blackout_screen".color)
 	if anim_locked or transporting:
 		anim.speed_scale = 1
 		velocity = Vector2.ZERO

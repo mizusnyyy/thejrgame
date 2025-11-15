@@ -1,10 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://co0fuyqnlfk1f"]
+[gd_scene load_steps=8 format=3 uid="uid://co0fuyqnlfk1f"]
 
 [ext_resource type="Texture2D" uid="uid://hebmpsxhk2af" path="res://assets/sprite/light/circle.png" id="1_48hfy"]
 
 [sub_resource type="Gradient" id="Gradient_48hfy"]
 offsets = PackedFloat32Array(0, 0.106464, 0.444867, 0.760456, 0.954373)
-colors = PackedColorArray(0.858824, 0.811765, 0.960784, 0, 0.859146, 0.810931, 0.961456, 1, 0.816651, 0.820079, 0.889725, 1, 0.669809, 0.546417, 0.88826, 1, 0.858824, 0.811765, 0.960784, 0)
+colors = PackedColorArray(0.858824, 0.811765, 0.960784, 0, 0.569362, 0.714562, 0.844828, 1, 0.741176, 0.819608, 0.890196, 0.968627, 0.384314, 0.662745, 0.937255, 0.788235, 0.858824, 0.811765, 0.960784, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_t6cse"]
 gradient = SubResource("Gradient_48hfy")
@@ -12,7 +12,7 @@ gradient = SubResource("Gradient_48hfy")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t6cse"]
 particle_flag_disable_z = true
 emission_shape = 3
-emission_box_extents = Vector3(300, 300, 1)
+emission_box_extents = Vector3(640, 360, 1)
 velocity_pivot = Vector3(50, 50, 0)
 direction = Vector3(0, -1, 0)
 initial_velocity_min = 21.13
@@ -26,31 +26,86 @@ scale_max = 0.3
 color = Color(0.835294, 1, 1, 1)
 color_ramp = SubResource("GradientTexture1D_t6cse")
 
+[sub_resource type="Curve" id="Curve_48hfy"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.477509, 8.4986), 0.0, 0.0, 0, 0, Vector2(0.740484, 4.81586), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_t6cse"]
+curve = SubResource("Curve_48hfy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_48hfy"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, 220, 0)
+emission_shape = 3
+emission_box_extents = Vector3(640, 1, 1)
+velocity_pivot = Vector3(50, 50, 0)
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 150.0
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = 171.45
+linear_accel_min = 0.999998
+linear_accel_max = 5.0
+radial_accel_curve = SubResource("CurveTexture_t6cse")
+scale_min = 1.4
+scale_max = 2.0
+color = Color(0.835294, 1, 1, 0.403922)
+color_ramp = SubResource("GradientTexture1D_t6cse")
+
 [node name="house_jr_bg" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-offset = Vector2(200, 200)
-transform = Transform2D(1, 0, 0, 1, 200, 200)
-follow_viewport_enabled = true
+layer = -1
+scroll_limit_begin = Vector2(-1179, -321)
+scroll_limit_end = Vector2(730, 177)
+scroll_ignore_camera_zoom = true
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="bubblefar" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = -9
 motion_scale = Vector2(0.1, 0.1)
-motion_mirroring = Vector2(400, 400)
+motion_mirroring = Vector2(640, 360)
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="ParallaxBackground/ParallaxLayer"]
-z_index = -9
+[node name="GPUParticles2D" type="GPUParticles2D" parent="ParallaxBackground/bubblefar"]
+position = Vector2(-440, -160)
 texture = ExtResource("1_48hfy")
 lifetime = 4.25
 fixed_fps = 12
-visibility_rect = Rect2(-200, -200, 400, 400)
+visibility_rect = Rect2(-200, -200, 640, 360)
 trail_lifetime = 2.87
 process_material = SubResource("ParticleProcessMaterial_t6cse")
 
-[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
-modulate = Color(0.156863, 0, 0.196078, 1)
+[node name="bg" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = -10
-offset_left = -200.0
-offset_top = -200.0
-offset_right = 200.0
-offset_bottom = 200.0
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(640, 360)
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/bg"]
+modulate = Color(0.156863, 0, 0.196078, 1)
+offset_left = -640.0
+offset_top = -360.0
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+layer = 1
+offset = Vector2(-250, -200)
+transform = Transform2D(1, 0, 0, 1, -250, -200)
+scroll_limit_begin = Vector2(-1179, -321)
+scroll_limit_end = Vector2(730, 177)
+scroll_ignore_camera_zoom = true
+
+[node name="bubbleclose" type="ParallaxLayer" parent="ParallaxBackground2"]
+z_index = 10
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(640, 360)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="ParallaxBackground2/bubbleclose"]
+amount = 3
+amount_ratio = 0.4144
+texture = ExtResource("1_48hfy")
+lifetime = 3.0
+speed_scale = 0.4
+explosiveness = 0.33
+fixed_fps = 12
+visibility_rect = Rect2(-200, -200, 640, 360)
+trail_lifetime = 2.87
+process_material = SubResource("ParticleProcessMaterial_48hfy")

@@ -5,12 +5,14 @@ extends Node2D
 @onready var nodes_interact:Array[Node] = []
 var player : CharacterBody2D
 var barrier
+var done_wardrobe := false
 
 func _ready():
 	ActionMan.register_scene(self)
+	xxxx()
 	
 	player = get_tree().get_first_node_in_group("player")
-	$ysorting/player/blackout_screen.visible=false
+	#$ysorting/player/blackout_screen.visible=false
 	print(CutsceneManager.has_played(CutsceneManager.cutscenes.intro))
 	if CutsceneManager.has_played(CutsceneManager.cutscenes.intro):
 		anim.stop()
@@ -28,7 +30,21 @@ func _ready():
 	Musicsounds.play_music(load("res://assets/sounds/music/1.ogg"))
 	#await get_tree().create_timer(3.0).timeout
 	#changebed(true)
+
+func xxxx():
+	while true:
 		
+		print("Camera:", $ysorting/player/player/Camera2D.position)
+		print("Camera global:", $ysorting/player/player/Camera2D.global_position)
+		print("Begin:", $house_jr_bg/ParallaxBackground.scroll_limit_begin)
+		print("End:", $house_jr_bg/ParallaxBackground.scroll_limit_end)
+
+		print(" ---------- == ---------- == ----------")
+		await get_tree().create_timer(0.4).timeout
+
+#func _process(delta: float) -> void:
+
+
 func spawnphone():
 	var ins : Area2D = item.instantiate()
 	$ysorting.add_child(ins)
@@ -97,7 +113,22 @@ func actioncouch():
 
 func actioncrystal(): change_dialogue("crystal","home_interact_crystal1")
 
-func actionwardrobe(): change_dialogue("wardrobe","home_interact_wardrobe1")
+func actionwardrobe(): 
+	change_dialogue("wardrobe","home_interact_wardrobe1")
+	if done_wardrobe:
+		return
+	player.snapanim()
+	await player.get_animduration("snap", 2.0)
+	
+	##smoke
+	
+	#player.anim_locked=false
+	player.anim.sprite_frames=load("res://scenes/player/jrsprite.tres")
+	player.anim.play("snap")
+	player.anim.frame=4
+	player.anim.play()
+	done_wardrobe=true
+	
 func actionwardrobe1(): change_dialogue("wardrobe","home_interact_wardrobe2")
 
 func actionbath(): change_dialogue("bath", "home_interact_bath1")

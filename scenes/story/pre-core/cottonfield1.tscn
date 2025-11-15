@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=4 uid="uid://hh1q8a3ntrfc"]
+[gd_scene load_steps=87 format=4 uid="uid://hh1q8a3ntrfc"]
 
 [ext_resource type="Script" uid="uid://clkj0hkqugo3e" path="res://scenes/story/pre-core/cottonfield_1.gd" id="1_p45fp"]
 [ext_resource type="PackedScene" uid="uid://jxpo5xgkhpos" path="res://scenes/ui/dialoge.tscn" id="1_y0cq1"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://6v4dxtuywy4r" path="res://scenes/player/teto.tscn" id="6_m0j0v"]
 [ext_resource type="Texture2D" uid="uid://bxq2w808td2io" path="res://assets/sprite/characters/glut/glut.png" id="7_3pd33"]
 [ext_resource type="PackedScene" uid="uid://c3fn22nsfymhg" path="res://scenes/mapmechanics/tp.tscn" id="7_mymkb"]
+[ext_resource type="SpriteFrames" uid="uid://bmedoseo2p0jj" path="res://scenes/player/jrsprite.tres" id="8_p45fp"]
 [ext_resource type="AudioStream" uid="uid://bk6wuwnskch7u" path="res://assets/sprite/characters/glut/squeek.wav" id="9_87ub6"]
 [ext_resource type="Texture2D" uid="uid://c71ehyv7vi481" path="res://assets/tiles/furniture.png" id="12_hr6u8"]
 [ext_resource type="Texture2D" uid="uid://b7632vv4ixuwo" path="res://assets/tiles/tilebg.png" id="13_xq3a2"]
@@ -35,6 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://b00bosebxbqrm" path="res://scenes/story/interact_object.tscn" id="33_neanc"]
 [ext_resource type="PackedScene" uid="uid://ck27vl245arqc" path="res://scenes/mapmechanics/spowalniacz.tscn" id="34_hr6u8"]
 [ext_resource type="Texture2D" uid="uid://vc0q6y17rgo" path="res://paveycity.png" id="36_fxkrp"]
+[ext_resource type="Texture2D" uid="uid://bdo8d0j7y6s7b" path="res://assets/sprite/characters/jr/jrspritesheet.png" id="37_p45fp"]
 [ext_resource type="PackedScene" uid="uid://pgr1hxlmxihq" path="res://scenes/common/doors.tscn" id="38_etjdk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_be3xl"]
@@ -1225,6 +1227,84 @@ size = Vector2(50, 18)
 resource_local_to_scene = true
 size = Vector2(20, 43)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_p45fp"]
+atlas = ExtResource("37_p45fp")
+region = Rect2(0, 192, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etjdk"]
+atlas = ExtResource("37_p45fp")
+region = Rect2(16, 192, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgdsg"]
+atlas = ExtResource("37_p45fp")
+region = Rect2(32, 192, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grflj"]
+atlas = ExtResource("37_p45fp")
+region = Rect2(48, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7p5uw"]
+atlas = ExtResource("37_p45fp")
+region = Rect2(80, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7do4"]
+atlas = ExtResource("37_p45fp")
+region = Rect2(112, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86bx5"]
+atlas = ExtResource("37_p45fp")
+region = Rect2(144, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4leom"]
+atlas = ExtResource("37_p45fp")
+region = Rect2(32, 192, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n01r1"]
+atlas = ExtResource("37_p45fp")
+region = Rect2(16, 192, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfcx1"]
+atlas = ExtResource("37_p45fp")
+region = Rect2(0, 192, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fxkrp"]
+animations = [{
+"frames": [{
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_p45fp")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_etjdk")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_hgdsg")
+}, {
+"duration": 3.5,
+"texture": SubResource("AtlasTexture_grflj")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_7p5uw")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_c7do4")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_86bx5")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_4leom")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_n01r1")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_qfcx1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="cottonfield_1" type="Node2D"]
 script = ExtResource("1_p45fp")
 
@@ -1282,7 +1362,8 @@ y_sort_enabled = true
 
 [node name="AnimatedSprite2D" parent="ysorting/player/player" index="1"]
 y_sort_enabled = true
-animation = &"idlel"
+sprite_frames = ExtResource("8_p45fp")
+animation = &"snap"
 
 [node name="glut" type="Area2D" parent="ysorting"]
 y_sort_enabled = true
@@ -1689,6 +1770,12 @@ visible = false
 modulate = Color(1, 1, 1, 0.4)
 position = Vector2(-8407, -1545)
 texture = ExtResource("36_fxkrp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-69, -119)
+sprite_frames = SubResource("SpriteFrames_fxkrp")
+autoplay = "default"
+frame_progress = 0.851325
 
 [connection signal="body_entered" from="ysorting/glut" to="ysorting/glut" method="_on_body_entered"]
 [connection signal="body_exited" from="ysorting/glut" to="ysorting/glut" method="_on_body_exited"]

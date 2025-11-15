@@ -19,7 +19,7 @@ signal obtain_done
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("gyro") and !anim_locked:
 		anim_locked=true
-		anim.play("obtain")
+		anim.play("snap")
 	if event.is_action_released("gyro"):
 		anim_locked=false
 
